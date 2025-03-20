@@ -1,0 +1,24 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Meibel Gateway Service:
+        inputs:
+            - location: http://127.0.0.1:8000/openapi.json
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        transformations:
+            - filterOperations:
+                operations: list,get,update,create
+                exclude: true
+        registry:
+            location: registry.speakeasyapi.dev/meibel/console/meibel-gateway-service
+targets:
+    meibelai:
+        target: python
+        source: Meibel Gateway Service
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/meibel/console/meibel-gateway-service-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false

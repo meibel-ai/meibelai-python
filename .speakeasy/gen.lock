@@ -1,0 +1,158 @@
+lockVersion: 2.0.0
+id: c1c6891a-974d-4485-9f9e-e0f3320259c6
+management:
+  docChecksum: 0f7afbb5f67d169d8e616694d603d60a
+  docVersion: 0.1.0
+  speakeasyVersion: 1.520.0
+  generationVersion: 2.555.1
+  releaseVersion: 0.1.1
+  configChecksum: cdeac44826ce059106a4fa05036b0adf
+features:
+  python:
+    additionalDependencies: 1.0.0
+    constsAndDefaults: 1.0.5
+    core: 5.12.4
+    defaultEnabledRetries: 0.2.0
+    devContainers: 3.0.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.1
+    globalSecurityCallbacks: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    nameOverrides: 3.0.1
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.1
+    serverEvents: 1.0.7
+    serverEventsSentinels: 0.1.0
+    unions: 3.0.4
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - USAGE.md
+  - docs/models/chatevent.md
+  - docs/models/createstreamresponsebody.md
+  - docs/models/data.md
+  - docs/models/deleterequest.md
+  - docs/models/heartbeatevent.md
+  - docs/models/httpvalidationerror.md
+  - docs/models/loc.md
+  - docs/models/runchatrequest.md
+  - docs/models/runchatstreamrequest.md
+  - docs/models/runchatstreamresponsebody.md
+  - docs/models/uploadrequest.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validationerror.md
+  - docs/sdks/completions/README.md
+  - docs/sdks/dataelements/README.md
+  - docs/sdks/datasources/README.md
+  - docs/sdks/experiences/README.md
+  - docs/sdks/meibelai/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare_readme.py
+  - scripts/publish.sh
+  - src/meibelai/__init__.py
+  - src/meibelai/_hooks/__init__.py
+  - src/meibelai/_hooks/sdkhooks.py
+  - src/meibelai/_hooks/types.py
+  - src/meibelai/_version.py
+  - src/meibelai/basesdk.py
+  - src/meibelai/completions.py
+  - src/meibelai/dataelements.py
+  - src/meibelai/datasources.py
+  - src/meibelai/experiences.py
+  - src/meibelai/httpclient.py
+  - src/meibelai/models/__init__.py
+  - src/meibelai/models/apierror.py
+  - src/meibelai/models/chatevent.py
+  - src/meibelai/models/create_streamop.py
+  - src/meibelai/models/deleteop.py
+  - src/meibelai/models/heartbeatevent.py
+  - src/meibelai/models/httpvalidationerror.py
+  - src/meibelai/models/run_chat_streamop.py
+  - src/meibelai/models/run_chatop.py
+  - src/meibelai/models/uploadop.py
+  - src/meibelai/models/validationerror.py
+  - src/meibelai/py.typed
+  - src/meibelai/sdk.py
+  - src/meibelai/sdkconfiguration.py
+  - src/meibelai/types/__init__.py
+  - src/meibelai/types/basemodel.py
+  - src/meibelai/utils/__init__.py
+  - src/meibelai/utils/annotations.py
+  - src/meibelai/utils/enums.py
+  - src/meibelai/utils/eventstreaming.py
+  - src/meibelai/utils/forms.py
+  - src/meibelai/utils/headers.py
+  - src/meibelai/utils/logger.py
+  - src/meibelai/utils/metadata.py
+  - src/meibelai/utils/queryparams.py
+  - src/meibelai/utils/requestbodies.py
+  - src/meibelai/utils/retries.py
+  - src/meibelai/utils/security.py
+  - src/meibelai/utils/serializers.py
+  - src/meibelai/utils/url.py
+  - src/meibelai/utils/values.py
+examples:
+  delete:
+    speakeasy-default-delete:
+      parameters:
+        path:
+          datasource_id: 545907
+          dataelement_id: 698486
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  upload:
+    speakeasy-default-upload:
+      parameters:
+        path:
+          datasource_id: 403654
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  create_stream:
+    speakeasy-default-create-stream:
+      responses:
+        "422":
+          application/json: {}
+        "200": {}
+  get_experiences_experiences__get:
+    speakeasy-default-get-experiences-experiences-get:
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  run_chat:
+    speakeasy-default-run-chat:
+      parameters:
+        path:
+          experience_id: 695973
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  run_chat_stream:
+    speakeasy-default-run-chat-stream:
+      parameters:
+        path:
+          experience_id: 271760
+      responses:
+        "422":
+          application/json: {}
+        "200": {}
+examplesVersion: 1.0.0
+generatedTests: {}

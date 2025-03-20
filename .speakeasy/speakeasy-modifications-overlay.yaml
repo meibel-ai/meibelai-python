@@ -1,0 +1,64 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/datasources/{datasource_id}/dataelements/upload"]["post"]
+    update:
+      x-speakeasy-name-override: uploadDataelement
+    x-speakeasy-metadata:
+      after: sdk.datasources.uploadDataelement()
+      before: sdk.datasources.upload()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
+  - target: $["paths"]["/completions/create/stream"]["post"]
+    update:
+      x-speakeasy-name-override: createStream
+    x-speakeasy-metadata:
+      after: sdk.completions.createStream()
+      before: sdk.completions.create_stream()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
+  - target: $["paths"]["/experiences/"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.experiences.get()
+      before: sdk.experiences.get_experiences_experiences__get()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
+  - target: $["paths"]["/experiences/run/chat/{experience_id}"]["post"]
+    update:
+      x-speakeasy-name-override: runChat
+    x-speakeasy-metadata:
+      after: sdk.experiences.runChat()
+      before: sdk.experiences.run_chat()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
+  - target: $["paths"]["/experiences/run/chat/stream/{experience_id}"]["post"]
+    update:
+      x-speakeasy-name-override: runChatStream
+    x-speakeasy-metadata:
+      after: sdk.experiences.runChatStream()
+      before: sdk.experiences.run_chat_stream()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
+  - target: $["paths"]["/datasources/{datasource_id}/dataelements/{dataelement_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: deleteDataelement
+    x-speakeasy-metadata:
+      after: sdk.datasources.deleteDataelement()
+      before: sdk.datasources.delete()
+      created_at: 1742480065617
+      reviewed_at: 1742480088855
+      type: method-name
