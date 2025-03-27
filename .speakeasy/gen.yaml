@@ -2,7 +2,7 @@ configVersion: 2.0.0
 generation:
   devContainers:
     enabled: true
-    schemaPath: http://127.0.0.1:8000/openapi.json
+    schemaPath: https://storage.googleapis.com/meibel-api-docs/api.json
   sdkClassName: Meibelai
   maintainOpenAPIOrder: true
   usageSnippets:
@@ -18,7 +18,7 @@ generation:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
 python:
-  version: 0.1.1
+  version: 0.10.4
   additionalDependencies:
     dev: {}
     main: {}

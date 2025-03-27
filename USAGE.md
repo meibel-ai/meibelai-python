@@ -6,7 +6,7 @@ from meibelai import Meibelai
 
 with Meibelai() as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486)
+    res = m_client.datasources.list()
 
     # Handle response
     print(res)
@@ -24,7 +24,7 @@ async def main():
 
     async with Meibelai() as m_client:
 
-        res = await m_client.datasources.delete_dataelement_async(datasource_id=545907, dataelement_id=698486)
+        res = await m_client.datasources.list_async()
 
         # Handle response
         print(res)

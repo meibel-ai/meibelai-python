@@ -9,7 +9,6 @@ import httpx
 from meibelai import utils
 from meibelai._hooks import SDKHooks
 from meibelai.completions import Completions
-from meibelai.dataelements import Dataelements
 from meibelai.datasources import Datasources
 from meibelai.experiences import Experiences
 from meibelai.types import OptionalNullable, UNSET
@@ -25,7 +24,6 @@ class Meibelai(BaseSDK):
 
     datasources: Datasources
     r"""Operations with datasources"""
-    dataelements: Dataelements
     completions: Completions
     r"""Operations with completions"""
     experiences: Experiences
@@ -118,7 +116,6 @@ class Meibelai(BaseSDK):
 
     def _init_sdks(self):
         self.datasources = Datasources(self.sdk_configuration)
-        self.dataelements = Dataelements(self.sdk_configuration)
         self.completions = Completions(self.sdk_configuration)
         self.experiences = Experiences(self.sdk_configuration)
 

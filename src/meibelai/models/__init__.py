@@ -2,10 +2,49 @@
 
 from .apierror import APIError
 from .chatevent import ChatEvent, ChatEventTypedDict, Data, DataTypedDict
-from .create_streamop import CreateStreamResponseBody, CreateStreamResponseBodyTypedDict
-from .deleteop import DeleteRequest, DeleteRequestTypedDict
+from .createdataelementop import (
+    CreateDataelementRequest,
+    CreateDataelementRequestTypedDict,
+)
+from .createstreamcompletionop import (
+    CreateStreamCompletionResponseBody,
+    CreateStreamCompletionResponseBodyTypedDict,
+)
+from .dataelementtype import DataElementType
+from .deletedataelementop import (
+    DeleteDataelementRequest,
+    DeleteDataelementRequestTypedDict,
+)
+from .gatewaydataelementresponse import (
+    GatewayDataElementResponse,
+    GatewayDataElementResponseTypedDict,
+)
+from .gatewaydatasourceresponse import (
+    GatewayDatasourceResponse,
+    GatewayDatasourceResponseTypedDict,
+)
+from .gatewaymetadata import GatewayMetadata, GatewayMetadataTypedDict
+from .gatewaynewdatasourcerequest import (
+    GatewayNewDatasourceRequest,
+    GatewayNewDatasourceRequestTypedDict,
+)
+from .gatewaynewdatasourceresponse import (
+    GatewayNewDatasourceResponse,
+    GatewayNewDatasourceResponseTypedDict,
+)
+from .gatewayupdatedatasourcerequest import (
+    GatewayUpdateDatasourceRequest,
+    GatewayUpdateDatasourceRequestTypedDict,
+)
+from .getdataelementop import GetDataelementRequest, GetDataelementRequestTypedDict
+from .getop import GetRequest, GetRequestTypedDict
 from .heartbeatevent import HeartbeatEvent, HeartbeatEventTypedDict
 from .httpvalidationerror import HTTPValidationError, HTTPValidationErrorData
+from .listdataelementsop import (
+    ListDataelementsRequest,
+    ListDataelementsRequestTypedDict,
+)
+from .listop import ListRequest, ListRequestTypedDict
 from .run_chat_streamop import (
     RunChatStreamRequest,
     RunChatStreamRequestTypedDict,
@@ -13,7 +52,15 @@ from .run_chat_streamop import (
     RunChatStreamResponseBodyTypedDict,
 )
 from .run_chatop import RunChatRequest, RunChatRequestTypedDict
-from .uploadop import UploadRequest, UploadRequestTypedDict
+from .updatedataelementop import (
+    UpdateDataelementRequest,
+    UpdateDataelementRequestTypedDict,
+)
+from .updateop import UpdateRequest, UpdateRequestTypedDict
+from .uploaddataelementop import (
+    UploadDataelementRequest,
+    UploadDataelementRequestTypedDict,
+)
 from .validationerror import (
     Loc,
     LocTypedDict,
@@ -26,16 +73,39 @@ __all__ = [
     "APIError",
     "ChatEvent",
     "ChatEventTypedDict",
-    "CreateStreamResponseBody",
-    "CreateStreamResponseBodyTypedDict",
+    "CreateDataelementRequest",
+    "CreateDataelementRequestTypedDict",
+    "CreateStreamCompletionResponseBody",
+    "CreateStreamCompletionResponseBodyTypedDict",
     "Data",
+    "DataElementType",
     "DataTypedDict",
-    "DeleteRequest",
-    "DeleteRequestTypedDict",
+    "DeleteDataelementRequest",
+    "DeleteDataelementRequestTypedDict",
+    "GatewayDataElementResponse",
+    "GatewayDataElementResponseTypedDict",
+    "GatewayDatasourceResponse",
+    "GatewayDatasourceResponseTypedDict",
+    "GatewayMetadata",
+    "GatewayMetadataTypedDict",
+    "GatewayNewDatasourceRequest",
+    "GatewayNewDatasourceRequestTypedDict",
+    "GatewayNewDatasourceResponse",
+    "GatewayNewDatasourceResponseTypedDict",
+    "GatewayUpdateDatasourceRequest",
+    "GatewayUpdateDatasourceRequestTypedDict",
+    "GetDataelementRequest",
+    "GetDataelementRequestTypedDict",
+    "GetRequest",
+    "GetRequestTypedDict",
     "HTTPValidationError",
     "HTTPValidationErrorData",
     "HeartbeatEvent",
     "HeartbeatEventTypedDict",
+    "ListDataelementsRequest",
+    "ListDataelementsRequestTypedDict",
+    "ListRequest",
+    "ListRequestTypedDict",
     "Loc",
     "LocTypedDict",
     "RunChatRequest",
@@ -44,8 +114,12 @@ __all__ = [
     "RunChatStreamRequestTypedDict",
     "RunChatStreamResponseBody",
     "RunChatStreamResponseBodyTypedDict",
-    "UploadRequest",
-    "UploadRequestTypedDict",
+    "UpdateDataelementRequest",
+    "UpdateDataelementRequestTypedDict",
+    "UpdateRequest",
+    "UpdateRequestTypedDict",
+    "UploadDataelementRequest",
+    "UploadDataelementRequestTypedDict",
     "ValidationError",
     "ValidationErrorTypedDict",
 ]

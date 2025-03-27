@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 0f7afbb5f67d169d8e616694d603d60a
+  docChecksum: e2a9e18463e6aa51ec568d680d46c1be
   docVersion: 0.1.0
-  speakeasyVersion: 1.520.0
-  generationVersion: 2.555.1
-  releaseVersion: 0.1.1
-  configChecksum: cdeac44826ce059106a4fa05036b0adf
+  speakeasyVersion: 1.525.0
+  generationVersion: 2.562.2
+  releaseVersion: 0.10.4
+  configChecksum: cd5397af08fc98e440fe206df169f14d
 features:
   python:
     additionalDependencies: 1.0.0
@@ -14,12 +14,15 @@ features:
     core: 5.12.4
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
+    flatRequests: 1.0.1
     flattening: 3.1.1
     globalSecurityCallbacks: 1.0.0
     globalServerURLs: 3.1.0
     methodArguments: 1.0.2
     nameOverrides: 3.0.1
+    nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.0.1
@@ -35,16 +38,30 @@ generatedFiles:
   - .vscode/settings.json
   - USAGE.md
   - docs/models/chatevent.md
-  - docs/models/createstreamresponsebody.md
+  - docs/models/createdataelementrequest.md
+  - docs/models/createstreamcompletionresponsebody.md
   - docs/models/data.md
-  - docs/models/deleterequest.md
+  - docs/models/dataelementtype.md
+  - docs/models/deletedataelementrequest.md
+  - docs/models/gatewaydataelementresponse.md
+  - docs/models/gatewaydatasourceresponse.md
+  - docs/models/gatewaymetadata.md
+  - docs/models/gatewaynewdatasourcerequest.md
+  - docs/models/gatewaynewdatasourceresponse.md
+  - docs/models/gatewayupdatedatasourcerequest.md
+  - docs/models/getdataelementrequest.md
+  - docs/models/getrequest.md
   - docs/models/heartbeatevent.md
   - docs/models/httpvalidationerror.md
+  - docs/models/listdataelementsrequest.md
+  - docs/models/listrequest.md
   - docs/models/loc.md
   - docs/models/runchatrequest.md
   - docs/models/runchatstreamrequest.md
   - docs/models/runchatstreamresponsebody.md
-  - docs/models/uploadrequest.md
+  - docs/models/updatedataelementrequest.md
+  - docs/models/updaterequest.md
+  - docs/models/uploaddataelementrequest.md
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
   - docs/sdks/completions/README.md
@@ -72,13 +89,27 @@ generatedFiles:
   - src/meibelai/models/__init__.py
   - src/meibelai/models/apierror.py
   - src/meibelai/models/chatevent.py
-  - src/meibelai/models/create_streamop.py
-  - src/meibelai/models/deleteop.py
+  - src/meibelai/models/createdataelementop.py
+  - src/meibelai/models/createstreamcompletionop.py
+  - src/meibelai/models/dataelementtype.py
+  - src/meibelai/models/deletedataelementop.py
+  - src/meibelai/models/gatewaydataelementresponse.py
+  - src/meibelai/models/gatewaydatasourceresponse.py
+  - src/meibelai/models/gatewaymetadata.py
+  - src/meibelai/models/gatewaynewdatasourcerequest.py
+  - src/meibelai/models/gatewaynewdatasourceresponse.py
+  - src/meibelai/models/gatewayupdatedatasourcerequest.py
+  - src/meibelai/models/getdataelementop.py
+  - src/meibelai/models/getop.py
   - src/meibelai/models/heartbeatevent.py
   - src/meibelai/models/httpvalidationerror.py
+  - src/meibelai/models/listdataelementsop.py
+  - src/meibelai/models/listop.py
   - src/meibelai/models/run_chat_streamop.py
   - src/meibelai/models/run_chatop.py
-  - src/meibelai/models/uploadop.py
+  - src/meibelai/models/updatedataelementop.py
+  - src/meibelai/models/updateop.py
+  - src/meibelai/models/uploaddataelementop.py
   - src/meibelai/models/validationerror.py
   - src/meibelai/py.typed
   - src/meibelai/sdk.py
@@ -154,5 +185,253 @@ examples:
         "422":
           application/json: {}
         "200": {}
+  get_datasources_datasources__get:
+    speakeasy-default-get-datasources-datasources-get:
+      parameters:
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  create_datasource_datasources__post:
+    speakeasy-default-create-datasource-datasources-post:
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  get_datasource_datasources__datasource_id__get:
+    speakeasy-default-get-datasource-datasources-datasource-id-get:
+      parameters:
+        path:
+          datasource_id: 567261
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  update_datasource_datasources__datasource_id__put:
+    speakeasy-default-update-datasource-datasources-datasource-id-put:
+      parameters:
+        path:
+          datasource_id: 803371
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  delete_datasource_datasources__datasource_id__delete:
+    speakeasy-default-delete-datasource-datasources-datasource-id-delete:
+      parameters:
+        path:
+          datasource_id: 205539
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  get_dataelements_datasources__datasource_id__dataelements_get:
+    speakeasy-default-get-dataelements-datasources-datasource-id-dataelements-get:
+      parameters:
+        path:
+          datasource_id: 561700
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  create_dataelement_datasources__datasource_id__dataelements_post:
+    speakeasy-default-create-dataelement-datasources-datasource-id-dataelements-post:
+      parameters:
+        path:
+          datasource_id: 529803
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  get_dataelement_datasources__datasource_id__dataelements__dataelement_id__get:
+    speakeasy-default-get-dataelement-datasources-datasource-id-dataelements-dataelement-id-get:
+      parameters:
+        path:
+          datasource_id: 362960
+          dataelement_id: 706157
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  update_dataelement_datasources__datasource_id__dataelements__dataelement_id__put:
+    speakeasy-default-update-dataelement-datasources-datasource-id-dataelements-dataelement-id-put:
+      parameters:
+        path:
+          datasource_id: 384028
+          dataelement_id: 277874
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  delete_dataelement_datasources__datasource_id__dataelements__dataelement_id__delete:
+    speakeasy-default-delete-dataelement-datasources-datasource-id-dataelements-dataelement-id-delete:
+      parameters:
+        path:
+          datasource_id: 647715
+          dataelement_id: 424652
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  upload_dataelement_datasources__datasource_id__dataelements_upload_post:
+    speakeasy-default-upload-dataelement-datasources-datasource-id-dataelements-upload-post:
+      parameters:
+        path:
+          datasource_id: 716701
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  create_completion_completions__post:
+    speakeasy-default-create-completion-completions-post:
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  stream_completion_completions_stream_post:
+    speakeasy-default-stream-completion-completions-stream-post:
+      responses:
+        "422":
+          application/json: {}
+        "200": {}
+  listDataelements:
+    speakeasy-default-list-dataelements:
+      parameters:
+        path:
+          datasource_id: 756811
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  createDataelement:
+    speakeasy-default-create-dataelement:
+      parameters:
+        path:
+          datasource_id: 24820
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  deleteDataelement:
+    speakeasy-default-delete-dataelement:
+      parameters:
+        path:
+          datasource_id: 647715
+          dataelement_id: 424652
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  uploadDataelement:
+    speakeasy-default-upload-dataelement:
+      parameters:
+        path:
+          datasource_id: 716701
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  getDataelement:
+    speakeasy-default-get-dataelement:
+      parameters:
+        path:
+          datasource_id: 700347
+          dataelement_id: 558834
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  updateDataelement:
+    speakeasy-default-update-dataelement:
+      parameters:
+        path:
+          datasource_id: 857478
+          dataelement_id: 597129
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  createCompletion:
+    speakeasy-default-create-completion:
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  createStreamCompletion:
+    speakeasy-default-create-stream-completion:
+      responses:
+        "422":
+          application/json: {}
+        "200": {}
+  list:
+    speakeasy-default-list:
+      parameters:
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: [{"created_at": "1728809913626", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "gzip", "description": "biodegrade miserably fedora blah", "processed": "<value>", "created_at": "1739841116569", "updated_at": "1743012461962", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "pdf", "description": "unimpressively quickly skean yowza beneath meanwhile", "processed": "<value>", "created_at": "1711716065001", "updated_at": "1743070798344", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743083428885"}, {"created_at": "1736068411042", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "zip", "description": "angrily inasmuch irritably finally round alongside whoever jump joyfully discourse", "processed": "<value>", "created_at": "1740618496212", "updated_at": "1743063556495", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "xlsx", "description": "monthly lampoon colligate linear hoot at off however kissingly whether", "processed": "<value>", "created_at": "1726921366473", "updated_at": "1743084893697", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743020872484"}, {"created_at": "1712135139607", "customer_id": "<id>", "data_elements": [], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743054441311"}]
+        "422":
+          application/json: {}
+  create:
+    speakeasy-default-create:
+      requestBody:
+        application/json: {"description": "yuck vice between gee ugh ha", "name": "<value>", "type": "<value>", "metadata": {}}
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get:
+    speakeasy-default-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      responses:
+        "200":
+          application/json: {"created_at": "1733637274276", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "tar", "description": "hundred whereas dimly unused cone restructure gadzooks", "processed": "<value>", "created_at": "1729557562281", "updated_at": "1743053251558", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "xlsx", "description": "responsibility jogging airman per border ascertain", "processed": "<value>", "created_at": "1727036141002", "updated_at": "1743055544955", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743055931711"}
+        "422":
+          application/json: {}
+  update:
+    speakeasy-default-update:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      requestBody:
+        application/json: {"description": "awful underneath retention too mobility char innocently dowse restfully", "name": "<value>", "type": "<value>", "metadata": {}}
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
 examplesVersion: 1.0.0
 generatedTests: {}

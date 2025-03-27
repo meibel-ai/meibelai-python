@@ -11,4 +11,4 @@ python -m pip install --upgrade pip
 pip install -e .
 
 # Generate starter usage sample with speakeasy
-speakeasy generate usage -s http://127.0.0.1:8000/openapi.json -l python -o samples/root.py
+speakeasy generate usage -s https://storage.googleapis.com/meibel-api-docs/api.json -l python -o samples/root.py

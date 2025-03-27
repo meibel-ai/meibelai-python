@@ -1,9 +1,9 @@
-speakeasyVersion: 1.520.0
+speakeasyVersion: 1.525.0
 sources:
     Meibel Gateway Service:
         sourceNamespace: meibel-gateway-service
-        sourceRevisionDigest: sha256:3a93b2745a9913e6c3b9696e72d458b49cff7911b23ca23cf710d1c70c6d1b6f
-        sourceBlobDigest: sha256:26c043615e0f2aa8662b7ec7e7a042f52dd0a49bc00d355753eb4da34cf03aa9
+        sourceRevisionDigest: sha256:8f9ae7e9a707c69ce6379dbba117a873cc79e83833ad0178eb74310bf065d4c6
+        sourceBlobDigest: sha256:a2b6390ebccbc7ff15df065580fe023a9f77f788418a6d1c3169f2b01f2569ea
         tags:
             - latest
             - 0.1.0
@@ -11,23 +11,19 @@ targets:
     meibelai:
         source: Meibel Gateway Service
         sourceNamespace: meibel-gateway-service
-        sourceRevisionDigest: sha256:3a93b2745a9913e6c3b9696e72d458b49cff7911b23ca23cf710d1c70c6d1b6f
-        sourceBlobDigest: sha256:26c043615e0f2aa8662b7ec7e7a042f52dd0a49bc00d355753eb4da34cf03aa9
+        sourceRevisionDigest: sha256:8f9ae7e9a707c69ce6379dbba117a873cc79e83833ad0178eb74310bf065d4c6
+        sourceBlobDigest: sha256:a2b6390ebccbc7ff15df065580fe023a9f77f788418a6d1c3169f2b01f2569ea
         codeSamplesNamespace: meibel-gateway-service-python-code-samples
-        codeSamplesRevisionDigest: sha256:6966b0127ef8ca5256a600fb69c55388d93d684556d5458abf880daec19e08ff
+        codeSamplesRevisionDigest: sha256:69b17f97ee5d16d7f975a241b6a72af1c7208620d3c518ca66086962554f86f2
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         Meibel Gateway Service:
             inputs:
-                - location: http://127.0.0.1:8000/openapi.json
+                - location: https://storage.googleapis.com/meibel-api-docs/api.json
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
-            transformations:
-                - filterOperations:
-                    operations: list,get,update,create
-                    exclude: true
             registry:
                 location: registry.speakeasyapi.dev/meibel/console/meibel-gateway-service
     targets:

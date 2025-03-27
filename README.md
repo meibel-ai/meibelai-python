@@ -127,7 +127,7 @@ from meibelai import Meibelai
 
 with Meibelai() as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486)
+    res = m_client.datasources.list()
 
     # Handle response
     print(res)
@@ -145,7 +145,7 @@ async def main():
 
     async with Meibelai() as m_client:
 
-        res = await m_client.datasources.delete_dataelement_async(datasource_id=545907, dataelement_id=698486)
+        res = await m_client.datasources.list_async()
 
         # Handle response
         print(res)
@@ -162,21 +162,34 @@ asyncio.run(main())
 
 ### [completions](docs/sdks/completions/README.md)
 
+* [create](docs/sdks/completions/README.md#create) - Create Completion
 * [create_stream](docs/sdks/completions/README.md#create_stream) - Create Completion Stream
-
-### [dataelements](docs/sdks/dataelements/README.md)
-
-* [delete_dataelement](docs/sdks/dataelements/README.md#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](docs/sdks/dataelements/README.md#upload_dataelement) - Upload Dataelement
 
 ### [datasources](docs/sdks/datasources/README.md)
 
+* [list](docs/sdks/datasources/README.md#list) - Get Datasources
+* [create](docs/sdks/datasources/README.md#create) - Create Datasource
+* [get](docs/sdks/datasources/README.md#get) - Get Datasource
+* [update](docs/sdks/datasources/README.md#update) - Update Datasource
+* [list_dataelements](docs/sdks/datasources/README.md#list_dataelements) - Get Dataelements
+* [create_dataelement](docs/sdks/datasources/README.md#create_dataelement) - Create Dataelement
+* [get_dataelement](docs/sdks/datasources/README.md#get_dataelement) - Get Dataelement
+* [update_dataelement](docs/sdks/datasources/README.md#update_dataelement) - Update Dataelement
 * [delete_dataelement](docs/sdks/datasources/README.md#delete_dataelement) - Delete Dataelement
 * [upload_dataelement](docs/sdks/datasources/README.md#upload_dataelement) - Upload Dataelement
 
+#### [datasources.dataelements](docs/sdks/dataelements/README.md)
+
+* [list_dataelements](docs/sdks/dataelements/README.md#list_dataelements) - Get Dataelements
+* [create_dataelement](docs/sdks/dataelements/README.md#create_dataelement) - Create Dataelement
+* [get_dataelement](docs/sdks/dataelements/README.md#get_dataelement) - Get Dataelement
+* [update_dataelement](docs/sdks/dataelements/README.md#update_dataelement) - Update Dataelement
+* [delete_dataelement](docs/sdks/dataelements/README.md#delete_dataelement) - Delete Dataelement
+* [upload_dataelement](docs/sdks/dataelements/README.md#upload_dataelement) - Upload Dataelement
+
 ### [experiences](docs/sdks/experiences/README.md)
 
-* [get](docs/sdks/experiences/README.md#get) - Get Experiences
+* [list](docs/sdks/experiences/README.md#list) - Get Experiences
 * [run_chat](docs/sdks/experiences/README.md#run_chat) - Run Chat Experience
 * [run_chat_stream](docs/sdks/experiences/README.md#run_chat_stream) - Run Chat Stream Experience
 
@@ -229,7 +242,7 @@ from meibelai.utils import BackoffStrategy, RetryConfig
 
 with Meibelai() as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486,
+    res = m_client.datasources.list(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -247,7 +260,7 @@ with Meibelai(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
 ) as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486)
+    res = m_client.datasources.list()
 
     # Handle response
     print(res)
@@ -269,7 +282,7 @@ By default, an API error will raise a models.APIError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `delete_dataelement_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -286,7 +299,7 @@ with Meibelai() as m_client:
     res = None
     try:
 
-        res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486)
+        res = m_client.datasources.list()
 
         # Handle response
         print(res)
@@ -314,7 +327,7 @@ with Meibelai(
     server_url="http://127.0.0.1:8000",
 ) as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=545907, dataelement_id=698486)
+    res = m_client.datasources.list()
 
     # Handle response
     print(res)

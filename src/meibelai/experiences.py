@@ -11,7 +11,7 @@ from typing import Any, Mapping, Optional
 class Experiences(BaseSDK):
     r"""Operations with experiences"""
 
-    def get(
+    def list(
         self,
         *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -66,7 +66,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="get_experiences_experiences__get",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,
@@ -102,7 +102,7 @@ class Experiences(BaseSDK):
             http_res,
         )
 
-    async def get_async(
+    async def list_async(
         self,
         *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -157,7 +157,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="get_experiences_experiences__get",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,
@@ -255,7 +255,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="run_chat",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,
@@ -353,7 +353,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="run_chat",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,
@@ -451,7 +451,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="run_chat_stream",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,
@@ -555,7 +555,7 @@ class Experiences(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="run_chat_stream",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=None,
             ),
             request=req,

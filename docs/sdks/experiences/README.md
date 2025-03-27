@@ -7,11 +7,11 @@ Operations with experiences
 
 ### Available Operations
 
-* [get](#get) - Get Experiences
+* [list](#list) - Get Experiences
 * [run_chat](#run_chat) - Run Chat Experience
 * [run_chat_stream](#run_chat_stream) - Run Chat Stream Experience
 
-## get
+## list
 
 Get Experiences
 
@@ -23,7 +23,7 @@ from meibelai import Meibelai
 
 with Meibelai() as m_client:
 
-    res = m_client.experiences.get()
+    res = m_client.experiences.list()
 
     # Handle response
     print(res)
