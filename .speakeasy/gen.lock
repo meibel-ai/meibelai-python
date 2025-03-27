@@ -3,10 +3,12 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: e2a9e18463e6aa51ec568d680d46c1be
   docVersion: 0.1.0
-  speakeasyVersion: 1.525.0
+  speakeasyVersion: 1.525.1
   generationVersion: 2.562.2
-  releaseVersion: 0.10.4
-  configChecksum: cd5397af08fc98e440fe206df169f14d
+  releaseVersion: 0.10.5
+  configChecksum: 49e1a8fb0c06dd4f5e8f0f1475c2d364
+  repoURL: https://github.com/meibel-ai/meibelai-python.git
+  installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
