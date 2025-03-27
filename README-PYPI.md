@@ -25,21 +25,21 @@ Meibel Gateway Service
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [meibelai](#meibelai)
-  * [SDK Installation](#sdk-installation)
-  * [IDE Support](#ide-support)
-  * [SDK Example Usage](#sdk-example-usage)
-  * [Available Resources and Operations](#available-resources-and-operations)
-  * [Server-sent event streaming](#server-sent-event-streaming)
-  * [Retries](#retries)
-  * [Error Handling](#error-handling)
-  * [Server Selection](#server-selection)
-  * [Custom HTTP Client](#custom-http-client)
-  * [Resource Management](#resource-management)
-  * [Debugging](#debugging)
-* [Development](#development)
-  * [Maturity](#maturity)
-  * [Contributions](#contributions)
+* [meibelai](https://github.com/meibel-ai/meibelai-python/blob/master/#meibelai)
+  * [SDK Installation](https://github.com/meibel-ai/meibelai-python/blob/master/#sdk-installation)
+  * [IDE Support](https://github.com/meibel-ai/meibelai-python/blob/master/#ide-support)
+  * [SDK Example Usage](https://github.com/meibel-ai/meibelai-python/blob/master/#sdk-example-usage)
+  * [Available Resources and Operations](https://github.com/meibel-ai/meibelai-python/blob/master/#available-resources-and-operations)
+  * [Server-sent event streaming](https://github.com/meibel-ai/meibelai-python/blob/master/#server-sent-event-streaming)
+  * [Retries](https://github.com/meibel-ai/meibelai-python/blob/master/#retries)
+  * [Error Handling](https://github.com/meibel-ai/meibelai-python/blob/master/#error-handling)
+  * [Server Selection](https://github.com/meibel-ai/meibelai-python/blob/master/#server-selection)
+  * [Custom HTTP Client](https://github.com/meibel-ai/meibelai-python/blob/master/#custom-http-client)
+  * [Resource Management](https://github.com/meibel-ai/meibelai-python/blob/master/#resource-management)
+  * [Debugging](https://github.com/meibel-ai/meibelai-python/blob/master/#debugging)
+* [Development](https://github.com/meibel-ai/meibelai-python/blob/master/#development)
+  * [Maturity](https://github.com/meibel-ai/meibelai-python/blob/master/#maturity)
+  * [Contributions](https://github.com/meibel-ai/meibelai-python/blob/master/#contributions)
 
 <!-- End Table of Contents [toc] -->
 
@@ -160,38 +160,38 @@ asyncio.run(main())
 <details open>
 <summary>Available methods</summary>
 
-### [completions](docs/sdks/completions/README.md)
+### [completions](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md)
 
-* [create](docs/sdks/completions/README.md#create) - Create Completion
-* [create_stream](docs/sdks/completions/README.md#create_stream) - Create Completion Stream
+* [create](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md#create) - Create Completion
+* [create_stream](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md#create_stream) - Create Completion Stream
 
-### [datasources](docs/sdks/datasources/README.md)
+### [datasources](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md)
 
-* [list](docs/sdks/datasources/README.md#list) - Get Datasources
-* [create](docs/sdks/datasources/README.md#create) - Create Datasource
-* [get](docs/sdks/datasources/README.md#get) - Get Datasource
-* [update](docs/sdks/datasources/README.md#update) - Update Datasource
-* [list_dataelements](docs/sdks/datasources/README.md#list_dataelements) - Get Dataelements
-* [create_dataelement](docs/sdks/datasources/README.md#create_dataelement) - Create Dataelement
-* [get_dataelement](docs/sdks/datasources/README.md#get_dataelement) - Get Dataelement
-* [update_dataelement](docs/sdks/datasources/README.md#update_dataelement) - Update Dataelement
-* [delete_dataelement](docs/sdks/datasources/README.md#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](docs/sdks/datasources/README.md#upload_dataelement) - Upload Dataelement
+* [list](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#list) - Get Datasources
+* [create](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#create) - Create Datasource
+* [get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get) - Get Datasource
+* [update](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update) - Update Datasource
+* [list_dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#list_dataelements) - Get Dataelements
+* [create_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#create_dataelement) - Create Dataelement
+* [get_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_dataelement) - Get Dataelement
+* [update_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update_dataelement) - Update Dataelement
+* [delete_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#delete_dataelement) - Delete Dataelement
+* [upload_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#upload_dataelement) - Upload Dataelement
 
-#### [datasources.dataelements](docs/sdks/dataelements/README.md)
+#### [datasources.dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
 
-* [list_dataelements](docs/sdks/dataelements/README.md#list_dataelements) - Get Dataelements
-* [create_dataelement](docs/sdks/dataelements/README.md#create_dataelement) - Create Dataelement
-* [get_dataelement](docs/sdks/dataelements/README.md#get_dataelement) - Get Dataelement
-* [update_dataelement](docs/sdks/dataelements/README.md#update_dataelement) - Update Dataelement
-* [delete_dataelement](docs/sdks/dataelements/README.md#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](docs/sdks/dataelements/README.md#upload_dataelement) - Upload Dataelement
+* [list_dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#list_dataelements) - Get Dataelements
+* [create_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#create_dataelement) - Create Dataelement
+* [get_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_dataelement) - Get Dataelement
+* [update_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_dataelement) - Update Dataelement
+* [delete_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#delete_dataelement) - Delete Dataelement
+* [upload_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#upload_dataelement) - Upload Dataelement
 
-### [experiences](docs/sdks/experiences/README.md)
+### [experiences](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md)
 
-* [list](docs/sdks/experiences/README.md#list) - Get Experiences
-* [run_chat](docs/sdks/experiences/README.md#run_chat) - Run Chat Experience
-* [run_chat_stream](docs/sdks/experiences/README.md#run_chat_stream) - Run Chat Stream Experience
+* [list](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#list) - Get Experiences
+* [run_chat](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#run_chat) - Run Chat Experience
+* [run_chat_stream](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#run_chat_stream) - Run Chat Stream Experience
 
 
 </details>
