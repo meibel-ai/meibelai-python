@@ -10,31 +10,13 @@ from .createstreamcompletionop import (
     CreateStreamCompletionResponseBody,
     CreateStreamCompletionResponseBodyTypedDict,
 )
+from .dataelementresponse import DataElementResponse, DataElementResponseTypedDict
 from .dataelementtype import DataElementType
+from .datasourceresponse import DatasourceResponse, DatasourceResponseTypedDict
+from .datasourcetype import DatasourceType
 from .deletedataelementop import (
     DeleteDataelementRequest,
     DeleteDataelementRequestTypedDict,
-)
-from .gatewaydataelementresponse import (
-    GatewayDataElementResponse,
-    GatewayDataElementResponseTypedDict,
-)
-from .gatewaydatasourceresponse import (
-    GatewayDatasourceResponse,
-    GatewayDatasourceResponseTypedDict,
-)
-from .gatewaymetadata import GatewayMetadata, GatewayMetadataTypedDict
-from .gatewaynewdatasourcerequest import (
-    GatewayNewDatasourceRequest,
-    GatewayNewDatasourceRequestTypedDict,
-)
-from .gatewaynewdatasourceresponse import (
-    GatewayNewDatasourceResponse,
-    GatewayNewDatasourceResponseTypedDict,
-)
-from .gatewayupdatedatasourcerequest import (
-    GatewayUpdateDatasourceRequest,
-    GatewayUpdateDatasourceRequestTypedDict,
 )
 from .getdataelementop import GetDataelementRequest, GetDataelementRequestTypedDict
 from .getop import GetRequest, GetRequestTypedDict
@@ -45,6 +27,9 @@ from .listdataelementsop import (
     ListDataelementsRequestTypedDict,
 )
 from .listop import ListRequest, ListRequestTypedDict
+from .metadata import Metadata, MetadataTypedDict
+from .newdatasourcerequest import NewDatasourceRequest, NewDatasourceRequestTypedDict
+from .newdatasourceresponse import NewDatasourceResponse, NewDatasourceResponseTypedDict
 from .run_chat_streamop import (
     RunChatStreamRequest,
     RunChatStreamRequestTypedDict,
@@ -52,9 +37,14 @@ from .run_chat_streamop import (
     RunChatStreamResponseBodyTypedDict,
 )
 from .run_chatop import RunChatRequest, RunChatRequestTypedDict
+from .security import Security, SecurityTypedDict
 from .updatedataelementop import (
     UpdateDataelementRequest,
     UpdateDataelementRequestTypedDict,
+)
+from .updatedatasourcerequest import (
+    UpdateDatasourceRequest,
+    UpdateDatasourceRequestTypedDict,
 )
 from .updateop import UpdateRequest, UpdateRequestTypedDict
 from .uploaddataelementop import (
@@ -78,22 +68,15 @@ __all__ = [
     "CreateStreamCompletionResponseBody",
     "CreateStreamCompletionResponseBodyTypedDict",
     "Data",
+    "DataElementResponse",
+    "DataElementResponseTypedDict",
     "DataElementType",
     "DataTypedDict",
+    "DatasourceResponse",
+    "DatasourceResponseTypedDict",
+    "DatasourceType",
     "DeleteDataelementRequest",
     "DeleteDataelementRequestTypedDict",
-    "GatewayDataElementResponse",
-    "GatewayDataElementResponseTypedDict",
-    "GatewayDatasourceResponse",
-    "GatewayDatasourceResponseTypedDict",
-    "GatewayMetadata",
-    "GatewayMetadataTypedDict",
-    "GatewayNewDatasourceRequest",
-    "GatewayNewDatasourceRequestTypedDict",
-    "GatewayNewDatasourceResponse",
-    "GatewayNewDatasourceResponseTypedDict",
-    "GatewayUpdateDatasourceRequest",
-    "GatewayUpdateDatasourceRequestTypedDict",
     "GetDataelementRequest",
     "GetDataelementRequestTypedDict",
     "GetRequest",
@@ -108,14 +91,24 @@ __all__ = [
     "ListRequestTypedDict",
     "Loc",
     "LocTypedDict",
+    "Metadata",
+    "MetadataTypedDict",
+    "NewDatasourceRequest",
+    "NewDatasourceRequestTypedDict",
+    "NewDatasourceResponse",
+    "NewDatasourceResponseTypedDict",
     "RunChatRequest",
     "RunChatRequestTypedDict",
     "RunChatStreamRequest",
     "RunChatStreamRequestTypedDict",
     "RunChatStreamResponseBody",
     "RunChatStreamResponseBodyTypedDict",
+    "Security",
+    "SecurityTypedDict",
     "UpdateDataelementRequest",
     "UpdateDataelementRequestTypedDict",
+    "UpdateDatasourceRequest",
+    "UpdateDatasourceRequestTypedDict",
     "UpdateRequest",
     "UpdateRequestTypedDict",
     "UploadDataelementRequest",

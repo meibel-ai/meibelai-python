@@ -5,9 +5,9 @@ from meibelai.types import BaseModel
 from typing_extensions import TypedDict
 
 
-class GatewayNewDatasourceResponseTypedDict(TypedDict):
+class NewDatasourceResponseTypedDict(TypedDict):
     id: str
 
 
-class GatewayNewDatasourceResponse(BaseModel):
+class NewDatasourceResponse(BaseModel):
     id: str

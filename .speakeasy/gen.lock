@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: e2a9e18463e6aa51ec568d680d46c1be
+  docChecksum: b3ed3be30e8c6dc44af619ca68391671
   docVersion: 0.1.0
-  speakeasyVersion: 1.525.1
-  generationVersion: 2.562.2
-  releaseVersion: 0.10.5
-  configChecksum: 49e1a8fb0c06dd4f5e8f0f1475c2d364
+  speakeasyVersion: 1.526.0
+  generationVersion: 2.563.0
+  releaseVersion: 0.11.0
+  configChecksum: 64b8eab0fd6dd6226f7bdab6c505890d
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -20,7 +20,9 @@ features:
     envVarSecurityUsage: 0.3.2
     flatRequests: 1.0.1
     flattening: 3.1.1
+    globalSecurity: 3.0.3
     globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.0
     methodArguments: 1.0.2
     nameOverrides: 3.0.1
@@ -43,14 +45,11 @@ generatedFiles:
   - docs/models/createdataelementrequest.md
   - docs/models/createstreamcompletionresponsebody.md
   - docs/models/data.md
+  - docs/models/dataelementresponse.md
   - docs/models/dataelementtype.md
+  - docs/models/datasourceresponse.md
+  - docs/models/datasourcetype.md
   - docs/models/deletedataelementrequest.md
-  - docs/models/gatewaydataelementresponse.md
-  - docs/models/gatewaydatasourceresponse.md
-  - docs/models/gatewaymetadata.md
-  - docs/models/gatewaynewdatasourcerequest.md
-  - docs/models/gatewaynewdatasourceresponse.md
-  - docs/models/gatewayupdatedatasourcerequest.md
   - docs/models/getdataelementrequest.md
   - docs/models/getrequest.md
   - docs/models/heartbeatevent.md
@@ -58,10 +57,15 @@ generatedFiles:
   - docs/models/listdataelementsrequest.md
   - docs/models/listrequest.md
   - docs/models/loc.md
+  - docs/models/metadata.md
+  - docs/models/newdatasourcerequest.md
+  - docs/models/newdatasourceresponse.md
   - docs/models/runchatrequest.md
   - docs/models/runchatstreamrequest.md
   - docs/models/runchatstreamresponsebody.md
+  - docs/models/security.md
   - docs/models/updatedataelementrequest.md
+  - docs/models/updatedatasourcerequest.md
   - docs/models/updaterequest.md
   - docs/models/uploaddataelementrequest.md
   - docs/models/utils/retryconfig.md
@@ -93,23 +97,25 @@ generatedFiles:
   - src/meibelai/models/chatevent.py
   - src/meibelai/models/createdataelementop.py
   - src/meibelai/models/createstreamcompletionop.py
+  - src/meibelai/models/dataelementresponse.py
   - src/meibelai/models/dataelementtype.py
+  - src/meibelai/models/datasourceresponse.py
+  - src/meibelai/models/datasourcetype.py
   - src/meibelai/models/deletedataelementop.py
-  - src/meibelai/models/gatewaydataelementresponse.py
-  - src/meibelai/models/gatewaydatasourceresponse.py
-  - src/meibelai/models/gatewaymetadata.py
-  - src/meibelai/models/gatewaynewdatasourcerequest.py
-  - src/meibelai/models/gatewaynewdatasourceresponse.py
-  - src/meibelai/models/gatewayupdatedatasourcerequest.py
   - src/meibelai/models/getdataelementop.py
   - src/meibelai/models/getop.py
   - src/meibelai/models/heartbeatevent.py
   - src/meibelai/models/httpvalidationerror.py
   - src/meibelai/models/listdataelementsop.py
   - src/meibelai/models/listop.py
+  - src/meibelai/models/metadata.py
+  - src/meibelai/models/newdatasourcerequest.py
+  - src/meibelai/models/newdatasourceresponse.py
   - src/meibelai/models/run_chat_streamop.py
   - src/meibelai/models/run_chatop.py
+  - src/meibelai/models/security.py
   - src/meibelai/models/updatedataelementop.py
+  - src/meibelai/models/updatedatasourcerequest.py
   - src/meibelai/models/updateop.py
   - src/meibelai/models/uploaddataelementop.py
   - src/meibelai/models/validationerror.py
@@ -401,13 +407,13 @@ examples:
           limit: 10
       responses:
         "200":
-          application/json: [{"created_at": "1728809913626", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "gzip", "description": "biodegrade miserably fedora blah", "processed": "<value>", "created_at": "1739841116569", "updated_at": "1743012461962", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "pdf", "description": "unimpressively quickly skean yowza beneath meanwhile", "processed": "<value>", "created_at": "1711716065001", "updated_at": "1743070798344", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743083428885"}, {"created_at": "1736068411042", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "zip", "description": "angrily inasmuch irritably finally round alongside whoever jump joyfully discourse", "processed": "<value>", "created_at": "1740618496212", "updated_at": "1743063556495", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "xlsx", "description": "monthly lampoon colligate linear hoot at off however kissingly whether", "processed": "<value>", "created_at": "1726921366473", "updated_at": "1743084893697", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743020872484"}, {"created_at": "1712135139607", "customer_id": "<id>", "data_elements": [], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743054441311"}]
+          application/json: [{"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "gzip", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "pdf", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743083428885"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "zip", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "xlsx", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743020872484"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743054441311"}]
         "422":
           application/json: {}
   create:
     speakeasy-default-create:
       requestBody:
-        application/json: {"description": "yuck vice between gee ugh ha", "name": "<value>", "type": "<value>", "metadata": {}}
+        application/json: {"description": "A datasource", "name": "My Datasource", "type": "google-drive", "metadata": {}}
       responses:
         "200":
           application/json: {"id": "<id>"}
@@ -420,7 +426,7 @@ examples:
           datasource_id: "<id>"
       responses:
         "200":
-          application/json: {"created_at": "1733637274276", "customer_id": "<id>", "data_elements": [{"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "tar", "description": "hundred whereas dimly unused cone restructure gadzooks", "processed": "<value>", "created_at": "1729557562281", "updated_at": "1743053251558", "metadata": {}}, {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "datasource_id": "<id>", "name": "<value>", "value": "<value>", "type": "xlsx", "description": "responsibility jogging airman per border ascertain", "processed": "<value>", "created_at": "1727036141002", "updated_at": "1743055544955", "metadata": {}}], "id": "<id>", "metadata": {}, "name": "<value>", "project_id": "<id>", "type": "<value>", "updated_at": "1743055931711"}
+          application/json: {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "tar", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "xlsx", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743055931711"}
         "422":
           application/json: {}
   update:

@@ -4,7 +4,7 @@ from .basesdk import BaseSDK
 from meibelai import models, utils
 from meibelai._hooks import HookContext
 from meibelai.types import OptionalNullable, UNSET
-from meibelai.utils import eventstreaming
+from meibelai.utils import eventstreaming, get_security_from_env
 from typing import Any, Mapping, Optional
 
 
@@ -43,10 +43,11 @@ class Completions(BaseSDK):
             request=None,
             request_body_required=False,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -66,8 +67,10 @@ class Completions(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createCompletion",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -134,10 +137,11 @@ class Completions(BaseSDK):
             request=None,
             request_body_required=False,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -157,8 +161,10 @@ class Completions(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createCompletion",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -225,10 +231,11 @@ class Completions(BaseSDK):
             request=None,
             request_body_required=False,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="text/event-stream",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -248,8 +255,10 @@ class Completions(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createStreamCompletion",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -324,10 +333,11 @@ class Completions(BaseSDK):
             request=None,
             request_body_required=False,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="text/event-stream",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -347,8 +357,10 @@ class Completions(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createStreamCompletion",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],

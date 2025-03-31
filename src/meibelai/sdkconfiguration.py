@@ -10,14 +10,15 @@ from ._version import (
 from .httpclient import AsyncHttpClient, HttpClient
 from .utils import Logger, RetryConfig, remove_suffix
 from dataclasses import dataclass
+from meibelai import models
 from meibelai.types import OptionalNullable, UNSET
 from pydantic import Field
-from typing import Dict, Optional, Tuple, Union
+from typing import Callable, Dict, Optional, Tuple, Union
 
 
 SERVERS = [
-    "http://127.0.0.1:8000",
-    # Local server
+    "http://api.meibel.ai",
+    # Meibel API
 ]
 """Contains the list of servers available to the SDK"""
 
@@ -29,6 +30,7 @@ class SDKConfiguration:
     async_client: Union[AsyncHttpClient, None]
     async_client_supplied: bool
     debug_logger: Logger
+    security: Optional[Union[models.Security, Callable[[], models.Security]]] = None
     server_url: Optional[str] = ""
     server_idx: Optional[int] = 0
     language: str = "python"

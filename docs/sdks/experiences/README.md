@@ -19,9 +19,12 @@ Get Experiences
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.experiences.list()
 
@@ -55,9 +58,12 @@ Run Chat Experience
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.experiences.run_chat(experience_id=695973)
 
@@ -92,9 +98,12 @@ Run Chat Stream Experience
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.experiences.run_chat_stream(experience_id=271760)
 

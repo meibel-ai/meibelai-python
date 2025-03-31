@@ -6,20 +6,20 @@ from .sdkconfiguration import SDKConfiguration
 from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 import httpx
-from meibelai import utils
+from meibelai import models, utils
 from meibelai._hooks import SDKHooks
 from meibelai.completions import Completions
 from meibelai.datasources import Datasources
 from meibelai.experiences import Experiences
 from meibelai.types import OptionalNullable, UNSET
-from typing import Dict, Optional, cast
+from typing import Any, Callable, Dict, Optional, Union, cast
 import weakref
 
 
 class Meibelai(BaseSDK):
-    r"""Meibel Gateway Service: Meibel Gateway Service
+    r"""Meibel AI API: Meibel Gateway Service
 
-    Meibel Gateway Service
+    Our API allows you to interact with our services.  Read the[docs](https://docs.mistral.ai) to learn how to use it.
     """
 
     datasources: Datasources
@@ -31,6 +31,9 @@ class Meibelai(BaseSDK):
 
     def __init__(
         self,
+        api_key_header: Optional[
+            Union[Optional[str], Callable[[], Optional[str]]]
+        ] = None,
         server_idx: Optional[int] = None,
         server_url: Optional[str] = None,
         url_params: Optional[Dict[str, str]] = None,
@@ -42,6 +45,7 @@ class Meibelai(BaseSDK):
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
+        :param api_key_header: The api_key_header required for authentication
         :param server_idx: The index of the server to use for all methods
         :param server_url: The server URL to use for all methods
         :param url_params: Parameters to optionally template the server URL with
@@ -71,6 +75,13 @@ class Meibelai(BaseSDK):
             type(async_client), AsyncHttpClient
         ), "The provided async_client must implement the AsyncHttpClient protocol."
 
+        security: Any = None
+        if callable(api_key_header):
+            # pylint: disable=unnecessary-lambda-assignment
+            security = lambda: models.Security(api_key_header=api_key_header())
+        else:
+            security = models.Security(api_key_header=api_key_header)
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
@@ -82,6 +93,7 @@ class Meibelai(BaseSDK):
                 client_supplied=client_supplied,
                 async_client=async_client,
                 async_client_supplied=async_client_supplied,
+                security=security,
                 server_url=server_url,
                 server_idx=server_idx,
                 retry_config=retry_config,

@@ -17,9 +17,9 @@ Developer-friendly & type-safe Python SDK specifically catered to leverage *meib
 <!-- Start Summary [summary] -->
 ## Summary
 
-Meibel Gateway Service: Meibel Gateway Service
+Meibel AI API: Meibel Gateway Service
 
-Meibel Gateway Service
+Our API allows you to interact with our services.  Read the[docs](https://docs.mistral.ai) to learn how to use it.
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -29,6 +29,7 @@ Meibel Gateway Service
   * [SDK Installation](https://github.com/meibel-ai/meibelai-python/blob/master/#sdk-installation)
   * [IDE Support](https://github.com/meibel-ai/meibelai-python/blob/master/#ide-support)
   * [SDK Example Usage](https://github.com/meibel-ai/meibelai-python/blob/master/#sdk-example-usage)
+  * [Authentication](https://github.com/meibel-ai/meibelai-python/blob/master/#authentication)
   * [Available Resources and Operations](https://github.com/meibel-ai/meibelai-python/blob/master/#available-resources-and-operations)
   * [Server-sent event streaming](https://github.com/meibel-ai/meibelai-python/blob/master/#server-sent-event-streaming)
   * [Retries](https://github.com/meibel-ai/meibelai-python/blob/master/#retries)
@@ -123,9 +124,12 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 ```python
 # Synchronous Example
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.list()
 
@@ -140,10 +144,13 @@ The same SDK client can also be used to make asychronous requests by importing a
 # Asynchronous Example
 import asyncio
 from meibelai import Meibelai
+import os
 
 async def main():
 
-    async with Meibelai() as m_client:
+    async with Meibelai(
+        api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+    ) as m_client:
 
         res = await m_client.datasources.list_async()
 
@@ -153,6 +160,35 @@ async def main():
 asyncio.run(main())
 ```
 <!-- End SDK Example Usage [usage] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name             | Type   | Scheme  | Environment Variable      |
+| ---------------- | ------ | ------- | ------------------------- |
+| `api_key_header` | apiKey | API key | `MEIBELAI_API_KEY_HEADER` |
+
+To authenticate with the API the `api_key_header` parameter must be set when initializing the SDK client instance. For example:
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.list()
+
+    # Handle response
+    print(res)
+
+```
+<!-- End Authentication [security] -->
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
@@ -211,9 +247,12 @@ underlying connection when the context is exited.
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.completions.create_stream()
 
@@ -238,9 +277,12 @@ To change the default retry strategy for a single API call, simply provide a `Re
 ```python
 from meibelai import Meibelai
 from meibelai.utils import BackoffStrategy, RetryConfig
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.list(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
@@ -254,10 +296,12 @@ If you'd like to override the default retry strategy for all operations that sup
 ```python
 from meibelai import Meibelai
 from meibelai.utils import BackoffStrategy, RetryConfig
+import os
 
 
 with Meibelai(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
     res = m_client.datasources.list()
@@ -293,9 +337,12 @@ When custom error responses are specified for an operation, the SDK may also rai
 
 ```python
 from meibelai import Meibelai, models
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
     res = None
     try:
 
@@ -321,10 +368,12 @@ with Meibelai() as m_client:
 The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 from meibelai import Meibelai
+import os
 
 
 with Meibelai(
-    server_url="http://127.0.0.1:8000",
+    server_url="http://api.meibel.ai",
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
     res = m_client.datasources.list()
@@ -425,16 +474,21 @@ The `Meibelai` class implements the context manager protocol and registers a fin
 
 ```python
 from meibelai import Meibelai
+import os
 def main():
 
-    with Meibelai() as m_client:
+    with Meibelai(
+        api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+    ) as m_client:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with Meibelai() as m_client:
+    async with Meibelai(
+        api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+    ) as m_client:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->

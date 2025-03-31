@@ -5,9 +5,9 @@ from meibelai.types import BaseModel
 from typing_extensions import TypedDict
 
 
-class GatewayMetadataTypedDict(TypedDict):
+class MetadataTypedDict(TypedDict):
     pass
 
 
-class GatewayMetadata(BaseModel):
+class Metadata(BaseModel):
     pass

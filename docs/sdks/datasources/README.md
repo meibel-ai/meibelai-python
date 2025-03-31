@@ -20,15 +20,18 @@ Operations with datasources
 
 ## list
 
-Get Datasources
+List all datasources for a project
 
 ### Example Usage
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.list()
 
@@ -49,7 +52,7 @@ with Meibelai() as m_client:
 
 ### Response
 
-**[List[models.GatewayDatasourceResponse]](../../models/.md)**
+**[List[models.DatasourceResponse]](../../models/.md)**
 
 ### Errors
 
@@ -65,12 +68,16 @@ Create Datasource
 ### Example Usage
 
 ```python
+import meibelai
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
-    res = m_client.datasources.create(description="yuck vice between gee ugh ha", name="<value>", type_="<value>", metadata={})
+    res = m_client.datasources.create(description="A datasource", name="My Datasource", type_=meibelai.DatasourceType.GOOGLE_DRIVE, metadata={})
 
     # Handle response
     print(res)
@@ -79,17 +86,17 @@ with Meibelai() as m_client:
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `description`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `type`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `metadata`                                                          | [models.GatewayMetadata](../../models/gatewaymetadata.md)           | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `description`                                                       | *str*                                                               | :heavy_check_mark:                                                  | A description of the datasource                                     | A datasource                                                        |
+| `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | The name of the datasource                                          | My Datasource                                                       |
+| `type`                                                              | [models.DatasourceType](../../models/datasourcetype.md)             | :heavy_check_mark:                                                  | N/A                                                                 |                                                                     |
+| `metadata`                                                          | [Optional[models.Metadata]](../../models/metadata.md)               | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
 ### Response
 
-**[models.GatewayNewDatasourceResponse](../../models/gatewaynewdatasourceresponse.md)**
+**[models.NewDatasourceResponse](../../models/newdatasourceresponse.md)**
 
 ### Errors
 
@@ -106,9 +113,12 @@ Get Datasource
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.get(datasource_id="<id>")
 
@@ -126,7 +136,7 @@ with Meibelai() as m_client:
 
 ### Response
 
-**[models.GatewayDatasourceResponse](../../models/gatewaydatasourceresponse.md)**
+**[models.DatasourceResponse](../../models/datasourceresponse.md)**
 
 ### Errors
 
@@ -143,9 +153,12 @@ Update Datasource
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.update(datasource_id="<id>", description="awful underneath retention too mobility char innocently dowse restfully", name="<value>", type_="<value>", metadata={})
 
@@ -162,7 +175,7 @@ with Meibelai() as m_client:
 | `description`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `type`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `metadata`                                                          | [models.GatewayMetadata](../../models/gatewaymetadata.md)           | :heavy_check_mark:                                                  | N/A                                                                 |
+| `metadata`                                                          | [models.Metadata](../../models/metadata.md)                         | :heavy_check_mark:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -184,9 +197,12 @@ Get Dataelements
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.list_dataelements(datasource_id=756811)
 
@@ -225,9 +241,12 @@ Create Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.create_dataelement(datasource_id=24820)
 
@@ -262,9 +281,12 @@ Get Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.get_dataelement(datasource_id=700347, dataelement_id=558834)
 
@@ -300,9 +322,12 @@ Update Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.update_dataelement(datasource_id=857478, dataelement_id=597129)
 
@@ -338,9 +363,12 @@ Delete Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.delete_dataelement(datasource_id=647715, dataelement_id=424652)
 
@@ -376,9 +404,12 @@ Upload Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.upload_dataelement(datasource_id=716701)
 

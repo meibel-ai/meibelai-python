@@ -1,4 +1,4 @@
-# GatewayMetadata
+# Metadata
 
 
 ## Fields

@@ -18,9 +18,12 @@ Create Completion
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.completions.create()
 
@@ -54,9 +57,12 @@ Create Completion Stream
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.completions.create_stream()
 

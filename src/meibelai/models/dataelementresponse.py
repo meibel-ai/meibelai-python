@@ -2,61 +2,76 @@
 
 from __future__ import annotations
 from .dataelementtype import DataElementType
-from .gatewaymetadata import GatewayMetadata, GatewayMetadataTypedDict
+from .metadata import Metadata, MetadataTypedDict
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Optional
 from typing_extensions import NotRequired, TypedDict
 
 
-class GatewayDataElementResponseTypedDict(TypedDict):
+class DataElementResponseTypedDict(TypedDict):
     id: str
-    customer_id: str
-    project_id: str
+    r"""The unique identifier of the data element"""
     datasource_id: str
+    r"""The unique identifier of the datasource"""
     name: str
+    r"""The name of the data element"""
     value: str
+    r"""The value of the data element"""
     type: DataElementType
     description: str
+    r"""A description of the data element"""
     processed: str
+    r"""Whether the data element has been processed"""
     created_at: str
+    r"""The date and time the data element was created"""
     updated_at: str
-    metadata: GatewayMetadataTypedDict
+    r"""The date and time the data element was updated"""
     parent_id: NotRequired[Nullable[str]]
+    r"""The unique identifier of the parent data element"""
     is_container_element: NotRequired[Nullable[str]]
+    r"""Whether the data element is a container element"""
+    metadata: NotRequired[MetadataTypedDict]
 
 
-class GatewayDataElementResponse(BaseModel):
+class DataElementResponse(BaseModel):
     id: str
-
-    customer_id: str
-
-    project_id: str
+    r"""The unique identifier of the data element"""
 
     datasource_id: str
+    r"""The unique identifier of the datasource"""
 
     name: str
+    r"""The name of the data element"""
 
     value: str
+    r"""The value of the data element"""
 
     type: DataElementType
 
     description: str
+    r"""A description of the data element"""
 
     processed: str
+    r"""Whether the data element has been processed"""
 
     created_at: str
+    r"""The date and time the data element was created"""
 
     updated_at: str
-
-    metadata: GatewayMetadata
+    r"""The date and time the data element was updated"""
 
     parent_id: OptionalNullable[str] = UNSET
+    r"""The unique identifier of the parent data element"""
 
     is_container_element: OptionalNullable[str] = UNSET
+    r"""Whether the data element is a container element"""
+
+    metadata: Optional[Metadata] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["parent_id", "is_container_element"]
+        optional_fields = ["parent_id", "is_container_element", "metadata"]
         nullable_fields = ["parent_id", "is_container_element"]
         null_default_fields = []
 

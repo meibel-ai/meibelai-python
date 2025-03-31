@@ -6,6 +6,7 @@ from meibelai import models, utils
 from meibelai._hooks import HookContext
 from meibelai.dataelements import Dataelements
 from meibelai.types import OptionalNullable, UNSET
+from meibelai.utils import get_security_from_env
 from typing import Any, List, Mapping, Optional, Union
 
 
@@ -33,8 +34,10 @@ class Datasources(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[models.GatewayDatasourceResponse]:
+    ) -> List[models.DatasourceResponse]:
         r"""Get Datasources
+
+        List all datasources for a project
 
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
@@ -74,6 +77,7 @@ class Datasources(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -93,8 +97,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="list",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -103,9 +109,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, List[models.GatewayDatasourceResponse]
-            )
+            return utils.unmarshal_json(http_res.text, List[models.DatasourceResponse])
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -142,8 +146,10 @@ class Datasources(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[models.GatewayDatasourceResponse]:
+    ) -> List[models.DatasourceResponse]:
         r"""Get Datasources
+
+        List all datasources for a project
 
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
@@ -183,6 +189,7 @@ class Datasources(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -202,8 +209,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="list",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -212,9 +221,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, List[models.GatewayDatasourceResponse]
-            )
+            return utils.unmarshal_json(http_res.text, List[models.DatasourceResponse])
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -245,17 +252,17 @@ class Datasources(BaseSDK):
         *,
         description: str,
         name: str,
-        type_: str,
-        metadata: Union[models.GatewayMetadata, models.GatewayMetadataTypedDict],
+        type_: models.DatasourceType,
+        metadata: Optional[Union[models.Metadata, models.MetadataTypedDict]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GatewayNewDatasourceResponse:
+    ) -> models.NewDatasourceResponse:
         r"""Create Datasource
 
-        :param description:
-        :param name:
+        :param description: A description of the datasource
+        :param name: The name of the datasource
         :param type:
         :param metadata:
         :param retries: Override the default retry configuration for this method
@@ -273,11 +280,11 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GatewayNewDatasourceRequest(
+        request = models.NewDatasourceRequest(
             description=description,
             name=name,
             type=type_,
-            metadata=utils.get_pydantic_model(metadata, models.GatewayMetadata),
+            metadata=utils.get_pydantic_model(metadata, Optional[models.Metadata]),
         )
 
         req = self._build_request(
@@ -288,12 +295,13 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=True,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.GatewayNewDatasourceRequest
+                request, False, False, "json", models.NewDatasourceRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -314,8 +322,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="create",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -324,9 +334,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.GatewayNewDatasourceResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.NewDatasourceResponse)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -357,17 +365,17 @@ class Datasources(BaseSDK):
         *,
         description: str,
         name: str,
-        type_: str,
-        metadata: Union[models.GatewayMetadata, models.GatewayMetadataTypedDict],
+        type_: models.DatasourceType,
+        metadata: Optional[Union[models.Metadata, models.MetadataTypedDict]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GatewayNewDatasourceResponse:
+    ) -> models.NewDatasourceResponse:
         r"""Create Datasource
 
-        :param description:
-        :param name:
+        :param description: A description of the datasource
+        :param name: The name of the datasource
         :param type:
         :param metadata:
         :param retries: Override the default retry configuration for this method
@@ -385,11 +393,11 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GatewayNewDatasourceRequest(
+        request = models.NewDatasourceRequest(
             description=description,
             name=name,
             type=type_,
-            metadata=utils.get_pydantic_model(metadata, models.GatewayMetadata),
+            metadata=utils.get_pydantic_model(metadata, Optional[models.Metadata]),
         )
 
         req = self._build_request_async(
@@ -400,12 +408,13 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=True,
             request_has_path_params=False,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.GatewayNewDatasourceRequest
+                request, False, False, "json", models.NewDatasourceRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -426,8 +435,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="create",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -436,9 +447,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.GatewayNewDatasourceResponse
-            )
+            return utils.unmarshal_json(http_res.text, models.NewDatasourceResponse)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -472,7 +481,7 @@ class Datasources(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GatewayDatasourceResponse:
+    ) -> models.DatasourceResponse:
         r"""Get Datasource
 
         :param datasource_id:
@@ -503,10 +512,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -526,8 +536,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="get",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -536,7 +548,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.GatewayDatasourceResponse)
+            return utils.unmarshal_json(http_res.text, models.DatasourceResponse)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -570,7 +582,7 @@ class Datasources(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GatewayDatasourceResponse:
+    ) -> models.DatasourceResponse:
         r"""Get Datasource
 
         :param datasource_id:
@@ -601,10 +613,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -624,8 +637,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="get",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -634,7 +649,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.GatewayDatasourceResponse)
+            return utils.unmarshal_json(http_res.text, models.DatasourceResponse)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = utils.unmarshal_json(
                 http_res.text, models.HTTPValidationErrorData
@@ -667,7 +682,7 @@ class Datasources(BaseSDK):
         description: str,
         name: str,
         type_: str,
-        metadata: Union[models.GatewayMetadata, models.GatewayMetadataTypedDict],
+        metadata: Union[models.Metadata, models.MetadataTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -697,11 +712,11 @@ class Datasources(BaseSDK):
 
         request = models.UpdateRequest(
             datasource_id=datasource_id,
-            gateway_update_datasource_request=models.GatewayUpdateDatasourceRequest(
+            update_datasource_request=models.UpdateDatasourceRequest(
                 description=description,
                 name=name,
                 type=type_,
-                metadata=utils.get_pydantic_model(metadata, models.GatewayMetadata),
+                metadata=utils.get_pydantic_model(metadata, models.Metadata),
             ),
         )
 
@@ -713,16 +728,17 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=True,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.gateway_update_datasource_request,
+                request.update_datasource_request,
                 False,
                 False,
                 "json",
-                models.GatewayUpdateDatasourceRequest,
+                models.UpdateDatasourceRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -743,8 +759,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="update",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -786,7 +804,7 @@ class Datasources(BaseSDK):
         description: str,
         name: str,
         type_: str,
-        metadata: Union[models.GatewayMetadata, models.GatewayMetadataTypedDict],
+        metadata: Union[models.Metadata, models.MetadataTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -816,11 +834,11 @@ class Datasources(BaseSDK):
 
         request = models.UpdateRequest(
             datasource_id=datasource_id,
-            gateway_update_datasource_request=models.GatewayUpdateDatasourceRequest(
+            update_datasource_request=models.UpdateDatasourceRequest(
                 description=description,
                 name=name,
                 type=type_,
-                metadata=utils.get_pydantic_model(metadata, models.GatewayMetadata),
+                metadata=utils.get_pydantic_model(metadata, models.Metadata),
             ),
         )
 
@@ -832,16 +850,17 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=True,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.gateway_update_datasource_request,
+                request.update_datasource_request,
                 False,
                 False,
                 "json",
-                models.GatewayUpdateDatasourceRequest,
+                models.UpdateDatasourceRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -862,8 +881,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="update",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -953,6 +974,7 @@ class Datasources(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -972,8 +994,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="listDataelements",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1063,6 +1087,7 @@ class Datasources(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1082,8 +1107,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="listDataelements",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1157,10 +1184,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1180,8 +1208,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1255,10 +1285,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1278,8 +1309,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="createDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1356,10 +1389,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1379,8 +1413,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="getDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1457,10 +1493,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1480,8 +1517,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="getDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1558,10 +1597,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1581,8 +1621,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="updateDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1659,10 +1701,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1682,8 +1725,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="updateDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1760,10 +1805,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1783,8 +1829,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="deleteDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1861,10 +1909,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1884,8 +1933,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="deleteDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -1959,10 +2010,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -1982,8 +2034,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="uploadDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
@@ -2057,10 +2111,11 @@ class Datasources(BaseSDK):
             request=request,
             request_body_required=False,
             request_has_path_params=True,
-            request_has_query_params=False,
+            request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
+            security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
 
@@ -2080,8 +2135,10 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 base_url=base_url or "",
                 operation_id="uploadDataelement",
-                oauth2_scopes=None,
-                security_source=None,
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],

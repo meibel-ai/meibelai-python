@@ -20,9 +20,12 @@ Get Dataelements
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.list_dataelements(datasource_id=756811)
 
@@ -61,9 +64,12 @@ Create Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.create_dataelement(datasource_id=24820)
 
@@ -98,9 +104,12 @@ Get Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.get_dataelement(datasource_id=700347, dataelement_id=558834)
 
@@ -136,9 +145,12 @@ Update Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.update_dataelement(datasource_id=857478, dataelement_id=597129)
 
@@ -174,9 +186,12 @@ Delete Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.delete_dataelement(datasource_id=647715, dataelement_id=424652)
 
@@ -212,9 +227,12 @@ Upload Dataelement
 
 ```python
 from meibelai import Meibelai
+import os
 
 
-with Meibelai() as m_client:
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
 
     res = m_client.datasources.dataelements.upload_dataelement(datasource_id=716701)
 
