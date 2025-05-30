@@ -3,17 +3,17 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: b3ed3be30e8c6dc44af619ca68391671
   docVersion: 0.1.0
-  speakeasyVersion: 1.526.0
-  generationVersion: 2.563.0
-  releaseVersion: 0.11.0
-  configChecksum: 64b8eab0fd6dd6226f7bdab6c505890d
+  speakeasyVersion: 1.554.1
+  generationVersion: 2.616.1
+  releaseVersion: 0.12.0
+  configChecksum: b45703725ebeab7b9094be8f0c4f4421
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.12.4
+    core: 5.19.1
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -23,13 +23,13 @@ features:
     globalSecurity: 3.0.3
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.1.0
+    globalServerURLs: 3.1.1
     methodArguments: 1.0.2
     nameOverrides: 3.0.1
     nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
-    sdkHooks: 1.0.1
+    sdkHooks: 1.1.0
     serverEvents: 1.0.7
     serverEventsSentinels: 0.1.0
     unions: 3.0.4
@@ -126,6 +126,7 @@ generatedFiles:
   - src/meibelai/types/basemodel.py
   - src/meibelai/utils/__init__.py
   - src/meibelai/utils/annotations.py
+  - src/meibelai/utils/datetimes.py
   - src/meibelai/utils/enums.py
   - src/meibelai/utils/eventstreaming.py
   - src/meibelai/utils/forms.py
@@ -140,191 +141,53 @@ generatedFiles:
   - src/meibelai/utils/url.py
   - src/meibelai/utils/values.py
 examples:
-  delete:
-    speakeasy-default-delete:
-      parameters:
-        path:
-          datasource_id: 545907
-          dataelement_id: 698486
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  upload:
-    speakeasy-default-upload:
-      parameters:
-        path:
-          datasource_id: 403654
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  create_stream:
-    speakeasy-default-create-stream:
-      responses:
-        "422":
-          application/json: {}
-        "200": {}
-  get_experiences_experiences__get:
-    speakeasy-default-get-experiences-experiences-get:
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  run_chat:
-    speakeasy-default-run-chat:
-      parameters:
-        path:
-          experience_id: 695973
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  run_chat_stream:
-    speakeasy-default-run-chat-stream:
-      parameters:
-        path:
-          experience_id: 271760
-      responses:
-        "422":
-          application/json: {}
-        "200": {}
-  get_datasources_datasources__get:
-    speakeasy-default-get-datasources-datasources-get:
+  list:
+    speakeasy-default-list:
       parameters:
         query:
           offset: 0
           limit: 10
       responses:
         "200":
-          application/json: "<value>"
+          application/json: [{"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}], "description": "A datasource", "id": "ds_xiTz3", "name": "My Datasource", "type": "<value>", "updated_at": "1735666686893"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}], "description": "A datasource", "id": "ds_xiTz3", "name": "My Datasource", "type": "<value>", "updated_at": "1735666686893"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "eml", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}], "description": "A datasource", "id": "ds_xiTz3", "name": "My Datasource", "type": "<value>", "updated_at": "1735666686893"}]
         "422":
           application/json: {}
-  create_datasource_datasources__post:
-    speakeasy-default-create-datasource-datasources-post:
+  create:
+    speakeasy-default-create:
+      requestBody:
+        application/json: {"description": "A datasource", "name": "My Datasource", "type": "default"}
       responses:
         "200":
-          application/json: "<value>"
+          application/json: {"id": "<id>"}
         "422":
           application/json: {}
-  get_datasource_datasources__datasource_id__get:
-    speakeasy-default-get-datasource-datasources-datasource-id-get:
+  get:
+    speakeasy-default-get:
       parameters:
         path:
-          datasource_id: 567261
+          datasource_id: "<id>"
       responses:
         "200":
-          application/json: "<value>"
+          application/json: {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "tar", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "tar", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z"}], "description": "A datasource", "id": "ds_xiTz3", "name": "My Datasource", "type": "<value>", "updated_at": "1735613684571"}
         "422":
           application/json: {}
-  update_datasource_datasources__datasource_id__put:
-    speakeasy-default-update-datasource-datasources-datasource-id-put:
+  update:
+    speakeasy-default-update:
       parameters:
         path:
-          datasource_id: 803371
+          datasource_id: "<id>"
+      requestBody:
+        application/json: {"description": "blaring flame considering openly precedent voluntarily beneath", "name": "<value>", "type": "<value>", "metadata": {}}
       responses:
         "200":
           application/json: "<value>"
         "422":
           application/json: {}
-  delete_datasource_datasources__datasource_id__delete:
-    speakeasy-default-delete-datasource-datasources-datasource-id-delete:
-      parameters:
-        path:
-          datasource_id: 205539
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  get_dataelements_datasources__datasource_id__dataelements_get:
-    speakeasy-default-get-dataelements-datasources-datasource-id-dataelements-get:
-      parameters:
-        path:
-          datasource_id: 561700
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  create_dataelement_datasources__datasource_id__dataelements_post:
-    speakeasy-default-create-dataelement-datasources-datasource-id-dataelements-post:
-      parameters:
-        path:
-          datasource_id: 529803
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  get_dataelement_datasources__datasource_id__dataelements__dataelement_id__get:
-    speakeasy-default-get-dataelement-datasources-datasource-id-dataelements-dataelement-id-get:
-      parameters:
-        path:
-          datasource_id: 362960
-          dataelement_id: 706157
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  update_dataelement_datasources__datasource_id__dataelements__dataelement_id__put:
-    speakeasy-default-update-dataelement-datasources-datasource-id-dataelements-dataelement-id-put:
-      parameters:
-        path:
-          datasource_id: 384028
-          dataelement_id: 277874
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  delete_dataelement_datasources__datasource_id__dataelements__dataelement_id__delete:
-    speakeasy-default-delete-dataelement-datasources-datasource-id-dataelements-dataelement-id-delete:
-      parameters:
-        path:
-          datasource_id: 647715
-          dataelement_id: 424652
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  upload_dataelement_datasources__datasource_id__dataelements_upload_post:
-    speakeasy-default-upload-dataelement-datasources-datasource-id-dataelements-upload-post:
-      parameters:
-        path:
-          datasource_id: 716701
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  create_completion_completions__post:
-    speakeasy-default-create-completion-completions-post:
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  stream_completion_completions_stream_post:
-    speakeasy-default-stream-completion-completions-stream-post:
-      responses:
-        "422":
-          application/json: {}
-        "200": {}
   listDataelements:
     speakeasy-default-list-dataelements:
       parameters:
         path:
-          datasource_id: 756811
+          datasource_id: 790947
         query:
           offset: 0
           limit: 10
@@ -337,28 +200,7 @@ examples:
     speakeasy-default-create-dataelement:
       parameters:
         path:
-          datasource_id: 24820
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  deleteDataelement:
-    speakeasy-default-delete-dataelement:
-      parameters:
-        path:
-          datasource_id: 647715
-          dataelement_id: 424652
-      responses:
-        "200":
-          application/json: "<value>"
-        "422":
-          application/json: {}
-  uploadDataelement:
-    speakeasy-default-upload-dataelement:
-      parameters:
-        path:
-          datasource_id: 716701
+          datasource_id: 934782
       responses:
         "200":
           application/json: "<value>"
@@ -368,8 +210,8 @@ examples:
     speakeasy-default-get-dataelement:
       parameters:
         path:
-          datasource_id: 700347
-          dataelement_id: 558834
+          datasource_id: 870573
+          dataelement_id: 302275
       responses:
         "200":
           application/json: "<value>"
@@ -379,8 +221,29 @@ examples:
     speakeasy-default-update-dataelement:
       parameters:
         path:
-          datasource_id: 857478
-          dataelement_id: 597129
+          datasource_id: 10702
+          dataelement_id: 126234
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  deleteDataelement:
+    speakeasy-default-delete-dataelement:
+      parameters:
+        path:
+          datasource_id: 40542
+          dataelement_id: 655223
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  uploadDataelement:
+    speakeasy-default-upload-dataelement:
+      parameters:
+        path:
+          datasource_id: 691705
       responses:
         "200":
           application/json: "<value>"
@@ -398,48 +261,30 @@ examples:
       responses:
         "422":
           application/json: {}
-        "200": {}
-  list:
-    speakeasy-default-list:
-      parameters:
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: [{"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "gzip", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "pdf", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743083428885"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "zip", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "xlsx", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743020872484"}, {"created_at": "2021-08-01T12:00:00Z", "data_elements": [], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743054441311"}]
-        "422":
-          application/json: {}
-  create:
-    speakeasy-default-create:
-      requestBody:
-        application/json: {"description": "A datasource", "name": "My Datasource", "type": "google-drive", "metadata": {}}
-      responses:
-        "200":
-          application/json: {"id": "<id>"}
-        "422":
-          application/json: {}
-  get:
-    speakeasy-default-get:
-      parameters:
-        path:
-          datasource_id: "<id>"
-      responses:
-        "200":
-          application/json: {"created_at": "2021-08-01T12:00:00Z", "data_elements": [{"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "tar", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}, {"id": "de_xiTz3", "parent_id": "de_xiTz3", "is_container_element": "True", "datasource_id": "ds_xiTz3", "name": "My Data Element", "value": "Value", "type": "xlsx", "description": "A data element", "processed": "True", "created_at": "2021-08-01T12:00:00Z", "updated_at": "2021-08-01T12:00:00Z", "metadata": {}}], "description": "A datasource", "id": "ds_xiTz3", "metadata": {}, "name": "My Datasource", "type": "<value>", "updated_at": "1743055931711"}
-        "422":
-          application/json: {}
-  update:
-    speakeasy-default-update:
-      parameters:
-        path:
-          datasource_id: "<id>"
-      requestBody:
-        application/json: {"description": "awful underneath retention too mobility char innocently dowse restfully", "name": "<value>", "type": "<value>", "metadata": {}}
+  get_experiences_experiences__get:
+    speakeasy-default-get-experiences-experiences-get:
       responses:
         "200":
           application/json: "<value>"
         "422":
           application/json: {}
-examplesVersion: 1.0.0
+  run_chat:
+    speakeasy-default-run-chat:
+      parameters:
+        path:
+          experience_id: 222689
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  run_chat_stream:
+    speakeasy-default-run-chat-stream:
+      parameters:
+        path:
+          experience_id: 674532
+      responses:
+        "422":
+          application/json: {}
+examplesVersion: 1.0.2
 generatedTests: {}

@@ -77,7 +77,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.create(description="A datasource", name="My Datasource", type_=meibelai.DatasourceType.GOOGLE_DRIVE, metadata={})
+    res = m_client.datasources.create(description="A datasource", name="My Datasource", type_=meibelai.DatasourceType.DEFAULT)
 
     # Handle response
     print(res)
@@ -160,7 +160,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.update(datasource_id="<id>", description="awful underneath retention too mobility char innocently dowse restfully", name="<value>", type_="<value>", metadata={})
+    res = m_client.datasources.update(datasource_id="<id>", description="blaring flame considering openly precedent voluntarily beneath", name="<value>", type_="<value>", metadata={})
 
     # Handle response
     print(res)
@@ -204,7 +204,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list_dataelements(datasource_id=756811)
+    res = m_client.datasources.list_dataelements(datasource_id=790947)
 
     # Handle response
     print(res)
@@ -248,7 +248,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.create_dataelement(datasource_id=24820)
+    res = m_client.datasources.create_dataelement(datasource_id=934782)
 
     # Handle response
     print(res)
@@ -288,7 +288,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.get_dataelement(datasource_id=700347, dataelement_id=558834)
+    res = m_client.datasources.get_dataelement(datasource_id=870573, dataelement_id=302275)
 
     # Handle response
     print(res)
@@ -329,7 +329,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.update_dataelement(datasource_id=857478, dataelement_id=597129)
+    res = m_client.datasources.update_dataelement(datasource_id=10702, dataelement_id=126234)
 
     # Handle response
     print(res)
@@ -370,7 +370,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.delete_dataelement(datasource_id=647715, dataelement_id=424652)
+    res = m_client.datasources.delete_dataelement(datasource_id=40542, dataelement_id=655223)
 
     # Handle response
     print(res)
@@ -411,7 +411,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.upload_dataelement(datasource_id=716701)
+    res = m_client.datasources.upload_dataelement(datasource_id=691705)
 
     # Handle response
     print(res)

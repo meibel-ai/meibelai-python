@@ -65,7 +65,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.experiences.run_chat(experience_id=695973)
+    res = m_client.experiences.run_chat(experience_id=222689)
 
     # Handle response
     print(res)
@@ -105,7 +105,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.experiences.run_chat_stream(experience_id=271760)
+    res = m_client.experiences.run_chat_stream(experience_id=674532)
 
     with res as event_stream:
         for event in event_stream:
