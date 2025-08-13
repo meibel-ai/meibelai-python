@@ -1,0 +1,21 @@
+# Datasource
+
+Datasource
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *Nullable[str]*                                                          | :heavy_check_mark:                                                       | N/A                                                                      |
+| `customer_id`                                                            | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `project_id`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `name`                                                                   | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `description`                                                            | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `recurrence`                                                             | *Nullable[str]*                                                          | :heavy_check_mark:                                                       | N/A                                                                      |
+| `created_by`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `created_at`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `updated_by`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `updated_at`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | N/A                                                                      |
+| `object_storage_config`                                                  | [Nullable[models.ObjectStorageConfig]](../models/objectstorageconfig.md) | :heavy_check_mark:                                                       | N/A                                                                      |
+| `web_config`                                                             | [Nullable[models.DatasourceWebConfig]](../models/datasourcewebconfig.md) | :heavy_check_mark:                                                       | N/A                                                                      |

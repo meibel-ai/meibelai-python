@@ -1,11 +1,14 @@
 # UpdateDatasourceRequest
 
+UpdateDatasourceRequest
+
 
 ## Fields
 
-| Field                                    | Type                                     | Required                                 | Description                              |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `description`                            | *str*                                    | :heavy_check_mark:                       | N/A                                      |
-| `name`                                   | *str*                                    | :heavy_check_mark:                       | N/A                                      |
-| `type`                                   | *str*                                    | :heavy_check_mark:                       | N/A                                      |
-| `metadata`                               | [models.Metadata](../models/metadata.md) | :heavy_check_mark:                       | N/A                                      |
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `name`                                                                           | *OptionalNullable[str]*                                                          | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `description`                                                                    | *OptionalNullable[str]*                                                          | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `recurrence`                                                                     | *OptionalNullable[str]*                                                          | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `object_storage_config`                                                          | [OptionalNullable[models.ObjectStorageConfig]](../models/objectstorageconfig.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `web_config`                                                                     | [OptionalNullable[models.DatasourceWebConfig]](../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                               | N/A                                                                              |

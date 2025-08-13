@@ -1,9 +1,14 @@
-# UpdateDataelementRequest
+# UpdateDataElementRequest
+
+UpdateDataElementRequest
 
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `datasource_id`    | *int*              | :heavy_check_mark: | N/A                |
-| `dataelement_id`   | *int*              | :heavy_check_mark: | N/A                |
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `description`                                                                                  | *OptionalNullable[str]*                                                                        | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `name`                                                                                         | *OptionalNullable[str]*                                                                        | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `path`                                                                                         | *OptionalNullable[str]*                                                                        | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `media_type`                                                                                   | *OptionalNullable[str]*                                                                        | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `discovery_record`                                                                             | [OptionalNullable[models.DataElementDiscoveryRecord]](../models/dataelementdiscoveryrecord.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |

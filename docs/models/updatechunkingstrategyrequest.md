@@ -1,0 +1,16 @@
+# UpdateChunkingStrategyRequest
+
+UpdateChunkingStrategyRequest
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `code_splitter`                                                                    | [OptionalNullable[models.CodeChunking]](../models/codechunking.md)                 | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `html_node_parser`                                                                 | [OptionalNullable[models.HTMLChunking]](../models/htmlchunking.md)                 | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `json_node_parser`                                                                 | [OptionalNullable[models.JSONNodeChunking]](../models/jsonnodechunking.md)         | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `markdown_node_parser`                                                             | [OptionalNullable[models.MarkdownNodeChunking]](../models/markdownnodechunking.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `semantic_splitter_node_parser`                                                    | [OptionalNullable[models.SemanticChunking]](../models/semanticchunking.md)         | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `sentence_splitter`                                                                | [OptionalNullable[models.SentenceChunking]](../models/sentencechunking.md)         | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `token_text_splitter`                                                              | [OptionalNullable[models.TokenTextChunking]](../models/tokentextchunking.md)       | :heavy_minus_sign:                                                                 | N/A                                                                                |

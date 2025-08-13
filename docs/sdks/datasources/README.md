@@ -3,27 +3,21 @@
 
 ## Overview
 
-Operations with datasources
-
 ### Available Operations
 
-* [list](#list) - Get Datasources
-* [create](#create) - Create Datasource
-* [get](#get) - Get Datasource
-* [update](#update) - Update Datasource
-* [list_dataelements](#list_dataelements) - Get Dataelements
-* [create_dataelement](#create_dataelement) - Create Dataelement
-* [get_dataelement](#get_dataelement) - Get Dataelement
-* [update_dataelement](#update_dataelement) - Update Dataelement
-* [delete_dataelement](#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](#upload_dataelement) - Upload Dataelement
+* [add_datasource](#add_datasource) - Add Datasource
+* [get_datasource](#get_datasource) - Get Datasource
+* [update_datasource](#update_datasource) - Update Datasource
+* [delete_datasource_datasource_datasource_id_delete](#delete_datasource_datasource_datasource_id_delete) - Delete Datasource
+* [get_all_datasource_ids](#get_all_datasource_ids) - Get All Datasource Ids
 
-## list
+## add_datasource
 
-List all datasources for a project
+Add Datasource
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="add_datasource" method="post" path="/datasource" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -33,7 +27,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.datasources.add_datasource(customer_id_param="<value>", customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>")
 
     # Handle response
     print(res)
@@ -42,17 +36,21 @@ with Meibelai(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `offset`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Number of items to skip                                             |
-| `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
-| `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
-| `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `customer_id_param`                                                                 | *str*                                                                               | :heavy_check_mark:                                                                  | Customer ID                                                                         |
+| `customer_id`                                                                       | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `project_id`                                                                        | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `name`                                                                              | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `description`                                                                       | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `recurrence`                                                                        | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `object_storage_config`                                                             | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `web_config`                                                                        | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
 
 ### Response
 
-**[List[models.DatasourceResponse]](../../models/.md)**
+**[models.AddDatasourceResponse](../../models/adddatasourceresponse.md)**
 
 ### Errors
 
@@ -61,56 +59,13 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## create
-
-Create Datasource
-
-### Example Usage
-
-```python
-import meibelai
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.create(description="A datasource", name="My Datasource", type_=meibelai.DatasourceType.DEFAULT)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `description`                                                       | *str*                                                               | :heavy_check_mark:                                                  | A description of the datasource                                     | A datasource                                                        |
-| `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | The name of the datasource                                          | My Datasource                                                       |
-| `type`                                                              | [models.DatasourceType](../../models/datasourcetype.md)             | :heavy_check_mark:                                                  | N/A                                                                 |                                                                     |
-| `metadata`                                                          | [Optional[models.Metadata]](../../models/metadata.md)               | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
-
-### Response
-
-**[models.NewDatasourceResponse](../../models/newdatasourceresponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## get
+## get_datasource
 
 Get Datasource
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="get_datasource" method="get" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -120,7 +75,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.get(datasource_id="<id>")
+    res = m_client.datasources.get_datasource(datasource_id="<id>", customer_id="<id>")
 
     # Handle response
     print(res)
@@ -132,11 +87,12 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[models.DatasourceResponse](../../models/datasourceresponse.md)**
+**[models.Datasource](../../models/datasource.md)**
 
 ### Errors
 
@@ -145,12 +101,13 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## update
+## update_datasource
 
 Update Datasource
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="update_datasource" method="put" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -160,7 +117,54 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.update(datasource_id="<id>", description="blaring flame considering openly precedent voluntarily beneath", name="<value>", type_="<value>", metadata={})
+    res = m_client.datasources.update_datasource(datasource_id="<id>", customer_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `datasource_id`                                                                     | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `customer_id`                                                                       | *str*                                                                               | :heavy_check_mark:                                                                  | Customer ID                                                                         |
+| `name`                                                                              | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `description`                                                                       | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `recurrence`                                                                        | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `object_storage_config`                                                             | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `web_config`                                                                        | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
+
+### Response
+
+**[models.UpdateDatasourceResponse](../../models/updatedatasourceresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## delete_datasource_datasource_datasource_id_delete
+
+Delete Datasource
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="delete_datasource_datasource__datasource_id__delete" method="delete" path="/datasource/{datasource_id}" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.delete_datasource_datasource_datasource_id_delete(datasource_id="<id>", customer_id="<id>")
 
     # Handle response
     print(res)
@@ -172,15 +176,12 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `description`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `type`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `metadata`                                                          | [models.Metadata](../../models/metadata.md)                         | :heavy_check_mark:                                                  | N/A                                                                 |
+| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[Any](../../models/.md)**
+**[models.DeleteDatasourceResponse](../../models/deletedatasourceresponse.md)**
 
 ### Errors
 
@@ -189,12 +190,13 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## list_dataelements
+## get_all_datasource_ids
 
-Get Dataelements
+Get All Datasource Ids
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="get_all_datasource_ids" method="post" path="/project_datasource_ids" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -204,7 +206,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list_dataelements(datasource_id=790947)
+    res = m_client.datasources.get_all_datasource_ids(customer_id_param="<value>", customer_id="<id>", project_id="<id>", offset=0, limit=10)
 
     # Handle response
     print(res)
@@ -215,7 +217,9 @@ with Meibelai(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `customer_id_param`                                                 | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `project_id`                                                        | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `offset`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Number of items to skip                                             |
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
@@ -224,210 +228,7 @@ with Meibelai(
 
 ### Response
 
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## create_dataelement
-
-Create Dataelement
-
-### Example Usage
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.create_dataelement(datasource_id=934782)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## get_dataelement
-
-Get Dataelement
-
-### Example Usage
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.get_dataelement(datasource_id=870573, dataelement_id=302275)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `dataelement_id`                                                    | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## update_dataelement
-
-Update Dataelement
-
-### Example Usage
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.update_dataelement(datasource_id=10702, dataelement_id=126234)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `dataelement_id`                                                    | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## delete_dataelement
-
-Delete Dataelement
-
-### Example Usage
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.delete_dataelement(datasource_id=40542, dataelement_id=655223)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `dataelement_id`                                                    | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## upload_dataelement
-
-Upload Dataelement
-
-### Example Usage
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.upload_dataelement(datasource_id=691705)
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *int*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
+**[List[str]](../../models/.md)**
 
 ### Errors
 

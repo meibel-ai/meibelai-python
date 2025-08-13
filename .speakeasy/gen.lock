@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: b3ed3be30e8c6dc44af619ca68391671
+  docChecksum: baca40baff7dc2a7280828c226be586d
   docVersion: 0.1.0
-  speakeasyVersion: 1.554.1
-  generationVersion: 2.616.1
-  releaseVersion: 0.12.0
-  configChecksum: b45703725ebeab7b9094be8f0c4f4421
+  speakeasyVersion: 1.603.1
+  generationVersion: 2.681.1
+  releaseVersion: 0.13.0
+  configChecksum: 319dced4844c41a28d073b0e43735b7e
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.19.1
+    core: 5.19.8
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -25,56 +25,185 @@ features:
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.1
     methodArguments: 1.0.2
-    nameOverrides: 3.0.1
     nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.1.0
-    serverEvents: 1.0.7
-    serverEventsSentinels: 0.1.0
     unions: 3.0.4
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
   - .gitattributes
-  - .python-version
   - .vscode/settings.json
   - USAGE.md
-  - docs/models/chatevent.md
-  - docs/models/createdataelementrequest.md
-  - docs/models/createstreamcompletionresponsebody.md
-  - docs/models/data.md
-  - docs/models/dataelementresponse.md
-  - docs/models/dataelementtype.md
-  - docs/models/datasourceresponse.md
-  - docs/models/datasourcetype.md
+  - docs/models/activity.md
+  - docs/models/activitystatus.md
+  - docs/models/addactivitybyblueprintinstancerequest.md
+  - docs/models/addactivityrequest.md
+  - docs/models/addactivityrequestinputdata.md
+  - docs/models/addactivityrequestoutputdata.md
+  - docs/models/addactivityresponse.md
+  - docs/models/addblueprintinstancerequest.md
+  - docs/models/addblueprintinstancerequest1.md
+  - docs/models/addblueprintinstanceresponse.md
+  - docs/models/addchunkingstrategyrequest.md
+  - docs/models/addchunkingstrategyrequest1.md
+  - docs/models/addchunkingstrategyresponse.md
+  - docs/models/adddataelementrequest.md
+  - docs/models/adddataelementrequest1.md
+  - docs/models/adddataelementresponse.md
+  - docs/models/adddatasourcerequest.md
+  - docs/models/adddatasourcerequest1.md
+  - docs/models/adddatasourceresponse.md
+  - docs/models/addeventresponse.md
+  - docs/models/addragconfigrequest.md
+  - docs/models/addragconfigrequest1.md
+  - docs/models/addragconfigresponse.md
+  - docs/models/addreferencegraphconfigrequest.md
+  - docs/models/addreferencegraphconfigrequest1.md
+  - docs/models/addreferencegraphconfigresponse.md
+  - docs/models/addtagcolumninforequest.md
+  - docs/models/addtagcolumnrequest.md
+  - docs/models/addtagcolumnresponse.md
+  - docs/models/addtagconfigrequest.md
+  - docs/models/addtagconfigrequest1.md
+  - docs/models/addtagconfigresponse.md
+  - docs/models/addtagtableinforequest.md
+  - docs/models/addtagtablerequest.md
+  - docs/models/addtagtableresponse.md
+  - docs/models/basicwebauth.md
+  - docs/models/blueprintinstance.md
+  - docs/models/blueprintinstanceinstancemetadata.md
+  - docs/models/blueprintinstancestatus.md
+  - docs/models/codechunking.md
+  - docs/models/completeblueprintinstancerequest.md
+  - docs/models/completeblueprintinstancerequest1.md
+  - docs/models/createeventbyblueprintinstanceidrequest.md
+  - docs/models/customeventrequest.md
+  - docs/models/customeventrequestdetails.md
+  - docs/models/dataelement.md
+  - docs/models/dataelementdiscoveryrecord.md
+  - docs/models/datasource.md
+  - docs/models/datasourcewebconfig.md
+  - docs/models/deleteblueprintinstancerequest.md
+  - docs/models/deletechunkingstrategyrequest.md
+  - docs/models/deletechunkingstrategyresponse.md
   - docs/models/deletedataelementrequest.md
+  - docs/models/deletedataelementresponse.md
+  - docs/models/deletedatasourcedatasourcedatasourceiddeleterequest.md
+  - docs/models/deletedatasourceresponse.md
+  - docs/models/deleteingestrecordrequest.md
+  - docs/models/deleteingestrecordresponse.md
+  - docs/models/deleteragconfigrequest.md
+  - docs/models/deletereferencegraphconfigrequest.md
+  - docs/models/deletereferencegraphconfigresponse.md
+  - docs/models/deletetagcolumninforequest.md
+  - docs/models/deletetagconfigrequest.md
+  - docs/models/deletetagtableinforequest.md
+  - docs/models/deletetagtableresponse.md
+  - docs/models/details.md
+  - docs/models/embeddingmodel.md
+  - docs/models/errordetails.md
+  - docs/models/event.md
+  - docs/models/eventtype.md
+  - docs/models/extractormodel.md
+  - docs/models/failblueprintinstancerequest.md
+  - docs/models/failblueprintinstancerequest1.md
+  - docs/models/gcsconfig.md
+  - docs/models/getactivitiesbyblueprintinstancerequest.md
+  - docs/models/getactivitiesresponse.md
+  - docs/models/getactivitybyblueprintinstancerequest.md
+  - docs/models/getallblueprintinstancesrequest.md
+  - docs/models/getalldataelementsrequest.md
+  - docs/models/getalldatasourceidsrequest.md
+  - docs/models/getalldatasourceidsrequest1.md
+  - docs/models/getallingestrecordsrequest.md
+  - docs/models/getalltagcolumninforequest.md
+  - docs/models/getalltagtableinforequest.md
+  - docs/models/getblueprintinstancerequest.md
+  - docs/models/getblueprintinstancesresponse.md
+  - docs/models/getchunkingstrategyrequest.md
+  - docs/models/getdataelementbypathrequest.md
+  - docs/models/getdataelementbypathrequest1.md
   - docs/models/getdataelementrequest.md
-  - docs/models/getrequest.md
-  - docs/models/heartbeatevent.md
+  - docs/models/getdatasourcerequest.md
+  - docs/models/geteventbyblueprintinstancerequest.md
+  - docs/models/geteventsbyblueprintinstancerequest.md
+  - docs/models/geteventsresponse.md
+  - docs/models/getingestrecordrequest.md
+  - docs/models/getnewandupdateddataelementsresponse.md
+  - docs/models/getnewandupdatedelementsrequest.md
+  - docs/models/getragconfigrequest.md
+  - docs/models/getreferencegraphconfigrequest.md
+  - docs/models/gettagcolumninforequest.md
+  - docs/models/gettagconfigrequest.md
+  - docs/models/gettagtableinforequest.md
+  - docs/models/htmlchunking.md
   - docs/models/httpvalidationerror.md
-  - docs/models/listdataelementsrequest.md
-  - docs/models/listrequest.md
+  - docs/models/ingestmethod.md
+  - docs/models/ingestrecord.md
+  - docs/models/inputdata.md
+  - docs/models/instancemetadata.md
+  - docs/models/jsonnodechunking.md
   - docs/models/loc.md
-  - docs/models/metadata.md
-  - docs/models/newdatasourcerequest.md
-  - docs/models/newdatasourceresponse.md
-  - docs/models/runchatrequest.md
-  - docs/models/runchatstreamrequest.md
-  - docs/models/runchatstreamresponsebody.md
+  - docs/models/markdownnodechunking.md
+  - docs/models/objectstorageconfig.md
+  - docs/models/objectstoragefilters.md
+  - docs/models/outputdata.md
+  - docs/models/ragchunkingstrategy.md
+  - docs/models/ragconfig.md
+  - docs/models/referencegraphconfig.md
+  - docs/models/s3config.md
   - docs/models/security.md
+  - docs/models/semanticchunking.md
+  - docs/models/sentencechunking.md
+  - docs/models/size.md
+  - docs/models/sparseembeddingmodel.md
+  - docs/models/tagcolumninfo.md
+  - docs/models/tagconfig.md
+  - docs/models/tagtableinfo.md
+  - docs/models/tokentextchunking.md
+  - docs/models/updateactivitystatusrequest.md
+  - docs/models/updateblueprintinstancestatusrequest.md
+  - docs/models/updatechunkingstrategyrequest.md
+  - docs/models/updatechunkingstrategyrequest1.md
+  - docs/models/updatechunkingstrategyresponse.md
   - docs/models/updatedataelementrequest.md
+  - docs/models/updatedataelementrequest1.md
+  - docs/models/updatedataelementresponse.md
   - docs/models/updatedatasourcerequest.md
-  - docs/models/updaterequest.md
-  - docs/models/uploaddataelementrequest.md
+  - docs/models/updatedatasourcerequest1.md
+  - docs/models/updatedatasourceresponse.md
+  - docs/models/updateragconfigrequest.md
+  - docs/models/updateragconfigrequest1.md
+  - docs/models/updateragconfigresponse.md
+  - docs/models/updatereferencegraphconfigrequest.md
+  - docs/models/updatereferencegraphconfigrequest1.md
+  - docs/models/updatereferencegraphconfigresponse.md
+  - docs/models/updatetagcolumninforequest.md
+  - docs/models/updatetagcolumnrequest.md
+  - docs/models/updatetagcolumnresponse.md
+  - docs/models/updatetagconfigrequest.md
+  - docs/models/updatetagconfigrequest1.md
+  - docs/models/updatetagconfigresponse.md
+  - docs/models/updatetagtableinforequest.md
+  - docs/models/updatetagtablerequest.md
+  - docs/models/updatetagtableresponse.md
+  - docs/models/upsertingestrecordrequest.md
+  - docs/models/upsertingestrecordrequest1.md
+  - docs/models/upsertingestrecordresponse.md
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
-  - docs/sdks/completions/README.md
+  - docs/models/webdomain.md
+  - docs/sdks/blueprintinstances/README.md
   - docs/sdks/dataelements/README.md
   - docs/sdks/datasources/README.md
-  - docs/sdks/experiences/README.md
+  - docs/sdks/ingest/README.md
   - docs/sdks/meibelai/README.md
+  - docs/sdks/rag/README.md
+  - docs/sdks/referencegraph/README.md
+  - docs/sdks/tag/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -87,41 +216,168 @@ generatedFiles:
   - src/meibelai/_hooks/types.py
   - src/meibelai/_version.py
   - src/meibelai/basesdk.py
-  - src/meibelai/completions.py
-  - src/meibelai/dataelements.py
+  - src/meibelai/blueprint_instances.py
+  - src/meibelai/data_elements.py
   - src/meibelai/datasources.py
-  - src/meibelai/experiences.py
   - src/meibelai/httpclient.py
+  - src/meibelai/ingest.py
   - src/meibelai/models/__init__.py
+  - src/meibelai/models/activity.py
+  - src/meibelai/models/activitystatus.py
+  - src/meibelai/models/add_activity_by_blueprint_instanceop.py
+  - src/meibelai/models/add_blueprint_instanceop.py
+  - src/meibelai/models/add_chunking_strategyop.py
+  - src/meibelai/models/add_data_elementop.py
+  - src/meibelai/models/add_datasourceop.py
+  - src/meibelai/models/add_rag_configop.py
+  - src/meibelai/models/add_reference_graph_configop.py
+  - src/meibelai/models/add_tag_column_infoop.py
+  - src/meibelai/models/add_tag_configop.py
+  - src/meibelai/models/add_tag_table_infoop.py
+  - src/meibelai/models/addactivityrequest.py
+  - src/meibelai/models/addactivityresponse.py
+  - src/meibelai/models/addblueprintinstancerequest.py
+  - src/meibelai/models/addblueprintinstanceresponse.py
+  - src/meibelai/models/addchunkingstrategyrequest.py
+  - src/meibelai/models/addchunkingstrategyresponse.py
+  - src/meibelai/models/adddataelementrequest.py
+  - src/meibelai/models/adddataelementresponse.py
+  - src/meibelai/models/adddatasourcerequest.py
+  - src/meibelai/models/adddatasourceresponse.py
+  - src/meibelai/models/addeventresponse.py
+  - src/meibelai/models/addragconfigrequest.py
+  - src/meibelai/models/addragconfigresponse.py
+  - src/meibelai/models/addreferencegraphconfigrequest.py
+  - src/meibelai/models/addreferencegraphconfigresponse.py
+  - src/meibelai/models/addtagcolumnrequest.py
+  - src/meibelai/models/addtagcolumnresponse.py
+  - src/meibelai/models/addtagconfigrequest.py
+  - src/meibelai/models/addtagconfigresponse.py
+  - src/meibelai/models/addtagtablerequest.py
+  - src/meibelai/models/addtagtableresponse.py
   - src/meibelai/models/apierror.py
-  - src/meibelai/models/chatevent.py
-  - src/meibelai/models/createdataelementop.py
-  - src/meibelai/models/createstreamcompletionop.py
-  - src/meibelai/models/dataelementresponse.py
-  - src/meibelai/models/dataelementtype.py
-  - src/meibelai/models/datasourceresponse.py
-  - src/meibelai/models/datasourcetype.py
-  - src/meibelai/models/deletedataelementop.py
-  - src/meibelai/models/getdataelementop.py
-  - src/meibelai/models/getop.py
-  - src/meibelai/models/heartbeatevent.py
+  - src/meibelai/models/basicwebauth.py
+  - src/meibelai/models/blueprintinstance.py
+  - src/meibelai/models/blueprintinstancestatus.py
+  - src/meibelai/models/codechunking.py
+  - src/meibelai/models/complete_blueprint_instanceop.py
+  - src/meibelai/models/completeblueprintinstancerequest.py
+  - src/meibelai/models/create_event_by_blueprint_instance_idop.py
+  - src/meibelai/models/customeventrequest.py
+  - src/meibelai/models/dataelement.py
+  - src/meibelai/models/dataelementdiscoveryrecord.py
+  - src/meibelai/models/datasource.py
+  - src/meibelai/models/datasourcewebconfig.py
+  - src/meibelai/models/delete_blueprint_instanceop.py
+  - src/meibelai/models/delete_chunking_strategyop.py
+  - src/meibelai/models/delete_data_elementop.py
+  - src/meibelai/models/delete_datasource_datasource_datasource_id_deleteop.py
+  - src/meibelai/models/delete_ingest_recordop.py
+  - src/meibelai/models/delete_rag_configop.py
+  - src/meibelai/models/delete_reference_graph_configop.py
+  - src/meibelai/models/delete_tag_column_infoop.py
+  - src/meibelai/models/delete_tag_configop.py
+  - src/meibelai/models/delete_tag_table_infoop.py
+  - src/meibelai/models/deletechunkingstrategyresponse.py
+  - src/meibelai/models/deletedataelementresponse.py
+  - src/meibelai/models/deletedatasourceresponse.py
+  - src/meibelai/models/deleteingestrecordresponse.py
+  - src/meibelai/models/deletereferencegraphconfigresponse.py
+  - src/meibelai/models/deletetagtableresponse.py
+  - src/meibelai/models/embeddingmodel.py
+  - src/meibelai/models/event.py
+  - src/meibelai/models/eventtype.py
+  - src/meibelai/models/extractormodel.py
+  - src/meibelai/models/fail_blueprint_instanceop.py
+  - src/meibelai/models/failblueprintinstancerequest.py
+  - src/meibelai/models/get_activities_by_blueprint_instanceop.py
+  - src/meibelai/models/get_activity_by_blueprint_instanceop.py
+  - src/meibelai/models/get_all_blueprint_instancesop.py
+  - src/meibelai/models/get_all_data_elementsop.py
+  - src/meibelai/models/get_all_datasource_idsop.py
+  - src/meibelai/models/get_all_ingest_recordsop.py
+  - src/meibelai/models/get_all_tag_column_infoop.py
+  - src/meibelai/models/get_all_tag_table_infoop.py
+  - src/meibelai/models/get_blueprint_instanceop.py
+  - src/meibelai/models/get_chunking_strategyop.py
+  - src/meibelai/models/get_data_element_by_pathop.py
+  - src/meibelai/models/get_data_elementop.py
+  - src/meibelai/models/get_datasourceop.py
+  - src/meibelai/models/get_event_by_blueprint_instanceop.py
+  - src/meibelai/models/get_events_by_blueprint_instanceop.py
+  - src/meibelai/models/get_ingest_recordop.py
+  - src/meibelai/models/get_new_and_updated_elementsop.py
+  - src/meibelai/models/get_rag_configop.py
+  - src/meibelai/models/get_reference_graph_configop.py
+  - src/meibelai/models/get_tag_column_infoop.py
+  - src/meibelai/models/get_tag_configop.py
+  - src/meibelai/models/get_tag_table_infoop.py
+  - src/meibelai/models/getactivitiesresponse.py
+  - src/meibelai/models/getalldatasourceidsrequest.py
+  - src/meibelai/models/getblueprintinstancesresponse.py
+  - src/meibelai/models/getdataelementbypathrequest.py
+  - src/meibelai/models/geteventsresponse.py
+  - src/meibelai/models/getnewandupdateddataelementsresponse.py
+  - src/meibelai/models/htmlchunking.py
   - src/meibelai/models/httpvalidationerror.py
-  - src/meibelai/models/listdataelementsop.py
-  - src/meibelai/models/listop.py
-  - src/meibelai/models/metadata.py
-  - src/meibelai/models/newdatasourcerequest.py
-  - src/meibelai/models/newdatasourceresponse.py
-  - src/meibelai/models/run_chat_streamop.py
-  - src/meibelai/models/run_chatop.py
+  - src/meibelai/models/ingestmethod.py
+  - src/meibelai/models/ingestrecord.py
+  - src/meibelai/models/jsonnodechunking.py
+  - src/meibelai/models/markdownnodechunking.py
+  - src/meibelai/models/meibelaierror.py
+  - src/meibelai/models/no_response_error.py
+  - src/meibelai/models/objectstorageconfig.py
+  - src/meibelai/models/objectstoragefilters.py
+  - src/meibelai/models/ragchunkingstrategy.py
+  - src/meibelai/models/ragconfig.py
+  - src/meibelai/models/referencegraphconfig.py
+  - src/meibelai/models/responsevalidationerror.py
+  - src/meibelai/models/s3config.py
   - src/meibelai/models/security.py
-  - src/meibelai/models/updatedataelementop.py
+  - src/meibelai/models/semanticchunking.py
+  - src/meibelai/models/sentencechunking.py
+  - src/meibelai/models/sparseembeddingmodel.py
+  - src/meibelai/models/tagcolumninfo.py
+  - src/meibelai/models/tagconfig.py
+  - src/meibelai/models/tagtableinfo.py
+  - src/meibelai/models/tokentextchunking.py
+  - src/meibelai/models/update_activity_statusop.py
+  - src/meibelai/models/update_blueprint_instance_statusop.py
+  - src/meibelai/models/update_chunking_strategyop.py
+  - src/meibelai/models/update_data_elementop.py
+  - src/meibelai/models/update_datasourceop.py
+  - src/meibelai/models/update_rag_configop.py
+  - src/meibelai/models/update_reference_graph_configop.py
+  - src/meibelai/models/update_tag_column_infoop.py
+  - src/meibelai/models/update_tag_configop.py
+  - src/meibelai/models/update_tag_table_infoop.py
+  - src/meibelai/models/updatechunkingstrategyrequest.py
+  - src/meibelai/models/updatechunkingstrategyresponse.py
+  - src/meibelai/models/updatedataelementrequest.py
+  - src/meibelai/models/updatedataelementresponse.py
   - src/meibelai/models/updatedatasourcerequest.py
-  - src/meibelai/models/updateop.py
-  - src/meibelai/models/uploaddataelementop.py
+  - src/meibelai/models/updatedatasourceresponse.py
+  - src/meibelai/models/updateragconfigrequest.py
+  - src/meibelai/models/updateragconfigresponse.py
+  - src/meibelai/models/updatereferencegraphconfigrequest.py
+  - src/meibelai/models/updatereferencegraphconfigresponse.py
+  - src/meibelai/models/updatetagcolumnrequest.py
+  - src/meibelai/models/updatetagcolumnresponse.py
+  - src/meibelai/models/updatetagconfigrequest.py
+  - src/meibelai/models/updatetagconfigresponse.py
+  - src/meibelai/models/updatetagtablerequest.py
+  - src/meibelai/models/updatetagtableresponse.py
+  - src/meibelai/models/upsert_ingest_recordop.py
+  - src/meibelai/models/upsertingestrecordrequest.py
+  - src/meibelai/models/upsertingestrecordresponse.py
   - src/meibelai/models/validationerror.py
+  - src/meibelai/models/webdomain.py
   - src/meibelai/py.typed
+  - src/meibelai/rag.py
+  - src/meibelai/reference_graph.py
   - src/meibelai/sdk.py
   - src/meibelai/sdkconfiguration.py
+  - src/meibelai/tag.py
   - src/meibelai/types/__init__.py
   - src/meibelai/types/basemodel.py
   - src/meibelai/utils/__init__.py
@@ -138,6 +394,7 @@ generatedFiles:
   - src/meibelai/utils/retries.py
   - src/meibelai/utils/security.py
   - src/meibelai/utils/serializers.py
+  - src/meibelai/utils/unmarshal_json_response.py
   - src/meibelai/utils/url.py
   - src/meibelai/utils/values.py
 examples:
@@ -284,6 +541,771 @@ examples:
         path:
           experience_id: 674532
       responses:
+        "422":
+          application/json: {}
+  root__get:
+    speakeasy-default-root-get:
+      responses:
+        "200":
+          application/json: "<value>"
+  add_datasource:
+    speakeasy-default-add-datasource:
+      parameters:
+        header:
+          customer-id: "<value>"
+      requestBody:
+        application/json: {"customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "smooth hmph geez key", "recurrence": "<value>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_datasource:
+    speakeasy-default-get-datasource:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "what minor wrongly wrong redress annual selfishly bleakly provided apud", "recurrence": "<value>", "created_by": "<value>", "created_at": "1704480796900", "updated_by": "<value>", "updated_at": "1735638000776", "object_storage_config": {"bucket": "<value>", "prefix": "<value>"}, "web_config": {"baseURL": "https://distant-acquaintance.name/", "javascriptRender": true, "waitForSelector": "<value>", "domains": [], "authentication": {"username": "Kariane.Blanda8", "password": "EiDnr6JVKVp64wp"}}}
+        "422":
+          application/json: {}
+  update_datasource:
+    speakeasy-default-update-datasource:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  delete_datasource_datasource__datasource_id__delete:
+    speakeasy-default-delete-datasource-datasource-datasource-id-delete:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_all_datasource_ids:
+    speakeasy-default-get-all-datasource-ids:
+      parameters:
+        query:
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<value>"
+      requestBody:
+        application/json: {"customer_id": "<id>", "project_id": "<id>"}
+      responses:
+        "200":
+          application/json: ["<value 1>", "<value 2>", "<value 3>"]
+        "422":
+          application/json: {}
+  add_data_element:
+    speakeasy-default-add-data-element:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"description": "mmm slip punctual whether fooey", "name": "<value>", "path": "/dev", "media_type": "<value>", "discovery_record": {"discovery_time": "<value>", "last_modified_time": "<value>", "size": 643019, "element_hash": "<value>"}}
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_data_element:
+    speakeasy-default-get-data-element:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/usr/include", "media_type": "<value>", "discovery_record": null, "description": "lifestyle split blight matter", "created_at": "1732325300596", "updated_at": "1735648354638"}
+        "422":
+          application/json: {}
+  update_data_element:
+    speakeasy-default-update-data-element:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  delete_data_element:
+    speakeasy-default-delete-data-element:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_all_data_elements:
+    speakeasy-default-get-all-data-elements:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        query:
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: [{"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/proc", "media_type": "<value>", "discovery_record": {"discovery_time": "<value>", "last_modified_time": "<value>", "size": 293551, "element_hash": "<value>"}, "description": "vice straight where who correctly ick or unethically upbeat", "created_at": "1735100916112", "updated_at": "1735643187614"}]
+        "422":
+          application/json: {}
+  get_data_element_by_path:
+    speakeasy-default-get-data-element-by-path:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"path": "/var/tmp"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/bin", "media_type": "<value>", "discovery_record": {"discovery_time": "<value>", "last_modified_time": "<value>", "size": 634.94, "element_hash": "<value>"}, "description": "funny phew advocate commemorate um functional shanghai lumbering consequently naturally", "created_at": "1732208379761", "updated_at": "1735686346742"}
+        "422":
+          application/json: {}
+  get_new_and_updated_elements:
+    speakeasy-default-get-new-and-updated-elements:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        query:
+          ingest_method: "RAG"
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"new_data_elements": [], "updated_data_elements": []}
+        "422":
+          application/json: {}
+  add_tag_config:
+    speakeasy-default-add-tag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"working_bucket": "<value>"}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_tag_config:
+    speakeasy-default-get-tag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "description": "spotless jealous always bandwidth aside outside loaf", "logical_group_regex": "<value>", "working_bucket": "<value>", "db_path": "<value>"}
+        "422":
+          application/json: {}
+  update_tag_config:
+    speakeasy-default-update-tag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  delete_tag_config:
+    speakeasy-default-delete-tag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  add_tag_table_info:
+    speakeasy-default-add-tag-table-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_tag_table_info:
+    speakeasy-default-get-tag-table-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "name": "<value>", "description": "spanish yowza oh"}
+        "422":
+          application/json: {}
+  update_tag_table_info:
+    speakeasy-default-update-tag-table-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  delete_tag_table_info:
+    speakeasy-default-delete-tag-table-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_all_tag_table_info:
+    speakeasy-default-get-all-tag-table-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        query:
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: [{"datasource_id": "<id>", "name": "<value>", "description": "lightly book disappointment meanwhile zowie unnaturally um lest up"}]
+        "422":
+          application/json: {}
+  add_tag_column_info:
+    speakeasy-default-add-tag-column-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+          column_name: "<value>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_tag_column_info:
+    speakeasy-default-get-tag-column-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+          column_name: "<value>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "table_name": "<value>", "name": "<value>", "description": "brr downchange injunction anti unnaturally ferociously obscure", "dtype": "<value>", "is_key": false, "is_indexed": false, "engineered_features": ["<value 1>", "<value 2>", "<value 3>"]}
+        "422":
+          application/json: {}
+  update_tag_column_info:
+    speakeasy-default-update-tag-column-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+          column_name: "<value>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_all_tag_column_info:
+    speakeasy-default-get-all-tag-column-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+        query:
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: [{"datasource_id": "<id>", "table_name": "<value>", "name": "<value>", "description": null, "dtype": "<value>", "is_key": true, "is_indexed": false, "engineered_features": ["<value 1>"]}]
+        "422":
+          application/json: {}
+  delete_tag_column_info:
+    speakeasy-default-delete-tag-column-info:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          table_name: "<value>"
+          column_name: "<value>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  add_rag_config:
+    speakeasy-default-add-rag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"collection_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_rag_config:
+    speakeasy-default-get-rag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "description": "ick yum whoa ugly unlike bah unto briefly frail", "collection_id": "<id>"}
+        "422":
+          application/json: {}
+  update_rag_config:
+    speakeasy-default-update-rag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  delete_rag_config:
+    speakeasy-default-delete-rag-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  add_chunking_strategy:
+    speakeasy-default-add-chunking-strategy:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_chunking_strategy:
+    speakeasy-default-get-chunking-strategy:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>"}
+        "422":
+          application/json: {}
+  update_chunking_strategy:
+    speakeasy-default-update-chunking-strategy:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  delete_chunking_strategy:
+    speakeasy-default-delete-chunking-strategy:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  upsert_ingest_record:
+    speakeasy-default-upsert-ingest-record:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+          ingest_method: "RAG"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"ingest_time": "<value>", "element_hash": "<value>"}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_ingest_record:
+    speakeasy-default-get-ingest-record:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+          ingest_method: "RAG"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "data_element_id": "<id>", "ingest_method": "RAG", "ingest_time": "<value>", "element_hash": "<value>"}
+        "422":
+          application/json: {}
+  delete_ingest_record:
+    speakeasy-default-delete-ingest-record:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+          ingest_method: "RefGraph"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_all_ingest_records:
+    speakeasy-default-get-all-ingest-records:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        query:
+          offset: 0
+          limit: 10
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: [{"datasource_id": "<id>", "data_element_id": "<id>", "ingest_method": "RAG", "ingest_time": "<value>", "element_hash": "<value>"}]
+        "422":
+          application/json: {}
+  add_reference_graph_config:
+    speakeasy-default-add-reference-graph-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"endpoint": "<value>", "db_name": "<value>", "doc_collection": "<value>", "ref_collection": "<value>"}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  get_reference_graph_config:
+    speakeasy-default-get-reference-graph-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"datasource_id": "<id>", "endpoint": "<value>", "db_name": "<value>", "doc_collection": "<value>", "ref_collection": "<value>"}
+        "422":
+          application/json: {}
+  update_reference_graph_config:
+    speakeasy-default-update-reference-graph-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  delete_reference_graph_config:
+    speakeasy-default-delete-reference-graph-config:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {}
+  add_blueprint_instance:
+    speakeasy-default-add-blueprint-instance:
+      parameters:
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "201":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_all_blueprint_instances:
+    speakeasy-default-get-all-blueprint-instances:
+      parameters:
+        query:
+          include_children: false
+          include_activities: false
+          include_events: false
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+        "422":
+          application/json: {}
+  get_blueprint_instance:
+    speakeasy-default-get-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        query:
+          include_children: false
+          include_activities: false
+          include_events: false
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{}]}
+        "422":
+          application/json: {}
+  delete_blueprint_instance:
+    speakeasy-default-delete-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "422":
+          application/json: {}
+  update_blueprint_instance_status:
+    speakeasy-default-update-blueprint-instance-status:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        query:
+          updated_status_value: "cancelled"
+        header:
+          customer-id: "<id>"
+      responses:
+        "422":
+          application/json: {}
+  complete_blueprint_instance:
+    speakeasy-default-complete-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "202":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  fail_blueprint_instance:
+    speakeasy-default-fail-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "202":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  add_activity_by_blueprint_instance:
+    speakeasy-default-add-activity-by-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"activity_type": "<value>"}
+      responses:
+        "201":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_activity_by_blueprint_instance:
+    speakeasy-default-get-activity-by-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+          activity_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"blueprint_instance_id": "<id>", "activity_type": "<value>"}]}
+        "422":
+          application/json: {}
+  get_activities_by_blueprint_instance:
+    speakeasy-default-get-activities-by-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+        "422":
+          application/json: {}
+  update_activity_status:
+    speakeasy-default-update-activity-status:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+          activity_id: "<id>"
+        query:
+          updated_status_value: "running"
+        header:
+          customer-id: "<id>"
+      responses:
+        "422":
+          application/json: {}
+  get_event_by_blueprint_instance:
+    speakeasy-default-get-event-by-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+          event_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"blueprint_instance_id": "<id>"}]}
+        "422":
+          application/json: {}
+  create_event_by_blueprint_instance_id:
+    speakeasy-default-create-event-by-blueprint-instance-id:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      requestBody:
+        application/json: {"event_name": "<value>"}
+      responses:
+        "201":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {}
+  get_events_by_blueprint_instance:
+    speakeasy-default-get-events-by-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+        header:
+          customer-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
         "422":
           application/json: {}
 examplesVersion: 1.0.2

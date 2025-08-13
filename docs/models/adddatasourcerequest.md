@@ -1,0 +1,16 @@
+# AddDatasourceRequest
+
+AddDatasourceRequest
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `customer_id`                                                                    | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `project_id`                                                                     | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `name`                                                                           | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `description`                                                                    | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `recurrence`                                                                     | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `object_storage_config`                                                          | [OptionalNullable[models.ObjectStorageConfig]](../models/objectstorageconfig.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `web_config`                                                                     | [OptionalNullable[models.DatasourceWebConfig]](../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                               | N/A                                                                              |

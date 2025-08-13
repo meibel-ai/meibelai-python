@@ -1,0 +1,13 @@
+# GetAllDatasourceIdsRequest1
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `offset`                                                                     | *Optional[int]*                                                              | :heavy_minus_sign:                                                           | Number of items to skip                                                      |
+| `limit`                                                                      | *Optional[int]*                                                              | :heavy_minus_sign:                                                           | Maximum number of items to return                                            |
+| `sort_by`                                                                    | *OptionalNullable[str]*                                                      | :heavy_minus_sign:                                                           | Field to sort by                                                             |
+| `sort_order`                                                                 | *OptionalNullable[str]*                                                      | :heavy_minus_sign:                                                           | Sort order (asc or desc)                                                     |
+| `customer_id_param`                                                          | *str*                                                                        | :heavy_check_mark:                                                           | Customer ID                                                                  |
+| `get_all_datasource_ids_request`                                             | [models.GetAllDatasourceIdsRequest](../models/getalldatasourceidsrequest.md) | :heavy_check_mark:                                                           | N/A                                                                          |

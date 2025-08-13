@@ -9,7 +9,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.root_get()
 
     # Handle response
     print(res)
@@ -17,7 +17,7 @@ with Meibelai(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
@@ -30,7 +30,7 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.list_async()
+        res = await m_client.root_get_async()
 
         # Handle response
         print(res)

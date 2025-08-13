@@ -31,7 +31,6 @@ Our API allows you to interact with our services.  Read the[docs](https://docs.m
   * [SDK Example Usage](https://github.com/meibel-ai/meibelai-python/blob/master/#sdk-example-usage)
   * [Authentication](https://github.com/meibel-ai/meibelai-python/blob/master/#authentication)
   * [Available Resources and Operations](https://github.com/meibel-ai/meibelai-python/blob/master/#available-resources-and-operations)
-  * [Server-sent event streaming](https://github.com/meibel-ai/meibelai-python/blob/master/#server-sent-event-streaming)
   * [Retries](https://github.com/meibel-ai/meibelai-python/blob/master/#retries)
   * [Error Handling](https://github.com/meibel-ai/meibelai-python/blob/master/#error-handling)
   * [Server Selection](https://github.com/meibel-ai/meibelai-python/blob/master/#server-selection)
@@ -56,7 +55,15 @@ Our API allows you to interact with our services.  Read the[docs](https://docs.m
 >
 > Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-The SDK can be installed with either *pip* or *poetry* package managers.
+The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
+
+### uv
+
+*uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
+
+```bash
+uv add git+https://github.com/meibel-ai/meibelai-python.git
+```
 
 ### PIP
 
@@ -131,7 +138,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.root_get()
 
     # Handle response
     print(res)
@@ -139,7 +146,7 @@ with Meibelai(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
@@ -152,7 +159,7 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.list_async()
+        res = await m_client.root_get_async()
 
         # Handle response
         print(res)
@@ -182,7 +189,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.root_get()
 
     # Handle response
     print(res)
@@ -196,77 +203,89 @@ with Meibelai(
 <details open>
 <summary>Available methods</summary>
 
-### [completions](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md)
+### [blueprint_instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md)
 
-* [create](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md#create) - Create Completion
-* [create_stream](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/completions/README.md#create_stream) - Create Completion Stream
+* [add_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#add_blueprint_instance) - Add Blueprint Instance
+* [get_all_blueprint_instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_all_blueprint_instances) - Get All Blueprint Instances
+* [get_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_blueprint_instance) - Get Blueprint Instance
+* [delete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#delete_blueprint_instance) - Delete Blueprint Instance
+* [update_blueprint_instance_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#update_blueprint_instance_status) - Update Blueprint Instance Status
+* [complete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#complete_blueprint_instance) - Complete a Blueprint Instance
+* [fail_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#fail_blueprint_instance) - Fail a Blueprint Instance
+* [add_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#add_activity_by_blueprint_instance) - Add Activity By Blueprint Instance
+* [get_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_activity_by_blueprint_instance) - Get Activity By Blueprint Instance
+* [get_activities_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_activities_by_blueprint_instance) - Get Activities By Blueprint Instance
+* [update_activity_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#update_activity_status) - Update Activity Status
+* [get_event_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_event_by_blueprint_instance) - Get Event By Blueprint Instance
+* [create_event_by_blueprint_instance_id](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
+* [get_events_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
+
+### [data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
+
+* [add_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
+* [get_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element) - Get Data Element
+* [update_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_data_element) - Update Data Element
+* [delete_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
+* [get_all_data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_all_data_elements) - Get All Data Elements
+* [get_data_element_by_path](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element_by_path) - Get Data Element By Path
+* [get_new_and_updated_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_new_and_updated_elements) - Get New And Updated Elements
 
 ### [datasources](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md)
 
-* [list](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#list) - Get Datasources
-* [create](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#create) - Create Datasource
-* [get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get) - Get Datasource
-* [update](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update) - Update Datasource
-* [list_dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#list_dataelements) - Get Dataelements
-* [create_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#create_dataelement) - Create Dataelement
-* [get_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_dataelement) - Get Dataelement
-* [update_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update_dataelement) - Update Dataelement
-* [delete_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#upload_dataelement) - Upload Dataelement
+* [add_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#add_datasource) - Add Datasource
+* [get_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_datasource) - Get Datasource
+* [update_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update_datasource) - Update Datasource
+* [delete_datasource_datasource_datasource_id_delete](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#delete_datasource_datasource_datasource_id_delete) - Delete Datasource
+* [get_all_datasource_ids](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_all_datasource_ids) - Get All Datasource Ids
 
-#### [datasources.dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
+### [ingest](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md)
 
-* [list_dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#list_dataelements) - Get Dataelements
-* [create_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#create_dataelement) - Create Dataelement
-* [get_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_dataelement) - Get Dataelement
-* [update_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_dataelement) - Update Dataelement
-* [delete_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#delete_dataelement) - Delete Dataelement
-* [upload_dataelement](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#upload_dataelement) - Upload Dataelement
+* [upsert_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#upsert_ingest_record) - Upsert Ingest Record
+* [get_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#get_ingest_record) - Get Ingest Record
+* [delete_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#delete_ingest_record) - Delete Ingest Record
+* [get_all_ingest_records](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#get_all_ingest_records) - Get All Ingest Records
 
-### [experiences](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md)
+### [Meibelai SDK](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelai/README.md)
 
-* [list](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#list) - Get Experiences
-* [run_chat](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#run_chat) - Run Chat Experience
-* [run_chat_stream](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/experiences/README.md#run_chat_stream) - Run Chat Stream Experience
+* [root_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelai/README.md#root_get) - Root
 
+### [rag](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md)
+
+* [add_rag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#add_rag_config) - Add Rag Config
+* [get_rag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#get_rag_config) - Get Rag Config
+* [update_rag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#update_rag_config) - Update Rag Config
+* [delete_rag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#delete_rag_config) - Delete Rag Config
+* [add_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#add_chunking_strategy) - Add Chunking Strategy
+* [get_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#get_chunking_strategy) - Get Chunking Strategy
+* [update_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#update_chunking_strategy) - Update Chunking Strategy
+* [delete_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#delete_chunking_strategy) - Delete Chunking Strategy
+
+### [reference_graph](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md)
+
+* [add_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#add_reference_graph_config) - Add Reference Graph Config
+* [get_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#get_reference_graph_config) - Get Reference Graph Config
+* [update_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#update_reference_graph_config) - Update Reference Graph Config
+* [delete_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#delete_reference_graph_config) - Delete Reference Graph Config
+
+### [tag](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md)
+
+* [add_tag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#add_tag_config) - Add Tag Config
+* [get_tag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_tag_config) - Get Tag Config
+* [update_tag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#update_tag_config) - Update Tag Config
+* [delete_tag_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#delete_tag_config) - Delete Tag Config
+* [add_tag_table_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#add_tag_table_info) - Add Tag Table Info
+* [get_tag_table_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_tag_table_info) - Get Tag Table Info
+* [update_tag_table_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#update_tag_table_info) - Update Tag Table Info
+* [delete_tag_table_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#delete_tag_table_info) - Delete Tag Table Info
+* [get_all_tag_table_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_all_tag_table_info) - Get All Tag Table Info
+* [add_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#add_tag_column_info) - Add Tag Column Info
+* [get_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_tag_column_info) - Get Tag Column Info
+* [update_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#update_tag_column_info) - Update Tag Column Info
+* [get_all_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_all_tag_column_info) - Get All Tag Column Info
+* [delete_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#delete_tag_column_info) - Delete Tag Column Info
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
-
-<!-- Start Server-sent event streaming [eventstream] -->
-## Server-sent event streaming
-
-[Server-sent events][mdn-sse] are used to stream content from certain
-operations. These operations will expose the stream as [Generator][generator] that
-can be consumed using a simple `for` loop. The loop will
-terminate when the server no longer has any events to send and closes the
-underlying connection.  
-
-The stream is also a [Context Manager][context-manager] and can be used with the `with` statement and will close the
-underlying connection when the context is exited.
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.completions.create_stream()
-
-    with res as event_stream:
-        for event in event_stream:
-            # handle event
-            print(event, flush=True)
-
-```
-
-[mdn-sse]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
-[generator]: https://book.pythontips.com/en/latest/generators.html
-[context-manager]: https://book.pythontips.com/en/latest/context_managers.html
-<!-- End Server-sent event streaming [eventstream] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -284,7 +303,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list(,
+    res = m_client.root_get(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -304,7 +323,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.root_get()
 
     # Handle response
     print(res)
@@ -315,27 +334,20 @@ with Meibelai(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`MeibelaiError`](https://github.com/meibel-ai/meibelai-python/blob/master/./src/meibelai/models/meibelaierror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a models.APIError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
-
-| Error Type                 | Status Code | Content Type     |
-| -------------------------- | ----------- | ---------------- |
-| models.HTTPValidationError | 422         | application/json |
-| models.APIError            | 4XX, 5XX    | \*/\*            |
+| Property           | Type             | Description                                                                             |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
+| `err.message`      | `str`            | Error message                                                                           |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                                                      |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](https://github.com/meibel-ai/meibelai-python/blob/master/#error-classes). |
 
 ### Example
-
 ```python
+import meibelai
 from meibelai import Meibelai, models
 import os
 
@@ -346,37 +358,93 @@ with Meibelai(
     res = None
     try:
 
-        res = m_client.datasources.list()
+        res = m_client.datasources.add_datasource(customer_id_param="<value>", customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>")
 
         # Handle response
         print(res)
 
-    except models.HTTPValidationError as e:
-        # handle e.data: models.HTTPValidationErrorData
-        raise(e)
-    except models.APIError as e:
-        # handle exception
-        raise(e)
+
+    except models.MeibelaiError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
+        # Depending on the method different errors may be thrown
+        if isinstance(e, models.HTTPValidationError):
+            print(e.data.detail)  # Optional[List[meibelai.ValidationError]]
 ```
+
+### Error Classes
+**Primary errors:**
+* [`MeibelaiError`](https://github.com/meibel-ai/meibelai-python/blob/master/./src/meibelai/models/meibelaierror.py): The base class for HTTP error responses.
+  * [`HTTPValidationError`](https://github.com/meibel-ai/meibelai-python/blob/master/./src/meibelai/models/httpvalidationerror.py): Validation Error. Status code `422`. *
+
+<details><summary>Less common errors (5)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`MeibelaiError`](https://github.com/meibel-ai/meibelai-python/blob/master/./src/meibelai/models/meibelaierror.py)**:
+* [`ResponseValidationError`](https://github.com/meibel-ai/meibelai-python/blob/master/./src/meibelai/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
+
+\* Check [the method documentation](https://github.com/meibel-ai/meibelai-python/blob/master/#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Override Server URL Per-Client
+### Select Server by Index
 
-The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| #   | Server                  | Description              |
+| --- | ----------------------- | ------------------------ |
+| 0   | `http://api.meibel.ai`  | Meibel API               |
+| 1   | `http://localhost:8000` | Local Development Server |
+
+#### Example
+
 ```python
 from meibelai import Meibelai
 import os
 
 
 with Meibelai(
-    server_url="http://api.meibel.ai",
+    server_idx=1,
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.list()
+    res = m_client.root_get()
+
+    # Handle response
+    print(res)
+
+```
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    server_url="http://localhost:8000",
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.root_get()
 
     # Handle response
     print(res)

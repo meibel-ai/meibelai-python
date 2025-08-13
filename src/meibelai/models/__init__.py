@@ -2,64 +2,488 @@
 
 from typing import TYPE_CHECKING
 from importlib import import_module
+import builtins
 
 if TYPE_CHECKING:
+    from .activity import (
+        Activity,
+        ActivityTypedDict,
+        InputData,
+        InputDataTypedDict,
+        OutputData,
+        OutputDataTypedDict,
+    )
+    from .activitystatus import ActivityStatus
+    from .add_activity_by_blueprint_instanceop import (
+        AddActivityByBlueprintInstanceRequest,
+        AddActivityByBlueprintInstanceRequestTypedDict,
+    )
+    from .add_blueprint_instanceop import (
+        AddBlueprintInstanceRequest1,
+        AddBlueprintInstanceRequest1TypedDict,
+    )
+    from .add_chunking_strategyop import (
+        AddChunkingStrategyRequest1,
+        AddChunkingStrategyRequest1TypedDict,
+    )
+    from .add_data_elementop import (
+        AddDataElementRequest1,
+        AddDataElementRequest1TypedDict,
+    )
+    from .add_datasourceop import AddDatasourceRequest1, AddDatasourceRequest1TypedDict
+    from .add_rag_configop import AddRagConfigRequest1, AddRagConfigRequest1TypedDict
+    from .add_reference_graph_configop import (
+        AddReferenceGraphConfigRequest1,
+        AddReferenceGraphConfigRequest1TypedDict,
+    )
+    from .add_tag_column_infoop import (
+        AddTagColumnInfoRequest,
+        AddTagColumnInfoRequestTypedDict,
+    )
+    from .add_tag_configop import AddTagConfigRequest1, AddTagConfigRequest1TypedDict
+    from .add_tag_table_infoop import (
+        AddTagTableInfoRequest,
+        AddTagTableInfoRequestTypedDict,
+    )
+    from .addactivityrequest import (
+        AddActivityRequest,
+        AddActivityRequestInputData,
+        AddActivityRequestInputDataTypedDict,
+        AddActivityRequestOutputData,
+        AddActivityRequestOutputDataTypedDict,
+        AddActivityRequestTypedDict,
+    )
+    from .addactivityresponse import AddActivityResponse, AddActivityResponseTypedDict
+    from .addblueprintinstancerequest import (
+        AddBlueprintInstanceRequest,
+        AddBlueprintInstanceRequestTypedDict,
+        InstanceMetadata,
+        InstanceMetadataTypedDict,
+    )
+    from .addblueprintinstanceresponse import (
+        AddBlueprintInstanceResponse,
+        AddBlueprintInstanceResponseTypedDict,
+    )
+    from .addchunkingstrategyrequest import (
+        AddChunkingStrategyRequest,
+        AddChunkingStrategyRequestTypedDict,
+    )
+    from .addchunkingstrategyresponse import (
+        AddChunkingStrategyResponse,
+        AddChunkingStrategyResponseTypedDict,
+    )
+    from .adddataelementrequest import (
+        AddDataElementRequest,
+        AddDataElementRequestTypedDict,
+    )
+    from .adddataelementresponse import (
+        AddDataElementResponse,
+        AddDataElementResponseTypedDict,
+    )
+    from .adddatasourcerequest import (
+        AddDatasourceRequest,
+        AddDatasourceRequestTypedDict,
+    )
+    from .adddatasourceresponse import (
+        AddDatasourceResponse,
+        AddDatasourceResponseTypedDict,
+    )
+    from .addeventresponse import AddEventResponse, AddEventResponseTypedDict
+    from .addragconfigrequest import AddRagConfigRequest, AddRagConfigRequestTypedDict
+    from .addragconfigresponse import (
+        AddRagConfigResponse,
+        AddRagConfigResponseTypedDict,
+    )
+    from .addreferencegraphconfigrequest import (
+        AddReferenceGraphConfigRequest,
+        AddReferenceGraphConfigRequestTypedDict,
+    )
+    from .addreferencegraphconfigresponse import (
+        AddReferenceGraphConfigResponse,
+        AddReferenceGraphConfigResponseTypedDict,
+    )
+    from .addtagcolumnrequest import AddTagColumnRequest, AddTagColumnRequestTypedDict
+    from .addtagcolumnresponse import (
+        AddTagColumnResponse,
+        AddTagColumnResponseTypedDict,
+    )
+    from .addtagconfigrequest import AddTagConfigRequest, AddTagConfigRequestTypedDict
+    from .addtagconfigresponse import (
+        AddTagConfigResponse,
+        AddTagConfigResponseTypedDict,
+    )
+    from .addtagtablerequest import AddTagTableRequest, AddTagTableRequestTypedDict
+    from .addtagtableresponse import AddTagTableResponse, AddTagTableResponseTypedDict
     from .apierror import APIError
-    from .chatevent import ChatEvent, ChatEventTypedDict, Data, DataTypedDict
-    from .createdataelementop import (
-        CreateDataelementRequest,
-        CreateDataelementRequestTypedDict,
+    from .basicwebauth import BasicWebAuth, BasicWebAuthTypedDict
+    from .blueprintinstance import (
+        BlueprintInstance,
+        BlueprintInstanceInstanceMetadata,
+        BlueprintInstanceInstanceMetadataTypedDict,
+        BlueprintInstanceTypedDict,
     )
-    from .createstreamcompletionop import (
-        CreateStreamCompletionResponseBody,
-        CreateStreamCompletionResponseBodyTypedDict,
+    from .blueprintinstancestatus import BlueprintInstanceStatus
+    from .codechunking import CodeChunking, CodeChunkingTypedDict
+    from .complete_blueprint_instanceop import (
+        CompleteBlueprintInstanceRequest1,
+        CompleteBlueprintInstanceRequest1TypedDict,
     )
-    from .dataelementresponse import DataElementResponse, DataElementResponseTypedDict
-    from .dataelementtype import DataElementType
-    from .datasourceresponse import DatasourceResponse, DatasourceResponseTypedDict
-    from .datasourcetype import DatasourceType
-    from .deletedataelementop import (
-        DeleteDataelementRequest,
-        DeleteDataelementRequestTypedDict,
+    from .completeblueprintinstancerequest import (
+        CompleteBlueprintInstanceRequest,
+        CompleteBlueprintInstanceRequestTypedDict,
     )
-    from .getdataelementop import GetDataelementRequest, GetDataelementRequestTypedDict
-    from .getop import GetRequest, GetRequestTypedDict
-    from .heartbeatevent import HeartbeatEvent, HeartbeatEventTypedDict
+    from .create_event_by_blueprint_instance_idop import (
+        CreateEventByBlueprintInstanceIDRequest,
+        CreateEventByBlueprintInstanceIDRequestTypedDict,
+    )
+    from .customeventrequest import (
+        CustomEventRequest,
+        CustomEventRequestDetails,
+        CustomEventRequestDetailsTypedDict,
+        CustomEventRequestTypedDict,
+    )
+    from .dataelement import DataElement, DataElementTypedDict
+    from .dataelementdiscoveryrecord import (
+        DataElementDiscoveryRecord,
+        DataElementDiscoveryRecordTypedDict,
+        Size,
+        SizeTypedDict,
+    )
+    from .datasource import Datasource, DatasourceTypedDict
+    from .datasourcewebconfig import DatasourceWebConfig, DatasourceWebConfigTypedDict
+    from .delete_blueprint_instanceop import (
+        DeleteBlueprintInstanceRequest,
+        DeleteBlueprintInstanceRequestTypedDict,
+    )
+    from .delete_chunking_strategyop import (
+        DeleteChunkingStrategyRequest,
+        DeleteChunkingStrategyRequestTypedDict,
+    )
+    from .delete_data_elementop import (
+        DeleteDataElementRequest,
+        DeleteDataElementRequestTypedDict,
+    )
+    from .delete_datasource_datasource_datasource_id_deleteop import (
+        DeleteDatasourceDatasourceDatasourceIDDeleteRequest,
+        DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict,
+    )
+    from .delete_ingest_recordop import (
+        DeleteIngestRecordRequest,
+        DeleteIngestRecordRequestTypedDict,
+    )
+    from .delete_rag_configop import (
+        DeleteRagConfigRequest,
+        DeleteRagConfigRequestTypedDict,
+    )
+    from .delete_reference_graph_configop import (
+        DeleteReferenceGraphConfigRequest,
+        DeleteReferenceGraphConfigRequestTypedDict,
+    )
+    from .delete_tag_column_infoop import (
+        DeleteTagColumnInfoRequest,
+        DeleteTagColumnInfoRequestTypedDict,
+    )
+    from .delete_tag_configop import (
+        DeleteTagConfigRequest,
+        DeleteTagConfigRequestTypedDict,
+    )
+    from .delete_tag_table_infoop import (
+        DeleteTagTableInfoRequest,
+        DeleteTagTableInfoRequestTypedDict,
+    )
+    from .deletechunkingstrategyresponse import (
+        DeleteChunkingStrategyResponse,
+        DeleteChunkingStrategyResponseTypedDict,
+    )
+    from .deletedataelementresponse import (
+        DeleteDataElementResponse,
+        DeleteDataElementResponseTypedDict,
+    )
+    from .deletedatasourceresponse import (
+        DeleteDatasourceResponse,
+        DeleteDatasourceResponseTypedDict,
+    )
+    from .deleteingestrecordresponse import (
+        DeleteIngestRecordResponse,
+        DeleteIngestRecordResponseTypedDict,
+    )
+    from .deletereferencegraphconfigresponse import (
+        DeleteReferenceGraphConfigResponse,
+        DeleteReferenceGraphConfigResponseTypedDict,
+    )
+    from .deletetagtableresponse import (
+        DeleteTagTableResponse,
+        DeleteTagTableResponseTypedDict,
+    )
+    from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
+    from .event import Details, DetailsTypedDict, Event, EventTypedDict
+    from .eventtype import EventType
+    from .extractormodel import ExtractorModel, ExtractorModelTypedDict
+    from .fail_blueprint_instanceop import (
+        FailBlueprintInstanceRequest1,
+        FailBlueprintInstanceRequest1TypedDict,
+    )
+    from .failblueprintinstancerequest import (
+        ErrorDetails,
+        ErrorDetailsTypedDict,
+        FailBlueprintInstanceRequest,
+        FailBlueprintInstanceRequestTypedDict,
+    )
+    from .get_activities_by_blueprint_instanceop import (
+        GetActivitiesByBlueprintInstanceRequest,
+        GetActivitiesByBlueprintInstanceRequestTypedDict,
+    )
+    from .get_activity_by_blueprint_instanceop import (
+        GetActivityByBlueprintInstanceRequest,
+        GetActivityByBlueprintInstanceRequestTypedDict,
+    )
+    from .get_all_blueprint_instancesop import (
+        GetAllBlueprintInstancesRequest,
+        GetAllBlueprintInstancesRequestTypedDict,
+    )
+    from .get_all_data_elementsop import (
+        GetAllDataElementsRequest,
+        GetAllDataElementsRequestTypedDict,
+    )
+    from .get_all_datasource_idsop import (
+        GetAllDatasourceIdsRequest1,
+        GetAllDatasourceIdsRequest1TypedDict,
+    )
+    from .get_all_ingest_recordsop import (
+        GetAllIngestRecordsRequest,
+        GetAllIngestRecordsRequestTypedDict,
+    )
+    from .get_all_tag_column_infoop import (
+        GetAllTagColumnInfoRequest,
+        GetAllTagColumnInfoRequestTypedDict,
+    )
+    from .get_all_tag_table_infoop import (
+        GetAllTagTableInfoRequest,
+        GetAllTagTableInfoRequestTypedDict,
+    )
+    from .get_blueprint_instanceop import (
+        GetBlueprintInstanceRequest,
+        GetBlueprintInstanceRequestTypedDict,
+    )
+    from .get_chunking_strategyop import (
+        GetChunkingStrategyRequest,
+        GetChunkingStrategyRequestTypedDict,
+    )
+    from .get_data_element_by_pathop import (
+        GetDataElementByPathRequest1,
+        GetDataElementByPathRequest1TypedDict,
+    )
+    from .get_data_elementop import (
+        GetDataElementRequest,
+        GetDataElementRequestTypedDict,
+    )
+    from .get_datasourceop import GetDatasourceRequest, GetDatasourceRequestTypedDict
+    from .get_event_by_blueprint_instanceop import (
+        GetEventByBlueprintInstanceRequest,
+        GetEventByBlueprintInstanceRequestTypedDict,
+    )
+    from .get_events_by_blueprint_instanceop import (
+        GetEventsByBlueprintInstanceRequest,
+        GetEventsByBlueprintInstanceRequestTypedDict,
+    )
+    from .get_ingest_recordop import (
+        GetIngestRecordRequest,
+        GetIngestRecordRequestTypedDict,
+    )
+    from .get_new_and_updated_elementsop import (
+        GetNewAndUpdatedElementsRequest,
+        GetNewAndUpdatedElementsRequestTypedDict,
+    )
+    from .get_rag_configop import GetRagConfigRequest, GetRagConfigRequestTypedDict
+    from .get_reference_graph_configop import (
+        GetReferenceGraphConfigRequest,
+        GetReferenceGraphConfigRequestTypedDict,
+    )
+    from .get_tag_column_infoop import (
+        GetTagColumnInfoRequest,
+        GetTagColumnInfoRequestTypedDict,
+    )
+    from .get_tag_configop import GetTagConfigRequest, GetTagConfigRequestTypedDict
+    from .get_tag_table_infoop import (
+        GetTagTableInfoRequest,
+        GetTagTableInfoRequestTypedDict,
+    )
+    from .getactivitiesresponse import (
+        GetActivitiesResponse,
+        GetActivitiesResponseTypedDict,
+    )
+    from .getalldatasourceidsrequest import (
+        GetAllDatasourceIdsRequest,
+        GetAllDatasourceIdsRequestTypedDict,
+    )
+    from .getblueprintinstancesresponse import (
+        GetBlueprintInstancesResponse,
+        GetBlueprintInstancesResponseTypedDict,
+    )
+    from .getdataelementbypathrequest import (
+        GetDataElementByPathRequest,
+        GetDataElementByPathRequestTypedDict,
+    )
+    from .geteventsresponse import GetEventsResponse, GetEventsResponseTypedDict
+    from .getnewandupdateddataelementsresponse import (
+        GetNewAndUpdatedDataElementsResponse,
+        GetNewAndUpdatedDataElementsResponseTypedDict,
+    )
+    from .htmlchunking import HTMLChunking, HTMLChunkingTypedDict
     from .httpvalidationerror import HTTPValidationError, HTTPValidationErrorData
-    from .listdataelementsop import (
-        ListDataelementsRequest,
-        ListDataelementsRequestTypedDict,
+    from .ingestmethod import IngestMethod
+    from .ingestrecord import IngestRecord, IngestRecordTypedDict
+    from .jsonnodechunking import JSONNodeChunking, JSONNodeChunkingTypedDict
+    from .markdownnodechunking import (
+        MarkdownNodeChunking,
+        MarkdownNodeChunkingTypedDict,
     )
-    from .listop import ListRequest, ListRequestTypedDict
-    from .metadata import Metadata, MetadataTypedDict
-    from .newdatasourcerequest import (
-        NewDatasourceRequest,
-        NewDatasourceRequestTypedDict,
+    from .meibelaierror import MeibelaiError
+    from .no_response_error import NoResponseError
+    from .objectstorageconfig import (
+        GcsConfig,
+        GcsConfigTypedDict,
+        ObjectStorageConfig,
+        ObjectStorageConfigTypedDict,
     )
-    from .newdatasourceresponse import (
-        NewDatasourceResponse,
-        NewDatasourceResponseTypedDict,
+    from .objectstoragefilters import (
+        ObjectStorageFilters,
+        ObjectStorageFiltersTypedDict,
     )
-    from .run_chat_streamop import (
-        RunChatStreamRequest,
-        RunChatStreamRequestTypedDict,
-        RunChatStreamResponseBody,
-        RunChatStreamResponseBodyTypedDict,
+    from .ragchunkingstrategy import RagChunkingStrategy, RagChunkingStrategyTypedDict
+    from .ragconfig import RagConfig, RagConfigTypedDict
+    from .referencegraphconfig import (
+        ReferenceGraphConfig,
+        ReferenceGraphConfigTypedDict,
     )
-    from .run_chatop import RunChatRequest, RunChatRequestTypedDict
+    from .responsevalidationerror import ResponseValidationError
+    from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
-    from .updatedataelementop import (
-        UpdateDataelementRequest,
-        UpdateDataelementRequestTypedDict,
+    from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
+    from .sentencechunking import SentenceChunking, SentenceChunkingTypedDict
+    from .sparseembeddingmodel import (
+        SparseEmbeddingModel,
+        SparseEmbeddingModelTypedDict,
+    )
+    from .tagcolumninfo import TagColumnInfo, TagColumnInfoTypedDict
+    from .tagconfig import TagConfig, TagConfigTypedDict
+    from .tagtableinfo import TagTableInfo, TagTableInfoTypedDict
+    from .tokentextchunking import TokenTextChunking, TokenTextChunkingTypedDict
+    from .update_activity_statusop import (
+        UpdateActivityStatusRequest,
+        UpdateActivityStatusRequestTypedDict,
+    )
+    from .update_blueprint_instance_statusop import (
+        UpdateBlueprintInstanceStatusRequest,
+        UpdateBlueprintInstanceStatusRequestTypedDict,
+    )
+    from .update_chunking_strategyop import (
+        UpdateChunkingStrategyRequest1,
+        UpdateChunkingStrategyRequest1TypedDict,
+    )
+    from .update_data_elementop import (
+        UpdateDataElementRequest1,
+        UpdateDataElementRequest1TypedDict,
+    )
+    from .update_datasourceop import (
+        UpdateDatasourceRequest1,
+        UpdateDatasourceRequest1TypedDict,
+    )
+    from .update_rag_configop import (
+        UpdateRagConfigRequest1,
+        UpdateRagConfigRequest1TypedDict,
+    )
+    from .update_reference_graph_configop import (
+        UpdateReferenceGraphConfigRequest1,
+        UpdateReferenceGraphConfigRequest1TypedDict,
+    )
+    from .update_tag_column_infoop import (
+        UpdateTagColumnInfoRequest,
+        UpdateTagColumnInfoRequestTypedDict,
+    )
+    from .update_tag_configop import (
+        UpdateTagConfigRequest1,
+        UpdateTagConfigRequest1TypedDict,
+    )
+    from .update_tag_table_infoop import (
+        UpdateTagTableInfoRequest,
+        UpdateTagTableInfoRequestTypedDict,
+    )
+    from .updatechunkingstrategyrequest import (
+        UpdateChunkingStrategyRequest,
+        UpdateChunkingStrategyRequestTypedDict,
+    )
+    from .updatechunkingstrategyresponse import (
+        UpdateChunkingStrategyResponse,
+        UpdateChunkingStrategyResponseTypedDict,
+    )
+    from .updatedataelementrequest import (
+        UpdateDataElementRequest,
+        UpdateDataElementRequestTypedDict,
+    )
+    from .updatedataelementresponse import (
+        UpdateDataElementResponse,
+        UpdateDataElementResponseTypedDict,
     )
     from .updatedatasourcerequest import (
         UpdateDatasourceRequest,
         UpdateDatasourceRequestTypedDict,
     )
-    from .updateop import UpdateRequest, UpdateRequestTypedDict
-    from .uploaddataelementop import (
-        UploadDataelementRequest,
-        UploadDataelementRequestTypedDict,
+    from .updatedatasourceresponse import (
+        UpdateDatasourceResponse,
+        UpdateDatasourceResponseTypedDict,
+    )
+    from .updateragconfigrequest import (
+        UpdateRagConfigRequest,
+        UpdateRagConfigRequestTypedDict,
+    )
+    from .updateragconfigresponse import (
+        UpdateRagConfigResponse,
+        UpdateRagConfigResponseTypedDict,
+    )
+    from .updatereferencegraphconfigrequest import (
+        UpdateReferenceGraphConfigRequest,
+        UpdateReferenceGraphConfigRequestTypedDict,
+    )
+    from .updatereferencegraphconfigresponse import (
+        UpdateReferenceGraphConfigResponse,
+        UpdateReferenceGraphConfigResponseTypedDict,
+    )
+    from .updatetagcolumnrequest import (
+        UpdateTagColumnRequest,
+        UpdateTagColumnRequestTypedDict,
+    )
+    from .updatetagcolumnresponse import (
+        UpdateTagColumnResponse,
+        UpdateTagColumnResponseTypedDict,
+    )
+    from .updatetagconfigrequest import (
+        UpdateTagConfigRequest,
+        UpdateTagConfigRequestTypedDict,
+    )
+    from .updatetagconfigresponse import (
+        UpdateTagConfigResponse,
+        UpdateTagConfigResponseTypedDict,
+    )
+    from .updatetagtablerequest import (
+        UpdateTagTableRequest,
+        UpdateTagTableRequestTypedDict,
+    )
+    from .updatetagtableresponse import (
+        UpdateTagTableResponse,
+        UpdateTagTableResponseTypedDict,
+    )
+    from .upsert_ingest_recordop import (
+        UpsertIngestRecordRequest1,
+        UpsertIngestRecordRequest1TypedDict,
+    )
+    from .upsertingestrecordrequest import (
+        UpsertIngestRecordRequest,
+        UpsertIngestRecordRequestTypedDict,
+    )
+    from .upsertingestrecordresponse import (
+        UpsertIngestRecordResponse,
+        UpsertIngestRecordResponseTypedDict,
     )
     from .validationerror import (
         Loc,
@@ -67,121 +491,644 @@ if TYPE_CHECKING:
         ValidationError,
         ValidationErrorTypedDict,
     )
+    from .webdomain import WebDomain, WebDomainTypedDict
 
 __all__ = [
     "APIError",
-    "ChatEvent",
-    "ChatEventTypedDict",
-    "CreateDataelementRequest",
-    "CreateDataelementRequestTypedDict",
-    "CreateStreamCompletionResponseBody",
-    "CreateStreamCompletionResponseBodyTypedDict",
-    "Data",
-    "DataElementResponse",
-    "DataElementResponseTypedDict",
-    "DataElementType",
-    "DataTypedDict",
-    "DatasourceResponse",
-    "DatasourceResponseTypedDict",
-    "DatasourceType",
-    "DeleteDataelementRequest",
-    "DeleteDataelementRequestTypedDict",
-    "GetDataelementRequest",
-    "GetDataelementRequestTypedDict",
-    "GetRequest",
-    "GetRequestTypedDict",
+    "Activity",
+    "ActivityStatus",
+    "ActivityTypedDict",
+    "AddActivityByBlueprintInstanceRequest",
+    "AddActivityByBlueprintInstanceRequestTypedDict",
+    "AddActivityRequest",
+    "AddActivityRequestInputData",
+    "AddActivityRequestInputDataTypedDict",
+    "AddActivityRequestOutputData",
+    "AddActivityRequestOutputDataTypedDict",
+    "AddActivityRequestTypedDict",
+    "AddActivityResponse",
+    "AddActivityResponseTypedDict",
+    "AddBlueprintInstanceRequest",
+    "AddBlueprintInstanceRequest1",
+    "AddBlueprintInstanceRequest1TypedDict",
+    "AddBlueprintInstanceRequestTypedDict",
+    "AddBlueprintInstanceResponse",
+    "AddBlueprintInstanceResponseTypedDict",
+    "AddChunkingStrategyRequest",
+    "AddChunkingStrategyRequest1",
+    "AddChunkingStrategyRequest1TypedDict",
+    "AddChunkingStrategyRequestTypedDict",
+    "AddChunkingStrategyResponse",
+    "AddChunkingStrategyResponseTypedDict",
+    "AddDataElementRequest",
+    "AddDataElementRequest1",
+    "AddDataElementRequest1TypedDict",
+    "AddDataElementRequestTypedDict",
+    "AddDataElementResponse",
+    "AddDataElementResponseTypedDict",
+    "AddDatasourceRequest",
+    "AddDatasourceRequest1",
+    "AddDatasourceRequest1TypedDict",
+    "AddDatasourceRequestTypedDict",
+    "AddDatasourceResponse",
+    "AddDatasourceResponseTypedDict",
+    "AddEventResponse",
+    "AddEventResponseTypedDict",
+    "AddRagConfigRequest",
+    "AddRagConfigRequest1",
+    "AddRagConfigRequest1TypedDict",
+    "AddRagConfigRequestTypedDict",
+    "AddRagConfigResponse",
+    "AddRagConfigResponseTypedDict",
+    "AddReferenceGraphConfigRequest",
+    "AddReferenceGraphConfigRequest1",
+    "AddReferenceGraphConfigRequest1TypedDict",
+    "AddReferenceGraphConfigRequestTypedDict",
+    "AddReferenceGraphConfigResponse",
+    "AddReferenceGraphConfigResponseTypedDict",
+    "AddTagColumnInfoRequest",
+    "AddTagColumnInfoRequestTypedDict",
+    "AddTagColumnRequest",
+    "AddTagColumnRequestTypedDict",
+    "AddTagColumnResponse",
+    "AddTagColumnResponseTypedDict",
+    "AddTagConfigRequest",
+    "AddTagConfigRequest1",
+    "AddTagConfigRequest1TypedDict",
+    "AddTagConfigRequestTypedDict",
+    "AddTagConfigResponse",
+    "AddTagConfigResponseTypedDict",
+    "AddTagTableInfoRequest",
+    "AddTagTableInfoRequestTypedDict",
+    "AddTagTableRequest",
+    "AddTagTableRequestTypedDict",
+    "AddTagTableResponse",
+    "AddTagTableResponseTypedDict",
+    "BasicWebAuth",
+    "BasicWebAuthTypedDict",
+    "BlueprintInstance",
+    "BlueprintInstanceInstanceMetadata",
+    "BlueprintInstanceInstanceMetadataTypedDict",
+    "BlueprintInstanceStatus",
+    "BlueprintInstanceTypedDict",
+    "CodeChunking",
+    "CodeChunkingTypedDict",
+    "CompleteBlueprintInstanceRequest",
+    "CompleteBlueprintInstanceRequest1",
+    "CompleteBlueprintInstanceRequest1TypedDict",
+    "CompleteBlueprintInstanceRequestTypedDict",
+    "CreateEventByBlueprintInstanceIDRequest",
+    "CreateEventByBlueprintInstanceIDRequestTypedDict",
+    "CustomEventRequest",
+    "CustomEventRequestDetails",
+    "CustomEventRequestDetailsTypedDict",
+    "CustomEventRequestTypedDict",
+    "DataElement",
+    "DataElementDiscoveryRecord",
+    "DataElementDiscoveryRecordTypedDict",
+    "DataElementTypedDict",
+    "Datasource",
+    "DatasourceTypedDict",
+    "DatasourceWebConfig",
+    "DatasourceWebConfigTypedDict",
+    "DeleteBlueprintInstanceRequest",
+    "DeleteBlueprintInstanceRequestTypedDict",
+    "DeleteChunkingStrategyRequest",
+    "DeleteChunkingStrategyRequestTypedDict",
+    "DeleteChunkingStrategyResponse",
+    "DeleteChunkingStrategyResponseTypedDict",
+    "DeleteDataElementRequest",
+    "DeleteDataElementRequestTypedDict",
+    "DeleteDataElementResponse",
+    "DeleteDataElementResponseTypedDict",
+    "DeleteDatasourceDatasourceDatasourceIDDeleteRequest",
+    "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict",
+    "DeleteDatasourceResponse",
+    "DeleteDatasourceResponseTypedDict",
+    "DeleteIngestRecordRequest",
+    "DeleteIngestRecordRequestTypedDict",
+    "DeleteIngestRecordResponse",
+    "DeleteIngestRecordResponseTypedDict",
+    "DeleteRagConfigRequest",
+    "DeleteRagConfigRequestTypedDict",
+    "DeleteReferenceGraphConfigRequest",
+    "DeleteReferenceGraphConfigRequestTypedDict",
+    "DeleteReferenceGraphConfigResponse",
+    "DeleteReferenceGraphConfigResponseTypedDict",
+    "DeleteTagColumnInfoRequest",
+    "DeleteTagColumnInfoRequestTypedDict",
+    "DeleteTagConfigRequest",
+    "DeleteTagConfigRequestTypedDict",
+    "DeleteTagTableInfoRequest",
+    "DeleteTagTableInfoRequestTypedDict",
+    "DeleteTagTableResponse",
+    "DeleteTagTableResponseTypedDict",
+    "Details",
+    "DetailsTypedDict",
+    "EmbeddingModel",
+    "EmbeddingModelTypedDict",
+    "ErrorDetails",
+    "ErrorDetailsTypedDict",
+    "Event",
+    "EventType",
+    "EventTypedDict",
+    "ExtractorModel",
+    "ExtractorModelTypedDict",
+    "FailBlueprintInstanceRequest",
+    "FailBlueprintInstanceRequest1",
+    "FailBlueprintInstanceRequest1TypedDict",
+    "FailBlueprintInstanceRequestTypedDict",
+    "GcsConfig",
+    "GcsConfigTypedDict",
+    "GetActivitiesByBlueprintInstanceRequest",
+    "GetActivitiesByBlueprintInstanceRequestTypedDict",
+    "GetActivitiesResponse",
+    "GetActivitiesResponseTypedDict",
+    "GetActivityByBlueprintInstanceRequest",
+    "GetActivityByBlueprintInstanceRequestTypedDict",
+    "GetAllBlueprintInstancesRequest",
+    "GetAllBlueprintInstancesRequestTypedDict",
+    "GetAllDataElementsRequest",
+    "GetAllDataElementsRequestTypedDict",
+    "GetAllDatasourceIdsRequest",
+    "GetAllDatasourceIdsRequest1",
+    "GetAllDatasourceIdsRequest1TypedDict",
+    "GetAllDatasourceIdsRequestTypedDict",
+    "GetAllIngestRecordsRequest",
+    "GetAllIngestRecordsRequestTypedDict",
+    "GetAllTagColumnInfoRequest",
+    "GetAllTagColumnInfoRequestTypedDict",
+    "GetAllTagTableInfoRequest",
+    "GetAllTagTableInfoRequestTypedDict",
+    "GetBlueprintInstanceRequest",
+    "GetBlueprintInstanceRequestTypedDict",
+    "GetBlueprintInstancesResponse",
+    "GetBlueprintInstancesResponseTypedDict",
+    "GetChunkingStrategyRequest",
+    "GetChunkingStrategyRequestTypedDict",
+    "GetDataElementByPathRequest",
+    "GetDataElementByPathRequest1",
+    "GetDataElementByPathRequest1TypedDict",
+    "GetDataElementByPathRequestTypedDict",
+    "GetDataElementRequest",
+    "GetDataElementRequestTypedDict",
+    "GetDatasourceRequest",
+    "GetDatasourceRequestTypedDict",
+    "GetEventByBlueprintInstanceRequest",
+    "GetEventByBlueprintInstanceRequestTypedDict",
+    "GetEventsByBlueprintInstanceRequest",
+    "GetEventsByBlueprintInstanceRequestTypedDict",
+    "GetEventsResponse",
+    "GetEventsResponseTypedDict",
+    "GetIngestRecordRequest",
+    "GetIngestRecordRequestTypedDict",
+    "GetNewAndUpdatedDataElementsResponse",
+    "GetNewAndUpdatedDataElementsResponseTypedDict",
+    "GetNewAndUpdatedElementsRequest",
+    "GetNewAndUpdatedElementsRequestTypedDict",
+    "GetRagConfigRequest",
+    "GetRagConfigRequestTypedDict",
+    "GetReferenceGraphConfigRequest",
+    "GetReferenceGraphConfigRequestTypedDict",
+    "GetTagColumnInfoRequest",
+    "GetTagColumnInfoRequestTypedDict",
+    "GetTagConfigRequest",
+    "GetTagConfigRequestTypedDict",
+    "GetTagTableInfoRequest",
+    "GetTagTableInfoRequestTypedDict",
+    "HTMLChunking",
+    "HTMLChunkingTypedDict",
     "HTTPValidationError",
     "HTTPValidationErrorData",
-    "HeartbeatEvent",
-    "HeartbeatEventTypedDict",
-    "ListDataelementsRequest",
-    "ListDataelementsRequestTypedDict",
-    "ListRequest",
-    "ListRequestTypedDict",
+    "IngestMethod",
+    "IngestRecord",
+    "IngestRecordTypedDict",
+    "InputData",
+    "InputDataTypedDict",
+    "InstanceMetadata",
+    "InstanceMetadataTypedDict",
+    "JSONNodeChunking",
+    "JSONNodeChunkingTypedDict",
     "Loc",
     "LocTypedDict",
-    "Metadata",
-    "MetadataTypedDict",
-    "NewDatasourceRequest",
-    "NewDatasourceRequestTypedDict",
-    "NewDatasourceResponse",
-    "NewDatasourceResponseTypedDict",
-    "RunChatRequest",
-    "RunChatRequestTypedDict",
-    "RunChatStreamRequest",
-    "RunChatStreamRequestTypedDict",
-    "RunChatStreamResponseBody",
-    "RunChatStreamResponseBodyTypedDict",
+    "MarkdownNodeChunking",
+    "MarkdownNodeChunkingTypedDict",
+    "MeibelaiError",
+    "NoResponseError",
+    "ObjectStorageConfig",
+    "ObjectStorageConfigTypedDict",
+    "ObjectStorageFilters",
+    "ObjectStorageFiltersTypedDict",
+    "OutputData",
+    "OutputDataTypedDict",
+    "RagChunkingStrategy",
+    "RagChunkingStrategyTypedDict",
+    "RagConfig",
+    "RagConfigTypedDict",
+    "ReferenceGraphConfig",
+    "ReferenceGraphConfigTypedDict",
+    "ResponseValidationError",
+    "S3Config",
+    "S3ConfigTypedDict",
     "Security",
     "SecurityTypedDict",
-    "UpdateDataelementRequest",
-    "UpdateDataelementRequestTypedDict",
+    "SemanticChunking",
+    "SemanticChunkingTypedDict",
+    "SentenceChunking",
+    "SentenceChunkingTypedDict",
+    "Size",
+    "SizeTypedDict",
+    "SparseEmbeddingModel",
+    "SparseEmbeddingModelTypedDict",
+    "TagColumnInfo",
+    "TagColumnInfoTypedDict",
+    "TagConfig",
+    "TagConfigTypedDict",
+    "TagTableInfo",
+    "TagTableInfoTypedDict",
+    "TokenTextChunking",
+    "TokenTextChunkingTypedDict",
+    "UpdateActivityStatusRequest",
+    "UpdateActivityStatusRequestTypedDict",
+    "UpdateBlueprintInstanceStatusRequest",
+    "UpdateBlueprintInstanceStatusRequestTypedDict",
+    "UpdateChunkingStrategyRequest",
+    "UpdateChunkingStrategyRequest1",
+    "UpdateChunkingStrategyRequest1TypedDict",
+    "UpdateChunkingStrategyRequestTypedDict",
+    "UpdateChunkingStrategyResponse",
+    "UpdateChunkingStrategyResponseTypedDict",
+    "UpdateDataElementRequest",
+    "UpdateDataElementRequest1",
+    "UpdateDataElementRequest1TypedDict",
+    "UpdateDataElementRequestTypedDict",
+    "UpdateDataElementResponse",
+    "UpdateDataElementResponseTypedDict",
     "UpdateDatasourceRequest",
+    "UpdateDatasourceRequest1",
+    "UpdateDatasourceRequest1TypedDict",
     "UpdateDatasourceRequestTypedDict",
-    "UpdateRequest",
-    "UpdateRequestTypedDict",
-    "UploadDataelementRequest",
-    "UploadDataelementRequestTypedDict",
+    "UpdateDatasourceResponse",
+    "UpdateDatasourceResponseTypedDict",
+    "UpdateRagConfigRequest",
+    "UpdateRagConfigRequest1",
+    "UpdateRagConfigRequest1TypedDict",
+    "UpdateRagConfigRequestTypedDict",
+    "UpdateRagConfigResponse",
+    "UpdateRagConfigResponseTypedDict",
+    "UpdateReferenceGraphConfigRequest",
+    "UpdateReferenceGraphConfigRequest1",
+    "UpdateReferenceGraphConfigRequest1TypedDict",
+    "UpdateReferenceGraphConfigRequestTypedDict",
+    "UpdateReferenceGraphConfigResponse",
+    "UpdateReferenceGraphConfigResponseTypedDict",
+    "UpdateTagColumnInfoRequest",
+    "UpdateTagColumnInfoRequestTypedDict",
+    "UpdateTagColumnRequest",
+    "UpdateTagColumnRequestTypedDict",
+    "UpdateTagColumnResponse",
+    "UpdateTagColumnResponseTypedDict",
+    "UpdateTagConfigRequest",
+    "UpdateTagConfigRequest1",
+    "UpdateTagConfigRequest1TypedDict",
+    "UpdateTagConfigRequestTypedDict",
+    "UpdateTagConfigResponse",
+    "UpdateTagConfigResponseTypedDict",
+    "UpdateTagTableInfoRequest",
+    "UpdateTagTableInfoRequestTypedDict",
+    "UpdateTagTableRequest",
+    "UpdateTagTableRequestTypedDict",
+    "UpdateTagTableResponse",
+    "UpdateTagTableResponseTypedDict",
+    "UpsertIngestRecordRequest",
+    "UpsertIngestRecordRequest1",
+    "UpsertIngestRecordRequest1TypedDict",
+    "UpsertIngestRecordRequestTypedDict",
+    "UpsertIngestRecordResponse",
+    "UpsertIngestRecordResponseTypedDict",
     "ValidationError",
     "ValidationErrorTypedDict",
+    "WebDomain",
+    "WebDomainTypedDict",
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "Activity": ".activity",
+    "ActivityTypedDict": ".activity",
+    "InputData": ".activity",
+    "InputDataTypedDict": ".activity",
+    "OutputData": ".activity",
+    "OutputDataTypedDict": ".activity",
+    "ActivityStatus": ".activitystatus",
+    "AddActivityByBlueprintInstanceRequest": ".add_activity_by_blueprint_instanceop",
+    "AddActivityByBlueprintInstanceRequestTypedDict": ".add_activity_by_blueprint_instanceop",
+    "AddBlueprintInstanceRequest1": ".add_blueprint_instanceop",
+    "AddBlueprintInstanceRequest1TypedDict": ".add_blueprint_instanceop",
+    "AddChunkingStrategyRequest1": ".add_chunking_strategyop",
+    "AddChunkingStrategyRequest1TypedDict": ".add_chunking_strategyop",
+    "AddDataElementRequest1": ".add_data_elementop",
+    "AddDataElementRequest1TypedDict": ".add_data_elementop",
+    "AddDatasourceRequest1": ".add_datasourceop",
+    "AddDatasourceRequest1TypedDict": ".add_datasourceop",
+    "AddRagConfigRequest1": ".add_rag_configop",
+    "AddRagConfigRequest1TypedDict": ".add_rag_configop",
+    "AddReferenceGraphConfigRequest1": ".add_reference_graph_configop",
+    "AddReferenceGraphConfigRequest1TypedDict": ".add_reference_graph_configop",
+    "AddTagColumnInfoRequest": ".add_tag_column_infoop",
+    "AddTagColumnInfoRequestTypedDict": ".add_tag_column_infoop",
+    "AddTagConfigRequest1": ".add_tag_configop",
+    "AddTagConfigRequest1TypedDict": ".add_tag_configop",
+    "AddTagTableInfoRequest": ".add_tag_table_infoop",
+    "AddTagTableInfoRequestTypedDict": ".add_tag_table_infoop",
+    "AddActivityRequest": ".addactivityrequest",
+    "AddActivityRequestInputData": ".addactivityrequest",
+    "AddActivityRequestInputDataTypedDict": ".addactivityrequest",
+    "AddActivityRequestOutputData": ".addactivityrequest",
+    "AddActivityRequestOutputDataTypedDict": ".addactivityrequest",
+    "AddActivityRequestTypedDict": ".addactivityrequest",
+    "AddActivityResponse": ".addactivityresponse",
+    "AddActivityResponseTypedDict": ".addactivityresponse",
+    "AddBlueprintInstanceRequest": ".addblueprintinstancerequest",
+    "AddBlueprintInstanceRequestTypedDict": ".addblueprintinstancerequest",
+    "InstanceMetadata": ".addblueprintinstancerequest",
+    "InstanceMetadataTypedDict": ".addblueprintinstancerequest",
+    "AddBlueprintInstanceResponse": ".addblueprintinstanceresponse",
+    "AddBlueprintInstanceResponseTypedDict": ".addblueprintinstanceresponse",
+    "AddChunkingStrategyRequest": ".addchunkingstrategyrequest",
+    "AddChunkingStrategyRequestTypedDict": ".addchunkingstrategyrequest",
+    "AddChunkingStrategyResponse": ".addchunkingstrategyresponse",
+    "AddChunkingStrategyResponseTypedDict": ".addchunkingstrategyresponse",
+    "AddDataElementRequest": ".adddataelementrequest",
+    "AddDataElementRequestTypedDict": ".adddataelementrequest",
+    "AddDataElementResponse": ".adddataelementresponse",
+    "AddDataElementResponseTypedDict": ".adddataelementresponse",
+    "AddDatasourceRequest": ".adddatasourcerequest",
+    "AddDatasourceRequestTypedDict": ".adddatasourcerequest",
+    "AddDatasourceResponse": ".adddatasourceresponse",
+    "AddDatasourceResponseTypedDict": ".adddatasourceresponse",
+    "AddEventResponse": ".addeventresponse",
+    "AddEventResponseTypedDict": ".addeventresponse",
+    "AddRagConfigRequest": ".addragconfigrequest",
+    "AddRagConfigRequestTypedDict": ".addragconfigrequest",
+    "AddRagConfigResponse": ".addragconfigresponse",
+    "AddRagConfigResponseTypedDict": ".addragconfigresponse",
+    "AddReferenceGraphConfigRequest": ".addreferencegraphconfigrequest",
+    "AddReferenceGraphConfigRequestTypedDict": ".addreferencegraphconfigrequest",
+    "AddReferenceGraphConfigResponse": ".addreferencegraphconfigresponse",
+    "AddReferenceGraphConfigResponseTypedDict": ".addreferencegraphconfigresponse",
+    "AddTagColumnRequest": ".addtagcolumnrequest",
+    "AddTagColumnRequestTypedDict": ".addtagcolumnrequest",
+    "AddTagColumnResponse": ".addtagcolumnresponse",
+    "AddTagColumnResponseTypedDict": ".addtagcolumnresponse",
+    "AddTagConfigRequest": ".addtagconfigrequest",
+    "AddTagConfigRequestTypedDict": ".addtagconfigrequest",
+    "AddTagConfigResponse": ".addtagconfigresponse",
+    "AddTagConfigResponseTypedDict": ".addtagconfigresponse",
+    "AddTagTableRequest": ".addtagtablerequest",
+    "AddTagTableRequestTypedDict": ".addtagtablerequest",
+    "AddTagTableResponse": ".addtagtableresponse",
+    "AddTagTableResponseTypedDict": ".addtagtableresponse",
     "APIError": ".apierror",
-    "ChatEvent": ".chatevent",
-    "ChatEventTypedDict": ".chatevent",
-    "Data": ".chatevent",
-    "DataTypedDict": ".chatevent",
-    "CreateDataelementRequest": ".createdataelementop",
-    "CreateDataelementRequestTypedDict": ".createdataelementop",
-    "CreateStreamCompletionResponseBody": ".createstreamcompletionop",
-    "CreateStreamCompletionResponseBodyTypedDict": ".createstreamcompletionop",
-    "DataElementResponse": ".dataelementresponse",
-    "DataElementResponseTypedDict": ".dataelementresponse",
-    "DataElementType": ".dataelementtype",
-    "DatasourceResponse": ".datasourceresponse",
-    "DatasourceResponseTypedDict": ".datasourceresponse",
-    "DatasourceType": ".datasourcetype",
-    "DeleteDataelementRequest": ".deletedataelementop",
-    "DeleteDataelementRequestTypedDict": ".deletedataelementop",
-    "GetDataelementRequest": ".getdataelementop",
-    "GetDataelementRequestTypedDict": ".getdataelementop",
-    "GetRequest": ".getop",
-    "GetRequestTypedDict": ".getop",
-    "HeartbeatEvent": ".heartbeatevent",
-    "HeartbeatEventTypedDict": ".heartbeatevent",
+    "BasicWebAuth": ".basicwebauth",
+    "BasicWebAuthTypedDict": ".basicwebauth",
+    "BlueprintInstance": ".blueprintinstance",
+    "BlueprintInstanceInstanceMetadata": ".blueprintinstance",
+    "BlueprintInstanceInstanceMetadataTypedDict": ".blueprintinstance",
+    "BlueprintInstanceTypedDict": ".blueprintinstance",
+    "BlueprintInstanceStatus": ".blueprintinstancestatus",
+    "CodeChunking": ".codechunking",
+    "CodeChunkingTypedDict": ".codechunking",
+    "CompleteBlueprintInstanceRequest1": ".complete_blueprint_instanceop",
+    "CompleteBlueprintInstanceRequest1TypedDict": ".complete_blueprint_instanceop",
+    "CompleteBlueprintInstanceRequest": ".completeblueprintinstancerequest",
+    "CompleteBlueprintInstanceRequestTypedDict": ".completeblueprintinstancerequest",
+    "CreateEventByBlueprintInstanceIDRequest": ".create_event_by_blueprint_instance_idop",
+    "CreateEventByBlueprintInstanceIDRequestTypedDict": ".create_event_by_blueprint_instance_idop",
+    "CustomEventRequest": ".customeventrequest",
+    "CustomEventRequestDetails": ".customeventrequest",
+    "CustomEventRequestDetailsTypedDict": ".customeventrequest",
+    "CustomEventRequestTypedDict": ".customeventrequest",
+    "DataElement": ".dataelement",
+    "DataElementTypedDict": ".dataelement",
+    "DataElementDiscoveryRecord": ".dataelementdiscoveryrecord",
+    "DataElementDiscoveryRecordTypedDict": ".dataelementdiscoveryrecord",
+    "Size": ".dataelementdiscoveryrecord",
+    "SizeTypedDict": ".dataelementdiscoveryrecord",
+    "Datasource": ".datasource",
+    "DatasourceTypedDict": ".datasource",
+    "DatasourceWebConfig": ".datasourcewebconfig",
+    "DatasourceWebConfigTypedDict": ".datasourcewebconfig",
+    "DeleteBlueprintInstanceRequest": ".delete_blueprint_instanceop",
+    "DeleteBlueprintInstanceRequestTypedDict": ".delete_blueprint_instanceop",
+    "DeleteChunkingStrategyRequest": ".delete_chunking_strategyop",
+    "DeleteChunkingStrategyRequestTypedDict": ".delete_chunking_strategyop",
+    "DeleteDataElementRequest": ".delete_data_elementop",
+    "DeleteDataElementRequestTypedDict": ".delete_data_elementop",
+    "DeleteDatasourceDatasourceDatasourceIDDeleteRequest": ".delete_datasource_datasource_datasource_id_deleteop",
+    "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict": ".delete_datasource_datasource_datasource_id_deleteop",
+    "DeleteIngestRecordRequest": ".delete_ingest_recordop",
+    "DeleteIngestRecordRequestTypedDict": ".delete_ingest_recordop",
+    "DeleteRagConfigRequest": ".delete_rag_configop",
+    "DeleteRagConfigRequestTypedDict": ".delete_rag_configop",
+    "DeleteReferenceGraphConfigRequest": ".delete_reference_graph_configop",
+    "DeleteReferenceGraphConfigRequestTypedDict": ".delete_reference_graph_configop",
+    "DeleteTagColumnInfoRequest": ".delete_tag_column_infoop",
+    "DeleteTagColumnInfoRequestTypedDict": ".delete_tag_column_infoop",
+    "DeleteTagConfigRequest": ".delete_tag_configop",
+    "DeleteTagConfigRequestTypedDict": ".delete_tag_configop",
+    "DeleteTagTableInfoRequest": ".delete_tag_table_infoop",
+    "DeleteTagTableInfoRequestTypedDict": ".delete_tag_table_infoop",
+    "DeleteChunkingStrategyResponse": ".deletechunkingstrategyresponse",
+    "DeleteChunkingStrategyResponseTypedDict": ".deletechunkingstrategyresponse",
+    "DeleteDataElementResponse": ".deletedataelementresponse",
+    "DeleteDataElementResponseTypedDict": ".deletedataelementresponse",
+    "DeleteDatasourceResponse": ".deletedatasourceresponse",
+    "DeleteDatasourceResponseTypedDict": ".deletedatasourceresponse",
+    "DeleteIngestRecordResponse": ".deleteingestrecordresponse",
+    "DeleteIngestRecordResponseTypedDict": ".deleteingestrecordresponse",
+    "DeleteReferenceGraphConfigResponse": ".deletereferencegraphconfigresponse",
+    "DeleteReferenceGraphConfigResponseTypedDict": ".deletereferencegraphconfigresponse",
+    "DeleteTagTableResponse": ".deletetagtableresponse",
+    "DeleteTagTableResponseTypedDict": ".deletetagtableresponse",
+    "EmbeddingModel": ".embeddingmodel",
+    "EmbeddingModelTypedDict": ".embeddingmodel",
+    "Details": ".event",
+    "DetailsTypedDict": ".event",
+    "Event": ".event",
+    "EventTypedDict": ".event",
+    "EventType": ".eventtype",
+    "ExtractorModel": ".extractormodel",
+    "ExtractorModelTypedDict": ".extractormodel",
+    "FailBlueprintInstanceRequest1": ".fail_blueprint_instanceop",
+    "FailBlueprintInstanceRequest1TypedDict": ".fail_blueprint_instanceop",
+    "ErrorDetails": ".failblueprintinstancerequest",
+    "ErrorDetailsTypedDict": ".failblueprintinstancerequest",
+    "FailBlueprintInstanceRequest": ".failblueprintinstancerequest",
+    "FailBlueprintInstanceRequestTypedDict": ".failblueprintinstancerequest",
+    "GetActivitiesByBlueprintInstanceRequest": ".get_activities_by_blueprint_instanceop",
+    "GetActivitiesByBlueprintInstanceRequestTypedDict": ".get_activities_by_blueprint_instanceop",
+    "GetActivityByBlueprintInstanceRequest": ".get_activity_by_blueprint_instanceop",
+    "GetActivityByBlueprintInstanceRequestTypedDict": ".get_activity_by_blueprint_instanceop",
+    "GetAllBlueprintInstancesRequest": ".get_all_blueprint_instancesop",
+    "GetAllBlueprintInstancesRequestTypedDict": ".get_all_blueprint_instancesop",
+    "GetAllDataElementsRequest": ".get_all_data_elementsop",
+    "GetAllDataElementsRequestTypedDict": ".get_all_data_elementsop",
+    "GetAllDatasourceIdsRequest1": ".get_all_datasource_idsop",
+    "GetAllDatasourceIdsRequest1TypedDict": ".get_all_datasource_idsop",
+    "GetAllIngestRecordsRequest": ".get_all_ingest_recordsop",
+    "GetAllIngestRecordsRequestTypedDict": ".get_all_ingest_recordsop",
+    "GetAllTagColumnInfoRequest": ".get_all_tag_column_infoop",
+    "GetAllTagColumnInfoRequestTypedDict": ".get_all_tag_column_infoop",
+    "GetAllTagTableInfoRequest": ".get_all_tag_table_infoop",
+    "GetAllTagTableInfoRequestTypedDict": ".get_all_tag_table_infoop",
+    "GetBlueprintInstanceRequest": ".get_blueprint_instanceop",
+    "GetBlueprintInstanceRequestTypedDict": ".get_blueprint_instanceop",
+    "GetChunkingStrategyRequest": ".get_chunking_strategyop",
+    "GetChunkingStrategyRequestTypedDict": ".get_chunking_strategyop",
+    "GetDataElementByPathRequest1": ".get_data_element_by_pathop",
+    "GetDataElementByPathRequest1TypedDict": ".get_data_element_by_pathop",
+    "GetDataElementRequest": ".get_data_elementop",
+    "GetDataElementRequestTypedDict": ".get_data_elementop",
+    "GetDatasourceRequest": ".get_datasourceop",
+    "GetDatasourceRequestTypedDict": ".get_datasourceop",
+    "GetEventByBlueprintInstanceRequest": ".get_event_by_blueprint_instanceop",
+    "GetEventByBlueprintInstanceRequestTypedDict": ".get_event_by_blueprint_instanceop",
+    "GetEventsByBlueprintInstanceRequest": ".get_events_by_blueprint_instanceop",
+    "GetEventsByBlueprintInstanceRequestTypedDict": ".get_events_by_blueprint_instanceop",
+    "GetIngestRecordRequest": ".get_ingest_recordop",
+    "GetIngestRecordRequestTypedDict": ".get_ingest_recordop",
+    "GetNewAndUpdatedElementsRequest": ".get_new_and_updated_elementsop",
+    "GetNewAndUpdatedElementsRequestTypedDict": ".get_new_and_updated_elementsop",
+    "GetRagConfigRequest": ".get_rag_configop",
+    "GetRagConfigRequestTypedDict": ".get_rag_configop",
+    "GetReferenceGraphConfigRequest": ".get_reference_graph_configop",
+    "GetReferenceGraphConfigRequestTypedDict": ".get_reference_graph_configop",
+    "GetTagColumnInfoRequest": ".get_tag_column_infoop",
+    "GetTagColumnInfoRequestTypedDict": ".get_tag_column_infoop",
+    "GetTagConfigRequest": ".get_tag_configop",
+    "GetTagConfigRequestTypedDict": ".get_tag_configop",
+    "GetTagTableInfoRequest": ".get_tag_table_infoop",
+    "GetTagTableInfoRequestTypedDict": ".get_tag_table_infoop",
+    "GetActivitiesResponse": ".getactivitiesresponse",
+    "GetActivitiesResponseTypedDict": ".getactivitiesresponse",
+    "GetAllDatasourceIdsRequest": ".getalldatasourceidsrequest",
+    "GetAllDatasourceIdsRequestTypedDict": ".getalldatasourceidsrequest",
+    "GetBlueprintInstancesResponse": ".getblueprintinstancesresponse",
+    "GetBlueprintInstancesResponseTypedDict": ".getblueprintinstancesresponse",
+    "GetDataElementByPathRequest": ".getdataelementbypathrequest",
+    "GetDataElementByPathRequestTypedDict": ".getdataelementbypathrequest",
+    "GetEventsResponse": ".geteventsresponse",
+    "GetEventsResponseTypedDict": ".geteventsresponse",
+    "GetNewAndUpdatedDataElementsResponse": ".getnewandupdateddataelementsresponse",
+    "GetNewAndUpdatedDataElementsResponseTypedDict": ".getnewandupdateddataelementsresponse",
+    "HTMLChunking": ".htmlchunking",
+    "HTMLChunkingTypedDict": ".htmlchunking",
     "HTTPValidationError": ".httpvalidationerror",
     "HTTPValidationErrorData": ".httpvalidationerror",
-    "ListDataelementsRequest": ".listdataelementsop",
-    "ListDataelementsRequestTypedDict": ".listdataelementsop",
-    "ListRequest": ".listop",
-    "ListRequestTypedDict": ".listop",
-    "Metadata": ".metadata",
-    "MetadataTypedDict": ".metadata",
-    "NewDatasourceRequest": ".newdatasourcerequest",
-    "NewDatasourceRequestTypedDict": ".newdatasourcerequest",
-    "NewDatasourceResponse": ".newdatasourceresponse",
-    "NewDatasourceResponseTypedDict": ".newdatasourceresponse",
-    "RunChatStreamRequest": ".run_chat_streamop",
-    "RunChatStreamRequestTypedDict": ".run_chat_streamop",
-    "RunChatStreamResponseBody": ".run_chat_streamop",
-    "RunChatStreamResponseBodyTypedDict": ".run_chat_streamop",
-    "RunChatRequest": ".run_chatop",
-    "RunChatRequestTypedDict": ".run_chatop",
+    "IngestMethod": ".ingestmethod",
+    "IngestRecord": ".ingestrecord",
+    "IngestRecordTypedDict": ".ingestrecord",
+    "JSONNodeChunking": ".jsonnodechunking",
+    "JSONNodeChunkingTypedDict": ".jsonnodechunking",
+    "MarkdownNodeChunking": ".markdownnodechunking",
+    "MarkdownNodeChunkingTypedDict": ".markdownnodechunking",
+    "MeibelaiError": ".meibelaierror",
+    "NoResponseError": ".no_response_error",
+    "GcsConfig": ".objectstorageconfig",
+    "GcsConfigTypedDict": ".objectstorageconfig",
+    "ObjectStorageConfig": ".objectstorageconfig",
+    "ObjectStorageConfigTypedDict": ".objectstorageconfig",
+    "ObjectStorageFilters": ".objectstoragefilters",
+    "ObjectStorageFiltersTypedDict": ".objectstoragefilters",
+    "RagChunkingStrategy": ".ragchunkingstrategy",
+    "RagChunkingStrategyTypedDict": ".ragchunkingstrategy",
+    "RagConfig": ".ragconfig",
+    "RagConfigTypedDict": ".ragconfig",
+    "ReferenceGraphConfig": ".referencegraphconfig",
+    "ReferenceGraphConfigTypedDict": ".referencegraphconfig",
+    "ResponseValidationError": ".responsevalidationerror",
+    "S3Config": ".s3config",
+    "S3ConfigTypedDict": ".s3config",
     "Security": ".security",
     "SecurityTypedDict": ".security",
-    "UpdateDataelementRequest": ".updatedataelementop",
-    "UpdateDataelementRequestTypedDict": ".updatedataelementop",
+    "SemanticChunking": ".semanticchunking",
+    "SemanticChunkingTypedDict": ".semanticchunking",
+    "SentenceChunking": ".sentencechunking",
+    "SentenceChunkingTypedDict": ".sentencechunking",
+    "SparseEmbeddingModel": ".sparseembeddingmodel",
+    "SparseEmbeddingModelTypedDict": ".sparseembeddingmodel",
+    "TagColumnInfo": ".tagcolumninfo",
+    "TagColumnInfoTypedDict": ".tagcolumninfo",
+    "TagConfig": ".tagconfig",
+    "TagConfigTypedDict": ".tagconfig",
+    "TagTableInfo": ".tagtableinfo",
+    "TagTableInfoTypedDict": ".tagtableinfo",
+    "TokenTextChunking": ".tokentextchunking",
+    "TokenTextChunkingTypedDict": ".tokentextchunking",
+    "UpdateActivityStatusRequest": ".update_activity_statusop",
+    "UpdateActivityStatusRequestTypedDict": ".update_activity_statusop",
+    "UpdateBlueprintInstanceStatusRequest": ".update_blueprint_instance_statusop",
+    "UpdateBlueprintInstanceStatusRequestTypedDict": ".update_blueprint_instance_statusop",
+    "UpdateChunkingStrategyRequest1": ".update_chunking_strategyop",
+    "UpdateChunkingStrategyRequest1TypedDict": ".update_chunking_strategyop",
+    "UpdateDataElementRequest1": ".update_data_elementop",
+    "UpdateDataElementRequest1TypedDict": ".update_data_elementop",
+    "UpdateDatasourceRequest1": ".update_datasourceop",
+    "UpdateDatasourceRequest1TypedDict": ".update_datasourceop",
+    "UpdateRagConfigRequest1": ".update_rag_configop",
+    "UpdateRagConfigRequest1TypedDict": ".update_rag_configop",
+    "UpdateReferenceGraphConfigRequest1": ".update_reference_graph_configop",
+    "UpdateReferenceGraphConfigRequest1TypedDict": ".update_reference_graph_configop",
+    "UpdateTagColumnInfoRequest": ".update_tag_column_infoop",
+    "UpdateTagColumnInfoRequestTypedDict": ".update_tag_column_infoop",
+    "UpdateTagConfigRequest1": ".update_tag_configop",
+    "UpdateTagConfigRequest1TypedDict": ".update_tag_configop",
+    "UpdateTagTableInfoRequest": ".update_tag_table_infoop",
+    "UpdateTagTableInfoRequestTypedDict": ".update_tag_table_infoop",
+    "UpdateChunkingStrategyRequest": ".updatechunkingstrategyrequest",
+    "UpdateChunkingStrategyRequestTypedDict": ".updatechunkingstrategyrequest",
+    "UpdateChunkingStrategyResponse": ".updatechunkingstrategyresponse",
+    "UpdateChunkingStrategyResponseTypedDict": ".updatechunkingstrategyresponse",
+    "UpdateDataElementRequest": ".updatedataelementrequest",
+    "UpdateDataElementRequestTypedDict": ".updatedataelementrequest",
+    "UpdateDataElementResponse": ".updatedataelementresponse",
+    "UpdateDataElementResponseTypedDict": ".updatedataelementresponse",
     "UpdateDatasourceRequest": ".updatedatasourcerequest",
     "UpdateDatasourceRequestTypedDict": ".updatedatasourcerequest",
-    "UpdateRequest": ".updateop",
-    "UpdateRequestTypedDict": ".updateop",
-    "UploadDataelementRequest": ".uploaddataelementop",
-    "UploadDataelementRequestTypedDict": ".uploaddataelementop",
+    "UpdateDatasourceResponse": ".updatedatasourceresponse",
+    "UpdateDatasourceResponseTypedDict": ".updatedatasourceresponse",
+    "UpdateRagConfigRequest": ".updateragconfigrequest",
+    "UpdateRagConfigRequestTypedDict": ".updateragconfigrequest",
+    "UpdateRagConfigResponse": ".updateragconfigresponse",
+    "UpdateRagConfigResponseTypedDict": ".updateragconfigresponse",
+    "UpdateReferenceGraphConfigRequest": ".updatereferencegraphconfigrequest",
+    "UpdateReferenceGraphConfigRequestTypedDict": ".updatereferencegraphconfigrequest",
+    "UpdateReferenceGraphConfigResponse": ".updatereferencegraphconfigresponse",
+    "UpdateReferenceGraphConfigResponseTypedDict": ".updatereferencegraphconfigresponse",
+    "UpdateTagColumnRequest": ".updatetagcolumnrequest",
+    "UpdateTagColumnRequestTypedDict": ".updatetagcolumnrequest",
+    "UpdateTagColumnResponse": ".updatetagcolumnresponse",
+    "UpdateTagColumnResponseTypedDict": ".updatetagcolumnresponse",
+    "UpdateTagConfigRequest": ".updatetagconfigrequest",
+    "UpdateTagConfigRequestTypedDict": ".updatetagconfigrequest",
+    "UpdateTagConfigResponse": ".updatetagconfigresponse",
+    "UpdateTagConfigResponseTypedDict": ".updatetagconfigresponse",
+    "UpdateTagTableRequest": ".updatetagtablerequest",
+    "UpdateTagTableRequestTypedDict": ".updatetagtablerequest",
+    "UpdateTagTableResponse": ".updatetagtableresponse",
+    "UpdateTagTableResponseTypedDict": ".updatetagtableresponse",
+    "UpsertIngestRecordRequest1": ".upsert_ingest_recordop",
+    "UpsertIngestRecordRequest1TypedDict": ".upsert_ingest_recordop",
+    "UpsertIngestRecordRequest": ".upsertingestrecordrequest",
+    "UpsertIngestRecordRequestTypedDict": ".upsertingestrecordrequest",
+    "UpsertIngestRecordResponse": ".upsertingestrecordresponse",
+    "UpsertIngestRecordResponseTypedDict": ".upsertingestrecordresponse",
     "Loc": ".validationerror",
     "LocTypedDict": ".validationerror",
     "ValidationError": ".validationerror",
     "ValidationErrorTypedDict": ".validationerror",
+    "WebDomain": ".webdomain",
+    "WebDomainTypedDict": ".webdomain",
 }
 
 
@@ -207,5 +1154,5 @@ def __getattr__(attr_name: str) -> object:
 
 
 def __dir__():
-    lazy_attrs = list(_dynamic_imports.keys())
-    return sorted(lazy_attrs)
+    lazy_attrs = builtins.list(_dynamic_imports.keys())
+    return builtins.sorted(lazy_attrs)

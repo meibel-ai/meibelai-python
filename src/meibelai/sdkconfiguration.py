@@ -18,6 +18,8 @@ from typing import Callable, Dict, Optional, Tuple, Union
 SERVERS = [
     "http://api.meibel.ai",
     # Meibel API
+    "http://localhost:8000",
+    # Local Development Server
 ]
 """Contains the list of servers available to the SDK"""
 
