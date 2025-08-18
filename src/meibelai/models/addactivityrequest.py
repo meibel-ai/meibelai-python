@@ -3,31 +3,16 @@
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class AddActivityRequestInputDataTypedDict(TypedDict):
-    pass
-
-
-class AddActivityRequestInputData(BaseModel):
-    pass
-
-
-class AddActivityRequestOutputDataTypedDict(TypedDict):
-    pass
-
-
-class AddActivityRequestOutputData(BaseModel):
-    pass
 
 
 class AddActivityRequestTypedDict(TypedDict):
     r"""AddActivityRequest"""
 
     activity_type: str
-    input_data: NotRequired[Nullable[AddActivityRequestInputDataTypedDict]]
-    output_data: NotRequired[Nullable[AddActivityRequestOutputDataTypedDict]]
+    input_data: NotRequired[Nullable[Dict[str, Any]]]
+    output_data: NotRequired[Nullable[Dict[str, Any]]]
     group_id: NotRequired[Nullable[str]]
 
 
@@ -36,9 +21,9 @@ class AddActivityRequest(BaseModel):
 
     activity_type: str
 
-    input_data: OptionalNullable[AddActivityRequestInputData] = UNSET
+    input_data: OptionalNullable[Dict[str, Any]] = UNSET
 
-    output_data: OptionalNullable[AddActivityRequestOutputData] = UNSET
+    output_data: OptionalNullable[Dict[str, Any]] = UNSET
 
     group_id: OptionalNullable[str] = UNSET
 

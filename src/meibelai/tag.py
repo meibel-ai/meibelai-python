@@ -14,8 +14,8 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         working_bucket: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
@@ -27,8 +27,8 @@ class Tag(BaseSDK):
         r"""Add Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param working_bucket:
+        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param db_path:
@@ -129,8 +129,8 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         working_bucket: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
@@ -142,8 +142,8 @@ class Tag(BaseSDK):
         r"""Add Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param working_bucket:
+        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param db_path:
@@ -244,7 +244,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -338,7 +338,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -432,7 +432,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
@@ -547,7 +547,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
@@ -662,7 +662,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -756,7 +756,7 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -851,7 +851,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -960,7 +960,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1069,7 +1069,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1166,7 +1166,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1263,7 +1263,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1372,7 +1372,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1481,7 +1481,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1578,7 +1578,7 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1674,11 +1674,11 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1687,11 +1687,11 @@ class Tag(BaseSDK):
         r"""Get All Tag Table Info
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1780,11 +1780,11 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1793,11 +1793,11 @@ class Tag(BaseSDK):
         r"""Get All Tag Table Info
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1888,7 +1888,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2012,7 +2012,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2136,7 +2136,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2236,7 +2236,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2336,7 +2336,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2460,7 +2460,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2583,11 +2583,11 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2597,11 +2597,11 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2692,11 +2692,11 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2706,11 +2706,11 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2802,7 +2802,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2902,7 +2902,7 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

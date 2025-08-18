@@ -3,15 +3,8 @@
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class InstanceMetadataTypedDict(TypedDict):
-    pass
-
-
-class InstanceMetadata(BaseModel):
-    pass
 
 
 class AddBlueprintInstanceRequestTypedDict(TypedDict):
@@ -20,7 +13,7 @@ class AddBlueprintInstanceRequestTypedDict(TypedDict):
     blueprint_id: NotRequired[Nullable[str]]
     workflow_type: NotRequired[Nullable[str]]
     task_queue: NotRequired[Nullable[str]]
-    instance_metadata: NotRequired[Nullable[InstanceMetadataTypedDict]]
+    instance_metadata: NotRequired[Nullable[Dict[str, Any]]]
     parent_id: NotRequired[Nullable[str]]
 
 
@@ -33,7 +26,7 @@ class AddBlueprintInstanceRequest(BaseModel):
 
     task_queue: OptionalNullable[str] = UNSET
 
-    instance_metadata: OptionalNullable[InstanceMetadata] = UNSET
+    instance_metadata: OptionalNullable[Dict[str, Any]] = UNSET
 
     parent_id: OptionalNullable[str] = UNSET
 

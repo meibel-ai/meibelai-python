@@ -20,7 +20,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class CompleteBlueprintInstanceRequest1TypedDict(TypedDict):
     blueprint_instance_id: str
     r"""Unique identifier for the workflow instance"""
-    customer_id: str
+    customer_id: NotRequired[Nullable[str]]
     r"""Customer ID"""
     complete_blueprint_instance_request: NotRequired[
         Nullable[CompleteBlueprintInstanceRequestTypedDict]
@@ -34,10 +34,10 @@ class CompleteBlueprintInstanceRequest1(BaseModel):
     r"""Unique identifier for the workflow instance"""
 
     customer_id: Annotated[
-        str,
+        OptionalNullable[str],
         pydantic.Field(alias="customer-id"),
         FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ]
+    ] = UNSET
     r"""Customer ID"""
 
     complete_blueprint_instance_request: Annotated[
@@ -47,8 +47,8 @@ class CompleteBlueprintInstanceRequest1(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["CompleteBlueprintInstanceRequest"]
-        nullable_fields = ["CompleteBlueprintInstanceRequest"]
+        optional_fields = ["customer-id", "CompleteBlueprintInstanceRequest"]
+        nullable_fields = ["customer-id", "CompleteBlueprintInstanceRequest"]
         null_default_fields = []
 
         serialized = handler(self)

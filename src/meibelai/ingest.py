@@ -16,9 +16,9 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
         ingest_time: str,
         element_hash: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -29,9 +29,9 @@ class Ingest(BaseSDK):
         :param datasource_id:
         :param data_element_id:
         :param ingest_method: IngestMethod
-        :param customer_id: Customer ID
         :param ingest_time:
         :param element_hash:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -131,9 +131,9 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
         ingest_time: str,
         element_hash: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -144,9 +144,9 @@ class Ingest(BaseSDK):
         :param datasource_id:
         :param data_element_id:
         :param ingest_method: IngestMethod
-        :param customer_id: Customer ID
         :param ingest_time:
         :param element_hash:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -246,7 +246,7 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -346,7 +346,7 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -446,7 +446,7 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -546,7 +546,7 @@ class Ingest(BaseSDK):
         datasource_id: str,
         data_element_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -644,12 +644,12 @@ class Ingest(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         method_filter: OptionalNullable[models.IngestMethod] = UNSET,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -658,12 +658,12 @@ class Ingest(BaseSDK):
         r"""Get All Ingest Records
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param method_filter: IngestMethod
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -753,12 +753,12 @@ class Ingest(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         method_filter: OptionalNullable[models.IngestMethod] = UNSET,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -767,12 +767,12 @@ class Ingest(BaseSDK):
         r"""Get All Ingest Records
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param method_filter: IngestMethod
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds

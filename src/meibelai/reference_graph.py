@@ -14,11 +14,11 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         endpoint: str,
         db_name: str,
         doc_collection: str,
         ref_collection: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -27,11 +27,11 @@ class ReferenceGraph(BaseSDK):
         r"""Add Reference Graph Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param endpoint:
         :param db_name:
         :param doc_collection:
         :param ref_collection:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -131,11 +131,11 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         endpoint: str,
         db_name: str,
         doc_collection: str,
         ref_collection: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -144,11 +144,11 @@ class ReferenceGraph(BaseSDK):
         r"""Add Reference Graph Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param endpoint:
         :param db_name:
         :param doc_collection:
         :param ref_collection:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -248,7 +248,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -342,7 +342,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -436,7 +436,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         endpoint: OptionalNullable[str] = UNSET,
         db_name: OptionalNullable[str] = UNSET,
         doc_collection: OptionalNullable[str] = UNSET,
@@ -553,7 +553,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         endpoint: OptionalNullable[str] = UNSET,
         db_name: OptionalNullable[str] = UNSET,
         doc_collection: OptionalNullable[str] = UNSET,
@@ -670,7 +670,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -766,7 +766,7 @@ class ReferenceGraph(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

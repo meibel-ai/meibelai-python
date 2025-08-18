@@ -5,23 +5,8 @@ from .activitystatus import ActivityStatus
 from datetime import datetime
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class InputDataTypedDict(TypedDict):
-    pass
-
-
-class InputData(BaseModel):
-    pass
-
-
-class OutputDataTypedDict(TypedDict):
-    pass
-
-
-class OutputData(BaseModel):
-    pass
 
 
 class ActivityTypedDict(TypedDict):
@@ -33,8 +18,8 @@ class ActivityTypedDict(TypedDict):
     status: NotRequired[Nullable[ActivityStatus]]
     start_time: NotRequired[Nullable[datetime]]
     end_time: NotRequired[Nullable[datetime]]
-    input_data: NotRequired[Nullable[InputDataTypedDict]]
-    output_data: NotRequired[Nullable[OutputDataTypedDict]]
+    input_data: NotRequired[Nullable[Dict[str, Any]]]
+    output_data: NotRequired[Nullable[Dict[str, Any]]]
     error: NotRequired[Nullable[str]]
     group_id: NotRequired[Nullable[str]]
 
@@ -54,9 +39,9 @@ class Activity(BaseModel):
 
     end_time: OptionalNullable[datetime] = UNSET
 
-    input_data: OptionalNullable[InputData] = UNSET
+    input_data: OptionalNullable[Dict[str, Any]] = UNSET
 
-    output_data: OptionalNullable[OutputData] = UNSET
+    output_data: OptionalNullable[Dict[str, Any]] = UNSET
 
     error: OptionalNullable[str] = UNSET
 

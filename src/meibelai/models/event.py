@@ -5,15 +5,8 @@ from .eventtype import EventType
 from datetime import datetime
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class DetailsTypedDict(TypedDict):
-    pass
-
-
-class Details(BaseModel):
-    pass
 
 
 class EventTypedDict(TypedDict):
@@ -24,7 +17,7 @@ class EventTypedDict(TypedDict):
     activity_id: NotRequired[Nullable[str]]
     event_type: NotRequired[Nullable[EventType]]
     timestamp: NotRequired[Nullable[datetime]]
-    details: NotRequired[Nullable[DetailsTypedDict]]
+    details: NotRequired[Nullable[Dict[str, Any]]]
     group_id: NotRequired[Nullable[str]]
     is_signal: NotRequired[Nullable[bool]]
     is_internal: NotRequired[Nullable[bool]]
@@ -44,7 +37,7 @@ class Event(BaseModel):
 
     timestamp: OptionalNullable[datetime] = UNSET
 
-    details: OptionalNullable[Details] = UNSET
+    details: OptionalNullable[Dict[str, Any]] = UNSET
 
     group_id: OptionalNullable[str] = UNSET
 

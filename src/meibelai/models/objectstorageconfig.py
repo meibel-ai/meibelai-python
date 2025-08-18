@@ -5,15 +5,8 @@ from .objectstoragefilters import ObjectStorageFilters, ObjectStorageFiltersType
 from .s3config import S3Config, S3ConfigTypedDict
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class GcsConfigTypedDict(TypedDict):
-    pass
-
-
-class GcsConfig(BaseModel):
-    pass
 
 
 class ObjectStorageConfigTypedDict(TypedDict):
@@ -22,7 +15,7 @@ class ObjectStorageConfigTypedDict(TypedDict):
     bucket: str
     prefix: Nullable[str]
     filters: NotRequired[Nullable[ObjectStorageFiltersTypedDict]]
-    gcs_config: NotRequired[Nullable[GcsConfigTypedDict]]
+    gcs_config: NotRequired[Nullable[Dict[str, Any]]]
     s3_config: NotRequired[Nullable[S3ConfigTypedDict]]
 
 
@@ -35,7 +28,7 @@ class ObjectStorageConfig(BaseModel):
 
     filters: OptionalNullable[ObjectStorageFilters] = UNSET
 
-    gcs_config: OptionalNullable[GcsConfig] = UNSET
+    gcs_config: OptionalNullable[Dict[str, Any]] = UNSET
 
     s3_config: OptionalNullable[S3Config] = UNSET
 

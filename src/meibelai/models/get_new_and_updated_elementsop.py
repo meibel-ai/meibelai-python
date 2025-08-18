@@ -19,8 +19,6 @@ class GetNewAndUpdatedElementsRequestTypedDict(TypedDict):
     datasource_id: str
     ingest_method: IngestMethod
     r"""IngestMethod"""
-    customer_id: str
-    r"""Customer ID"""
     regex_filter: NotRequired[str]
     media_type_filters: NotRequired[List[str]]
     offset: NotRequired[int]
@@ -31,6 +29,8 @@ class GetNewAndUpdatedElementsRequestTypedDict(TypedDict):
     r"""Field to sort by"""
     sort_order: NotRequired[Nullable[str]]
     r"""Sort order (asc or desc)"""
+    customer_id: NotRequired[Nullable[str]]
+    r"""Customer ID"""
 
 
 class GetNewAndUpdatedElementsRequest(BaseModel):
@@ -43,13 +43,6 @@ class GetNewAndUpdatedElementsRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ]
     r"""IngestMethod"""
-
-    customer_id: Annotated[
-        str,
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ]
-    r"""Customer ID"""
 
     regex_filter: Annotated[
         Optional[str],
@@ -85,6 +78,13 @@ class GetNewAndUpdatedElementsRequest(BaseModel):
     ] = UNSET
     r"""Sort order (asc or desc)"""
 
+    customer_id: Annotated[
+        OptionalNullable[str],
+        pydantic.Field(alias="customer-id"),
+        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
+    ] = UNSET
+    r"""Customer ID"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -94,8 +94,9 @@ class GetNewAndUpdatedElementsRequest(BaseModel):
             "limit",
             "sort_by",
             "sort_order",
+            "customer-id",
         ]
-        nullable_fields = ["sort_by", "sort_order"]
+        nullable_fields = ["sort_by", "sort_order", "customer-id"]
         null_default_fields = []
 
         serialized = handler(self)

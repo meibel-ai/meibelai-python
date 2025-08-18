@@ -5,9 +5,9 @@ AddActivityRequest
 
 ## Fields
 
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `activity_type`                                                                                    | *str*                                                                                              | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `input_data`                                                                                       | [OptionalNullable[models.AddActivityRequestInputData]](../models/addactivityrequestinputdata.md)   | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
-| `output_data`                                                                                      | [OptionalNullable[models.AddActivityRequestOutputData]](../models/addactivityrequestoutputdata.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
-| `group_id`                                                                                         | *OptionalNullable[str]*                                                                            | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| Field                   | Type                    | Required                | Description             |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+| `activity_type`         | *str*                   | :heavy_check_mark:      | N/A                     |
+| `input_data`            | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |
+| `output_data`           | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |
+| `group_id`              | *OptionalNullable[str]* | :heavy_minus_sign:      | N/A                     |

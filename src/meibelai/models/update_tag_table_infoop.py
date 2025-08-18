@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from .updatetagtablerequest import UpdateTagTableRequest, UpdateTagTableRequestTypedDict
-from meibelai.types import BaseModel
+from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from meibelai.utils import (
     FieldMetadata,
     HeaderMetadata,
@@ -10,15 +10,16 @@ from meibelai.utils import (
     RequestMetadata,
 )
 import pydantic
-from typing_extensions import Annotated, TypedDict
+from pydantic import model_serializer
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class UpdateTagTableInfoRequestTypedDict(TypedDict):
     datasource_id: str
     table_name: str
-    customer_id: str
-    r"""Customer ID"""
     update_tag_table_request: UpdateTagTableRequestTypedDict
+    customer_id: NotRequired[Nullable[str]]
+    r"""Customer ID"""
 
 
 class UpdateTagTableInfoRequest(BaseModel):
@@ -30,14 +31,44 @@ class UpdateTagTableInfoRequest(BaseModel):
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
 
-    customer_id: Annotated[
-        str,
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ]
-    r"""Customer ID"""
-
     update_tag_table_request: Annotated[
         UpdateTagTableRequest,
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
     ]
+
+    customer_id: Annotated[
+        OptionalNullable[str],
+        pydantic.Field(alias="customer-id"),
+        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
+    ] = UNSET
+    r"""Customer ID"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = ["customer-id"]
+        nullable_fields = ["customer-id"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m

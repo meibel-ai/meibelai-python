@@ -3,15 +3,8 @@
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class CustomEventRequestDetailsTypedDict(TypedDict):
-    pass
-
-
-class CustomEventRequestDetails(BaseModel):
-    pass
 
 
 class CustomEventRequestTypedDict(TypedDict):
@@ -20,7 +13,7 @@ class CustomEventRequestTypedDict(TypedDict):
     event_name: str
     r"""Name of the custom event being logged."""
     activity_id: NotRequired[Nullable[str]]
-    details: NotRequired[Nullable[CustomEventRequestDetailsTypedDict]]
+    details: NotRequired[Nullable[Dict[str, Any]]]
     group_id: NotRequired[Nullable[str]]
     is_signal: NotRequired[Nullable[bool]]
     is_internal: NotRequired[Nullable[bool]]
@@ -35,7 +28,7 @@ class CustomEventRequest(BaseModel):
 
     activity_id: OptionalNullable[str] = UNSET
 
-    details: OptionalNullable[CustomEventRequestDetails] = UNSET
+    details: OptionalNullable[Dict[str, Any]] = UNSET
 
     group_id: OptionalNullable[str] = UNSET
 

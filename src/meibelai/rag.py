@@ -14,8 +14,8 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         collection_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
             Union[models.ExtractorModel, models.ExtractorModelTypedDict]
@@ -27,6 +27,9 @@ class Rag(BaseSDK):
             Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
         ] = UNSET,
         collect_metadata: OptionalNullable[bool] = UNSET,
+        metadata_options: OptionalNullable[
+            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -35,13 +38,14 @@ class Rag(BaseSDK):
         r"""Add Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param collection_id:
+        :param customer_id: Customer ID
         :param description:
         :param extractor_model:
         :param embedding_model:
         :param sparse_embedding_model:
         :param collect_metadata:
+        :param metadata_options:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -74,6 +78,9 @@ class Rag(BaseSDK):
                     OptionalNullable[models.SparseEmbeddingModel],
                 ),
                 collect_metadata=collect_metadata,
+                metadata_options=utils.get_pydantic_model(
+                    metadata_options, OptionalNullable[models.MetadataOptions]
+                ),
             ),
         )
 
@@ -148,8 +155,8 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         collection_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
             Union[models.ExtractorModel, models.ExtractorModelTypedDict]
@@ -161,6 +168,9 @@ class Rag(BaseSDK):
             Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
         ] = UNSET,
         collect_metadata: OptionalNullable[bool] = UNSET,
+        metadata_options: OptionalNullable[
+            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -169,13 +179,14 @@ class Rag(BaseSDK):
         r"""Add Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param collection_id:
+        :param customer_id: Customer ID
         :param description:
         :param extractor_model:
         :param embedding_model:
         :param sparse_embedding_model:
         :param collect_metadata:
+        :param metadata_options:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -208,6 +219,9 @@ class Rag(BaseSDK):
                     OptionalNullable[models.SparseEmbeddingModel],
                 ),
                 collect_metadata=collect_metadata,
+                metadata_options=utils.get_pydantic_model(
+                    metadata_options, OptionalNullable[models.MetadataOptions]
+                ),
             ),
         )
 
@@ -282,7 +296,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -376,7 +390,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -470,7 +484,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         collection_id: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
@@ -483,6 +497,9 @@ class Rag(BaseSDK):
             Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
         ] = UNSET,
         collect_metadata: OptionalNullable[bool] = UNSET,
+        metadata_options: OptionalNullable[
+            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -498,6 +515,7 @@ class Rag(BaseSDK):
         :param embedding_model:
         :param sparse_embedding_model:
         :param collect_metadata:
+        :param metadata_options:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -530,6 +548,9 @@ class Rag(BaseSDK):
                     OptionalNullable[models.SparseEmbeddingModel],
                 ),
                 collect_metadata=collect_metadata,
+                metadata_options=utils.get_pydantic_model(
+                    metadata_options, OptionalNullable[models.MetadataOptions]
+                ),
             ),
         )
 
@@ -604,7 +625,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         collection_id: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
@@ -617,6 +638,9 @@ class Rag(BaseSDK):
             Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
         ] = UNSET,
         collect_metadata: OptionalNullable[bool] = UNSET,
+        metadata_options: OptionalNullable[
+            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -632,6 +656,7 @@ class Rag(BaseSDK):
         :param embedding_model:
         :param sparse_embedding_model:
         :param collect_metadata:
+        :param metadata_options:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -664,6 +689,9 @@ class Rag(BaseSDK):
                     OptionalNullable[models.SparseEmbeddingModel],
                 ),
                 collect_metadata=collect_metadata,
+                metadata_options=utils.get_pydantic_model(
+                    metadata_options, OptionalNullable[models.MetadataOptions]
+                ),
             ),
         )
 
@@ -738,7 +766,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -832,7 +860,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -926,7 +954,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1079,7 +1107,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1232,7 +1260,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1326,7 +1354,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1420,7 +1448,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1575,7 +1603,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1730,7 +1758,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1826,7 +1854,7 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

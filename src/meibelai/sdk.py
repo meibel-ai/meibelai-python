@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from meibelai.rag import Rag
     from meibelai.reference_graph import ReferenceGraph
     from meibelai.tag import Tag
+    from meibelai.workflows import Workflows
 
 
 class Meibelai(BaseSDK):
@@ -38,6 +39,7 @@ class Meibelai(BaseSDK):
     ingest: "Ingest"
     reference_graph: "ReferenceGraph"
     blueprint_instances: "BlueprintInstances"
+    workflows: "Workflows"
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "data_elements": ("meibelai.data_elements", "DataElements"),
@@ -46,6 +48,7 @@ class Meibelai(BaseSDK):
         "ingest": ("meibelai.ingest", "Ingest"),
         "reference_graph": ("meibelai.reference_graph", "ReferenceGraph"),
         "blueprint_instances": ("meibelai.blueprint_instances", "BlueprintInstances"),
+        "workflows": ("meibelai.workflows", "Workflows"),
     }
 
     def __init__(

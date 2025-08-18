@@ -3,6 +3,7 @@
 from __future__ import annotations
 from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
 from .extractormodel import ExtractorModel, ExtractorModelTypedDict
+from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
 from .sparseembeddingmodel import SparseEmbeddingModel, SparseEmbeddingModelTypedDict
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
@@ -18,6 +19,7 @@ class AddRagConfigRequestTypedDict(TypedDict):
     embedding_model: NotRequired[Nullable[EmbeddingModelTypedDict]]
     sparse_embedding_model: NotRequired[Nullable[SparseEmbeddingModelTypedDict]]
     collect_metadata: NotRequired[Nullable[bool]]
+    metadata_options: NotRequired[Nullable[MetadataOptionsTypedDict]]
 
 
 class AddRagConfigRequest(BaseModel):
@@ -35,6 +37,8 @@ class AddRagConfigRequest(BaseModel):
 
     collect_metadata: OptionalNullable[bool] = UNSET
 
+    metadata_options: OptionalNullable[MetadataOptions] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -43,6 +47,7 @@ class AddRagConfigRequest(BaseModel):
             "embedding_model",
             "sparse_embedding_model",
             "collect_metadata",
+            "metadata_options",
         ]
         nullable_fields = [
             "description",
@@ -50,6 +55,7 @@ class AddRagConfigRequest(BaseModel):
             "embedding_model",
             "sparse_embedding_model",
             "collect_metadata",
+            "metadata_options",
         ]
         null_default_fields = []
 

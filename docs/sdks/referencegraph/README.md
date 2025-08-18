@@ -26,7 +26,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.reference_graph.add_reference_graph_config(datasource_id="<id>", customer_id="<id>", endpoint="<value>", db_name="<value>", doc_collection="<value>", ref_collection="<value>")
+    res = m_client.reference_graph.add_reference_graph_config(datasource_id="<id>", endpoint="<value>", db_name="<value>", doc_collection="<value>", ref_collection="<value>", customer_id="<id>")
 
     # Handle response
     print(res)
@@ -38,11 +38,11 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `endpoint`                                                          | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `db_name`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `doc_collection`                                                    | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `ref_collection`                                                    | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -84,7 +84,7 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -126,7 +126,7 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `endpoint`                                                          | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `db_name`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `doc_collection`                                                    | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
@@ -172,7 +172,7 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

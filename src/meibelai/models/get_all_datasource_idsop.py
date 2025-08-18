@@ -19,8 +19,6 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetAllDatasourceIdsRequest1TypedDict(TypedDict):
-    customer_id_param: str
-    r"""Customer ID"""
     get_all_datasource_ids_request: GetAllDatasourceIdsRequestTypedDict
     offset: NotRequired[int]
     r"""Number of items to skip"""
@@ -30,16 +28,11 @@ class GetAllDatasourceIdsRequest1TypedDict(TypedDict):
     r"""Field to sort by"""
     sort_order: NotRequired[Nullable[str]]
     r"""Sort order (asc or desc)"""
+    customer_id_param: NotRequired[Nullable[str]]
+    r"""Customer ID"""
 
 
 class GetAllDatasourceIdsRequest1(BaseModel):
-    customer_id_param: Annotated[
-        str,
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ]
-    r"""Customer ID"""
-
     get_all_datasource_ids_request: Annotated[
         GetAllDatasourceIdsRequest,
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
@@ -69,10 +62,23 @@ class GetAllDatasourceIdsRequest1(BaseModel):
     ] = UNSET
     r"""Sort order (asc or desc)"""
 
+    customer_id_param: Annotated[
+        OptionalNullable[str],
+        pydantic.Field(alias="customer-id"),
+        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
+    ] = UNSET
+    r"""Customer ID"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["offset", "limit", "sort_by", "sort_order"]
-        nullable_fields = ["sort_by", "sort_order"]
+        optional_fields = [
+            "offset",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "customer-id_param",
+        ]
+        nullable_fields = ["sort_by", "sort_order", "customer-id_param"]
         null_default_fields = []
 
         serialized = handler(self)

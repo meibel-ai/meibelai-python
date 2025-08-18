@@ -5,14 +5,7 @@ from importlib import import_module
 import builtins
 
 if TYPE_CHECKING:
-    from .activity import (
-        Activity,
-        ActivityTypedDict,
-        InputData,
-        InputDataTypedDict,
-        OutputData,
-        OutputDataTypedDict,
-    )
+    from .activity import Activity, ActivityTypedDict
     from .activitystatus import ActivityStatus
     from .add_activity_by_blueprint_instanceop import (
         AddActivityByBlueprintInstanceRequest,
@@ -45,20 +38,11 @@ if TYPE_CHECKING:
         AddTagTableInfoRequest,
         AddTagTableInfoRequestTypedDict,
     )
-    from .addactivityrequest import (
-        AddActivityRequest,
-        AddActivityRequestInputData,
-        AddActivityRequestInputDataTypedDict,
-        AddActivityRequestOutputData,
-        AddActivityRequestOutputDataTypedDict,
-        AddActivityRequestTypedDict,
-    )
+    from .addactivityrequest import AddActivityRequest, AddActivityRequestTypedDict
     from .addactivityresponse import AddActivityResponse, AddActivityResponseTypedDict
     from .addblueprintinstancerequest import (
         AddBlueprintInstanceRequest,
         AddBlueprintInstanceRequestTypedDict,
-        InstanceMetadata,
-        InstanceMetadataTypedDict,
     )
     from .addblueprintinstanceresponse import (
         AddBlueprintInstanceResponse,
@@ -114,15 +98,15 @@ if TYPE_CHECKING:
     )
     from .addtagtablerequest import AddTagTableRequest, AddTagTableRequestTypedDict
     from .addtagtableresponse import AddTagTableResponse, AddTagTableResponseTypedDict
+    from .alloweddataelementfilterkeys import AllowedDataElementFilterKeys
     from .apierror import APIError
     from .basicwebauth import BasicWebAuth, BasicWebAuthTypedDict
-    from .blueprintinstance import (
-        BlueprintInstance,
-        BlueprintInstanceInstanceMetadata,
-        BlueprintInstanceInstanceMetadataTypedDict,
-        BlueprintInstanceTypedDict,
-    )
+    from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
+    from .cancel_blueprint_instanceop import (
+        CancelBlueprintInstanceRequest,
+        CancelBlueprintInstanceRequestTypedDict,
+    )
     from .codechunking import CodeChunking, CodeChunkingTypedDict
     from .complete_blueprint_instanceop import (
         CompleteBlueprintInstanceRequest1,
@@ -136,18 +120,19 @@ if TYPE_CHECKING:
         CreateEventByBlueprintInstanceIDRequest,
         CreateEventByBlueprintInstanceIDRequestTypedDict,
     )
-    from .customeventrequest import (
-        CustomEventRequest,
-        CustomEventRequestDetails,
-        CustomEventRequestDetailsTypedDict,
-        CustomEventRequestTypedDict,
-    )
+    from .customeventrequest import CustomEventRequest, CustomEventRequestTypedDict
     from .dataelement import DataElement, DataElementTypedDict
+    from .dataelementcondition import DataElementCondition
     from .dataelementdiscoveryrecord import (
         DataElementDiscoveryRecord,
         DataElementDiscoveryRecordTypedDict,
         Size,
         SizeTypedDict,
+    )
+    from .dataelementfilter import DataElementFilter, DataElementFilterTypedDict
+    from .dataelementfilterrequest import (
+        DataElementFilterRequest,
+        DataElementFilterRequestTypedDict,
     )
     from .datasource import Datasource, DatasourceTypedDict
     from .datasourcewebconfig import DatasourceWebConfig, DatasourceWebConfigTypedDict
@@ -216,7 +201,7 @@ if TYPE_CHECKING:
         DeleteTagTableResponseTypedDict,
     )
     from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
-    from .event import Details, DetailsTypedDict, Event, EventTypedDict
+    from .event import Event, EventTypedDict
     from .eventtype import EventType
     from .extractormodel import ExtractorModel, ExtractorModelTypedDict
     from .fail_blueprint_instanceop import (
@@ -224,8 +209,6 @@ if TYPE_CHECKING:
         FailBlueprintInstanceRequest1TypedDict,
     )
     from .failblueprintinstancerequest import (
-        ErrorDetails,
-        ErrorDetailsTypedDict,
         FailBlueprintInstanceRequest,
         FailBlueprintInstanceRequestTypedDict,
     )
@@ -339,17 +322,14 @@ if TYPE_CHECKING:
         MarkdownNodeChunkingTypedDict,
     )
     from .meibelaierror import MeibelaiError
+    from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
     from .no_response_error import NoResponseError
-    from .objectstorageconfig import (
-        GcsConfig,
-        GcsConfigTypedDict,
-        ObjectStorageConfig,
-        ObjectStorageConfigTypedDict,
-    )
+    from .objectstorageconfig import ObjectStorageConfig, ObjectStorageConfigTypedDict
     from .objectstoragefilters import (
         ObjectStorageFilters,
         ObjectStorageFiltersTypedDict,
     )
+    from .query_workflowop import QueryWorkflowRequest, QueryWorkflowRequestTypedDict
     from .ragchunkingstrategy import RagChunkingStrategy, RagChunkingStrategyTypedDict
     from .ragconfig import RagConfig, RagConfigTypedDict
     from .referencegraphconfig import (
@@ -360,10 +340,19 @@ if TYPE_CHECKING:
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
     from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
+    from .send_signalop import SendSignalRequest, SendSignalRequestTypedDict
     from .sentencechunking import SentenceChunking, SentenceChunkingTypedDict
     from .sparseembeddingmodel import (
         SparseEmbeddingModel,
         SparseEmbeddingModelTypedDict,
+    )
+    from .start_blueprint_instanceop import (
+        StartBlueprintInstanceRequest1,
+        StartBlueprintInstanceRequest1TypedDict,
+    )
+    from .startblueprintinstancerequest import (
+        StartBlueprintInstanceRequest,
+        StartBlueprintInstanceRequestTypedDict,
     )
     from .tagcolumninfo import TagColumnInfo, TagColumnInfoTypedDict
     from .tagconfig import TagConfig, TagConfigTypedDict
@@ -501,10 +490,6 @@ __all__ = [
     "AddActivityByBlueprintInstanceRequest",
     "AddActivityByBlueprintInstanceRequestTypedDict",
     "AddActivityRequest",
-    "AddActivityRequestInputData",
-    "AddActivityRequestInputDataTypedDict",
-    "AddActivityRequestOutputData",
-    "AddActivityRequestOutputDataTypedDict",
     "AddActivityRequestTypedDict",
     "AddActivityResponse",
     "AddActivityResponseTypedDict",
@@ -564,13 +549,14 @@ __all__ = [
     "AddTagTableRequestTypedDict",
     "AddTagTableResponse",
     "AddTagTableResponseTypedDict",
+    "AllowedDataElementFilterKeys",
     "BasicWebAuth",
     "BasicWebAuthTypedDict",
     "BlueprintInstance",
-    "BlueprintInstanceInstanceMetadata",
-    "BlueprintInstanceInstanceMetadataTypedDict",
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
+    "CancelBlueprintInstanceRequest",
+    "CancelBlueprintInstanceRequestTypedDict",
     "CodeChunking",
     "CodeChunkingTypedDict",
     "CompleteBlueprintInstanceRequest",
@@ -580,12 +566,15 @@ __all__ = [
     "CreateEventByBlueprintInstanceIDRequest",
     "CreateEventByBlueprintInstanceIDRequestTypedDict",
     "CustomEventRequest",
-    "CustomEventRequestDetails",
-    "CustomEventRequestDetailsTypedDict",
     "CustomEventRequestTypedDict",
     "DataElement",
+    "DataElementCondition",
     "DataElementDiscoveryRecord",
     "DataElementDiscoveryRecordTypedDict",
+    "DataElementFilter",
+    "DataElementFilterRequest",
+    "DataElementFilterRequestTypedDict",
+    "DataElementFilterTypedDict",
     "DataElementTypedDict",
     "Datasource",
     "DatasourceTypedDict",
@@ -623,12 +612,8 @@ __all__ = [
     "DeleteTagTableInfoRequestTypedDict",
     "DeleteTagTableResponse",
     "DeleteTagTableResponseTypedDict",
-    "Details",
-    "DetailsTypedDict",
     "EmbeddingModel",
     "EmbeddingModelTypedDict",
-    "ErrorDetails",
-    "ErrorDetailsTypedDict",
     "Event",
     "EventType",
     "EventTypedDict",
@@ -638,8 +623,6 @@ __all__ = [
     "FailBlueprintInstanceRequest1",
     "FailBlueprintInstanceRequest1TypedDict",
     "FailBlueprintInstanceRequestTypedDict",
-    "GcsConfig",
-    "GcsConfigTypedDict",
     "GetActivitiesByBlueprintInstanceRequest",
     "GetActivitiesByBlueprintInstanceRequestTypedDict",
     "GetActivitiesResponse",
@@ -703,10 +686,6 @@ __all__ = [
     "IngestMethod",
     "IngestRecord",
     "IngestRecordTypedDict",
-    "InputData",
-    "InputDataTypedDict",
-    "InstanceMetadata",
-    "InstanceMetadataTypedDict",
     "JSONNodeChunking",
     "JSONNodeChunkingTypedDict",
     "Loc",
@@ -714,13 +693,15 @@ __all__ = [
     "MarkdownNodeChunking",
     "MarkdownNodeChunkingTypedDict",
     "MeibelaiError",
+    "MetadataOptions",
+    "MetadataOptionsTypedDict",
     "NoResponseError",
     "ObjectStorageConfig",
     "ObjectStorageConfigTypedDict",
     "ObjectStorageFilters",
     "ObjectStorageFiltersTypedDict",
-    "OutputData",
-    "OutputDataTypedDict",
+    "QueryWorkflowRequest",
+    "QueryWorkflowRequestTypedDict",
     "RagChunkingStrategy",
     "RagChunkingStrategyTypedDict",
     "RagConfig",
@@ -734,12 +715,18 @@ __all__ = [
     "SecurityTypedDict",
     "SemanticChunking",
     "SemanticChunkingTypedDict",
+    "SendSignalRequest",
+    "SendSignalRequestTypedDict",
     "SentenceChunking",
     "SentenceChunkingTypedDict",
     "Size",
     "SizeTypedDict",
     "SparseEmbeddingModel",
     "SparseEmbeddingModelTypedDict",
+    "StartBlueprintInstanceRequest",
+    "StartBlueprintInstanceRequest1",
+    "StartBlueprintInstanceRequest1TypedDict",
+    "StartBlueprintInstanceRequestTypedDict",
     "TagColumnInfo",
     "TagColumnInfoTypedDict",
     "TagConfig",
@@ -815,10 +802,6 @@ __all__ = [
 _dynamic_imports: dict[str, str] = {
     "Activity": ".activity",
     "ActivityTypedDict": ".activity",
-    "InputData": ".activity",
-    "InputDataTypedDict": ".activity",
-    "OutputData": ".activity",
-    "OutputDataTypedDict": ".activity",
     "ActivityStatus": ".activitystatus",
     "AddActivityByBlueprintInstanceRequest": ".add_activity_by_blueprint_instanceop",
     "AddActivityByBlueprintInstanceRequestTypedDict": ".add_activity_by_blueprint_instanceop",
@@ -841,17 +824,11 @@ _dynamic_imports: dict[str, str] = {
     "AddTagTableInfoRequest": ".add_tag_table_infoop",
     "AddTagTableInfoRequestTypedDict": ".add_tag_table_infoop",
     "AddActivityRequest": ".addactivityrequest",
-    "AddActivityRequestInputData": ".addactivityrequest",
-    "AddActivityRequestInputDataTypedDict": ".addactivityrequest",
-    "AddActivityRequestOutputData": ".addactivityrequest",
-    "AddActivityRequestOutputDataTypedDict": ".addactivityrequest",
     "AddActivityRequestTypedDict": ".addactivityrequest",
     "AddActivityResponse": ".addactivityresponse",
     "AddActivityResponseTypedDict": ".addactivityresponse",
     "AddBlueprintInstanceRequest": ".addblueprintinstancerequest",
     "AddBlueprintInstanceRequestTypedDict": ".addblueprintinstancerequest",
-    "InstanceMetadata": ".addblueprintinstancerequest",
-    "InstanceMetadataTypedDict": ".addblueprintinstancerequest",
     "AddBlueprintInstanceResponse": ".addblueprintinstanceresponse",
     "AddBlueprintInstanceResponseTypedDict": ".addblueprintinstanceresponse",
     "AddChunkingStrategyRequest": ".addchunkingstrategyrequest",
@@ -888,14 +865,15 @@ _dynamic_imports: dict[str, str] = {
     "AddTagTableRequestTypedDict": ".addtagtablerequest",
     "AddTagTableResponse": ".addtagtableresponse",
     "AddTagTableResponseTypedDict": ".addtagtableresponse",
+    "AllowedDataElementFilterKeys": ".alloweddataelementfilterkeys",
     "APIError": ".apierror",
     "BasicWebAuth": ".basicwebauth",
     "BasicWebAuthTypedDict": ".basicwebauth",
     "BlueprintInstance": ".blueprintinstance",
-    "BlueprintInstanceInstanceMetadata": ".blueprintinstance",
-    "BlueprintInstanceInstanceMetadataTypedDict": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
+    "CancelBlueprintInstanceRequest": ".cancel_blueprint_instanceop",
+    "CancelBlueprintInstanceRequestTypedDict": ".cancel_blueprint_instanceop",
     "CodeChunking": ".codechunking",
     "CodeChunkingTypedDict": ".codechunking",
     "CompleteBlueprintInstanceRequest1": ".complete_blueprint_instanceop",
@@ -905,15 +883,18 @@ _dynamic_imports: dict[str, str] = {
     "CreateEventByBlueprintInstanceIDRequest": ".create_event_by_blueprint_instance_idop",
     "CreateEventByBlueprintInstanceIDRequestTypedDict": ".create_event_by_blueprint_instance_idop",
     "CustomEventRequest": ".customeventrequest",
-    "CustomEventRequestDetails": ".customeventrequest",
-    "CustomEventRequestDetailsTypedDict": ".customeventrequest",
     "CustomEventRequestTypedDict": ".customeventrequest",
     "DataElement": ".dataelement",
     "DataElementTypedDict": ".dataelement",
+    "DataElementCondition": ".dataelementcondition",
     "DataElementDiscoveryRecord": ".dataelementdiscoveryrecord",
     "DataElementDiscoveryRecordTypedDict": ".dataelementdiscoveryrecord",
     "Size": ".dataelementdiscoveryrecord",
     "SizeTypedDict": ".dataelementdiscoveryrecord",
+    "DataElementFilter": ".dataelementfilter",
+    "DataElementFilterTypedDict": ".dataelementfilter",
+    "DataElementFilterRequest": ".dataelementfilterrequest",
+    "DataElementFilterRequestTypedDict": ".dataelementfilterrequest",
     "Datasource": ".datasource",
     "DatasourceTypedDict": ".datasource",
     "DatasourceWebConfig": ".datasourcewebconfig",
@@ -952,8 +933,6 @@ _dynamic_imports: dict[str, str] = {
     "DeleteTagTableResponseTypedDict": ".deletetagtableresponse",
     "EmbeddingModel": ".embeddingmodel",
     "EmbeddingModelTypedDict": ".embeddingmodel",
-    "Details": ".event",
-    "DetailsTypedDict": ".event",
     "Event": ".event",
     "EventTypedDict": ".event",
     "EventType": ".eventtype",
@@ -961,8 +940,6 @@ _dynamic_imports: dict[str, str] = {
     "ExtractorModelTypedDict": ".extractormodel",
     "FailBlueprintInstanceRequest1": ".fail_blueprint_instanceop",
     "FailBlueprintInstanceRequest1TypedDict": ".fail_blueprint_instanceop",
-    "ErrorDetails": ".failblueprintinstancerequest",
-    "ErrorDetailsTypedDict": ".failblueprintinstancerequest",
     "FailBlueprintInstanceRequest": ".failblueprintinstancerequest",
     "FailBlueprintInstanceRequestTypedDict": ".failblueprintinstancerequest",
     "GetActivitiesByBlueprintInstanceRequest": ".get_activities_by_blueprint_instanceop",
@@ -1033,13 +1010,15 @@ _dynamic_imports: dict[str, str] = {
     "MarkdownNodeChunking": ".markdownnodechunking",
     "MarkdownNodeChunkingTypedDict": ".markdownnodechunking",
     "MeibelaiError": ".meibelaierror",
+    "MetadataOptions": ".metadataoptions",
+    "MetadataOptionsTypedDict": ".metadataoptions",
     "NoResponseError": ".no_response_error",
-    "GcsConfig": ".objectstorageconfig",
-    "GcsConfigTypedDict": ".objectstorageconfig",
     "ObjectStorageConfig": ".objectstorageconfig",
     "ObjectStorageConfigTypedDict": ".objectstorageconfig",
     "ObjectStorageFilters": ".objectstoragefilters",
     "ObjectStorageFiltersTypedDict": ".objectstoragefilters",
+    "QueryWorkflowRequest": ".query_workflowop",
+    "QueryWorkflowRequestTypedDict": ".query_workflowop",
     "RagChunkingStrategy": ".ragchunkingstrategy",
     "RagChunkingStrategyTypedDict": ".ragchunkingstrategy",
     "RagConfig": ".ragconfig",
@@ -1053,10 +1032,16 @@ _dynamic_imports: dict[str, str] = {
     "SecurityTypedDict": ".security",
     "SemanticChunking": ".semanticchunking",
     "SemanticChunkingTypedDict": ".semanticchunking",
+    "SendSignalRequest": ".send_signalop",
+    "SendSignalRequestTypedDict": ".send_signalop",
     "SentenceChunking": ".sentencechunking",
     "SentenceChunkingTypedDict": ".sentencechunking",
     "SparseEmbeddingModel": ".sparseembeddingmodel",
     "SparseEmbeddingModelTypedDict": ".sparseembeddingmodel",
+    "StartBlueprintInstanceRequest1": ".start_blueprint_instanceop",
+    "StartBlueprintInstanceRequest1TypedDict": ".start_blueprint_instanceop",
+    "StartBlueprintInstanceRequest": ".startblueprintinstancerequest",
+    "StartBlueprintInstanceRequestTypedDict": ".startblueprintinstancerequest",
     "TagColumnInfo": ".tagcolumninfo",
     "TagColumnInfoTypedDict": ".tagcolumninfo",
     "TagConfig": ".tagconfig",

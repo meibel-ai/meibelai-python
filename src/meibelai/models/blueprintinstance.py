@@ -7,16 +7,8 @@ from .event import Event, EventTypedDict
 from datetime import datetime
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
-from typing import List
+from typing import Any, Dict, List
 from typing_extensions import NotRequired, TypedDict
-
-
-class BlueprintInstanceInstanceMetadataTypedDict(TypedDict):
-    pass
-
-
-class BlueprintInstanceInstanceMetadata(BaseModel):
-    pass
 
 
 class BlueprintInstanceTypedDict(TypedDict):
@@ -30,7 +22,7 @@ class BlueprintInstanceTypedDict(TypedDict):
     status: NotRequired[Nullable[BlueprintInstanceStatus]]
     start_time: NotRequired[Nullable[datetime]]
     end_time: NotRequired[Nullable[datetime]]
-    instance_metadata: NotRequired[Nullable[BlueprintInstanceInstanceMetadataTypedDict]]
+    instance_metadata: NotRequired[Nullable[Dict[str, Any]]]
     parent_id: NotRequired[Nullable[str]]
     children: NotRequired[Nullable[List[BlueprintInstanceTypedDict]]]
     activities: NotRequired[Nullable[List[ActivityTypedDict]]]
@@ -56,7 +48,7 @@ class BlueprintInstance(BaseModel):
 
     end_time: OptionalNullable[datetime] = UNSET
 
-    instance_metadata: OptionalNullable[BlueprintInstanceInstanceMetadata] = UNSET
+    instance_metadata: OptionalNullable[Dict[str, Any]] = UNSET
 
     parent_id: OptionalNullable[str] = UNSET
 

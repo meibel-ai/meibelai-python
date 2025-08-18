@@ -3,15 +3,8 @@
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
+from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
-
-
-class ErrorDetailsTypedDict(TypedDict):
-    pass
-
-
-class ErrorDetails(BaseModel):
-    pass
 
 
 class FailBlueprintInstanceRequestTypedDict(TypedDict):
@@ -19,7 +12,7 @@ class FailBlueprintInstanceRequestTypedDict(TypedDict):
 
     error: NotRequired[Nullable[str]]
     r"""Error message for failure"""
-    error_details: NotRequired[Nullable[ErrorDetailsTypedDict]]
+    error_details: NotRequired[Nullable[Dict[str, Any]]]
 
 
 class FailBlueprintInstanceRequest(BaseModel):
@@ -28,7 +21,7 @@ class FailBlueprintInstanceRequest(BaseModel):
     error: OptionalNullable[str] = UNSET
     r"""Error message for failure"""
 
-    error_details: OptionalNullable[ErrorDetails] = UNSET
+    error_details: OptionalNullable[Dict[str, Any]] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

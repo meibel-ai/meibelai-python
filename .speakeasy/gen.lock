@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: baca40baff7dc2a7280828c226be586d
+  docChecksum: c03fbac2078fa46eddf23a4a569b5b1a
   docVersion: 0.1.0
-  speakeasyVersion: 1.604.1
-  generationVersion: 2.683.1
-  releaseVersion: 0.13.1
-  configChecksum: a2958eae7bd268f8c830cf28957a844f
+  speakeasyVersion: 1.605.5
+  generationVersion: 2.684.0
+  releaseVersion: 0.13.2
+  configChecksum: 033e7aa47294552c514c965f61de3cc2
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -41,8 +41,6 @@ generatedFiles:
   - docs/models/activitystatus.md
   - docs/models/addactivitybyblueprintinstancerequest.md
   - docs/models/addactivityrequest.md
-  - docs/models/addactivityrequestinputdata.md
-  - docs/models/addactivityrequestoutputdata.md
   - docs/models/addactivityresponse.md
   - docs/models/addblueprintinstancerequest.md
   - docs/models/addblueprintinstancerequest1.md
@@ -72,18 +70,21 @@ generatedFiles:
   - docs/models/addtagtableinforequest.md
   - docs/models/addtagtablerequest.md
   - docs/models/addtagtableresponse.md
+  - docs/models/alloweddataelementfilterkeys.md
   - docs/models/basicwebauth.md
   - docs/models/blueprintinstance.md
-  - docs/models/blueprintinstanceinstancemetadata.md
   - docs/models/blueprintinstancestatus.md
+  - docs/models/cancelblueprintinstancerequest.md
   - docs/models/codechunking.md
   - docs/models/completeblueprintinstancerequest.md
   - docs/models/completeblueprintinstancerequest1.md
   - docs/models/createeventbyblueprintinstanceidrequest.md
   - docs/models/customeventrequest.md
-  - docs/models/customeventrequestdetails.md
   - docs/models/dataelement.md
+  - docs/models/dataelementcondition.md
   - docs/models/dataelementdiscoveryrecord.md
+  - docs/models/dataelementfilter.md
+  - docs/models/dataelementfilterrequest.md
   - docs/models/datasource.md
   - docs/models/datasourcewebconfig.md
   - docs/models/deleteblueprintinstancerequest.md
@@ -102,15 +103,12 @@ generatedFiles:
   - docs/models/deletetagconfigrequest.md
   - docs/models/deletetagtableinforequest.md
   - docs/models/deletetagtableresponse.md
-  - docs/models/details.md
   - docs/models/embeddingmodel.md
-  - docs/models/errordetails.md
   - docs/models/event.md
   - docs/models/eventtype.md
   - docs/models/extractormodel.md
   - docs/models/failblueprintinstancerequest.md
   - docs/models/failblueprintinstancerequest1.md
-  - docs/models/gcsconfig.md
   - docs/models/getactivitiesbyblueprintinstancerequest.md
   - docs/models/getactivitiesresponse.md
   - docs/models/getactivitybyblueprintinstancerequest.md
@@ -143,23 +141,25 @@ generatedFiles:
   - docs/models/httpvalidationerror.md
   - docs/models/ingestmethod.md
   - docs/models/ingestrecord.md
-  - docs/models/inputdata.md
-  - docs/models/instancemetadata.md
   - docs/models/jsonnodechunking.md
   - docs/models/loc.md
   - docs/models/markdownnodechunking.md
+  - docs/models/metadataoptions.md
   - docs/models/objectstorageconfig.md
   - docs/models/objectstoragefilters.md
-  - docs/models/outputdata.md
+  - docs/models/queryworkflowrequest.md
   - docs/models/ragchunkingstrategy.md
   - docs/models/ragconfig.md
   - docs/models/referencegraphconfig.md
   - docs/models/s3config.md
   - docs/models/security.md
   - docs/models/semanticchunking.md
+  - docs/models/sendsignalrequest.md
   - docs/models/sentencechunking.md
   - docs/models/size.md
   - docs/models/sparseembeddingmodel.md
+  - docs/models/startblueprintinstancerequest.md
+  - docs/models/startblueprintinstancerequest1.md
   - docs/models/tagcolumninfo.md
   - docs/models/tagconfig.md
   - docs/models/tagtableinfo.md
@@ -204,6 +204,7 @@ generatedFiles:
   - docs/sdks/rag/README.md
   - docs/sdks/referencegraph/README.md
   - docs/sdks/tag/README.md
+  - docs/sdks/workflows/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -255,17 +256,22 @@ generatedFiles:
   - src/meibelai/models/addtagconfigresponse.py
   - src/meibelai/models/addtagtablerequest.py
   - src/meibelai/models/addtagtableresponse.py
+  - src/meibelai/models/alloweddataelementfilterkeys.py
   - src/meibelai/models/apierror.py
   - src/meibelai/models/basicwebauth.py
   - src/meibelai/models/blueprintinstance.py
   - src/meibelai/models/blueprintinstancestatus.py
+  - src/meibelai/models/cancel_blueprint_instanceop.py
   - src/meibelai/models/codechunking.py
   - src/meibelai/models/complete_blueprint_instanceop.py
   - src/meibelai/models/completeblueprintinstancerequest.py
   - src/meibelai/models/create_event_by_blueprint_instance_idop.py
   - src/meibelai/models/customeventrequest.py
   - src/meibelai/models/dataelement.py
+  - src/meibelai/models/dataelementcondition.py
   - src/meibelai/models/dataelementdiscoveryrecord.py
+  - src/meibelai/models/dataelementfilter.py
+  - src/meibelai/models/dataelementfilterrequest.py
   - src/meibelai/models/datasource.py
   - src/meibelai/models/datasourcewebconfig.py
   - src/meibelai/models/delete_blueprint_instanceop.py
@@ -325,9 +331,11 @@ generatedFiles:
   - src/meibelai/models/jsonnodechunking.py
   - src/meibelai/models/markdownnodechunking.py
   - src/meibelai/models/meibelaierror.py
+  - src/meibelai/models/metadataoptions.py
   - src/meibelai/models/no_response_error.py
   - src/meibelai/models/objectstorageconfig.py
   - src/meibelai/models/objectstoragefilters.py
+  - src/meibelai/models/query_workflowop.py
   - src/meibelai/models/ragchunkingstrategy.py
   - src/meibelai/models/ragconfig.py
   - src/meibelai/models/referencegraphconfig.py
@@ -335,8 +343,11 @@ generatedFiles:
   - src/meibelai/models/s3config.py
   - src/meibelai/models/security.py
   - src/meibelai/models/semanticchunking.py
+  - src/meibelai/models/send_signalop.py
   - src/meibelai/models/sentencechunking.py
   - src/meibelai/models/sparseembeddingmodel.py
+  - src/meibelai/models/start_blueprint_instanceop.py
+  - src/meibelai/models/startblueprintinstancerequest.py
   - src/meibelai/models/tagcolumninfo.py
   - src/meibelai/models/tagconfig.py
   - src/meibelai/models/tagtableinfo.py
@@ -397,6 +408,7 @@ generatedFiles:
   - src/meibelai/utils/unmarshal_json_response.py
   - src/meibelai/utils/url.py
   - src/meibelai/utils/values.py
+  - src/meibelai/workflows.py
 examples:
   list:
     speakeasy-default-list:
@@ -1146,6 +1158,8 @@ examples:
           include_children: false
           include_activities: false
           include_events: false
+          offset: 0
+          limit: 10
         header:
           customer-id: "<id>"
       responses:
@@ -1249,6 +1263,9 @@ examples:
       parameters:
         path:
           blueprint_instance_id: "<id>"
+        query:
+          offset: 0
+          limit: 10
         header:
           customer-id: "<id>"
       responses:
@@ -1301,6 +1318,9 @@ examples:
       parameters:
         path:
           blueprint_instance_id: "<id>"
+        query:
+          offset: 0
+          limit: 10
         header:
           customer-id: "<id>"
       responses:
@@ -1308,5 +1328,48 @@ examples:
           application/json: {"data": []}
         "422":
           application/json: {}
+  start_blueprint_instance:
+    speakeasy-default-start-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+      responses:
+        "201":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  cancel_blueprint_instance:
+    speakeasy-default-cancel-blueprint-instance:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  send_signal:
+    speakeasy-default-send-signal:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+          signal_name: "<value>"
+      responses:
+        "201":
+          application/json: "<value>"
+        "422":
+          application/json: {}
+  query_workflow:
+    speakeasy-default-query-workflow:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+          query_name: "<value>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## SDK Changes Detected:\n* `meibelai.blueprint_instances.get_all_blueprint_instances()`: \n  *  `request` **Changed**\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.get_events_by_blueprint_instance()`: \n  *  `request` **Changed**\n  *  `response.data.[].details` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.create_event_by_blueprint_instance_id()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.get_event_by_blueprint_instance()`: \n  *  `request.customer-id` **Changed**\n  *  `response.data.[].details` **Changed** **Breaking** :warning:\n* `meibelai.datasources.add_datasource()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.datasources.get_datasource()`: \n  *  `request.customer-id` **Changed**\n  *  `response.object_storage_config.gcs_config` **Changed** **Breaking** :warning:\n* `meibelai.datasources.update_datasource()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.get_activities_by_blueprint_instance()`: \n  *  `request` **Changed**\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.get_activity_by_blueprint_instance()`: \n  *  `request.customer-id` **Changed**\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.add_activity_by_blueprint_instance()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.fail_blueprint_instance()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.get_blueprint_instance()`: \n  *  `request.customer-id` **Changed**\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `meibelai.blueprint_instances.add_blueprint_instance()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.rag.get_rag_config()`: \n  *  `request.customer-id` **Changed**\n  *  `response.metadata_options` **Added**\n* `meibelai.rag.add_chunking_strategy()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.get_new_and_updated_elements()`:  `request.customer-id` **Changed**\n* `meibelai.tag.get_tag_config()`:  `request.customer-id` **Changed**\n* `meibelai.tag.update_tag_config()`:  `request.customer-id` **Changed**\n* `meibelai.tag.add_tag_config()`:  `request.customer-id` **Changed**\n* `meibelai.tag.delete_tag_config()`:  `request.customer-id` **Changed**\n* `meibelai.tag.get_tag_table_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.update_tag_table_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.add_tag_table_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.delete_tag_table_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.get_all_tag_table_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.get_tag_column_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.update_tag_column_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.add_tag_column_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.get_all_tag_column_info()`:  `request.customer-id` **Changed**\n* `meibelai.tag.delete_tag_column_info()`:  `request.customer-id` **Changed**\n* `meibelai.workflows.start_blueprint_instance()`: **Added**\n* `meibelai.rag.update_rag_config()`:  `request` **Changed**\n* `meibelai.rag.add_rag_config()`:  `request` **Changed**\n* `meibelai.rag.delete_rag_config()`:  `request.customer-id` **Changed**\n* `meibelai.rag.get_chunking_strategy()`:  `request.customer-id` **Changed**\n* `meibelai.rag.update_chunking_strategy()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.get_data_element_by_path()`:  `request.customer-id` **Changed**\n* `meibelai.rag.delete_chunking_strategy()`:  `request.customer-id` **Changed**\n* `meibelai.ingest.get_ingest_record()`:  `request.customer-id` **Changed**\n* `meibelai.ingest.upsert_ingest_record()`:  `request.customer-id` **Changed**\n* `meibelai.ingest.delete_ingest_record()`:  `request.customer-id` **Changed**\n* `meibelai.ingest.get_all_ingest_records()`:  `request.customer-id` **Changed**\n* `meibelai.reference_graph.get_reference_graph_config()`:  `request.customer-id` **Changed**\n* `meibelai.reference_graph.update_reference_graph_config()`:  `request.customer-id` **Changed**\n* `meibelai.reference_graph.add_reference_graph_config()`:  `request.customer-id` **Changed**\n* `meibelai.reference_graph.delete_reference_graph_config()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.get_all_data_elements()`:  `request` **Changed**\n* `meibelai.data_elements.delete_data_element()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.update_data_element()`:  `request.customer-id` **Changed**\n* `meibelai.blueprint_instances.delete_blueprint_instance()`:  `request.customer-id` **Changed**\n* `meibelai.blueprint_instances.update_blueprint_instance_status()`:  `request.customer-id` **Changed**\n* `meibelai.blueprint_instances.complete_blueprint_instance()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.get_data_element()`:  `request.customer-id` **Changed**\n* `meibelai.data_elements.add_data_element()`:  `request.customer-id` **Changed**\n* `meibelai.datasources.get_all_datasource_ids()`:  `request.customer-id_param` **Changed**\n* `meibelai.datasources.delete_datasource_datasource_datasource_id_delete()`:  `request.customer-id` **Changed**\n* `meibelai.blueprint_instances.update_activity_status()`:  `request.customer-id` **Changed**\n* `meibelai.workflows.query_workflow()`: **Added**\n* `meibelai.workflows.send_signal()`: **Added**\n* `meibelai.workflows.cancel_blueprint_instance()`: **Added**\n"

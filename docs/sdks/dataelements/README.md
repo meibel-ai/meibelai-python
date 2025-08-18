@@ -29,12 +29,12 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.add_data_element(datasource_id="<id>", customer_id="<id>", description="mmm slip punctual whether fooey", name="<value>", path="/dev", media_type="<value>", discovery_record={
+    res = m_client.data_elements.add_data_element(datasource_id="<id>", description="mmm slip punctual whether fooey", name="<value>", path="/dev", media_type="<value>", discovery_record={
         "discovery_time": "<value>",
         "last_modified_time": "<value>",
         "size": 643019,
         "element_hash": "<value>",
-    })
+    }, customer_id="<id>")
 
     # Handle response
     print(res)
@@ -46,12 +46,12 @@ with Meibelai(
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                           | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
-| `customer_id`                                                                             | *str*                                                                                     | :heavy_check_mark:                                                                        | Customer ID                                                                               |
 | `description`                                                                             | *Nullable[str]*                                                                           | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `name`                                                                                    | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `path`                                                                                    | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `media_type`                                                                              | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `discovery_record`                                                                        | [Nullable[models.DataElementDiscoveryRecord]](../../models/dataelementdiscoveryrecord.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `customer_id`                                                                             | *OptionalNullable[str]*                                                                   | :heavy_minus_sign:                                                                        | Customer ID                                                                               |
 | `retries`                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                          | :heavy_minus_sign:                                                                        | Configuration to override the default retry behavior of the client.                       |
 
 ### Response
@@ -94,7 +94,7 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `data_element_id`                                                   | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -137,7 +137,7 @@ with Meibelai(
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                                   | *str*                                                                                             | :heavy_check_mark:                                                                                | N/A                                                                                               |
 | `data_element_id`                                                                                 | *str*                                                                                             | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `customer_id`                                                                                     | *str*                                                                                             | :heavy_check_mark:                                                                                | Customer ID                                                                                       |
+| `customer_id`                                                                                     | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | Customer ID                                                                                       |
 | `description`                                                                                     | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
 | `name`                                                                                            | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
 | `path`                                                                                            | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
@@ -185,7 +185,7 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `data_element_id`                                                   | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -205,7 +205,7 @@ Get All Data Elements
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_all_data_elements" method="get" path="/datasource/{datasource_id}/all_data_elements" -->
+<!-- UsageSnippet language="python" operationID="get_all_data_elements" method="post" path="/datasource/{datasource_id}/all_data_elements" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -215,7 +215,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.get_all_data_elements(datasource_id="<id>", customer_id="<id>", offset=0, limit=10)
+    res = m_client.data_elements.get_all_data_elements(datasource_id="<id>", offset=0, limit=10, customer_id="<id>")
 
     # Handle response
     print(res)
@@ -227,13 +227,14 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `regex_filter`                                                      | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `media_type_filters`                                                | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `offset`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Number of items to skip                                             |
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
 | `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
+| `filters`                                                           | List[[models.DataElementFilter](../../models/dataelementfilter.md)] | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -263,7 +264,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.get_data_element_by_path(datasource_id="<id>", customer_id="<id>", path="/var/tmp")
+    res = m_client.data_elements.get_data_element_by_path(datasource_id="<id>", path="/var/tmp", customer_id="<id>")
 
     # Handle response
     print(res)
@@ -275,8 +276,8 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `path`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -307,7 +308,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.get_new_and_updated_elements(datasource_id="<id>", ingest_method=meibelai.IngestMethod.RAG, customer_id="<id>", offset=0, limit=10)
+    res = m_client.data_elements.get_new_and_updated_elements(datasource_id="<id>", ingest_method=meibelai.IngestMethod.RAG, offset=0, limit=10, customer_id="<id>")
 
     # Handle response
     print(res)
@@ -320,13 +321,13 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `ingest_method`                                                     | [models.IngestMethod](../../models/ingestmethod.md)                 | :heavy_check_mark:                                                  | IngestMethod                                                        |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Customer ID                                                         |
 | `regex_filter`                                                      | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `media_type_filters`                                                | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `offset`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Number of items to skip                                             |
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
 | `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
+| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

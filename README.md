@@ -284,6 +284,13 @@ with Meibelai(
 * [get_all_tag_column_info](docs/sdks/tag/README.md#get_all_tag_column_info) - Get All Tag Column Info
 * [delete_tag_column_info](docs/sdks/tag/README.md#delete_tag_column_info) - Delete Tag Column Info
 
+### [workflows](docs/sdks/workflows/README.md)
+
+* [start_blueprint_instance](docs/sdks/workflows/README.md#start_blueprint_instance) - Start Blueprint Instance
+* [cancel_blueprint_instance](docs/sdks/workflows/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
+* [send_signal](docs/sdks/workflows/README.md#send_signal) - Send Signal
+* [query_workflow](docs/sdks/workflows/README.md#query_workflow) - Query Workflow
+
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -358,7 +365,7 @@ with Meibelai(
     res = None
     try:
 
-        res = m_client.datasources.add_datasource(customer_id_param="<value>", customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>")
+        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", customer_id_param="<value>")
 
         # Handle response
         print(res)

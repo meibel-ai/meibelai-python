@@ -14,7 +14,6 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         description: Nullable[str],
         name: str,
         path: str,
@@ -25,6 +24,7 @@ class DataElements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -33,12 +33,12 @@ class DataElements(BaseSDK):
         r"""Add Data Element
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param name:
         :param path:
         :param media_type:
         :param discovery_record:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -139,7 +139,6 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         description: Nullable[str],
         name: str,
         path: str,
@@ -150,6 +149,7 @@ class DataElements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -158,12 +158,12 @@ class DataElements(BaseSDK):
         r"""Add Data Element
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param name:
         :param path:
         :param media_type:
         :param discovery_record:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -265,7 +265,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -362,7 +362,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -459,7 +459,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         path: OptionalNullable[str] = UNSET,
@@ -588,7 +588,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         path: OptionalNullable[str] = UNSET,
@@ -717,7 +717,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -814,7 +814,7 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -910,13 +910,18 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         regex_filter: Optional[str] = None,
         media_type_filters: Optional[List[str]] = None,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
+        filters: OptionalNullable[
+            Union[
+                List[models.DataElementFilter], List[models.DataElementFilterTypedDict]
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -925,13 +930,14 @@ class DataElements(BaseSDK):
         r"""Get All Data Elements
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param regex_filter:
         :param media_type_filters:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
+        :param filters:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -956,10 +962,15 @@ class DataElements(BaseSDK):
             sort_by=sort_by,
             sort_order=sort_order,
             customer_id=customer_id,
+            data_element_filter_request=models.DataElementFilterRequest(
+                filters=utils.get_pydantic_model(
+                    filters, OptionalNullable[List[models.DataElementFilter]]
+                ),
+            ),
         )
 
         req = self._build_request(
-            method="GET",
+            method="POST",
             path="/datasource/{datasource_id}/all_data_elements",
             base_url=base_url,
             url_variables=url_variables,
@@ -971,6 +982,13 @@ class DataElements(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.data_element_filter_request,
+                False,
+                True,
+                "json",
+                Optional[models.DataElementFilterRequest],
+            ),
             timeout_ms=timeout_ms,
         )
 
@@ -1022,13 +1040,18 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         regex_filter: Optional[str] = None,
         media_type_filters: Optional[List[str]] = None,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
+        filters: OptionalNullable[
+            Union[
+                List[models.DataElementFilter], List[models.DataElementFilterTypedDict]
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1037,13 +1060,14 @@ class DataElements(BaseSDK):
         r"""Get All Data Elements
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param regex_filter:
         :param media_type_filters:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
+        :param filters:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1068,10 +1092,15 @@ class DataElements(BaseSDK):
             sort_by=sort_by,
             sort_order=sort_order,
             customer_id=customer_id,
+            data_element_filter_request=models.DataElementFilterRequest(
+                filters=utils.get_pydantic_model(
+                    filters, OptionalNullable[List[models.DataElementFilter]]
+                ),
+            ),
         )
 
         req = self._build_request_async(
-            method="GET",
+            method="POST",
             path="/datasource/{datasource_id}/all_data_elements",
             base_url=base_url,
             url_variables=url_variables,
@@ -1083,6 +1112,13 @@ class DataElements(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.data_element_filter_request,
+                False,
+                True,
+                "json",
+                Optional[models.DataElementFilterRequest],
+            ),
             timeout_ms=timeout_ms,
         )
 
@@ -1134,8 +1170,8 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         path: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1144,8 +1180,8 @@ class DataElements(BaseSDK):
         r"""Get Data Element By Path
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param path:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1240,8 +1276,8 @@ class DataElements(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
         path: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1250,8 +1286,8 @@ class DataElements(BaseSDK):
         r"""Get Data Element By Path
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param path:
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1347,13 +1383,13 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
         regex_filter: Optional[str] = None,
         media_type_filters: Optional[List[str]] = None,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1365,13 +1401,13 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param ingest_method: IngestMethod
-        :param customer_id: Customer ID
         :param regex_filter:
         :param media_type_filters:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1466,13 +1502,13 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         ingest_method: models.IngestMethod,
-        customer_id: str,
         regex_filter: Optional[str] = None,
         media_type_filters: Optional[List[str]] = None,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1484,13 +1520,13 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param ingest_method: IngestMethod
-        :param customer_id: Customer ID
         :param regex_filter:
         :param media_type_filters:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds

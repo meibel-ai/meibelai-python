@@ -13,12 +13,12 @@ class Datasources(BaseSDK):
     def add_datasource(
         self,
         *,
-        customer_id_param: str,
         customer_id: str,
         project_id: str,
         name: str,
         description: str,
         recurrence: str,
+        customer_id_param: OptionalNullable[str] = UNSET,
         object_storage_config: OptionalNullable[
             Union[models.ObjectStorageConfig, models.ObjectStorageConfigTypedDict]
         ] = UNSET,
@@ -32,12 +32,12 @@ class Datasources(BaseSDK):
     ) -> models.AddDatasourceResponse:
         r"""Add Datasource
 
-        :param customer_id_param: Customer ID
         :param customer_id:
         :param project_id:
         :param name:
         :param description:
         :param recurrence:
+        :param customer_id_param: Customer ID
         :param object_storage_config:
         :param web_config:
         :param retries: Override the default retry configuration for this method
@@ -142,12 +142,12 @@ class Datasources(BaseSDK):
     async def add_datasource_async(
         self,
         *,
-        customer_id_param: str,
         customer_id: str,
         project_id: str,
         name: str,
         description: str,
         recurrence: str,
+        customer_id_param: OptionalNullable[str] = UNSET,
         object_storage_config: OptionalNullable[
             Union[models.ObjectStorageConfig, models.ObjectStorageConfigTypedDict]
         ] = UNSET,
@@ -161,12 +161,12 @@ class Datasources(BaseSDK):
     ) -> models.AddDatasourceResponse:
         r"""Add Datasource
 
-        :param customer_id_param: Customer ID
         :param customer_id:
         :param project_id:
         :param name:
         :param description:
         :param recurrence:
+        :param customer_id_param: Customer ID
         :param object_storage_config:
         :param web_config:
         :param retries: Override the default retry configuration for this method
@@ -272,7 +272,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -366,7 +366,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -460,7 +460,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         recurrence: OptionalNullable[str] = UNSET,
@@ -586,7 +586,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         recurrence: OptionalNullable[str] = UNSET,
@@ -712,7 +712,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -806,7 +806,7 @@ class Datasources(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: str,
+        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -899,13 +899,13 @@ class Datasources(BaseSDK):
     def get_all_datasource_ids(
         self,
         *,
-        customer_id_param: str,
         customer_id: str,
         project_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id_param: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -913,13 +913,13 @@ class Datasources(BaseSDK):
     ) -> List[str]:
         r"""Get All Datasource Ids
 
-        :param customer_id_param: Customer ID
         :param customer_id:
         :param project_id:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id_param: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1017,13 +1017,13 @@ class Datasources(BaseSDK):
     async def get_all_datasource_ids_async(
         self,
         *,
-        customer_id_param: str,
         customer_id: str,
         project_id: str,
         offset: Optional[int] = 0,
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
+        customer_id_param: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1031,13 +1031,13 @@ class Datasources(BaseSDK):
     ) -> List[str]:
         r"""Get All Datasource Ids
 
-        :param customer_id_param: Customer ID
         :param customer_id:
         :param project_id:
         :param offset: Number of items to skip
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
+        :param customer_id_param: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
