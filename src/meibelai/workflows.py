@@ -10,11 +10,12 @@ from typing import Any, Dict, List, Mapping, Optional
 
 
 class Workflows(BaseSDK):
+    r"""Operations with workflows"""
+
     def start_blueprint_instance(
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         workflow_args: OptionalNullable[List[Any]] = UNSET,
         workflow_kwargs: OptionalNullable[Dict[str, Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -25,7 +26,6 @@ class Workflows(BaseSDK):
         r"""Start Blueprint Instance
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param workflow_args:
         :param workflow_kwargs:
         :param retries: Override the default retry configuration for this method
@@ -45,7 +45,6 @@ class Workflows(BaseSDK):
 
         request = models.StartBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             start_blueprint_instance_request=models.StartBlueprintInstanceRequest(
                 workflow_args=workflow_args,
                 workflow_kwargs=workflow_kwargs,
@@ -123,7 +122,6 @@ class Workflows(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         workflow_args: OptionalNullable[List[Any]] = UNSET,
         workflow_kwargs: OptionalNullable[Dict[str, Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -134,7 +132,6 @@ class Workflows(BaseSDK):
         r"""Start Blueprint Instance
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param workflow_args:
         :param workflow_kwargs:
         :param retries: Override the default retry configuration for this method
@@ -154,7 +151,6 @@ class Workflows(BaseSDK):
 
         request = models.StartBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             start_blueprint_instance_request=models.StartBlueprintInstanceRequest(
                 workflow_args=workflow_args,
                 workflow_kwargs=workflow_kwargs,
@@ -232,7 +228,6 @@ class Workflows(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -241,7 +236,6 @@ class Workflows(BaseSDK):
         r"""Cancel Blueprint Instance
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -259,7 +253,6 @@ class Workflows(BaseSDK):
 
         request = models.CancelBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -326,7 +319,6 @@ class Workflows(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -335,7 +327,6 @@ class Workflows(BaseSDK):
         r"""Cancel Blueprint Instance
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -353,7 +344,6 @@ class Workflows(BaseSDK):
 
         request = models.CancelBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -421,7 +411,6 @@ class Workflows(BaseSDK):
         *,
         blueprint_instance_id: str,
         signal_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         request_body: OptionalNullable[List[Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -432,7 +421,6 @@ class Workflows(BaseSDK):
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
         :param signal_name: Name of the signal to send
-        :param customer_id: Customer ID
         :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -452,7 +440,6 @@ class Workflows(BaseSDK):
         request = models.SendSignalRequest(
             blueprint_instance_id=blueprint_instance_id,
             signal_name=signal_name,
-            customer_id=customer_id,
             request_body=request_body,
         )
 
@@ -524,7 +511,6 @@ class Workflows(BaseSDK):
         *,
         blueprint_instance_id: str,
         signal_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         request_body: OptionalNullable[List[Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -535,7 +521,6 @@ class Workflows(BaseSDK):
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
         :param signal_name: Name of the signal to send
-        :param customer_id: Customer ID
         :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -555,7 +540,6 @@ class Workflows(BaseSDK):
         request = models.SendSignalRequest(
             blueprint_instance_id=blueprint_instance_id,
             signal_name=signal_name,
-            customer_id=customer_id,
             request_body=request_body,
         )
 
@@ -627,7 +611,6 @@ class Workflows(BaseSDK):
         *,
         blueprint_instance_id: str,
         query_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         request_body: OptionalNullable[List[Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -638,7 +621,6 @@ class Workflows(BaseSDK):
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
         :param query_name: Name of the query to execute
-        :param customer_id: Customer ID
         :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -658,7 +640,6 @@ class Workflows(BaseSDK):
         request = models.QueryWorkflowRequest(
             blueprint_instance_id=blueprint_instance_id,
             query_name=query_name,
-            customer_id=customer_id,
             request_body=request_body,
         )
 
@@ -730,7 +711,6 @@ class Workflows(BaseSDK):
         *,
         blueprint_instance_id: str,
         query_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         request_body: OptionalNullable[List[Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -741,7 +721,6 @@ class Workflows(BaseSDK):
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
         :param query_name: Name of the query to execute
-        :param customer_id: Customer ID
         :param request_body:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -761,7 +740,6 @@ class Workflows(BaseSDK):
         request = models.QueryWorkflowRequest(
             blueprint_instance_id=blueprint_instance_id,
             query_name=query_name,
-            customer_id=customer_id,
             request_body=request_body,
         )
 

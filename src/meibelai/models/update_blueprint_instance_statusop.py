@@ -3,13 +3,7 @@
 from __future__ import annotations
 from .blueprintinstancestatus import BlueprintInstanceStatus
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from meibelai.utils import (
-    FieldMetadata,
-    HeaderMetadata,
-    PathParamMetadata,
-    QueryParamMetadata,
-)
-import pydantic
+from meibelai.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
 from pydantic import model_serializer
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -19,8 +13,6 @@ class UpdateBlueprintInstanceStatusRequestTypedDict(TypedDict):
     updated_status_value: BlueprintInstanceStatus
     r"""BlueprintInstanceStatus"""
     workflow_run_id: NotRequired[Nullable[str]]
-    customer_id: NotRequired[Nullable[str]]
-    r"""Customer ID"""
 
 
 class UpdateBlueprintInstanceStatusRequest(BaseModel):
@@ -39,17 +31,10 @@ class UpdateBlueprintInstanceStatusRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = UNSET
 
-    customer_id: Annotated[
-        OptionalNullable[str],
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ] = UNSET
-    r"""Customer ID"""
-
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["workflow_run_id", "customer-id"]
-        nullable_fields = ["workflow_run_id", "customer-id"]
+        optional_fields = ["workflow_run_id"]
+        nullable_fields = ["workflow_run_id"]
         null_default_fields = []
 
         serialized = handler(self)

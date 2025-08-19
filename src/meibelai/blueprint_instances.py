@@ -10,10 +10,11 @@ from typing import Any, Dict, Mapping, Optional
 
 
 class BlueprintInstances(BaseSDK):
+    r"""Operations with blueprint_instances"""
+
     def add_blueprint_instance(
         self,
         *,
-        customer_id: OptionalNullable[str] = UNSET,
         blueprint_id: OptionalNullable[str] = UNSET,
         workflow_type: OptionalNullable[str] = UNSET,
         task_queue: OptionalNullable[str] = UNSET,
@@ -26,7 +27,6 @@ class BlueprintInstances(BaseSDK):
     ) -> models.AddBlueprintInstanceResponse:
         r"""Add Blueprint Instance
 
-        :param customer_id: Customer ID
         :param blueprint_id:
         :param workflow_type:
         :param task_queue:
@@ -47,15 +47,12 @@ class BlueprintInstances(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddBlueprintInstanceRequest1(
-            customer_id=customer_id,
-            add_blueprint_instance_request=models.AddBlueprintInstanceRequest(
-                blueprint_id=blueprint_id,
-                workflow_type=workflow_type,
-                task_queue=task_queue,
-                instance_metadata=instance_metadata,
-                parent_id=parent_id,
-            ),
+        request = models.AddBlueprintInstanceRequest(
+            blueprint_id=blueprint_id,
+            workflow_type=workflow_type,
+            task_queue=task_queue,
+            instance_metadata=instance_metadata,
+            parent_id=parent_id,
         )
 
         req = self._build_request(
@@ -72,11 +69,7 @@ class BlueprintInstances(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_blueprint_instance_request,
-                False,
-                False,
-                "json",
-                models.AddBlueprintInstanceRequest,
+                request, False, False, "json", models.AddBlueprintInstanceRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -130,7 +123,6 @@ class BlueprintInstances(BaseSDK):
     async def add_blueprint_instance_async(
         self,
         *,
-        customer_id: OptionalNullable[str] = UNSET,
         blueprint_id: OptionalNullable[str] = UNSET,
         workflow_type: OptionalNullable[str] = UNSET,
         task_queue: OptionalNullable[str] = UNSET,
@@ -143,7 +135,6 @@ class BlueprintInstances(BaseSDK):
     ) -> models.AddBlueprintInstanceResponse:
         r"""Add Blueprint Instance
 
-        :param customer_id: Customer ID
         :param blueprint_id:
         :param workflow_type:
         :param task_queue:
@@ -164,15 +155,12 @@ class BlueprintInstances(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddBlueprintInstanceRequest1(
-            customer_id=customer_id,
-            add_blueprint_instance_request=models.AddBlueprintInstanceRequest(
-                blueprint_id=blueprint_id,
-                workflow_type=workflow_type,
-                task_queue=task_queue,
-                instance_metadata=instance_metadata,
-                parent_id=parent_id,
-            ),
+        request = models.AddBlueprintInstanceRequest(
+            blueprint_id=blueprint_id,
+            workflow_type=workflow_type,
+            task_queue=task_queue,
+            instance_metadata=instance_metadata,
+            parent_id=parent_id,
         )
 
         req = self._build_request_async(
@@ -189,11 +177,7 @@ class BlueprintInstances(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_blueprint_instance_request,
-                False,
-                False,
-                "json",
-                models.AddBlueprintInstanceRequest,
+                request, False, False, "json", models.AddBlueprintInstanceRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -254,7 +238,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -269,7 +252,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -293,7 +275,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -368,7 +349,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -383,7 +363,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -407,7 +386,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -479,7 +457,6 @@ class BlueprintInstances(BaseSDK):
         include_children: Optional[bool] = False,
         include_activities: Optional[bool] = False,
         include_events: Optional[bool] = False,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -491,7 +468,6 @@ class BlueprintInstances(BaseSDK):
         :param include_children:
         :param include_activities:
         :param include_events:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -512,7 +488,6 @@ class BlueprintInstances(BaseSDK):
             include_children=include_children,
             include_activities=include_activities,
             include_events=include_events,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -584,7 +559,6 @@ class BlueprintInstances(BaseSDK):
         include_children: Optional[bool] = False,
         include_activities: Optional[bool] = False,
         include_events: Optional[bool] = False,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -596,7 +570,6 @@ class BlueprintInstances(BaseSDK):
         :param include_children:
         :param include_activities:
         :param include_events:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -617,7 +590,6 @@ class BlueprintInstances(BaseSDK):
             include_children=include_children,
             include_activities=include_activities,
             include_events=include_events,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -686,7 +658,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -695,7 +666,6 @@ class BlueprintInstances(BaseSDK):
         r"""Delete Blueprint Instance
 
         :param blueprint_instance_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -713,7 +683,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.DeleteBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -780,7 +749,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -789,7 +757,6 @@ class BlueprintInstances(BaseSDK):
         r"""Delete Blueprint Instance
 
         :param blueprint_instance_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -807,7 +774,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.DeleteBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -876,7 +842,6 @@ class BlueprintInstances(BaseSDK):
         blueprint_instance_id: str,
         updated_status_value: models.BlueprintInstanceStatus,
         workflow_run_id: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -887,7 +852,6 @@ class BlueprintInstances(BaseSDK):
         :param blueprint_instance_id:
         :param updated_status_value: BlueprintInstanceStatus
         :param workflow_run_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -907,7 +871,6 @@ class BlueprintInstances(BaseSDK):
             blueprint_instance_id=blueprint_instance_id,
             updated_status_value=updated_status_value,
             workflow_run_id=workflow_run_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -976,7 +939,6 @@ class BlueprintInstances(BaseSDK):
         blueprint_instance_id: str,
         updated_status_value: models.BlueprintInstanceStatus,
         workflow_run_id: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -987,7 +949,6 @@ class BlueprintInstances(BaseSDK):
         :param blueprint_instance_id:
         :param updated_status_value: BlueprintInstanceStatus
         :param workflow_run_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1007,7 +968,6 @@ class BlueprintInstances(BaseSDK):
             blueprint_instance_id=blueprint_instance_id,
             updated_status_value=updated_status_value,
             workflow_run_id=workflow_run_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1074,7 +1034,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         result: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1086,7 +1045,6 @@ class BlueprintInstances(BaseSDK):
         This endpoint is used to mark a Blueprint Instance as completed. It will update the status of the Blueprint Instance to 'COMPLETED' and log the completion event.
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param result:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1105,7 +1063,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.CompleteBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             complete_blueprint_instance_request=models.CompleteBlueprintInstanceRequest(
                 result=result,
             ),
@@ -1182,7 +1139,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         result: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1194,7 +1150,6 @@ class BlueprintInstances(BaseSDK):
         This endpoint is used to mark a Blueprint Instance as completed. It will update the status of the Blueprint Instance to 'COMPLETED' and log the completion event.
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param result:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1213,7 +1168,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.CompleteBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             complete_blueprint_instance_request=models.CompleteBlueprintInstanceRequest(
                 result=result,
             ),
@@ -1290,7 +1244,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         error: OptionalNullable[str] = UNSET,
         error_details: OptionalNullable[Dict[str, Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -1303,7 +1256,6 @@ class BlueprintInstances(BaseSDK):
         This endpoint is used to mark a Blueprint Instance as failed. It will update the status of the Blueprint Instance to 'FAILED' and log the failure event.
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param error: Error message for failure
         :param error_details:
         :param retries: Override the default retry configuration for this method
@@ -1323,7 +1275,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.FailBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             fail_blueprint_instance_request=models.FailBlueprintInstanceRequest(
                 error=error,
                 error_details=error_details,
@@ -1401,7 +1352,6 @@ class BlueprintInstances(BaseSDK):
         self,
         *,
         blueprint_instance_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         error: OptionalNullable[str] = UNSET,
         error_details: OptionalNullable[Dict[str, Any]] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -1414,7 +1364,6 @@ class BlueprintInstances(BaseSDK):
         This endpoint is used to mark a Blueprint Instance as failed. It will update the status of the Blueprint Instance to 'FAILED' and log the failure event.
 
         :param blueprint_instance_id: Unique identifier for the workflow instance
-        :param customer_id: Customer ID
         :param error: Error message for failure
         :param error_details:
         :param retries: Override the default retry configuration for this method
@@ -1434,7 +1383,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.FailBlueprintInstanceRequest1(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             fail_blueprint_instance_request=models.FailBlueprintInstanceRequest(
                 error=error,
                 error_details=error_details,
@@ -1513,7 +1461,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         activity_type: str,
-        customer_id: OptionalNullable[str] = UNSET,
         input_data: OptionalNullable[Dict[str, Any]] = UNSET,
         output_data: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
@@ -1526,7 +1473,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param activity_type:
-        :param customer_id: Customer ID
         :param input_data:
         :param output_data:
         :param group_id:
@@ -1547,7 +1493,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.AddActivityByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             add_activity_request=models.AddActivityRequest(
                 activity_type=activity_type,
                 input_data=input_data,
@@ -1628,7 +1573,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         activity_type: str,
-        customer_id: OptionalNullable[str] = UNSET,
         input_data: OptionalNullable[Dict[str, Any]] = UNSET,
         output_data: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
@@ -1641,7 +1585,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param activity_type:
-        :param customer_id: Customer ID
         :param input_data:
         :param output_data:
         :param group_id:
@@ -1662,7 +1605,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.AddActivityByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             add_activity_request=models.AddActivityRequest(
                 activity_type=activity_type,
                 input_data=input_data,
@@ -1743,7 +1685,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         activity_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1753,7 +1694,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param activity_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1772,7 +1712,6 @@ class BlueprintInstances(BaseSDK):
         request = models.GetActivityByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
             activity_id=activity_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1840,7 +1779,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         activity_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1850,7 +1788,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param activity_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1869,7 +1806,6 @@ class BlueprintInstances(BaseSDK):
         request = models.GetActivityByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
             activity_id=activity_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1940,7 +1876,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1953,7 +1888,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1975,7 +1909,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2046,7 +1979,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2059,7 +1991,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2081,7 +2012,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -2150,7 +2080,6 @@ class BlueprintInstances(BaseSDK):
         blueprint_instance_id: str,
         activity_id: str,
         updated_status_value: models.ActivityStatus,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2161,7 +2090,6 @@ class BlueprintInstances(BaseSDK):
         :param blueprint_instance_id:
         :param activity_id:
         :param updated_status_value: ActivityStatus
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2181,7 +2109,6 @@ class BlueprintInstances(BaseSDK):
             blueprint_instance_id=blueprint_instance_id,
             activity_id=activity_id,
             updated_status_value=updated_status_value,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2250,7 +2177,6 @@ class BlueprintInstances(BaseSDK):
         blueprint_instance_id: str,
         activity_id: str,
         updated_status_value: models.ActivityStatus,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2261,7 +2187,6 @@ class BlueprintInstances(BaseSDK):
         :param blueprint_instance_id:
         :param activity_id:
         :param updated_status_value: ActivityStatus
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2281,7 +2206,6 @@ class BlueprintInstances(BaseSDK):
             blueprint_instance_id=blueprint_instance_id,
             activity_id=activity_id,
             updated_status_value=updated_status_value,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -2349,7 +2273,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         event_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2359,7 +2282,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param event_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2378,7 +2300,6 @@ class BlueprintInstances(BaseSDK):
         request = models.GetEventByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
             event_id=event_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2446,7 +2367,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         event_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2456,7 +2376,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param event_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2475,7 +2394,6 @@ class BlueprintInstances(BaseSDK):
         request = models.GetEventByBlueprintInstanceRequest(
             blueprint_instance_id=blueprint_instance_id,
             event_id=event_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -2543,7 +2461,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         event_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         activity_id: OptionalNullable[str] = UNSET,
         details: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
@@ -2559,7 +2476,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param event_name: Name of the custom event being logged.
-        :param customer_id: Customer ID
         :param activity_id:
         :param details:
         :param group_id:
@@ -2583,7 +2499,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.CreateEventByBlueprintInstanceIDRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             custom_event_request=models.CustomEventRequest(
                 activity_id=activity_id,
                 event_name=event_name,
@@ -2667,7 +2582,6 @@ class BlueprintInstances(BaseSDK):
         *,
         blueprint_instance_id: str,
         event_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         activity_id: OptionalNullable[str] = UNSET,
         details: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
@@ -2683,7 +2597,6 @@ class BlueprintInstances(BaseSDK):
 
         :param blueprint_instance_id:
         :param event_name: Name of the custom event being logged.
-        :param customer_id: Customer ID
         :param activity_id:
         :param details:
         :param group_id:
@@ -2707,7 +2620,6 @@ class BlueprintInstances(BaseSDK):
 
         request = models.CreateEventByBlueprintInstanceIDRequest(
             blueprint_instance_id=blueprint_instance_id,
-            customer_id=customer_id,
             custom_event_request=models.CustomEventRequest(
                 activity_id=activity_id,
                 event_name=event_name,
@@ -2794,7 +2706,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2807,7 +2718,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2829,7 +2739,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2900,7 +2809,6 @@ class BlueprintInstances(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2913,7 +2821,6 @@ class BlueprintInstances(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2935,7 +2842,6 @@ class BlueprintInstances(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(

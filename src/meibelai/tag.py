@@ -10,12 +10,13 @@ from typing import Any, List, Mapping, Optional
 
 
 class Tag(BaseSDK):
+    r"""Operations with tag"""
+
     def add_tag_config(
         self,
         *,
         datasource_id: str,
         working_bucket: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
@@ -28,7 +29,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param working_bucket:
-        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param db_path:
@@ -49,7 +49,6 @@ class Tag(BaseSDK):
 
         request = models.AddTagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_tag_config_request=models.AddTagConfigRequest(
                 description=description,
                 logical_group_regex=logical_group_regex,
@@ -130,7 +129,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         working_bucket: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
@@ -143,7 +141,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param working_bucket:
-        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param db_path:
@@ -164,7 +161,6 @@ class Tag(BaseSDK):
 
         request = models.AddTagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_tag_config_request=models.AddTagConfigRequest(
                 description=description,
                 logical_group_regex=logical_group_regex,
@@ -244,7 +240,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -253,7 +248,6 @@ class Tag(BaseSDK):
         r"""Get Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -271,7 +265,6 @@ class Tag(BaseSDK):
 
         request = models.GetTagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -338,7 +331,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -347,7 +339,6 @@ class Tag(BaseSDK):
         r"""Get Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -365,7 +356,6 @@ class Tag(BaseSDK):
 
         request = models.GetTagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -432,7 +422,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
@@ -445,7 +434,6 @@ class Tag(BaseSDK):
         r"""Update Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param working_bucket:
@@ -467,7 +455,6 @@ class Tag(BaseSDK):
 
         request = models.UpdateTagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_tag_config_request=models.UpdateTagConfigRequest(
                 description=description,
                 logical_group_regex=logical_group_regex,
@@ -547,7 +534,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
@@ -560,7 +546,6 @@ class Tag(BaseSDK):
         r"""Update Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param logical_group_regex:
         :param working_bucket:
@@ -582,7 +567,6 @@ class Tag(BaseSDK):
 
         request = models.UpdateTagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_tag_config_request=models.UpdateTagConfigRequest(
                 description=description,
                 logical_group_regex=logical_group_regex,
@@ -662,7 +646,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -671,7 +654,6 @@ class Tag(BaseSDK):
         r"""Delete Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -689,7 +671,6 @@ class Tag(BaseSDK):
 
         request = models.DeleteTagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -756,7 +737,6 @@ class Tag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -765,7 +745,6 @@ class Tag(BaseSDK):
         r"""Delete Tag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -783,7 +762,6 @@ class Tag(BaseSDK):
 
         request = models.DeleteTagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -851,7 +829,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -862,7 +839,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param description:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -882,7 +858,6 @@ class Tag(BaseSDK):
         request = models.AddTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
             add_tag_table_request=models.AddTagTableRequest(
                 description=description,
             ),
@@ -960,7 +935,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -971,7 +945,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param description:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -991,7 +964,6 @@ class Tag(BaseSDK):
         request = models.AddTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
             add_tag_table_request=models.AddTagTableRequest(
                 description=description,
             ),
@@ -1069,7 +1041,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1079,7 +1050,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1098,7 +1068,6 @@ class Tag(BaseSDK):
         request = models.GetTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1166,7 +1135,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1176,7 +1144,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1195,7 +1162,6 @@ class Tag(BaseSDK):
         request = models.GetTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1263,7 +1229,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1274,7 +1239,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param description:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1294,7 +1258,6 @@ class Tag(BaseSDK):
         request = models.UpdateTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
             update_tag_table_request=models.UpdateTagTableRequest(
                 description=description,
             ),
@@ -1372,7 +1335,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1383,7 +1345,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param description:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1403,7 +1364,6 @@ class Tag(BaseSDK):
         request = models.UpdateTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
             update_tag_table_request=models.UpdateTagTableRequest(
                 description=description,
             ),
@@ -1481,7 +1441,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1491,7 +1450,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1510,7 +1468,6 @@ class Tag(BaseSDK):
         request = models.DeleteTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1578,7 +1535,6 @@ class Tag(BaseSDK):
         *,
         datasource_id: str,
         table_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1588,7 +1544,6 @@ class Tag(BaseSDK):
 
         :param datasource_id:
         :param table_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1607,7 +1562,6 @@ class Tag(BaseSDK):
         request = models.DeleteTagTableInfoRequest(
             datasource_id=datasource_id,
             table_name=table_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1678,7 +1632,6 @@ class Tag(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1691,7 +1644,6 @@ class Tag(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1713,7 +1665,6 @@ class Tag(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1784,7 +1735,6 @@ class Tag(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1797,7 +1747,6 @@ class Tag(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1819,7 +1768,6 @@ class Tag(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1888,7 +1836,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -1904,7 +1851,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param description:
         :param dtype:
         :param is_key:
@@ -1929,7 +1875,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
             add_tag_column_request=models.AddTagColumnRequest(
                 description=description,
                 dtype=dtype,
@@ -2012,7 +1957,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2028,7 +1972,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param description:
         :param dtype:
         :param is_key:
@@ -2053,7 +1996,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
             add_tag_column_request=models.AddTagColumnRequest(
                 description=description,
                 dtype=dtype,
@@ -2136,7 +2078,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2147,7 +2088,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2167,7 +2107,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2236,7 +2175,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2247,7 +2185,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2267,7 +2204,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -2336,7 +2272,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2352,7 +2287,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param description:
         :param dtype:
         :param is_key:
@@ -2377,7 +2311,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
             update_tag_column_request=models.UpdateTagColumnRequest(
                 description=description,
                 dtype=dtype,
@@ -2460,7 +2393,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         dtype: OptionalNullable[str] = UNSET,
         is_key: OptionalNullable[bool] = UNSET,
@@ -2476,7 +2408,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param description:
         :param dtype:
         :param is_key:
@@ -2501,7 +2432,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
             update_tag_column_request=models.UpdateTagColumnRequest(
                 description=description,
                 dtype=dtype,
@@ -2587,7 +2517,6 @@ class Tag(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2601,7 +2530,6 @@ class Tag(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2624,7 +2552,6 @@ class Tag(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2696,7 +2623,6 @@ class Tag(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2710,7 +2636,6 @@ class Tag(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2733,7 +2658,6 @@ class Tag(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -2802,7 +2726,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2813,7 +2736,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2833,7 +2755,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -2902,7 +2823,6 @@ class Tag(BaseSDK):
         datasource_id: str,
         table_name: str,
         column_name: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2913,7 +2833,6 @@ class Tag(BaseSDK):
         :param datasource_id:
         :param table_name:
         :param column_name:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -2933,7 +2852,6 @@ class Tag(BaseSDK):
             datasource_id=datasource_id,
             table_name=table_name,
             column_name=column_name,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(

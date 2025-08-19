@@ -2,13 +2,7 @@
 
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from meibelai.utils import (
-    FieldMetadata,
-    HeaderMetadata,
-    PathParamMetadata,
-    RequestMetadata,
-)
-import pydantic
+from meibelai.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from pydantic import model_serializer
 from typing import Any, List
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -19,8 +13,6 @@ class SendSignalRequestTypedDict(TypedDict):
     r"""Unique identifier for the workflow instance"""
     signal_name: str
     r"""Name of the signal to send"""
-    customer_id: NotRequired[Nullable[str]]
-    r"""Customer ID"""
     request_body: NotRequired[Nullable[List[Any]]]
 
 
@@ -35,13 +27,6 @@ class SendSignalRequest(BaseModel):
     ]
     r"""Name of the signal to send"""
 
-    customer_id: Annotated[
-        OptionalNullable[str],
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ] = UNSET
-    r"""Customer ID"""
-
     request_body: Annotated[
         OptionalNullable[List[Any]],
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
@@ -49,8 +34,8 @@ class SendSignalRequest(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["customer-id", "RequestBody"]
-        nullable_fields = ["customer-id", "RequestBody"]
+        optional_fields = ["RequestBody"]
+        nullable_fields = ["RequestBody"]
         null_default_fields = []
 
         serialized = handler(self)

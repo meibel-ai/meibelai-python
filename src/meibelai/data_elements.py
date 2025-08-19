@@ -10,6 +10,8 @@ from typing import Any, List, Mapping, Optional, Union
 
 
 class DataElements(BaseSDK):
+    r"""Operations with data elements"""
+
     def add_data_element(
         self,
         *,
@@ -24,7 +26,6 @@ class DataElements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -38,7 +39,6 @@ class DataElements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -56,7 +56,6 @@ class DataElements(BaseSDK):
 
         request = models.AddDataElementRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_data_element_request=models.AddDataElementRequest(
                 description=description,
                 name=name,
@@ -149,7 +148,6 @@ class DataElements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -163,7 +161,6 @@ class DataElements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -181,7 +178,6 @@ class DataElements(BaseSDK):
 
         request = models.AddDataElementRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_data_element_request=models.AddDataElementRequest(
                 description=description,
                 name=name,
@@ -260,12 +256,217 @@ class DataElements(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
+    def get_data_elements(
+        self,
+        *,
+        datasource_id: str,
+        offset: Optional[int] = 0,
+        limit: Optional[int] = 10,
+        sort_by: OptionalNullable[str] = UNSET,
+        sort_order: OptionalNullable[str] = UNSET,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> List[models.DataElement]:
+        r"""Get Data Elements
+
+        :param datasource_id:
+        :param offset: Number of items to skip
+        :param limit: Maximum number of items to return
+        :param sort_by: Field to sort by
+        :param sort_order: Sort order (asc or desc)
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementsRequest(
+            datasource_id=datasource_id,
+            offset=offset,
+            limit=limit,
+            sort_by=sort_by,
+            sort_order=sort_order,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="get_data_elements",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(List[models.DataElement], http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def get_data_elements_async(
+        self,
+        *,
+        datasource_id: str,
+        offset: Optional[int] = 0,
+        limit: Optional[int] = 10,
+        sort_by: OptionalNullable[str] = UNSET,
+        sort_order: OptionalNullable[str] = UNSET,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> List[models.DataElement]:
+        r"""Get Data Elements
+
+        :param datasource_id:
+        :param offset: Number of items to skip
+        :param limit: Maximum number of items to return
+        :param sort_by: Field to sort by
+        :param sort_order: Sort order (asc or desc)
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementsRequest(
+            datasource_id=datasource_id,
+            offset=offset,
+            limit=limit,
+            sort_by=sort_by,
+            sort_order=sort_order,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="get_data_elements",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(List[models.DataElement], http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
     def get_data_element(
         self,
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -275,7 +476,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -294,7 +494,6 @@ class DataElements(BaseSDK):
         request = models.GetDataElementRequest(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -362,7 +561,6 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -372,7 +570,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -391,7 +588,6 @@ class DataElements(BaseSDK):
         request = models.GetDataElementRequest(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -459,7 +655,6 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         path: OptionalNullable[str] = UNSET,
@@ -479,7 +674,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param description:
         :param name:
         :param path:
@@ -503,7 +697,6 @@ class DataElements(BaseSDK):
         request = models.UpdateDataElementRequest1(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
             update_data_element_request=models.UpdateDataElementRequest(
                 description=description,
                 name=name,
@@ -588,7 +781,6 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         name: OptionalNullable[str] = UNSET,
         path: OptionalNullable[str] = UNSET,
@@ -608,7 +800,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param description:
         :param name:
         :param path:
@@ -632,7 +823,6 @@ class DataElements(BaseSDK):
         request = models.UpdateDataElementRequest1(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
             update_data_element_request=models.UpdateDataElementRequest(
                 description=description,
                 name=name,
@@ -717,7 +907,6 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -727,7 +916,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -746,7 +934,6 @@ class DataElements(BaseSDK):
         request = models.DeleteDataElementRequest(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -814,7 +1001,6 @@ class DataElements(BaseSDK):
         *,
         datasource_id: str,
         data_element_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -824,7 +1010,6 @@ class DataElements(BaseSDK):
 
         :param datasource_id:
         :param data_element_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -843,7 +1028,6 @@ class DataElements(BaseSDK):
         request = models.DeleteDataElementRequest(
             datasource_id=datasource_id,
             data_element_id=data_element_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -906,7 +1090,7 @@ class DataElements(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def get_all_data_elements(
+    def get_data_elements_by_filters(
         self,
         *,
         datasource_id: str,
@@ -916,7 +1100,6 @@ class DataElements(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         filters: OptionalNullable[
             Union[
                 List[models.DataElementFilter], List[models.DataElementFilterTypedDict]
@@ -927,7 +1110,7 @@ class DataElements(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> List[models.DataElement]:
-        r"""Get All Data Elements
+        r"""Get Data Elements By Filters
 
         :param datasource_id:
         :param regex_filter:
@@ -936,7 +1119,6 @@ class DataElements(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param filters:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -953,7 +1135,7 @@ class DataElements(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetAllDataElementsRequest(
+        request = models.GetDataElementsByFiltersRequest(
             datasource_id=datasource_id,
             regex_filter=regex_filter,
             media_type_filters=media_type_filters,
@@ -961,7 +1143,6 @@ class DataElements(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
             data_element_filter_request=models.DataElementFilterRequest(
                 filters=utils.get_pydantic_model(
                     filters, OptionalNullable[List[models.DataElementFilter]]
@@ -971,7 +1152,7 @@ class DataElements(BaseSDK):
 
         req = self._build_request(
             method="POST",
-            path="/datasource/{datasource_id}/all_data_elements",
+            path="/datasource/{datasource_id}/data_elements_by_filters",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1008,7 +1189,7 @@ class DataElements(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_all_data_elements",
+                operation_id="get_data_elements_by_filters",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1036,7 +1217,7 @@ class DataElements(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def get_all_data_elements_async(
+    async def get_data_elements_by_filters_async(
         self,
         *,
         datasource_id: str,
@@ -1046,7 +1227,6 @@ class DataElements(BaseSDK):
         limit: Optional[int] = 10,
         sort_by: OptionalNullable[str] = UNSET,
         sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
         filters: OptionalNullable[
             Union[
                 List[models.DataElementFilter], List[models.DataElementFilterTypedDict]
@@ -1057,7 +1237,7 @@ class DataElements(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> List[models.DataElement]:
-        r"""Get All Data Elements
+        r"""Get Data Elements By Filters
 
         :param datasource_id:
         :param regex_filter:
@@ -1066,7 +1246,6 @@ class DataElements(BaseSDK):
         :param limit: Maximum number of items to return
         :param sort_by: Field to sort by
         :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
         :param filters:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1083,7 +1262,7 @@ class DataElements(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetAllDataElementsRequest(
+        request = models.GetDataElementsByFiltersRequest(
             datasource_id=datasource_id,
             regex_filter=regex_filter,
             media_type_filters=media_type_filters,
@@ -1091,7 +1270,6 @@ class DataElements(BaseSDK):
             limit=limit,
             sort_by=sort_by,
             sort_order=sort_order,
-            customer_id=customer_id,
             data_element_filter_request=models.DataElementFilterRequest(
                 filters=utils.get_pydantic_model(
                     filters, OptionalNullable[List[models.DataElementFilter]]
@@ -1101,7 +1279,7 @@ class DataElements(BaseSDK):
 
         req = self._build_request_async(
             method="POST",
-            path="/datasource/{datasource_id}/all_data_elements",
+            path="/datasource/{datasource_id}/data_elements_by_filters",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1138,7 +1316,7 @@ class DataElements(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_all_data_elements",
+                operation_id="get_data_elements_by_filters",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1152,456 +1330,6 @@ class DataElements(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return unmarshal_json_response(List[models.DataElement], http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def get_data_element_by_path(
-        self,
-        *,
-        datasource_id: str,
-        path: str,
-        customer_id: OptionalNullable[str] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.DataElement:
-        r"""Get Data Element By Path
-
-        :param datasource_id:
-        :param path:
-        :param customer_id: Customer ID
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetDataElementByPathRequest1(
-            datasource_id=datasource_id,
-            customer_id=customer_id,
-            get_data_element_by_path_request=models.GetDataElementByPathRequest(
-                path=path,
-            ),
-        )
-
-        req = self._build_request(
-            method="POST",
-            path="/datasource/{datasource_id}/data_element_by_path",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.get_data_element_by_path_request,
-                False,
-                False,
-                "json",
-                models.GetDataElementByPathRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="get_data_element_by_path",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.DataElement, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def get_data_element_by_path_async(
-        self,
-        *,
-        datasource_id: str,
-        path: str,
-        customer_id: OptionalNullable[str] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.DataElement:
-        r"""Get Data Element By Path
-
-        :param datasource_id:
-        :param path:
-        :param customer_id: Customer ID
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetDataElementByPathRequest1(
-            datasource_id=datasource_id,
-            customer_id=customer_id,
-            get_data_element_by_path_request=models.GetDataElementByPathRequest(
-                path=path,
-            ),
-        )
-
-        req = self._build_request_async(
-            method="POST",
-            path="/datasource/{datasource_id}/data_element_by_path",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.get_data_element_by_path_request,
-                False,
-                False,
-                "json",
-                models.GetDataElementByPathRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="get_data_element_by_path",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.DataElement, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def get_new_and_updated_elements(
-        self,
-        *,
-        datasource_id: str,
-        ingest_method: models.IngestMethod,
-        regex_filter: Optional[str] = None,
-        media_type_filters: Optional[List[str]] = None,
-        offset: Optional[int] = 0,
-        limit: Optional[int] = 10,
-        sort_by: OptionalNullable[str] = UNSET,
-        sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GetNewAndUpdatedDataElementsResponse:
-        r"""Get New And Updated Elements
-
-        Get new and updated data elements since the last ingest time using the method specified.
-
-        :param datasource_id:
-        :param ingest_method: IngestMethod
-        :param regex_filter:
-        :param media_type_filters:
-        :param offset: Number of items to skip
-        :param limit: Maximum number of items to return
-        :param sort_by: Field to sort by
-        :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetNewAndUpdatedElementsRequest(
-            datasource_id=datasource_id,
-            ingest_method=ingest_method,
-            regex_filter=regex_filter,
-            media_type_filters=media_type_filters,
-            offset=offset,
-            limit=limit,
-            sort_by=sort_by,
-            sort_order=sort_order,
-            customer_id=customer_id,
-        )
-
-        req = self._build_request(
-            method="GET",
-            path="/datasource/{datasource_id}/new_and_updated_elements",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="get_new_and_updated_elements",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.GetNewAndUpdatedDataElementsResponse, http_res
-            )
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def get_new_and_updated_elements_async(
-        self,
-        *,
-        datasource_id: str,
-        ingest_method: models.IngestMethod,
-        regex_filter: Optional[str] = None,
-        media_type_filters: Optional[List[str]] = None,
-        offset: Optional[int] = 0,
-        limit: Optional[int] = 10,
-        sort_by: OptionalNullable[str] = UNSET,
-        sort_order: OptionalNullable[str] = UNSET,
-        customer_id: OptionalNullable[str] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.GetNewAndUpdatedDataElementsResponse:
-        r"""Get New And Updated Elements
-
-        Get new and updated data elements since the last ingest time using the method specified.
-
-        :param datasource_id:
-        :param ingest_method: IngestMethod
-        :param regex_filter:
-        :param media_type_filters:
-        :param offset: Number of items to skip
-        :param limit: Maximum number of items to return
-        :param sort_by: Field to sort by
-        :param sort_order: Sort order (asc or desc)
-        :param customer_id: Customer ID
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetNewAndUpdatedElementsRequest(
-            datasource_id=datasource_id,
-            ingest_method=ingest_method,
-            regex_filter=regex_filter,
-            media_type_filters=media_type_filters,
-            offset=offset,
-            limit=limit,
-            sort_by=sort_by,
-            sort_order=sort_order,
-            customer_id=customer_id,
-        )
-
-        req = self._build_request_async(
-            method="GET",
-            path="/datasource/{datasource_id}/new_and_updated_elements",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="get_new_and_updated_elements",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.GetNewAndUpdatedDataElementsResponse, http_res
-            )
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res

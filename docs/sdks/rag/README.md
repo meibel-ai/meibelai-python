@@ -3,6 +3,8 @@
 
 ## Overview
 
+Operations with rag
+
 ### Available Operations
 
 * [add_rag_config](#add_rag_config) - Add Rag Config
@@ -30,7 +32,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", customer_id="<id>")
+    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>")
 
     # Handle response
     print(res)
@@ -43,7 +45,6 @@ with Meibelai(
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                       | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
 | `collection_id`                                                                       | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `customer_id`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | Customer ID                                                                           |
 | `description`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `extractor_model`                                                                     | [OptionalNullable[models.ExtractorModel]](../../models/extractormodel.md)             | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `embedding_model`                                                                     | [OptionalNullable[models.EmbeddingModel]](../../models/embeddingmodel.md)             | :heavy_minus_sign:                                                                    | N/A                                                                                   |
@@ -79,7 +80,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.get_rag_config(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.get_rag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -91,7 +92,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -121,7 +121,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_rag_config(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.update_rag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -133,7 +133,6 @@ with Meibelai(
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                       | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `customer_id`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | Customer ID                                                                           |
 | `description`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `collection_id`                                                                       | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `extractor_model`                                                                     | [OptionalNullable[models.ExtractorModel]](../../models/extractormodel.md)             | :heavy_minus_sign:                                                                    | N/A                                                                                   |
@@ -170,7 +169,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.delete_rag_config(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.delete_rag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -182,7 +181,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -212,7 +210,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_chunking_strategy(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.add_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -224,7 +222,6 @@ with Meibelai(
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                       | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `customer_id`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | Customer ID                                                                           |
 | `code_splitter`                                                                       | [OptionalNullable[models.CodeChunking]](../../models/codechunking.md)                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `html_node_parser`                                                                    | [OptionalNullable[models.HTMLChunking]](../../models/htmlchunking.md)                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `json_node_parser`                                                                    | [OptionalNullable[models.JSONNodeChunking]](../../models/jsonnodechunking.md)         | :heavy_minus_sign:                                                                    | N/A                                                                                   |
@@ -261,7 +258,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.get_chunking_strategy(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.get_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -273,7 +270,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -303,7 +299,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_chunking_strategy(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.update_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -315,7 +311,6 @@ with Meibelai(
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `datasource_id`                                                                       | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `customer_id`                                                                         | *OptionalNullable[str]*                                                               | :heavy_minus_sign:                                                                    | Customer ID                                                                           |
 | `code_splitter`                                                                       | [OptionalNullable[models.CodeChunking]](../../models/codechunking.md)                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `html_node_parser`                                                                    | [OptionalNullable[models.HTMLChunking]](../../models/htmlchunking.md)                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `json_node_parser`                                                                    | [OptionalNullable[models.JSONNodeChunking]](../../models/jsonnodechunking.md)         | :heavy_minus_sign:                                                                    | N/A                                                                                   |
@@ -352,7 +347,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.delete_chunking_strategy(datasource_id="<id>", customer_id="<id>")
+    res = m_client.rag.delete_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -364,7 +359,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

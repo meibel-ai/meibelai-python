@@ -19,9 +19,7 @@ if TYPE_CHECKING:
     from meibelai.blueprint_instances import BlueprintInstances
     from meibelai.data_elements import DataElements
     from meibelai.datasources import Datasources
-    from meibelai.ingest import Ingest
     from meibelai.rag import Rag
-    from meibelai.reference_graph import ReferenceGraph
     from meibelai.tag import Tag
     from meibelai.workflows import Workflows
 
@@ -33,20 +31,22 @@ class Meibelai(BaseSDK):
     """
 
     datasources: "Datasources"
+    r"""Operations with datasources"""
     data_elements: "DataElements"
+    r"""Operations with data elements"""
     tag: "Tag"
+    r"""Operations with tag"""
     rag: "Rag"
-    ingest: "Ingest"
-    reference_graph: "ReferenceGraph"
+    r"""Operations with rag"""
     blueprint_instances: "BlueprintInstances"
+    r"""Operations with blueprint_instances"""
     workflows: "Workflows"
+    r"""Operations with workflows"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "data_elements": ("meibelai.data_elements", "DataElements"),
         "tag": ("meibelai.tag", "Tag"),
         "rag": ("meibelai.rag", "Rag"),
-        "ingest": ("meibelai.ingest", "Ingest"),
-        "reference_graph": ("meibelai.reference_graph", "ReferenceGraph"),
         "blueprint_instances": ("meibelai.blueprint_instances", "BlueprintInstances"),
         "workflows": ("meibelai.workflows", "Workflows"),
     }

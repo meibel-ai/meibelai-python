@@ -223,27 +223,19 @@ with Meibelai(
 ### [data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
 
 * [add_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
+* [get_data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_elements) - Get Data Elements
 * [get_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element) - Get Data Element
 * [update_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_data_element) - Update Data Element
 * [delete_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
-* [get_all_data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_all_data_elements) - Get All Data Elements
-* [get_data_element_by_path](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element_by_path) - Get Data Element By Path
-* [get_new_and_updated_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_new_and_updated_elements) - Get New And Updated Elements
+* [get_data_elements_by_filters](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_elements_by_filters) - Get Data Elements By Filters
 
 ### [datasources](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md)
 
 * [add_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#add_datasource) - Add Datasource
+* [get_datasource_ids](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_datasource_ids) - Get Datasource Ids
 * [get_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_datasource) - Get Datasource
 * [update_datasource](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#update_datasource) - Update Datasource
 * [delete_datasource_datasource_datasource_id_delete](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#delete_datasource_datasource_datasource_id_delete) - Delete Datasource
-* [get_all_datasource_ids](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/datasources/README.md#get_all_datasource_ids) - Get All Datasource Ids
-
-### [ingest](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md)
-
-* [upsert_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#upsert_ingest_record) - Upsert Ingest Record
-* [get_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#get_ingest_record) - Get Ingest Record
-* [delete_ingest_record](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#delete_ingest_record) - Delete Ingest Record
-* [get_all_ingest_records](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/ingest/README.md#get_all_ingest_records) - Get All Ingest Records
 
 ### [Meibelai SDK](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelai/README.md)
 
@@ -259,13 +251,6 @@ with Meibelai(
 * [get_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#get_chunking_strategy) - Get Chunking Strategy
 * [update_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#update_chunking_strategy) - Update Chunking Strategy
 * [delete_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#delete_chunking_strategy) - Delete Chunking Strategy
-
-### [reference_graph](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md)
-
-* [add_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#add_reference_graph_config) - Add Reference Graph Config
-* [get_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#get_reference_graph_config) - Get Reference Graph Config
-* [update_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#update_reference_graph_config) - Update Reference Graph Config
-* [delete_reference_graph_config](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/referencegraph/README.md#delete_reference_graph_config) - Delete Reference Graph Config
 
 ### [tag](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md)
 
@@ -365,7 +350,7 @@ with Meibelai(
     res = None
     try:
 
-        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", customer_id_param="<value>")
+        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>")
 
         # Handle response
         print(res)

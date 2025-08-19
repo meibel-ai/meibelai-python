@@ -11,10 +11,6 @@ if TYPE_CHECKING:
         AddActivityByBlueprintInstanceRequest,
         AddActivityByBlueprintInstanceRequestTypedDict,
     )
-    from .add_blueprint_instanceop import (
-        AddBlueprintInstanceRequest1,
-        AddBlueprintInstanceRequest1TypedDict,
-    )
     from .add_chunking_strategyop import (
         AddChunkingStrategyRequest1,
         AddChunkingStrategyRequest1TypedDict,
@@ -23,12 +19,7 @@ if TYPE_CHECKING:
         AddDataElementRequest1,
         AddDataElementRequest1TypedDict,
     )
-    from .add_datasourceop import AddDatasourceRequest1, AddDatasourceRequest1TypedDict
     from .add_rag_configop import AddRagConfigRequest1, AddRagConfigRequest1TypedDict
-    from .add_reference_graph_configop import (
-        AddReferenceGraphConfigRequest1,
-        AddReferenceGraphConfigRequest1TypedDict,
-    )
     from .add_tag_column_infoop import (
         AddTagColumnInfoRequest,
         AddTagColumnInfoRequestTypedDict,
@@ -77,14 +68,6 @@ if TYPE_CHECKING:
     from .addragconfigresponse import (
         AddRagConfigResponse,
         AddRagConfigResponseTypedDict,
-    )
-    from .addreferencegraphconfigrequest import (
-        AddReferenceGraphConfigRequest,
-        AddReferenceGraphConfigRequestTypedDict,
-    )
-    from .addreferencegraphconfigresponse import (
-        AddReferenceGraphConfigResponse,
-        AddReferenceGraphConfigResponseTypedDict,
     )
     from .addtagcolumnrequest import AddTagColumnRequest, AddTagColumnRequestTypedDict
     from .addtagcolumnresponse import (
@@ -152,17 +135,9 @@ if TYPE_CHECKING:
         DeleteDatasourceDatasourceDatasourceIDDeleteRequest,
         DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict,
     )
-    from .delete_ingest_recordop import (
-        DeleteIngestRecordRequest,
-        DeleteIngestRecordRequestTypedDict,
-    )
     from .delete_rag_configop import (
         DeleteRagConfigRequest,
         DeleteRagConfigRequestTypedDict,
-    )
-    from .delete_reference_graph_configop import (
-        DeleteReferenceGraphConfigRequest,
-        DeleteReferenceGraphConfigRequestTypedDict,
     )
     from .delete_tag_column_infoop import (
         DeleteTagColumnInfoRequest,
@@ -187,14 +162,6 @@ if TYPE_CHECKING:
     from .deletedatasourceresponse import (
         DeleteDatasourceResponse,
         DeleteDatasourceResponseTypedDict,
-    )
-    from .deleteingestrecordresponse import (
-        DeleteIngestRecordResponse,
-        DeleteIngestRecordResponseTypedDict,
-    )
-    from .deletereferencegraphconfigresponse import (
-        DeleteReferenceGraphConfigResponse,
-        DeleteReferenceGraphConfigResponseTypedDict,
     )
     from .deletetagtableresponse import (
         DeleteTagTableResponse,
@@ -224,18 +191,6 @@ if TYPE_CHECKING:
         GetAllBlueprintInstancesRequest,
         GetAllBlueprintInstancesRequestTypedDict,
     )
-    from .get_all_data_elementsop import (
-        GetAllDataElementsRequest,
-        GetAllDataElementsRequestTypedDict,
-    )
-    from .get_all_datasource_idsop import (
-        GetAllDatasourceIdsRequest1,
-        GetAllDatasourceIdsRequest1TypedDict,
-    )
-    from .get_all_ingest_recordsop import (
-        GetAllIngestRecordsRequest,
-        GetAllIngestRecordsRequestTypedDict,
-    )
     from .get_all_tag_column_infoop import (
         GetAllTagColumnInfoRequest,
         GetAllTagColumnInfoRequestTypedDict,
@@ -252,13 +207,21 @@ if TYPE_CHECKING:
         GetChunkingStrategyRequest,
         GetChunkingStrategyRequestTypedDict,
     )
-    from .get_data_element_by_pathop import (
-        GetDataElementByPathRequest1,
-        GetDataElementByPathRequest1TypedDict,
-    )
     from .get_data_elementop import (
         GetDataElementRequest,
         GetDataElementRequestTypedDict,
+    )
+    from .get_data_elements_by_filtersop import (
+        GetDataElementsByFiltersRequest,
+        GetDataElementsByFiltersRequestTypedDict,
+    )
+    from .get_data_elementsop import (
+        GetDataElementsRequest,
+        GetDataElementsRequestTypedDict,
+    )
+    from .get_datasource_idsop import (
+        GetDatasourceIdsRequest,
+        GetDatasourceIdsRequestTypedDict,
     )
     from .get_datasourceop import GetDatasourceRequest, GetDatasourceRequestTypedDict
     from .get_event_by_blueprint_instanceop import (
@@ -269,19 +232,7 @@ if TYPE_CHECKING:
         GetEventsByBlueprintInstanceRequest,
         GetEventsByBlueprintInstanceRequestTypedDict,
     )
-    from .get_ingest_recordop import (
-        GetIngestRecordRequest,
-        GetIngestRecordRequestTypedDict,
-    )
-    from .get_new_and_updated_elementsop import (
-        GetNewAndUpdatedElementsRequest,
-        GetNewAndUpdatedElementsRequestTypedDict,
-    )
     from .get_rag_configop import GetRagConfigRequest, GetRagConfigRequestTypedDict
-    from .get_reference_graph_configop import (
-        GetReferenceGraphConfigRequest,
-        GetReferenceGraphConfigRequestTypedDict,
-    )
     from .get_tag_column_infoop import (
         GetTagColumnInfoRequest,
         GetTagColumnInfoRequestTypedDict,
@@ -295,27 +246,13 @@ if TYPE_CHECKING:
         GetActivitiesResponse,
         GetActivitiesResponseTypedDict,
     )
-    from .getalldatasourceidsrequest import (
-        GetAllDatasourceIdsRequest,
-        GetAllDatasourceIdsRequestTypedDict,
-    )
     from .getblueprintinstancesresponse import (
         GetBlueprintInstancesResponse,
         GetBlueprintInstancesResponseTypedDict,
     )
-    from .getdataelementbypathrequest import (
-        GetDataElementByPathRequest,
-        GetDataElementByPathRequestTypedDict,
-    )
     from .geteventsresponse import GetEventsResponse, GetEventsResponseTypedDict
-    from .getnewandupdateddataelementsresponse import (
-        GetNewAndUpdatedDataElementsResponse,
-        GetNewAndUpdatedDataElementsResponseTypedDict,
-    )
     from .htmlchunking import HTMLChunking, HTMLChunkingTypedDict
     from .httpvalidationerror import HTTPValidationError, HTTPValidationErrorData
-    from .ingestmethod import IngestMethod
-    from .ingestrecord import IngestRecord, IngestRecordTypedDict
     from .jsonnodechunking import JSONNodeChunking, JSONNodeChunkingTypedDict
     from .markdownnodechunking import (
         MarkdownNodeChunking,
@@ -332,10 +269,6 @@ if TYPE_CHECKING:
     from .query_workflowop import QueryWorkflowRequest, QueryWorkflowRequestTypedDict
     from .ragchunkingstrategy import RagChunkingStrategy, RagChunkingStrategyTypedDict
     from .ragconfig import RagConfig, RagConfigTypedDict
-    from .referencegraphconfig import (
-        ReferenceGraphConfig,
-        ReferenceGraphConfigTypedDict,
-    )
     from .responsevalidationerror import ResponseValidationError
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
@@ -382,10 +315,6 @@ if TYPE_CHECKING:
         UpdateRagConfigRequest1,
         UpdateRagConfigRequest1TypedDict,
     )
-    from .update_reference_graph_configop import (
-        UpdateReferenceGraphConfigRequest1,
-        UpdateReferenceGraphConfigRequest1TypedDict,
-    )
     from .update_tag_column_infoop import (
         UpdateTagColumnInfoRequest,
         UpdateTagColumnInfoRequestTypedDict,
@@ -430,14 +359,6 @@ if TYPE_CHECKING:
         UpdateRagConfigResponse,
         UpdateRagConfigResponseTypedDict,
     )
-    from .updatereferencegraphconfigrequest import (
-        UpdateReferenceGraphConfigRequest,
-        UpdateReferenceGraphConfigRequestTypedDict,
-    )
-    from .updatereferencegraphconfigresponse import (
-        UpdateReferenceGraphConfigResponse,
-        UpdateReferenceGraphConfigResponseTypedDict,
-    )
     from .updatetagcolumnrequest import (
         UpdateTagColumnRequest,
         UpdateTagColumnRequestTypedDict,
@@ -462,18 +383,6 @@ if TYPE_CHECKING:
         UpdateTagTableResponse,
         UpdateTagTableResponseTypedDict,
     )
-    from .upsert_ingest_recordop import (
-        UpsertIngestRecordRequest1,
-        UpsertIngestRecordRequest1TypedDict,
-    )
-    from .upsertingestrecordrequest import (
-        UpsertIngestRecordRequest,
-        UpsertIngestRecordRequestTypedDict,
-    )
-    from .upsertingestrecordresponse import (
-        UpsertIngestRecordResponse,
-        UpsertIngestRecordResponseTypedDict,
-    )
     from .validationerror import (
         Loc,
         LocTypedDict,
@@ -494,8 +403,6 @@ __all__ = [
     "AddActivityResponse",
     "AddActivityResponseTypedDict",
     "AddBlueprintInstanceRequest",
-    "AddBlueprintInstanceRequest1",
-    "AddBlueprintInstanceRequest1TypedDict",
     "AddBlueprintInstanceRequestTypedDict",
     "AddBlueprintInstanceResponse",
     "AddBlueprintInstanceResponseTypedDict",
@@ -512,8 +419,6 @@ __all__ = [
     "AddDataElementResponse",
     "AddDataElementResponseTypedDict",
     "AddDatasourceRequest",
-    "AddDatasourceRequest1",
-    "AddDatasourceRequest1TypedDict",
     "AddDatasourceRequestTypedDict",
     "AddDatasourceResponse",
     "AddDatasourceResponseTypedDict",
@@ -525,12 +430,6 @@ __all__ = [
     "AddRagConfigRequestTypedDict",
     "AddRagConfigResponse",
     "AddRagConfigResponseTypedDict",
-    "AddReferenceGraphConfigRequest",
-    "AddReferenceGraphConfigRequest1",
-    "AddReferenceGraphConfigRequest1TypedDict",
-    "AddReferenceGraphConfigRequestTypedDict",
-    "AddReferenceGraphConfigResponse",
-    "AddReferenceGraphConfigResponseTypedDict",
     "AddTagColumnInfoRequest",
     "AddTagColumnInfoRequestTypedDict",
     "AddTagColumnRequest",
@@ -594,16 +493,8 @@ __all__ = [
     "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict",
     "DeleteDatasourceResponse",
     "DeleteDatasourceResponseTypedDict",
-    "DeleteIngestRecordRequest",
-    "DeleteIngestRecordRequestTypedDict",
-    "DeleteIngestRecordResponse",
-    "DeleteIngestRecordResponseTypedDict",
     "DeleteRagConfigRequest",
     "DeleteRagConfigRequestTypedDict",
-    "DeleteReferenceGraphConfigRequest",
-    "DeleteReferenceGraphConfigRequestTypedDict",
-    "DeleteReferenceGraphConfigResponse",
-    "DeleteReferenceGraphConfigResponseTypedDict",
     "DeleteTagColumnInfoRequest",
     "DeleteTagColumnInfoRequestTypedDict",
     "DeleteTagConfigRequest",
@@ -631,14 +522,6 @@ __all__ = [
     "GetActivityByBlueprintInstanceRequestTypedDict",
     "GetAllBlueprintInstancesRequest",
     "GetAllBlueprintInstancesRequestTypedDict",
-    "GetAllDataElementsRequest",
-    "GetAllDataElementsRequestTypedDict",
-    "GetAllDatasourceIdsRequest",
-    "GetAllDatasourceIdsRequest1",
-    "GetAllDatasourceIdsRequest1TypedDict",
-    "GetAllDatasourceIdsRequestTypedDict",
-    "GetAllIngestRecordsRequest",
-    "GetAllIngestRecordsRequestTypedDict",
     "GetAllTagColumnInfoRequest",
     "GetAllTagColumnInfoRequestTypedDict",
     "GetAllTagTableInfoRequest",
@@ -649,12 +532,14 @@ __all__ = [
     "GetBlueprintInstancesResponseTypedDict",
     "GetChunkingStrategyRequest",
     "GetChunkingStrategyRequestTypedDict",
-    "GetDataElementByPathRequest",
-    "GetDataElementByPathRequest1",
-    "GetDataElementByPathRequest1TypedDict",
-    "GetDataElementByPathRequestTypedDict",
     "GetDataElementRequest",
     "GetDataElementRequestTypedDict",
+    "GetDataElementsByFiltersRequest",
+    "GetDataElementsByFiltersRequestTypedDict",
+    "GetDataElementsRequest",
+    "GetDataElementsRequestTypedDict",
+    "GetDatasourceIdsRequest",
+    "GetDatasourceIdsRequestTypedDict",
     "GetDatasourceRequest",
     "GetDatasourceRequestTypedDict",
     "GetEventByBlueprintInstanceRequest",
@@ -663,16 +548,8 @@ __all__ = [
     "GetEventsByBlueprintInstanceRequestTypedDict",
     "GetEventsResponse",
     "GetEventsResponseTypedDict",
-    "GetIngestRecordRequest",
-    "GetIngestRecordRequestTypedDict",
-    "GetNewAndUpdatedDataElementsResponse",
-    "GetNewAndUpdatedDataElementsResponseTypedDict",
-    "GetNewAndUpdatedElementsRequest",
-    "GetNewAndUpdatedElementsRequestTypedDict",
     "GetRagConfigRequest",
     "GetRagConfigRequestTypedDict",
-    "GetReferenceGraphConfigRequest",
-    "GetReferenceGraphConfigRequestTypedDict",
     "GetTagColumnInfoRequest",
     "GetTagColumnInfoRequestTypedDict",
     "GetTagConfigRequest",
@@ -683,9 +560,6 @@ __all__ = [
     "HTMLChunkingTypedDict",
     "HTTPValidationError",
     "HTTPValidationErrorData",
-    "IngestMethod",
-    "IngestRecord",
-    "IngestRecordTypedDict",
     "JSONNodeChunking",
     "JSONNodeChunkingTypedDict",
     "Loc",
@@ -706,8 +580,6 @@ __all__ = [
     "RagChunkingStrategyTypedDict",
     "RagConfig",
     "RagConfigTypedDict",
-    "ReferenceGraphConfig",
-    "ReferenceGraphConfigTypedDict",
     "ResponseValidationError",
     "S3Config",
     "S3ConfigTypedDict",
@@ -763,12 +635,6 @@ __all__ = [
     "UpdateRagConfigRequestTypedDict",
     "UpdateRagConfigResponse",
     "UpdateRagConfigResponseTypedDict",
-    "UpdateReferenceGraphConfigRequest",
-    "UpdateReferenceGraphConfigRequest1",
-    "UpdateReferenceGraphConfigRequest1TypedDict",
-    "UpdateReferenceGraphConfigRequestTypedDict",
-    "UpdateReferenceGraphConfigResponse",
-    "UpdateReferenceGraphConfigResponseTypedDict",
     "UpdateTagColumnInfoRequest",
     "UpdateTagColumnInfoRequestTypedDict",
     "UpdateTagColumnRequest",
@@ -787,12 +653,6 @@ __all__ = [
     "UpdateTagTableRequestTypedDict",
     "UpdateTagTableResponse",
     "UpdateTagTableResponseTypedDict",
-    "UpsertIngestRecordRequest",
-    "UpsertIngestRecordRequest1",
-    "UpsertIngestRecordRequest1TypedDict",
-    "UpsertIngestRecordRequestTypedDict",
-    "UpsertIngestRecordResponse",
-    "UpsertIngestRecordResponseTypedDict",
     "ValidationError",
     "ValidationErrorTypedDict",
     "WebDomain",
@@ -805,18 +665,12 @@ _dynamic_imports: dict[str, str] = {
     "ActivityStatus": ".activitystatus",
     "AddActivityByBlueprintInstanceRequest": ".add_activity_by_blueprint_instanceop",
     "AddActivityByBlueprintInstanceRequestTypedDict": ".add_activity_by_blueprint_instanceop",
-    "AddBlueprintInstanceRequest1": ".add_blueprint_instanceop",
-    "AddBlueprintInstanceRequest1TypedDict": ".add_blueprint_instanceop",
     "AddChunkingStrategyRequest1": ".add_chunking_strategyop",
     "AddChunkingStrategyRequest1TypedDict": ".add_chunking_strategyop",
     "AddDataElementRequest1": ".add_data_elementop",
     "AddDataElementRequest1TypedDict": ".add_data_elementop",
-    "AddDatasourceRequest1": ".add_datasourceop",
-    "AddDatasourceRequest1TypedDict": ".add_datasourceop",
     "AddRagConfigRequest1": ".add_rag_configop",
     "AddRagConfigRequest1TypedDict": ".add_rag_configop",
-    "AddReferenceGraphConfigRequest1": ".add_reference_graph_configop",
-    "AddReferenceGraphConfigRequest1TypedDict": ".add_reference_graph_configop",
     "AddTagColumnInfoRequest": ".add_tag_column_infoop",
     "AddTagColumnInfoRequestTypedDict": ".add_tag_column_infoop",
     "AddTagConfigRequest1": ".add_tag_configop",
@@ -849,10 +703,6 @@ _dynamic_imports: dict[str, str] = {
     "AddRagConfigRequestTypedDict": ".addragconfigrequest",
     "AddRagConfigResponse": ".addragconfigresponse",
     "AddRagConfigResponseTypedDict": ".addragconfigresponse",
-    "AddReferenceGraphConfigRequest": ".addreferencegraphconfigrequest",
-    "AddReferenceGraphConfigRequestTypedDict": ".addreferencegraphconfigrequest",
-    "AddReferenceGraphConfigResponse": ".addreferencegraphconfigresponse",
-    "AddReferenceGraphConfigResponseTypedDict": ".addreferencegraphconfigresponse",
     "AddTagColumnRequest": ".addtagcolumnrequest",
     "AddTagColumnRequestTypedDict": ".addtagcolumnrequest",
     "AddTagColumnResponse": ".addtagcolumnresponse",
@@ -907,12 +757,8 @@ _dynamic_imports: dict[str, str] = {
     "DeleteDataElementRequestTypedDict": ".delete_data_elementop",
     "DeleteDatasourceDatasourceDatasourceIDDeleteRequest": ".delete_datasource_datasource_datasource_id_deleteop",
     "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict": ".delete_datasource_datasource_datasource_id_deleteop",
-    "DeleteIngestRecordRequest": ".delete_ingest_recordop",
-    "DeleteIngestRecordRequestTypedDict": ".delete_ingest_recordop",
     "DeleteRagConfigRequest": ".delete_rag_configop",
     "DeleteRagConfigRequestTypedDict": ".delete_rag_configop",
-    "DeleteReferenceGraphConfigRequest": ".delete_reference_graph_configop",
-    "DeleteReferenceGraphConfigRequestTypedDict": ".delete_reference_graph_configop",
     "DeleteTagColumnInfoRequest": ".delete_tag_column_infoop",
     "DeleteTagColumnInfoRequestTypedDict": ".delete_tag_column_infoop",
     "DeleteTagConfigRequest": ".delete_tag_configop",
@@ -925,10 +771,6 @@ _dynamic_imports: dict[str, str] = {
     "DeleteDataElementResponseTypedDict": ".deletedataelementresponse",
     "DeleteDatasourceResponse": ".deletedatasourceresponse",
     "DeleteDatasourceResponseTypedDict": ".deletedatasourceresponse",
-    "DeleteIngestRecordResponse": ".deleteingestrecordresponse",
-    "DeleteIngestRecordResponseTypedDict": ".deleteingestrecordresponse",
-    "DeleteReferenceGraphConfigResponse": ".deletereferencegraphconfigresponse",
-    "DeleteReferenceGraphConfigResponseTypedDict": ".deletereferencegraphconfigresponse",
     "DeleteTagTableResponse": ".deletetagtableresponse",
     "DeleteTagTableResponseTypedDict": ".deletetagtableresponse",
     "EmbeddingModel": ".embeddingmodel",
@@ -948,12 +790,6 @@ _dynamic_imports: dict[str, str] = {
     "GetActivityByBlueprintInstanceRequestTypedDict": ".get_activity_by_blueprint_instanceop",
     "GetAllBlueprintInstancesRequest": ".get_all_blueprint_instancesop",
     "GetAllBlueprintInstancesRequestTypedDict": ".get_all_blueprint_instancesop",
-    "GetAllDataElementsRequest": ".get_all_data_elementsop",
-    "GetAllDataElementsRequestTypedDict": ".get_all_data_elementsop",
-    "GetAllDatasourceIdsRequest1": ".get_all_datasource_idsop",
-    "GetAllDatasourceIdsRequest1TypedDict": ".get_all_datasource_idsop",
-    "GetAllIngestRecordsRequest": ".get_all_ingest_recordsop",
-    "GetAllIngestRecordsRequestTypedDict": ".get_all_ingest_recordsop",
     "GetAllTagColumnInfoRequest": ".get_all_tag_column_infoop",
     "GetAllTagColumnInfoRequestTypedDict": ".get_all_tag_column_infoop",
     "GetAllTagTableInfoRequest": ".get_all_tag_table_infoop",
@@ -962,24 +798,22 @@ _dynamic_imports: dict[str, str] = {
     "GetBlueprintInstanceRequestTypedDict": ".get_blueprint_instanceop",
     "GetChunkingStrategyRequest": ".get_chunking_strategyop",
     "GetChunkingStrategyRequestTypedDict": ".get_chunking_strategyop",
-    "GetDataElementByPathRequest1": ".get_data_element_by_pathop",
-    "GetDataElementByPathRequest1TypedDict": ".get_data_element_by_pathop",
     "GetDataElementRequest": ".get_data_elementop",
     "GetDataElementRequestTypedDict": ".get_data_elementop",
+    "GetDataElementsByFiltersRequest": ".get_data_elements_by_filtersop",
+    "GetDataElementsByFiltersRequestTypedDict": ".get_data_elements_by_filtersop",
+    "GetDataElementsRequest": ".get_data_elementsop",
+    "GetDataElementsRequestTypedDict": ".get_data_elementsop",
+    "GetDatasourceIdsRequest": ".get_datasource_idsop",
+    "GetDatasourceIdsRequestTypedDict": ".get_datasource_idsop",
     "GetDatasourceRequest": ".get_datasourceop",
     "GetDatasourceRequestTypedDict": ".get_datasourceop",
     "GetEventByBlueprintInstanceRequest": ".get_event_by_blueprint_instanceop",
     "GetEventByBlueprintInstanceRequestTypedDict": ".get_event_by_blueprint_instanceop",
     "GetEventsByBlueprintInstanceRequest": ".get_events_by_blueprint_instanceop",
     "GetEventsByBlueprintInstanceRequestTypedDict": ".get_events_by_blueprint_instanceop",
-    "GetIngestRecordRequest": ".get_ingest_recordop",
-    "GetIngestRecordRequestTypedDict": ".get_ingest_recordop",
-    "GetNewAndUpdatedElementsRequest": ".get_new_and_updated_elementsop",
-    "GetNewAndUpdatedElementsRequestTypedDict": ".get_new_and_updated_elementsop",
     "GetRagConfigRequest": ".get_rag_configop",
     "GetRagConfigRequestTypedDict": ".get_rag_configop",
-    "GetReferenceGraphConfigRequest": ".get_reference_graph_configop",
-    "GetReferenceGraphConfigRequestTypedDict": ".get_reference_graph_configop",
     "GetTagColumnInfoRequest": ".get_tag_column_infoop",
     "GetTagColumnInfoRequestTypedDict": ".get_tag_column_infoop",
     "GetTagConfigRequest": ".get_tag_configop",
@@ -988,23 +822,14 @@ _dynamic_imports: dict[str, str] = {
     "GetTagTableInfoRequestTypedDict": ".get_tag_table_infoop",
     "GetActivitiesResponse": ".getactivitiesresponse",
     "GetActivitiesResponseTypedDict": ".getactivitiesresponse",
-    "GetAllDatasourceIdsRequest": ".getalldatasourceidsrequest",
-    "GetAllDatasourceIdsRequestTypedDict": ".getalldatasourceidsrequest",
     "GetBlueprintInstancesResponse": ".getblueprintinstancesresponse",
     "GetBlueprintInstancesResponseTypedDict": ".getblueprintinstancesresponse",
-    "GetDataElementByPathRequest": ".getdataelementbypathrequest",
-    "GetDataElementByPathRequestTypedDict": ".getdataelementbypathrequest",
     "GetEventsResponse": ".geteventsresponse",
     "GetEventsResponseTypedDict": ".geteventsresponse",
-    "GetNewAndUpdatedDataElementsResponse": ".getnewandupdateddataelementsresponse",
-    "GetNewAndUpdatedDataElementsResponseTypedDict": ".getnewandupdateddataelementsresponse",
     "HTMLChunking": ".htmlchunking",
     "HTMLChunkingTypedDict": ".htmlchunking",
     "HTTPValidationError": ".httpvalidationerror",
     "HTTPValidationErrorData": ".httpvalidationerror",
-    "IngestMethod": ".ingestmethod",
-    "IngestRecord": ".ingestrecord",
-    "IngestRecordTypedDict": ".ingestrecord",
     "JSONNodeChunking": ".jsonnodechunking",
     "JSONNodeChunkingTypedDict": ".jsonnodechunking",
     "MarkdownNodeChunking": ".markdownnodechunking",
@@ -1023,8 +848,6 @@ _dynamic_imports: dict[str, str] = {
     "RagChunkingStrategyTypedDict": ".ragchunkingstrategy",
     "RagConfig": ".ragconfig",
     "RagConfigTypedDict": ".ragconfig",
-    "ReferenceGraphConfig": ".referencegraphconfig",
-    "ReferenceGraphConfigTypedDict": ".referencegraphconfig",
     "ResponseValidationError": ".responsevalidationerror",
     "S3Config": ".s3config",
     "S3ConfigTypedDict": ".s3config",
@@ -1062,8 +885,6 @@ _dynamic_imports: dict[str, str] = {
     "UpdateDatasourceRequest1TypedDict": ".update_datasourceop",
     "UpdateRagConfigRequest1": ".update_rag_configop",
     "UpdateRagConfigRequest1TypedDict": ".update_rag_configop",
-    "UpdateReferenceGraphConfigRequest1": ".update_reference_graph_configop",
-    "UpdateReferenceGraphConfigRequest1TypedDict": ".update_reference_graph_configop",
     "UpdateTagColumnInfoRequest": ".update_tag_column_infoop",
     "UpdateTagColumnInfoRequestTypedDict": ".update_tag_column_infoop",
     "UpdateTagConfigRequest1": ".update_tag_configop",
@@ -1086,10 +907,6 @@ _dynamic_imports: dict[str, str] = {
     "UpdateRagConfigRequestTypedDict": ".updateragconfigrequest",
     "UpdateRagConfigResponse": ".updateragconfigresponse",
     "UpdateRagConfigResponseTypedDict": ".updateragconfigresponse",
-    "UpdateReferenceGraphConfigRequest": ".updatereferencegraphconfigrequest",
-    "UpdateReferenceGraphConfigRequestTypedDict": ".updatereferencegraphconfigrequest",
-    "UpdateReferenceGraphConfigResponse": ".updatereferencegraphconfigresponse",
-    "UpdateReferenceGraphConfigResponseTypedDict": ".updatereferencegraphconfigresponse",
     "UpdateTagColumnRequest": ".updatetagcolumnrequest",
     "UpdateTagColumnRequestTypedDict": ".updatetagcolumnrequest",
     "UpdateTagColumnResponse": ".updatetagcolumnresponse",
@@ -1102,12 +919,6 @@ _dynamic_imports: dict[str, str] = {
     "UpdateTagTableRequestTypedDict": ".updatetagtablerequest",
     "UpdateTagTableResponse": ".updatetagtableresponse",
     "UpdateTagTableResponseTypedDict": ".updatetagtableresponse",
-    "UpsertIngestRecordRequest1": ".upsert_ingest_recordop",
-    "UpsertIngestRecordRequest1TypedDict": ".upsert_ingest_recordop",
-    "UpsertIngestRecordRequest": ".upsertingestrecordrequest",
-    "UpsertIngestRecordRequestTypedDict": ".upsertingestrecordrequest",
-    "UpsertIngestRecordResponse": ".upsertingestrecordresponse",
-    "UpsertIngestRecordResponseTypedDict": ".upsertingestrecordresponse",
     "Loc": ".validationerror",
     "LocTypedDict": ".validationerror",
     "ValidationError": ".validationerror",

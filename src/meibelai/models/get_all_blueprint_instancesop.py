@@ -2,8 +2,7 @@
 
 from __future__ import annotations
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from meibelai.utils import FieldMetadata, HeaderMetadata, QueryParamMetadata
-import pydantic
+from meibelai.utils import FieldMetadata, QueryParamMetadata
 from pydantic import model_serializer
 from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
@@ -21,8 +20,6 @@ class GetAllBlueprintInstancesRequestTypedDict(TypedDict):
     r"""Field to sort by"""
     sort_order: NotRequired[Nullable[str]]
     r"""Sort order (asc or desc)"""
-    customer_id: NotRequired[Nullable[str]]
-    r"""Customer ID"""
 
 
 class GetAllBlueprintInstancesRequest(BaseModel):
@@ -65,13 +62,6 @@ class GetAllBlueprintInstancesRequest(BaseModel):
     ] = UNSET
     r"""Sort order (asc or desc)"""
 
-    customer_id: Annotated[
-        OptionalNullable[str],
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ] = UNSET
-    r"""Customer ID"""
-
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -82,9 +72,8 @@ class GetAllBlueprintInstancesRequest(BaseModel):
             "limit",
             "sort_by",
             "sort_order",
-            "customer-id",
         ]
-        nullable_fields = ["sort_by", "sort_order", "customer-id"]
+        nullable_fields = ["sort_by", "sort_order"]
         null_default_fields = []
 
         serialized = handler(self)

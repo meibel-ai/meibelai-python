@@ -9,4 +9,3 @@
 | `include_children`      | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 | `include_activities`    | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
 | `include_events`        | *Optional[bool]*        | :heavy_minus_sign:      | N/A                     |
-| `customer_id`           | *OptionalNullable[str]* | :heavy_minus_sign:      | Customer ID             |

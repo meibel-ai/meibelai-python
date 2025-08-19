@@ -3,6 +3,8 @@
 
 ## Overview
 
+Operations with blueprint_instances
+
 ### Available Operations
 
 * [add_blueprint_instance](#add_blueprint_instance) - Add Blueprint Instance
@@ -36,7 +38,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_blueprint_instance(customer_id="<id>")
+    res = m_client.blueprint_instances.add_blueprint_instance()
 
     # Handle response
     print(res)
@@ -47,7 +49,6 @@ with Meibelai(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `blueprint_id`                                                      | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `workflow_type`                                                     | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `task_queue`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
@@ -82,7 +83,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10, customer_id="<id>")
+    res = m_client.blueprint_instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10)
 
     # Handle response
     print(res)
@@ -100,7 +101,6 @@ with Meibelai(
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
 | `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -130,7 +130,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_blueprint_instance(blueprint_instance_id="<id>", include_children=False, include_activities=False, include_events=False, customer_id="<id>")
+    res = m_client.blueprint_instances.get_blueprint_instance(blueprint_instance_id="<id>", include_children=False, include_activities=False, include_events=False)
 
     # Handle response
     print(res)
@@ -145,7 +145,6 @@ with Meibelai(
 | `include_children`                                                  | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `include_activities`                                                | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `include_events`                                                    | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -175,7 +174,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.delete_blueprint_instance(blueprint_instance_id="<id>", customer_id="<id>")
+    m_client.blueprint_instances.delete_blueprint_instance(blueprint_instance_id="<id>")
 
     # Use the SDK ...
 
@@ -186,7 +185,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Errors
@@ -213,7 +211,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.CANCELLED, customer_id="<id>")
+    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.CANCELLED)
 
     # Use the SDK ...
 
@@ -226,7 +224,6 @@ with Meibelai(
 | `blueprint_instance_id`                                                   | *str*                                                                     | :heavy_check_mark:                                                        | N/A                                                                       |
 | `updated_status_value`                                                    | [models.BlueprintInstanceStatus](../../models/blueprintinstancestatus.md) | :heavy_check_mark:                                                        | BlueprintInstanceStatus                                                   |
 | `workflow_run_id`                                                         | *OptionalNullable[str]*                                                   | :heavy_minus_sign:                                                        | N/A                                                                       |
-| `customer_id`                                                             | *OptionalNullable[str]*                                                   | :heavy_minus_sign:                                                        | Customer ID                                                               |
 | `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
 
 ### Errors
@@ -252,7 +249,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>", customer_id="<id>")
+    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>")
 
     # Handle response
     print(res)
@@ -264,7 +261,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `result`                                                            | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
@@ -295,7 +291,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>", customer_id="<id>")
+    res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>")
 
     # Handle response
     print(res)
@@ -307,7 +303,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `error`                                                             | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Error message for failure                                           |
 | `error_details`                                                     | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
@@ -339,7 +334,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>", customer_id="<id>")
+    res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>")
 
     # Handle response
     print(res)
@@ -352,7 +347,6 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `activity_type`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `input_data`                                                        | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `output_data`                                                       | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `group_id`                                                          | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
@@ -385,7 +379,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_id="<id>", customer_id="<id>")
+    res = m_client.blueprint_instances.get_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_id="<id>")
 
     # Handle response
     print(res)
@@ -398,7 +392,6 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `activity_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -428,7 +421,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, customer_id="<id>")
+    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10)
 
     # Handle response
     print(res)
@@ -444,7 +437,6 @@ with Meibelai(
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
 | `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -475,7 +467,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.RUNNING, customer_id="<id>")
+    m_client.blueprint_instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.RUNNING)
 
     # Use the SDK ...
 
@@ -488,7 +480,6 @@ with Meibelai(
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `activity_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `updated_status_value`                                              | [models.ActivityStatus](../../models/activitystatus.md)             | :heavy_check_mark:                                                  | ActivityStatus                                                      |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Errors
@@ -514,7 +505,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_event_by_blueprint_instance(blueprint_instance_id="<id>", event_id="<id>", customer_id="<id>")
+    res = m_client.blueprint_instances.get_event_by_blueprint_instance(blueprint_instance_id="<id>", event_id="<id>")
 
     # Handle response
     print(res)
@@ -527,7 +518,6 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `event_id`                                                          | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -557,7 +547,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>", customer_id="<id>")
+    res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>")
 
     # Handle response
     print(res)
@@ -570,7 +560,6 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `event_name`                                                        | *str*                                                               | :heavy_check_mark:                                                  | Name of the custom event being logged.                              |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `activity_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `details`                                                           | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `group_id`                                                          | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
@@ -606,7 +595,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, customer_id="<id>")
+    res = m_client.blueprint_instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10)
 
     # Handle response
     print(res)
@@ -622,7 +611,6 @@ with Meibelai(
 | `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return                                   |
 | `sort_by`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Field to sort by                                                    |
 | `sort_order`                                                        | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Sort order (asc or desc)                                            |
-| `customer_id`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Customer ID                                                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

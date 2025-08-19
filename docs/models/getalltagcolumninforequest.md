@@ -11,4 +11,3 @@
 | `limit`                           | *Optional[int]*                   | :heavy_minus_sign:                | Maximum number of items to return |
 | `sort_by`                         | *OptionalNullable[str]*           | :heavy_minus_sign:                | Field to sort by                  |
 | `sort_order`                      | *OptionalNullable[str]*           | :heavy_minus_sign:                | Sort order (asc or desc)          |
-| `customer_id`                     | *OptionalNullable[str]*           | :heavy_minus_sign:                | Customer ID                       |

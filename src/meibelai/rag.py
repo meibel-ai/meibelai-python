@@ -10,12 +10,13 @@ from typing import Any, Mapping, Optional, Union
 
 
 class Rag(BaseSDK):
+    r"""Operations with rag"""
+
     def add_rag_config(
         self,
         *,
         datasource_id: str,
         collection_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
             Union[models.ExtractorModel, models.ExtractorModelTypedDict]
@@ -39,7 +40,6 @@ class Rag(BaseSDK):
 
         :param datasource_id:
         :param collection_id:
-        :param customer_id: Customer ID
         :param description:
         :param extractor_model:
         :param embedding_model:
@@ -63,7 +63,6 @@ class Rag(BaseSDK):
 
         request = models.AddRagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_rag_config_request=models.AddRagConfigRequest(
                 description=description,
                 collection_id=collection_id,
@@ -156,7 +155,6 @@ class Rag(BaseSDK):
         *,
         datasource_id: str,
         collection_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
             Union[models.ExtractorModel, models.ExtractorModelTypedDict]
@@ -180,7 +178,6 @@ class Rag(BaseSDK):
 
         :param datasource_id:
         :param collection_id:
-        :param customer_id: Customer ID
         :param description:
         :param extractor_model:
         :param embedding_model:
@@ -204,7 +201,6 @@ class Rag(BaseSDK):
 
         request = models.AddRagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_rag_config_request=models.AddRagConfigRequest(
                 description=description,
                 collection_id=collection_id,
@@ -296,7 +292,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -305,7 +300,6 @@ class Rag(BaseSDK):
         r"""Get Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -323,7 +317,6 @@ class Rag(BaseSDK):
 
         request = models.GetRagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -390,7 +383,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -399,7 +391,6 @@ class Rag(BaseSDK):
         r"""Get Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -417,7 +408,6 @@ class Rag(BaseSDK):
 
         request = models.GetRagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -484,7 +474,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         collection_id: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
@@ -508,7 +497,6 @@ class Rag(BaseSDK):
         r"""Update Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param collection_id:
         :param extractor_model:
@@ -533,7 +521,6 @@ class Rag(BaseSDK):
 
         request = models.UpdateRagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_rag_config_request=models.UpdateRagConfigRequest(
                 description=description,
                 collection_id=collection_id,
@@ -625,7 +612,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         description: OptionalNullable[str] = UNSET,
         collection_id: OptionalNullable[str] = UNSET,
         extractor_model: OptionalNullable[
@@ -649,7 +635,6 @@ class Rag(BaseSDK):
         r"""Update Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param description:
         :param collection_id:
         :param extractor_model:
@@ -674,7 +659,6 @@ class Rag(BaseSDK):
 
         request = models.UpdateRagConfigRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_rag_config_request=models.UpdateRagConfigRequest(
                 description=description,
                 collection_id=collection_id,
@@ -766,7 +750,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -775,7 +758,6 @@ class Rag(BaseSDK):
         r"""Delete Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -793,7 +775,6 @@ class Rag(BaseSDK):
 
         request = models.DeleteRagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -860,7 +841,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -869,7 +849,6 @@ class Rag(BaseSDK):
         r"""Delete Rag Config
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -887,7 +866,6 @@ class Rag(BaseSDK):
 
         request = models.DeleteRagConfigRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -954,7 +932,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -984,7 +961,6 @@ class Rag(BaseSDK):
         r"""Add Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param code_splitter:
         :param html_node_parser:
         :param json_node_parser:
@@ -1009,7 +985,6 @@ class Rag(BaseSDK):
 
         request = models.AddChunkingStrategyRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_chunking_strategy_request=models.AddChunkingStrategyRequest(
                 code_splitter=utils.get_pydantic_model(
                     code_splitter, OptionalNullable[models.CodeChunking]
@@ -1107,7 +1082,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1137,7 +1111,6 @@ class Rag(BaseSDK):
         r"""Add Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param code_splitter:
         :param html_node_parser:
         :param json_node_parser:
@@ -1162,7 +1135,6 @@ class Rag(BaseSDK):
 
         request = models.AddChunkingStrategyRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             add_chunking_strategy_request=models.AddChunkingStrategyRequest(
                 code_splitter=utils.get_pydantic_model(
                     code_splitter, OptionalNullable[models.CodeChunking]
@@ -1260,7 +1232,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1269,7 +1240,6 @@ class Rag(BaseSDK):
         r"""Get Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1287,7 +1257,6 @@ class Rag(BaseSDK):
 
         request = models.GetChunkingStrategyRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1354,7 +1323,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1363,7 +1331,6 @@ class Rag(BaseSDK):
         r"""Get Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1381,7 +1348,6 @@ class Rag(BaseSDK):
 
         request = models.GetChunkingStrategyRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(
@@ -1448,7 +1414,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1478,7 +1443,6 @@ class Rag(BaseSDK):
         r"""Update Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param code_splitter:
         :param html_node_parser:
         :param json_node_parser:
@@ -1503,7 +1467,6 @@ class Rag(BaseSDK):
 
         request = models.UpdateChunkingStrategyRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_chunking_strategy_request=models.UpdateChunkingStrategyRequest(
                 code_splitter=utils.get_pydantic_model(
                     code_splitter, OptionalNullable[models.CodeChunking]
@@ -1603,7 +1566,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         code_splitter: OptionalNullable[
             Union[models.CodeChunking, models.CodeChunkingTypedDict]
         ] = UNSET,
@@ -1633,7 +1595,6 @@ class Rag(BaseSDK):
         r"""Update Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param code_splitter:
         :param html_node_parser:
         :param json_node_parser:
@@ -1658,7 +1619,6 @@ class Rag(BaseSDK):
 
         request = models.UpdateChunkingStrategyRequest1(
             datasource_id=datasource_id,
-            customer_id=customer_id,
             update_chunking_strategy_request=models.UpdateChunkingStrategyRequest(
                 code_splitter=utils.get_pydantic_model(
                     code_splitter, OptionalNullable[models.CodeChunking]
@@ -1758,7 +1718,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1767,7 +1726,6 @@ class Rag(BaseSDK):
         r"""Delete Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1785,7 +1743,6 @@ class Rag(BaseSDK):
 
         request = models.DeleteChunkingStrategyRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request(
@@ -1854,7 +1811,6 @@ class Rag(BaseSDK):
         self,
         *,
         datasource_id: str,
-        customer_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1863,7 +1819,6 @@ class Rag(BaseSDK):
         r"""Delete Chunking Strategy
 
         :param datasource_id:
-        :param customer_id: Customer ID
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1881,7 +1836,6 @@ class Rag(BaseSDK):
 
         request = models.DeleteChunkingStrategyRequest(
             datasource_id=datasource_id,
-            customer_id=customer_id,
         )
 
         req = self._build_request_async(

@@ -6,13 +6,7 @@ from .startblueprintinstancerequest import (
     StartBlueprintInstanceRequestTypedDict,
 )
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from meibelai.utils import (
-    FieldMetadata,
-    HeaderMetadata,
-    PathParamMetadata,
-    RequestMetadata,
-)
-import pydantic
+from meibelai.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from pydantic import model_serializer
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -20,8 +14,6 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class StartBlueprintInstanceRequest1TypedDict(TypedDict):
     blueprint_instance_id: str
     r"""Unique identifier for the workflow instance"""
-    customer_id: NotRequired[Nullable[str]]
-    r"""Customer ID"""
     start_blueprint_instance_request: NotRequired[
         Nullable[StartBlueprintInstanceRequestTypedDict]
     ]
@@ -33,13 +25,6 @@ class StartBlueprintInstanceRequest1(BaseModel):
     ]
     r"""Unique identifier for the workflow instance"""
 
-    customer_id: Annotated[
-        OptionalNullable[str],
-        pydantic.Field(alias="customer-id"),
-        FieldMetadata(header=HeaderMetadata(style="simple", explode=False)),
-    ] = UNSET
-    r"""Customer ID"""
-
     start_blueprint_instance_request: Annotated[
         OptionalNullable[StartBlueprintInstanceRequest],
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
@@ -47,8 +32,8 @@ class StartBlueprintInstanceRequest1(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["customer-id", "StartBlueprintInstanceRequest"]
-        nullable_fields = ["customer-id", "StartBlueprintInstanceRequest"]
+        optional_fields = ["StartBlueprintInstanceRequest"]
+        nullable_fields = ["StartBlueprintInstanceRequest"]
         null_default_fields = []
 
         serialized = handler(self)

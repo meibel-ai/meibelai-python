@@ -1,11 +1,10 @@
-# GetEventsByBlueprintInstanceRequest
+# GetDatasourceIdsRequest
 
 
 ## Fields
 
 | Field                             | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `blueprint_instance_id`           | *str*                             | :heavy_check_mark:                | N/A                               |
 | `offset`                          | *Optional[int]*                   | :heavy_minus_sign:                | Number of items to skip           |
 | `limit`                           | *Optional[int]*                   | :heavy_minus_sign:                | Maximum number of items to return |
 | `sort_by`                         | *OptionalNullable[str]*           | :heavy_minus_sign:                | Field to sort by                  |
