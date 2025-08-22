@@ -3,10 +3,10 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: 919e6c7bdbeff057c2c7c602b84104f7
   docVersion: 0.1.0
-  speakeasyVersion: 1.606.0
-  generationVersion: 2.686.7
-  releaseVersion: 0.13.3
-  configChecksum: f8591a0a52d95f444090c2f7e9e6d822
+  speakeasyVersion: 1.606.2
+  generationVersion: 2.687.1
+  releaseVersion: 0.13.4
+  configChecksum: 9f6734ac9967c83a3117bb4e316aa79a
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -512,12 +512,12 @@ examples:
         header:
           customer-id: "<value>"
       requestBody:
-        application/json: {"customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "smooth hmph geez key", "recurrence": "<value>"}
+        application/json: {"customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "smooth hmph geez key", "recurrence": "<value>", "object_storage_config": {"bucket": "<value>", "prefix": "<value>", "filters": {"included_prefixes": ["<value 1>", "<value 2>"], "included_file_types": ["<value 1>", "<value 2>", "<value 3>"], "recursive_prefixes": true, "modified_date_start": "<value>", "modified_date_end": "<value>", "min_file_size": 110821, "max_file_size": 861343}, "gcs_config": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "s3_config": null}, "web_config": {"baseURL": "https://soupy-department.biz", "javascriptRender": false, "waitForSelector": "<value>", "domains": [{"domain": "well-made-hygienic.com", "limitPattern": "<value>", "excludePattern": "<value>", "ingestible": true, "expandable": true}], "authentication": {"username": "Amir_Schaden", "password": "Qgqx_NgZXn9ZOj5"}}}
       responses:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_datasource:
     speakeasy-default-get-datasource:
       parameters:
@@ -527,9 +527,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "what minor wrongly wrong redress annual selfishly bleakly provided apud", "recurrence": "<value>", "created_by": "<value>", "created_at": "1704480796900", "updated_by": "<value>", "updated_at": "1735638000776", "object_storage_config": {"bucket": "<value>", "prefix": "<value>"}, "web_config": {"baseURL": "https://distant-acquaintance.name/", "javascriptRender": true, "waitForSelector": "<value>", "domains": [], "authentication": {"username": "Kariane.Blanda8", "password": "EiDnr6JVKVp64wp"}}}
+          application/json: {"id": "<id>", "customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "what minor wrongly wrong redress annual selfishly bleakly provided apud", "recurrence": "<value>", "created_by": "<value>", "created_at": "1704480796900", "updated_by": "<value>", "updated_at": "1735638000776", "object_storage_config": {"bucket": "<value>", "prefix": "<value>", "filters": {"included_prefixes": ["<value 1>", "<value 2>", "<value 3>"], "included_file_types": ["<value 1>", "<value 2>", "<value 3>"], "recursive_prefixes": false, "modified_date_start": "<value>", "modified_date_end": "<value>", "min_file_size": null, "max_file_size": 25430}, "gcs_config": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "s3_config": {"role_arn": "<value>", "region": "<value>"}}, "web_config": {"baseURL": "https://distant-acquaintance.name/", "javascriptRender": true, "waitForSelector": "<value>", "domains": [], "authentication": {"username": "Kariane.Blanda8", "password": "EiDnr6JVKVp64wp"}}}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [586546], "msg": "<value>", "type": "<value>"}]}
   update_datasource:
     speakeasy-default-update-datasource:
       parameters:
@@ -538,12 +538,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"name": "<value>", "description": "amongst coordinated all", "recurrence": "<value>", "object_storage_config": {"bucket": "<value>", "prefix": null, "filters": {"included_prefixes": ["<value 1>", "<value 2>", "<value 3>"], "included_file_types": ["<value 1>"], "recursive_prefixes": true, "modified_date_start": "<value>", "modified_date_end": "<value>", "min_file_size": 289575, "max_file_size": 208282}, "gcs_config": {"key": "<value>", "key1": "<value>"}, "s3_config": {"role_arn": "<value>", "region": "<value>"}}, "web_config": {"baseURL": "https://giving-pendant.net", "javascriptRender": true, "waitForSelector": "<value>", "domains": [], "authentication": {"username": "Audie94", "password": "lD3r6ZuNUApWlV4"}}}
       responses:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_datasource_datasource__datasource_id__delete:
     speakeasy-default-delete-datasource-datasource-datasource-id-delete:
       parameters:
@@ -555,7 +555,7 @@ examples:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_all_datasource_ids:
     speakeasy-default-get-all-datasource-ids:
       parameters:
@@ -584,7 +584,7 @@ examples:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   get_data_element:
     speakeasy-default-get-data-element:
       parameters:
@@ -597,7 +597,7 @@ examples:
         "200":
           application/json: {"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/usr/include", "media_type": "<value>", "discovery_record": null, "description": "lifestyle split blight matter", "created_at": "1732325300596", "updated_at": "1735648354638"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   update_data_element:
     speakeasy-default-update-data-element:
       parameters:
@@ -607,12 +607,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "now expert including pish obedient yieldingly", "name": "<value>", "path": "/media", "media_type": "<value>", "discovery_record": {"discovery_time": "<value>", "last_modified_time": "<value>", "size": 982718, "element_hash": "<value>"}}
       responses:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [199855], "msg": "<value>", "type": "<value>"}]}
   delete_data_element:
     speakeasy-default-delete-data-element:
       parameters:
@@ -625,7 +625,7 @@ examples:
         "200":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_all_data_elements:
     speakeasy-default-get-all-data-elements:
       parameters:
@@ -679,12 +679,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {"working_bucket": "<value>"}
+        application/json: {"description": "bandwidth anenst psst round secrecy judicious gown atrium ick", "logical_group_regex": "<value>", "working_bucket": "<value>", "db_path": null}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_tag_config:
     speakeasy-default-get-tag-config:
       parameters:
@@ -694,9 +694,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"datasource_id": "<id>", "description": "spotless jealous always bandwidth aside outside loaf", "logical_group_regex": "<value>", "working_bucket": "<value>", "db_path": "<value>"}
+          application/json: {"datasource_id": "<id>", "description": "spotless jealous always bandwidth aside outside loaf", "logical_group_regex": "<value>", "working_bucket": "<value>", "db_path": "<value>", "created_by": "<value>", "updated_by": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [827993], "msg": "<value>", "type": "<value>"}]}
   update_tag_config:
     speakeasy-default-update-tag-config:
       parameters:
@@ -705,12 +705,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "fatherly grown shrilly jealously decide", "logical_group_regex": null, "working_bucket": "<value>", "db_path": "<value>"}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_tag_config:
     speakeasy-default-delete-tag-config:
       parameters:
@@ -722,7 +722,7 @@ examples:
         "200":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   add_tag_table_info:
     speakeasy-default-add-tag-table-info:
       parameters:
@@ -732,12 +732,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "below eulogise questioningly nephew innovation strange likewise brr"}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   get_tag_table_info:
     speakeasy-default-get-tag-table-info:
       parameters:
@@ -750,7 +750,7 @@ examples:
         "200":
           application/json: {"datasource_id": "<id>", "name": "<value>", "description": "spanish yowza oh"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   update_tag_table_info:
     speakeasy-default-update-tag-table-info:
       parameters:
@@ -760,12 +760,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "affectionate colorfully for whose unnaturally smog huzzah perfectly"}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_tag_table_info:
     speakeasy-default-delete-tag-table-info:
       parameters:
@@ -778,7 +778,7 @@ examples:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_all_tag_table_info:
     speakeasy-default-get-all-tag-table-info:
       parameters:
@@ -787,13 +787,15 @@ examples:
         query:
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
         header:
           customer-id: "<id>"
       responses:
         "200":
           application/json: [{"datasource_id": "<id>", "name": "<value>", "description": "lightly book disappointment meanwhile zowie unnaturally um lest up"}]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   add_tag_column_info:
     speakeasy-default-add-tag-column-info:
       parameters:
@@ -804,12 +806,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "really agitated gladly printer", "dtype": "<value>", "is_key": false, "is_indexed": false, "engineered_features": ["<value 1>"]}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_tag_column_info:
     speakeasy-default-get-tag-column-info:
       parameters:
@@ -823,7 +825,7 @@ examples:
         "200":
           application/json: {"datasource_id": "<id>", "table_name": "<value>", "name": "<value>", "description": "brr downchange injunction anti unnaturally ferociously obscure", "dtype": "<value>", "is_key": false, "is_indexed": false, "engineered_features": ["<value 1>", "<value 2>", "<value 3>"]}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   update_tag_column_info:
     speakeasy-default-update-tag-column-info:
       parameters:
@@ -834,12 +836,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "pish poorly boo evenly appliance but aw", "dtype": "<value>", "is_key": true, "is_indexed": true, "engineered_features": ["<value 1>", "<value 2>", "<value 3>"]}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_all_tag_column_info:
     speakeasy-default-get-all-tag-column-info:
       parameters:
@@ -849,13 +851,15 @@ examples:
         query:
           offset: 0
           limit: 10
+          sort_by: null
+          sort_order: "<value>"
         header:
           customer-id: "<id>"
       responses:
         "200":
           application/json: [{"datasource_id": "<id>", "table_name": "<value>", "name": "<value>", "description": null, "dtype": "<value>", "is_key": true, "is_indexed": false, "engineered_features": ["<value 1>"]}]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_tag_column_info:
     speakeasy-default-delete-tag-column-info:
       parameters:
@@ -869,7 +873,7 @@ examples:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [89433], "msg": "<value>", "type": "<value>"}]}
   add_rag_config:
     speakeasy-default-add-rag-config:
       parameters:
@@ -878,12 +882,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {"collection_id": "<id>"}
+        application/json: {"description": "unto yippee unknown from", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 107326}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": true, "metadata_options": {"create_title": true, "extract_questions_answers": false, "extract_summary": false, "has_consumer_content": null, "get_bibliographical_information": null}}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   get_rag_config:
     speakeasy-default-get-rag-config:
       parameters:
@@ -893,9 +897,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"datasource_id": "<id>", "description": "ick yum whoa ugly unlike bah unto briefly frail", "collection_id": "<id>"}
+          application/json: {"datasource_id": "<id>", "description": "ick yum whoa ugly unlike bah unto briefly frail", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 339770}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": false, "extract_questions_answers": true, "extract_summary": null, "has_consumer_content": false, "get_bibliographical_information": false}, "created_by": "<value>", "updated_by": null}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   update_rag_config:
     speakeasy-default-update-rag-config:
       parameters:
@@ -904,12 +908,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"description": "stable suckle volleyball yieldingly cleverly shyly", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 477647}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": true, "extract_questions_answers": true, "extract_summary": false, "has_consumer_content": true, "get_bibliographical_information": true}}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [536699], "msg": "<value>", "type": "<value>"}]}
   delete_rag_config:
     speakeasy-default-delete-rag-config:
       parameters:
@@ -921,7 +925,7 @@ examples:
         "200":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   add_chunking_strategy:
     speakeasy-default-add-chunking-strategy:
       parameters:
@@ -930,12 +934,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"code_splitter": {"chunk_lines": 750571, "chunk_lines_overlap": 608702, "max_chars": 567662}, "html_node_parser": {"include_metadata": true, "include_prev_next_rel": false, "tags": ["<value 1>", "<value 2>"]}, "json_node_parser": {"include_metadata": true, "include_prev_next_rel": true}, "markdown_node_parser": {"include_metadata": false, "include_prev_next_rel": true, "header_path_separator": "<value>"}, "semantic_splitter_node_parser": {"buffer_size": 887654, "include_metadata": true, "include_prev_next_rel": false, "breakpoint_percentile_threshold": 22055}, "sentence_splitter": {"chunk_size": 351648, "chunk_overlap": 940255, "separator": "<value>", "paragraph_separator": "<value>", "secondary_chunking_regex": "<value>"}, "token_text_splitter": {"chunk_size": 846457, "chunk_overlap": 52711, "separator": "<value>", "backup_separators": ["<value 1>"], "keep_whitespaces": false}}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_chunking_strategy:
     speakeasy-default-get-chunking-strategy:
       parameters:
@@ -945,9 +949,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"datasource_id": "<id>"}
+          application/json: {"datasource_id": "<id>", "code_splitter": {"chunk_lines": 117014, "chunk_lines_overlap": 503866, "max_chars": null}, "html_node_parser": {"include_metadata": false, "include_prev_next_rel": false, "tags": ["<value 1>", "<value 2>"]}, "json_node_parser": {"include_metadata": false, "include_prev_next_rel": false}, "markdown_node_parser": {"include_metadata": false, "include_prev_next_rel": true, "header_path_separator": "<value>"}, "semantic_splitter_node_parser": {"buffer_size": 91832, "include_metadata": false, "include_prev_next_rel": true, "breakpoint_percentile_threshold": 480247}, "sentence_splitter": {"chunk_size": 76215, "chunk_overlap": 877486, "separator": "<value>", "paragraph_separator": "<value>", "secondary_chunking_regex": "<value>"}, "token_text_splitter": {"chunk_size": 79821, "chunk_overlap": 620057, "separator": "<value>", "backup_separators": ["<value 1>"], "keep_whitespaces": true}}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   update_chunking_strategy:
     speakeasy-default-update-chunking-strategy:
       parameters:
@@ -956,12 +960,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"code_splitter": {"chunk_lines": 246082, "chunk_lines_overlap": 454883, "max_chars": 942191}, "html_node_parser": {"include_metadata": true, "include_prev_next_rel": true, "tags": ["<value 1>", "<value 2>", "<value 3>"]}, "json_node_parser": {"include_metadata": false, "include_prev_next_rel": false}, "markdown_node_parser": {"include_metadata": true, "include_prev_next_rel": true, "header_path_separator": "<value>"}, "semantic_splitter_node_parser": {"buffer_size": 745292, "include_metadata": false, "include_prev_next_rel": false, "breakpoint_percentile_threshold": 912198}, "sentence_splitter": {"chunk_size": 477170, "chunk_overlap": 716276, "separator": "<value>", "paragraph_separator": "<value>", "secondary_chunking_regex": "<value>"}, "token_text_splitter": {"chunk_size": 635106, "chunk_overlap": 380612, "separator": "<value>", "backup_separators": ["<value 1>", "<value 2>"], "keep_whitespaces": true}}
       responses:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_chunking_strategy:
     speakeasy-default-delete-chunking-strategy:
       parameters:
@@ -973,7 +977,7 @@ examples:
         "200":
           application/json: {"message": "<value>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   upsert_ingest_record:
     speakeasy-default-upsert-ingest-record:
       parameters:
@@ -1091,12 +1095,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"blueprint_id": "<id>", "workflow_type": "<value>", "task_queue": "<value>", "instance_metadata": {"key": "<value>", "key1": "<value>"}, "parent_id": "<id>"}
       responses:
         "201":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [650263], "msg": "<value>", "type": "<value>"}]}
   get_all_blueprint_instances:
     speakeasy-default-get-all-blueprint-instances:
       parameters:
@@ -1106,13 +1110,15 @@ examples:
           include_events: false
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
         header:
           customer-id: "<id>"
       responses:
         "200":
           application/json: {"data": []}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   get_blueprint_instance:
     speakeasy-default-get-blueprint-instance:
       parameters:
@@ -1126,9 +1132,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{}]}
+          application/json: {"data": [{"id": "<id>", "blueprint_id": "<id>", "workflow_type": "<value>", "task_queue": "<value>", "workflow_run_id": "<id>", "status": "created", "start_time": "2023-05-21T08:20:56.764Z", "end_time": "2023-08-09T01:59:55.956Z", "instance_metadata": {"key": "<value>", "key1": "<value>"}, "parent_id": "<id>", "children": [{"id": "<id>", "blueprint_id": null, "workflow_type": "<value>", "task_queue": "<value>", "workflow_run_id": "<id>", "status": "failed", "start_time": "2025-03-10T03:12:34.873Z", "end_time": "2025-10-08T07:20:42.727Z", "instance_metadata": {"key": "<value>", "key1": "<value>"}, "parent_id": "<id>", "activities": [{"id": "<id>", "blueprint_instance_id": "<id>", "activity_type": "<value>", "status": "failed", "start_time": "2025-04-03T02:59:40.522Z", "end_time": "2023-12-04T21:24:21.856Z", "input_data": {"key": "<value>", "key1": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>"}, "error": "<value>", "group_id": "<id>"}], "events": [{"id": "<id>", "activity_id": "<id>", "blueprint_instance_id": "<id>", "event_type": "custom_event", "timestamp": "2023-01-08T21:52:29.903Z", "details": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "group_id": "<id>", "is_signal": false, "is_internal": true, "originating_signal_id": null}]}], "activities": [{"id": "<id>", "blueprint_instance_id": "<id>", "activity_type": "<value>", "status": "failed", "start_time": "2025-04-03T02:59:40.522Z", "end_time": "2023-12-04T21:24:21.856Z", "input_data": {"key": "<value>", "key1": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>"}, "error": "<value>", "group_id": "<id>"}], "events": [{"id": "<id>", "activity_id": "<id>", "blueprint_instance_id": "<id>", "event_type": "custom_event", "timestamp": "2023-01-08T21:52:29.903Z", "details": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "group_id": "<id>", "is_signal": false, "is_internal": true, "originating_signal_id": null}]}]}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   delete_blueprint_instance:
     speakeasy-default-delete-blueprint-instance:
       parameters:
@@ -1138,7 +1144,7 @@ examples:
           customer-id: "<id>"
       responses:
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [41876], "msg": "<value>", "type": "<value>"}]}
   update_blueprint_instance_status:
     speakeasy-default-update-blueprint-instance-status:
       parameters:
@@ -1146,11 +1152,12 @@ examples:
           blueprint_instance_id: "<id>"
         query:
           updated_status_value: "cancelled"
+          workflow_run_id: "<id>"
         header:
           customer-id: "<id>"
       responses:
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [560857], "msg": "<value>", "type": "<value>"}]}
   complete_blueprint_instance:
     speakeasy-default-complete-blueprint-instance:
       parameters:
@@ -1158,11 +1165,13 @@ examples:
           blueprint_instance_id: "<id>"
         header:
           customer-id: "<id>"
+      requestBody:
+        application/json: {"result": null}
       responses:
         "202":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   fail_blueprint_instance:
     speakeasy-default-fail-blueprint-instance:
       parameters:
@@ -1171,12 +1180,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"error": "<value>", "error_details": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
       responses:
         "202":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   add_activity_by_blueprint_instance:
     speakeasy-default-add-activity-by-blueprint-instance:
       parameters:
@@ -1185,12 +1194,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {"activity_type": "<value>"}
+        application/json: {"activity_type": "<value>", "input_data": {"key": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "group_id": "<id>"}
       responses:
         "201":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_activity_by_blueprint_instance:
     speakeasy-default-get-activity-by-blueprint-instance:
       parameters:
@@ -1201,9 +1210,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"blueprint_instance_id": "<id>", "activity_type": "<value>"}]}
+          application/json: {"data": [{"id": "<id>", "blueprint_instance_id": "<id>", "activity_type": "<value>", "status": "failed", "start_time": "2025-08-20T19:41:15.604Z", "end_time": "2025-01-26T13:16:49.827Z", "input_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>"}, "error": "<value>", "group_id": "<id>"}]}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   get_activities_by_blueprint_instance:
     speakeasy-default-get-activities-by-blueprint-instance:
       parameters:
@@ -1212,13 +1221,15 @@ examples:
         query:
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
         header:
           customer-id: "<id>"
       responses:
         "200":
           application/json: {"data": []}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   update_activity_status:
     speakeasy-default-update-activity-status:
       parameters:
@@ -1231,7 +1242,7 @@ examples:
           customer-id: "<id>"
       responses:
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_event_by_blueprint_instance:
     speakeasy-default-get-event-by-blueprint-instance:
       parameters:
@@ -1242,9 +1253,9 @@ examples:
           customer-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"blueprint_instance_id": "<id>"}]}
+          application/json: {"data": [{"id": "<id>", "activity_id": "<id>", "blueprint_instance_id": "<id>", "event_type": "agent_thinking", "timestamp": "2023-10-22T21:46:41.270Z", "details": {"key": "<value>", "key1": "<value>"}, "group_id": "<id>", "is_signal": null, "is_internal": null, "originating_signal_id": "<id>"}]}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [515032], "msg": "<value>", "type": "<value>"}]}
   create_event_by_blueprint_instance_id:
     speakeasy-default-create-event-by-blueprint-instance-id:
       parameters:
@@ -1253,12 +1264,12 @@ examples:
         header:
           customer-id: "<id>"
       requestBody:
-        application/json: {"event_name": "<value>"}
+        application/json: {"activity_id": null, "event_name": "<value>", "details": {"key": "<value>"}, "group_id": "<id>", "is_signal": false, "is_internal": false, "originating_signal_id": "<id>"}
       responses:
         "201":
           application/json: {"id": "<id>"}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [262272], "msg": "<value>", "type": "<value>"}]}
   get_events_by_blueprint_instance:
     speakeasy-default-get-events-by-blueprint-instance:
       parameters:
@@ -1267,23 +1278,27 @@ examples:
         query:
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
         header:
           customer-id: "<id>"
       responses:
         "200":
           application/json: {"data": []}
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   start_blueprint_instance:
     speakeasy-default-start-blueprint-instance:
       parameters:
         path:
           blueprint_instance_id: "<id>"
+      requestBody:
+        application/json: {"workflow_args": ["<value 1>"], "workflow_kwargs": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
       responses:
         "201":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   cancel_blueprint_instance:
     speakeasy-default-cancel-blueprint-instance:
       parameters:
@@ -1293,40 +1308,46 @@ examples:
         "200":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   send_signal:
     speakeasy-default-send-signal:
       parameters:
         path:
           blueprint_instance_id: "<id>"
           signal_name: "<value>"
+      requestBody:
+        application/json: ["<value 1>"]
       responses:
         "201":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [19621], "msg": "<value>", "type": "<value>"}]}
   query_workflow:
     speakeasy-default-query-workflow:
       parameters:
         path:
           blueprint_instance_id: "<id>"
           query_name: "<value>"
+      requestBody:
+        application/json: ["<value 1>", "<value 2>"]
       responses:
         "200":
           application/json: "<value>"
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_datasource_ids:
     speakeasy-default-get-datasource-ids:
       parameters:
         query:
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
       responses:
         "200":
           application/json: ["<value 1>", "<value 2>"]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_data_elements:
     speakeasy-default-get-data-elements:
       parameters:
@@ -1335,11 +1356,13 @@ examples:
         query:
           offset: 0
           limit: 10
+          sort_by: "<value>"
+          sort_order: "<value>"
       responses:
         "200":
           application/json: [{"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/sbin", "media_type": "<value>", "discovery_record": null, "description": "jubilantly firsthand whoever scenario ugh lest electrify without", "created_at": "1707234184486", "updated_at": "1735623202715"}]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   get_data_elements_by_filters:
     speakeasy-default-get-data-elements-by-filters:
       parameters:
@@ -1348,75 +1371,16 @@ examples:
         query:
           offset: 0
           limit: 10
+          regex_filter: "<value>"
+          media_type_filters: ["<value 1>", "<value 2>"]
+          sort_by: "<value>"
+          sort_order: "<value>"
+      requestBody:
+        application/json: {"filters": [{"key": "name", "condition": null, "value": "<value>"}]}
       responses:
         "200":
           application/json: [{"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/lost+found", "media_type": "<value>", "discovery_record": null, "description": "propound nor innocently along furthermore truly essential", "created_at": "1734506020724", "updated_at": "1735613666656"}]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## SDK Changes Detected:
-  * `meibelai.tag.delete_tag_table_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.datasources.add_datasource()`:  `request.customer-id_param` **Removed** **Breaking** :warning:
-  * `meibelai.workflows.query_workflow()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.workflows.send_signal()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.workflows.cancel_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.workflows.start_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_events_by_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.create_event_by_blueprint_instance_id()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_event_by_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_activity_status()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activities_by_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activity_by_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_activity_by_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.fail_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.complete_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.get_tag_column_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.datasources.get_datasource()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.datasources.update_datasource()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.datasources.delete_datasource_datasource_datasource_id_delete()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.data_elements.add_data_element()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_element()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.data_elements.update_data_element()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.data_elements.delete_data_element()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.get_tag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.update_tag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.add_tag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.get_tag_table_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.update_tag_table_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.add_tag_table_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_blueprint_instance_status()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.add_tag_column_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.delete_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.update_tag_column_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_table_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_column_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_column_info()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.get_rag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.update_rag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.add_rag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.delete_rag_config()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.get_chunking_strategy()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.update_chunking_strategy()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.add_chunking_strategy()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.rag.delete_chunking_strategy()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_all_blueprint_instances()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_blueprint_instance()`:  `request.customer-id` **Removed** **Breaking** :warning:
-  * `meibelai.ingest.upsert_ingest_record()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_new_and_updated_elements()`: **Deleted** **Breaking** :warning:
-  * `meibelai.reference_graph.delete_reference_graph_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.reference_graph.add_reference_graph_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.reference_graph.update_reference_graph_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_datasource_ids()`: **Added**
-  * `meibelai.data_elements.get_data_elements()`: **Added**
-  * `meibelai.ingest.get_all_ingest_records()`: **Deleted** **Breaking** :warning:
-  * `meibelai.reference_graph.get_reference_graph_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.ingest.get_ingest_record()`: **Deleted** **Breaking** :warning:
-  * `meibelai.ingest.delete_ingest_record()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_element_by_path()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_all_data_elements()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_all_datasource_ids()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_elements_by_filters()`: **Added**

@@ -38,7 +38,10 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_blueprint_instance()
+    res = m_client.blueprint_instances.add_blueprint_instance(blueprint_id="<id>", workflow_type="<value>", task_queue="<value>", instance_metadata={
+        "key": "<value>",
+        "key1": "<value>",
+    }, parent_id="<id>")
 
     # Handle response
     print(res)
@@ -83,7 +86,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10)
+    res = m_client.blueprint_instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -211,7 +214,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.CANCELLED)
+    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.CANCELLED, workflow_run_id="<id>")
 
     # Use the SDK ...
 
@@ -249,7 +252,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>")
+    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>", result=None)
 
     # Handle response
     print(res)
@@ -291,7 +294,11 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>")
+    res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>", error="<value>", error_details={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    })
 
     # Handle response
     print(res)
@@ -334,7 +341,13 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>")
+    res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>", input_data={
+        "key": "<value>",
+    }, output_data={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    }, group_id="<id>")
 
     # Handle response
     print(res)
@@ -421,7 +434,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10)
+    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -547,7 +560,9 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>")
+    res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>", activity_id=None, details={
+        "key": "<value>",
+    }, group_id="<id>", is_signal=False, is_internal=False, originating_signal_id="<id>")
 
     # Handle response
     print(res)
@@ -595,7 +610,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10)
+    res = m_client.blueprint_instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)

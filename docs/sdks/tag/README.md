@@ -38,7 +38,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>")
+    res = m_client.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="bandwidth anenst psst round secrecy judicious gown atrium ick", logical_group_regex="<value>", db_path=None)
 
     # Handle response
     print(res)
@@ -124,7 +124,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_config(datasource_id="<id>")
+    res = m_client.tag.update_tag_config(datasource_id="<id>", description="fatherly grown shrilly jealously decide", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
 
     # Handle response
     print(res)
@@ -210,7 +210,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>")
+    res = m_client.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>", description="below eulogise questioningly nephew innovation strange likewise brr")
 
     # Handle response
     print(res)
@@ -295,7 +295,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>")
+    res = m_client.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>", description="affectionate colorfully for whose unnaturally smog huzzah perfectly")
 
     # Handle response
     print(res)
@@ -380,7 +380,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_all_tag_table_info(datasource_id="<id>", offset=0, limit=10)
+    res = m_client.tag.get_all_tag_table_info(datasource_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -425,7 +425,9 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
+    res = m_client.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="really agitated gladly printer", dtype="<value>", is_key=False, is_indexed=False, engineered_features=[
+        "<value 1>",
+    ])
 
     # Handle response
     print(res)
@@ -516,7 +518,11 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
+    res = m_client.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="pish poorly boo evenly appliance but aw", dtype="<value>", is_key=True, is_indexed=True, engineered_features=[
+        "<value 1>",
+        "<value 2>",
+        "<value 3>",
+    ])
 
     # Handle response
     print(res)
@@ -564,7 +570,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10)
+    res = m_client.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10, sort_by=None, sort_order="<value>")
 
     # Handle response
     print(res)

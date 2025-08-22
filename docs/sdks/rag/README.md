@@ -32,7 +32,23 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>")
+    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", description="unto yippee unknown from", extractor_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+    }, embedding_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+        "dimensions": 107326,
+    }, sparse_embedding_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+    }, collect_metadata=True, metadata_options={
+        "create_title": True,
+        "extract_questions_answers": False,
+        "extract_summary": False,
+        "has_consumer_content": None,
+        "get_bibliographical_information": None,
+    })
 
     # Handle response
     print(res)
@@ -121,7 +137,23 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_rag_config(datasource_id="<id>")
+    res = m_client.rag.update_rag_config(datasource_id="<id>", description="stable suckle volleyball yieldingly cleverly shyly", collection_id="<id>", extractor_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+    }, embedding_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+        "dimensions": 477647,
+    }, sparse_embedding_model={
+        "name": "<value>",
+        "endpoint": "<value>",
+    }, collect_metadata=False, metadata_options={
+        "create_title": True,
+        "extract_questions_answers": True,
+        "extract_summary": False,
+        "has_consumer_content": True,
+        "get_bibliographical_information": True,
+    })
 
     # Handle response
     print(res)
@@ -210,7 +242,44 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_chunking_strategy(datasource_id="<id>")
+    res = m_client.rag.add_chunking_strategy(datasource_id="<id>", code_splitter={
+        "chunk_lines": 750571,
+        "chunk_lines_overlap": 608702,
+        "max_chars": 567662,
+    }, html_node_parser={
+        "include_metadata": True,
+        "include_prev_next_rel": False,
+        "tags": [
+            "<value 1>",
+            "<value 2>",
+        ],
+    }, json_node_parser={
+        "include_metadata": True,
+        "include_prev_next_rel": True,
+    }, markdown_node_parser={
+        "include_metadata": False,
+        "include_prev_next_rel": True,
+        "header_path_separator": "<value>",
+    }, semantic_splitter_node_parser={
+        "buffer_size": 887654,
+        "include_metadata": True,
+        "include_prev_next_rel": False,
+        "breakpoint_percentile_threshold": 22055,
+    }, sentence_splitter={
+        "chunk_size": 351648,
+        "chunk_overlap": 940255,
+        "separator": "<value>",
+        "paragraph_separator": "<value>",
+        "secondary_chunking_regex": "<value>",
+    }, token_text_splitter={
+        "chunk_size": 846457,
+        "chunk_overlap": 52711,
+        "separator": "<value>",
+        "backup_separators": [
+            "<value 1>",
+        ],
+        "keep_whitespaces": False,
+    })
 
     # Handle response
     print(res)
@@ -299,7 +368,46 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_chunking_strategy(datasource_id="<id>")
+    res = m_client.rag.update_chunking_strategy(datasource_id="<id>", code_splitter={
+        "chunk_lines": 246082,
+        "chunk_lines_overlap": 454883,
+        "max_chars": 942191,
+    }, html_node_parser={
+        "include_metadata": True,
+        "include_prev_next_rel": True,
+        "tags": [
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
+        ],
+    }, json_node_parser={
+        "include_metadata": False,
+        "include_prev_next_rel": False,
+    }, markdown_node_parser={
+        "include_metadata": True,
+        "include_prev_next_rel": True,
+        "header_path_separator": "<value>",
+    }, semantic_splitter_node_parser={
+        "buffer_size": 745292,
+        "include_metadata": False,
+        "include_prev_next_rel": False,
+        "breakpoint_percentile_threshold": 912198,
+    }, sentence_splitter={
+        "chunk_size": 477170,
+        "chunk_overlap": 716276,
+        "separator": "<value>",
+        "paragraph_separator": "<value>",
+        "secondary_chunking_regex": "<value>",
+    }, token_text_splitter={
+        "chunk_size": 635106,
+        "chunk_overlap": 380612,
+        "separator": "<value>",
+        "backup_separators": [
+            "<value 1>",
+            "<value 2>",
+        ],
+        "keep_whitespaces": True,
+    })
 
     # Handle response
     print(res)

@@ -28,7 +28,13 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.workflows.start_blueprint_instance(blueprint_instance_id="<id>")
+    res = m_client.workflows.start_blueprint_instance(blueprint_instance_id="<id>", workflow_args=[
+        "<value 1>",
+    ], workflow_kwargs={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    })
 
     # Handle response
     print(res)
@@ -112,7 +118,9 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.workflows.send_signal(blueprint_instance_id="<id>", signal_name="<value>")
+    res = m_client.workflows.send_signal(blueprint_instance_id="<id>", signal_name="<value>", request_body=[
+        "<value 1>",
+    ])
 
     # Handle response
     print(res)
@@ -155,7 +163,10 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.workflows.query_workflow(blueprint_instance_id="<id>", query_name="<value>")
+    res = m_client.workflows.query_workflow(blueprint_instance_id="<id>", query_name="<value>", request_body=[
+        "<value 1>",
+        "<value 2>",
+    ])
 
     # Handle response
     print(res)

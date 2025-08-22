@@ -81,7 +81,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.get_data_elements(datasource_id="<id>", offset=0, limit=10)
+    res = m_client.data_elements.get_data_elements(datasource_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -168,7 +168,12 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.update_data_element(datasource_id="<id>", data_element_id="<id>")
+    res = m_client.data_elements.update_data_element(datasource_id="<id>", data_element_id="<id>", description="now expert including pish obedient yieldingly", name="<value>", path="/media", media_type="<value>", discovery_record={
+        "discovery_time": "<value>",
+        "last_modified_time": "<value>",
+        "size": 982718,
+        "element_hash": "<value>",
+    })
 
     # Handle response
     print(res)
@@ -249,6 +254,7 @@ Get Data Elements By Filters
 
 <!-- UsageSnippet language="python" operationID="get_data_elements_by_filters" method="post" path="/datasource/{datasource_id}/data_elements_by_filters" -->
 ```python
+import meibelai
 from meibelai import Meibelai
 import os
 
@@ -257,7 +263,16 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.get_data_elements_by_filters(datasource_id="<id>", offset=0, limit=10)
+    res = m_client.data_elements.get_data_elements_by_filters(datasource_id="<id>", regex_filter="<value>", media_type_filters=[
+        "<value 1>",
+        "<value 2>",
+    ], offset=0, limit=10, sort_by="<value>", sort_order="<value>", filters=[
+        {
+            "key": meibelai.AllowedDataElementFilterKeys.NAME,
+            "condition": None,
+            "value": "<value>",
+        },
+    ])
 
     # Handle response
     print(res)
