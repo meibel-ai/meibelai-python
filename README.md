@@ -345,6 +345,10 @@ with Meibelai(
 * [get_event_by_blueprint_instance](docs/sdks/blueprintinstances/README.md#get_event_by_blueprint_instance) - Get Event By Blueprint Instance
 * [create_event_by_blueprint_instance_id](docs/sdks/blueprintinstances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
 * [get_events_by_blueprint_instance](docs/sdks/blueprintinstances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
+* [start_blueprint_instance](docs/sdks/blueprintinstances/README.md#start_blueprint_instance) - Start Blueprint Instance
+* [cancel_blueprint_instance](docs/sdks/blueprintinstances/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
+* [send_signal](docs/sdks/blueprintinstances/README.md#send_signal) - Send Signal
+* [query_workflow](docs/sdks/blueprintinstances/README.md#query_workflow) - Query Workflow
 
 ### [data_elements](docs/sdks/dataelements/README.md)
 
@@ -360,7 +364,7 @@ with Meibelai(
 * [add_datasource](docs/sdks/datasources/README.md#add_datasource) - Add Datasource
 * [get_datasource](docs/sdks/datasources/README.md#get_datasource) - Get Datasource
 * [update_datasource](docs/sdks/datasources/README.md#update_datasource) - Update Datasource
-* [delete_datasource_datasource_datasource_id_delete](docs/sdks/datasources/README.md#delete_datasource_datasource_datasource_id_delete) - Delete Datasource
+* [delete_datasource](docs/sdks/datasources/README.md#delete_datasource) - Delete Datasource
 * [get_all_datasource_ids](docs/sdks/datasources/README.md#get_all_datasource_ids) - Get All Datasource Ids
 
 
@@ -391,13 +395,6 @@ with Meibelai(
 * [update_tag_column_info](docs/sdks/tag/README.md#update_tag_column_info) - Update Tag Column Info
 * [get_all_tag_column_info](docs/sdks/tag/README.md#get_all_tag_column_info) - Get All Tag Column Info
 * [delete_tag_column_info](docs/sdks/tag/README.md#delete_tag_column_info) - Delete Tag Column Info
-
-### [workflows](docs/sdks/workflows/README.md)
-
-* [start_blueprint_instance](docs/sdks/workflows/README.md#start_blueprint_instance) - Start Blueprint Instance
-* [cancel_blueprint_instance](docs/sdks/workflows/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
-* [send_signal](docs/sdks/workflows/README.md#send_signal) - Send Signal
-* [query_workflow](docs/sdks/workflows/README.md#query_workflow) - Query Workflow
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

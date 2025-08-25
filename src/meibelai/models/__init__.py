@@ -131,9 +131,9 @@ if TYPE_CHECKING:
         DeleteDataElementRequest,
         DeleteDataElementRequestTypedDict,
     )
-    from .delete_datasource_datasource_datasource_id_deleteop import (
-        DeleteDatasourceDatasourceDatasourceIDDeleteRequest,
-        DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict,
+    from .delete_datasourceop import (
+        DeleteDatasourceRequest,
+        DeleteDatasourceRequestTypedDict,
     )
     from .delete_rag_configop import (
         DeleteRagConfigRequest,
@@ -489,8 +489,8 @@ __all__ = [
     "DeleteDataElementRequestTypedDict",
     "DeleteDataElementResponse",
     "DeleteDataElementResponseTypedDict",
-    "DeleteDatasourceDatasourceDatasourceIDDeleteRequest",
-    "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict",
+    "DeleteDatasourceRequest",
+    "DeleteDatasourceRequestTypedDict",
     "DeleteDatasourceResponse",
     "DeleteDatasourceResponseTypedDict",
     "DeleteRagConfigRequest",
@@ -755,8 +755,8 @@ _dynamic_imports: dict[str, str] = {
     "DeleteChunkingStrategyRequestTypedDict": ".delete_chunking_strategyop",
     "DeleteDataElementRequest": ".delete_data_elementop",
     "DeleteDataElementRequestTypedDict": ".delete_data_elementop",
-    "DeleteDatasourceDatasourceDatasourceIDDeleteRequest": ".delete_datasource_datasource_datasource_id_deleteop",
-    "DeleteDatasourceDatasourceDatasourceIDDeleteRequestTypedDict": ".delete_datasource_datasource_datasource_id_deleteop",
+    "DeleteDatasourceRequest": ".delete_datasourceop",
+    "DeleteDatasourceRequestTypedDict": ".delete_datasourceop",
     "DeleteRagConfigRequest": ".delete_rag_configop",
     "DeleteRagConfigRequestTypedDict": ".delete_rag_configop",
     "DeleteTagColumnInfoRequest": ".delete_tag_column_infoop",

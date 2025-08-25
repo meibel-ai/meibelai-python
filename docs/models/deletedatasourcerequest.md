@@ -1,4 +1,4 @@
-# DeleteDatasourceDatasourceDatasourceIDDeleteRequest
+# DeleteDatasourceRequest
 
 
 ## Fields

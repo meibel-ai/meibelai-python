@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 7cb4e4b89a4ee54d59caa406251c67ec
+  docChecksum: ea23824571c70d334116c422e8cc5668
   docVersion: 0.2.0
   speakeasyVersion: 1.606.5
   generationVersion: 2.687.1
-  releaseVersion: 0.14.0
-  configChecksum: cc6624f57ee677ca5314035a6260ea42
+  releaseVersion: 0.14.1
+  configChecksum: ec2f8e18dec6fb711e0d5f7eda752f60
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -87,7 +87,7 @@ generatedFiles:
   - docs/models/deletechunkingstrategyresponse.md
   - docs/models/deletedataelementrequest.md
   - docs/models/deletedataelementresponse.md
-  - docs/models/deletedatasourcedatasourcedatasourceiddeleterequest.md
+  - docs/models/deletedatasourcerequest.md
   - docs/models/deletedatasourceresponse.md
   - docs/models/deleteragconfigrequest.md
   - docs/models/deletetagcolumninforequest.md
@@ -177,7 +177,6 @@ generatedFiles:
   - docs/sdks/meibelai/README.md
   - docs/sdks/rag/README.md
   - docs/sdks/tag/README.md
-  - docs/sdks/workflows/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -244,7 +243,7 @@ generatedFiles:
   - src/meibelai/models/delete_blueprint_instanceop.py
   - src/meibelai/models/delete_chunking_strategyop.py
   - src/meibelai/models/delete_data_elementop.py
-  - src/meibelai/models/delete_datasource_datasource_datasource_id_deleteop.py
+  - src/meibelai/models/delete_datasourceop.py
   - src/meibelai/models/delete_rag_configop.py
   - src/meibelai/models/delete_tag_column_infoop.py
   - src/meibelai/models/delete_tag_configop.py
@@ -354,7 +353,6 @@ generatedFiles:
   - src/meibelai/utils/unmarshal_json_response.py
   - src/meibelai/utils/url.py
   - src/meibelai/utils/values.py
-  - src/meibelai/workflows.py
 examples:
   list:
     speakeasy-default-list:
@@ -1382,10 +1380,27 @@ examples:
           application/json: [{"id": "<id>", "datasource_id": "<id>", "name": "<value>", "path": "/lost+found", "media_type": "<value>", "discovery_record": null, "description": "propound nor innocently along furthermore truly essential", "created_at": "1734506020724", "updated_at": "1735613666656"}]
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  delete_datasource:
+    speakeasy-default-delete-datasource:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## SDK Changes Detected:
-  * `meibelai.datasources.get_all_datasource_ids()`: **Added**
-  * `meibelai.root_get()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_datasource_ids()`: **Deleted** **Breaking** :warning:
+  * `meibelai.datasources.delete_datasource()`: **Added**
+  * `meibelai.blueprint_instances.start_blueprint_instance()`: **Added**
+  * `meibelai.blueprint_instances.cancel_blueprint_instance()`: **Added**
+  * `meibelai.blueprint_instances.send_signal()`: **Added**
+  * `meibelai.blueprint_instances.query_workflow()`: **Added**
+  * `meibelai.datasources.delete_datasource_datasource_datasource_id_delete()`: **Deleted** **Breaking** :warning:
+  * `meibelai.workflows.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.workflows.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.workflows.send_signal()`: **Deleted** **Breaking** :warning:
+  * `meibelai.workflows.query_workflow()`: **Deleted** **Breaking** :warning:

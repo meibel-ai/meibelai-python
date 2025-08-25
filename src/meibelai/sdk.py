@@ -19,7 +19,6 @@ if TYPE_CHECKING:
     from meibelai.datasources import Datasources
     from meibelai.rag import Rag
     from meibelai.tag import Tag
-    from meibelai.workflows import Workflows
 
 
 class Meibelai(BaseSDK):
@@ -38,15 +37,12 @@ class Meibelai(BaseSDK):
     r"""Operations with rag"""
     blueprint_instances: "BlueprintInstances"
     r"""Operations with blueprint_instances"""
-    workflows: "Workflows"
-    r"""Operations with workflows"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "data_elements": ("meibelai.data_elements", "DataElements"),
         "tag": ("meibelai.tag", "Tag"),
         "rag": ("meibelai.rag", "Rag"),
         "blueprint_instances": ("meibelai.blueprint_instances", "BlueprintInstances"),
-        "workflows": ("meibelai.workflows", "Workflows"),
     }
 
     def __init__(

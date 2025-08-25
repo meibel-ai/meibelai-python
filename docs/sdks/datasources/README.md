@@ -10,7 +10,7 @@ Operations with datasources
 * [add_datasource](#add_datasource) - Add Datasource
 * [get_datasource](#get_datasource) - Get Datasource
 * [update_datasource](#update_datasource) - Update Datasource
-* [delete_datasource_datasource_datasource_id_delete](#delete_datasource_datasource_datasource_id_delete) - Delete Datasource
+* [delete_datasource](#delete_datasource) - Delete Datasource
 * [get_all_datasource_ids](#get_all_datasource_ids) - Get All Datasource Ids
 
 ## add_datasource
@@ -224,13 +224,13 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## delete_datasource_datasource_datasource_id_delete
+## delete_datasource
 
 Delete Datasource
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_datasource_datasource__datasource_id__delete" method="delete" path="/datasource/{datasource_id}" -->
+<!-- UsageSnippet language="python" operationID="delete_datasource" method="delete" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -240,7 +240,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.delete_datasource_datasource_datasource_id_delete(datasource_id="<id>")
+    res = m_client.datasources.delete_datasource(datasource_id="<id>")
 
     # Handle response
     print(res)

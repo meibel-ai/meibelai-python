@@ -680,7 +680,7 @@ class Datasources(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def delete_datasource_datasource_datasource_id_delete(
+    def delete_datasource(
         self,
         *,
         datasource_id: str,
@@ -707,7 +707,7 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteDatasourceDatasourceDatasourceIDDeleteRequest(
+        request = models.DeleteDatasourceRequest(
             datasource_id=datasource_id,
         )
 
@@ -743,7 +743,7 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_datasource_datasource__datasource_id__delete",
+                operation_id="delete_datasource",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -771,7 +771,7 @@ class Datasources(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def delete_datasource_datasource_datasource_id_delete_async(
+    async def delete_datasource_async(
         self,
         *,
         datasource_id: str,
@@ -798,7 +798,7 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteDatasourceDatasourceDatasourceIDDeleteRequest(
+        request = models.DeleteDatasourceRequest(
             datasource_id=datasource_id,
         )
 
@@ -834,7 +834,7 @@ class Datasources(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_datasource_datasource__datasource_id__delete",
+                operation_id="delete_datasource",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
