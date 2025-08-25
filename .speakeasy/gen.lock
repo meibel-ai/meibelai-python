@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 919e6c7bdbeff057c2c7c602b84104f7
-  docVersion: 0.1.0
-  speakeasyVersion: 1.606.2
+  docChecksum: 7cb4e4b89a4ee54d59caa406251c67ec
+  docVersion: 0.2.0
+  speakeasyVersion: 1.606.5
   generationVersion: 2.687.1
-  releaseVersion: 0.13.4
-  configChecksum: 9f6734ac9967c83a3117bb4e316aa79a
+  releaseVersion: 0.14.0
+  configChecksum: cc6624f57ee677ca5314035a6260ea42
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -104,6 +104,7 @@ generatedFiles:
   - docs/models/getactivitiesresponse.md
   - docs/models/getactivitybyblueprintinstancerequest.md
   - docs/models/getallblueprintinstancesrequest.md
+  - docs/models/getalldatasourceidsrequest.md
   - docs/models/getalltagcolumninforequest.md
   - docs/models/getalltagtableinforequest.md
   - docs/models/getblueprintinstancerequest.md
@@ -112,7 +113,6 @@ generatedFiles:
   - docs/models/getdataelementrequest.md
   - docs/models/getdataelementsbyfiltersrequest.md
   - docs/models/getdataelementsrequest.md
-  - docs/models/getdatasourceidsrequest.md
   - docs/models/getdatasourcerequest.md
   - docs/models/geteventbyblueprintinstancerequest.md
   - docs/models/geteventsbyblueprintinstancerequest.md
@@ -269,7 +269,6 @@ generatedFiles:
   - src/meibelai/models/get_data_elementop.py
   - src/meibelai/models/get_data_elements_by_filtersop.py
   - src/meibelai/models/get_data_elementsop.py
-  - src/meibelai/models/get_datasource_idsop.py
   - src/meibelai/models/get_datasourceop.py
   - src/meibelai/models/get_event_by_blueprint_instanceop.py
   - src/meibelai/models/get_events_by_blueprint_instanceop.py
@@ -278,6 +277,7 @@ generatedFiles:
   - src/meibelai/models/get_tag_configop.py
   - src/meibelai/models/get_tag_table_infoop.py
   - src/meibelai/models/getactivitiesresponse.py
+  - src/meibelai/models/getalldatasourceidsrequest.py
   - src/meibelai/models/getblueprintinstancesresponse.py
   - src/meibelai/models/geteventsresponse.py
   - src/meibelai/models/htmlchunking.py
@@ -570,7 +570,7 @@ examples:
         "200":
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
         "422":
-          application/json: {}
+          application/json: {"detail": [{"loc": [108267], "msg": "<value>", "type": "<value>"}]}
   add_data_element:
     speakeasy-default-add-data-element:
       parameters:
@@ -1384,3 +1384,8 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## SDK Changes Detected:
+  * `meibelai.datasources.get_all_datasource_ids()`: **Added**
+  * `meibelai.root_get()`: **Deleted** **Breaking** :warning:
+  * `meibelai.datasources.get_datasource_ids()`: **Deleted** **Breaking** :warning:

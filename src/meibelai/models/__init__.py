@@ -219,10 +219,6 @@ if TYPE_CHECKING:
         GetDataElementsRequest,
         GetDataElementsRequestTypedDict,
     )
-    from .get_datasource_idsop import (
-        GetDatasourceIdsRequest,
-        GetDatasourceIdsRequestTypedDict,
-    )
     from .get_datasourceop import GetDatasourceRequest, GetDatasourceRequestTypedDict
     from .get_event_by_blueprint_instanceop import (
         GetEventByBlueprintInstanceRequest,
@@ -245,6 +241,10 @@ if TYPE_CHECKING:
     from .getactivitiesresponse import (
         GetActivitiesResponse,
         GetActivitiesResponseTypedDict,
+    )
+    from .getalldatasourceidsrequest import (
+        GetAllDatasourceIdsRequest,
+        GetAllDatasourceIdsRequestTypedDict,
     )
     from .getblueprintinstancesresponse import (
         GetBlueprintInstancesResponse,
@@ -522,6 +522,8 @@ __all__ = [
     "GetActivityByBlueprintInstanceRequestTypedDict",
     "GetAllBlueprintInstancesRequest",
     "GetAllBlueprintInstancesRequestTypedDict",
+    "GetAllDatasourceIdsRequest",
+    "GetAllDatasourceIdsRequestTypedDict",
     "GetAllTagColumnInfoRequest",
     "GetAllTagColumnInfoRequestTypedDict",
     "GetAllTagTableInfoRequest",
@@ -538,8 +540,6 @@ __all__ = [
     "GetDataElementsByFiltersRequestTypedDict",
     "GetDataElementsRequest",
     "GetDataElementsRequestTypedDict",
-    "GetDatasourceIdsRequest",
-    "GetDatasourceIdsRequestTypedDict",
     "GetDatasourceRequest",
     "GetDatasourceRequestTypedDict",
     "GetEventByBlueprintInstanceRequest",
@@ -804,8 +804,6 @@ _dynamic_imports: dict[str, str] = {
     "GetDataElementsByFiltersRequestTypedDict": ".get_data_elements_by_filtersop",
     "GetDataElementsRequest": ".get_data_elementsop",
     "GetDataElementsRequestTypedDict": ".get_data_elementsop",
-    "GetDatasourceIdsRequest": ".get_datasource_idsop",
-    "GetDatasourceIdsRequestTypedDict": ".get_datasource_idsop",
     "GetDatasourceRequest": ".get_datasourceop",
     "GetDatasourceRequestTypedDict": ".get_datasourceop",
     "GetEventByBlueprintInstanceRequest": ".get_event_by_blueprint_instanceop",
@@ -822,6 +820,8 @@ _dynamic_imports: dict[str, str] = {
     "GetTagTableInfoRequestTypedDict": ".get_tag_table_infoop",
     "GetActivitiesResponse": ".getactivitiesresponse",
     "GetActivitiesResponseTypedDict": ".getactivitiesresponse",
+    "GetAllDatasourceIdsRequest": ".getalldatasourceidsrequest",
+    "GetAllDatasourceIdsRequestTypedDict": ".getalldatasourceidsrequest",
     "GetBlueprintInstancesResponse": ".getblueprintinstancesresponse",
     "GetBlueprintInstancesResponseTypedDict": ".getblueprintinstancesresponse",
     "GetEventsResponse": ".geteventsresponse",
