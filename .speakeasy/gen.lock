@@ -3,17 +3,17 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: 2371cfb5f3543a6588fcdbdb2b13eb49
   docVersion: 0.2.0
-  speakeasyVersion: 1.606.10
-  generationVersion: 2.687.13
-  releaseVersion: 0.15.0
-  configChecksum: fc2187c6d913b20f8874d981f4e966eb
+  speakeasyVersion: 1.607.0
+  generationVersion: 2.690.1
+  releaseVersion: 0.15.1
+  configChecksum: 5715d3c8ffc220609604d139f3784336
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.20.1
+    core: 5.20.2
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -1533,11 +1533,3 @@ examples:
           application/json: {"detail": [{"loc": [878342], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## SDK Changes Detected:
-  * `meibelai.content.list_content_datasource_datasource_id_content_get()`: **Added**
-  * `meibelai.content.upload_content_datasource_datasource_id_content_post()`: **Added**
-  * `meibelai.content.get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get()`: **Added**
-  * `meibelai.content.get_content_metadata_datasource_datasource_id_content_path_get()`: **Added**
-  * `meibelai.content.delete_content_datasource_datasource_id_content_path_delete()`: **Added**
-  * `meibelai.content.download_content_datasource_datasource_id_content_path_download_get()`: **Added**
