@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: ea23824571c70d334116c422e8cc5668
+  docChecksum: 2371cfb5f3543a6588fcdbdb2b13eb49
   docVersion: 0.2.0
-  speakeasyVersion: 1.606.5
-  generationVersion: 2.687.1
-  releaseVersion: 0.14.1
-  configChecksum: ec2f8e18dec6fb711e0d5f7eda752f60
+  speakeasyVersion: 1.606.10
+  generationVersion: 2.687.13
+  releaseVersion: 0.15.0
+  configChecksum: fc2187c6d913b20f8874d981f4e966eb
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.19.9
+    core: 5.20.1
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -29,6 +29,8 @@ features:
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.1.0
+    serverEvents: 1.0.8
+    serverEventsSentinels: 0.1.0
     unions: 3.0.4
 generatedFiles:
   - .devcontainer/README.md
@@ -73,8 +75,12 @@ generatedFiles:
   - docs/models/codechunking.md
   - docs/models/completeblueprintinstancerequest.md
   - docs/models/completeblueprintinstancerequest1.md
+  - docs/models/contentitem.md
+  - docs/models/contenttype.md
   - docs/models/createeventbyblueprintinstanceidrequest.md
+  - docs/models/currentstatus.md
   - docs/models/customeventrequest.md
+  - docs/models/data.md
   - docs/models/dataelement.md
   - docs/models/dataelementcondition.md
   - docs/models/dataelementdiscoveryrecord.md
@@ -85,6 +91,8 @@ generatedFiles:
   - docs/models/deleteblueprintinstancerequest.md
   - docs/models/deletechunkingstrategyrequest.md
   - docs/models/deletechunkingstrategyresponse.md
+  - docs/models/deletecontentdatasourcedatasourceidcontentpathdeleterequest.md
+  - docs/models/deletecontentresponse.md
   - docs/models/deletedataelementrequest.md
   - docs/models/deletedataelementresponse.md
   - docs/models/deletedatasourcerequest.md
@@ -94,6 +102,7 @@ generatedFiles:
   - docs/models/deletetagconfigrequest.md
   - docs/models/deletetagtableinforequest.md
   - docs/models/deletetagtableresponse.md
+  - docs/models/downloadcontentdatasourcedatasourceidcontentpathdownloadgetrequest.md
   - docs/models/embeddingmodel.md
   - docs/models/event.md
   - docs/models/eventtype.md
@@ -110,6 +119,8 @@ generatedFiles:
   - docs/models/getblueprintinstancerequest.md
   - docs/models/getblueprintinstancesresponse.md
   - docs/models/getchunkingstrategyrequest.md
+  - docs/models/getcontentmetadatadatasourcedatasourceidcontentpathgetrequest.md
+  - docs/models/getcontentresponse.md
   - docs/models/getdataelementrequest.md
   - docs/models/getdataelementsbyfiltersrequest.md
   - docs/models/getdataelementsrequest.md
@@ -121,9 +132,14 @@ generatedFiles:
   - docs/models/gettagcolumninforequest.md
   - docs/models/gettagconfigrequest.md
   - docs/models/gettagtableinforequest.md
+  - docs/models/getuploadprogressstreamuploadsuploadidprogressgetrequest.md
+  - docs/models/getuploadprogressstreamuploadsuploadidprogressgetresponsebody.md
+  - docs/models/getuploadstatusdatasourcedatasourceidcontentuploadstatusuploadidgetrequest.md
   - docs/models/htmlchunking.md
   - docs/models/httpvalidationerror.md
   - docs/models/jsonnodechunking.md
+  - docs/models/listcontentdatasourcedatasourceidcontentgetrequest.md
+  - docs/models/listcontentresponse.md
   - docs/models/loc.md
   - docs/models/markdownnodechunking.md
   - docs/models/metadataoptions.md
@@ -139,8 +155,25 @@ generatedFiles:
   - docs/models/sentencechunking.md
   - docs/models/size.md
   - docs/models/sparseembeddingmodel.md
+  - docs/models/ssecompleteevent.md
+  - docs/models/ssecompleteeventdata.md
+  - docs/models/ssecompleteeventevent.md
+  - docs/models/sseconnectionevent.md
+  - docs/models/sseconnectioneventevent.md
+  - docs/models/sseerrorevent.md
+  - docs/models/sseerroreventdata.md
+  - docs/models/sseerroreventevent.md
+  - docs/models/ssekeepaliveevent.md
+  - docs/models/ssekeepaliveeventdata.md
+  - docs/models/ssekeepaliveeventevent.md
+  - docs/models/sseprogressevent.md
+  - docs/models/sseprogresseventdata.md
+  - docs/models/sseprogresseventdatadata.md
+  - docs/models/sseprogresseventevent.md
   - docs/models/startblueprintinstancerequest.md
   - docs/models/startblueprintinstancerequest1.md
+  - docs/models/streamuploadprogressdatasourcedatasourceidcontentuploadprogressuploadidgetrequest.md
+  - docs/models/streamuploadprogressdatasourcedatasourceidcontentuploadprogressuploadidgetresponsebody.md
   - docs/models/tagcolumninfo.md
   - docs/models/tagconfig.md
   - docs/models/tagtableinfo.md
@@ -168,10 +201,13 @@ generatedFiles:
   - docs/models/updatetagtableinforequest.md
   - docs/models/updatetagtablerequest.md
   - docs/models/updatetagtableresponse.md
+  - docs/models/uploadcontentdatasourcedatasourceidcontentpostrequest.md
+  - docs/models/uploadcontentresponse.md
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
   - docs/models/webdomain.md
   - docs/sdks/blueprintinstances/README.md
+  - docs/sdks/content/README.md
   - docs/sdks/dataelements/README.md
   - docs/sdks/datasources/README.md
   - docs/sdks/meibelai/README.md
@@ -190,6 +226,7 @@ generatedFiles:
   - src/meibelai/_version.py
   - src/meibelai/basesdk.py
   - src/meibelai/blueprint_instances.py
+  - src/meibelai/content.py
   - src/meibelai/data_elements.py
   - src/meibelai/datasources.py
   - src/meibelai/httpclient.py
@@ -231,6 +268,8 @@ generatedFiles:
   - src/meibelai/models/codechunking.py
   - src/meibelai/models/complete_blueprint_instanceop.py
   - src/meibelai/models/completeblueprintinstancerequest.py
+  - src/meibelai/models/contentitem.py
+  - src/meibelai/models/contenttype.py
   - src/meibelai/models/create_event_by_blueprint_instance_idop.py
   - src/meibelai/models/customeventrequest.py
   - src/meibelai/models/dataelement.py
@@ -242,6 +281,7 @@ generatedFiles:
   - src/meibelai/models/datasourcewebconfig.py
   - src/meibelai/models/delete_blueprint_instanceop.py
   - src/meibelai/models/delete_chunking_strategyop.py
+  - src/meibelai/models/delete_content_datasource_datasource_id_content_path_deleteop.py
   - src/meibelai/models/delete_data_elementop.py
   - src/meibelai/models/delete_datasourceop.py
   - src/meibelai/models/delete_rag_configop.py
@@ -249,9 +289,11 @@ generatedFiles:
   - src/meibelai/models/delete_tag_configop.py
   - src/meibelai/models/delete_tag_table_infoop.py
   - src/meibelai/models/deletechunkingstrategyresponse.py
+  - src/meibelai/models/deletecontentresponse.py
   - src/meibelai/models/deletedataelementresponse.py
   - src/meibelai/models/deletedatasourceresponse.py
   - src/meibelai/models/deletetagtableresponse.py
+  - src/meibelai/models/download_content_datasource_datasource_id_content_path_download_getop.py
   - src/meibelai/models/embeddingmodel.py
   - src/meibelai/models/event.py
   - src/meibelai/models/eventtype.py
@@ -265,6 +307,7 @@ generatedFiles:
   - src/meibelai/models/get_all_tag_table_infoop.py
   - src/meibelai/models/get_blueprint_instanceop.py
   - src/meibelai/models/get_chunking_strategyop.py
+  - src/meibelai/models/get_content_metadata_datasource_datasource_id_content_path_getop.py
   - src/meibelai/models/get_data_elementop.py
   - src/meibelai/models/get_data_elements_by_filtersop.py
   - src/meibelai/models/get_data_elementsop.py
@@ -275,13 +318,18 @@ generatedFiles:
   - src/meibelai/models/get_tag_column_infoop.py
   - src/meibelai/models/get_tag_configop.py
   - src/meibelai/models/get_tag_table_infoop.py
+  - src/meibelai/models/get_upload_progress_stream_uploads_upload_id_progress_getop.py
+  - src/meibelai/models/get_upload_status_datasource_datasource_id_content_upload_status_upload_id_getop.py
   - src/meibelai/models/getactivitiesresponse.py
   - src/meibelai/models/getalldatasourceidsrequest.py
   - src/meibelai/models/getblueprintinstancesresponse.py
+  - src/meibelai/models/getcontentresponse.py
   - src/meibelai/models/geteventsresponse.py
   - src/meibelai/models/htmlchunking.py
   - src/meibelai/models/httpvalidationerror.py
   - src/meibelai/models/jsonnodechunking.py
+  - src/meibelai/models/list_content_datasource_datasource_id_content_getop.py
+  - src/meibelai/models/listcontentresponse.py
   - src/meibelai/models/markdownnodechunking.py
   - src/meibelai/models/meibelaierror.py
   - src/meibelai/models/metadataoptions.py
@@ -298,8 +346,14 @@ generatedFiles:
   - src/meibelai/models/send_signalop.py
   - src/meibelai/models/sentencechunking.py
   - src/meibelai/models/sparseembeddingmodel.py
+  - src/meibelai/models/ssecompleteevent.py
+  - src/meibelai/models/sseconnectionevent.py
+  - src/meibelai/models/sseerrorevent.py
+  - src/meibelai/models/ssekeepaliveevent.py
+  - src/meibelai/models/sseprogressevent.py
   - src/meibelai/models/start_blueprint_instanceop.py
   - src/meibelai/models/startblueprintinstancerequest.py
+  - src/meibelai/models/stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_getop.py
   - src/meibelai/models/tagcolumninfo.py
   - src/meibelai/models/tagconfig.py
   - src/meibelai/models/tagtableinfo.py
@@ -327,6 +381,8 @@ generatedFiles:
   - src/meibelai/models/updatetagconfigresponse.py
   - src/meibelai/models/updatetagtablerequest.py
   - src/meibelai/models/updatetagtableresponse.py
+  - src/meibelai/models/upload_content_datasource_datasource_id_content_postop.py
+  - src/meibelai/models/uploadcontentresponse.py
   - src/meibelai/models/validationerror.py
   - src/meibelai/models/webdomain.py
   - src/meibelai/py.typed
@@ -1390,17 +1446,98 @@ examples:
           application/json: {"id": "<id>"}
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  list_content_datasource__datasource_id__content_get:
+    speakeasy-default-list-content-datasource-datasource-id-content-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+        query:
+          prefix: "<value>"
+          continuation_token: "<value>"
+          limit: 1000
+      responses:
+        "200":
+          application/json: {"items": [], "continuation_token": "<value>"}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  upload_content_datasource__datasource_id__content_post:
+    speakeasy-default-upload-content-datasource-datasource-id-content-post:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      responses:
+        "200":
+          application/json: {"success": false, "message": "<value>", "upload_id": "<id>", "sse_url": "https://hefty-lox.net", "estimated_files": 66762, "estimated_size": 388354}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  get_upload_progress_stream_uploads__upload_id__progress_get:
+    speakeasy-default-get-upload-progress-stream-uploads-upload-id-progress-get:
+      parameters:
+        path:
+          upload_id: "<id>"
+      responses:
+        "422":
+          application/json: {"detail": [{"loc": [299841], "msg": "<value>", "type": "<value>"}]}
+  get_upload_status_datasource__datasource_id__content_upload_status__upload_id__get:
+    speakeasy-default-get-upload-status-datasource-datasource-id-content-upload-status-upload-id-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          upload_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [279050], "msg": "<value>", "type": "<value>"}]}
+  stream_upload_progress_datasource__datasource_id__content_upload_progress__upload_id__get:
+    speakeasy-default-stream-upload-progress-datasource-datasource-id-content-upload-progress-upload-id-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          upload_id: "<id>"
+      responses:
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  get_content_metadata_datasource__datasource_id__content__path__get:
+    speakeasy-default-get-content-metadata-datasource-datasource-id-content-path-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          path: "/usr/obj"
+      responses:
+        "200":
+          application/json: {"name": "<value>", "path": "/usr/include", "type": "directory", "size": null, "media_type": "<value>", "last_modified": "<value>", "etag": "<value>", "metadata": {"key": "<value>", "key1": "<value>"}}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  delete_content_datasource__datasource_id__content__path__delete:
+    speakeasy-default-delete-content-datasource-datasource-id-content-path-delete:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          path: "/usr/sbin"
+      responses:
+        "200":
+          application/json: {"success": true, "deleted_paths": ["<value 1>", "<value 2>"]}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  download_content_datasource__datasource_id__content__path__download_get:
+    speakeasy-default-download-content-datasource-datasource-id-content-path-download-get:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          path: "/proc"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [878342], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## SDK Changes Detected:
-  * `meibelai.datasources.delete_datasource()`: **Added**
-  * `meibelai.blueprint_instances.start_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.cancel_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.send_signal()`: **Added**
-  * `meibelai.blueprint_instances.query_workflow()`: **Added**
-  * `meibelai.datasources.delete_datasource_datasource_datasource_id_delete()`: **Deleted** **Breaking** :warning:
-  * `meibelai.workflows.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.workflows.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.workflows.send_signal()`: **Deleted** **Breaking** :warning:
-  * `meibelai.workflows.query_workflow()`: **Deleted** **Breaking** :warning:
+  * `meibelai.content.list_content_datasource_datasource_id_content_get()`: **Added**
+  * `meibelai.content.upload_content_datasource_datasource_id_content_post()`: **Added**
+  * `meibelai.content.get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get()`: **Added**
+  * `meibelai.content.get_content_metadata_datasource_datasource_id_content_path_get()`: **Added**
+  * `meibelai.content.delete_content_datasource_datasource_id_content_path_delete()`: **Added**
+  * `meibelai.content.download_content_datasource_datasource_id_content_path_download_get()`: **Added**

@@ -31,6 +31,7 @@ Our API allows you to interact with our services.  Read the[docs](https://docs.m
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [Server-sent event streaming](#server-sent-event-streaming)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
@@ -350,6 +351,17 @@ with Meibelai(
 * [send_signal](docs/sdks/blueprintinstances/README.md#send_signal) - Send Signal
 * [query_workflow](docs/sdks/blueprintinstances/README.md#query_workflow) - Query Workflow
 
+### [content](docs/sdks/content/README.md)
+
+* [list_content_datasource_datasource_id_content_get](docs/sdks/content/README.md#list_content_datasource_datasource_id_content_get) - List Content
+* [upload_content_datasource_datasource_id_content_post](docs/sdks/content/README.md#upload_content_datasource_datasource_id_content_post) - Upload Content
+* [get_upload_progress_stream_uploads_upload_id_progress_get](docs/sdks/content/README.md#get_upload_progress_stream_uploads_upload_id_progress_get) - Stream upload progress events
+* [get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get](docs/sdks/content/README.md#get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get) - Get Upload Status
+* [stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get](docs/sdks/content/README.md#stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get) - Stream upload progress events (legacy)
+* [get_content_metadata_datasource_datasource_id_content_path_get](docs/sdks/content/README.md#get_content_metadata_datasource_datasource_id_content_path_get) - Get Content Metadata
+* [delete_content_datasource_datasource_id_content_path_delete](docs/sdks/content/README.md#delete_content_datasource_datasource_id_content_path_delete) - Delete Content
+* [download_content_datasource_datasource_id_content_path_download_get](docs/sdks/content/README.md#download_content_datasource_datasource_id_content_path_download_get) - Download Content
+
 ### [data_elements](docs/sdks/dataelements/README.md)
 
 * [add_data_element](docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
@@ -398,6 +410,41 @@ with Meibelai(
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Server-sent event streaming [eventstream] -->
+## Server-sent event streaming
+
+[Server-sent events][mdn-sse] are used to stream content from certain
+operations. These operations will expose the stream as [Generator][generator] that
+can be consumed using a simple `for` loop. The loop will
+terminate when the server no longer has any events to send and closes the
+underlying connection.  
+
+The stream is also a [Context Manager][context-manager] and can be used with the `with` statement and will close the
+underlying connection when the context is exited.
+
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.content.get_upload_progress_stream_uploads_upload_id_progress_get(upload_id="<id>")
+
+    with res as event_stream:
+        for event in event_stream:
+            # handle event
+            print(event, flush=True)
+
+```
+
+[mdn-sse]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+[generator]: https://book.pythontips.com/en/latest/generators.html
+[context-manager]: https://book.pythontips.com/en/latest/context_managers.html
+<!-- End Server-sent event streaming [eventstream] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
