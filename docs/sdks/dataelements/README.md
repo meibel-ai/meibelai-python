@@ -20,7 +20,7 @@ Add Data Element
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_data_element" method="post" path="/datasource/{datasource_id}/data_element" -->
+<!-- UsageSnippet language="python" operationID="addDataElement" method="post" path="/datasource/{datasource_id}/data_element" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -30,10 +30,10 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.add_data_element(datasource_id="<id>", description="mmm slip punctual whether fooey", name="<value>", path="/dev", media_type="<value>", discovery_record={
+    res = m_client.data_elements.add_data_element(datasource_id="<id>", description="round yowza wherever", name="<value>", path="/usr/lib", media_type="<value>", discovery_record={
         "discovery_time": "<value>",
         "last_modified_time": "<value>",
-        "size": 643019,
+        "size": 740493,
         "element_hash": "<value>",
     })
 
@@ -71,7 +71,7 @@ Get Data Elements
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_data_elements" method="get" path="/datasource/{datasource_id}/data_element" -->
+<!-- UsageSnippet language="python" operationID="getDataElements" method="get" path="/datasource/{datasource_id}/data_element" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -116,7 +116,7 @@ Get Data Element
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_data_element" method="get" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
+<!-- UsageSnippet language="python" operationID="getDataElement" method="get" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -158,7 +158,7 @@ Update Data Element
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_data_element" method="put" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
+<!-- UsageSnippet language="python" operationID="updateDataElement" method="put" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -168,10 +168,10 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.data_elements.update_data_element(datasource_id="<id>", data_element_id="<id>", description="now expert including pish obedient yieldingly", name="<value>", path="/media", media_type="<value>", discovery_record={
+    res = m_client.data_elements.update_data_element(datasource_id="<id>", data_element_id="<id>", description="before jealously orient", name="<value>", path="/usr/libexec", media_type="<value>", discovery_record={
         "discovery_time": "<value>",
         "last_modified_time": "<value>",
-        "size": 982718,
+        "size": 506325,
         "element_hash": "<value>",
     })
 
@@ -210,7 +210,7 @@ Delete Data Element
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_data_element" method="delete" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
+<!-- UsageSnippet language="python" operationID="deleteDataElement" method="delete" path="/datasource/{datasource_id}/data_element/{data_element_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -252,7 +252,7 @@ Get Data Elements By Filters
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_data_elements_by_filters" method="post" path="/datasource/{datasource_id}/data_elements_by_filters" -->
+<!-- UsageSnippet language="python" operationID="getDataElementsByFilters" method="post" path="/datasource/{datasource_id}/data_elements_by_filters" -->
 ```python
 import meibelai
 from meibelai import Meibelai
@@ -266,10 +266,10 @@ with Meibelai(
     res = m_client.data_elements.get_data_elements_by_filters(datasource_id="<id>", regex_filter="<value>", media_type_filters=[
         "<value 1>",
         "<value 2>",
-    ], offset=0, limit=10, sort_by="<value>", sort_order="<value>", filters=[
+    ], offset=0, limit=10, sort_by="<value>", sort_order=None, filters=[
         {
             "key": meibelai.AllowedDataElementFilterKeys.NAME,
-            "condition": None,
+            "condition": meibelai.DataElementCondition.STARTS_WITH,
             "value": "<value>",
         },
     ])

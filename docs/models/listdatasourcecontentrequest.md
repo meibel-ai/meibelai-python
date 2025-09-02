@@ -1,4 +1,4 @@
-# ListContentDatasourceDatasourceIDContentGetRequest
+# ListDatasourceContentRequest
 
 
 ## Fields

@@ -139,47 +139,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -202,47 +181,26 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
-            "filters": {
-                "included_prefixes": [
-                    "<value 1>",
-                    "<value 2>",
-                ],
-                "included_file_types": [
-                    "<value 1>",
-                    "<value 2>",
-                    "<value 3>",
-                ],
-                "recursive_prefixes": True,
-                "modified_date_start": "<value>",
-                "modified_date_end": "<value>",
-                "min_file_size": 110821,
-                "max_file_size": 861343,
-            },
+            "filters": None,
             "gcs_config": {
                 "key": "<value>",
                 "key1": "<value>",
-                "key2": "<value>",
             },
-            "s3_config": None,
+            "s3_config": {
+                "role_arn": "<value>",
+                "region": "<value>",
+            },
         }, web_config={
-            "base_url": "https://soupy-department.biz",
-            "javascript_render": False,
+            "base_url": "https://neighboring-fen.net/",
+            "javascript_render": True,
             "wait_for_selector": "<value>",
-            "domains": [
-                {
-                    "domain": "well-made-hygienic.com",
-                    "limit_pattern": "<value>",
-                    "exclude_pattern": "<value>",
-                    "ingestible": True,
-                    "expandable": True,
-                },
-            ],
+            "domains": None,
             "authentication": {
-                "username": "Amir_Schaden",
-                "password": "Qgqx_NgZXn9ZOj5",
+                "username": "Eulalia35",
+                "password": "VKK1aONN4LAHFVF",
             },
         })
 
@@ -274,47 +232,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -353,14 +290,14 @@ with Meibelai(
 
 ### [content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md)
 
-* [list_content_datasource_datasource_id_content_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#list_content_datasource_datasource_id_content_get) - List Content
-* [upload_content_datasource_datasource_id_content_post](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#upload_content_datasource_datasource_id_content_post) - Upload Content
-* [get_upload_progress_stream_uploads_upload_id_progress_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#get_upload_progress_stream_uploads_upload_id_progress_get) - Stream upload progress events
-* [get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get) - Get Upload Status
-* [stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get) - Stream upload progress events (legacy)
-* [get_content_metadata_datasource_datasource_id_content_path_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#get_content_metadata_datasource_datasource_id_content_path_get) - Get Content Metadata
-* [delete_content_datasource_datasource_id_content_path_delete](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#delete_content_datasource_datasource_id_content_path_delete) - Delete Content
-* [download_content_datasource_datasource_id_content_path_download_get](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#download_content_datasource_datasource_id_content_path_download_get) - Download Content
+* [list_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#list_datasource_content) - List Content
+* [upload_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#upload_datasource_content) - Upload Content
+* [stream_upload_progress](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#stream_upload_progress) - Stream upload progress events
+* [get_datasource_upload_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#get_datasource_upload_status) - Get Upload Status
+* [stream_datasource_upload_progress](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#stream_datasource_upload_progress) - Stream upload progress events (legacy)
+* [get_datasource_content_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#get_datasource_content_metadata) - Get Content Metadata
+* [delete_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#delete_datasource_content) - Delete Content
+* [download_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#download_datasource_content) - Download Content
 
 ### [data_elements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
 
@@ -432,7 +369,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.content.get_upload_progress_stream_uploads_upload_id_progress_get(upload_id="<id>")
+    res = m_client.content.stream_upload_progress(upload_id="<id>")
 
     with res as event_stream:
         for event in event_stream:
@@ -462,47 +399,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
@@ -524,47 +440,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -601,47 +496,26 @@ with Meibelai(
     res = None
     try:
 
-        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
-            "filters": {
-                "included_prefixes": [
-                    "<value 1>",
-                    "<value 2>",
-                ],
-                "included_file_types": [
-                    "<value 1>",
-                    "<value 2>",
-                    "<value 3>",
-                ],
-                "recursive_prefixes": True,
-                "modified_date_start": "<value>",
-                "modified_date_end": "<value>",
-                "min_file_size": 110821,
-                "max_file_size": 861343,
-            },
+            "filters": None,
             "gcs_config": {
                 "key": "<value>",
                 "key1": "<value>",
-                "key2": "<value>",
             },
-            "s3_config": None,
+            "s3_config": {
+                "role_arn": "<value>",
+                "region": "<value>",
+            },
         }, web_config={
-            "base_url": "https://soupy-department.biz",
-            "javascript_render": False,
+            "base_url": "https://neighboring-fen.net/",
+            "javascript_render": True,
             "wait_for_selector": "<value>",
-            "domains": [
-                {
-                    "domain": "well-made-hygienic.com",
-                    "limit_pattern": "<value>",
-                    "exclude_pattern": "<value>",
-                    "ingestible": True,
-                    "expandable": True,
-                },
-            ],
+            "domains": None,
             "authentication": {
-                "username": "Amir_Schaden",
-                "password": "Qgqx_NgZXn9ZOj5",
+                "username": "Eulalia35",
+                "password": "VKK1aONN4LAHFVF",
             },
         })
 
@@ -707,47 +581,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -769,47 +622,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 

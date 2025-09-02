@@ -12,7 +12,7 @@ from typing import Any, Mapping, Optional
 class Content(BaseSDK):
     r"""Operations with content upload and management"""
 
-    def list_content_datasource_datasource_id_content_get(
+    def list_datasource_content(
         self,
         *,
         datasource_id: str,
@@ -47,7 +47,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.ListContentDatasourceDatasourceIDContentGetRequest(
+        request = models.ListDatasourceContentRequest(
             datasource_id=datasource_id,
             prefix=prefix,
             continuation_token=continuation_token,
@@ -86,7 +86,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="list_content_datasource__datasource_id__content_get",
+                operation_id="listDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -114,7 +114,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def list_content_datasource_datasource_id_content_get_async(
+    async def list_datasource_content_async(
         self,
         *,
         datasource_id: str,
@@ -149,7 +149,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.ListContentDatasourceDatasourceIDContentGetRequest(
+        request = models.ListDatasourceContentRequest(
             datasource_id=datasource_id,
             prefix=prefix,
             continuation_token=continuation_token,
@@ -188,7 +188,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="list_content_datasource__datasource_id__content_get",
+                operation_id="listDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -216,7 +216,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def upload_content_datasource_datasource_id_content_post(
+    def upload_datasource_content(
         self,
         *,
         datasource_id: str,
@@ -249,7 +249,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.UploadContentDatasourceDatasourceIDContentPostRequest(
+        request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
         )
 
@@ -285,7 +285,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="upload_content_datasource__datasource_id__content_post",
+                operation_id="uploadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -313,7 +313,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def upload_content_datasource_datasource_id_content_post_async(
+    async def upload_datasource_content_async(
         self,
         *,
         datasource_id: str,
@@ -346,7 +346,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.UploadContentDatasourceDatasourceIDContentPostRequest(
+        request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
         )
 
@@ -382,7 +382,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="upload_content_datasource__datasource_id__content_post",
+                operation_id="uploadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -410,7 +410,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def get_upload_progress_stream_uploads_upload_id_progress_get(
+    def stream_upload_progress(
         self,
         *,
         upload_id: str,
@@ -418,9 +418,7 @@ class Content(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> eventstreaming.EventStream[
-        models.GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody
-    ]:
+    ) -> eventstreaming.EventStream[models.StreamUploadProgressResponseBody]:
         r"""Stream upload progress events
 
         Subscribe to real-time upload progress updates via Server-Sent Events
@@ -441,7 +439,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetUploadProgressStreamUploadsUploadIDProgressGetRequest(
+        request = models.StreamUploadProgressRequest(
             upload_id=upload_id,
         )
 
@@ -477,7 +475,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_upload_progress_stream_uploads__upload_id__progress_get",
+                operation_id="streamUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -494,8 +492,7 @@ class Content(BaseSDK):
             return eventstreaming.EventStream(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody,
+                    raw, models.StreamUploadProgressResponseBody
                 ),
                 client_ref=self,
             )
@@ -515,7 +512,7 @@ class Content(BaseSDK):
         http_res_text = utils.stream_to_text(http_res)
         raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    async def get_upload_progress_stream_uploads_upload_id_progress_get_async(
+    async def stream_upload_progress_async(
         self,
         *,
         upload_id: str,
@@ -523,9 +520,7 @@ class Content(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> eventstreaming.EventStreamAsync[
-        models.GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody
-    ]:
+    ) -> eventstreaming.EventStreamAsync[models.StreamUploadProgressResponseBody]:
         r"""Stream upload progress events
 
         Subscribe to real-time upload progress updates via Server-Sent Events
@@ -546,7 +541,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetUploadProgressStreamUploadsUploadIDProgressGetRequest(
+        request = models.StreamUploadProgressRequest(
             upload_id=upload_id,
         )
 
@@ -582,7 +577,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_upload_progress_stream_uploads__upload_id__progress_get",
+                operation_id="streamUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -599,8 +594,7 @@ class Content(BaseSDK):
             return eventstreaming.EventStreamAsync(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody,
+                    raw, models.StreamUploadProgressResponseBody
                 ),
                 client_ref=self,
             )
@@ -620,7 +614,7 @@ class Content(BaseSDK):
         http_res_text = await utils.stream_to_text_async(http_res)
         raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    def get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get(
+    def get_datasource_upload_status(
         self,
         *,
         datasource_id: str,
@@ -651,7 +645,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetUploadStatusDatasourceDatasourceIDContentUploadStatusUploadIDGetRequest(
+        request = models.GetDatasourceUploadStatusRequest(
             datasource_id=datasource_id,
             upload_id=upload_id,
         )
@@ -688,7 +682,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_upload_status_datasource__datasource_id__content_upload_status__upload_id__get",
+                operation_id="getDatasourceUploadStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -716,7 +710,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get_async(
+    async def get_datasource_upload_status_async(
         self,
         *,
         datasource_id: str,
@@ -747,7 +741,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetUploadStatusDatasourceDatasourceIDContentUploadStatusUploadIDGetRequest(
+        request = models.GetDatasourceUploadStatusRequest(
             datasource_id=datasource_id,
             upload_id=upload_id,
         )
@@ -784,7 +778,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_upload_status_datasource__datasource_id__content_upload_status__upload_id__get",
+                operation_id="getDatasourceUploadStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -812,7 +806,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get(
+    def stream_datasource_upload_progress(
         self,
         *,
         datasource_id: str,
@@ -821,9 +815,7 @@ class Content(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> eventstreaming.EventStream[
-        models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody
-    ]:
+    ) -> eventstreaming.EventStream[models.StreamDatasourceUploadProgressResponseBody]:
         r"""Stream upload progress events (legacy)
 
         Subscribe to real-time upload progress updates via Server-Sent Events. Consider using /uploads/{upload_id}/progress instead.
@@ -845,7 +837,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetRequest(
+        request = models.StreamDatasourceUploadProgressRequest(
             datasource_id=datasource_id,
             upload_id=upload_id,
         )
@@ -882,7 +874,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="stream_upload_progress_datasource__datasource_id__content_upload_progress__upload_id__get",
+                operation_id="streamDatasourceUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -899,8 +891,7 @@ class Content(BaseSDK):
             return eventstreaming.EventStream(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody,
+                    raw, models.StreamDatasourceUploadProgressResponseBody
                 ),
                 client_ref=self,
             )
@@ -920,7 +911,7 @@ class Content(BaseSDK):
         http_res_text = utils.stream_to_text(http_res)
         raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    async def stream_upload_progress_datasource_datasource_id_content_upload_progress_upload_id_get_async(
+    async def stream_datasource_upload_progress_async(
         self,
         *,
         datasource_id: str,
@@ -930,7 +921,7 @@ class Content(BaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> eventstreaming.EventStreamAsync[
-        models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody
+        models.StreamDatasourceUploadProgressResponseBody
     ]:
         r"""Stream upload progress events (legacy)
 
@@ -953,7 +944,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetRequest(
+        request = models.StreamDatasourceUploadProgressRequest(
             datasource_id=datasource_id,
             upload_id=upload_id,
         )
@@ -990,7 +981,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="stream_upload_progress_datasource__datasource_id__content_upload_progress__upload_id__get",
+                operation_id="streamDatasourceUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1007,8 +998,7 @@ class Content(BaseSDK):
             return eventstreaming.EventStreamAsync(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody,
+                    raw, models.StreamDatasourceUploadProgressResponseBody
                 ),
                 client_ref=self,
             )
@@ -1028,7 +1018,7 @@ class Content(BaseSDK):
         http_res_text = await utils.stream_to_text_async(http_res)
         raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    def get_content_metadata_datasource_datasource_id_content_path_get(
+    def get_datasource_content_metadata(
         self,
         *,
         datasource_id: str,
@@ -1059,7 +1049,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetContentMetadataDatasourceDatasourceIDContentPathGetRequest(
+        request = models.GetDatasourceContentMetadataRequest(
             datasource_id=datasource_id,
             path=path,
         )
@@ -1096,7 +1086,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_content_metadata_datasource__datasource_id__content__path__get",
+                operation_id="getDatasourceContentMetadata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1124,7 +1114,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def get_content_metadata_datasource_datasource_id_content_path_get_async(
+    async def get_datasource_content_metadata_async(
         self,
         *,
         datasource_id: str,
@@ -1155,7 +1145,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetContentMetadataDatasourceDatasourceIDContentPathGetRequest(
+        request = models.GetDatasourceContentMetadataRequest(
             datasource_id=datasource_id,
             path=path,
         )
@@ -1192,7 +1182,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_content_metadata_datasource__datasource_id__content__path__get",
+                operation_id="getDatasourceContentMetadata",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1220,7 +1210,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def delete_content_datasource_datasource_id_content_path_delete(
+    def delete_datasource_content(
         self,
         *,
         datasource_id: str,
@@ -1251,7 +1241,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteContentDatasourceDatasourceIDContentPathDeleteRequest(
+        request = models.DeleteDatasourceContentRequest(
             datasource_id=datasource_id,
             path=path,
         )
@@ -1288,7 +1278,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_content_datasource__datasource_id__content__path__delete",
+                operation_id="deleteDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1316,7 +1306,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def delete_content_datasource_datasource_id_content_path_delete_async(
+    async def delete_datasource_content_async(
         self,
         *,
         datasource_id: str,
@@ -1347,7 +1337,7 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteContentDatasourceDatasourceIDContentPathDeleteRequest(
+        request = models.DeleteDatasourceContentRequest(
             datasource_id=datasource_id,
             path=path,
         )
@@ -1384,7 +1374,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_content_datasource__datasource_id__content__path__delete",
+                operation_id="deleteDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1412,7 +1402,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def download_content_datasource_datasource_id_content_path_download_get(
+    def download_datasource_content(
         self,
         *,
         datasource_id: str,
@@ -1443,11 +1433,9 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = (
-            models.DownloadContentDatasourceDatasourceIDContentPathDownloadGetRequest(
-                datasource_id=datasource_id,
-                path=path,
-            )
+        request = models.DownloadDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
         )
 
         req = self._build_request(
@@ -1482,7 +1470,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="download_content_datasource__datasource_id__content__path__download_get",
+                operation_id="downloadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1510,7 +1498,7 @@ class Content(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def download_content_datasource_datasource_id_content_path_download_get_async(
+    async def download_datasource_content_async(
         self,
         *,
         datasource_id: str,
@@ -1541,11 +1529,9 @@ class Content(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = (
-            models.DownloadContentDatasourceDatasourceIDContentPathDownloadGetRequest(
-                datasource_id=datasource_id,
-                path=path,
-            )
+        request = models.DownloadDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
         )
 
         req = self._build_request_async(
@@ -1580,7 +1566,7 @@ class Content(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="download_content_datasource__datasource_id__content__path__download_get",
+                operation_id="downloadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

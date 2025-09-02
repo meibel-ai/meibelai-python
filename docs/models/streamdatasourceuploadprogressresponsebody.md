@@ -1,4 +1,4 @@
-# StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody
+# StreamDatasourceUploadProgressResponseBody
 
 Server-Sent Events stream for upload progress
 

@@ -1,4 +1,4 @@
-# UploadContentDatasourceDatasourceIDContentPostRequest
+# UploadDatasourceContentRequest
 
 
 ## Fields

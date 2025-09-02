@@ -1,4 +1,4 @@
-# GetUploadStatusDatasourceDatasourceIDContentUploadStatusUploadIDGetRequest
+# GetDatasourceUploadStatusRequest
 
 
 ## Fields

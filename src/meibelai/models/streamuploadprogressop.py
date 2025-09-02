@@ -13,18 +13,18 @@ from typing import Union
 from typing_extensions import Annotated, TypeAliasType, TypedDict
 
 
-class GetUploadProgressStreamUploadsUploadIDProgressGetRequestTypedDict(TypedDict):
+class StreamUploadProgressRequestTypedDict(TypedDict):
     upload_id: str
 
 
-class GetUploadProgressStreamUploadsUploadIDProgressGetRequest(BaseModel):
+class StreamUploadProgressRequest(BaseModel):
     upload_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
 
 
-GetUploadProgressStreamUploadsUploadIDProgressGetResponseBodyTypedDict = TypeAliasType(
-    "GetUploadProgressStreamUploadsUploadIDProgressGetResponseBodyTypedDict",
+StreamUploadProgressResponseBodyTypedDict = TypeAliasType(
+    "StreamUploadProgressResponseBodyTypedDict",
     Union[
         SSEConnectionEventTypedDict,
         SSEProgressEventTypedDict,
@@ -36,7 +36,7 @@ GetUploadProgressStreamUploadsUploadIDProgressGetResponseBodyTypedDict = TypeAli
 r"""Server-Sent Events stream for upload progress"""
 
 
-GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody = Annotated[
+StreamUploadProgressResponseBody = Annotated[
     Union[
         Annotated[SSEConnectionEvent, Tag("connected")],
         Annotated[SSEProgressEvent, Tag("progress")],

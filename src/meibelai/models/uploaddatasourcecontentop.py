@@ -6,18 +6,11 @@ from meibelai.utils import FieldMetadata, PathParamMetadata
 from typing_extensions import Annotated, TypedDict
 
 
-class DownloadContentDatasourceDatasourceIDContentPathDownloadGetRequestTypedDict(
-    TypedDict
-):
+class UploadDatasourceContentRequestTypedDict(TypedDict):
     datasource_id: str
-    path: str
 
 
-class DownloadContentDatasourceDatasourceIDContentPathDownloadGetRequest(BaseModel):
+class UploadDatasourceContentRequest(BaseModel):
     datasource_id: Annotated[
-        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
-    ]
-
-    path: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]

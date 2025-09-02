@@ -9,47 +9,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -72,47 +51,26 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
-            "filters": {
-                "included_prefixes": [
-                    "<value 1>",
-                    "<value 2>",
-                ],
-                "included_file_types": [
-                    "<value 1>",
-                    "<value 2>",
-                    "<value 3>",
-                ],
-                "recursive_prefixes": True,
-                "modified_date_start": "<value>",
-                "modified_date_end": "<value>",
-                "min_file_size": 110821,
-                "max_file_size": 861343,
-            },
+            "filters": None,
             "gcs_config": {
                 "key": "<value>",
                 "key1": "<value>",
-                "key2": "<value>",
             },
-            "s3_config": None,
+            "s3_config": {
+                "role_arn": "<value>",
+                "region": "<value>",
+            },
         }, web_config={
-            "base_url": "https://soupy-department.biz",
-            "javascript_render": False,
+            "base_url": "https://neighboring-fen.net/",
+            "javascript_render": True,
             "wait_for_selector": "<value>",
-            "domains": [
-                {
-                    "domain": "well-made-hygienic.com",
-                    "limit_pattern": "<value>",
-                    "exclude_pattern": "<value>",
-                    "ingestible": True,
-                    "expandable": True,
-                },
-            ],
+            "domains": None,
             "authentication": {
-                "username": "Amir_Schaden",
-                "password": "Qgqx_NgZXn9ZOj5",
+                "username": "Eulalia35",
+                "password": "VKK1aONN4LAHFVF",
             },
         })
 

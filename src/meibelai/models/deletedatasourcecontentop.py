@@ -6,12 +6,12 @@ from meibelai.utils import FieldMetadata, PathParamMetadata
 from typing_extensions import Annotated, TypedDict
 
 
-class DeleteContentDatasourceDatasourceIDContentPathDeleteRequestTypedDict(TypedDict):
+class DeleteDatasourceContentRequestTypedDict(TypedDict):
     datasource_id: str
     path: str
 
 
-class DeleteContentDatasourceDatasourceIDContentPathDeleteRequest(BaseModel):
+class DeleteDatasourceContentRequest(BaseModel):
     datasource_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]

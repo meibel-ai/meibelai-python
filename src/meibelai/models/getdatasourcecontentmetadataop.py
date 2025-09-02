@@ -6,20 +6,16 @@ from meibelai.utils import FieldMetadata, PathParamMetadata
 from typing_extensions import Annotated, TypedDict
 
 
-class GetUploadStatusDatasourceDatasourceIDContentUploadStatusUploadIDGetRequestTypedDict(
-    TypedDict
-):
+class GetDatasourceContentMetadataRequestTypedDict(TypedDict):
     datasource_id: str
-    upload_id: str
+    path: str
 
 
-class GetUploadStatusDatasourceDatasourceIDContentUploadStatusUploadIDGetRequest(
-    BaseModel
-):
+class GetDatasourceContentMetadataRequest(BaseModel):
     datasource_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
 
-    upload_id: Annotated[
+    path: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]

@@ -90,7 +90,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="add_blueprint_instance",
+                operation_id="addBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -198,7 +198,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="add_blueprint_instance",
+                operation_id="addBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -309,7 +309,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_all_blueprint_instances",
+                operation_id="getAllBlueprintInstances",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -420,7 +420,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_all_blueprint_instances",
+                operation_id="getAllBlueprintInstances",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -522,7 +522,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_blueprint_instance",
+                operation_id="getBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -624,7 +624,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_blueprint_instance",
+                operation_id="getBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -717,7 +717,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_blueprint_instance",
+                operation_id="deleteBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -808,7 +808,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="delete_blueprint_instance",
+                operation_id="deleteBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -905,7 +905,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="update_blueprint_instance_status",
+                operation_id="updateBlueprintInstanceStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1002,7 +1002,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="update_blueprint_instance_status",
+                operation_id="updateBlueprintInstanceStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1107,7 +1107,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="complete_blueprint_instance",
+                operation_id="completeBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1212,7 +1212,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="complete_blueprint_instance",
+                operation_id="completeBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1320,7 +1320,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="fail_blueprint_instance",
+                operation_id="failBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1428,7 +1428,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="fail_blueprint_instance",
+                operation_id="failBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1540,7 +1540,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="add_activity_by_blueprint_instance",
+                operation_id="addActivityByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1652,7 +1652,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="add_activity_by_blueprint_instance",
+                operation_id="addActivityByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1746,7 +1746,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_activity_by_blueprint_instance",
+                operation_id="getActivityByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1840,7 +1840,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_activity_by_blueprint_instance",
+                operation_id="getActivityByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1943,7 +1943,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_activities_by_blueprint_instance",
+                operation_id="getActivitiesByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2046,7 +2046,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_activities_by_blueprint_instance",
+                operation_id="getActivitiesByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2143,7 +2143,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="update_activity_status",
+                operation_id="updateActivityStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2240,7 +2240,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="update_activity_status",
+                operation_id="updateActivityStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2334,7 +2334,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_event_by_blueprint_instance",
+                operation_id="getEventByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2428,7 +2428,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_event_by_blueprint_instance",
+                operation_id="getEventByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2549,7 +2549,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="create_event_by_blueprint_instance_id",
+                operation_id="createEventByBlueprintInstanceId",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2670,7 +2670,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="create_event_by_blueprint_instance_id",
+                operation_id="createEventByBlueprintInstanceId",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2773,7 +2773,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_events_by_blueprint_instance",
+                operation_id="getEventsByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2876,7 +2876,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="get_events_by_blueprint_instance",
+                operation_id="getEventsByBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -2982,7 +2982,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="start_blueprint_instance",
+                operation_id="startBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3088,7 +3088,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="start_blueprint_instance",
+                operation_id="startBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3179,7 +3179,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="cancel_blueprint_instance",
+                operation_id="cancelBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3270,7 +3270,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="cancel_blueprint_instance",
+                operation_id="cancelBlueprintInstance",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3370,7 +3370,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="send_signal",
+                operation_id="sendSignal",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3470,7 +3470,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="send_signal",
+                operation_id="sendSignal",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3570,7 +3570,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="query_workflow",
+                operation_id="queryWorkflow",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -3670,7 +3670,7 @@ class BlueprintInstances(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="query_workflow",
+                operation_id="queryWorkflow",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security

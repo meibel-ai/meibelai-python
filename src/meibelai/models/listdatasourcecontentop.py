@@ -8,14 +8,14 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class ListContentDatasourceDatasourceIDContentGetRequestTypedDict(TypedDict):
+class ListDatasourceContentRequestTypedDict(TypedDict):
     datasource_id: str
     prefix: NotRequired[Nullable[str]]
     continuation_token: NotRequired[Nullable[str]]
     limit: NotRequired[int]
 
 
-class ListContentDatasourceDatasourceIDContentGetRequest(BaseModel):
+class ListDatasourceContentRequest(BaseModel):
     datasource_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]

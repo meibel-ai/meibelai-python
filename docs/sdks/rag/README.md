@@ -22,7 +22,7 @@ Add Rag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_rag_config" method="post" path="/datasource/{datasource_id}/rag_config" -->
+<!-- UsageSnippet language="python" operationID="addRagConfig" method="post" path="/datasource/{datasource_id}/rag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -32,22 +32,22 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", description="unto yippee unknown from", extractor_model={
+    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", description="which gloomy regarding rosemary provider vivaciously fat willow", extractor_model={
         "name": "<value>",
         "endpoint": "<value>",
     }, embedding_model={
         "name": "<value>",
         "endpoint": "<value>",
-        "dimensions": 107326,
+        "dimensions": 66789,
     }, sparse_embedding_model={
         "name": "<value>",
         "endpoint": "<value>",
-    }, collect_metadata=True, metadata_options={
-        "create_title": True,
+    }, collect_metadata=False, metadata_options={
+        "create_title": None,
         "extract_questions_answers": False,
-        "extract_summary": False,
-        "has_consumer_content": None,
-        "get_bibliographical_information": None,
+        "extract_summary": True,
+        "has_consumer_content": True,
+        "get_bibliographical_information": False,
     })
 
     # Handle response
@@ -86,7 +86,7 @@ Get Rag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_rag_config" method="get" path="/datasource/{datasource_id}/rag_config" -->
+<!-- UsageSnippet language="python" operationID="getRagConfig" method="get" path="/datasource/{datasource_id}/rag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -127,7 +127,7 @@ Update Rag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_rag_config" method="put" path="/datasource/{datasource_id}/rag_config" -->
+<!-- UsageSnippet language="python" operationID="updateRagConfig" method="put" path="/datasource/{datasource_id}/rag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -137,20 +137,20 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_rag_config(datasource_id="<id>", description="stable suckle volleyball yieldingly cleverly shyly", collection_id="<id>", extractor_model={
+    res = m_client.rag.update_rag_config(datasource_id="<id>", description="scoop version advocate fondly darn who wherever respectful atop snack", collection_id="<id>", extractor_model={
         "name": "<value>",
         "endpoint": "<value>",
     }, embedding_model={
         "name": "<value>",
         "endpoint": "<value>",
-        "dimensions": 477647,
+        "dimensions": 562748,
     }, sparse_embedding_model={
         "name": "<value>",
         "endpoint": "<value>",
     }, collect_metadata=False, metadata_options={
         "create_title": True,
-        "extract_questions_answers": True,
-        "extract_summary": False,
+        "extract_questions_answers": False,
+        "extract_summary": True,
         "has_consumer_content": True,
         "get_bibliographical_information": True,
     })
@@ -191,7 +191,7 @@ Delete Rag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_rag_config" method="delete" path="/datasource/{datasource_id}/rag_config" -->
+<!-- UsageSnippet language="python" operationID="deleteRagConfig" method="delete" path="/datasource/{datasource_id}/rag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -232,7 +232,7 @@ Add Chunking Strategy
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_chunking_strategy" method="post" path="/datasource/{datasource_id}/chunking_strategy" -->
+<!-- UsageSnippet language="python" operationID="addChunkingStrategy" method="post" path="/datasource/{datasource_id}/chunking_strategy" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -243,42 +243,41 @@ with Meibelai(
 ) as m_client:
 
     res = m_client.rag.add_chunking_strategy(datasource_id="<id>", code_splitter={
-        "chunk_lines": 750571,
-        "chunk_lines_overlap": 608702,
-        "max_chars": 567662,
+        "chunk_lines": 638565,
+        "chunk_lines_overlap": 656087,
+        "max_chars": 448427,
     }, html_node_parser={
         "include_metadata": True,
-        "include_prev_next_rel": False,
-        "tags": [
-            "<value 1>",
-            "<value 2>",
-        ],
+        "include_prev_next_rel": True,
+        "tags": None,
     }, json_node_parser={
         "include_metadata": True,
-        "include_prev_next_rel": True,
+        "include_prev_next_rel": False,
     }, markdown_node_parser={
         "include_metadata": False,
         "include_prev_next_rel": True,
         "header_path_separator": "<value>",
     }, semantic_splitter_node_parser={
-        "buffer_size": 887654,
-        "include_metadata": True,
+        "buffer_size": 602838,
+        "include_metadata": False,
         "include_prev_next_rel": False,
-        "breakpoint_percentile_threshold": 22055,
+        "breakpoint_percentile_threshold": 688505,
     }, sentence_splitter={
-        "chunk_size": 351648,
-        "chunk_overlap": 940255,
+        "chunk_size": 438626,
+        "chunk_overlap": 440520,
         "separator": "<value>",
         "paragraph_separator": "<value>",
         "secondary_chunking_regex": "<value>",
     }, token_text_splitter={
-        "chunk_size": 846457,
-        "chunk_overlap": 52711,
+        "chunk_size": 974923,
+        "chunk_overlap": 269364,
         "separator": "<value>",
         "backup_separators": [
             "<value 1>",
+            "<value 2>",
+            "<value 3>",
         ],
-        "keep_whitespaces": False,
+        "keep_whitespaces": True,
     })
 
     # Handle response
@@ -317,7 +316,7 @@ Get Chunking Strategy
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_chunking_strategy" method="get" path="/datasource/{datasource_id}/chunking_strategy" -->
+<!-- UsageSnippet language="python" operationID="getChunkingStrategy" method="get" path="/datasource/{datasource_id}/chunking_strategy" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -358,7 +357,7 @@ Update Chunking Strategy
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_chunking_strategy" method="put" path="/datasource/{datasource_id}/chunking_strategy" -->
+<!-- UsageSnippet language="python" operationID="updateChunkingStrategy" method="put" path="/datasource/{datasource_id}/chunking_strategy" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -369,43 +368,39 @@ with Meibelai(
 ) as m_client:
 
     res = m_client.rag.update_chunking_strategy(datasource_id="<id>", code_splitter={
-        "chunk_lines": 246082,
-        "chunk_lines_overlap": 454883,
-        "max_chars": 942191,
+        "chunk_lines": 54839,
+        "chunk_lines_overlap": None,
+        "max_chars": 255540,
     }, html_node_parser={
-        "include_metadata": True,
-        "include_prev_next_rel": True,
+        "include_metadata": False,
+        "include_prev_next_rel": False,
         "tags": [
             "<value 1>",
             "<value 2>",
-            "<value 3>",
         ],
     }, json_node_parser={
-        "include_metadata": False,
+        "include_metadata": True,
         "include_prev_next_rel": False,
     }, markdown_node_parser={
-        "include_metadata": True,
-        "include_prev_next_rel": True,
-        "header_path_separator": "<value>",
-    }, semantic_splitter_node_parser={
-        "buffer_size": 745292,
         "include_metadata": False,
         "include_prev_next_rel": False,
-        "breakpoint_percentile_threshold": 912198,
+        "header_path_separator": "<value>",
+    }, semantic_splitter_node_parser={
+        "buffer_size": 612870,
+        "include_metadata": True,
+        "include_prev_next_rel": False,
+        "breakpoint_percentile_threshold": 35666,
     }, sentence_splitter={
-        "chunk_size": 477170,
-        "chunk_overlap": 716276,
+        "chunk_size": 991279,
+        "chunk_overlap": 203347,
         "separator": "<value>",
         "paragraph_separator": "<value>",
         "secondary_chunking_regex": "<value>",
     }, token_text_splitter={
-        "chunk_size": 635106,
-        "chunk_overlap": 380612,
+        "chunk_size": 387919,
+        "chunk_overlap": 552454,
         "separator": "<value>",
-        "backup_separators": [
-            "<value 1>",
-            "<value 2>",
-        ],
+        "backup_separators": None,
         "keep_whitespaces": True,
     })
 
@@ -445,7 +440,7 @@ Delete Chunking Strategy
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_chunking_strategy" method="delete" path="/datasource/{datasource_id}/chunking_strategy" -->
+<!-- UsageSnippet language="python" operationID="deleteChunkingStrategy" method="delete" path="/datasource/{datasource_id}/chunking_strategy" -->
 ```python
 from meibelai import Meibelai
 import os

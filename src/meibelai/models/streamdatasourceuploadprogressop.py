@@ -13,16 +13,12 @@ from typing import Union
 from typing_extensions import Annotated, TypeAliasType, TypedDict
 
 
-class StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetRequestTypedDict(
-    TypedDict
-):
+class StreamDatasourceUploadProgressRequestTypedDict(TypedDict):
     datasource_id: str
     upload_id: str
 
 
-class StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetRequest(
-    BaseModel
-):
+class StreamDatasourceUploadProgressRequest(BaseModel):
     datasource_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -32,8 +28,8 @@ class StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGet
     ]
 
 
-StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBodyTypedDict = TypeAliasType(
-    "StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBodyTypedDict",
+StreamDatasourceUploadProgressResponseBodyTypedDict = TypeAliasType(
+    "StreamDatasourceUploadProgressResponseBodyTypedDict",
     Union[
         SSEConnectionEventTypedDict,
         SSEProgressEventTypedDict,
@@ -45,7 +41,7 @@ StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetRespon
 r"""Server-Sent Events stream for upload progress"""
 
 
-StreamUploadProgressDatasourceDatasourceIDContentUploadProgressUploadIDGetResponseBody = Annotated[
+StreamDatasourceUploadProgressResponseBody = Annotated[
     Union[
         Annotated[SSEConnectionEvent, Tag("connected")],
         Annotated[SSEProgressEvent, Tag("progress")],

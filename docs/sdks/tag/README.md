@@ -28,7 +28,7 @@ Add Tag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_tag_config" method="post" path="/datasource/{datasource_id}/tag_config" -->
+<!-- UsageSnippet language="python" operationID="addTagConfig" method="post" path="/datasource/{datasource_id}/tag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -38,7 +38,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="bandwidth anenst psst round secrecy judicious gown atrium ick", logical_group_regex="<value>", db_path=None)
+    res = m_client.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="fray brace waltz interesting huzzah whether experience", logical_group_regex="<value>", db_path="<value>")
 
     # Handle response
     print(res)
@@ -73,7 +73,7 @@ Get Tag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_tag_config" method="get" path="/datasource/{datasource_id}/tag_config" -->
+<!-- UsageSnippet language="python" operationID="getTagConfig" method="get" path="/datasource/{datasource_id}/tag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -114,7 +114,7 @@ Update Tag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_tag_config" method="put" path="/datasource/{datasource_id}/tag_config" -->
+<!-- UsageSnippet language="python" operationID="updateTagConfig" method="put" path="/datasource/{datasource_id}/tag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -124,7 +124,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_config(datasource_id="<id>", description="fatherly grown shrilly jealously decide", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
+    res = m_client.tag.update_tag_config(datasource_id="<id>", description="impostor inside immediately", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
 
     # Handle response
     print(res)
@@ -159,7 +159,7 @@ Delete Tag Config
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_tag_config" method="delete" path="/datasource/{datasource_id}/tag_config" -->
+<!-- UsageSnippet language="python" operationID="deleteTagConfig" method="delete" path="/datasource/{datasource_id}/tag_config" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -200,7 +200,7 @@ Add Tag Table Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_tag_table_info" method="post" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
+<!-- UsageSnippet language="python" operationID="addTagTableInfo" method="post" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -210,7 +210,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>", description="below eulogise questioningly nephew innovation strange likewise brr")
+    res = m_client.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>", description="hmph subdued large safe positively intellect intervention")
 
     # Handle response
     print(res)
@@ -243,7 +243,7 @@ Get Tag Table Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_tag_table_info" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
+<!-- UsageSnippet language="python" operationID="getTagTableInfo" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -285,7 +285,7 @@ Update Tag Table Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_tag_table_info" method="put" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
+<!-- UsageSnippet language="python" operationID="updateTagTableInfo" method="put" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -295,7 +295,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>", description="affectionate colorfully for whose unnaturally smog huzzah perfectly")
+    res = m_client.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>", description="reckon as before lovingly")
 
     # Handle response
     print(res)
@@ -328,7 +328,7 @@ Delete Tag Table Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_tag_table_info" method="delete" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
+<!-- UsageSnippet language="python" operationID="deleteTagTableInfo" method="delete" path="/datasource/{datasource_id}/tag_table_info/{table_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -370,7 +370,7 @@ Get All Tag Table Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_all_tag_table_info" method="get" path="/datasource/{datasource_id}/tag_table_info" -->
+<!-- UsageSnippet language="python" operationID="getAllTagTableInfo" method="get" path="/datasource/{datasource_id}/tag_table_info" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -415,7 +415,7 @@ Add Tag Column Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_tag_column_info" method="post" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
+<!-- UsageSnippet language="python" operationID="addTagColumnInfo" method="post" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -425,8 +425,9 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="really agitated gladly printer", dtype="<value>", is_key=False, is_indexed=False, engineered_features=[
+    res = m_client.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="kiddingly ack cricket monumental feline indolent feminize casket cappelletti", dtype=None, is_key=True, is_indexed=False, engineered_features=[
         "<value 1>",
+        "<value 2>",
     ])
 
     # Handle response
@@ -465,7 +466,7 @@ Get Tag Column Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_tag_column_info" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
+<!-- UsageSnippet language="python" operationID="getTagColumnInfo" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -508,7 +509,7 @@ Update Tag Column Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_tag_column_info" method="put" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
+<!-- UsageSnippet language="python" operationID="updateTagColumnInfo" method="put" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info/{column_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -518,10 +519,9 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="pish poorly boo evenly appliance but aw", dtype="<value>", is_key=True, is_indexed=True, engineered_features=[
+    res = m_client.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="gah ad though aw when disbar", dtype="<value>", is_key=None, is_indexed=False, engineered_features=[
         "<value 1>",
         "<value 2>",
-        "<value 3>",
     ])
 
     # Handle response
@@ -560,7 +560,7 @@ Get All Tag Column Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_all_tag_column_info" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info" -->
+<!-- UsageSnippet language="python" operationID="getAllTagColumnInfo" method="get" path="/datasource/{datasource_id}/tag_table_info/{table_name}/column_info" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -570,7 +570,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10, sort_by=None, sort_order="<value>")
+    res = m_client.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -606,7 +606,7 @@ Delete Tag Column Info
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_tag_column_info" method="delete" path="/datasource/{datasource_id}/tag_config/{table_name}/column_info/{column_name}" -->
+<!-- UsageSnippet language="python" operationID="deleteTagColumnInfo" method="delete" path="/datasource/{datasource_id}/tag_config/{table_name}/column_info/{column_name}" -->
 ```python
 from meibelai import Meibelai
 import os

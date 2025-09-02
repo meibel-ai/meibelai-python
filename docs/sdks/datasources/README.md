@@ -19,7 +19,7 @@ Add Datasource
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_datasource" method="post" path="/datasource" -->
+<!-- UsageSnippet language="python" operationID="addDatasource" method="post" path="/datasource" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -29,47 +29,26 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="smooth hmph geez key", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 110821,
-            "max_file_size": 861343,
-        },
+        "filters": None,
         "gcs_config": {
             "key": "<value>",
             "key1": "<value>",
-            "key2": "<value>",
         },
-        "s3_config": None,
+        "s3_config": {
+            "role_arn": "<value>",
+            "region": "<value>",
+        },
     }, web_config={
-        "base_url": "https://soupy-department.biz",
-        "javascript_render": False,
+        "base_url": "https://neighboring-fen.net/",
+        "javascript_render": True,
         "wait_for_selector": "<value>",
-        "domains": [
-            {
-                "domain": "well-made-hygienic.com",
-                "limit_pattern": "<value>",
-                "exclude_pattern": "<value>",
-                "ingestible": True,
-                "expandable": True,
-            },
-        ],
+        "domains": None,
         "authentication": {
-            "username": "Amir_Schaden",
-            "password": "Qgqx_NgZXn9ZOj5",
+            "username": "Eulalia35",
+            "password": "VKK1aONN4LAHFVF",
         },
     })
 
@@ -108,7 +87,7 @@ Get Datasource
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_datasource" method="get" path="/datasource/{datasource_id}" -->
+<!-- UsageSnippet language="python" operationID="getDatasource" method="get" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -149,7 +128,7 @@ Update Datasource
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_datasource" method="put" path="/datasource/{datasource_id}" -->
+<!-- UsageSnippet language="python" operationID="updateDatasource" method="put" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -159,40 +138,22 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.update_datasource(datasource_id="<id>", name="<value>", description="amongst coordinated all", recurrence="<value>", object_storage_config={
-        "bucket": "<value>",
-        "prefix": None,
-        "filters": {
-            "included_prefixes": [
-                "<value 1>",
-                "<value 2>",
-                "<value 3>",
-            ],
-            "included_file_types": [
-                "<value 1>",
-            ],
-            "recursive_prefixes": True,
-            "modified_date_start": "<value>",
-            "modified_date_end": "<value>",
-            "min_file_size": 289575,
-            "max_file_size": 208282,
-        },
-        "gcs_config": {
-            "key": "<value>",
-            "key1": "<value>",
-        },
-        "s3_config": {
-            "role_arn": "<value>",
-            "region": "<value>",
-        },
-    }, web_config={
-        "base_url": "https://giving-pendant.net",
-        "javascript_render": True,
+    res = m_client.datasources.update_datasource(datasource_id="<id>", name="<value>", description="carelessly now interestingly connect sore outrageous", recurrence="<value>", object_storage_config=None, web_config={
+        "base_url": "https://quintessential-masterpiece.info/",
+        "javascript_render": False,
         "wait_for_selector": "<value>",
-        "domains": [],
+        "domains": [
+            {
+                "domain": "grown-chairperson.com",
+                "limit_pattern": "<value>",
+                "exclude_pattern": "<value>",
+                "ingestible": False,
+                "expandable": True,
+            },
+        ],
         "authentication": {
-            "username": "Audie94",
-            "password": "lD3r6ZuNUApWlV4",
+            "username": "Craig.Torp",
+            "password": "EOnNAiJTwzj27zA",
         },
     })
 
@@ -230,7 +191,7 @@ Delete Datasource
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_datasource" method="delete" path="/datasource/{datasource_id}" -->
+<!-- UsageSnippet language="python" operationID="deleteDatasource" method="delete" path="/datasource/{datasource_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -271,7 +232,7 @@ Get All Datasource Ids
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_all_datasource_ids" method="post" path="/project_datasource_ids" -->
+<!-- UsageSnippet language="python" operationID="getAllDatasourceIds" method="post" path="/project_datasource_ids" -->
 ```python
 from meibelai import Meibelai
 import os

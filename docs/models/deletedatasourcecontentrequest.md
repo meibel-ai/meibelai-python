@@ -1,4 +1,4 @@
-# GetContentMetadataDatasourceDatasourceIDContentPathGetRequest
+# DeleteDatasourceContentRequest
 
 
 ## Fields

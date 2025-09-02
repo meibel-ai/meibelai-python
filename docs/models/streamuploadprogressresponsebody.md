@@ -1,4 +1,4 @@
-# GetUploadProgressStreamUploadsUploadIDProgressGetResponseBody
+# StreamUploadProgressResponseBody
 
 Server-Sent Events stream for upload progress
 

@@ -32,7 +32,7 @@ Add Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_blueprint_instance" method="post" path="/blueprint-instance/" -->
+<!-- UsageSnippet language="python" operationID="addBlueprintInstance" method="post" path="/blueprint-instance/" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -80,7 +80,7 @@ Get All Blueprint Instances
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_all_blueprint_instances" method="get" path="/blueprint-instance/" -->
+<!-- UsageSnippet language="python" operationID="getAllBlueprintInstances" method="get" path="/blueprint-instance/" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -127,7 +127,7 @@ Get Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_blueprint_instance" method="get" path="/blueprint-instance/{blueprint_instance_id}" -->
+<!-- UsageSnippet language="python" operationID="getBlueprintInstance" method="get" path="/blueprint-instance/{blueprint_instance_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -171,7 +171,7 @@ Delete Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="delete_blueprint_instance" method="delete" path="/blueprint-instance/{blueprint_instance_id}" -->
+<!-- UsageSnippet language="python" operationID="deleteBlueprintInstance" method="delete" path="/blueprint-instance/{blueprint_instance_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -207,7 +207,7 @@ Update Blueprint Instance Status
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_blueprint_instance_status" method="put" path="/blueprint-instance/{blueprint_instance_id}/status" -->
+<!-- UsageSnippet language="python" operationID="updateBlueprintInstanceStatus" method="put" path="/blueprint-instance/{blueprint_instance_id}/status" -->
 ```python
 import meibelai
 from meibelai import Meibelai
@@ -218,7 +218,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.CANCELLED, workflow_run_id="<id>")
+    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.FAILED, workflow_run_id="<id>")
 
     # Use the SDK ...
 
@@ -246,7 +246,7 @@ This endpoint is used to mark a Blueprint Instance as completed. It will update 
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="complete_blueprint_instance" method="put" path="/blueprint-instance/{blueprint_instance_id}/complete-instance" -->
+<!-- UsageSnippet language="python" operationID="completeBlueprintInstance" method="put" path="/blueprint-instance/{blueprint_instance_id}/complete-instance" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -256,7 +256,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>", result=None)
+    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>", result="<value>")
 
     # Handle response
     print(res)
@@ -288,7 +288,7 @@ This endpoint is used to mark a Blueprint Instance as failed. It will update the
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="fail_blueprint_instance" method="put" path="/blueprint-instance/{blueprint_instance_id}/fail-instance" -->
+<!-- UsageSnippet language="python" operationID="failBlueprintInstance" method="put" path="/blueprint-instance/{blueprint_instance_id}/fail-instance" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -300,8 +300,6 @@ with Meibelai(
 
     res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>", error="<value>", error_details={
         "key": "<value>",
-        "key1": "<value>",
-        "key2": "<value>",
     })
 
     # Handle response
@@ -335,7 +333,7 @@ Add Activity By Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="add_activity_by_blueprint_instance" method="post" path="/blueprint-instance/{blueprint_instance_id}/activity" -->
+<!-- UsageSnippet language="python" operationID="addActivityByBlueprintInstance" method="post" path="/blueprint-instance/{blueprint_instance_id}/activity" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -347,6 +345,8 @@ with Meibelai(
 
     res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>", input_data={
         "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
     }, output_data={
         "key": "<value>",
         "key1": "<value>",
@@ -386,7 +386,7 @@ Get Activity By Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_activity_by_blueprint_instance" method="get" path="/blueprint-instance/{blueprint_instance_id}/activity/{activity_id}" -->
+<!-- UsageSnippet language="python" operationID="getActivityByBlueprintInstance" method="get" path="/blueprint-instance/{blueprint_instance_id}/activity/{activity_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -428,7 +428,7 @@ Get Activities By Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_activities_by_blueprint_instance" method="get" path="/blueprint-instance/{blueprint_instance_id}/activities" -->
+<!-- UsageSnippet language="python" operationID="getActivitiesByBlueprintInstance" method="get" path="/blueprint-instance/{blueprint_instance_id}/activities" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -438,7 +438,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
+    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order=None)
 
     # Handle response
     print(res)
@@ -473,7 +473,7 @@ Update Activity Status
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="update_activity_status" method="put" path="/blueprint-instance/{blueprint_instance_id}/activity/{activity_id}/status" -->
+<!-- UsageSnippet language="python" operationID="updateActivityStatus" method="put" path="/blueprint-instance/{blueprint_instance_id}/activity/{activity_id}/status" -->
 ```python
 import meibelai
 from meibelai import Meibelai
@@ -484,7 +484,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.RUNNING)
+    m_client.blueprint_instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.WAITING)
 
     # Use the SDK ...
 
@@ -512,7 +512,7 @@ Get Event By Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_event_by_blueprint_instance" method="get" path="/blueprint-instance/{blueprint_instance_id}/event/{event_id}" -->
+<!-- UsageSnippet language="python" operationID="getEventByBlueprintInstance" method="get" path="/blueprint-instance/{blueprint_instance_id}/event/{event_id}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -554,7 +554,7 @@ Create Event By Blueprint Instance Id
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="create_event_by_blueprint_instance_id" method="post" path="/blueprint-instance/{blueprint_instance_id}/event" -->
+<!-- UsageSnippet language="python" operationID="createEventByBlueprintInstanceId" method="post" path="/blueprint-instance/{blueprint_instance_id}/event" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -566,7 +566,9 @@ with Meibelai(
 
     res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>", activity_id=None, details={
         "key": "<value>",
-    }, group_id="<id>", is_signal=False, is_internal=False, originating_signal_id="<id>")
+        "key1": "<value>",
+        "key2": "<value>",
+    }, group_id="<id>", is_signal=False, is_internal=None, originating_signal_id="<id>")
 
     # Handle response
     print(res)
@@ -604,7 +606,7 @@ Get Events By Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="get_events_by_blueprint_instance" method="get" path="/blueprint-instance/{blueprint_instance_id}/events" -->
+<!-- UsageSnippet language="python" operationID="getEventsByBlueprintInstance" method="get" path="/blueprint-instance/{blueprint_instance_id}/events" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -649,7 +651,7 @@ Start Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="start_blueprint_instance" method="post" path="/{blueprint_instance_id}/start-instance" -->
+<!-- UsageSnippet language="python" operationID="startBlueprintInstance" method="post" path="/{blueprint_instance_id}/start-instance" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -659,9 +661,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.start_blueprint_instance(blueprint_instance_id="<id>", workflow_args=[
-        "<value 1>",
-    ], workflow_kwargs={
+    res = m_client.blueprint_instances.start_blueprint_instance(blueprint_instance_id="<id>", workflow_args=None, workflow_kwargs={
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
@@ -698,7 +698,7 @@ Cancel Blueprint Instance
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="cancel_blueprint_instance" method="post" path="/{blueprint_instance_id}/cancel-instance" -->
+<!-- UsageSnippet language="python" operationID="cancelBlueprintInstance" method="post" path="/{blueprint_instance_id}/cancel-instance" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -739,7 +739,7 @@ Send Signal
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="send_signal" method="post" path="/{blueprint_instance_id}/signals/{signal_name}" -->
+<!-- UsageSnippet language="python" operationID="sendSignal" method="post" path="/{blueprint_instance_id}/signals/{signal_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -751,6 +751,8 @@ with Meibelai(
 
     res = m_client.blueprint_instances.send_signal(blueprint_instance_id="<id>", signal_name="<value>", request_body=[
         "<value 1>",
+        "<value 2>",
+        "<value 3>",
     ])
 
     # Handle response
@@ -784,7 +786,7 @@ Query Workflow
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="query_workflow" method="post" path="/{blueprint_instance_id}/queries/{query_name}" -->
+<!-- UsageSnippet language="python" operationID="queryWorkflow" method="post" path="/{blueprint_instance_id}/queries/{query_name}" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -797,6 +799,7 @@ with Meibelai(
     res = m_client.blueprint_instances.query_workflow(blueprint_instance_id="<id>", query_name="<value>", request_body=[
         "<value 1>",
         "<value 2>",
+        "<value 3>",
     ])
 
     # Handle response
