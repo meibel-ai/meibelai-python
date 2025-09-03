@@ -3,10 +3,10 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: 267cdfdf044494ca11f81d903cb6346b
   docVersion: 0.2.0
-  speakeasyVersion: 1.607.0
+  speakeasyVersion: 1.607.1
   generationVersion: 2.690.1
-  releaseVersion: 0.15.2
-  configChecksum: 03e85d1a4230026a5ba58d146e3808a1
+  releaseVersion: 0.15.3
+  configChecksum: 4e88904649910454b7021789871131b8
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -2229,119 +2229,3 @@ examples:
           application/json: {"detail": [{"loc": [581499], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Python SDK Changes Detected:
-  * `meibelai.datasources.add_datasource()`: **Added**
-  * `meibelai.datasources.get_datasource()`: **Added**
-  * `meibelai.datasources.update_datasource()`: **Added**
-  * `meibelai.datasources.delete_datasource()`: **Added**
-  * `meibelai.datasources.get_all_datasource_ids()`: **Added**
-  * `meibelai.data_elements.add_data_element()`: **Added**
-  * `meibelai.data_elements.get_data_elements()`: **Added**
-  * `meibelai.data_elements.get_data_element()`: **Added**
-  * `meibelai.data_elements.update_data_element()`: **Added**
-  * `meibelai.data_elements.delete_data_element()`: **Added**
-  * `meibelai.data_elements.get_data_elements_by_filters()`: **Added**
-  * `meibelai.tag.add_tag_config()`: **Added**
-  * `meibelai.tag.get_tag_config()`: **Added**
-  * `meibelai.tag.update_tag_config()`: **Added**
-  * `meibelai.tag.delete_tag_config()`: **Added**
-  * `meibelai.tag.add_tag_table_info()`: **Added**
-  * `meibelai.tag.get_tag_table_info()`: **Added**
-  * `meibelai.tag.update_tag_table_info()`: **Added**
-  * `meibelai.tag.delete_tag_table_info()`: **Added**
-  * `meibelai.tag.get_all_tag_table_info()`: **Added**
-  * `meibelai.tag.add_tag_column_info()`: **Added**
-  * `meibelai.tag.get_tag_column_info()`: **Added**
-  * `meibelai.tag.update_tag_column_info()`: **Added**
-  * `meibelai.tag.get_all_tag_column_info()`: **Added**
-  * `meibelai.tag.delete_tag_column_info()`: **Added**
-  * `meibelai.rag.add_rag_config()`: **Added**
-  * `meibelai.rag.get_rag_config()`: **Added**
-  * `meibelai.rag.update_rag_config()`: **Added**
-  * `meibelai.rag.delete_rag_config()`: **Added**
-  * `meibelai.rag.add_chunking_strategy()`: **Added**
-  * `meibelai.rag.get_chunking_strategy()`: **Added**
-  * `meibelai.rag.update_chunking_strategy()`: **Added**
-  * `meibelai.rag.delete_chunking_strategy()`: **Added**
-  * `meibelai.content.list_datasource_content()`: **Added**
-  * `meibelai.content.upload_datasource_content()`: **Added**
-  * `meibelai.content.get_datasource_upload_status()`: **Added**
-  * `meibelai.content.get_datasource_content_metadata()`: **Added**
-  * `meibelai.content.delete_datasource_content()`: **Added**
-  * `meibelai.content.download_datasource_content()`: **Added**
-  * `meibelai.blueprint_instances.add_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.get_all_blueprint_instances()`: **Added**
-  * `meibelai.blueprint_instances.get_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.delete_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.update_blueprint_instance_status()`: **Added**
-  * `meibelai.blueprint_instances.complete_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.fail_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.add_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.get_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.get_activities_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.update_activity_status()`: **Added**
-  * `meibelai.blueprint_instances.get_event_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.create_event_by_blueprint_instance_id()`: **Added**
-  * `meibelai.blueprint_instances.get_events_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.start_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.cancel_blueprint_instance()`: **Added**
-  * `meibelai.blueprint_instances.send_signal()`: **Added**
-  * `meibelai.blueprint_instances.query_workflow()`: **Added**
-  * `meibelai.datasources.add_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.update_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.delete_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_all_datasource_ids()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_elements()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.add_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.update_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.delete_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_elements_by_filters()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.get_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.update_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.add_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.delete_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.get_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.update_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.add_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.delete_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.list_content_datasource_datasource_id_content_get()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.upload_content_datasource_datasource_id_content_post()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.get_upload_status_datasource_datasource_id_content_upload_status_upload_id_get()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.get_content_metadata_datasource_datasource_id_content_path_get()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.delete_content_datasource_datasource_id_content_path_delete()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.download_content_datasource_datasource_id_content_path_download_get()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_all_blueprint_instances()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.delete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_blueprint_instance_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.complete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.fail_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activities_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_activity_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_event_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.create_event_by_blueprint_instance_id()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_events_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.send_signal()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.query_workflow()`: **Deleted** **Breaking** :warning:
