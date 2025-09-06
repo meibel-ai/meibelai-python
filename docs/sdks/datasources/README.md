@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with datasources
-
 ### Available Operations
 
 * [add_datasource](#add_datasource) - Add Datasource

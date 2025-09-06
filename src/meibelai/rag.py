@@ -10,8 +10,6 @@ from typing import Any, Mapping, Optional, Union
 
 
 class Rag(BaseSDK):
-    r"""Operations with rag"""
-
     def add_rag_config(
         self,
         *,

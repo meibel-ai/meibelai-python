@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 267cdfdf044494ca11f81d903cb6346b
+  docChecksum: 1f004bc2977aec344d0b0df654cbb171
   docVersion: 0.2.0
-  speakeasyVersion: 1.607.1
-  generationVersion: 2.690.1
-  releaseVersion: 0.15.3
-  configChecksum: 4e88904649910454b7021789871131b8
+  speakeasyVersion: 1.611.0
+  generationVersion: 2.694.1
+  releaseVersion: 0.15.4
+  configChecksum: 2e5575c0ae134047cc3712b550d143ad
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.20.2
+    core: 5.20.3
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0

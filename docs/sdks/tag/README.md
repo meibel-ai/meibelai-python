@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with tag
-
 ### Available Operations
 
 * [add_tag_config](#add_tag_config) - Add Tag Config

@@ -10,8 +10,6 @@ from typing import Any, Dict, List, Mapping, Optional
 
 
 class BlueprintInstances(BaseSDK):
-    r"""Operations with blueprint_instances"""
-
     def add_blueprint_instance(
         self,
         *,

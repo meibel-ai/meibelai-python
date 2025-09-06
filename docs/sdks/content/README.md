@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with content upload and management
-
 ### Available Operations
 
 * [list_datasource_content](#list_datasource_content) - List Content

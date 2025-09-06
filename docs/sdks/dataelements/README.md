@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with data elements
-
 ### Available Operations
 
 * [add_data_element](#add_data_element) - Add Data Element

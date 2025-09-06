@@ -30,17 +30,11 @@ class Meibelai(BaseSDK):
     """
 
     datasources: "Datasources"
-    r"""Operations with datasources"""
     data_elements: "DataElements"
-    r"""Operations with data elements"""
     tag: "Tag"
-    r"""Operations with tag"""
     rag: "Rag"
-    r"""Operations with rag"""
     content: "Content"
-    r"""Operations with content upload and management"""
     blueprint_instances: "BlueprintInstances"
-    r"""Operations with blueprint_instances"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "data_elements": ("meibelai.data_elements", "DataElements"),

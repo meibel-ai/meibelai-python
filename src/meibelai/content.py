@@ -10,8 +10,6 @@ from typing import Any, Mapping, Optional
 
 
 class Content(BaseSDK):
-    r"""Operations with content upload and management"""
-
     def list_datasource_content(
         self,
         *,

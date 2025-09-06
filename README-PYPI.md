@@ -564,10 +564,10 @@ with Meibelai(
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                  | Description              |
-| --- | ----------------------- | ------------------------ |
-| 0   | `http://api.meibel.ai`  | Meibel API               |
-| 1   | `http://localhost:8000` | Local Development Server |
+| #   | Server                     | Description              |
+| --- | -------------------------- | ------------------------ |
+| 0   | `https://api.meibel.ai/v1` | Meibel API               |
+| 1   | `http://localhost:8000`    | Local Development Server |
 
 #### Example
 

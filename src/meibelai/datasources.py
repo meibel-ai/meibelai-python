@@ -10,8 +10,6 @@ from typing import Any, List, Mapping, Optional, Union
 
 
 class Datasources(BaseSDK):
-    r"""Operations with datasources"""
-
     def add_datasource(
         self,
         *,

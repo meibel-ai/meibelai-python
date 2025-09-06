@@ -10,8 +10,6 @@ from typing import Any, List, Mapping, Optional, Union
 
 
 class DataElements(BaseSDK):
-    r"""Operations with data elements"""
-
     def add_data_element(
         self,
         *,

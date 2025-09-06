@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with rag
-
 ### Available Operations
 
 * [add_rag_config](#add_rag_config) - Add Rag Config

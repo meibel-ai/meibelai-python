@@ -3,8 +3,6 @@
 
 ## Overview
 
-Operations with blueprint_instances
-
 ### Available Operations
 
 * [add_blueprint_instance](#add_blueprint_instance) - Add Blueprint Instance

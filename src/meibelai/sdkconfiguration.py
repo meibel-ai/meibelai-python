@@ -16,7 +16,7 @@ from typing import Callable, Dict, Optional, Tuple, Union
 
 
 SERVERS = [
-    "http://api.meibel.ai",
+    "https://api.meibel.ai/v1",
     # Meibel API
     "http://localhost:8000",
     # Local Development Server
