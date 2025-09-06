@@ -10,6 +10,8 @@ from typing import Any, List, Mapping, Optional
 
 
 class Tag(BaseSDK):
+    r"""Operations with tag"""
+
     def add_tag_config(
         self,
         *,

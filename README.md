@@ -290,23 +290,8 @@ with Meibelai(
 
 ### [content](docs/sdks/content/README.md)
 
-* [list_datasource_content](docs/sdks/content/README.md#list_datasource_content) - List Content
-* [upload_datasource_content](docs/sdks/content/README.md#upload_datasource_content) - Upload Content
 * [stream_upload_progress](docs/sdks/content/README.md#stream_upload_progress) - Stream upload progress events
-* [get_datasource_upload_status](docs/sdks/content/README.md#get_datasource_upload_status) - Get Upload Status
 * [stream_datasource_upload_progress](docs/sdks/content/README.md#stream_datasource_upload_progress) - Stream upload progress events (legacy)
-* [get_datasource_content_metadata](docs/sdks/content/README.md#get_datasource_content_metadata) - Get Content Metadata
-* [delete_datasource_content](docs/sdks/content/README.md#delete_datasource_content) - Delete Content
-* [download_datasource_content](docs/sdks/content/README.md#download_datasource_content) - Download Content
-
-### [data_elements](docs/sdks/dataelements/README.md)
-
-* [add_data_element](docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
-* [get_data_elements](docs/sdks/dataelements/README.md#get_data_elements) - Get Data Elements
-* [get_data_element](docs/sdks/dataelements/README.md#get_data_element) - Get Data Element
-* [update_data_element](docs/sdks/dataelements/README.md#update_data_element) - Update Data Element
-* [delete_data_element](docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
-* [get_data_elements_by_filters](docs/sdks/dataelements/README.md#get_data_elements_by_filters) - Get Data Elements By Filters
 
 ### [datasources](docs/sdks/datasources/README.md)
 
@@ -316,8 +301,27 @@ with Meibelai(
 * [delete_datasource](docs/sdks/datasources/README.md#delete_datasource) - Delete Datasource
 * [get_all_datasource_ids](docs/sdks/datasources/README.md#get_all_datasource_ids) - Get All Datasource Ids
 
+#### [datasources.content](docs/sdks/meibelaicontent/README.md)
 
-### [rag](docs/sdks/rag/README.md)
+* [list_datasource_content](docs/sdks/meibelaicontent/README.md#list_datasource_content) - List Content
+* [upload_datasource_content](docs/sdks/meibelaicontent/README.md#upload_datasource_content) - Upload Content
+* [stream_upload_progress](docs/sdks/meibelaicontent/README.md#stream_upload_progress) - Stream upload progress events
+* [get_datasource_upload_status](docs/sdks/meibelaicontent/README.md#get_datasource_upload_status) - Get Upload Status
+* [stream_datasource_upload_progress](docs/sdks/meibelaicontent/README.md#stream_datasource_upload_progress) - Stream upload progress events (legacy)
+* [get_datasource_content_metadata](docs/sdks/meibelaicontent/README.md#get_datasource_content_metadata) - Get Content Metadata
+* [delete_datasource_content](docs/sdks/meibelaicontent/README.md#delete_datasource_content) - Delete Content
+* [download_datasource_content](docs/sdks/meibelaicontent/README.md#download_datasource_content) - Download Content
+
+#### [datasources.dataelements](docs/sdks/dataelements/README.md)
+
+* [add_data_element](docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
+* [get_data_elements](docs/sdks/dataelements/README.md#get_data_elements) - Get Data Elements
+* [get_data_element](docs/sdks/dataelements/README.md#get_data_element) - Get Data Element
+* [update_data_element](docs/sdks/dataelements/README.md#update_data_element) - Update Data Element
+* [delete_data_element](docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
+* [get_data_elements_by_filters](docs/sdks/dataelements/README.md#get_data_elements_by_filters) - Get Data Elements By Filters
+
+#### [datasources.rag](docs/sdks/rag/README.md)
 
 * [add_rag_config](docs/sdks/rag/README.md#add_rag_config) - Add Rag Config
 * [get_rag_config](docs/sdks/rag/README.md#get_rag_config) - Get Rag Config
@@ -328,7 +332,7 @@ with Meibelai(
 * [update_chunking_strategy](docs/sdks/rag/README.md#update_chunking_strategy) - Update Chunking Strategy
 * [delete_chunking_strategy](docs/sdks/rag/README.md#delete_chunking_strategy) - Delete Chunking Strategy
 
-### [tag](docs/sdks/tag/README.md)
+#### [datasources.tag](docs/sdks/tag/README.md)
 
 * [add_tag_config](docs/sdks/tag/README.md#add_tag_config) - Add Tag Config
 * [get_tag_config](docs/sdks/tag/README.md#get_tag_config) - Get Tag Config
@@ -344,6 +348,7 @@ with Meibelai(
 * [update_tag_column_info](docs/sdks/tag/README.md#update_tag_column_info) - Update Tag Column Info
 * [get_all_tag_column_info](docs/sdks/tag/README.md#get_all_tag_column_info) - Get All Tag Column Info
 * [delete_tag_column_info](docs/sdks/tag/README.md#delete_tag_column_info) - Delete Tag Column Info
+
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -369,7 +374,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.content.stream_upload_progress(upload_id="<id>")
+    res = m_client.datasources.content.stream_upload_progress(upload_id="<id>")
 
     with res as event_stream:
         for event in event_stream:
@@ -539,7 +544,7 @@ with Meibelai(
 ### Error Classes
 **Primary errors:**
 * [`MeibelaiError`](./src/meibelai/models/meibelaierror.py): The base class for HTTP error responses.
-  * [`HTTPValidationError`](./src/meibelai/models/httpvalidationerror.py): Validation Error. Status code `422`.
+  * [`HTTPValidationError`](./src/meibelai/models/httpvalidationerror.py): Validation Error. Status code `422`. *
 
 <details><summary>Less common errors (5)</summary>
 
@@ -555,6 +560,8 @@ with Meibelai(
 * [`ResponseValidationError`](./src/meibelai/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->

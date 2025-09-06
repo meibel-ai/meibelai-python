@@ -4,48 +4,34 @@ from .basesdk import BaseSDK
 from meibelai import models, utils
 from meibelai._hooks import HookContext
 from meibelai.types import OptionalNullable, UNSET
-from meibelai.utils import get_security_from_env
+from meibelai.utils import eventstreaming, get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, Mapping, Optional, Union
+from typing import Any, Mapping, Optional
 
 
-class Rag(BaseSDK):
-    r"""Operations with rag"""
+class MeibelaiContent(BaseSDK):
+    r"""Operations with content upload and management"""
 
-    def add_rag_config(
+    def list_datasource_content(
         self,
         *,
         datasource_id: str,
-        collection_id: str,
-        description: OptionalNullable[str] = UNSET,
-        extractor_model: OptionalNullable[
-            Union[models.ExtractorModel, models.ExtractorModelTypedDict]
-        ] = UNSET,
-        embedding_model: OptionalNullable[
-            Union[models.EmbeddingModel, models.EmbeddingModelTypedDict]
-        ] = UNSET,
-        sparse_embedding_model: OptionalNullable[
-            Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
-        ] = UNSET,
-        collect_metadata: OptionalNullable[bool] = UNSET,
-        metadata_options: OptionalNullable[
-            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
-        ] = UNSET,
+        prefix: OptionalNullable[str] = UNSET,
+        continuation_token: OptionalNullable[str] = UNSET,
+        limit: Optional[int] = 1000,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AddRagConfigResponse:
-        r"""Add Rag Config
+    ) -> models.ListContentResponse:
+        r"""List Content
+
+        Proxy list content request
 
         :param datasource_id:
-        :param collection_id:
-        :param description:
-        :param extractor_model:
-        :param embedding_model:
-        :param sparse_embedding_model:
-        :param collect_metadata:
-        :param metadata_options:
+        :param prefix:
+        :param continuation_token:
+        :param limit:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -61,267 +47,16 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddRagConfigRequest1(
+        request = models.ListDatasourceContentRequest(
             datasource_id=datasource_id,
-            add_rag_config_request=models.AddRagConfigRequest(
-                description=description,
-                collection_id=collection_id,
-                extractor_model=utils.get_pydantic_model(
-                    extractor_model, OptionalNullable[models.ExtractorModel]
-                ),
-                embedding_model=utils.get_pydantic_model(
-                    embedding_model, OptionalNullable[models.EmbeddingModel]
-                ),
-                sparse_embedding_model=utils.get_pydantic_model(
-                    sparse_embedding_model,
-                    OptionalNullable[models.SparseEmbeddingModel],
-                ),
-                collect_metadata=collect_metadata,
-                metadata_options=utils.get_pydantic_model(
-                    metadata_options, OptionalNullable[models.MetadataOptions]
-                ),
-            ),
-        )
-
-        req = self._build_request(
-            method="POST",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_rag_config_request,
-                False,
-                False,
-                "json",
-                models.AddRagConfigRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="addRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AddRagConfigResponse, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def add_rag_config_async(
-        self,
-        *,
-        datasource_id: str,
-        collection_id: str,
-        description: OptionalNullable[str] = UNSET,
-        extractor_model: OptionalNullable[
-            Union[models.ExtractorModel, models.ExtractorModelTypedDict]
-        ] = UNSET,
-        embedding_model: OptionalNullable[
-            Union[models.EmbeddingModel, models.EmbeddingModelTypedDict]
-        ] = UNSET,
-        sparse_embedding_model: OptionalNullable[
-            Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
-        ] = UNSET,
-        collect_metadata: OptionalNullable[bool] = UNSET,
-        metadata_options: OptionalNullable[
-            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
-        ] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AddRagConfigResponse:
-        r"""Add Rag Config
-
-        :param datasource_id:
-        :param collection_id:
-        :param description:
-        :param extractor_model:
-        :param embedding_model:
-        :param sparse_embedding_model:
-        :param collect_metadata:
-        :param metadata_options:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.AddRagConfigRequest1(
-            datasource_id=datasource_id,
-            add_rag_config_request=models.AddRagConfigRequest(
-                description=description,
-                collection_id=collection_id,
-                extractor_model=utils.get_pydantic_model(
-                    extractor_model, OptionalNullable[models.ExtractorModel]
-                ),
-                embedding_model=utils.get_pydantic_model(
-                    embedding_model, OptionalNullable[models.EmbeddingModel]
-                ),
-                sparse_embedding_model=utils.get_pydantic_model(
-                    sparse_embedding_model,
-                    OptionalNullable[models.SparseEmbeddingModel],
-                ),
-                collect_metadata=collect_metadata,
-                metadata_options=utils.get_pydantic_model(
-                    metadata_options, OptionalNullable[models.MetadataOptions]
-                ),
-            ),
-        )
-
-        req = self._build_request_async(
-            method="POST",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_rag_config_request,
-                False,
-                False,
-                "json",
-                models.AddRagConfigRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="addRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AddRagConfigResponse, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def get_rag_config(
-        self,
-        *,
-        datasource_id: str,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.RagConfig:
-        r"""Get Rag Config
-
-        :param datasource_id:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetRagConfigRequest(
-            datasource_id=datasource_id,
+            prefix=prefix,
+            continuation_token=continuation_token,
+            limit=limit,
         )
 
         req = self._build_request(
             method="GET",
-            path="/datasource/{datasource_id}/rag_config",
+            path="/datasource/{datasource_id}/content",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -351,7 +86,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getRagConfig",
+                operation_id="listDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -364,7 +99,7 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.RagConfig, http_res)
+            return unmarshal_json_response(models.ListContentResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -379,18 +114,26 @@ class Rag(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def get_rag_config_async(
+    async def list_datasource_content_async(
         self,
         *,
         datasource_id: str,
+        prefix: OptionalNullable[str] = UNSET,
+        continuation_token: OptionalNullable[str] = UNSET,
+        limit: Optional[int] = 1000,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.RagConfig:
-        r"""Get Rag Config
+    ) -> models.ListContentResponse:
+        r"""List Content
+
+        Proxy list content request
 
         :param datasource_id:
+        :param prefix:
+        :param continuation_token:
+        :param limit:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -406,13 +149,16 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetRagConfigRequest(
+        request = models.ListDatasourceContentRequest(
             datasource_id=datasource_id,
+            prefix=prefix,
+            continuation_token=continuation_token,
+            limit=limit,
         )
 
         req = self._build_request_async(
             method="GET",
-            path="/datasource/{datasource_id}/rag_config",
+            path="/datasource/{datasource_id}/content",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -442,7 +188,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getRagConfig",
+                operation_id="listDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -455,7 +201,7 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.RagConfig, http_res)
+            return unmarshal_json_response(models.ListContentResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -470,283 +216,7 @@ class Rag(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def update_rag_config(
-        self,
-        *,
-        datasource_id: str,
-        description: OptionalNullable[str] = UNSET,
-        collection_id: OptionalNullable[str] = UNSET,
-        extractor_model: OptionalNullable[
-            Union[models.ExtractorModel, models.ExtractorModelTypedDict]
-        ] = UNSET,
-        embedding_model: OptionalNullable[
-            Union[models.EmbeddingModel, models.EmbeddingModelTypedDict]
-        ] = UNSET,
-        sparse_embedding_model: OptionalNullable[
-            Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
-        ] = UNSET,
-        collect_metadata: OptionalNullable[bool] = UNSET,
-        metadata_options: OptionalNullable[
-            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
-        ] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.UpdateRagConfigResponse:
-        r"""Update Rag Config
-
-        :param datasource_id:
-        :param description:
-        :param collection_id:
-        :param extractor_model:
-        :param embedding_model:
-        :param sparse_embedding_model:
-        :param collect_metadata:
-        :param metadata_options:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.UpdateRagConfigRequest1(
-            datasource_id=datasource_id,
-            update_rag_config_request=models.UpdateRagConfigRequest(
-                description=description,
-                collection_id=collection_id,
-                extractor_model=utils.get_pydantic_model(
-                    extractor_model, OptionalNullable[models.ExtractorModel]
-                ),
-                embedding_model=utils.get_pydantic_model(
-                    embedding_model, OptionalNullable[models.EmbeddingModel]
-                ),
-                sparse_embedding_model=utils.get_pydantic_model(
-                    sparse_embedding_model,
-                    OptionalNullable[models.SparseEmbeddingModel],
-                ),
-                collect_metadata=collect_metadata,
-                metadata_options=utils.get_pydantic_model(
-                    metadata_options, OptionalNullable[models.MetadataOptions]
-                ),
-            ),
-        )
-
-        req = self._build_request(
-            method="PUT",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.update_rag_config_request,
-                False,
-                False,
-                "json",
-                models.UpdateRagConfigRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="updateRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.UpdateRagConfigResponse, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def update_rag_config_async(
-        self,
-        *,
-        datasource_id: str,
-        description: OptionalNullable[str] = UNSET,
-        collection_id: OptionalNullable[str] = UNSET,
-        extractor_model: OptionalNullable[
-            Union[models.ExtractorModel, models.ExtractorModelTypedDict]
-        ] = UNSET,
-        embedding_model: OptionalNullable[
-            Union[models.EmbeddingModel, models.EmbeddingModelTypedDict]
-        ] = UNSET,
-        sparse_embedding_model: OptionalNullable[
-            Union[models.SparseEmbeddingModel, models.SparseEmbeddingModelTypedDict]
-        ] = UNSET,
-        collect_metadata: OptionalNullable[bool] = UNSET,
-        metadata_options: OptionalNullable[
-            Union[models.MetadataOptions, models.MetadataOptionsTypedDict]
-        ] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.UpdateRagConfigResponse:
-        r"""Update Rag Config
-
-        :param datasource_id:
-        :param description:
-        :param collection_id:
-        :param extractor_model:
-        :param embedding_model:
-        :param sparse_embedding_model:
-        :param collect_metadata:
-        :param metadata_options:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.UpdateRagConfigRequest1(
-            datasource_id=datasource_id,
-            update_rag_config_request=models.UpdateRagConfigRequest(
-                description=description,
-                collection_id=collection_id,
-                extractor_model=utils.get_pydantic_model(
-                    extractor_model, OptionalNullable[models.ExtractorModel]
-                ),
-                embedding_model=utils.get_pydantic_model(
-                    embedding_model, OptionalNullable[models.EmbeddingModel]
-                ),
-                sparse_embedding_model=utils.get_pydantic_model(
-                    sparse_embedding_model,
-                    OptionalNullable[models.SparseEmbeddingModel],
-                ),
-                collect_metadata=collect_metadata,
-                metadata_options=utils.get_pydantic_model(
-                    metadata_options, OptionalNullable[models.MetadataOptions]
-                ),
-            ),
-        )
-
-        req = self._build_request_async(
-            method="PUT",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.update_rag_config_request,
-                False,
-                False,
-                "json",
-                models.UpdateRagConfigRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="updateRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.UpdateRagConfigResponse, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def delete_rag_config(
+    def upload_datasource_content(
         self,
         *,
         datasource_id: str,
@@ -754,8 +224,14 @@ class Rag(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> str:
-        r"""Delete Rag Config
+    ) -> models.UploadContentResponse:
+        r"""Upload Content
+
+        Proxy upload with zero-copy streaming.
+
+        This endpoint maintains the multipart form data structure and streams
+        it directly to the backend service without buffering files in memory.
+        The multipart parsing happens on the backend service side.
 
         :param datasource_id:
         :param retries: Override the default retry configuration for this method
@@ -773,264 +249,23 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteRagConfigRequest(
+        request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-        )
-
-        req = self._build_request(
-            method="DELETE",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="deleteRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(str, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def delete_rag_config_async(
-        self,
-        *,
-        datasource_id: str,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> str:
-        r"""Delete Rag Config
-
-        :param datasource_id:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.DeleteRagConfigRequest(
-            datasource_id=datasource_id,
-        )
-
-        req = self._build_request_async(
-            method="DELETE",
-            path="/datasource/{datasource_id}/rag_config",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=False,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="deleteRagConfig",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(str, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def add_chunking_strategy(
-        self,
-        *,
-        datasource_id: str,
-        code_splitter: OptionalNullable[
-            Union[models.CodeChunking, models.CodeChunkingTypedDict]
-        ] = UNSET,
-        html_node_parser: OptionalNullable[
-            Union[models.HTMLChunking, models.HTMLChunkingTypedDict]
-        ] = UNSET,
-        json_node_parser: OptionalNullable[
-            Union[models.JSONNodeChunking, models.JSONNodeChunkingTypedDict]
-        ] = UNSET,
-        markdown_node_parser: OptionalNullable[
-            Union[models.MarkdownNodeChunking, models.MarkdownNodeChunkingTypedDict]
-        ] = UNSET,
-        semantic_splitter_node_parser: OptionalNullable[
-            Union[models.SemanticChunking, models.SemanticChunkingTypedDict]
-        ] = UNSET,
-        sentence_splitter: OptionalNullable[
-            Union[models.SentenceChunking, models.SentenceChunkingTypedDict]
-        ] = UNSET,
-        token_text_splitter: OptionalNullable[
-            Union[models.TokenTextChunking, models.TokenTextChunkingTypedDict]
-        ] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AddChunkingStrategyResponse:
-        r"""Add Chunking Strategy
-
-        :param datasource_id:
-        :param code_splitter:
-        :param html_node_parser:
-        :param json_node_parser:
-        :param markdown_node_parser:
-        :param semantic_splitter_node_parser:
-        :param sentence_splitter:
-        :param token_text_splitter:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.AddChunkingStrategyRequest1(
-            datasource_id=datasource_id,
-            add_chunking_strategy_request=models.AddChunkingStrategyRequest(
-                code_splitter=utils.get_pydantic_model(
-                    code_splitter, OptionalNullable[models.CodeChunking]
-                ),
-                html_node_parser=utils.get_pydantic_model(
-                    html_node_parser, OptionalNullable[models.HTMLChunking]
-                ),
-                json_node_parser=utils.get_pydantic_model(
-                    json_node_parser, OptionalNullable[models.JSONNodeChunking]
-                ),
-                markdown_node_parser=utils.get_pydantic_model(
-                    markdown_node_parser, OptionalNullable[models.MarkdownNodeChunking]
-                ),
-                semantic_splitter_node_parser=utils.get_pydantic_model(
-                    semantic_splitter_node_parser,
-                    OptionalNullable[models.SemanticChunking],
-                ),
-                sentence_splitter=utils.get_pydantic_model(
-                    sentence_splitter, OptionalNullable[models.SentenceChunking]
-                ),
-                token_text_splitter=utils.get_pydantic_model(
-                    token_text_splitter, OptionalNullable[models.TokenTextChunking]
-                ),
-            ),
         )
 
         req = self._build_request(
             method="POST",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            path="/datasource/{datasource_id}/content",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=True,
+            request_body_required=False,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_chunking_strategy_request,
-                False,
-                False,
-                "json",
-                models.AddChunkingStrategyRequest,
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -1050,7 +285,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="addChunkingStrategy",
+                operation_id="uploadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1063,7 +298,7 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AddChunkingStrategyResponse, http_res)
+            return unmarshal_json_response(models.UploadContentResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -1078,46 +313,24 @@ class Rag(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def add_chunking_strategy_async(
+    async def upload_datasource_content_async(
         self,
         *,
         datasource_id: str,
-        code_splitter: OptionalNullable[
-            Union[models.CodeChunking, models.CodeChunkingTypedDict]
-        ] = UNSET,
-        html_node_parser: OptionalNullable[
-            Union[models.HTMLChunking, models.HTMLChunkingTypedDict]
-        ] = UNSET,
-        json_node_parser: OptionalNullable[
-            Union[models.JSONNodeChunking, models.JSONNodeChunkingTypedDict]
-        ] = UNSET,
-        markdown_node_parser: OptionalNullable[
-            Union[models.MarkdownNodeChunking, models.MarkdownNodeChunkingTypedDict]
-        ] = UNSET,
-        semantic_splitter_node_parser: OptionalNullable[
-            Union[models.SemanticChunking, models.SemanticChunkingTypedDict]
-        ] = UNSET,
-        sentence_splitter: OptionalNullable[
-            Union[models.SentenceChunking, models.SentenceChunkingTypedDict]
-        ] = UNSET,
-        token_text_splitter: OptionalNullable[
-            Union[models.TokenTextChunking, models.TokenTextChunkingTypedDict]
-        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AddChunkingStrategyResponse:
-        r"""Add Chunking Strategy
+    ) -> models.UploadContentResponse:
+        r"""Upload Content
+
+        Proxy upload with zero-copy streaming.
+
+        This endpoint maintains the multipart form data structure and streams
+        it directly to the backend service without buffering files in memory.
+        The multipart parsing happens on the backend service side.
 
         :param datasource_id:
-        :param code_splitter:
-        :param html_node_parser:
-        :param json_node_parser:
-        :param markdown_node_parser:
-        :param semantic_splitter_node_parser:
-        :param sentence_splitter:
-        :param token_text_splitter:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1133,54 +346,23 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddChunkingStrategyRequest1(
+        request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-            add_chunking_strategy_request=models.AddChunkingStrategyRequest(
-                code_splitter=utils.get_pydantic_model(
-                    code_splitter, OptionalNullable[models.CodeChunking]
-                ),
-                html_node_parser=utils.get_pydantic_model(
-                    html_node_parser, OptionalNullable[models.HTMLChunking]
-                ),
-                json_node_parser=utils.get_pydantic_model(
-                    json_node_parser, OptionalNullable[models.JSONNodeChunking]
-                ),
-                markdown_node_parser=utils.get_pydantic_model(
-                    markdown_node_parser, OptionalNullable[models.MarkdownNodeChunking]
-                ),
-                semantic_splitter_node_parser=utils.get_pydantic_model(
-                    semantic_splitter_node_parser,
-                    OptionalNullable[models.SemanticChunking],
-                ),
-                sentence_splitter=utils.get_pydantic_model(
-                    sentence_splitter, OptionalNullable[models.SentenceChunking]
-                ),
-                token_text_splitter=utils.get_pydantic_model(
-                    token_text_splitter, OptionalNullable[models.TokenTextChunking]
-                ),
-            ),
         )
 
         req = self._build_request_async(
             method="POST",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            path="/datasource/{datasource_id}/content",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=True,
+            request_body_required=False,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.add_chunking_strategy_request,
-                False,
-                False,
-                "json",
-                models.AddChunkingStrategyRequest,
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -1200,7 +382,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="addChunkingStrategy",
+                operation_id="uploadDatasourceContent",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1213,7 +395,7 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AddChunkingStrategyResponse, http_res)
+            return unmarshal_json_response(models.UploadContentResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -1228,18 +410,20 @@ class Rag(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def get_chunking_strategy(
+    def stream_upload_progress(
         self,
         *,
-        datasource_id: str,
+        upload_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.RagChunkingStrategy:
-        r"""Get Chunking Strategy
+    ) -> eventstreaming.EventStream[models.SSEEvent]:
+        r"""Stream upload progress events
 
-        :param datasource_id:
+        Subscribe to real-time upload progress updates via Server-Sent Events
+
+        :param upload_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1255,13 +439,13 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetChunkingStrategyRequest(
-            datasource_id=datasource_id,
+        request = models.StreamUploadProgressRequest(
+            upload_id=upload_id,
         )
 
         req = self._build_request(
             method="GET",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            path="/uploads/{upload_id}/progress",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1269,7 +453,7 @@ class Rag(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="text/event-stream",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
@@ -1291,46 +475,55 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getChunkingStrategy",
+                operation_id="streamUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["422", "4XX", "5XX"],
+            error_status_codes=["404", "422", "4XX", "5XX"],
+            stream=True,
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.RagChunkingStrategy, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStream(
+                http_res,
+                lambda raw: utils.unmarshal_json(raw, models.SSEEvent),
+                client_ref=self,
             )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = utils.stream_to_text(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
+        if utils.match_response(http_res, ["404", "4XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
 
-        raise models.APIError("Unexpected response received", http_res)
+        http_res_text = utils.stream_to_text(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    async def get_chunking_strategy_async(
+    async def stream_upload_progress_async(
         self,
         *,
-        datasource_id: str,
+        upload_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.RagChunkingStrategy:
-        r"""Get Chunking Strategy
+    ) -> eventstreaming.EventStreamAsync[models.SSEEvent]:
+        r"""Stream upload progress events
 
-        :param datasource_id:
+        Subscribe to real-time upload progress updates via Server-Sent Events
+
+        :param upload_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1346,13 +539,13 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.GetChunkingStrategyRequest(
-            datasource_id=datasource_id,
+        request = models.StreamUploadProgressRequest(
+            upload_id=upload_id,
         )
 
         req = self._build_request_async(
             method="GET",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            path="/uploads/{upload_id}/progress",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1360,7 +553,7 @@ class Rag(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="text/event-stream",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
@@ -1382,74 +575,57 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="getChunkingStrategy",
+                operation_id="streamUploadProgress",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
             ),
             request=req,
-            error_status_codes=["422", "4XX", "5XX"],
+            error_status_codes=["404", "422", "4XX", "5XX"],
+            stream=True,
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.RagChunkingStrategy, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStreamAsync(
+                http_res,
+                lambda raw: utils.unmarshal_json(raw, models.SSEEvent),
+                client_ref=self,
             )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
+        if utils.match_response(http_res, ["404", "4XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
 
-        raise models.APIError("Unexpected response received", http_res)
+        http_res_text = await utils.stream_to_text_async(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    def update_chunking_strategy(
+    def get_datasource_upload_status(
         self,
         *,
         datasource_id: str,
-        code_splitter: OptionalNullable[
-            Union[models.CodeChunking, models.CodeChunkingTypedDict]
-        ] = UNSET,
-        html_node_parser: OptionalNullable[
-            Union[models.HTMLChunking, models.HTMLChunkingTypedDict]
-        ] = UNSET,
-        json_node_parser: OptionalNullable[
-            Union[models.JSONNodeChunking, models.JSONNodeChunkingTypedDict]
-        ] = UNSET,
-        markdown_node_parser: OptionalNullable[
-            Union[models.MarkdownNodeChunking, models.MarkdownNodeChunkingTypedDict]
-        ] = UNSET,
-        semantic_splitter_node_parser: OptionalNullable[
-            Union[models.SemanticChunking, models.SemanticChunkingTypedDict]
-        ] = UNSET,
-        sentence_splitter: OptionalNullable[
-            Union[models.SentenceChunking, models.SentenceChunkingTypedDict]
-        ] = UNSET,
-        token_text_splitter: OptionalNullable[
-            Union[models.TokenTextChunking, models.TokenTextChunkingTypedDict]
-        ] = UNSET,
+        upload_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.UpdateChunkingStrategyResponse:
-        r"""Update Chunking Strategy
+    ) -> Any:
+        r"""Get Upload Status
+
+        Proxy upload status request
 
         :param datasource_id:
-        :param code_splitter:
-        :param html_node_parser:
-        :param json_node_parser:
-        :param markdown_node_parser:
-        :param semantic_splitter_node_parser:
-        :param sentence_splitter:
-        :param token_text_splitter:
+        :param upload_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1465,289 +641,14 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.UpdateChunkingStrategyRequest1(
+        request = models.GetDatasourceUploadStatusRequest(
             datasource_id=datasource_id,
-            update_chunking_strategy_request=models.UpdateChunkingStrategyRequest(
-                code_splitter=utils.get_pydantic_model(
-                    code_splitter, OptionalNullable[models.CodeChunking]
-                ),
-                html_node_parser=utils.get_pydantic_model(
-                    html_node_parser, OptionalNullable[models.HTMLChunking]
-                ),
-                json_node_parser=utils.get_pydantic_model(
-                    json_node_parser, OptionalNullable[models.JSONNodeChunking]
-                ),
-                markdown_node_parser=utils.get_pydantic_model(
-                    markdown_node_parser, OptionalNullable[models.MarkdownNodeChunking]
-                ),
-                semantic_splitter_node_parser=utils.get_pydantic_model(
-                    semantic_splitter_node_parser,
-                    OptionalNullable[models.SemanticChunking],
-                ),
-                sentence_splitter=utils.get_pydantic_model(
-                    sentence_splitter, OptionalNullable[models.SentenceChunking]
-                ),
-                token_text_splitter=utils.get_pydantic_model(
-                    token_text_splitter, OptionalNullable[models.TokenTextChunking]
-                ),
-            ),
+            upload_id=upload_id,
         )
 
         req = self._build_request(
-            method="PUT",
-            path="/datasource/{datasource_id}/chunking_strategy",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.update_chunking_strategy_request,
-                False,
-                False,
-                "json",
-                models.UpdateChunkingStrategyRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = self.do_request(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="updateChunkingStrategy",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.UpdateChunkingStrategyResponse, http_res
-            )
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = utils.stream_to_text(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    async def update_chunking_strategy_async(
-        self,
-        *,
-        datasource_id: str,
-        code_splitter: OptionalNullable[
-            Union[models.CodeChunking, models.CodeChunkingTypedDict]
-        ] = UNSET,
-        html_node_parser: OptionalNullable[
-            Union[models.HTMLChunking, models.HTMLChunkingTypedDict]
-        ] = UNSET,
-        json_node_parser: OptionalNullable[
-            Union[models.JSONNodeChunking, models.JSONNodeChunkingTypedDict]
-        ] = UNSET,
-        markdown_node_parser: OptionalNullable[
-            Union[models.MarkdownNodeChunking, models.MarkdownNodeChunkingTypedDict]
-        ] = UNSET,
-        semantic_splitter_node_parser: OptionalNullable[
-            Union[models.SemanticChunking, models.SemanticChunkingTypedDict]
-        ] = UNSET,
-        sentence_splitter: OptionalNullable[
-            Union[models.SentenceChunking, models.SentenceChunkingTypedDict]
-        ] = UNSET,
-        token_text_splitter: OptionalNullable[
-            Union[models.TokenTextChunking, models.TokenTextChunkingTypedDict]
-        ] = UNSET,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.UpdateChunkingStrategyResponse:
-        r"""Update Chunking Strategy
-
-        :param datasource_id:
-        :param code_splitter:
-        :param html_node_parser:
-        :param json_node_parser:
-        :param markdown_node_parser:
-        :param semantic_splitter_node_parser:
-        :param sentence_splitter:
-        :param token_text_splitter:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.UpdateChunkingStrategyRequest1(
-            datasource_id=datasource_id,
-            update_chunking_strategy_request=models.UpdateChunkingStrategyRequest(
-                code_splitter=utils.get_pydantic_model(
-                    code_splitter, OptionalNullable[models.CodeChunking]
-                ),
-                html_node_parser=utils.get_pydantic_model(
-                    html_node_parser, OptionalNullable[models.HTMLChunking]
-                ),
-                json_node_parser=utils.get_pydantic_model(
-                    json_node_parser, OptionalNullable[models.JSONNodeChunking]
-                ),
-                markdown_node_parser=utils.get_pydantic_model(
-                    markdown_node_parser, OptionalNullable[models.MarkdownNodeChunking]
-                ),
-                semantic_splitter_node_parser=utils.get_pydantic_model(
-                    semantic_splitter_node_parser,
-                    OptionalNullable[models.SemanticChunking],
-                ),
-                sentence_splitter=utils.get_pydantic_model(
-                    sentence_splitter, OptionalNullable[models.SentenceChunking]
-                ),
-                token_text_splitter=utils.get_pydantic_model(
-                    token_text_splitter, OptionalNullable[models.TokenTextChunking]
-                ),
-            ),
-        )
-
-        req = self._build_request_async(
-            method="PUT",
-            path="/datasource/{datasource_id}/chunking_strategy",
-            base_url=base_url,
-            url_variables=url_variables,
-            request=request,
-            request_body_required=True,
-            request_has_path_params=True,
-            request_has_query_params=True,
-            user_agent_header="user-agent",
-            accept_header_value="application/json",
-            http_headers=http_headers,
-            security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.update_chunking_strategy_request,
-                False,
-                False,
-                "json",
-                models.UpdateChunkingStrategyRequest,
-            ),
-            timeout_ms=timeout_ms,
-        )
-
-        if retries == UNSET:
-            if self.sdk_configuration.retry_config is not UNSET:
-                retries = self.sdk_configuration.retry_config
-            else:
-                retries = utils.RetryConfig(
-                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
-                )
-
-        retry_config = None
-        if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, ["5XX"])
-
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(
-                config=self.sdk_configuration,
-                base_url=base_url or "",
-                operation_id="updateChunkingStrategy",
-                oauth2_scopes=[],
-                security_source=get_security_from_env(
-                    self.sdk_configuration.security, models.Security
-                ),
-            ),
-            request=req,
-            error_status_codes=["422", "4XX", "5XX"],
-            retry_config=retry_config,
-        )
-
-        response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.UpdateChunkingStrategyResponse, http_res
-            )
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
-            )
-            raise models.HTTPValidationError(response_data, http_res)
-        if utils.match_response(http_res, "4XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-        if utils.match_response(http_res, "5XX", "*"):
-            http_res_text = await utils.stream_to_text_async(http_res)
-            raise models.APIError("API error occurred", http_res, http_res_text)
-
-        raise models.APIError("Unexpected response received", http_res)
-
-    def delete_chunking_strategy(
-        self,
-        *,
-        datasource_id: str,
-        retries: OptionalNullable[utils.RetryConfig] = UNSET,
-        server_url: Optional[str] = None,
-        timeout_ms: Optional[int] = None,
-        http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.DeleteChunkingStrategyResponse:
-        r"""Delete Chunking Strategy
-
-        :param datasource_id:
-        :param retries: Override the default retry configuration for this method
-        :param server_url: Override the default server URL for this method
-        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
-        :param http_headers: Additional headers to set or replace on requests.
-        """
-        base_url = None
-        url_variables = None
-        if timeout_ms is None:
-            timeout_ms = self.sdk_configuration.timeout_ms
-
-        if server_url is not None:
-            base_url = server_url
-        else:
-            base_url = self._get_url(base_url, url_variables)
-
-        request = models.DeleteChunkingStrategyRequest(
-            datasource_id=datasource_id,
-        )
-
-        req = self._build_request(
-            method="DELETE",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            method="GET",
+            path="/datasource/{datasource_id}/content/upload-status/{upload_id}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1777,7 +678,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="deleteChunkingStrategy",
+                operation_id="getDatasourceUploadStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1790,9 +691,7 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.DeleteChunkingStrategyResponse, http_res
-            )
+            return unmarshal_json_response(Any, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -1807,18 +706,22 @@ class Rag(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    async def delete_chunking_strategy_async(
+    async def get_datasource_upload_status_async(
         self,
         *,
         datasource_id: str,
+        upload_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.DeleteChunkingStrategyResponse:
-        r"""Delete Chunking Strategy
+    ) -> Any:
+        r"""Get Upload Status
+
+        Proxy upload status request
 
         :param datasource_id:
+        :param upload_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1834,13 +737,14 @@ class Rag(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.DeleteChunkingStrategyRequest(
+        request = models.GetDatasourceUploadStatusRequest(
             datasource_id=datasource_id,
+            upload_id=upload_id,
         )
 
         req = self._build_request_async(
-            method="DELETE",
-            path="/datasource/{datasource_id}/chunking_strategy",
+            method="GET",
+            path="/datasource/{datasource_id}/content/upload-status/{upload_id}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -1870,7 +774,7 @@ class Rag(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="deleteChunkingStrategy",
+                operation_id="getDatasourceUploadStatus",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1883,9 +787,789 @@ class Rag(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(
-                models.DeleteChunkingStrategyResponse, http_res
+            return unmarshal_json_response(Any, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
             )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def stream_datasource_upload_progress(
+        self,
+        *,
+        datasource_id: str,
+        upload_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> eventstreaming.EventStream[models.SSEEvent]:
+        r"""Stream upload progress events (legacy)
+
+        Subscribe to real-time upload progress updates via Server-Sent Events. Consider using /uploads/{upload_id}/progress instead.
+
+        :param datasource_id:
+        :param upload_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.StreamDatasourceUploadProgressRequest(
+            datasource_id=datasource_id,
+            upload_id=upload_id,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/content/upload-progress/{upload_id}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="text/event-stream",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="streamDatasourceUploadProgress",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["404", "422", "4XX", "5XX"],
+            stream=True,
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStream(
+                http_res,
+                lambda raw: utils.unmarshal_json(raw, models.SSEEvent),
+                client_ref=self,
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = utils.stream_to_text(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
+        if utils.match_response(http_res, ["404", "4XX"], "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        http_res_text = utils.stream_to_text(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)
+
+    async def stream_datasource_upload_progress_async(
+        self,
+        *,
+        datasource_id: str,
+        upload_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> eventstreaming.EventStreamAsync[models.SSEEvent]:
+        r"""Stream upload progress events (legacy)
+
+        Subscribe to real-time upload progress updates via Server-Sent Events. Consider using /uploads/{upload_id}/progress instead.
+
+        :param datasource_id:
+        :param upload_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.StreamDatasourceUploadProgressRequest(
+            datasource_id=datasource_id,
+            upload_id=upload_id,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/content/upload-progress/{upload_id}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="text/event-stream",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="streamDatasourceUploadProgress",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["404", "422", "4XX", "5XX"],
+            stream=True,
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStreamAsync(
+                http_res,
+                lambda raw: utils.unmarshal_json(raw, models.SSEEvent),
+                client_ref=self,
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
+        if utils.match_response(http_res, ["404", "4XX"], "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        http_res_text = await utils.stream_to_text_async(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)
+
+    def get_datasource_content_metadata(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetContentResponse:
+        r"""Get Content Metadata
+
+        Proxy content metadata request
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDatasourceContentMetadataRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/content/{path}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDatasourceContentMetadata",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(models.GetContentResponse, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def get_datasource_content_metadata_async(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetContentResponse:
+        r"""Get Content Metadata
+
+        Proxy content metadata request
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDatasourceContentMetadataRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/content/{path}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDatasourceContentMetadata",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(models.GetContentResponse, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def delete_datasource_content(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.DeleteContentResponse:
+        r"""Delete Content
+
+        Proxy delete request
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.DeleteDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request(
+            method="DELETE",
+            path="/datasource/{datasource_id}/content/{path}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="deleteDatasourceContent",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(models.DeleteContentResponse, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def delete_datasource_content_async(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.DeleteContentResponse:
+        r"""Delete Content
+
+        Proxy delete request
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.DeleteDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request_async(
+            method="DELETE",
+            path="/datasource/{datasource_id}/content/{path}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="deleteDatasourceContent",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(models.DeleteContentResponse, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def download_datasource_content(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> Any:
+        r"""Download Content
+
+        Proxy download request with streaming
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.DownloadDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/content/{path}/download",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="downloadDatasourceContent",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(Any, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def download_datasource_content_async(
+        self,
+        *,
+        datasource_id: str,
+        path: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> Any:
+        r"""Download Content
+
+        Proxy download request with streaming
+
+        :param datasource_id:
+        :param path:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.DownloadDatasourceContentRequest(
+            datasource_id=datasource_id,
+            path=path,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/content/{path}/download",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="downloadDatasourceContent",
+                oauth2_scopes=[],
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(Any, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res

@@ -1,7 +1,9 @@
 # Tag
-(*tag*)
+(*datasources.tag*)
 
 ## Overview
+
+Operations with tag
 
 ### Available Operations
 
@@ -36,7 +38,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="fray brace waltz interesting huzzah whether experience", logical_group_regex="<value>", db_path="<value>")
+    res = m_client.datasources.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="fray brace waltz interesting huzzah whether experience", logical_group_regex="<value>", db_path="<value>")
 
     # Handle response
     print(res)
@@ -81,7 +83,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_tag_config(datasource_id="<id>")
+    res = m_client.datasources.tag.get_tag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -122,7 +124,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_config(datasource_id="<id>", description="impostor inside immediately", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
+    res = m_client.datasources.tag.update_tag_config(datasource_id="<id>", description="impostor inside immediately", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
 
     # Handle response
     print(res)
@@ -167,7 +169,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.delete_tag_config(datasource_id="<id>")
+    res = m_client.datasources.tag.delete_tag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -208,7 +210,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>", description="hmph subdued large safe positively intellect intervention")
+    res = m_client.datasources.tag.add_tag_table_info(datasource_id="<id>", table_name="<value>", description="hmph subdued large safe positively intellect intervention")
 
     # Handle response
     print(res)
@@ -251,7 +253,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_tag_table_info(datasource_id="<id>", table_name="<value>")
+    res = m_client.datasources.tag.get_tag_table_info(datasource_id="<id>", table_name="<value>")
 
     # Handle response
     print(res)
@@ -293,7 +295,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>", description="reckon as before lovingly")
+    res = m_client.datasources.tag.update_tag_table_info(datasource_id="<id>", table_name="<value>", description="reckon as before lovingly")
 
     # Handle response
     print(res)
@@ -336,7 +338,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.delete_tag_table_info(datasource_id="<id>", table_name="<value>")
+    res = m_client.datasources.tag.delete_tag_table_info(datasource_id="<id>", table_name="<value>")
 
     # Handle response
     print(res)
@@ -378,7 +380,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_all_tag_table_info(datasource_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
+    res = m_client.datasources.tag.get_all_tag_table_info(datasource_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -423,7 +425,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="kiddingly ack cricket monumental feline indolent feminize casket cappelletti", dtype=None, is_key=True, is_indexed=False, engineered_features=[
+    res = m_client.datasources.tag.add_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="kiddingly ack cricket monumental feline indolent feminize casket cappelletti", dtype=None, is_key=True, is_indexed=False, engineered_features=[
         "<value 1>",
         "<value 2>",
     ])
@@ -474,7 +476,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
+    res = m_client.datasources.tag.get_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
 
     # Handle response
     print(res)
@@ -517,7 +519,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="gah ad though aw when disbar", dtype="<value>", is_key=None, is_indexed=False, engineered_features=[
+    res = m_client.datasources.tag.update_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>", description="gah ad though aw when disbar", dtype="<value>", is_key=None, is_indexed=False, engineered_features=[
         "<value 1>",
         "<value 2>",
     ])
@@ -568,7 +570,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
+    res = m_client.datasources.tag.get_all_tag_column_info(datasource_id="<id>", table_name="<value>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -614,7 +616,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.tag.delete_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
+    res = m_client.datasources.tag.delete_tag_column_info(datasource_id="<id>", table_name="<value>", column_name="<value>")
 
     # Handle response
     print(res)

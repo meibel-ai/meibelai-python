@@ -9,7 +9,9 @@ from meibelai.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Any, List, Mapping, Optional, Union
 
 
-class DataElements(BaseSDK):
+class Dataelements(BaseSDK):
+    r"""Operations with data elements"""
+
     def add_data_element(
         self,
         *,

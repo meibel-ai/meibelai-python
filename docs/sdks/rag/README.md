@@ -1,7 +1,9 @@
 # Rag
-(*rag*)
+(*datasources.rag*)
 
 ## Overview
+
+Operations with rag
 
 ### Available Operations
 
@@ -30,7 +32,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", description="which gloomy regarding rosemary provider vivaciously fat willow", extractor_model={
+    res = m_client.datasources.rag.add_rag_config(datasource_id="<id>", collection_id="<id>", description="which gloomy regarding rosemary provider vivaciously fat willow", extractor_model={
         "name": "<value>",
         "endpoint": "<value>",
     }, embedding_model={
@@ -94,7 +96,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.get_rag_config(datasource_id="<id>")
+    res = m_client.datasources.rag.get_rag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -135,7 +137,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_rag_config(datasource_id="<id>", description="scoop version advocate fondly darn who wherever respectful atop snack", collection_id="<id>", extractor_model={
+    res = m_client.datasources.rag.update_rag_config(datasource_id="<id>", description="scoop version advocate fondly darn who wherever respectful atop snack", collection_id="<id>", extractor_model={
         "name": "<value>",
         "endpoint": "<value>",
     }, embedding_model={
@@ -199,7 +201,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.delete_rag_config(datasource_id="<id>")
+    res = m_client.datasources.rag.delete_rag_config(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -240,7 +242,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.add_chunking_strategy(datasource_id="<id>", code_splitter={
+    res = m_client.datasources.rag.add_chunking_strategy(datasource_id="<id>", code_splitter={
         "chunk_lines": 638565,
         "chunk_lines_overlap": 656087,
         "max_chars": 448427,
@@ -324,7 +326,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.get_chunking_strategy(datasource_id="<id>")
+    res = m_client.datasources.rag.get_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -365,7 +367,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.update_chunking_strategy(datasource_id="<id>", code_splitter={
+    res = m_client.datasources.rag.update_chunking_strategy(datasource_id="<id>", code_splitter={
         "chunk_lines": 54839,
         "chunk_lines_overlap": None,
         "max_chars": 255540,
@@ -448,7 +450,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.rag.delete_chunking_strategy(datasource_id="<id>")
+    res = m_client.datasources.rag.delete_chunking_strategy(datasource_id="<id>")
 
     # Handle response
     print(res)

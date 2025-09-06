@@ -17,10 +17,7 @@ import weakref
 if TYPE_CHECKING:
     from meibelai.blueprint_instances import BlueprintInstances
     from meibelai.content import Content
-    from meibelai.data_elements import DataElements
     from meibelai.datasources import Datasources
-    from meibelai.rag import Rag
-    from meibelai.tag import Tag
 
 
 class Meibelai(BaseSDK):
@@ -30,16 +27,12 @@ class Meibelai(BaseSDK):
     """
 
     datasources: "Datasources"
-    data_elements: "DataElements"
-    tag: "Tag"
-    rag: "Rag"
+    r"""Operations with datasources"""
     content: "Content"
     blueprint_instances: "BlueprintInstances"
+    r"""Operations with blueprint_instances"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
-        "data_elements": ("meibelai.data_elements", "DataElements"),
-        "tag": ("meibelai.tag", "Tag"),
-        "rag": ("meibelai.rag", "Rag"),
         "content": ("meibelai.content", "Content"),
         "blueprint_instances": ("meibelai.blueprint_instances", "BlueprintInstances"),
     }
