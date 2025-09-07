@@ -5,8 +5,8 @@ management:
   docVersion: 0.2.0
   speakeasyVersion: 1.611.1
   generationVersion: 2.694.1
-  releaseVersion: 0.16.0
-  configChecksum: d686c19c4c1be6105b6e8b382af0736f
+  releaseVersion: 0.16.1
+  configChecksum: 4af91b385ed104c1c977e384bc8582c4
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -2347,4 +2347,3 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Python SDK Changes Detected:\n* `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.datasources.content.download_datasource_content()`: \n  *  `response.status[200]` **Changed** **Breaking** :warning:\n  *  `error.status[404]` **Added**\n* `meibelai.datasources.content.get_datasource_upload_status()`:  `error.status[404]` **Added**\n* `meibelai.datasources.content.get_datasource_content_metadata()`:  `error.status[404]` **Added**\n* `meibelai.datasources.content.delete_datasource_content()`:  `error.status[404]` **Added**\n"
