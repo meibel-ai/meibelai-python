@@ -1,5 +1,5 @@
-# BlueprintInstances
-(*blueprint_instances*)
+# Instances
+(*blueprints.instances*)
 
 ## Overview
 
@@ -21,10 +21,6 @@ Operations with blueprint_instances
 * [get_event_by_blueprint_instance](#get_event_by_blueprint_instance) - Get Event By Blueprint Instance
 * [create_event_by_blueprint_instance_id](#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
 * [get_events_by_blueprint_instance](#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
-* [start_blueprint_instance](#start_blueprint_instance) - Start Blueprint Instance
-* [cancel_blueprint_instance](#cancel_blueprint_instance) - Cancel Blueprint Instance
-* [send_signal](#send_signal) - Send Signal
-* [query_workflow](#query_workflow) - Query Workflow
 
 ## add_blueprint_instance
 
@@ -42,7 +38,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_blueprint_instance(blueprint_id="<id>", workflow_type="<value>", task_queue="<value>", instance_metadata={
+    res = m_client.blueprints.instances.add_blueprint_instance(blueprint_id="<id>", workflow_type="<value>", task_queue="<value>", instance_metadata={
         "key": "<value>",
         "key1": "<value>",
     }, parent_id="<id>")
@@ -90,7 +86,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10, sort_by="<value>", sort_order="<value>")
+    res = m_client.blueprints.instances.get_all_blueprint_instances(include_children=False, include_activities=False, include_events=False, offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -137,7 +133,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_blueprint_instance(blueprint_instance_id="<id>", include_children=False, include_activities=False, include_events=False)
+    res = m_client.blueprints.instances.get_blueprint_instance(blueprint_instance_id="<id>", include_children=False, include_activities=False, include_events=False)
 
     # Handle response
     print(res)
@@ -181,7 +177,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.delete_blueprint_instance(blueprint_instance_id="<id>")
+    m_client.blueprints.instances.delete_blueprint_instance(blueprint_instance_id="<id>")
 
     # Use the SDK ...
 
@@ -218,7 +214,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.FAILED, workflow_run_id="<id>")
+    m_client.blueprints.instances.update_blueprint_instance_status(blueprint_instance_id="<id>", updated_status_value=meibelai.BlueprintInstanceStatus.FAILED, workflow_run_id="<id>")
 
     # Use the SDK ...
 
@@ -256,7 +252,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.complete_blueprint_instance(blueprint_instance_id="<id>", result="<value>")
+    res = m_client.blueprints.instances.complete_blueprint_instance(blueprint_instance_id="<id>", result="<value>")
 
     # Handle response
     print(res)
@@ -298,7 +294,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.fail_blueprint_instance(blueprint_instance_id="<id>", error="<value>", error_details={
+    res = m_client.blueprints.instances.fail_blueprint_instance(blueprint_instance_id="<id>", error="<value>", error_details={
         "key": "<value>",
     })
 
@@ -343,7 +339,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>", input_data={
+    res = m_client.blueprints.instances.add_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_type="<value>", input_data={
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
@@ -396,7 +392,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_id="<id>")
+    res = m_client.blueprints.instances.get_activity_by_blueprint_instance(blueprint_instance_id="<id>", activity_id="<id>")
 
     # Handle response
     print(res)
@@ -438,7 +434,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order=None)
+    res = m_client.blueprints.instances.get_activities_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order=None)
 
     # Handle response
     print(res)
@@ -484,7 +480,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    m_client.blueprint_instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.WAITING)
+    m_client.blueprints.instances.update_activity_status(blueprint_instance_id="<id>", activity_id="<id>", updated_status_value=meibelai.ActivityStatus.WAITING)
 
     # Use the SDK ...
 
@@ -522,7 +518,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_event_by_blueprint_instance(blueprint_instance_id="<id>", event_id="<id>")
+    res = m_client.blueprints.instances.get_event_by_blueprint_instance(blueprint_instance_id="<id>", event_id="<id>")
 
     # Handle response
     print(res)
@@ -564,7 +560,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>", activity_id=None, details={
+    res = m_client.blueprints.instances.create_event_by_blueprint_instance_id(blueprint_instance_id="<id>", event_name="<value>", activity_id=None, details={
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
@@ -616,7 +612,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprint_instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
+    res = m_client.blueprints.instances.get_events_by_blueprint_instance(blueprint_instance_id="<id>", offset=0, limit=10, sort_by="<value>", sort_order="<value>")
 
     # Handle response
     print(res)
@@ -637,188 +633,6 @@ with Meibelai(
 ### Response
 
 **[models.GetEventsResponse](../../models/geteventsresponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## start_blueprint_instance
-
-Start Blueprint Instance
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="startBlueprintInstance" method="post" path="/{blueprint_instance_id}/start-instance" -->
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.blueprint_instances.start_blueprint_instance(blueprint_instance_id="<id>", workflow_args=None, workflow_kwargs={
-        "key": "<value>",
-        "key1": "<value>",
-        "key2": "<value>",
-    })
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `workflow_args`                                                     | List[*Any*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `workflow_kwargs`                                                   | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## cancel_blueprint_instance
-
-Cancel Blueprint Instance
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="cancelBlueprintInstance" method="post" path="/{blueprint_instance_id}/cancel-instance" -->
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.blueprint_instances.cancel_blueprint_instance(blueprint_instance_id="<id>")
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## send_signal
-
-Send Signal
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="sendSignal" method="post" path="/{blueprint_instance_id}/signals/{signal_name}" -->
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.blueprint_instances.send_signal(blueprint_instance_id="<id>", signal_name="<value>", request_body=[
-        "<value 1>",
-        "<value 2>",
-        "<value 3>",
-    ])
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `signal_name`                                                       | *str*                                                               | :heavy_check_mark:                                                  | Name of the signal to send                                          |
-| `request_body`                                                      | List[*Any*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
-## query_workflow
-
-Query Workflow
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="queryWorkflow" method="post" path="/{blueprint_instance_id}/queries/{query_name}" -->
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.blueprint_instances.query_workflow(blueprint_instance_id="<id>", query_name="<value>", request_body=[
-        "<value 1>",
-        "<value 2>",
-        "<value 3>",
-    ])
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
-| `query_name`                                                        | *str*                                                               | :heavy_check_mark:                                                  | Name of the query to execute                                        |
-| `request_body`                                                      | List[*Any*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
 
 ### Errors
 

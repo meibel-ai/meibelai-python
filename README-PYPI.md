@@ -267,26 +267,41 @@ with Meibelai(
 <details open>
 <summary>Available methods</summary>
 
-### [blueprint_instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md)
+### [blueprints](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md)
 
-* [add_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#add_blueprint_instance) - Add Blueprint Instance
-* [get_all_blueprint_instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_all_blueprint_instances) - Get All Blueprint Instances
-* [get_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_blueprint_instance) - Get Blueprint Instance
-* [delete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#delete_blueprint_instance) - Delete Blueprint Instance
-* [update_blueprint_instance_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#update_blueprint_instance_status) - Update Blueprint Instance Status
-* [complete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#complete_blueprint_instance) - Complete a Blueprint Instance
-* [fail_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#fail_blueprint_instance) - Fail a Blueprint Instance
-* [add_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#add_activity_by_blueprint_instance) - Add Activity By Blueprint Instance
-* [get_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_activity_by_blueprint_instance) - Get Activity By Blueprint Instance
-* [get_activities_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_activities_by_blueprint_instance) - Get Activities By Blueprint Instance
-* [update_activity_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#update_activity_status) - Update Activity Status
-* [get_event_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_event_by_blueprint_instance) - Get Event By Blueprint Instance
-* [create_event_by_blueprint_instance_id](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
-* [get_events_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
-* [start_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#start_blueprint_instance) - Start Blueprint Instance
-* [cancel_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
-* [send_signal](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#send_signal) - Send Signal
-* [query_workflow](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprintinstances/README.md#query_workflow) - Query Workflow
+* [get_blueprints](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#get_blueprints) - Get Blueprints
+* [create_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#create_blueprint) - Create Blueprint
+* [get_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#get_blueprint) - Get Blueprint
+* [update_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#update_blueprint) - Update Blueprint
+* [delete_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#delete_blueprint) - Delete Blueprint
+* [create_blueprint_task](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#create_blueprint_task) - Create Blueprint Task
+* [get_blueprint_tasks](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#get_blueprint_tasks) - Get Blueprint Tasks
+* [update_blueprint_task](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#update_blueprint_task) - Update Blueprint Task
+* [delete_blueprint_task](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#delete_blueprint_task) - Delete Blueprint Task
+
+#### [blueprints.executions](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md)
+
+* [start_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#start_blueprint_instance) - Start Blueprint Instance
+* [cancel_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
+* [send_signal](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_signal) - Send Signal
+* [query_workflow](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#query_workflow) - Query Workflow
+
+#### [blueprints.instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md)
+
+* [add_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#add_blueprint_instance) - Add Blueprint Instance
+* [get_all_blueprint_instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_all_blueprint_instances) - Get All Blueprint Instances
+* [get_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_blueprint_instance) - Get Blueprint Instance
+* [delete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#delete_blueprint_instance) - Delete Blueprint Instance
+* [update_blueprint_instance_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#update_blueprint_instance_status) - Update Blueprint Instance Status
+* [complete_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#complete_blueprint_instance) - Complete a Blueprint Instance
+* [fail_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#fail_blueprint_instance) - Fail a Blueprint Instance
+* [add_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#add_activity_by_blueprint_instance) - Add Activity By Blueprint Instance
+* [get_activity_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_activity_by_blueprint_instance) - Get Activity By Blueprint Instance
+* [get_activities_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_activities_by_blueprint_instance) - Get Activities By Blueprint Instance
+* [update_activity_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#update_activity_status) - Update Activity Status
+* [get_event_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_event_by_blueprint_instance) - Get Event By Blueprint Instance
+* [create_event_by_blueprint_instance_id](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
+* [get_events_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
 
 ### [content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md)
 

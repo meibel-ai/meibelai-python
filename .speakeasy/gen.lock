@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 2afd1f21b6242e3a4ce86517a0423229
+  docChecksum: 1ad0d1215ec2a8bf807727823d51eaf1
   docVersion: 0.2.0
-  speakeasyVersion: 1.611.0
+  speakeasyVersion: 1.611.1
   generationVersion: 2.694.1
-  releaseVersion: 0.15.5
-  configChecksum: 0c2331a46bb53f49b7fe0fea8158756a
+  releaseVersion: 0.15.6
+  configChecksum: 5d4e2a5e922b6b5bb6c7e668e3b71ca4
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -46,6 +46,9 @@ generatedFiles:
   - docs/models/addactivityresponse.md
   - docs/models/addblueprintinstancerequest.md
   - docs/models/addblueprintinstanceresponse.md
+  - docs/models/addblueprintrequest.md
+  - docs/models/addblueprintresponse.md
+  - docs/models/addblueprinttaskrequest.md
   - docs/models/addchunkingstrategyrequest.md
   - docs/models/addchunkingstrategyrequest1.md
   - docs/models/addchunkingstrategyresponse.md
@@ -69,6 +72,7 @@ generatedFiles:
   - docs/models/addtagtableresponse.md
   - docs/models/alloweddataelementfilterkeys.md
   - docs/models/basicwebauth.md
+  - docs/models/blueprint.md
   - docs/models/blueprintinstance.md
   - docs/models/blueprintinstancestatus.md
   - docs/models/cancelblueprintinstancerequest.md
@@ -77,6 +81,7 @@ generatedFiles:
   - docs/models/completeblueprintinstancerequest1.md
   - docs/models/contentitem.md
   - docs/models/contenttype.md
+  - docs/models/createblueprinttaskrequest.md
   - docs/models/createeventbyblueprintinstanceidrequest.md
   - docs/models/customeventrequest.md
   - docs/models/data.md
@@ -88,6 +93,8 @@ generatedFiles:
   - docs/models/datasource.md
   - docs/models/datasourcewebconfig.md
   - docs/models/deleteblueprintinstancerequest.md
+  - docs/models/deleteblueprintrequest.md
+  - docs/models/deleteblueprinttaskrequest.md
   - docs/models/deletechunkingstrategyrequest.md
   - docs/models/deletechunkingstrategyresponse.md
   - docs/models/deletecontentresponse.md
@@ -102,6 +109,7 @@ generatedFiles:
   - docs/models/deletetagtableinforequest.md
   - docs/models/deletetagtableresponse.md
   - docs/models/downloaddatasourcecontentrequest.md
+  - docs/models/dsldefinition.md
   - docs/models/embeddingmodel.md
   - docs/models/event.md
   - docs/models/eventtype.md
@@ -117,6 +125,9 @@ generatedFiles:
   - docs/models/getalltagtableinforequest.md
   - docs/models/getblueprintinstancerequest.md
   - docs/models/getblueprintinstancesresponse.md
+  - docs/models/getblueprintrequest.md
+  - docs/models/getblueprintsresponse.md
+  - docs/models/getblueprinttasksrequest.md
   - docs/models/getchunkingstrategyrequest.md
   - docs/models/getcontentresponse.md
   - docs/models/getdataelementrequest.md
@@ -163,6 +174,10 @@ generatedFiles:
   - docs/models/tokentextchunking.md
   - docs/models/updateactivitystatusrequest.md
   - docs/models/updateblueprintinstancestatusrequest.md
+  - docs/models/updateblueprintrequest.md
+  - docs/models/updateblueprintrequest1.md
+  - docs/models/updateblueprinttaskrequest.md
+  - docs/models/updateblueprinttaskrequest1.md
   - docs/models/updatechunkingstrategyrequest.md
   - docs/models/updatechunkingstrategyrequest1.md
   - docs/models/updatechunkingstrategyresponse.md
@@ -189,10 +204,12 @@ generatedFiles:
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
   - docs/models/webdomain.md
-  - docs/sdks/blueprintinstances/README.md
+  - docs/sdks/blueprints/README.md
   - docs/sdks/content/README.md
   - docs/sdks/dataelements/README.md
   - docs/sdks/datasources/README.md
+  - docs/sdks/executions/README.md
+  - docs/sdks/instances/README.md
   - docs/sdks/meibelai/README.md
   - docs/sdks/meibelaicontent/README.md
   - docs/sdks/rag/README.md
@@ -209,11 +226,13 @@ generatedFiles:
   - src/meibelai/_hooks/types.py
   - src/meibelai/_version.py
   - src/meibelai/basesdk.py
-  - src/meibelai/blueprint_instances.py
+  - src/meibelai/blueprints.py
   - src/meibelai/content.py
   - src/meibelai/dataelements.py
   - src/meibelai/datasources.py
+  - src/meibelai/executions.py
   - src/meibelai/httpclient.py
+  - src/meibelai/instances.py
   - src/meibelai/meibelai_content.py
   - src/meibelai/models/__init__.py
   - src/meibelai/models/activity.py
@@ -223,6 +242,9 @@ generatedFiles:
   - src/meibelai/models/addactivityresponse.py
   - src/meibelai/models/addblueprintinstancerequest.py
   - src/meibelai/models/addblueprintinstanceresponse.py
+  - src/meibelai/models/addblueprintrequest.py
+  - src/meibelai/models/addblueprintresponse.py
+  - src/meibelai/models/addblueprinttaskrequest.py
   - src/meibelai/models/addchunkingstrategyop.py
   - src/meibelai/models/addchunkingstrategyrequest.py
   - src/meibelai/models/addchunkingstrategyresponse.py
@@ -247,6 +269,7 @@ generatedFiles:
   - src/meibelai/models/alloweddataelementfilterkeys.py
   - src/meibelai/models/apierror.py
   - src/meibelai/models/basicwebauth.py
+  - src/meibelai/models/blueprint.py
   - src/meibelai/models/blueprintinstance.py
   - src/meibelai/models/blueprintinstancestatus.py
   - src/meibelai/models/cancelblueprintinstanceop.py
@@ -255,6 +278,7 @@ generatedFiles:
   - src/meibelai/models/completeblueprintinstancerequest.py
   - src/meibelai/models/contentitem.py
   - src/meibelai/models/contenttype.py
+  - src/meibelai/models/createblueprinttaskop.py
   - src/meibelai/models/createeventbyblueprintinstanceidop.py
   - src/meibelai/models/customeventrequest.py
   - src/meibelai/models/dataelement.py
@@ -265,6 +289,8 @@ generatedFiles:
   - src/meibelai/models/datasource.py
   - src/meibelai/models/datasourcewebconfig.py
   - src/meibelai/models/deleteblueprintinstanceop.py
+  - src/meibelai/models/deleteblueprintop.py
+  - src/meibelai/models/deleteblueprinttaskop.py
   - src/meibelai/models/deletechunkingstrategyop.py
   - src/meibelai/models/deletechunkingstrategyresponse.py
   - src/meibelai/models/deletecontentresponse.py
@@ -279,6 +305,7 @@ generatedFiles:
   - src/meibelai/models/deletetagtableinfoop.py
   - src/meibelai/models/deletetagtableresponse.py
   - src/meibelai/models/downloaddatasourcecontentop.py
+  - src/meibelai/models/dsldefinition.py
   - src/meibelai/models/embeddingmodel.py
   - src/meibelai/models/event.py
   - src/meibelai/models/eventtype.py
@@ -294,6 +321,9 @@ generatedFiles:
   - src/meibelai/models/getalltagtableinfoop.py
   - src/meibelai/models/getblueprintinstanceop.py
   - src/meibelai/models/getblueprintinstancesresponse.py
+  - src/meibelai/models/getblueprintop.py
+  - src/meibelai/models/getblueprintsresponse.py
+  - src/meibelai/models/getblueprinttasksop.py
   - src/meibelai/models/getchunkingstrategyop.py
   - src/meibelai/models/getcontentresponse.py
   - src/meibelai/models/getdataelementop.py
@@ -341,6 +371,10 @@ generatedFiles:
   - src/meibelai/models/tokentextchunking.py
   - src/meibelai/models/updateactivitystatusop.py
   - src/meibelai/models/updateblueprintinstancestatusop.py
+  - src/meibelai/models/updateblueprintop.py
+  - src/meibelai/models/updateblueprintrequest.py
+  - src/meibelai/models/updateblueprinttaskop.py
+  - src/meibelai/models/updateblueprinttaskrequest.py
   - src/meibelai/models/updatechunkingstrategyop.py
   - src/meibelai/models/updatechunkingstrategyrequest.py
   - src/meibelai/models/updatechunkingstrategyresponse.py
@@ -2208,121 +2242,146 @@ examples:
           application/json: "<value>"
         "422":
           application/json: {"detail": [{"loc": [581499], "msg": "<value>", "type": "<value>"}]}
+  getBlueprints:
+    speakeasy-default-get-blueprints:
+      responses:
+        "200":
+          application/json: {"data": [{"id": "<id>", "name": "<value>", "version": "<value>", "description": null, "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2023-04-26T01:38:27.798Z", "updated_at": "2025-02-12T17:31:25.478Z", "customer_id": "<id>", "project_id": "<id>"}]}
+        "422":
+          application/json: {"detail": [{"loc": [421867], "msg": "<value>", "type": "<value>"}]}
+  createBlueprint:
+    speakeasy-default-create-blueprint:
+      requestBody:
+        application/json: {"name": "<value>", "version": "<value>", "description": "hoot mmm tinted wealthy brr as inasmuch malfunction", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+      responses:
+        "201":
+          application/json: {"id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  getBlueprint:
+    speakeasy-default-get-blueprint:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "version": null, "description": "bran convoke sans ripe sanity tenderly pave er across", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2024-05-12T13:12:54.876Z", "updated_at": "2024-04-05T23:10:34.404Z", "customer_id": "<id>", "project_id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  updateBlueprint:
+    speakeasy-default-update-blueprint:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>", "version": null, "description": "ride sometimes worth although into whenever indeed", "dsl_definition": null, "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "version": "<value>", "description": "daughter psst strange absent furthermore lecture numb shore king", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": null, "created_by": "<value>", "updated_by": "<value>", "created_at": "2025-02-05T03:30:50.854Z", "updated_at": "2025-07-15T18:46:17.464Z", "customer_id": "<id>", "project_id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  deleteBlueprint:
+    speakeasy-default-delete-blueprint:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [571367], "msg": "<value>", "type": "<value>"}]}
+  createBlueprintTask:
+    speakeasy-default-create-blueprint-task:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>", "description": "loyally upon around ick near miserably", "input_schema": {"key": "<value>", "key1": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}}
+      responses:
+        "201":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  getBlueprintTasks:
+    speakeasy-default-get-blueprint-tasks:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  updateBlueprintTask:
+    speakeasy-default-update-blueprint-task:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+          task_id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>", "description": "artistic degenerate knit chow obnoxiously loosely instead sleepily below", "input_schema": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}}
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  deleteBlueprintTask:
+    speakeasy-default-delete-blueprint-task:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+          task_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Python SDK Changes Detected:
-  * `meibelai.datasources.add_datasource()`: **Added**
-  * `meibelai.datasources.get_datasource()`: **Added**
-  * `meibelai.datasources.update_datasource()`: **Added**
-  * `meibelai.datasources.delete_datasource()`: **Added**
-  * `meibelai.datasources.get_all_datasource_ids()`: **Added**
-  * `meibelai.datasources.dataelements.add_data_element()`: **Added**
-  * `meibelai.datasources.dataelements.get_data_elements()`: **Added**
-  * `meibelai.datasources.dataelements.get_data_element()`: **Added**
-  * `meibelai.datasources.dataelements.update_data_element()`: **Added**
-  * `meibelai.datasources.dataelements.delete_data_element()`: **Added**
-  * `meibelai.datasources.dataelements.get_data_elements_by_filters()`: **Added**
-  * `meibelai.datasources.tag.add_tag_config()`: **Added**
-  * `meibelai.datasources.tag.get_tag_config()`: **Added**
-  * `meibelai.datasources.tag.update_tag_config()`: **Added**
-  * `meibelai.datasources.tag.delete_tag_config()`: **Added**
-  * `meibelai.datasources.tag.add_tag_table_info()`: **Added**
-  * `meibelai.datasources.tag.get_tag_table_info()`: **Added**
-  * `meibelai.datasources.tag.update_tag_table_info()`: **Added**
-  * `meibelai.datasources.tag.delete_tag_table_info()`: **Added**
-  * `meibelai.datasources.tag.get_all_tag_table_info()`: **Added**
-  * `meibelai.datasources.tag.add_tag_column_info()`: **Added**
-  * `meibelai.datasources.tag.get_tag_column_info()`: **Added**
-  * `meibelai.datasources.tag.update_tag_column_info()`: **Added**
-  * `meibelai.datasources.tag.get_all_tag_column_info()`: **Added**
-  * `meibelai.datasources.tag.delete_tag_column_info()`: **Added**
-  * `meibelai.datasources.rag.add_rag_config()`: **Added**
-  * `meibelai.datasources.rag.get_rag_config()`: **Added**
-  * `meibelai.datasources.rag.update_rag_config()`: **Added**
-  * `meibelai.datasources.rag.delete_rag_config()`: **Added**
-  * `meibelai.datasources.rag.add_chunking_strategy()`: **Added**
-  * `meibelai.datasources.rag.get_chunking_strategy()`: **Added**
-  * `meibelai.datasources.rag.update_chunking_strategy()`: **Added**
-  * `meibelai.datasources.rag.delete_chunking_strategy()`: **Added**
-  * `meibelai.datasources.content.list_datasource_content()`: **Added**
-  * `meibelai.datasources.content.upload_datasource_content()`: **Added**
-  * `meibelai.datasources.content.get_datasource_upload_status()`: **Added**
-  * `meibelai.datasources.content.get_datasource_content_metadata()`: **Added**
-  * `meibelai.datasources.content.delete_datasource_content()`: **Added**
-  * `meibelai.datasources.content.download_datasource_content()`: **Added**
-  * `meibelai.blueprint-instances.add_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.get_all_blueprint_instances()`: **Added**
-  * `meibelai.blueprint-instances.get_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.delete_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.update_blueprint_instance_status()`: **Added**
-  * `meibelai.blueprint-instances.complete_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.fail_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.add_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.get_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.get_activities_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.update_activity_status()`: **Added**
-  * `meibelai.blueprint-instances.get_event_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.create_event_by_blueprint_instance_id()`: **Added**
-  * `meibelai.blueprint-instances.get_events_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.start_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.cancel_blueprint_instance()`: **Added**
-  * `meibelai.blueprint-instances.send_signal()`: **Added**
-  * `meibelai.blueprint-instances.query_workflow()`: **Added**
-  * `meibelai.datasources.add_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.update_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.delete_datasource()`: **Deleted** **Breaking** :warning:
-  * `meibelai.datasources.get_all_datasource_ids()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_elements()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.add_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.update_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.delete_data_element()`: **Deleted** **Breaking** :warning:
-  * `meibelai.data_elements.get_data_elements_by_filters()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_table_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.update_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.add_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.get_all_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.tag.delete_tag_column_info()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.get_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.update_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.add_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.delete_rag_config()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.get_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.update_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.add_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.rag.delete_chunking_strategy()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.list_datasource_content()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.upload_datasource_content()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.get_datasource_upload_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.get_datasource_content_metadata()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.delete_datasource_content()`: **Deleted** **Breaking** :warning:
-  * `meibelai.content.download_datasource_content()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_all_blueprint_instances()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.delete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_blueprint_instance_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.complete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.fail_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.add_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_activities_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.update_activity_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_event_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.create_event_by_blueprint_instance_id()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.get_events_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.send_signal()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint_instances.query_workflow()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprints.get_blueprints()`: **Added**
+  * `meibelai.blueprints.create_blueprint()`: **Added**
+  * `meibelai.blueprints.get_blueprint()`: **Added**
+  * `meibelai.blueprints.update_blueprint()`: **Added**
+  * `meibelai.blueprints.delete_blueprint()`: **Added**
+  * `meibelai.blueprints.create_blueprint_task()`: **Added**
+  * `meibelai.blueprints.get_blueprint_tasks()`: **Added**
+  * `meibelai.blueprints.update_blueprint_task()`: **Added**
+  * `meibelai.blueprints.delete_blueprint_task()`: **Added**
+  * `meibelai.blueprints.instances.add_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.get_all_blueprint_instances()`: **Added**
+  * `meibelai.blueprints.instances.get_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.delete_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.update_blueprint_instance_status()`: **Added**
+  * `meibelai.blueprints.instances.complete_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.fail_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.add_activity_by_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.get_activity_by_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.get_activities_by_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.update_activity_status()`: **Added**
+  * `meibelai.blueprints.instances.get_event_by_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.instances.create_event_by_blueprint_instance_id()`: **Added**
+  * `meibelai.blueprints.instances.get_events_by_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.executions.start_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.executions.cancel_blueprint_instance()`: **Added**
+  * `meibelai.blueprints.executions.send_signal()`: **Added**
+  * `meibelai.blueprints.executions.query_workflow()`: **Added**
+  * `meibelai.blueprint-instances.get_all_blueprint_instances()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.add_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.get_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.delete_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.update_blueprint_instance_status()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.complete_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.fail_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.add_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.get_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.get_activities_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.update_activity_status()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.get_event_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.create_event_by_blueprint_instance_id()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.get_events_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.send_signal()`: **Deleted** **Breaking** :warning:
+  * `meibelai.blueprint-instances.query_workflow()`: **Deleted** **Breaking** :warning:

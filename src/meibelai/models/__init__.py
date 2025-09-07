@@ -23,6 +23,15 @@ if TYPE_CHECKING:
         AddBlueprintInstanceResponse,
         AddBlueprintInstanceResponseTypedDict,
     )
+    from .addblueprintrequest import AddBlueprintRequest, AddBlueprintRequestTypedDict
+    from .addblueprintresponse import (
+        AddBlueprintResponse,
+        AddBlueprintResponseTypedDict,
+    )
+    from .addblueprinttaskrequest import (
+        AddBlueprintTaskRequest,
+        AddBlueprintTaskRequestTypedDict,
+    )
     from .addchunkingstrategyop import (
         AddChunkingStrategyRequest1,
         AddChunkingStrategyRequest1TypedDict,
@@ -86,6 +95,7 @@ if TYPE_CHECKING:
     from .alloweddataelementfilterkeys import AllowedDataElementFilterKeys
     from .apierror import APIError
     from .basicwebauth import BasicWebAuth, BasicWebAuthTypedDict
+    from .blueprint import Blueprint, BlueprintTypedDict
     from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
     from .cancelblueprintinstanceop import (
@@ -103,6 +113,10 @@ if TYPE_CHECKING:
     )
     from .contentitem import ContentItem, ContentItemTypedDict
     from .contenttype import ContentType
+    from .createblueprinttaskop import (
+        CreateBlueprintTaskRequest,
+        CreateBlueprintTaskRequestTypedDict,
+    )
     from .createeventbyblueprintinstanceidop import (
         CreateEventByBlueprintInstanceIDRequest,
         CreateEventByBlueprintInstanceIDRequestTypedDict,
@@ -126,6 +140,14 @@ if TYPE_CHECKING:
     from .deleteblueprintinstanceop import (
         DeleteBlueprintInstanceRequest,
         DeleteBlueprintInstanceRequestTypedDict,
+    )
+    from .deleteblueprintop import (
+        DeleteBlueprintRequest,
+        DeleteBlueprintRequestTypedDict,
+    )
+    from .deleteblueprinttaskop import (
+        DeleteBlueprintTaskRequest,
+        DeleteBlueprintTaskRequestTypedDict,
     )
     from .deletechunkingstrategyop import (
         DeleteChunkingStrategyRequest,
@@ -183,6 +205,7 @@ if TYPE_CHECKING:
         DownloadDatasourceContentRequest,
         DownloadDatasourceContentRequestTypedDict,
     )
+    from .dsldefinition import DslDefinition
     from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
     from .event import Event, EventTypedDict
     from .eventtype import EventType
@@ -230,6 +253,15 @@ if TYPE_CHECKING:
     from .getblueprintinstancesresponse import (
         GetBlueprintInstancesResponse,
         GetBlueprintInstancesResponseTypedDict,
+    )
+    from .getblueprintop import GetBlueprintRequest, GetBlueprintRequestTypedDict
+    from .getblueprintsresponse import (
+        GetBlueprintsResponse,
+        GetBlueprintsResponseTypedDict,
+    )
+    from .getblueprinttasksop import (
+        GetBlueprintTasksRequest,
+        GetBlueprintTasksRequestTypedDict,
     )
     from .getchunkingstrategyop import (
         GetChunkingStrategyRequest,
@@ -333,6 +365,22 @@ if TYPE_CHECKING:
     from .updateblueprintinstancestatusop import (
         UpdateBlueprintInstanceStatusRequest,
         UpdateBlueprintInstanceStatusRequestTypedDict,
+    )
+    from .updateblueprintop import (
+        UpdateBlueprintRequest1,
+        UpdateBlueprintRequest1TypedDict,
+    )
+    from .updateblueprintrequest import (
+        UpdateBlueprintRequest,
+        UpdateBlueprintRequestTypedDict,
+    )
+    from .updateblueprinttaskop import (
+        UpdateBlueprintTaskRequest1,
+        UpdateBlueprintTaskRequest1TypedDict,
+    )
+    from .updateblueprinttaskrequest import (
+        UpdateBlueprintTaskRequest,
+        UpdateBlueprintTaskRequestTypedDict,
     )
     from .updatechunkingstrategyop import (
         UpdateChunkingStrategyRequest1,
@@ -449,6 +497,12 @@ __all__ = [
     "AddBlueprintInstanceRequestTypedDict",
     "AddBlueprintInstanceResponse",
     "AddBlueprintInstanceResponseTypedDict",
+    "AddBlueprintRequest",
+    "AddBlueprintRequestTypedDict",
+    "AddBlueprintResponse",
+    "AddBlueprintResponseTypedDict",
+    "AddBlueprintTaskRequest",
+    "AddBlueprintTaskRequestTypedDict",
     "AddChunkingStrategyRequest",
     "AddChunkingStrategyRequest1",
     "AddChunkingStrategyRequest1TypedDict",
@@ -494,9 +548,11 @@ __all__ = [
     "AllowedDataElementFilterKeys",
     "BasicWebAuth",
     "BasicWebAuthTypedDict",
+    "Blueprint",
     "BlueprintInstance",
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
+    "BlueprintTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
     "CodeChunking",
@@ -508,6 +564,8 @@ __all__ = [
     "ContentItem",
     "ContentItemTypedDict",
     "ContentType",
+    "CreateBlueprintTaskRequest",
+    "CreateBlueprintTaskRequestTypedDict",
     "CreateEventByBlueprintInstanceIDRequest",
     "CreateEventByBlueprintInstanceIDRequestTypedDict",
     "CustomEventRequest",
@@ -529,6 +587,10 @@ __all__ = [
     "DatasourceWebConfigTypedDict",
     "DeleteBlueprintInstanceRequest",
     "DeleteBlueprintInstanceRequestTypedDict",
+    "DeleteBlueprintRequest",
+    "DeleteBlueprintRequestTypedDict",
+    "DeleteBlueprintTaskRequest",
+    "DeleteBlueprintTaskRequestTypedDict",
     "DeleteChunkingStrategyRequest",
     "DeleteChunkingStrategyRequestTypedDict",
     "DeleteChunkingStrategyResponse",
@@ -557,6 +619,7 @@ __all__ = [
     "DeleteTagTableResponseTypedDict",
     "DownloadDatasourceContentRequest",
     "DownloadDatasourceContentRequestTypedDict",
+    "DslDefinition",
     "EmbeddingModel",
     "EmbeddingModelTypedDict",
     "Event",
@@ -586,6 +649,12 @@ __all__ = [
     "GetBlueprintInstanceRequestTypedDict",
     "GetBlueprintInstancesResponse",
     "GetBlueprintInstancesResponseTypedDict",
+    "GetBlueprintRequest",
+    "GetBlueprintRequestTypedDict",
+    "GetBlueprintTasksRequest",
+    "GetBlueprintTasksRequestTypedDict",
+    "GetBlueprintsResponse",
+    "GetBlueprintsResponseTypedDict",
     "GetChunkingStrategyRequest",
     "GetChunkingStrategyRequestTypedDict",
     "GetContentResponse",
@@ -681,6 +750,14 @@ __all__ = [
     "UpdateActivityStatusRequestTypedDict",
     "UpdateBlueprintInstanceStatusRequest",
     "UpdateBlueprintInstanceStatusRequestTypedDict",
+    "UpdateBlueprintRequest",
+    "UpdateBlueprintRequest1",
+    "UpdateBlueprintRequest1TypedDict",
+    "UpdateBlueprintRequestTypedDict",
+    "UpdateBlueprintTaskRequest",
+    "UpdateBlueprintTaskRequest1",
+    "UpdateBlueprintTaskRequest1TypedDict",
+    "UpdateBlueprintTaskRequestTypedDict",
     "UpdateChunkingStrategyRequest",
     "UpdateChunkingStrategyRequest1",
     "UpdateChunkingStrategyRequest1TypedDict",
@@ -747,6 +824,12 @@ _dynamic_imports: dict[str, str] = {
     "AddBlueprintInstanceRequestTypedDict": ".addblueprintinstancerequest",
     "AddBlueprintInstanceResponse": ".addblueprintinstanceresponse",
     "AddBlueprintInstanceResponseTypedDict": ".addblueprintinstanceresponse",
+    "AddBlueprintRequest": ".addblueprintrequest",
+    "AddBlueprintRequestTypedDict": ".addblueprintrequest",
+    "AddBlueprintResponse": ".addblueprintresponse",
+    "AddBlueprintResponseTypedDict": ".addblueprintresponse",
+    "AddBlueprintTaskRequest": ".addblueprinttaskrequest",
+    "AddBlueprintTaskRequestTypedDict": ".addblueprinttaskrequest",
     "AddChunkingStrategyRequest1": ".addchunkingstrategyop",
     "AddChunkingStrategyRequest1TypedDict": ".addchunkingstrategyop",
     "AddChunkingStrategyRequest": ".addchunkingstrategyrequest",
@@ -793,6 +876,8 @@ _dynamic_imports: dict[str, str] = {
     "APIError": ".apierror",
     "BasicWebAuth": ".basicwebauth",
     "BasicWebAuthTypedDict": ".basicwebauth",
+    "Blueprint": ".blueprint",
+    "BlueprintTypedDict": ".blueprint",
     "BlueprintInstance": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
@@ -807,6 +892,8 @@ _dynamic_imports: dict[str, str] = {
     "ContentItem": ".contentitem",
     "ContentItemTypedDict": ".contentitem",
     "ContentType": ".contenttype",
+    "CreateBlueprintTaskRequest": ".createblueprinttaskop",
+    "CreateBlueprintTaskRequestTypedDict": ".createblueprinttaskop",
     "CreateEventByBlueprintInstanceIDRequest": ".createeventbyblueprintinstanceidop",
     "CreateEventByBlueprintInstanceIDRequestTypedDict": ".createeventbyblueprintinstanceidop",
     "CustomEventRequest": ".customeventrequest",
@@ -828,6 +915,10 @@ _dynamic_imports: dict[str, str] = {
     "DatasourceWebConfigTypedDict": ".datasourcewebconfig",
     "DeleteBlueprintInstanceRequest": ".deleteblueprintinstanceop",
     "DeleteBlueprintInstanceRequestTypedDict": ".deleteblueprintinstanceop",
+    "DeleteBlueprintRequest": ".deleteblueprintop",
+    "DeleteBlueprintRequestTypedDict": ".deleteblueprintop",
+    "DeleteBlueprintTaskRequest": ".deleteblueprinttaskop",
+    "DeleteBlueprintTaskRequestTypedDict": ".deleteblueprinttaskop",
     "DeleteChunkingStrategyRequest": ".deletechunkingstrategyop",
     "DeleteChunkingStrategyRequestTypedDict": ".deletechunkingstrategyop",
     "DeleteChunkingStrategyResponse": ".deletechunkingstrategyresponse",
@@ -856,6 +947,7 @@ _dynamic_imports: dict[str, str] = {
     "DeleteTagTableResponseTypedDict": ".deletetagtableresponse",
     "DownloadDatasourceContentRequest": ".downloaddatasourcecontentop",
     "DownloadDatasourceContentRequestTypedDict": ".downloaddatasourcecontentop",
+    "DslDefinition": ".dsldefinition",
     "EmbeddingModel": ".embeddingmodel",
     "EmbeddingModelTypedDict": ".embeddingmodel",
     "Event": ".event",
@@ -885,6 +977,12 @@ _dynamic_imports: dict[str, str] = {
     "GetBlueprintInstanceRequestTypedDict": ".getblueprintinstanceop",
     "GetBlueprintInstancesResponse": ".getblueprintinstancesresponse",
     "GetBlueprintInstancesResponseTypedDict": ".getblueprintinstancesresponse",
+    "GetBlueprintRequest": ".getblueprintop",
+    "GetBlueprintRequestTypedDict": ".getblueprintop",
+    "GetBlueprintsResponse": ".getblueprintsresponse",
+    "GetBlueprintsResponseTypedDict": ".getblueprintsresponse",
+    "GetBlueprintTasksRequest": ".getblueprinttasksop",
+    "GetBlueprintTasksRequestTypedDict": ".getblueprinttasksop",
     "GetChunkingStrategyRequest": ".getchunkingstrategyop",
     "GetChunkingStrategyRequestTypedDict": ".getchunkingstrategyop",
     "GetContentResponse": ".getcontentresponse",
@@ -977,6 +1075,14 @@ _dynamic_imports: dict[str, str] = {
     "UpdateActivityStatusRequestTypedDict": ".updateactivitystatusop",
     "UpdateBlueprintInstanceStatusRequest": ".updateblueprintinstancestatusop",
     "UpdateBlueprintInstanceStatusRequestTypedDict": ".updateblueprintinstancestatusop",
+    "UpdateBlueprintRequest1": ".updateblueprintop",
+    "UpdateBlueprintRequest1TypedDict": ".updateblueprintop",
+    "UpdateBlueprintRequest": ".updateblueprintrequest",
+    "UpdateBlueprintRequestTypedDict": ".updateblueprintrequest",
+    "UpdateBlueprintTaskRequest1": ".updateblueprinttaskop",
+    "UpdateBlueprintTaskRequest1TypedDict": ".updateblueprinttaskop",
+    "UpdateBlueprintTaskRequest": ".updateblueprinttaskrequest",
+    "UpdateBlueprintTaskRequestTypedDict": ".updateblueprinttaskrequest",
     "UpdateChunkingStrategyRequest1": ".updatechunkingstrategyop",
     "UpdateChunkingStrategyRequest1TypedDict": ".updatechunkingstrategyop",
     "UpdateChunkingStrategyRequest": ".updatechunkingstrategyrequest",

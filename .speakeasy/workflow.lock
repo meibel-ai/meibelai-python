@@ -1,21 +1,21 @@
-speakeasyVersion: 1.611.0
+speakeasyVersion: 1.611.1
 sources:
     Meibel Gateway Service:
         sourceNamespace: meibel-gateway-service
-        sourceRevisionDigest: sha256:cb49d235b92e418c9e814b8055dd42ff9663dc594c0f5c17e06fa26c722c390f
-        sourceBlobDigest: sha256:6c01f7c296e7f73bfdaf6026a5e044110d374b8e5198015a2d3443e84e6c2183
+        sourceRevisionDigest: sha256:6da70d1e5d9330ebbb2a971c0b3ebe806a80fa2a8dbb92d684050296cd39d66f
+        sourceBlobDigest: sha256:245115c1432b77657a158721bc3403e5523f66fb755e41e8101aafb062007d05
         tags:
             - latest
-            - speakeasy-sdk-regen-1757185949
+            - speakeasy-sdk-regen-1757269525
             - 0.2.0
 targets:
     meibelai:
         source: Meibel Gateway Service
         sourceNamespace: meibel-gateway-service
-        sourceRevisionDigest: sha256:cb49d235b92e418c9e814b8055dd42ff9663dc594c0f5c17e06fa26c722c390f
-        sourceBlobDigest: sha256:6c01f7c296e7f73bfdaf6026a5e044110d374b8e5198015a2d3443e84e6c2183
+        sourceRevisionDigest: sha256:6da70d1e5d9330ebbb2a971c0b3ebe806a80fa2a8dbb92d684050296cd39d66f
+        sourceBlobDigest: sha256:245115c1432b77657a158721bc3403e5523f66fb755e41e8101aafb062007d05
         codeSamplesNamespace: meibel-gateway-service-python-code-samples
-        codeSamplesRevisionDigest: sha256:74587254c35c20cec36164863b81cb8925025250f4589897c24edd93763aa1f9
+        codeSamplesRevisionDigest: sha256:033f4f74e5e780c521839995660702d5759574f4385b1fc40e8946b01150a0a6
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

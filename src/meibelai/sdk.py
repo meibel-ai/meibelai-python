@@ -15,7 +15,7 @@ from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
 
 if TYPE_CHECKING:
-    from meibelai.blueprint_instances import BlueprintInstances
+    from meibelai.blueprints import Blueprints
     from meibelai.content import Content
     from meibelai.datasources import Datasources
 
@@ -29,12 +29,12 @@ class Meibelai(BaseSDK):
     datasources: "Datasources"
     r"""Operations with datasources"""
     content: "Content"
-    blueprint_instances: "BlueprintInstances"
-    r"""Operations with blueprint_instances"""
+    blueprints: "Blueprints"
+    r"""Operations with blueprints"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "content": ("meibelai.content", "Content"),
-        "blueprint_instances": ("meibelai.blueprint_instances", "BlueprintInstances"),
+        "blueprints": ("meibelai.blueprints", "Blueprints"),
     }
 
     def __init__(
