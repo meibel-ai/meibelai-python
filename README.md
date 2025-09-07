@@ -32,6 +32,7 @@ Our API allows you to interact with our services.  Read the[docs](https://docs.m
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Server-sent event streaming](#server-sent-event-streaming)
+  * [File uploads](#file-uploads)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
@@ -318,14 +319,14 @@ with Meibelai(
 
 #### [datasources.content](docs/sdks/meibelaicontent/README.md)
 
-* [list_datasource_content](docs/sdks/meibelaicontent/README.md#list_datasource_content) - List Content
+* [list_datasource_content](docs/sdks/meibelaicontent/README.md#list_datasource_content) - List datasource content
 * [upload_datasource_content](docs/sdks/meibelaicontent/README.md#upload_datasource_content) - Upload Content
 * [stream_upload_progress](docs/sdks/meibelaicontent/README.md#stream_upload_progress) - Stream upload progress events
-* [get_datasource_upload_status](docs/sdks/meibelaicontent/README.md#get_datasource_upload_status) - Get Upload Status
+* [get_datasource_upload_status](docs/sdks/meibelaicontent/README.md#get_datasource_upload_status) - Get upload status
 * [stream_datasource_upload_progress](docs/sdks/meibelaicontent/README.md#stream_datasource_upload_progress) - Stream upload progress events (legacy)
-* [get_datasource_content_metadata](docs/sdks/meibelaicontent/README.md#get_datasource_content_metadata) - Get Content Metadata
-* [delete_datasource_content](docs/sdks/meibelaicontent/README.md#delete_datasource_content) - Delete Content
-* [download_datasource_content](docs/sdks/meibelaicontent/README.md#download_datasource_content) - Download Content
+* [get_datasource_content_metadata](docs/sdks/meibelaicontent/README.md#get_datasource_content_metadata) - Get content metadata
+* [delete_datasource_content](docs/sdks/meibelaicontent/README.md#delete_datasource_content) - Delete content
+* [download_datasource_content](docs/sdks/meibelaicontent/README.md#download_datasource_content) - Download content file
 
 #### [datasources.dataelements](docs/sdks/dataelements/README.md)
 
@@ -402,6 +403,33 @@ with Meibelai(
 [generator]: https://book.pythontips.com/en/latest/generators.html
 [context-manager]: https://book.pythontips.com/en/latest/context_managers.html
 <!-- End Server-sent event streaming [eventstream] -->
+
+<!-- Start File uploads [file-upload] -->
+## File uploads
+
+Certain SDK methods accept file objects as part of a request body or multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
+
+> [!TIP]
+>
+> For endpoints that handle file uploads bytes arrays can also be used. However, using streams is recommended for large files.
+>
+
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>", files=[], prefix="<value>", extract_zip=False, extract_eml=True, max_concurrent=655255)
+
+    # Handle response
+    print(res)
+
+```
+<!-- End File uploads [file-upload] -->
 
 <!-- Start Retries [retries] -->
 ## Retries

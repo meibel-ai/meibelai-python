@@ -98,6 +98,12 @@ if TYPE_CHECKING:
     from .blueprint import Blueprint, BlueprintTypedDict
     from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
+    from .body_uploaddatasourcecontent import (
+        BodyUploadDatasourceContent,
+        BodyUploadDatasourceContentTypedDict,
+        Files,
+        FilesTypedDict,
+    )
     from .cancelblueprintinstanceop import (
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
@@ -553,6 +559,8 @@ __all__ = [
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
     "BlueprintTypedDict",
+    "BodyUploadDatasourceContent",
+    "BodyUploadDatasourceContentTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
     "CodeChunking",
@@ -631,6 +639,8 @@ __all__ = [
     "FailBlueprintInstanceRequest1",
     "FailBlueprintInstanceRequest1TypedDict",
     "FailBlueprintInstanceRequestTypedDict",
+    "Files",
+    "FilesTypedDict",
     "GetActivitiesByBlueprintInstanceRequest",
     "GetActivitiesByBlueprintInstanceRequestTypedDict",
     "GetActivitiesResponse",
@@ -881,6 +891,10 @@ _dynamic_imports: dict[str, str] = {
     "BlueprintInstance": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
+    "BodyUploadDatasourceContent": ".body_uploaddatasourcecontent",
+    "BodyUploadDatasourceContentTypedDict": ".body_uploaddatasourcecontent",
+    "Files": ".body_uploaddatasourcecontent",
+    "FilesTypedDict": ".body_uploaddatasourcecontent",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
     "CodeChunking": ".codechunking",

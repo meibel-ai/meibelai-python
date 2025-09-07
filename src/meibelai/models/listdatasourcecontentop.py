@@ -11,8 +11,11 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class ListDatasourceContentRequestTypedDict(TypedDict):
     datasource_id: str
     prefix: NotRequired[Nullable[str]]
+    r"""Filter content by path prefix"""
     continuation_token: NotRequired[Nullable[str]]
+    r"""Token for pagination to get next page of results"""
     limit: NotRequired[int]
+    r"""Maximum number of items to return (1-10000)"""
 
 
 class ListDatasourceContentRequest(BaseModel):
@@ -24,16 +27,19 @@ class ListDatasourceContentRequest(BaseModel):
         OptionalNullable[str],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = UNSET
+    r"""Filter content by path prefix"""
 
     continuation_token: Annotated[
         OptionalNullable[str],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = UNSET
+    r"""Token for pagination to get next page of results"""
 
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 1000
+    r"""Maximum number of items to return (1-10000)"""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

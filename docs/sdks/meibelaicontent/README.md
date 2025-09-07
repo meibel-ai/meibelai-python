@@ -7,18 +7,18 @@ Operations with content upload and management
 
 ### Available Operations
 
-* [list_datasource_content](#list_datasource_content) - List Content
+* [list_datasource_content](#list_datasource_content) - List datasource content
 * [upload_datasource_content](#upload_datasource_content) - Upload Content
 * [stream_upload_progress](#stream_upload_progress) - Stream upload progress events
-* [get_datasource_upload_status](#get_datasource_upload_status) - Get Upload Status
+* [get_datasource_upload_status](#get_datasource_upload_status) - Get upload status
 * [stream_datasource_upload_progress](#stream_datasource_upload_progress) - Stream upload progress events (legacy)
-* [get_datasource_content_metadata](#get_datasource_content_metadata) - Get Content Metadata
-* [delete_datasource_content](#delete_datasource_content) - Delete Content
-* [download_datasource_content](#download_datasource_content) - Download Content
+* [get_datasource_content_metadata](#get_datasource_content_metadata) - Get content metadata
+* [delete_datasource_content](#delete_datasource_content) - Delete content
+* [download_datasource_content](#download_datasource_content) - Download content file
 
 ## list_datasource_content
 
-Proxy list content request
+List files and directories in a datasource with optional filtering and pagination
 
 ### Example Usage
 
@@ -44,9 +44,9 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `prefix`                                                            | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `continuation_token`                                                | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `prefix`                                                            | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Filter content by path prefix                                       |
+| `continuation_token`                                                | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Token for pagination to get next page of results                    |
+| `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum number of items to return (1-10000)                         |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -80,7 +80,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>")
+    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>", files=[], prefix="<value>", extract_zip=False, extract_eml=True, max_concurrent=655255)
 
     # Handle response
     print(res)
@@ -92,6 +92,11 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `files`                                                             | List[[models.Files](../../models/files.md)]                         | :heavy_check_mark:                                                  | Files to upload to the datasource                                   |
+| `prefix`                                                            | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | Path prefix for organizing uploaded files                           |
+| `extract_zip`                                                       | *OptionalNullable[bool]*                                            | :heavy_minus_sign:                                                  | Auto-extract ZIP archives                                           |
+| `extract_eml`                                                       | *OptionalNullable[bool]*                                            | :heavy_minus_sign:                                                  | Extract EML email files                                             |
+| `max_concurrent`                                                    | *OptionalNullable[int]*                                             | :heavy_minus_sign:                                                  | Maximum concurrent file uploads                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -150,7 +155,7 @@ with Meibelai(
 
 ## get_datasource_upload_status
 
-Proxy upload status request
+Get the current status of a content upload operation
 
 ### Example Usage
 
@@ -236,7 +241,7 @@ with Meibelai(
 
 ## get_datasource_content_metadata
 
-Proxy content metadata request
+Get metadata information for a file or directory in the datasource
 
 ### Example Usage
 
@@ -278,7 +283,7 @@ with Meibelai(
 
 ## delete_datasource_content
 
-Proxy delete request
+Delete a file or directory from the datasource
 
 ### Example Usage
 
@@ -320,7 +325,7 @@ with Meibelai(
 
 ## download_datasource_content
 
-Proxy download request with streaming
+Download a file from the datasource with streaming support for large files
 
 ### Example Usage
 
@@ -351,7 +356,7 @@ with Meibelai(
 
 ### Response
 
-**[Any](../../models/.md)**
+**[httpx.Response](../../models/.md)**
 
 ### Errors
 

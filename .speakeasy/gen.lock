@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 1ad0d1215ec2a8bf807727823d51eaf1
+  docChecksum: db817a8629c99a93fb2529af9d11bc55
   docVersion: 0.2.0
   speakeasyVersion: 1.611.1
   generationVersion: 2.694.1
-  releaseVersion: 0.15.6
-  configChecksum: 5d4e2a5e922b6b5bb6c7e668e3b71ca4
+  releaseVersion: 0.16.0
+  configChecksum: d686c19c4c1be6105b6e8b382af0736f
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -16,6 +16,7 @@ features:
     core: 5.20.3
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
+    downloadStreams: 1.0.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
     flatRequests: 1.0.1
@@ -25,6 +26,7 @@ features:
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.1
     methodArguments: 1.0.2
+    multipartFileContentType: 1.0.0
     nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
@@ -32,6 +34,7 @@ features:
     serverEvents: 1.0.8
     serverEventsSentinels: 0.1.0
     unions: 3.0.4
+    uploadStreams: 1.0.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -75,6 +78,7 @@ generatedFiles:
   - docs/models/blueprint.md
   - docs/models/blueprintinstance.md
   - docs/models/blueprintinstancestatus.md
+  - docs/models/bodyuploaddatasourcecontent.md
   - docs/models/cancelblueprintinstancerequest.md
   - docs/models/codechunking.md
   - docs/models/completeblueprintinstancerequest.md
@@ -116,6 +120,7 @@ generatedFiles:
   - docs/models/extractormodel.md
   - docs/models/failblueprintinstancerequest.md
   - docs/models/failblueprintinstancerequest1.md
+  - docs/models/files.md
   - docs/models/getactivitiesbyblueprintinstancerequest.md
   - docs/models/getactivitiesresponse.md
   - docs/models/getactivitybyblueprintinstancerequest.md
@@ -272,6 +277,7 @@ generatedFiles:
   - src/meibelai/models/blueprint.py
   - src/meibelai/models/blueprintinstance.py
   - src/meibelai/models/blueprintinstancestatus.py
+  - src/meibelai/models/body_uploaddatasourcecontent.py
   - src/meibelai/models/cancelblueprintinstanceop.py
   - src/meibelai/models/codechunking.py
   - src/meibelai/models/completeblueprintinstanceop.py
@@ -1959,6 +1965,8 @@ examples:
       parameters:
         path:
           datasource_id: "<id>"
+      requestBody:
+        multipart/form-data: {"files": [], "prefix": "<value>", "extract_zip": false, "extract_eml": true, "max_concurrent": 655255}
       responses:
         "200":
           application/json: {"success": true, "message": "<value>", "upload_id": "<id>", "sse_url": "https://good-tomb.com/", "estimated_files": 164539, "estimated_size": 596009}
@@ -2023,6 +2031,7 @@ examples:
       responses:
         "200":
           application/json: "<value>"
+          application/octet-stream: "x-file: example.file"
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   addBlueprintInstance:
@@ -2338,50 +2347,4 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Python SDK Changes Detected:
-  * `meibelai.blueprints.get_blueprints()`: **Added**
-  * `meibelai.blueprints.create_blueprint()`: **Added**
-  * `meibelai.blueprints.get_blueprint()`: **Added**
-  * `meibelai.blueprints.update_blueprint()`: **Added**
-  * `meibelai.blueprints.delete_blueprint()`: **Added**
-  * `meibelai.blueprints.create_blueprint_task()`: **Added**
-  * `meibelai.blueprints.get_blueprint_tasks()`: **Added**
-  * `meibelai.blueprints.update_blueprint_task()`: **Added**
-  * `meibelai.blueprints.delete_blueprint_task()`: **Added**
-  * `meibelai.blueprints.instances.add_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.get_all_blueprint_instances()`: **Added**
-  * `meibelai.blueprints.instances.get_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.delete_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.update_blueprint_instance_status()`: **Added**
-  * `meibelai.blueprints.instances.complete_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.fail_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.add_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.get_activity_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.get_activities_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.update_activity_status()`: **Added**
-  * `meibelai.blueprints.instances.get_event_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.instances.create_event_by_blueprint_instance_id()`: **Added**
-  * `meibelai.blueprints.instances.get_events_by_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.executions.start_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.executions.cancel_blueprint_instance()`: **Added**
-  * `meibelai.blueprints.executions.send_signal()`: **Added**
-  * `meibelai.blueprints.executions.query_workflow()`: **Added**
-  * `meibelai.blueprint-instances.get_all_blueprint_instances()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.add_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.get_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.delete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.update_blueprint_instance_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.complete_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.fail_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.add_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.get_activity_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.get_activities_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.update_activity_status()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.get_event_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.create_event_by_blueprint_instance_id()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.get_events_by_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.start_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.cancel_blueprint_instance()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.send_signal()`: **Deleted** **Breaking** :warning:
-  * `meibelai.blueprint-instances.query_workflow()`: **Deleted** **Breaking** :warning:
+releaseNotes: "## Python SDK Changes Detected:\n* `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.datasources.content.download_datasource_content()`: \n  *  `response.status[200]` **Changed** **Breaking** :warning:\n  *  `error.status[404]` **Added**\n* `meibelai.datasources.content.get_datasource_upload_status()`:  `error.status[404]` **Added**\n* `meibelai.datasources.content.get_datasource_content_metadata()`:  `error.status[404]` **Added**\n* `meibelai.datasources.content.delete_datasource_content()`:  `error.status[404]` **Added**\n"
