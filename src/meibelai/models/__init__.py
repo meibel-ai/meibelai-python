@@ -108,6 +108,10 @@ if TYPE_CHECKING:
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
     )
+    from .chatwithblueprintop import (
+        ChatWithBlueprintRequest,
+        ChatWithBlueprintRequestTypedDict,
+    )
     from .codechunking import CodeChunking, CodeChunkingTypedDict
     from .completeblueprintinstanceop import (
         CompleteBlueprintInstanceRequest1,
@@ -563,6 +567,8 @@ __all__ = [
     "BodyUploadDatasourceContentTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
+    "ChatWithBlueprintRequest",
+    "ChatWithBlueprintRequestTypedDict",
     "CodeChunking",
     "CodeChunkingTypedDict",
     "CompleteBlueprintInstanceRequest",
@@ -897,6 +903,8 @@ _dynamic_imports: dict[str, str] = {
     "FilesTypedDict": ".body_uploaddatasourcecontent",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
+    "ChatWithBlueprintRequest": ".chatwithblueprintop",
+    "ChatWithBlueprintRequestTypedDict": ".chatwithblueprintop",
     "CodeChunking": ".codechunking",
     "CodeChunkingTypedDict": ".codechunking",
     "CompleteBlueprintInstanceRequest1": ".completeblueprintinstanceop",

@@ -170,6 +170,7 @@ with Meibelai(
 </br>
 
 The same SDK client can also be used to make asynchronous requests by importing asyncio.
+
 ```python
 # Asynchronous Example
 import asyncio
@@ -286,6 +287,7 @@ with Meibelai(
 * [cancel_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
 * [send_signal](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_signal) - Send Signal
 * [query_workflow](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#query_workflow) - Query Workflow
+* [chat_with_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#chat_with_blueprint) - Chat With Blueprint
 
 #### [blueprints.instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md)
 
@@ -614,10 +616,11 @@ with Meibelai(
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                     | Description              |
-| --- | -------------------------- | ------------------------ |
-| 0   | `https://api.meibel.ai/v1` | Meibel API               |
-| 1   | `http://localhost:8000`    | Local Development Server |
+| #   | Server                         | Description              |
+| --- | ------------------------------ | ------------------------ |
+| 0   | `https://api.meibel.ai/v1`     | Meibel API               |
+| 1   | `https://api.dev.meibel.ai/v1` | Meibel API               |
+| 2   | `http://localhost:8000`        | Local Development Server |
 
 #### Example
 
@@ -627,7 +630,7 @@ import os
 
 
 with Meibelai(
-    server_idx=1,
+    server_idx=2,
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 

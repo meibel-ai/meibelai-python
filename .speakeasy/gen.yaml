@@ -19,18 +19,20 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
+    hoistGlobalSecurity: true
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.16.1
+  version: 0.17.0
   additionalDependencies:
     dev: {}
     main: {}
   allowedRedefinedBuiltins:
     - id
     - object
+  asyncMode: both
   authors:
     - Speakeasy
   baseErrorName: MeibelaiError
@@ -54,6 +56,7 @@ python:
       shared: ""
       webhooks: ""
   inputModelSuffix: input
+  legacyPyright: true
   maxMethodParams: 999
   methodArguments: infer-optional-args
   moduleName: ""
@@ -63,4 +66,5 @@ python:
   pytestFilterWarnings: []
   pytestTimeout: 0
   responseFormat: flat
+  sseFlatResponse: false
   templateVersion: v2
