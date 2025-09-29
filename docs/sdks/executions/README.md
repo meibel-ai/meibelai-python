@@ -227,7 +227,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprints.executions.chat_with_blueprint(blueprint_instance_id="<id>", user_message="<value>", signal_name="incoming_chat_message", query_name="GetWorkflowState", max_wait_seconds=30, poll_interval_seconds=1, min_new_items=2, request_body=[
+    res = m_client.blueprints.executions.chat_with_blueprint(blueprint_instance_id="<id>", user_message="<value>", signal_name="incoming_chat_message", query_name="GetWorkflowState", max_wait_seconds=30, poll_interval_seconds=1, min_new_items=1, request_body=[
         "<value 1>",
         "<value 2>",
         "<value 3>",

@@ -222,10 +222,10 @@ class MeibelaiContent(BaseSDK):
         *,
         datasource_id: str,
         files: Union[List[models.Files], List[models.FilesTypedDict]],
-        prefix: OptionalNullable[str] = UNSET,
-        extract_zip: OptionalNullable[bool] = UNSET,
-        extract_eml: OptionalNullable[bool] = UNSET,
-        max_concurrent: OptionalNullable[int] = UNSET,
+        prefix: Optional[str] = None,
+        extract_zip: Optional[bool] = None,
+        extract_eml: Optional[bool] = None,
+        max_concurrent: Optional[int] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -262,7 +262,7 @@ class MeibelaiContent(BaseSDK):
 
         request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-            body_upload_datasource_content=models.BodyUploadDatasourceContent(
+            request_body=models.UploadDatasourceContentRequestBody(
                 files=utils.get_pydantic_model(files, List[models.Files]),
                 prefix=prefix,
                 extract_zip=extract_zip,
@@ -277,7 +277,7 @@ class MeibelaiContent(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=True,
+            request_body_required=False,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -285,11 +285,11 @@ class MeibelaiContent(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.body_upload_datasource_content,
+                request.request_body,
                 False,
-                False,
+                True,
                 "multipart",
-                models.BodyUploadDatasourceContent,
+                Optional[models.UploadDatasourceContentRequestBody],
             ),
             timeout_ms=timeout_ms,
         )
@@ -343,10 +343,10 @@ class MeibelaiContent(BaseSDK):
         *,
         datasource_id: str,
         files: Union[List[models.Files], List[models.FilesTypedDict]],
-        prefix: OptionalNullable[str] = UNSET,
-        extract_zip: OptionalNullable[bool] = UNSET,
-        extract_eml: OptionalNullable[bool] = UNSET,
-        max_concurrent: OptionalNullable[int] = UNSET,
+        prefix: Optional[str] = None,
+        extract_zip: Optional[bool] = None,
+        extract_eml: Optional[bool] = None,
+        max_concurrent: Optional[int] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -383,7 +383,7 @@ class MeibelaiContent(BaseSDK):
 
         request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-            body_upload_datasource_content=models.BodyUploadDatasourceContent(
+            request_body=models.UploadDatasourceContentRequestBody(
                 files=utils.get_pydantic_model(files, List[models.Files]),
                 prefix=prefix,
                 extract_zip=extract_zip,
@@ -398,7 +398,7 @@ class MeibelaiContent(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=True,
+            request_body_required=False,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -406,11 +406,11 @@ class MeibelaiContent(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.body_upload_datasource_content,
+                request.request_body,
                 False,
-                False,
+                True,
                 "multipart",
-                models.BodyUploadDatasourceContent,
+                Optional[models.UploadDatasourceContentRequestBody],
             ),
             timeout_ms=timeout_ms,
         )

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 457c95443497387957f800f0601ab94b
+  docChecksum: ddbadb7773a85d62726a08dbcfc5d497
   docVersion: 0.2.0
-  speakeasyVersion: 1.628.4
-  generationVersion: 2.716.5
-  releaseVersion: 0.17.0
-  configChecksum: 197aac941d04619326e91b9eae3937a5
+  speakeasyVersion: 1.631.4
+  generationVersion: 2.716.16
+  releaseVersion: 0.17.1
+  configChecksum: 4c2b8ab3d77f5300432f558ec9932c11
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -78,7 +78,6 @@ generatedFiles:
   - docs/models/blueprint.md
   - docs/models/blueprintinstance.md
   - docs/models/blueprintinstancestatus.md
-  - docs/models/bodyuploaddatasourcecontent.md
   - docs/models/cancelblueprintinstancerequest.md
   - docs/models/chatwithblueprintrequest.md
   - docs/models/codechunking.md
@@ -207,6 +206,7 @@ generatedFiles:
   - docs/models/updatetagtableresponse.md
   - docs/models/uploadcontentresponse.md
   - docs/models/uploaddatasourcecontentrequest.md
+  - docs/models/uploaddatasourcecontentrequestbody.md
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
   - docs/models/webdomain.md
@@ -278,7 +278,6 @@ generatedFiles:
   - src/meibelai/models/blueprint.py
   - src/meibelai/models/blueprintinstance.py
   - src/meibelai/models/blueprintinstancestatus.py
-  - src/meibelai/models/body_uploaddatasourcecontent.py
   - src/meibelai/models/cancelblueprintinstanceop.py
   - src/meibelai/models/chatwithblueprintop.py
   - src/meibelai/models/codechunking.py
@@ -2358,7 +2357,7 @@ examples:
           query_name: "GetWorkflowState"
           max_wait_seconds: 30
           poll_interval_seconds: 1
-          min_new_items: 2
+          min_new_items: 1
       requestBody:
         application/json: ["<value 1>", "<value 2>", "<value 3>"]
       responses:
@@ -2370,4 +2369,4 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Python SDK Changes Detected:
-  * `meibelai.blueprints.executions.chat_with_blueprint()`: **Added**
+  * `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:

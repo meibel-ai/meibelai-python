@@ -98,12 +98,6 @@ if TYPE_CHECKING:
     from .blueprint import Blueprint, BlueprintTypedDict
     from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
-    from .body_uploaddatasourcecontent import (
-        BodyUploadDatasourceContent,
-        BodyUploadDatasourceContentTypedDict,
-        Files,
-        FilesTypedDict,
-    )
     from .cancelblueprintinstanceop import (
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
@@ -481,7 +475,11 @@ if TYPE_CHECKING:
         UploadContentResponseTypedDict,
     )
     from .uploaddatasourcecontentop import (
+        Files,
+        FilesTypedDict,
         UploadDatasourceContentRequest,
+        UploadDatasourceContentRequestBody,
+        UploadDatasourceContentRequestBodyTypedDict,
         UploadDatasourceContentRequestTypedDict,
     )
     from .validationerror import (
@@ -563,8 +561,6 @@ __all__ = [
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
     "BlueprintTypedDict",
-    "BodyUploadDatasourceContent",
-    "BodyUploadDatasourceContentTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
     "ChatWithBlueprintRequest",
@@ -819,6 +815,8 @@ __all__ = [
     "UploadContentResponse",
     "UploadContentResponseTypedDict",
     "UploadDatasourceContentRequest",
+    "UploadDatasourceContentRequestBody",
+    "UploadDatasourceContentRequestBodyTypedDict",
     "UploadDatasourceContentRequestTypedDict",
     "ValidationError",
     "ValidationErrorTypedDict",
@@ -897,10 +895,6 @@ _dynamic_imports: dict[str, str] = {
     "BlueprintInstance": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
-    "BodyUploadDatasourceContent": ".body_uploaddatasourcecontent",
-    "BodyUploadDatasourceContentTypedDict": ".body_uploaddatasourcecontent",
-    "Files": ".body_uploaddatasourcecontent",
-    "FilesTypedDict": ".body_uploaddatasourcecontent",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
     "ChatWithBlueprintRequest": ".chatwithblueprintop",
@@ -1149,7 +1143,11 @@ _dynamic_imports: dict[str, str] = {
     "UpdateTagTableResponseTypedDict": ".updatetagtableresponse",
     "UploadContentResponse": ".uploadcontentresponse",
     "UploadContentResponseTypedDict": ".uploadcontentresponse",
+    "Files": ".uploaddatasourcecontentop",
+    "FilesTypedDict": ".uploaddatasourcecontentop",
     "UploadDatasourceContentRequest": ".uploaddatasourcecontentop",
+    "UploadDatasourceContentRequestBody": ".uploaddatasourcecontentop",
+    "UploadDatasourceContentRequestBodyTypedDict": ".uploaddatasourcecontentop",
     "UploadDatasourceContentRequestTypedDict": ".uploaddatasourcecontentop",
     "Loc": ".validationerror",
     "LocTypedDict": ".validationerror",

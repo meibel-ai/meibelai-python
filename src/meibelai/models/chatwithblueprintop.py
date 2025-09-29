@@ -56,7 +56,7 @@ class ChatWithBlueprintRequest(BaseModel):
     min_new_items: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
-    ] = 2
+    ] = 1
 
     request_body: Annotated[
         OptionalNullable[List[Any]],
