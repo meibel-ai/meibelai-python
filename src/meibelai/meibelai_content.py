@@ -7,7 +7,7 @@ from meibelai._hooks import HookContext
 from meibelai.types import OptionalNullable, UNSET
 from meibelai.utils import eventstreaming, get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, List, Mapping, Optional, Union
+from typing import Any, Mapping, Optional
 
 
 class MeibelaiContent(BaseSDK):
@@ -88,7 +88,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="listDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -190,7 +190,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="listDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -221,11 +221,6 @@ class MeibelaiContent(BaseSDK):
         self,
         *,
         datasource_id: str,
-        files: Union[List[models.Files], List[models.FilesTypedDict]],
-        prefix: Optional[str] = None,
-        extract_zip: Optional[bool] = None,
-        extract_eml: Optional[bool] = None,
-        max_concurrent: Optional[int] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -240,11 +235,6 @@ class MeibelaiContent(BaseSDK):
         The multipart parsing happens on the backend service side.
 
         :param datasource_id:
-        :param files: Files to upload to the datasource
-        :param prefix: Path prefix for organizing uploaded files
-        :param extract_zip: Auto-extract ZIP archives
-        :param extract_eml: Extract EML email files
-        :param max_concurrent: Maximum concurrent file uploads
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -262,13 +252,6 @@ class MeibelaiContent(BaseSDK):
 
         request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-            request_body=models.UploadDatasourceContentRequestBody(
-                files=utils.get_pydantic_model(files, List[models.Files]),
-                prefix=prefix,
-                extract_zip=extract_zip,
-                extract_eml=extract_eml,
-                max_concurrent=max_concurrent,
-            ),
         )
 
         req = self._build_request(
@@ -284,13 +267,6 @@ class MeibelaiContent(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
-                False,
-                True,
-                "multipart",
-                Optional[models.UploadDatasourceContentRequestBody],
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -311,7 +287,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="uploadDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -342,11 +318,6 @@ class MeibelaiContent(BaseSDK):
         self,
         *,
         datasource_id: str,
-        files: Union[List[models.Files], List[models.FilesTypedDict]],
-        prefix: Optional[str] = None,
-        extract_zip: Optional[bool] = None,
-        extract_eml: Optional[bool] = None,
-        max_concurrent: Optional[int] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -361,11 +332,6 @@ class MeibelaiContent(BaseSDK):
         The multipart parsing happens on the backend service side.
 
         :param datasource_id:
-        :param files: Files to upload to the datasource
-        :param prefix: Path prefix for organizing uploaded files
-        :param extract_zip: Auto-extract ZIP archives
-        :param extract_eml: Extract EML email files
-        :param max_concurrent: Maximum concurrent file uploads
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -383,13 +349,6 @@ class MeibelaiContent(BaseSDK):
 
         request = models.UploadDatasourceContentRequest(
             datasource_id=datasource_id,
-            request_body=models.UploadDatasourceContentRequestBody(
-                files=utils.get_pydantic_model(files, List[models.Files]),
-                prefix=prefix,
-                extract_zip=extract_zip,
-                extract_eml=extract_eml,
-                max_concurrent=max_concurrent,
-            ),
         )
 
         req = self._build_request_async(
@@ -405,13 +364,6 @@ class MeibelaiContent(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
-                False,
-                True,
-                "multipart",
-                Optional[models.UploadDatasourceContentRequestBody],
-            ),
             timeout_ms=timeout_ms,
         )
 
@@ -432,7 +384,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="uploadDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -525,7 +477,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="streamUploadProgress",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -625,7 +577,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="streamUploadProgress",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -728,7 +680,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getDatasourceUploadStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -824,7 +776,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getDatasourceUploadStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -920,7 +872,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="streamDatasourceUploadProgress",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1023,7 +975,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="streamDatasourceUploadProgress",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1126,7 +1078,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getDatasourceContentMetadata",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1222,7 +1174,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getDatasourceContentMetadata",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1318,7 +1270,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="deleteDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1414,7 +1366,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="deleteDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1510,7 +1462,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="downloadDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1609,7 +1561,7 @@ class MeibelaiContent(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="downloadDatasourceContent",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

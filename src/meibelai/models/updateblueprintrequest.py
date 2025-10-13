@@ -12,17 +12,21 @@ class UpdateBlueprintRequestTypedDict(TypedDict):
     r"""UpdateBlueprintRequest"""
 
     name: NotRequired[Nullable[str]]
+    execution_mode: NotRequired[Nullable[str]]
     version: NotRequired[Nullable[str]]
     description: NotRequired[Nullable[str]]
     dsl_definition: NotRequired[Nullable[DslDefinition]]
     yaml_spec_content: NotRequired[Nullable[str]]
     json_spec_content: NotRequired[Nullable[Dict[str, Any]]]
+    init_input: NotRequired[Nullable[Dict[str, Any]]]
 
 
 class UpdateBlueprintRequest(BaseModel):
     r"""UpdateBlueprintRequest"""
 
     name: OptionalNullable[str] = UNSET
+
+    execution_mode: OptionalNullable[str] = UNSET
 
     version: OptionalNullable[str] = UNSET
 
@@ -34,23 +38,29 @@ class UpdateBlueprintRequest(BaseModel):
 
     json_spec_content: OptionalNullable[Dict[str, Any]] = UNSET
 
+    init_input: OptionalNullable[Dict[str, Any]] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
             "name",
+            "execution_mode",
             "version",
             "description",
             "dsl_definition",
             "yaml_spec_content",
             "json_spec_content",
+            "init_input",
         ]
         nullable_fields = [
             "name",
+            "execution_mode",
             "version",
             "description",
             "dsl_definition",
             "yaml_spec_content",
             "json_spec_content",
+            "init_input",
         ]
         null_default_fields = []
 

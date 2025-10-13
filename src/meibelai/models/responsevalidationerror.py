@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from meibelai.models import MeibelaiError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class ResponseValidationError(MeibelaiError):
     """Error raised when there is a type mismatch between the response data and the expected Pydantic model."""
 

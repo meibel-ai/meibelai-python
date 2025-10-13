@@ -7,48 +7,21 @@ from typing import Any, Dict
 from typing_extensions import NotRequired, TypedDict
 
 
-class AddActivityRequestTypedDict(TypedDict):
-    r"""AddActivityRequest"""
+class ExecuteBlueprintRequestTypedDict(TypedDict):
+    r"""ExecuteBlueprintRequest"""
 
-    activity_type: str
-    input_data: NotRequired[Nullable[Dict[str, Any]]]
-    output_data: NotRequired[Nullable[Dict[str, Any]]]
-    group_id: NotRequired[Nullable[str]]
-    task_metadata: NotRequired[Nullable[Dict[str, Any]]]
-    status: NotRequired[Nullable[str]]
+    init_input: NotRequired[Nullable[Dict[str, Any]]]
 
 
-class AddActivityRequest(BaseModel):
-    r"""AddActivityRequest"""
+class ExecuteBlueprintRequest(BaseModel):
+    r"""ExecuteBlueprintRequest"""
 
-    activity_type: str
-
-    input_data: OptionalNullable[Dict[str, Any]] = UNSET
-
-    output_data: OptionalNullable[Dict[str, Any]] = UNSET
-
-    group_id: OptionalNullable[str] = UNSET
-
-    task_metadata: OptionalNullable[Dict[str, Any]] = UNSET
-
-    status: OptionalNullable[str] = UNSET
+    init_input: OptionalNullable[Dict[str, Any]] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "input_data",
-            "output_data",
-            "group_id",
-            "task_metadata",
-            "status",
-        ]
-        nullable_fields = [
-            "input_data",
-            "output_data",
-            "group_id",
-            "task_metadata",
-            "status",
-        ]
+        optional_fields = ["init_input"]
+        nullable_fields = ["init_input"]
         null_default_fields = []
 
         serialized = handler(self)

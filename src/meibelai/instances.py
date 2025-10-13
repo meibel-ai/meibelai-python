@@ -91,7 +91,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="addBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -199,7 +199,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="addBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -310,7 +310,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getAllBlueprintInstances",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -421,7 +421,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getAllBlueprintInstances",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -523,7 +523,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -625,7 +625,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -718,7 +718,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="deleteBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -809,7 +809,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="deleteBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -906,7 +906,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="updateBlueprintInstanceStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1003,7 +1003,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="updateBlueprintInstanceStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1108,7 +1108,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="completeBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1213,7 +1213,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="completeBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1321,7 +1321,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="failBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1429,7 +1429,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="failBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1464,6 +1464,8 @@ class Instances(BaseSDK):
         input_data: OptionalNullable[Dict[str, Any]] = UNSET,
         output_data: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
+        task_metadata: OptionalNullable[Dict[str, Any]] = UNSET,
+        status: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1476,6 +1478,8 @@ class Instances(BaseSDK):
         :param input_data:
         :param output_data:
         :param group_id:
+        :param task_metadata:
+        :param status:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1498,6 +1502,8 @@ class Instances(BaseSDK):
                 input_data=input_data,
                 output_data=output_data,
                 group_id=group_id,
+                task_metadata=task_metadata,
+                status=status,
             ),
         )
 
@@ -1541,7 +1547,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="addActivityByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1576,6 +1582,8 @@ class Instances(BaseSDK):
         input_data: OptionalNullable[Dict[str, Any]] = UNSET,
         output_data: OptionalNullable[Dict[str, Any]] = UNSET,
         group_id: OptionalNullable[str] = UNSET,
+        task_metadata: OptionalNullable[Dict[str, Any]] = UNSET,
+        status: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1588,6 +1596,8 @@ class Instances(BaseSDK):
         :param input_data:
         :param output_data:
         :param group_id:
+        :param task_metadata:
+        :param status:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1610,6 +1620,8 @@ class Instances(BaseSDK):
                 input_data=input_data,
                 output_data=output_data,
                 group_id=group_id,
+                task_metadata=task_metadata,
+                status=status,
             ),
         )
 
@@ -1653,7 +1665,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="addActivityByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1747,7 +1759,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getActivityByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1841,7 +1853,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getActivityByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1944,7 +1956,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getActivitiesByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2047,7 +2059,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getActivitiesByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2144,7 +2156,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="updateActivityStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2241,7 +2253,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="updateActivityStatus",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2335,7 +2347,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getEventByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2429,7 +2441,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getEventByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2550,7 +2562,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="createEventByBlueprintInstanceId",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2671,7 +2683,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="createEventByBlueprintInstanceId",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2774,7 +2786,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getEventsByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2877,7 +2889,7 @@ class Instances(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="getEventsByBlueprintInstance",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

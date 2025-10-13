@@ -14,6 +14,8 @@ class UpdateBlueprintTaskRequestTypedDict(TypedDict):
     description: NotRequired[Nullable[str]]
     input_schema: NotRequired[Nullable[Dict[str, Any]]]
     output_schema: NotRequired[Nullable[Dict[str, Any]]]
+    config_schema: NotRequired[Nullable[Dict[str, Any]]]
+    tool_schema: NotRequired[Nullable[Dict[str, Any]]]
 
 
 class UpdateBlueprintTaskRequest(BaseModel):
@@ -27,10 +29,28 @@ class UpdateBlueprintTaskRequest(BaseModel):
 
     output_schema: OptionalNullable[Dict[str, Any]] = UNSET
 
+    config_schema: OptionalNullable[Dict[str, Any]] = UNSET
+
+    tool_schema: OptionalNullable[Dict[str, Any]] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["name", "description", "input_schema", "output_schema"]
-        nullable_fields = ["name", "description", "input_schema", "output_schema"]
+        optional_fields = [
+            "name",
+            "description",
+            "input_schema",
+            "output_schema",
+            "config_schema",
+            "tool_schema",
+        ]
+        nullable_fields = [
+            "name",
+            "description",
+            "input_schema",
+            "output_schema",
+            "config_schema",
+            "tool_schema",
+        ]
         null_default_fields = []
 
         serialized = handler(self)

@@ -12,6 +12,7 @@ Operations with blueprints
 * [get_blueprint](#get_blueprint) - Get Blueprint
 * [update_blueprint](#update_blueprint) - Update Blueprint
 * [delete_blueprint](#delete_blueprint) - Delete Blueprint
+* [execute_blueprint](#execute_blueprint) - Execute Blueprint
 * [create_blueprint_task](#create_blueprint_task) - Create Blueprint Task
 * [get_blueprint_tasks](#get_blueprint_tasks) - Get Blueprint Tasks
 * [update_blueprint_task](#update_blueprint_task) - Update Blueprint Task
@@ -74,10 +75,12 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprints.create_blueprint(name="<value>", dsl_definition=meibelai.DslDefinition.SERVERLESS_WORKFLOW_V1_0_0, version="<value>", description="hoot mmm tinted wealthy brr as inasmuch malfunction", yaml_spec_content="<value>", json_spec_content={
+    res = m_client.blueprints.create_blueprint(name="<value>", dsl_definition=meibelai.DslDefinition.SERVERLESS_WORKFLOW_V1_0_0, execution_mode="<value>", version="<value>", description="hoot mmm tinted wealthy brr as inasmuch malfunction", yaml_spec_content="<value>", json_spec_content={
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
+    }, workflow_type="<value>", workflow_task_queue="<value>", init_input={
+        "key": "<value>",
     })
 
     # Handle response
@@ -91,10 +94,14 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `dsl_definition`                                                    | [models.DslDefinition](../../models/dsldefinition.md)               | :heavy_check_mark:                                                  | DslDefinition                                                       |
+| `execution_mode`                                                    | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `version`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `description`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `yaml_spec_content`                                                 | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `json_spec_content`                                                 | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `workflow_type`                                                     | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `workflow_task_queue`                                               | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `init_input`                                                        | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -165,11 +172,11 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprints.update_blueprint(blueprint_id="<id>", name="<value>", version=None, description="ride sometimes worth although into whenever indeed", dsl_definition=None, yaml_spec_content="<value>", json_spec_content={
+    res = m_client.blueprints.update_blueprint(blueprint_id="<id>", name="<value>", execution_mode="<value>", version=None, description="ride sometimes worth although into whenever indeed", dsl_definition=None, yaml_spec_content="<value>", json_spec_content={
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
-    })
+    }, init_input=None)
 
     # Handle response
     print(res)
@@ -182,11 +189,13 @@ with Meibelai(
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `blueprint_id`                                                          | *str*                                                                   | :heavy_check_mark:                                                      | N/A                                                                     |
 | `name`                                                                  | *OptionalNullable[str]*                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `execution_mode`                                                        | *OptionalNullable[str]*                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `version`                                                               | *OptionalNullable[str]*                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `description`                                                           | *OptionalNullable[str]*                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `dsl_definition`                                                        | [OptionalNullable[models.DslDefinition]](../../models/dsldefinition.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `yaml_spec_content`                                                     | *OptionalNullable[str]*                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `json_spec_content`                                                     | Dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `init_input`                                                            | Dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
 | `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
 
 ### Response
@@ -241,6 +250,52 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
+## execute_blueprint
+
+Execute Blueprint
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="executeBlueprint" method="post" path="/blueprint/{blueprint_id}/execute" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.blueprints.execute_blueprint(blueprint_id="<id>", init_input={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    })
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `blueprint_id`                                                      | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `init_input`                                                        | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[Any](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
 ## create_blueprint_task
 
 Create Blueprint Task
@@ -263,7 +318,11 @@ with Meibelai(
     }, output_schema={
         "key": "<value>",
         "key1": "<value>",
-    }, description="loyally upon around ick near miserably")
+    }, type_="<value>", description="loyally upon around ick near miserably", config_schema={
+        "key": "<value>",
+    }, tool_schema={
+        "key": "<value>",
+    })
 
     # Handle response
     print(res)
@@ -278,7 +337,10 @@ with Meibelai(
 | `name`                                                              | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `input_schema`                                                      | Dict[str, *Any*]                                                    | :heavy_check_mark:                                                  | N/A                                                                 |
 | `output_schema`                                                     | Dict[str, *Any*]                                                    | :heavy_check_mark:                                                  | N/A                                                                 |
+| `type`                                                              | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `description`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `config_schema`                                                     | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `tool_schema`                                                       | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
@@ -356,6 +418,13 @@ with Meibelai(
     }, output_schema={
         "key": "<value>",
         "key1": "<value>",
+    }, config_schema={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    }, tool_schema={
+        "key": "<value>",
+        "key1": "<value>",
     })
 
     # Handle response
@@ -373,6 +442,8 @@ with Meibelai(
 | `description`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `input_schema`                                                      | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `output_schema`                                                     | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `config_schema`                                                     | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `tool_schema`                                                       | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

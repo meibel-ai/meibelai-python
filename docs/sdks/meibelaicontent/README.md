@@ -80,7 +80,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>", files=[], prefix="<value>", extract_zip=False, extract_eml=True, max_concurrent=655255)
+    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>")
 
     # Handle response
     print(res)
@@ -92,11 +92,6 @@ with Meibelai(
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `files`                                                             | List[[models.Files](../../models/files.md)]                         | :heavy_check_mark:                                                  | Files to upload to the datasource                                   |
-| `prefix`                                                            | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | Path prefix for organizing uploaded files                           |
-| `extract_zip`                                                       | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | Auto-extract ZIP archives                                           |
-| `extract_eml`                                                       | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | Extract EML email files                                             |
-| `max_concurrent`                                                    | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | Maximum concurrent file uploads                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

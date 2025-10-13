@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: ddbadb7773a85d62726a08dbcfc5d497
+  docChecksum: 99f5e429f2a94643849407993276d796
   docVersion: 0.2.0
-  speakeasyVersion: 1.631.4
-  generationVersion: 2.716.16
-  releaseVersion: 0.17.1
-  configChecksum: 4c2b8ab3d77f5300432f558ec9932c11
+  speakeasyVersion: 1.636.3
+  generationVersion: 2.723.11
+  releaseVersion: 0.18.0
+  configChecksum: 73c37329a536255f8a6c470d2a54e5dd
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.22.0
+    core: 5.22.1
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     downloadStreams: 1.0.1
@@ -26,15 +26,13 @@ features:
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.1
     methodArguments: 1.0.2
-    multipartFileContentType: 1.0.0
     nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.1.0
-    serverEvents: 1.0.10
+    serverEvents: 1.0.11
     serverEventsSentinels: 0.1.0
-    unions: 3.0.5
-    uploadStreams: 1.0.0
+    unions: 3.1.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -76,6 +74,7 @@ generatedFiles:
   - docs/models/alloweddataelementfilterkeys.md
   - docs/models/basicwebauth.md
   - docs/models/blueprint.md
+  - docs/models/blueprintexecutionmode.md
   - docs/models/blueprintinstance.md
   - docs/models/blueprintinstancestatus.md
   - docs/models/cancelblueprintinstancerequest.md
@@ -117,10 +116,11 @@ generatedFiles:
   - docs/models/embeddingmodel.md
   - docs/models/event.md
   - docs/models/eventtype.md
+  - docs/models/executeblueprintrequest.md
+  - docs/models/executeblueprintrequest1.md
   - docs/models/extractormodel.md
   - docs/models/failblueprintinstancerequest.md
   - docs/models/failblueprintinstancerequest1.md
-  - docs/models/files.md
   - docs/models/getactivitiesbyblueprintinstancerequest.md
   - docs/models/getactivitiesresponse.md
   - docs/models/getactivitybyblueprintinstancerequest.md
@@ -206,7 +206,6 @@ generatedFiles:
   - docs/models/updatetagtableresponse.md
   - docs/models/uploadcontentresponse.md
   - docs/models/uploaddatasourcecontentrequest.md
-  - docs/models/uploaddatasourcecontentrequestbody.md
   - docs/models/utils/retryconfig.md
   - docs/models/validationerror.md
   - docs/models/webdomain.md
@@ -216,7 +215,6 @@ generatedFiles:
   - docs/sdks/datasources/README.md
   - docs/sdks/executions/README.md
   - docs/sdks/instances/README.md
-  - docs/sdks/meibelai/README.md
   - docs/sdks/meibelaicontent/README.md
   - docs/sdks/rag/README.md
   - docs/sdks/tag/README.md
@@ -276,6 +274,7 @@ generatedFiles:
   - src/meibelai/models/apierror.py
   - src/meibelai/models/basicwebauth.py
   - src/meibelai/models/blueprint.py
+  - src/meibelai/models/blueprintexecutionmode.py
   - src/meibelai/models/blueprintinstance.py
   - src/meibelai/models/blueprintinstancestatus.py
   - src/meibelai/models/cancelblueprintinstanceop.py
@@ -316,6 +315,8 @@ generatedFiles:
   - src/meibelai/models/embeddingmodel.py
   - src/meibelai/models/event.py
   - src/meibelai/models/eventtype.py
+  - src/meibelai/models/executeblueprintop.py
+  - src/meibelai/models/executeblueprintrequest.py
   - src/meibelai/models/extractormodel.py
   - src/meibelai/models/failblueprintinstanceop.py
   - src/meibelai/models/failblueprintinstancerequest.py
@@ -2123,7 +2124,7 @@ examples:
         path:
           blueprint_instance_id: "<id>"
       requestBody:
-        application/json: {"activity_type": "<value>", "input_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "group_id": "<id>"}
+        application/json: {"activity_type": "<value>", "input_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "group_id": "<id>", "task_metadata": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "status": "<value>"}
       responses:
         "201":
           application/json: {"id": "<id>"}
@@ -2137,7 +2138,7 @@ examples:
           activity_id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "<id>", "blueprint_instance_id": "<id>", "activity_type": "<value>", "status": "failed", "start_time": "2024-12-04T11:29:08.899Z", "end_time": "2024-07-17T16:38:08.725Z", "input_data": {"key": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "error": "<value>", "group_id": "<id>"}]}
+          application/json: {"data": [{"id": "<id>", "blueprint_instance_id": "<id>", "activity_type": "<value>", "status": "failed", "start_time": "2024-12-04T11:29:08.899Z", "end_time": "2024-07-17T16:38:08.725Z", "input_data": {"key": "<value>"}, "output_data": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "error": "<value>", "group_id": "<id>", "task_metadata": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}]}
         "422":
           application/json: {"detail": [{"loc": [808956], "msg": "<value>", "type": "<value>"}]}
   getActivitiesByBlueprintInstance:
@@ -2256,13 +2257,13 @@ examples:
     speakeasy-default-get-blueprints:
       responses:
         "200":
-          application/json: {"data": [{"id": "<id>", "name": "<value>", "version": "<value>", "description": null, "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2023-04-26T01:38:27.798Z", "updated_at": "2025-02-12T17:31:25.478Z", "customer_id": "<id>", "project_id": "<id>"}]}
+          application/json: {"data": [{"id": "<id>", "name": "<value>", "execution_mode": "CHAT", "chat_signal": "<value>", "version": "<value>", "description": null, "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2023-04-26T01:38:27.798Z", "updated_at": "2025-02-12T17:31:25.478Z", "customer_id": "<id>", "project_id": "<id>", "workflow_type": null, "workflow_task_queue": "<value>", "init_input": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}]}
         "422":
           application/json: {"detail": [{"loc": [421867], "msg": "<value>", "type": "<value>"}]}
   createBlueprint:
     speakeasy-default-create-blueprint:
       requestBody:
-        application/json: {"name": "<value>", "version": "<value>", "description": "hoot mmm tinted wealthy brr as inasmuch malfunction", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+        application/json: {"name": "<value>", "execution_mode": "<value>", "version": "<value>", "description": "hoot mmm tinted wealthy brr as inasmuch malfunction", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "workflow_type": "<value>", "workflow_task_queue": "<value>", "init_input": {"key": "<value>"}}
       responses:
         "201":
           application/json: {"id": "<id>"}
@@ -2275,7 +2276,7 @@ examples:
           blueprint_id: "<id>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "version": null, "description": "bran convoke sans ripe sanity tenderly pave er across", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2024-05-12T13:12:54.876Z", "updated_at": "2024-04-05T23:10:34.404Z", "customer_id": "<id>", "project_id": "<id>"}
+          application/json: {"id": "<id>", "name": "<value>", "execution_mode": "CHAT", "chat_signal": "<value>", "version": null, "description": "bran convoke sans ripe sanity tenderly pave er across", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "created_by": "<value>", "updated_by": "<value>", "created_at": "2024-05-12T13:12:54.876Z", "updated_at": "2024-04-05T23:10:34.404Z", "customer_id": "<id>", "project_id": "<id>", "workflow_type": "<value>", "workflow_task_queue": "<value>", "init_input": null}
         "422":
           application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
   updateBlueprint:
@@ -2284,10 +2285,10 @@ examples:
         path:
           blueprint_id: "<id>"
       requestBody:
-        application/json: {"name": "<value>", "version": null, "description": "ride sometimes worth although into whenever indeed", "dsl_definition": null, "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+        application/json: {"name": "<value>", "execution_mode": "<value>", "version": null, "description": "ride sometimes worth although into whenever indeed", "dsl_definition": null, "yaml_spec_content": "<value>", "json_spec_content": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "init_input": null}
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "version": "<value>", "description": "daughter psst strange absent furthermore lecture numb shore king", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": null, "created_by": "<value>", "updated_by": "<value>", "created_at": "2025-02-05T03:30:50.854Z", "updated_at": "2025-07-15T18:46:17.464Z", "customer_id": "<id>", "project_id": "<id>"}
+          application/json: {"id": "<id>", "name": "<value>", "execution_mode": "WORKFLOW", "chat_signal": "<value>", "version": "<value>", "description": "daughter psst strange absent furthermore lecture numb shore king", "dsl_definition": "serverless-workflow_v1.0.0", "yaml_spec_content": "<value>", "json_spec_content": null, "created_by": "<value>", "updated_by": "<value>", "created_at": "2025-02-05T03:30:50.854Z", "updated_at": "2025-07-15T18:46:17.464Z", "customer_id": "<id>", "project_id": "<id>", "workflow_type": "<value>", "workflow_task_queue": "<value>", "init_input": {"key": "<value>"}}
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   deleteBlueprint:
@@ -2306,7 +2307,7 @@ examples:
         path:
           blueprint_id: "<id>"
       requestBody:
-        application/json: {"name": "<value>", "description": "loyally upon around ick near miserably", "input_schema": {"key": "<value>", "key1": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}}
+        application/json: {"name": "<value>", "type": "<value>", "description": "loyally upon around ick near miserably", "input_schema": {"key": "<value>", "key1": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}, "config_schema": {"key": "<value>"}, "tool_schema": {"key": "<value>"}}
       responses:
         "201":
           application/json: "<value>"
@@ -2329,7 +2330,7 @@ examples:
           blueprint_id: "<id>"
           task_id: "<id>"
       requestBody:
-        application/json: {"name": "<value>", "description": "artistic degenerate knit chow obnoxiously loosely instead sleepily below", "input_schema": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}}
+        application/json: {"name": "<value>", "description": "artistic degenerate knit chow obnoxiously loosely instead sleepily below", "input_schema": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "output_schema": {"key": "<value>", "key1": "<value>"}, "config_schema": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "tool_schema": {"key": "<value>", "key1": "<value>"}}
       responses:
         "200":
           application/json: "<value>"
@@ -2365,8 +2366,18 @@ examples:
           application/json: "<value>"
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  executeBlueprint:
+    speakeasy-default-execute-blueprint:
+      parameters:
+        path:
+          blueprint_id: "<id>"
+      requestBody:
+        application/json: {"init_input": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Python SDK Changes Detected:
-  * `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:
+releaseNotes: "## Python SDK Changes Detected:\n* `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprints.create_blueprint_task()`:  `request` **Changed**\n* `meibelai.blueprints.get_blueprints()`:  `response.data.[]` **Changed**\n* `meibelai.blueprints.create_blueprint()`:  `request` **Changed**\n* `meibelai.blueprints.get_blueprint()`:  `response` **Changed**\n* `meibelai.blueprints.update_blueprint()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `meibelai.blueprints.execute_blueprint()`: **Added**\n* `meibelai.blueprints.update_blueprint_task()`:  `request` **Changed**\n* `meibelai.blueprints.instances.get_all_blueprint_instances()`:  `response.data.[].activities.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.get_blueprint_instance()`:  `response.data.[].activities.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.add_activity_by_blueprint_instance()`:  `request` **Changed**\n* `meibelai.blueprints.instances.get_activity_by_blueprint_instance()`:  `response.data.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.get_activities_by_blueprint_instance()`:  `response.data.[].task_metadata` **Added**\n"

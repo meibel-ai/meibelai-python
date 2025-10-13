@@ -96,6 +96,7 @@ if TYPE_CHECKING:
     from .apierror import APIError
     from .basicwebauth import BasicWebAuth, BasicWebAuthTypedDict
     from .blueprint import Blueprint, BlueprintTypedDict
+    from .blueprintexecutionmode import BlueprintExecutionMode
     from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
     from .cancelblueprintinstanceop import (
@@ -213,6 +214,14 @@ if TYPE_CHECKING:
     from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
     from .event import Event, EventTypedDict
     from .eventtype import EventType
+    from .executeblueprintop import (
+        ExecuteBlueprintRequest1,
+        ExecuteBlueprintRequest1TypedDict,
+    )
+    from .executeblueprintrequest import (
+        ExecuteBlueprintRequest,
+        ExecuteBlueprintRequestTypedDict,
+    )
     from .extractormodel import ExtractorModel, ExtractorModelTypedDict
     from .failblueprintinstanceop import (
         FailBlueprintInstanceRequest1,
@@ -475,11 +484,7 @@ if TYPE_CHECKING:
         UploadContentResponseTypedDict,
     )
     from .uploaddatasourcecontentop import (
-        Files,
-        FilesTypedDict,
         UploadDatasourceContentRequest,
-        UploadDatasourceContentRequestBody,
-        UploadDatasourceContentRequestBodyTypedDict,
         UploadDatasourceContentRequestTypedDict,
     )
     from .validationerror import (
@@ -557,6 +562,7 @@ __all__ = [
     "BasicWebAuth",
     "BasicWebAuthTypedDict",
     "Blueprint",
+    "BlueprintExecutionMode",
     "BlueprintInstance",
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
@@ -635,14 +641,16 @@ __all__ = [
     "Event",
     "EventType",
     "EventTypedDict",
+    "ExecuteBlueprintRequest",
+    "ExecuteBlueprintRequest1",
+    "ExecuteBlueprintRequest1TypedDict",
+    "ExecuteBlueprintRequestTypedDict",
     "ExtractorModel",
     "ExtractorModelTypedDict",
     "FailBlueprintInstanceRequest",
     "FailBlueprintInstanceRequest1",
     "FailBlueprintInstanceRequest1TypedDict",
     "FailBlueprintInstanceRequestTypedDict",
-    "Files",
-    "FilesTypedDict",
     "GetActivitiesByBlueprintInstanceRequest",
     "GetActivitiesByBlueprintInstanceRequestTypedDict",
     "GetActivitiesResponse",
@@ -815,8 +823,6 @@ __all__ = [
     "UploadContentResponse",
     "UploadContentResponseTypedDict",
     "UploadDatasourceContentRequest",
-    "UploadDatasourceContentRequestBody",
-    "UploadDatasourceContentRequestBodyTypedDict",
     "UploadDatasourceContentRequestTypedDict",
     "ValidationError",
     "ValidationErrorTypedDict",
@@ -892,6 +898,7 @@ _dynamic_imports: dict[str, str] = {
     "BasicWebAuthTypedDict": ".basicwebauth",
     "Blueprint": ".blueprint",
     "BlueprintTypedDict": ".blueprint",
+    "BlueprintExecutionMode": ".blueprintexecutionmode",
     "BlueprintInstance": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
@@ -969,6 +976,10 @@ _dynamic_imports: dict[str, str] = {
     "Event": ".event",
     "EventTypedDict": ".event",
     "EventType": ".eventtype",
+    "ExecuteBlueprintRequest1": ".executeblueprintop",
+    "ExecuteBlueprintRequest1TypedDict": ".executeblueprintop",
+    "ExecuteBlueprintRequest": ".executeblueprintrequest",
+    "ExecuteBlueprintRequestTypedDict": ".executeblueprintrequest",
     "ExtractorModel": ".extractormodel",
     "ExtractorModelTypedDict": ".extractormodel",
     "FailBlueprintInstanceRequest1": ".failblueprintinstanceop",
@@ -1143,11 +1154,7 @@ _dynamic_imports: dict[str, str] = {
     "UpdateTagTableResponseTypedDict": ".updatetagtableresponse",
     "UploadContentResponse": ".uploadcontentresponse",
     "UploadContentResponseTypedDict": ".uploadcontentresponse",
-    "Files": ".uploaddatasourcecontentop",
-    "FilesTypedDict": ".uploaddatasourcecontentop",
     "UploadDatasourceContentRequest": ".uploaddatasourcecontentop",
-    "UploadDatasourceContentRequestBody": ".uploaddatasourcecontentop",
-    "UploadDatasourceContentRequestBodyTypedDict": ".uploaddatasourcecontentop",
     "UploadDatasourceContentRequestTypedDict": ".uploaddatasourcecontentop",
     "Loc": ".validationerror",
     "LocTypedDict": ".validationerror",

@@ -11,3 +11,5 @@ UpdateBlueprintTaskRequest
 | `description`           | *OptionalNullable[str]* | :heavy_minus_sign:      | N/A                     |
 | `input_schema`          | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |
 | `output_schema`         | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |
+| `config_schema`         | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |
+| `tool_schema`           | Dict[str, *Any*]        | :heavy_minus_sign:      | N/A                     |

@@ -347,7 +347,11 @@ with Meibelai(
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
-    }, group_id="<id>")
+    }, group_id="<id>", task_metadata={
+        "key": "<value>",
+        "key1": "<value>",
+        "key2": "<value>",
+    }, status="<value>")
 
     # Handle response
     print(res)
@@ -363,6 +367,8 @@ with Meibelai(
 | `input_data`                                                        | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `output_data`                                                       | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `group_id`                                                          | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `task_metadata`                                                     | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `status`                                                            | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

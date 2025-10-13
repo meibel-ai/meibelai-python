@@ -14,10 +14,14 @@ class AddBlueprintRequestTypedDict(TypedDict):
     name: str
     dsl_definition: DslDefinition
     r"""DslDefinition"""
+    execution_mode: NotRequired[Nullable[str]]
     version: NotRequired[Nullable[str]]
     description: NotRequired[Nullable[str]]
     yaml_spec_content: NotRequired[Nullable[str]]
     json_spec_content: NotRequired[Nullable[Dict[str, Any]]]
+    workflow_type: NotRequired[Nullable[str]]
+    workflow_task_queue: NotRequired[Nullable[str]]
+    init_input: NotRequired[Nullable[Dict[str, Any]]]
 
 
 class AddBlueprintRequest(BaseModel):
@@ -28,6 +32,8 @@ class AddBlueprintRequest(BaseModel):
     dsl_definition: DslDefinition
     r"""DslDefinition"""
 
+    execution_mode: OptionalNullable[str] = UNSET
+
     version: OptionalNullable[str] = UNSET
 
     description: OptionalNullable[str] = UNSET
@@ -36,19 +42,33 @@ class AddBlueprintRequest(BaseModel):
 
     json_spec_content: OptionalNullable[Dict[str, Any]] = UNSET
 
+    workflow_type: OptionalNullable[str] = UNSET
+
+    workflow_task_queue: OptionalNullable[str] = UNSET
+
+    init_input: OptionalNullable[Dict[str, Any]] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
+            "execution_mode",
             "version",
             "description",
             "yaml_spec_content",
             "json_spec_content",
+            "workflow_type",
+            "workflow_task_queue",
+            "init_input",
         ]
         nullable_fields = [
+            "execution_mode",
             "version",
             "description",
             "yaml_spec_content",
             "json_spec_content",
+            "workflow_type",
+            "workflow_task_queue",
+            "init_input",
         ]
         null_default_fields = []
 

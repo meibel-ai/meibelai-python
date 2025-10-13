@@ -22,6 +22,7 @@ class ActivityTypedDict(TypedDict):
     output_data: NotRequired[Nullable[Dict[str, Any]]]
     error: NotRequired[Nullable[str]]
     group_id: NotRequired[Nullable[str]]
+    task_metadata: NotRequired[Nullable[Dict[str, Any]]]
 
 
 class Activity(BaseModel):
@@ -47,6 +48,8 @@ class Activity(BaseModel):
 
     group_id: OptionalNullable[str] = UNSET
 
+    task_metadata: OptionalNullable[Dict[str, Any]] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -58,6 +61,7 @@ class Activity(BaseModel):
             "output_data",
             "error",
             "group_id",
+            "task_metadata",
         ]
         nullable_fields = [
             "id",
@@ -68,6 +72,7 @@ class Activity(BaseModel):
             "output_data",
             "error",
             "group_id",
+            "task_metadata",
         ]
         null_default_fields = []
 

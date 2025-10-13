@@ -32,7 +32,6 @@ Our API allows you to interact with our services.  Read the[docs](https://docs.m
   * [Authentication](https://github.com/meibel-ai/meibelai-python/blob/master/#authentication)
   * [Available Resources and Operations](https://github.com/meibel-ai/meibelai-python/blob/master/#available-resources-and-operations)
   * [Server-sent event streaming](https://github.com/meibel-ai/meibelai-python/blob/master/#server-sent-event-streaming)
-  * [File uploads](https://github.com/meibel-ai/meibelai-python/blob/master/#file-uploads)
   * [Retries](https://github.com/meibel-ai/meibelai-python/blob/master/#retries)
   * [Error Handling](https://github.com/meibel-ai/meibelai-python/blob/master/#error-handling)
   * [Server Selection](https://github.com/meibel-ai/meibelai-python/blob/master/#server-selection)
@@ -276,6 +275,7 @@ with Meibelai(
 * [get_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#get_blueprint) - Get Blueprint
 * [update_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#update_blueprint) - Update Blueprint
 * [delete_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#delete_blueprint) - Delete Blueprint
+* [execute_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#execute_blueprint) - Execute Blueprint
 * [create_blueprint_task](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#create_blueprint_task) - Create Blueprint Task
 * [get_blueprint_tasks](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#get_blueprint_tasks) - Get Blueprint Tasks
 * [update_blueprint_task](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/blueprints/README.md#update_blueprint_task) - Update Blueprint Task
@@ -367,7 +367,6 @@ with Meibelai(
 * [get_all_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#get_all_tag_column_info) - Get All Tag Column Info
 * [delete_tag_column_info](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md#delete_tag_column_info) - Delete Tag Column Info
 
-
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -405,33 +404,6 @@ with Meibelai(
 [generator]: https://book.pythontips.com/en/latest/generators.html
 [context-manager]: https://book.pythontips.com/en/latest/context_managers.html
 <!-- End Server-sent event streaming [eventstream] -->
-
-<!-- Start File uploads [file-upload] -->
-## File uploads
-
-Certain SDK methods accept file objects as part of a request body or multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
-
-> [!TIP]
->
-> For endpoints that handle file uploads bytes arrays can also be used. However, using streams is recommended for large files.
->
-
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.datasources.content.upload_datasource_content(datasource_id="<id>", files=[], prefix="<value>", extract_zip=False, extract_eml=True, max_concurrent=655255)
-
-    # Handle response
-    print(res)
-
-```
-<!-- End File uploads [file-upload] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
