@@ -5,8 +5,8 @@ management:
   docVersion: 0.2.0
   speakeasyVersion: 1.636.3
   generationVersion: 2.723.11
-  releaseVersion: 0.18.0
-  configChecksum: 73c37329a536255f8a6c470d2a54e5dd
+  releaseVersion: 0.19.1
+  configChecksum: 2daf9616c1f9b72ba1a9d64e774b2461
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:
@@ -2380,4 +2380,3 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Python SDK Changes Detected:\n* `meibelai.datasources.content.upload_datasource_content()`:  `request` **Changed** **Breaking** :warning:\n* `meibelai.blueprints.create_blueprint_task()`:  `request` **Changed**\n* `meibelai.blueprints.get_blueprints()`:  `response.data.[]` **Changed**\n* `meibelai.blueprints.create_blueprint()`:  `request` **Changed**\n* `meibelai.blueprints.get_blueprint()`:  `response` **Changed**\n* `meibelai.blueprints.update_blueprint()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `meibelai.blueprints.execute_blueprint()`: **Added**\n* `meibelai.blueprints.update_blueprint_task()`:  `request` **Changed**\n* `meibelai.blueprints.instances.get_all_blueprint_instances()`:  `response.data.[].activities.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.get_blueprint_instance()`:  `response.data.[].activities.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.add_activity_by_blueprint_instance()`:  `request` **Changed**\n* `meibelai.blueprints.instances.get_activity_by_blueprint_instance()`:  `response.data.[].task_metadata` **Added**\n* `meibelai.blueprints.instances.get_activities_by_blueprint_instance()`:  `response.data.[].task_metadata` **Added**\n"

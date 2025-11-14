@@ -24,8 +24,11 @@ generation:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
+  requestBodyFieldName: ""
+  schemas:
+    allOfMergeStrategy: shallowMerge
 python:
-  version: 0.18.0
+  version: 0.19.1
   additionalDependencies:
     dev: {}
     main: {}
