@@ -28,7 +28,7 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
 python:
-  version: 0.19.1
+  version: 0.20.1
   additionalDependencies:
     dev: {}
     main: {}
@@ -60,6 +60,7 @@ python:
       webhooks: ""
   inputModelSuffix: input
   legacyPyright: true
+  license: ""
   maxMethodParams: 999
   methodArguments: infer-optional-args
   moduleName: ""
