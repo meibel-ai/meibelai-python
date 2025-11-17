@@ -5,8 +5,8 @@ management:
   docVersion: 0.2.0
   speakeasyVersion: 1.636.3
   generationVersion: 2.723.11
-  releaseVersion: 0.21.1
-  configChecksum: a60df3a54090e8476d12185ed7f9070c
+  releaseVersion: 0.22.1
+  configChecksum: 02566d5723d5436e879b19822cc54056
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 features:

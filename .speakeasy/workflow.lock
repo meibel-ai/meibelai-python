@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:1f19e7cbf7649036c6320886f49142faa0677b3d7e1d0dfe496c8f806780d3aa
         tags:
             - latest
-            - speakeasy-sdk-regen-1763253043
+            - speakeasy-sdk-regen-1763339344
             - 0.2.0
 targets:
     meibelai:
@@ -15,7 +15,7 @@ targets:
         sourceRevisionDigest: sha256:1f42ba2ef784945c29e3ecbbcf00e0cd76ee219f50fdbc5289f7ce08239fcced
         sourceBlobDigest: sha256:1f19e7cbf7649036c6320886f49142faa0677b3d7e1d0dfe496c8f806780d3aa
         codeSamplesNamespace: meibel-gateway-service-python-code-samples
-        codeSamplesRevisionDigest: sha256:839c2c5378372ae4d62e6afa79adfab3909f065e022d8f8f597443b1ff8579b7
+        codeSamplesRevisionDigest: sha256:02a30964833925071174086c2afe25d9e18117477063da8100c58e28f648cb08
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
