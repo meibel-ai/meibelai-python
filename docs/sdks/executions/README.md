@@ -10,7 +10,6 @@ work with executions of blueprints
 * [cancel_blueprint_instance](#cancel_blueprint_instance) - Cancel Blueprint Instance
 * [send_signal](#send_signal) - Send Signal
 * [query_workflow](#query_workflow) - Query Workflow
-* [chat_with_blueprint](#chat_with_blueprint) - Chat With Blueprint
 * [get_blueprint_instance_workflow_status](#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
 * [send_chat_message](#send_chat_message) - Send Chat Message
 
@@ -196,74 +195,6 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## chat_with_blueprint
-
-Chat endpoint that queries current state, sends a signal, then polls until the list changes.
-
-Args:
-    blueprint_instance_id: Unique identifier for the workflow instance
-    user_message: User message to send
-    query_name: Name of the query to poll
-    signal_args: Optional arguments for the signal
-    query_args: Optional arguments for the query
-    max_wait_seconds: Maximum time to wait for a response (default: 30 seconds)
-    poll_interval_seconds: Interval between query polls (default: 1.0 seconds)
-    min_new_items: Minimum new items to wait for (default: 2 for signal + response)
-
-Returns:
-    The updated query response when the list changes sufficiently
-
-Raises:
-    HTTPException: If timeout is reached or other errors occur
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="chatWithBlueprint" method="post" path="/{blueprint_instance_id}/chat" -->
-```python
-from meibelai import Meibelai
-import os
-
-
-with Meibelai(
-    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
-) as m_client:
-
-    res = m_client.blueprints.executions.chat_with_blueprint(blueprint_instance_id="<id>", user_message="<value>", signal_name="incoming_chat_message", query_name="GetWorkflowState", max_wait_seconds=30, poll_interval_seconds=1, min_new_items=1, request_body=[
-        "<value 1>",
-        "<value 2>",
-        "<value 3>",
-    ])
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `user_message`                                                      | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `signal_name`                                                       | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `query_name`                                                        | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `max_wait_seconds`                                                  | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `poll_interval_seconds`                                             | *Optional[float]*                                                   | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `min_new_items`                                                     | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `request_body`                                                      | List[*Any*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[Any](../../models/.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.APIError            | 4XX, 5XX                   | \*/\*                      |
-
 ## get_blueprint_instance_workflow_status
 
 Get Blueprint Instance Workflow Status
@@ -311,7 +242,7 @@ Send Chat Message
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="sendChatMessage" method="post" path="/{blueprint_instance_id}/chat/send_message" -->
+<!-- UsageSnippet language="python" operationID="sendChatMessage" method="post" path="/{blueprint_instance_id}/chat" -->
 ```python
 from meibelai import Meibelai
 import os

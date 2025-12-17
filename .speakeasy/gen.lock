@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 9a5c9bb525f3b50c38633307b5519832
+  docChecksum: d8f6693992e17fd7746457b5d4fb0a3d
   docVersion: 0.3.0
-  speakeasyVersion: 1.678.0
-  generationVersion: 2.787.2
-  releaseVersion: 0.23.0
-  configChecksum: ce16d64ed240f5dcb54b9637cc64c1cc
+  speakeasyVersion: 1.678.1
+  generationVersion: 2.787.5
+  releaseVersion: 0.23.1
+  configChecksum: c1ffddc9e23abb4e95a39e932d3951a2
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 persistentEdits:
-  generation_id: 726ab2ae-d3df-45e2-b6d8-b38cd4d7822f
-  pristine_commit_hash: bdd464b2f6214b86a1a4f4cafc310ffd829c7d55
-  pristine_tree_hash: 6a0418284e16f58ae4035f5dc74bf90fa0001b5e
+  generation_id: 3cfb6413-cd61-489e-912b-87d0a5303191
+  pristine_commit_hash: e1b42d7f7891c82ab1016503b2b6d4b822ad38f1
+  pristine_tree_hash: e1dff4c157bf7ab98ced73bd5c7c471dac1e2973
 features:
   python:
     additionalDependencies: 1.0.0
@@ -222,10 +222,6 @@ trackedFiles:
     id: d3794aba6279
     last_write_checksum: sha1:569ff8f691dd7f581100e786b31737e81398ad46
     pristine_git_object: 481da2559d4abf3ef5331e4ff0df9d28f1edd406
-  docs/models/chatwithblueprintrequest.md:
-    id: bc908eb2481c
-    last_write_checksum: sha1:8d97cd4fd453f7703f25e9494d25da93e1a75783
-    pristine_git_object: cd773923d8c4766ab628de839bf1b8c571e5cae0
   docs/models/codechunking.md:
     id: 013fdbe4c1ac
     last_write_checksum: sha1:5c55f87ed68636d2a9ef32f69f12d82a793928cf
@@ -772,8 +768,8 @@ trackedFiles:
     pristine_git_object: 84b6fa6bc4946ab812066cb10ef90bcffb765bd3
   docs/sdks/executions/README.md:
     id: 401745b17323
-    last_write_checksum: sha1:a6fa401515998f49efbcbaa5c3d370b5334877a0
-    pristine_git_object: 9beaed4b1804edcfb5842deebfd1d3dee56c9868
+    last_write_checksum: sha1:3fb43edd86e45414ecd68655c7b79f0332048ff3
+    pristine_git_object: d44ad81c255df1537c3d4e88f0f9672402e95fc5
   docs/sdks/instances/README.md:
     id: 3a42a583dacc
     last_write_checksum: sha1:74c5c9dbf5b0ea6eaceccb5a415e6d84de53b4c8
@@ -804,8 +800,8 @@ trackedFiles:
     pristine_git_object: e8cd3e85682cd3d489cf3c5be75a0563d0c9f4bf
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:83e47cf3a9df962e9db733a9abc60837e6fcb22c
-    pristine_git_object: 9e76d70c09194526b4a68a1da8d2d5e89d2f8eca
+    last_write_checksum: sha1:c457995fc2e5b52b3ba8e58640bd256f4e6e4a2e
+    pristine_git_object: 038b726de2c67555d8ae66ff5f546c95bb21282b
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:4f38078791667b48e093e6f5b54bda2b240c741d
@@ -832,8 +828,8 @@ trackedFiles:
     pristine_git_object: 9b50d497b8196195b4d7a30470cd231d68d4cd39
   src/meibelai/_version.py:
     id: 67c1a15c7974
-    last_write_checksum: sha1:53ec2186194685d27416d76b026fc87e88537135
-    pristine_git_object: a235469d9f102024fea13b4e5c120b14a7076d02
+    last_write_checksum: sha1:1e3fd8d1e1cee796c70ff7ffaa17535139122f0e
+    pristine_git_object: dd58f498da460e33130635816ce1ad448858b012
   src/meibelai/basesdk.py:
     id: 147a3827d9f5
     last_write_checksum: sha1:55f782d4ae2e71f7b5f4085796d395bc08ca2b0a
@@ -856,8 +852,8 @@ trackedFiles:
     pristine_git_object: d36898402313e18185606c6bd51f5cbf3644c1a4
   src/meibelai/executions.py:
     id: eeda88d248c6
-    last_write_checksum: sha1:aea55e28ec3207c9f2e4dd6ac2d82290a1205556
-    pristine_git_object: 7ebe2ca400bc126d0602f91f8f1920ecae814e68
+    last_write_checksum: sha1:320ab6549dca8303bfbf4db5be4045747a34705d
+    pristine_git_object: 933d06d81966d10b4e944523a63a2319055487fd
   src/meibelai/httpclient.py:
     id: 71c056cf3639
     last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
@@ -872,8 +868,8 @@ trackedFiles:
     pristine_git_object: cf63e7377a068cf802a8305dbfed05adce208a43
   src/meibelai/models/__init__.py:
     id: 5c627b972d34
-    last_write_checksum: sha1:9f1b67a1a40d3d228d77fd1a3c05dce757b6fc63
-    pristine_git_object: 7091a2326fe1a5626aa5e11f89c0778236191dbd
+    last_write_checksum: sha1:fb85b011d9b98b6a050e9049f008cecbbb46a78c
+    pristine_git_object: eebe7c2e5ea995f395aeca32f7be2c3960fa3381
   src/meibelai/models/activity.py:
     id: 7af01ddbba8f
     last_write_checksum: sha1:f5f577ca64c4198b7fef710fbc5bf7368d90a7e1
@@ -1038,10 +1034,6 @@ trackedFiles:
     id: 7fe219b3a92e
     last_write_checksum: sha1:a06844257f53d1e41f77719c42f47f2a28aa96e8
     pristine_git_object: 993ba73da2af6cb56b82859b719179c149693443
-  src/meibelai/models/chatwithblueprintop.py:
-    id: 7433bc82c8dd
-    last_write_checksum: sha1:bfd86743a0abb4b774a179749760ef8ceae6bcfe
-    pristine_git_object: 73375703217d5034d2f1fd150cb41fd1c0aa470a
   src/meibelai/models/codechunking.py:
     id: e3026cc15900
     last_write_checksum: sha1:4b963ef7f0930c726d465abea4908208317bacd0
@@ -3634,8 +3626,7 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Python SDK Changes:
-  * `meibelai.blueprints.executions.get_blueprint_instance_workflow_status()`: **Added**
-  * `meibelai.blueprints.executions.send_chat_message()`: **Added**
+  * `meibelai.blueprints.executions.chat_with_blueprint()`: **Deleted** **Breaking** :warning:
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

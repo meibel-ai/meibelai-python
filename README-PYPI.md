@@ -287,7 +287,6 @@ with Meibelai(
 * [cancel_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
 * [send_signal](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_signal) - Send Signal
 * [query_workflow](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#query_workflow) - Query Workflow
-* [chat_with_blueprint](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#chat_with_blueprint) - Chat With Blueprint
 * [get_blueprint_instance_workflow_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
 * [send_chat_message](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_chat_message) - Send Chat Message
 

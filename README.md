@@ -287,7 +287,6 @@ with Meibelai(
 * [cancel_blueprint_instance](docs/sdks/executions/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
 * [send_signal](docs/sdks/executions/README.md#send_signal) - Send Signal
 * [query_workflow](docs/sdks/executions/README.md#query_workflow) - Query Workflow
-* [chat_with_blueprint](docs/sdks/executions/README.md#chat_with_blueprint) - Chat With Blueprint
 * [get_blueprint_instance_workflow_status](docs/sdks/executions/README.md#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
 * [send_chat_message](docs/sdks/executions/README.md#send_chat_message) - Send Chat Message
 

@@ -111,10 +111,6 @@ if TYPE_CHECKING:
         ChatBlueprintInstanceResponse,
         ChatBlueprintInstanceResponseTypedDict,
     )
-    from .chatwithblueprintop import (
-        ChatWithBlueprintRequest,
-        ChatWithBlueprintRequestTypedDict,
-    )
     from .codechunking import CodeChunking, CodeChunkingTypedDict
     from .completeblueprintinstanceop import (
         CompleteBlueprintInstanceRequest1,
@@ -589,8 +585,6 @@ __all__ = [
     "ChatBlueprintInstanceRequestTypedDict",
     "ChatBlueprintInstanceResponse",
     "ChatBlueprintInstanceResponseTypedDict",
-    "ChatWithBlueprintRequest",
-    "ChatWithBlueprintRequestTypedDict",
     "CodeChunking",
     "CodeChunkingTypedDict",
     "CompleteBlueprintInstanceRequest",
@@ -932,8 +926,6 @@ _dynamic_imports: dict[str, str] = {
     "ChatBlueprintInstanceRequestTypedDict": ".chatblueprintinstancerequest",
     "ChatBlueprintInstanceResponse": ".chatblueprintinstanceresponse",
     "ChatBlueprintInstanceResponseTypedDict": ".chatblueprintinstanceresponse",
-    "ChatWithBlueprintRequest": ".chatwithblueprintop",
-    "ChatWithBlueprintRequestTypedDict": ".chatwithblueprintop",
     "CodeChunking": ".codechunking",
     "CodeChunkingTypedDict": ".codechunking",
     "CompleteBlueprintInstanceRequest1": ".completeblueprintinstanceop",
