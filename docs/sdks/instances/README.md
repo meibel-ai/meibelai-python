@@ -1,5 +1,4 @@
-# Instances
-(*blueprints.instances*)
+# Blueprints.Instances
 
 ## Overview
 

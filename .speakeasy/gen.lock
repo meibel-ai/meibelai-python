@@ -1,19 +1,23 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 99f5e429f2a94643849407993276d796
-  docVersion: 0.2.0
-  speakeasyVersion: 1.636.3
-  generationVersion: 2.723.11
-  releaseVersion: 0.22.1
-  configChecksum: 02566d5723d5436e879b19822cc54056
+  docChecksum: 9a5c9bb525f3b50c38633307b5519832
+  docVersion: 0.3.0
+  speakeasyVersion: 1.678.0
+  generationVersion: 2.787.2
+  releaseVersion: 0.23.0
+  configChecksum: ce16d64ed240f5dcb54b9637cc64c1cc
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
+persistentEdits:
+  generation_id: 726ab2ae-d3df-45e2-b6d8-b38cd4d7822f
+  pristine_commit_hash: bdd464b2f6214b86a1a4f4cafc310ffd829c7d55
+  pristine_tree_hash: 6a0418284e16f58ae4035f5dc74bf90fa0001b5e
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.22.1
+    core: 5.23.14
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     downloadStreams: 1.0.1
@@ -24,414 +28,1640 @@ features:
     globalSecurity: 3.0.4
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.1.1
+    globalServerURLs: 3.2.0
     methodArguments: 1.0.2
     nullables: 1.0.1
     responseFormat: 1.0.1
-    retries: 3.0.2
-    sdkHooks: 1.1.0
+    retries: 3.0.3
+    sdkHooks: 1.2.0
     serverEvents: 1.0.11
     serverEventsSentinels: 0.1.0
-    unions: 3.1.0
-generatedFiles:
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
-  - .gitattributes
-  - .vscode/settings.json
-  - USAGE.md
-  - docs/models/activity.md
-  - docs/models/activitystatus.md
-  - docs/models/addactivitybyblueprintinstancerequest.md
-  - docs/models/addactivityrequest.md
-  - docs/models/addactivityresponse.md
-  - docs/models/addblueprintinstancerequest.md
-  - docs/models/addblueprintinstanceresponse.md
-  - docs/models/addblueprintrequest.md
-  - docs/models/addblueprintresponse.md
-  - docs/models/addblueprinttaskrequest.md
-  - docs/models/addchunkingstrategyrequest.md
-  - docs/models/addchunkingstrategyrequest1.md
-  - docs/models/addchunkingstrategyresponse.md
-  - docs/models/adddataelementrequest.md
-  - docs/models/adddataelementrequest1.md
-  - docs/models/adddataelementresponse.md
-  - docs/models/adddatasourcerequest.md
-  - docs/models/adddatasourceresponse.md
-  - docs/models/addeventresponse.md
-  - docs/models/addragconfigrequest.md
-  - docs/models/addragconfigrequest1.md
-  - docs/models/addragconfigresponse.md
-  - docs/models/addtagcolumninforequest.md
-  - docs/models/addtagcolumnrequest.md
-  - docs/models/addtagcolumnresponse.md
-  - docs/models/addtagconfigrequest.md
-  - docs/models/addtagconfigrequest1.md
-  - docs/models/addtagconfigresponse.md
-  - docs/models/addtagtableinforequest.md
-  - docs/models/addtagtablerequest.md
-  - docs/models/addtagtableresponse.md
-  - docs/models/alloweddataelementfilterkeys.md
-  - docs/models/basicwebauth.md
-  - docs/models/blueprint.md
-  - docs/models/blueprintexecutionmode.md
-  - docs/models/blueprintinstance.md
-  - docs/models/blueprintinstancestatus.md
-  - docs/models/cancelblueprintinstancerequest.md
-  - docs/models/chatwithblueprintrequest.md
-  - docs/models/codechunking.md
-  - docs/models/completeblueprintinstancerequest.md
-  - docs/models/completeblueprintinstancerequest1.md
-  - docs/models/contentitem.md
-  - docs/models/contenttype.md
-  - docs/models/createblueprinttaskrequest.md
-  - docs/models/createeventbyblueprintinstanceidrequest.md
-  - docs/models/customeventrequest.md
-  - docs/models/data.md
-  - docs/models/dataelement.md
-  - docs/models/dataelementcondition.md
-  - docs/models/dataelementdiscoveryrecord.md
-  - docs/models/dataelementfilter.md
-  - docs/models/dataelementfilterrequest.md
-  - docs/models/datasource.md
-  - docs/models/datasourcewebconfig.md
-  - docs/models/deleteblueprintinstancerequest.md
-  - docs/models/deleteblueprintrequest.md
-  - docs/models/deleteblueprinttaskrequest.md
-  - docs/models/deletechunkingstrategyrequest.md
-  - docs/models/deletechunkingstrategyresponse.md
-  - docs/models/deletecontentresponse.md
-  - docs/models/deletedataelementrequest.md
-  - docs/models/deletedataelementresponse.md
-  - docs/models/deletedatasourcecontentrequest.md
-  - docs/models/deletedatasourcerequest.md
-  - docs/models/deletedatasourceresponse.md
-  - docs/models/deleteragconfigrequest.md
-  - docs/models/deletetagcolumninforequest.md
-  - docs/models/deletetagconfigrequest.md
-  - docs/models/deletetagtableinforequest.md
-  - docs/models/deletetagtableresponse.md
-  - docs/models/downloaddatasourcecontentrequest.md
-  - docs/models/dsldefinition.md
-  - docs/models/embeddingmodel.md
-  - docs/models/event.md
-  - docs/models/eventtype.md
-  - docs/models/executeblueprintrequest.md
-  - docs/models/executeblueprintrequest1.md
-  - docs/models/extractormodel.md
-  - docs/models/failblueprintinstancerequest.md
-  - docs/models/failblueprintinstancerequest1.md
-  - docs/models/getactivitiesbyblueprintinstancerequest.md
-  - docs/models/getactivitiesresponse.md
-  - docs/models/getactivitybyblueprintinstancerequest.md
-  - docs/models/getallblueprintinstancesrequest.md
-  - docs/models/getalldatasourceidsrequest.md
-  - docs/models/getalltagcolumninforequest.md
-  - docs/models/getalltagtableinforequest.md
-  - docs/models/getblueprintinstancerequest.md
-  - docs/models/getblueprintinstancesresponse.md
-  - docs/models/getblueprintrequest.md
-  - docs/models/getblueprintsresponse.md
-  - docs/models/getblueprinttasksrequest.md
-  - docs/models/getchunkingstrategyrequest.md
-  - docs/models/getcontentresponse.md
-  - docs/models/getdataelementrequest.md
-  - docs/models/getdataelementsbyfiltersrequest.md
-  - docs/models/getdataelementsrequest.md
-  - docs/models/getdatasourcecontentmetadatarequest.md
-  - docs/models/getdatasourcerequest.md
-  - docs/models/getdatasourceuploadstatusrequest.md
-  - docs/models/geteventbyblueprintinstancerequest.md
-  - docs/models/geteventsbyblueprintinstancerequest.md
-  - docs/models/geteventsresponse.md
-  - docs/models/getragconfigrequest.md
-  - docs/models/gettagcolumninforequest.md
-  - docs/models/gettagconfigrequest.md
-  - docs/models/gettagtableinforequest.md
-  - docs/models/htmlchunking.md
-  - docs/models/httpvalidationerror.md
-  - docs/models/jsonnodechunking.md
-  - docs/models/listcontentresponse.md
-  - docs/models/listdatasourcecontentrequest.md
-  - docs/models/loc.md
-  - docs/models/markdownnodechunking.md
-  - docs/models/metadataoptions.md
-  - docs/models/objectstorageconfig.md
-  - docs/models/objectstoragefilters.md
-  - docs/models/queryworkflowrequest.md
-  - docs/models/ragchunkingstrategy.md
-  - docs/models/ragconfig.md
-  - docs/models/s3config.md
-  - docs/models/security.md
-  - docs/models/semanticchunking.md
-  - docs/models/sendsignalrequest.md
-  - docs/models/sentencechunking.md
-  - docs/models/size.md
-  - docs/models/sparseembeddingmodel.md
-  - docs/models/sseevent.md
-  - docs/models/startblueprintinstancerequest.md
-  - docs/models/startblueprintinstancerequest1.md
-  - docs/models/streamdatasourceuploadprogressrequest.md
-  - docs/models/streamuploadprogressrequest.md
-  - docs/models/tagcolumninfo.md
-  - docs/models/tagconfig.md
-  - docs/models/tagtableinfo.md
-  - docs/models/tokentextchunking.md
-  - docs/models/updateactivitystatusrequest.md
-  - docs/models/updateblueprintinstancestatusrequest.md
-  - docs/models/updateblueprintrequest.md
-  - docs/models/updateblueprintrequest1.md
-  - docs/models/updateblueprinttaskrequest.md
-  - docs/models/updateblueprinttaskrequest1.md
-  - docs/models/updatechunkingstrategyrequest.md
-  - docs/models/updatechunkingstrategyrequest1.md
-  - docs/models/updatechunkingstrategyresponse.md
-  - docs/models/updatedataelementrequest.md
-  - docs/models/updatedataelementrequest1.md
-  - docs/models/updatedataelementresponse.md
-  - docs/models/updatedatasourcerequest.md
-  - docs/models/updatedatasourcerequest1.md
-  - docs/models/updatedatasourceresponse.md
-  - docs/models/updateragconfigrequest.md
-  - docs/models/updateragconfigrequest1.md
-  - docs/models/updateragconfigresponse.md
-  - docs/models/updatetagcolumninforequest.md
-  - docs/models/updatetagcolumnrequest.md
-  - docs/models/updatetagcolumnresponse.md
-  - docs/models/updatetagconfigrequest.md
-  - docs/models/updatetagconfigrequest1.md
-  - docs/models/updatetagconfigresponse.md
-  - docs/models/updatetagtableinforequest.md
-  - docs/models/updatetagtablerequest.md
-  - docs/models/updatetagtableresponse.md
-  - docs/models/uploadcontentresponse.md
-  - docs/models/uploaddatasourcecontentrequest.md
-  - docs/models/utils/retryconfig.md
-  - docs/models/validationerror.md
-  - docs/models/webdomain.md
-  - docs/sdks/blueprints/README.md
-  - docs/sdks/content/README.md
-  - docs/sdks/dataelements/README.md
-  - docs/sdks/datasources/README.md
-  - docs/sdks/executions/README.md
-  - docs/sdks/instances/README.md
-  - docs/sdks/meibelaicontent/README.md
-  - docs/sdks/rag/README.md
-  - docs/sdks/tag/README.md
-  - poetry.toml
-  - py.typed
-  - pylintrc
-  - pyproject.toml
-  - scripts/prepare_readme.py
-  - scripts/publish.sh
-  - src/meibelai/__init__.py
-  - src/meibelai/_hooks/__init__.py
-  - src/meibelai/_hooks/sdkhooks.py
-  - src/meibelai/_hooks/types.py
-  - src/meibelai/_version.py
-  - src/meibelai/basesdk.py
-  - src/meibelai/blueprints.py
-  - src/meibelai/content.py
-  - src/meibelai/dataelements.py
-  - src/meibelai/datasources.py
-  - src/meibelai/executions.py
-  - src/meibelai/httpclient.py
-  - src/meibelai/instances.py
-  - src/meibelai/meibelai_content.py
-  - src/meibelai/models/__init__.py
-  - src/meibelai/models/activity.py
-  - src/meibelai/models/activitystatus.py
-  - src/meibelai/models/addactivitybyblueprintinstanceop.py
-  - src/meibelai/models/addactivityrequest.py
-  - src/meibelai/models/addactivityresponse.py
-  - src/meibelai/models/addblueprintinstancerequest.py
-  - src/meibelai/models/addblueprintinstanceresponse.py
-  - src/meibelai/models/addblueprintrequest.py
-  - src/meibelai/models/addblueprintresponse.py
-  - src/meibelai/models/addblueprinttaskrequest.py
-  - src/meibelai/models/addchunkingstrategyop.py
-  - src/meibelai/models/addchunkingstrategyrequest.py
-  - src/meibelai/models/addchunkingstrategyresponse.py
-  - src/meibelai/models/adddataelementop.py
-  - src/meibelai/models/adddataelementrequest.py
-  - src/meibelai/models/adddataelementresponse.py
-  - src/meibelai/models/adddatasourcerequest.py
-  - src/meibelai/models/adddatasourceresponse.py
-  - src/meibelai/models/addeventresponse.py
-  - src/meibelai/models/addragconfigop.py
-  - src/meibelai/models/addragconfigrequest.py
-  - src/meibelai/models/addragconfigresponse.py
-  - src/meibelai/models/addtagcolumninfoop.py
-  - src/meibelai/models/addtagcolumnrequest.py
-  - src/meibelai/models/addtagcolumnresponse.py
-  - src/meibelai/models/addtagconfigop.py
-  - src/meibelai/models/addtagconfigrequest.py
-  - src/meibelai/models/addtagconfigresponse.py
-  - src/meibelai/models/addtagtableinfoop.py
-  - src/meibelai/models/addtagtablerequest.py
-  - src/meibelai/models/addtagtableresponse.py
-  - src/meibelai/models/alloweddataelementfilterkeys.py
-  - src/meibelai/models/apierror.py
-  - src/meibelai/models/basicwebauth.py
-  - src/meibelai/models/blueprint.py
-  - src/meibelai/models/blueprintexecutionmode.py
-  - src/meibelai/models/blueprintinstance.py
-  - src/meibelai/models/blueprintinstancestatus.py
-  - src/meibelai/models/cancelblueprintinstanceop.py
-  - src/meibelai/models/chatwithblueprintop.py
-  - src/meibelai/models/codechunking.py
-  - src/meibelai/models/completeblueprintinstanceop.py
-  - src/meibelai/models/completeblueprintinstancerequest.py
-  - src/meibelai/models/contentitem.py
-  - src/meibelai/models/contenttype.py
-  - src/meibelai/models/createblueprinttaskop.py
-  - src/meibelai/models/createeventbyblueprintinstanceidop.py
-  - src/meibelai/models/customeventrequest.py
-  - src/meibelai/models/dataelement.py
-  - src/meibelai/models/dataelementcondition.py
-  - src/meibelai/models/dataelementdiscoveryrecord.py
-  - src/meibelai/models/dataelementfilter.py
-  - src/meibelai/models/dataelementfilterrequest.py
-  - src/meibelai/models/datasource.py
-  - src/meibelai/models/datasourcewebconfig.py
-  - src/meibelai/models/deleteblueprintinstanceop.py
-  - src/meibelai/models/deleteblueprintop.py
-  - src/meibelai/models/deleteblueprinttaskop.py
-  - src/meibelai/models/deletechunkingstrategyop.py
-  - src/meibelai/models/deletechunkingstrategyresponse.py
-  - src/meibelai/models/deletecontentresponse.py
-  - src/meibelai/models/deletedataelementop.py
-  - src/meibelai/models/deletedataelementresponse.py
-  - src/meibelai/models/deletedatasourcecontentop.py
-  - src/meibelai/models/deletedatasourceop.py
-  - src/meibelai/models/deletedatasourceresponse.py
-  - src/meibelai/models/deleteragconfigop.py
-  - src/meibelai/models/deletetagcolumninfoop.py
-  - src/meibelai/models/deletetagconfigop.py
-  - src/meibelai/models/deletetagtableinfoop.py
-  - src/meibelai/models/deletetagtableresponse.py
-  - src/meibelai/models/downloaddatasourcecontentop.py
-  - src/meibelai/models/dsldefinition.py
-  - src/meibelai/models/embeddingmodel.py
-  - src/meibelai/models/event.py
-  - src/meibelai/models/eventtype.py
-  - src/meibelai/models/executeblueprintop.py
-  - src/meibelai/models/executeblueprintrequest.py
-  - src/meibelai/models/extractormodel.py
-  - src/meibelai/models/failblueprintinstanceop.py
-  - src/meibelai/models/failblueprintinstancerequest.py
-  - src/meibelai/models/getactivitiesbyblueprintinstanceop.py
-  - src/meibelai/models/getactivitiesresponse.py
-  - src/meibelai/models/getactivitybyblueprintinstanceop.py
-  - src/meibelai/models/getallblueprintinstancesop.py
-  - src/meibelai/models/getalldatasourceidsrequest.py
-  - src/meibelai/models/getalltagcolumninfoop.py
-  - src/meibelai/models/getalltagtableinfoop.py
-  - src/meibelai/models/getblueprintinstanceop.py
-  - src/meibelai/models/getblueprintinstancesresponse.py
-  - src/meibelai/models/getblueprintop.py
-  - src/meibelai/models/getblueprintsresponse.py
-  - src/meibelai/models/getblueprinttasksop.py
-  - src/meibelai/models/getchunkingstrategyop.py
-  - src/meibelai/models/getcontentresponse.py
-  - src/meibelai/models/getdataelementop.py
-  - src/meibelai/models/getdataelementsbyfiltersop.py
-  - src/meibelai/models/getdataelementsop.py
-  - src/meibelai/models/getdatasourcecontentmetadataop.py
-  - src/meibelai/models/getdatasourceop.py
-  - src/meibelai/models/getdatasourceuploadstatusop.py
-  - src/meibelai/models/geteventbyblueprintinstanceop.py
-  - src/meibelai/models/geteventsbyblueprintinstanceop.py
-  - src/meibelai/models/geteventsresponse.py
-  - src/meibelai/models/getragconfigop.py
-  - src/meibelai/models/gettagcolumninfoop.py
-  - src/meibelai/models/gettagconfigop.py
-  - src/meibelai/models/gettagtableinfoop.py
-  - src/meibelai/models/htmlchunking.py
-  - src/meibelai/models/httpvalidationerror.py
-  - src/meibelai/models/jsonnodechunking.py
-  - src/meibelai/models/listcontentresponse.py
-  - src/meibelai/models/listdatasourcecontentop.py
-  - src/meibelai/models/markdownnodechunking.py
-  - src/meibelai/models/meibelaierror.py
-  - src/meibelai/models/metadataoptions.py
-  - src/meibelai/models/no_response_error.py
-  - src/meibelai/models/objectstorageconfig.py
-  - src/meibelai/models/objectstoragefilters.py
-  - src/meibelai/models/queryworkflowop.py
-  - src/meibelai/models/ragchunkingstrategy.py
-  - src/meibelai/models/ragconfig.py
-  - src/meibelai/models/responsevalidationerror.py
-  - src/meibelai/models/s3config.py
-  - src/meibelai/models/security.py
-  - src/meibelai/models/semanticchunking.py
-  - src/meibelai/models/sendsignalop.py
-  - src/meibelai/models/sentencechunking.py
-  - src/meibelai/models/sparseembeddingmodel.py
-  - src/meibelai/models/sseevent.py
-  - src/meibelai/models/startblueprintinstanceop.py
-  - src/meibelai/models/startblueprintinstancerequest.py
-  - src/meibelai/models/streamdatasourceuploadprogressop.py
-  - src/meibelai/models/streamuploadprogressop.py
-  - src/meibelai/models/tagcolumninfo.py
-  - src/meibelai/models/tagconfig.py
-  - src/meibelai/models/tagtableinfo.py
-  - src/meibelai/models/tokentextchunking.py
-  - src/meibelai/models/updateactivitystatusop.py
-  - src/meibelai/models/updateblueprintinstancestatusop.py
-  - src/meibelai/models/updateblueprintop.py
-  - src/meibelai/models/updateblueprintrequest.py
-  - src/meibelai/models/updateblueprinttaskop.py
-  - src/meibelai/models/updateblueprinttaskrequest.py
-  - src/meibelai/models/updatechunkingstrategyop.py
-  - src/meibelai/models/updatechunkingstrategyrequest.py
-  - src/meibelai/models/updatechunkingstrategyresponse.py
-  - src/meibelai/models/updatedataelementop.py
-  - src/meibelai/models/updatedataelementrequest.py
-  - src/meibelai/models/updatedataelementresponse.py
-  - src/meibelai/models/updatedatasourceop.py
-  - src/meibelai/models/updatedatasourcerequest.py
-  - src/meibelai/models/updatedatasourceresponse.py
-  - src/meibelai/models/updateragconfigop.py
-  - src/meibelai/models/updateragconfigrequest.py
-  - src/meibelai/models/updateragconfigresponse.py
-  - src/meibelai/models/updatetagcolumninfoop.py
-  - src/meibelai/models/updatetagcolumnrequest.py
-  - src/meibelai/models/updatetagcolumnresponse.py
-  - src/meibelai/models/updatetagconfigop.py
-  - src/meibelai/models/updatetagconfigrequest.py
-  - src/meibelai/models/updatetagconfigresponse.py
-  - src/meibelai/models/updatetagtableinfoop.py
-  - src/meibelai/models/updatetagtablerequest.py
-  - src/meibelai/models/updatetagtableresponse.py
-  - src/meibelai/models/uploadcontentresponse.py
-  - src/meibelai/models/uploaddatasourcecontentop.py
-  - src/meibelai/models/validationerror.py
-  - src/meibelai/models/webdomain.py
-  - src/meibelai/py.typed
-  - src/meibelai/rag.py
-  - src/meibelai/sdk.py
-  - src/meibelai/sdkconfiguration.py
-  - src/meibelai/tag.py
-  - src/meibelai/types/__init__.py
-  - src/meibelai/types/basemodel.py
-  - src/meibelai/utils/__init__.py
-  - src/meibelai/utils/annotations.py
-  - src/meibelai/utils/datetimes.py
-  - src/meibelai/utils/enums.py
-  - src/meibelai/utils/eventstreaming.py
-  - src/meibelai/utils/forms.py
-  - src/meibelai/utils/headers.py
-  - src/meibelai/utils/logger.py
-  - src/meibelai/utils/metadata.py
-  - src/meibelai/utils/queryparams.py
-  - src/meibelai/utils/requestbodies.py
-  - src/meibelai/utils/retries.py
-  - src/meibelai/utils/security.py
-  - src/meibelai/utils/serializers.py
-  - src/meibelai/utils/unmarshal_json_response.py
-  - src/meibelai/utils/url.py
-  - src/meibelai/utils/values.py
+    unions: 3.1.1
+trackedFiles:
+  .devcontainer/README.md:
+    id: b170c0f184ac
+    last_write_checksum: sha1:e6d29536c4b22dd5334099dbf899a764c50c9cd8
+    pristine_git_object: 46edb27ae097d68d18beb62fba925054a7b2d777
+  .devcontainer/devcontainer.json:
+    id: b34062a34eb1
+    last_write_checksum: sha1:fbbce5654b8990b172a9ffe841d7635cd51c495b
+    pristine_git_object: 7e67af9f5b5aeed56bab8dd84f75d3729df3ada1
+  .devcontainer/setup.sh:
+    id: 5f1dfbfeb8eb
+    last_write_checksum: sha1:e77eb4f12bbd3171e636355b66d66cd91e5c09ae
+    pristine_git_object: ca5977643a80bce69f00efc4582999973805ece9
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:53134de3ada576f37c22276901e1b5b6d85cd2da
+    pristine_git_object: 4d75d59008e4d8609876d263419a9dc56c8d6f3a
+  .vscode/settings.json:
+    id: 89aa447020cd
+    last_write_checksum: sha1:f84632c81029fcdda8c3b0c768d02b836fc80526
+    pristine_git_object: 8d79f0abb72526f1fb34a4c03e5bba612c6ba2ae
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:be47338f15bd0dd7d18e0e603eda6b511d4b0b13
+    pristine_git_object: 8a391182daa200a1ef4e2a489f3f99f0e0921538
+  docs/models/activity.md:
+    id: 78c9fe854b65
+    last_write_checksum: sha1:b5f88681f66907f7f0ea9b32edbc78b84fb6208b
+    pristine_git_object: e5654ce872018400c3726efe2905cc5dc600f09d
+  docs/models/activitystatus.md:
+    id: 64f50c19be21
+    last_write_checksum: sha1:975efb0a8f8c3794631273bcacf3e1d478b5a7fb
+    pristine_git_object: 3a78dc141963449a8c4b674537bfcf100439ae96
+  docs/models/addactivitybyblueprintinstancerequest.md:
+    id: 0dcc35b79fa4
+    last_write_checksum: sha1:2685b45cbc76ff53900e868df4066298f021b02c
+    pristine_git_object: 7aacbc291e888052746ccb57866e3f62493eeae0
+  docs/models/addactivityrequest.md:
+    id: aeb8124b136f
+    last_write_checksum: sha1:d05f101bf06b0923623b1df1d124144745b1d35b
+    pristine_git_object: 875e32a654952fb3999932a4d00b8b31bcd6df13
+  docs/models/addactivityresponse.md:
+    id: fe0663ab580a
+    last_write_checksum: sha1:0cedb005a8edd400719cf02eacbe9e8bebdf3e4b
+    pristine_git_object: 8b0fa732ae700c670d2d084f0d9f25e693326c1a
+  docs/models/addblueprintinstancerequest.md:
+    id: 4b52038f72a9
+    last_write_checksum: sha1:78bb80c9776d848f28d6645115e99ceb410aac08
+    pristine_git_object: d725ee14de9904bc0fe61d72cf8fb1620773d36b
+  docs/models/addblueprintinstanceresponse.md:
+    id: 97309d76a540
+    last_write_checksum: sha1:99db502e433f3a6acfbb127c021a520d40bfa44e
+    pristine_git_object: 71193a6a07840e71ef88c8d3cfbfaba4cc748aff
+  docs/models/addblueprintrequest.md:
+    id: 7a865ebcebe6
+    last_write_checksum: sha1:1e8fea4e53778b55c13cc8b57132606b6e033b57
+    pristine_git_object: 2865c72555b0249f15792ec6fdc15de83be558d9
+  docs/models/addblueprintresponse.md:
+    id: 479350a52617
+    last_write_checksum: sha1:a627a306721d2675b76c1b450662358f83b6bb7e
+    pristine_git_object: b4455c0622f11276ef3accabaa289a0b18993a81
+  docs/models/addblueprinttaskrequest.md:
+    id: 741e0e12f3e0
+    last_write_checksum: sha1:9179e0b2e16ee5cfa108671fc5eb07d69017d5d5
+    pristine_git_object: 0281656b4e6d23dd803812106639c06f6ebdfce9
+  docs/models/addchunkingstrategyrequest.md:
+    id: 429186ff9227
+    last_write_checksum: sha1:ff27511fa62720404f096aeba3f3023d9ee70bdb
+    pristine_git_object: 2c8f13b490da082106b9165e0cc7cc6160873257
+  docs/models/addchunkingstrategyrequest1.md:
+    id: 64d361af6f40
+    last_write_checksum: sha1:0abdfe48f82ef32e12dd035006ce278baf655974
+    pristine_git_object: 449fbb100008555bbe755440ac32cfc6f791fac4
+  docs/models/addchunkingstrategyresponse.md:
+    id: 49c70b052ac9
+    last_write_checksum: sha1:7d67aff64fe62134c116d7f4b1c90f329d43a2fb
+    pristine_git_object: e5a234aeb161556517ebc12ef9dde744e6a50993
+  docs/models/adddataelementrequest.md:
+    id: b7082f5586ed
+    last_write_checksum: sha1:0c5f5ef300a6695c3da9cc3b4597e8811b5246c5
+    pristine_git_object: 39ac3f3587b08793f3f5f7fdf0ae63ad27c36260
+  docs/models/adddataelementrequest1.md:
+    id: 5f1d45012259
+    last_write_checksum: sha1:4266e9f3f4f15a9bced6c7fe0ec3bb21a958b67d
+    pristine_git_object: c515bc739b316e52a21faee5ec336a170d0b622a
+  docs/models/adddataelementresponse.md:
+    id: 5b533312b774
+    last_write_checksum: sha1:a103bcaa5fd24d4913181ac35adc5b2455ad5f78
+    pristine_git_object: 5b40dd9b05ba9761ee3eb266bd9bc652725d5ac4
+  docs/models/adddatasourcerequest.md:
+    id: 099234bd27b4
+    last_write_checksum: sha1:624552a2da8f48c6f45096980bf79194a95d78ba
+    pristine_git_object: 3fe8e0253110f43ee4b2443b1bc951ec621336a7
+  docs/models/adddatasourceresponse.md:
+    id: 22f00a75fc8f
+    last_write_checksum: sha1:f285854faebf808ff7ae4ad6f310d812696cb4f7
+    pristine_git_object: 3fe2f7fd2ec724367758a43355e9dbb624bc7c9d
+  docs/models/addeventresponse.md:
+    id: 31074252fecb
+    last_write_checksum: sha1:6ec3e798c310a077b70d7e36f043e2c272cf70d2
+    pristine_git_object: 0600e9d3fa2a8c687fe16e9d0d62c5f443570ec8
+  docs/models/addragconfigrequest.md:
+    id: 2daa6f0325b8
+    last_write_checksum: sha1:5ad21f6a56afb10afddaa0bc55fe4241b2111026
+    pristine_git_object: d2c88b0a6554ac701649f6c5415356292540a9bc
+  docs/models/addragconfigrequest1.md:
+    id: 578e7d2e2193
+    last_write_checksum: sha1:535a7da2a2a74ff9900cdbcd1d93e8c84a751e97
+    pristine_git_object: bbaf791682c01ed651f594123edeba2c48b0b144
+  docs/models/addragconfigresponse.md:
+    id: 9ac563ec93d1
+    last_write_checksum: sha1:2d534189f73447b69147695205fc1af9ec31f3f2
+    pristine_git_object: 91f05987360932b8fc0d4f1fa5c41ee4cc46e4f5
+  docs/models/addtagcolumninforequest.md:
+    id: de6580636e8a
+    last_write_checksum: sha1:42dab7c69c2cfd5acef63033676a62dbf86f3ddf
+    pristine_git_object: 0411d002d0f08f9807c9c55673337de2cf212ff0
+  docs/models/addtagcolumnrequest.md:
+    id: b7e390217280
+    last_write_checksum: sha1:a5bf978184102c3d927471bbe8638c4d3d3e3c69
+    pristine_git_object: 91d3e75bdeb577fd84959133b5bf3ed50b31bd85
+  docs/models/addtagcolumnresponse.md:
+    id: 731d0c9c2b38
+    last_write_checksum: sha1:83e42edab90a152d2f22ab94b0017f302062e6e3
+    pristine_git_object: 9a13e247550165b8d68f908e98c648ad76923561
+  docs/models/addtagconfigrequest.md:
+    id: fc3f28611db0
+    last_write_checksum: sha1:9d00f5ca602e18a76e3228b0808ab172a67a7071
+    pristine_git_object: 045667b626c9b2981340c34474fe638a5f230c8d
+  docs/models/addtagconfigrequest1.md:
+    id: 5acdda1c937a
+    last_write_checksum: sha1:e9c0e6d063b8d6d64decacd337083499aa4b09f0
+    pristine_git_object: 750d3a870df9e4b1320758cc7ae58381ae3584d8
+  docs/models/addtagconfigresponse.md:
+    id: 29c0f3a7378e
+    last_write_checksum: sha1:5c114234511d2b5a034520b030c34f65bf50b2b4
+    pristine_git_object: f043c0cb29bc4815e8e73a6cfd988d2383c80dc2
+  docs/models/addtagtableinforequest.md:
+    id: bc9dd4de06ca
+    last_write_checksum: sha1:55245766a7ffc270a29a8df6c47e91bf31a3b225
+    pristine_git_object: 71b42f44d68725192a6945c2148d271158544868
+  docs/models/addtagtablerequest.md:
+    id: 38040f629633
+    last_write_checksum: sha1:c9bba765d3d2ccd1d967d9c49a694335a6b09530
+    pristine_git_object: 15fd675a981c407ef9e7a8593e02de8b9cb09e73
+  docs/models/addtagtableresponse.md:
+    id: 144f1950328b
+    last_write_checksum: sha1:96e10b4a4f5740a47628693e949f705bf78548d2
+    pristine_git_object: 1e3fab6665045d7951553c76541995d6899369cf
+  docs/models/alloweddataelementfilterkeys.md:
+    id: d2a059dc884a
+    last_write_checksum: sha1:026b4352d49a0bfa005d7a88f8b31d32251950af
+    pristine_git_object: 71a5a777f93f719ae6f62086120c4a6427090c5d
+  docs/models/basicwebauth.md:
+    id: 682e6a6f38a2
+    last_write_checksum: sha1:ce65f1a3ecadfb984731349450de4980c1bc058c
+    pristine_git_object: 256d5227711c2a2efdb4a311f47a3ed35e5b2f05
+  docs/models/blueprint.md:
+    id: d120c9ce811f
+    last_write_checksum: sha1:a146e3eaa9fce33e4966f5d0534d05b7470814f7
+    pristine_git_object: dd8fb073175498e6b3f242921c3c8c37072aa195
+  docs/models/blueprintexecutionmode.md:
+    id: 7130aaa61bfb
+    last_write_checksum: sha1:6f613cf7012e96ff200e1f9c8f327d63e523752f
+    pristine_git_object: 84dd041f47b011d16850d95c8ce594953c98f877
+  docs/models/blueprintinstance.md:
+    id: f25c087f6175
+    last_write_checksum: sha1:9c2c4be3b04bc7c31458b7c7630bfceb461501ff
+    pristine_git_object: bba55881cf866157f7ac211650fdf5c9f8a034e5
+  docs/models/blueprintinstancestatus.md:
+    id: 7753dceba403
+    last_write_checksum: sha1:c76e875a809941bb60bcf97e56a4d52032005348
+    pristine_git_object: 077734c9ed08265083b18977992f16add8830751
+  docs/models/cancelblueprintinstancerequest.md:
+    id: f83ac9065d06
+    last_write_checksum: sha1:615212cc272874447908bfecb3794d4238c65d51
+    pristine_git_object: 8e3deb67eefaf4988e7c3327301f2689b0a6e1b2
+  docs/models/chatblueprintinstancerequest.md:
+    id: 895ec3f17459
+    last_write_checksum: sha1:ee4503398e92f252f3f55bebb27c8a0a8e13a4a8
+    pristine_git_object: 6aa4b72e4a1cdb3ec4a08bb3a569d462c31d8b37
+  docs/models/chatblueprintinstanceresponse.md:
+    id: d3794aba6279
+    last_write_checksum: sha1:569ff8f691dd7f581100e786b31737e81398ad46
+    pristine_git_object: 481da2559d4abf3ef5331e4ff0df9d28f1edd406
+  docs/models/chatwithblueprintrequest.md:
+    id: bc908eb2481c
+    last_write_checksum: sha1:8d97cd4fd453f7703f25e9494d25da93e1a75783
+    pristine_git_object: cd773923d8c4766ab628de839bf1b8c571e5cae0
+  docs/models/codechunking.md:
+    id: 013fdbe4c1ac
+    last_write_checksum: sha1:5c55f87ed68636d2a9ef32f69f12d82a793928cf
+    pristine_git_object: 33cc17f3e94e9faa9f42151307643209aca14b81
+  docs/models/completeblueprintinstancerequest.md:
+    id: 0d24b1e418c0
+    last_write_checksum: sha1:bd18859f1866a69a3e1570b3db471e5f24c131fa
+    pristine_git_object: 7c5fba446b144de121cbf7b312f50260aeda61cf
+  docs/models/completeblueprintinstancerequest1.md:
+    id: 0fb03d55486a
+    last_write_checksum: sha1:04d020084c3369b0c3079df515604109568f9973
+    pristine_git_object: f652cb9ed15a733d96059f0920e57b2e3446fa52
+  docs/models/contentitem.md:
+    id: 4ca6596caeb6
+    last_write_checksum: sha1:f9d9ecfebf57359ff1318ef5724a387a72e29c38
+    pristine_git_object: 52460765bf59d10a4295ea2031ac9afabe60e5fe
+  docs/models/contenttype.md:
+    id: 78e9266f4216
+    last_write_checksum: sha1:b09b585d1da48101d72e479a5dbdeb4e89e4287c
+    pristine_git_object: 7e169c73348c42f9ab2047b26dfca559bffbeb5e
+  docs/models/createblueprinttaskrequest.md:
+    id: 5a49bd82579a
+    last_write_checksum: sha1:68e3834795eed745d38614fc55b40f48e095d553
+    pristine_git_object: 915b7e1e11617849413a73fc92687a1cbc0c60a4
+  docs/models/createeventbyblueprintinstanceidrequest.md:
+    id: 31b0a0554995
+    last_write_checksum: sha1:f26efd73c27de4147278a488955ebba3f69acf5e
+    pristine_git_object: 76e7ef86e9463a6ae07b81db43aff94e03dd3a7d
+  docs/models/customeventrequest.md:
+    id: 0db2f4e8b8a3
+    last_write_checksum: sha1:1147db41b10f110253a33b462102c0361ea94d22
+    pristine_git_object: 7fd1acec8c353f3bed4046f11c52dc4f6f3a466d
+  docs/models/data.md:
+    id: 9a31987caf78
+    last_write_checksum: sha1:00995add1b8199264d3392706a4847394c8576ec
+    pristine_git_object: 1a5367916ca5e18e25fe124842872d6e218cba1e
+  docs/models/dataelement.md:
+    id: 3f56a9422058
+    last_write_checksum: sha1:9e042fef0da26299ac304784712fcd4c0d1da605
+    pristine_git_object: 69e5af81f29b49102ea796470a5d3d92ed9c3ff6
+  docs/models/dataelementcondition.md:
+    id: 09066005433c
+    last_write_checksum: sha1:b759b618e47ffc6eab15cc4ab683416592f3ce39
+    pristine_git_object: 282d67b0ab0b53a0c5f17cb0210a30e051608d85
+  docs/models/dataelementdiscoveryrecord.md:
+    id: a9e127b005c1
+    last_write_checksum: sha1:757c69233c7183f71b630d269a7dfc9f3d70384e
+    pristine_git_object: 16d32e3f0f44235c87cfa2694614ef1834112658
+  docs/models/dataelementfilter.md:
+    id: 35b2860a9ed3
+    last_write_checksum: sha1:51b7ebf41a23c3e536a213779959e1225933d822
+    pristine_git_object: d508ddfdba508cbbc409907824fb36f4a06198a1
+  docs/models/dataelementfilterrequest.md:
+    id: f7bb03860eb0
+    last_write_checksum: sha1:58c11108d9c4f691dd7adec565dfdf3a4193dc44
+    pristine_git_object: c78b21a61c1bb531a034eec26607c09ce3557751
+  docs/models/datasource.md:
+    id: 1fe408a0fe08
+    last_write_checksum: sha1:e19a94851f841fa7b461d42022417f63197bf277
+    pristine_git_object: b391d61492272d3a630da4233895c1702b6e331f
+  docs/models/datasourcewebconfig.md:
+    id: b0767ac02e76
+    last_write_checksum: sha1:75767d056833ee903ed3f4fcc5f9bb2ce892a927
+    pristine_git_object: 38688891c50bc0b38f85b0ba6f0e6261d471aeb4
+  docs/models/deleteblueprintinstancerequest.md:
+    id: 9ac7dbc713ca
+    last_write_checksum: sha1:92c9b17f12b7a7f7f25b3114128fb33a37764131
+    pristine_git_object: 71d43781d4e8b4b05e3de2f45bfe040e2c456e4a
+  docs/models/deleteblueprintrequest.md:
+    id: 1c24586e444c
+    last_write_checksum: sha1:d15e65110ed9cbda00b6b067172c09d743cdc3e4
+    pristine_git_object: d06217a116b11f23bdc85054f66c99069597a765
+  docs/models/deleteblueprinttaskrequest.md:
+    id: 62b82633c820
+    last_write_checksum: sha1:aca25429d62cfdd26736dd38e548c8355842da84
+    pristine_git_object: beb23d772b2bd80d351517b744e2527d27c6a2c9
+  docs/models/deletechunkingstrategyrequest.md:
+    id: c00af78b17da
+    last_write_checksum: sha1:2133efe1ff4e899aa6151a1da4eb54021dd4c134
+    pristine_git_object: 418d1a3590b136ccb43bb4ff337ecd1f06958b40
+  docs/models/deletechunkingstrategyresponse.md:
+    id: e059c0702f83
+    last_write_checksum: sha1:de9f7195aaeb6aff48b9ad3220c723ca20e45532
+    pristine_git_object: e5f5adaa4f215375cb319b9c67af2bea7cf83bc2
+  docs/models/deletecontentresponse.md:
+    id: 028b79be1414
+    last_write_checksum: sha1:4e407f00698343a852080906013defd316c3007b
+    pristine_git_object: ea486989c06e7037fcf0abba04c2e42afbd157b6
+  docs/models/deletedataelementrequest.md:
+    id: 43d17975fcd7
+    last_write_checksum: sha1:a07e5413a5db3e6fd65070805ec161c49d98a2e9
+    pristine_git_object: 6cb8150e030de78afdd0b879d0bcb3b36aa69b83
+  docs/models/deletedataelementresponse.md:
+    id: 6608e2d1bb31
+    last_write_checksum: sha1:d4c4b7ad213910e10699c94d4f2976fac1d7d0ff
+    pristine_git_object: e3461dfb0bd78db262a69408ae4ea69dffc97474
+  docs/models/deletedatasourcecontentrequest.md:
+    id: 22eebe50e6d8
+    last_write_checksum: sha1:2806f653ae0d47483d045070f988ec2c9bda1a90
+    pristine_git_object: 3eb70fc3e4bcd10786e236789dd3a6d360a2727c
+  docs/models/deletedatasourcerequest.md:
+    id: dd678ffcedb8
+    last_write_checksum: sha1:ec12f9e042ee2eb099283bb88dca1a471006a2b8
+    pristine_git_object: cc04ce194e7cccbcd01b630e576b558aab9d852e
+  docs/models/deletedatasourceresponse.md:
+    id: 658c9b4b9c9e
+    last_write_checksum: sha1:f984a04080554ef3512fab883dfd39acb785ef5f
+    pristine_git_object: 68c2e0ba1ce965ce940174f3677e3b2ed6d1ff50
+  docs/models/deleteragconfigrequest.md:
+    id: 424622f9f2dd
+    last_write_checksum: sha1:02f5b273fc9e1e7bec8fba7b0929f5663cf9553f
+    pristine_git_object: a2b7663b2013c4a4bcdb8cfd1e40177c4d99e401
+  docs/models/deletetagcolumninforequest.md:
+    id: 856de4d082db
+    last_write_checksum: sha1:4856e28a59e51a84d91fc796020ea1a5688f9655
+    pristine_git_object: ca05875c333771037c36788355f3f83644c24edc
+  docs/models/deletetagconfigrequest.md:
+    id: 0ed9d12b02d3
+    last_write_checksum: sha1:36cacc7b5c02c6ef99b0ac47623c27370aa74130
+    pristine_git_object: 23c67609185b1cdf052f035f8368f880c6abaacd
+  docs/models/deletetagtableinforequest.md:
+    id: f9d98f0c9d62
+    last_write_checksum: sha1:f0fb3cb0bc88a0f49dea6a0989dfe73f9f50e9f0
+    pristine_git_object: 59f35d51f996a81aa1e951c3b3d284bdd593a54f
+  docs/models/deletetagtableresponse.md:
+    id: a162567c9733
+    last_write_checksum: sha1:d8e5d7ef9bc371ab68f3b53815837ad3c84d596d
+    pristine_git_object: 35afd7b7850ef87c70d723fe77160f87d4c459b1
+  docs/models/downloaddatasourcecontentrequest.md:
+    id: f8ba2ffda991
+    last_write_checksum: sha1:af306b784ac3e3fabd7d3a447a38d7e8a6906c20
+    pristine_git_object: 899970b67ab00241009cb02c0b268580685e6af7
+  docs/models/dsldefinition.md:
+    id: a3e2d51f294f
+    last_write_checksum: sha1:b1c758ef99dc2e878d65e946adcf88350c9105ae
+    pristine_git_object: b91d4bd2bf1f0d74c97bbb220cc686a2380a86a6
+  docs/models/embeddingmodel.md:
+    id: 533cfb3e048b
+    last_write_checksum: sha1:f25dc5e0680240154e8bbb898e7b510281703256
+    pristine_git_object: 4a481e796db3e026bd2fd0f5316ab30ca9c73cea
+  docs/models/event.md:
+    id: 311c22a8574a
+    last_write_checksum: sha1:49230fdab7fa8b9490ffcb7443158dc1a7251623
+    pristine_git_object: 3ecdd39b5548346f47c24ccd5bbfcbeb7aa48828
+  docs/models/eventtype.md:
+    id: bfe6f1477d8b
+    last_write_checksum: sha1:02db9b555573fa45e313db1ebdd1d312c2a3484e
+    pristine_git_object: c7306e756702a08a4ae46c4b0e8638e8f8560a85
+  docs/models/executeblueprintrequest.md:
+    id: afc6bc1d7611
+    last_write_checksum: sha1:8271278f565e6962161b751429f3e46095f4ee68
+    pristine_git_object: 65238f88f6d6860457241ca7917af497a0e0c89d
+  docs/models/executeblueprintrequest1.md:
+    id: da48656cc792
+    last_write_checksum: sha1:4703f1b196c847e343840825411391180724b131
+    pristine_git_object: 5e2553bd7eb9b3044844999e54d55389b80e4a0a
+  docs/models/extractormodel.md:
+    id: 83303b205e74
+    last_write_checksum: sha1:24a53ab48c8ff9b0c4d1be9a8bca57bb41140020
+    pristine_git_object: 83cb2c6938af481ea26d4b803a38823cbc51bfcd
+  docs/models/failblueprintinstancerequest.md:
+    id: 0aacd3e4b0ce
+    last_write_checksum: sha1:fc8a518148ac834134df4e6b07b101ae685df41d
+    pristine_git_object: 5f444f0b65f34e2b3bd96222ba673578c8685dc1
+  docs/models/failblueprintinstancerequest1.md:
+    id: d674bf3c7e89
+    last_write_checksum: sha1:81919cc882fd0164249a33dcd034ab9d2ce70902
+    pristine_git_object: c3599cbdc2ebf85fe5c6d6ab2d6d13c029508d97
+  docs/models/getactivitiesbyblueprintinstancerequest.md:
+    id: 7fdbc03b738c
+    last_write_checksum: sha1:8d17d8e9dfdeb1a4684b8c744e684012dc03a4b0
+    pristine_git_object: c315cdd8bf76b81dfddaac53f33ba7a8ecc9e8b9
+  docs/models/getactivitiesresponse.md:
+    id: 40fd507fdfe2
+    last_write_checksum: sha1:8bb000bf637c05d73371196f2adb7e6397897e47
+    pristine_git_object: 40429f7a9ed97a11e372442762e5f478f46cfef5
+  docs/models/getactivitybyblueprintinstancerequest.md:
+    id: 717e29931f5e
+    last_write_checksum: sha1:6d652550697c8681de2785f4fdc94b16744a17d8
+    pristine_git_object: 215c46cf9623fcb8c712520869ab610b6ead1ffa
+  docs/models/getallblueprintinstancesrequest.md:
+    id: fa3d51e6f282
+    last_write_checksum: sha1:0a1031c37e6a38b223e75ddcbce0208d6f6f871f
+    pristine_git_object: b27da148ef22ee3d592818a5bcb94eddc1c61bcc
+  docs/models/getalldatasourceidsrequest.md:
+    id: 9a1c4aab09c4
+    last_write_checksum: sha1:91c332d5e74ce8d2ca88705ae90dcb0830c1c480
+    pristine_git_object: d49aeece965a135aa377a8840d22185c8f81a231
+  docs/models/getalltagcolumninforequest.md:
+    id: 5d3d892a09d3
+    last_write_checksum: sha1:c435e975ab780edd2ac53d8b263da71f0e739af0
+    pristine_git_object: d34597b1f5967fd05e2d4c83b38dbe3fd4fdb08d
+  docs/models/getalltagtableinforequest.md:
+    id: 29e4e1290b70
+    last_write_checksum: sha1:f9002daf0a20ead5fc9908d2f6b3cadf31e0201d
+    pristine_git_object: afe1adf5d57f7fb73145262d7e361766e7a5813d
+  docs/models/getblueprintinstancerequest.md:
+    id: 84599b8fe8d0
+    last_write_checksum: sha1:2402867c1549c85959aee35603aeb57a95130d2d
+    pristine_git_object: 479903f8fbf06f02fa7f029751a29387c1a59847
+  docs/models/getblueprintinstancesresponse.md:
+    id: dc2b8d32df49
+    last_write_checksum: sha1:b9a488a7dfee1d27ae882fff154a7ef985a8e046
+    pristine_git_object: 086dd22206e0449115a985a241417e70566bca90
+  docs/models/getblueprintinstanceworkflowstatusrequest.md:
+    id: dd0f1a594041
+    last_write_checksum: sha1:d9897e5ad075844ca06b20e187d5f13eb0c50f9e
+    pristine_git_object: 50199be6662ba5e608ec32b17ddbee37fe665167
+  docs/models/getblueprintrequest.md:
+    id: 995ebe1014db
+    last_write_checksum: sha1:778cfadfb9b8676edb20a98000d340fd695368b3
+    pristine_git_object: 3faa1e89561353fe9f52f245cc8000e9eded18be
+  docs/models/getblueprintsresponse.md:
+    id: c7db8cc2185a
+    last_write_checksum: sha1:b64aff4ce7bfb331632d96184d7a2c9883cec5be
+    pristine_git_object: ca6450a8d1d2db1b1e605fea8e440af7a5e0b3f8
+  docs/models/getblueprinttasksrequest.md:
+    id: 9f0a3f1e1262
+    last_write_checksum: sha1:f84c707172c23d1d319a7cc9c0497c45d011ebe8
+    pristine_git_object: 7cb83277699f1099d76942380eecd8b73f0ede50
+  docs/models/getchunkingstrategyrequest.md:
+    id: b67b583696d9
+    last_write_checksum: sha1:b2477367c62817bbce9c2c2d035d1ae96d6f16cc
+    pristine_git_object: 76e0fce5f8472dbf8e7cd40945267ff9f8376f78
+  docs/models/getcontentresponse.md:
+    id: be2b91231085
+    last_write_checksum: sha1:97b79b9f73249bac03d28b9cf6935233ecf145fa
+    pristine_git_object: cda4af31d47664dc70417fddbb55134c8d16bf13
+  docs/models/getdataelementrequest.md:
+    id: 3b762f0dcd32
+    last_write_checksum: sha1:d0cf87b4d85ab6ca8d88fddd1190722338e93ecc
+    pristine_git_object: 1c64506319bb8bf8c88c21d7e1f62ac2c6ba8e17
+  docs/models/getdataelementsbyfiltersrequest.md:
+    id: e25f21598430
+    last_write_checksum: sha1:3da15a6b03965c748956318c510c86c7cd4e5f7b
+    pristine_git_object: a20b047c8b24813236fe666cc3a290283d59aa2e
+  docs/models/getdataelementsrequest.md:
+    id: 0b14953ad085
+    last_write_checksum: sha1:9a871674e325cedbffe4d95fdbeaeb69f0fce3b8
+    pristine_git_object: e0e92f1d53800250aab350a0f0b1e526236f152d
+  docs/models/getdatasourcecontentmetadatarequest.md:
+    id: c9201634892e
+    last_write_checksum: sha1:3efe38462e99e643b9d5f7f92fab654d5c13b4d4
+    pristine_git_object: 764f866a329519a4b6ff46e8312b4ca91379fb7e
+  docs/models/getdatasourcerequest.md:
+    id: 0e9537b718c2
+    last_write_checksum: sha1:fadda7677c1d49430f2f5ebcd7cdef31fa59345b
+    pristine_git_object: a1c7562ff4ccdaa013e9cc99b37f1b8e8f477e74
+  docs/models/getdatasourceuploadstatusrequest.md:
+    id: 7cbc1ebf3416
+    last_write_checksum: sha1:cd9d7b5c90e6817bce3ba31ed153b6407f7df7ab
+    pristine_git_object: ea453ba7c975ca7dd0e70748407b97fb5552e5d4
+  docs/models/geteventbyblueprintinstancerequest.md:
+    id: 25875b9b7e7d
+    last_write_checksum: sha1:ffb47c5955be7b3b6b5e8bdb1b4c4bf496ed269a
+    pristine_git_object: 50e177623b5e19b95ddd5837e17f1731513a9761
+  docs/models/geteventsbyblueprintinstancerequest.md:
+    id: f8d2610991de
+    last_write_checksum: sha1:6c76b751d036c69fe0066877fdb997d9e5aa0a18
+    pristine_git_object: aaeac5d3eb505aa51f9043c740b0ab851f5cf228
+  docs/models/geteventsresponse.md:
+    id: 3825bca01108
+    last_write_checksum: sha1:01f8bec0fee9718db02351570cd956f096a1b543
+    pristine_git_object: 1e3e2ac5c68572cbaf8f39ec957bc75c0c168ead
+  docs/models/getragconfigrequest.md:
+    id: 524787e5e8a8
+    last_write_checksum: sha1:74bf0f6fa1bfa833dcb42c313e80824abc4e5f2c
+    pristine_git_object: 71a0b46ce0f5612747d4e718771b520736287ced
+  docs/models/gettagcolumninforequest.md:
+    id: 46dc5e3efa6f
+    last_write_checksum: sha1:b475b462650d8a7dddb445aec277a2286a4189d8
+    pristine_git_object: 9cdd85c351cb298797508d517950afcff0907cb5
+  docs/models/gettagconfigrequest.md:
+    id: 6c83c97a854c
+    last_write_checksum: sha1:d1e7272dd9bd284f022f0347e009fb2367f69cd4
+    pristine_git_object: 2c2869d901758342e37c153a711c5a32360be7db
+  docs/models/gettagtableinforequest.md:
+    id: 0e770250b914
+    last_write_checksum: sha1:ff7d13be5adb089bc6400126e86e9b750c3ef41f
+    pristine_git_object: d13786c9dfd703775760ff484690d41672720438
+  docs/models/htmlchunking.md:
+    id: acd004048888
+    last_write_checksum: sha1:bdf253cb15fdcbedc235bec9d789409ff913e334
+    pristine_git_object: 0f9289eba0c79d6461eb07503278a6b9b310c1bb
+  docs/models/httpvalidationerror.md:
+    id: a211c095f2ac
+    last_write_checksum: sha1:277a46811144643262651853dc6176d21b33573e
+    pristine_git_object: 712a148c3e2305dca4c702851865f9f8c8e674cc
+  docs/models/jsonnodechunking.md:
+    id: 31e59fa43d35
+    last_write_checksum: sha1:001e1aca34767819c27679a594d63d6d53abb77e
+    pristine_git_object: d214987cabb85f2b70163481849d420d812e5a4a
+  docs/models/listcontentresponse.md:
+    id: b02b59aa4195
+    last_write_checksum: sha1:919974b721126a288dfad8ed30d55af39901caed
+    pristine_git_object: f808f6729fb9ba00fff1820e5658a3a7989a0387
+  docs/models/listdatasourcecontentrequest.md:
+    id: b0b67eeef19f
+    last_write_checksum: sha1:85d09af8c9b2291aff0507b32e7a0ddb83f730d5
+    pristine_git_object: da8e38cb698f735b3436f5a67f10237db7a075de
+  docs/models/loc.md:
+    id: b071d5a509cc
+    last_write_checksum: sha1:09a04749333ab50ae806c3ac6adcaa90d54df0f1
+    pristine_git_object: d6094ac2c6e0326c039dad2f6b89158694ef6aa7
+  docs/models/markdownnodechunking.md:
+    id: 3bc3affa6716
+    last_write_checksum: sha1:ea489be351119d3f6b98be12420d153049700a0d
+    pristine_git_object: 5d7df87c7c7e7e2b2d7ceaa0b226c1bafcb05428
+  docs/models/metadataoptions.md:
+    id: 21f9e7314472
+    last_write_checksum: sha1:3cbe55671720854fe0a5d005c75f7f198d1de1d1
+    pristine_git_object: 78f3b58d3fca1236c744aa54084881e2a2661a28
+  docs/models/objectstorageconfig.md:
+    id: 4a4c46b36993
+    last_write_checksum: sha1:2160a9ff6842a883b4f55cd2376c8790a267bf8b
+    pristine_git_object: e22bfcfcc1a5673bc6da7fece5641bb1a01de88e
+  docs/models/objectstoragefilters.md:
+    id: d0d71c472867
+    last_write_checksum: sha1:41771edf54422967be93e07300969682d14f5420
+    pristine_git_object: 7f2240a4f7d00d1dda3ec7b3f7e666061a52ae3a
+  docs/models/queryworkflowrequest.md:
+    id: af0ecfb58182
+    last_write_checksum: sha1:70677bbd96a58f94c62945ef43b7082d26a1baee
+    pristine_git_object: 858052e4ecf236e72c03cb990f78b3f72104c11e
+  docs/models/ragchunkingstrategy.md:
+    id: c6ba0a115c4a
+    last_write_checksum: sha1:864b30560ba78ea6600b75bdd65563b59119aa01
+    pristine_git_object: 81fa2af0d840332efa94fba22a75f80735b73355
+  docs/models/ragconfig.md:
+    id: b6aa678b63d3
+    last_write_checksum: sha1:d9b18978e63b7d74ad2202ed9938224084a24afa
+    pristine_git_object: 3f4c35572c1fe198eecd8c1867e1f06468001056
+  docs/models/s3config.md:
+    id: e2f08f60f0d6
+    last_write_checksum: sha1:082c80a4962133f225ad765bd2cc4020832d631a
+    pristine_git_object: dba2ff3df5d7d9eb32e327ad1a2a12d32f584e71
+  docs/models/security.md:
+    id: 452e4d4eb67a
+    last_write_checksum: sha1:b779342cf8b5456dff023352a821041b30eddf1d
+    pristine_git_object: 94f4aa33eb33bc161ca9b609b689ad281656aac9
+  docs/models/semanticchunking.md:
+    id: 64ce430713c4
+    last_write_checksum: sha1:586ae4c54b745e7853d55d02728aed55ca61bcbf
+    pristine_git_object: 2c1dbbd41be9d5757038cf3fa644f14fb6387f35
+  docs/models/sendchatmessagerequest.md:
+    id: cd1cca6de461
+    last_write_checksum: sha1:1dd14dd71152341763544258788709d7a0070d8d
+    pristine_git_object: 4a2b121538c971b118245010f66528c8cf4f6523
+  docs/models/sendsignalrequest.md:
+    id: 6e0a84d2d636
+    last_write_checksum: sha1:f03aeed9a75178f551b25029418dbd8ac1e92fdc
+    pristine_git_object: d624cc2eedbbef98eb28c36fb3df494235283cff
+  docs/models/sentencechunking.md:
+    id: c9caca890527
+    last_write_checksum: sha1:449e1db8440c47923e225e1b97754a94aa078175
+    pristine_git_object: ef0aace6b4ed33f6db058c3ab1073d19c3fb8330
+  docs/models/size.md:
+    id: fa13061e86ae
+    last_write_checksum: sha1:ed40e6a2507efcc5f38f6cc95e434328ade3bfae
+    pristine_git_object: a8d748797ef89c5f948080aee703e2dbc6c22d59
+  docs/models/sparseembeddingmodel.md:
+    id: d36887259bb6
+    last_write_checksum: sha1:10ff831d70ad89b2b250ec7cb055dca0a2423395
+    pristine_git_object: 9515a9a3bf257fd0161b681ede18fbe04f28c884
+  docs/models/sseevent.md:
+    id: 922538ca399c
+    last_write_checksum: sha1:a8f5b663e765e15e42f2473754382296762a2801
+    pristine_git_object: b4a3c95547505cdb5b91aa4aa8c8f2156f04f3ac
+  docs/models/startblueprintinstancerequest.md:
+    id: 3e2a5656e0eb
+    last_write_checksum: sha1:bfd78c36ab077943dd8c5f3f9da560165d3195f4
+    pristine_git_object: c52aacd879222b0d8d77c9903225333848ac02eb
+  docs/models/startblueprintinstancerequest1.md:
+    id: e0f86f58f56d
+    last_write_checksum: sha1:167cdfaba0d668576236379022b57f407a9d0205
+    pristine_git_object: 60630c16aa6cebc323c44571ddccbc0406ae5907
+  docs/models/streamdatasourceuploadprogressrequest.md:
+    id: b9d1f020db4f
+    last_write_checksum: sha1:57fa629ff4f179e60acd3edc3b4426a65ff99bed
+    pristine_git_object: 89c4dd60b524ad480497bde33e995eb845c71ea7
+  docs/models/streamuploadprogressrequest.md:
+    id: d74e9f67ee02
+    last_write_checksum: sha1:de767eb09651490accb557b1aca7daf36dc2819d
+    pristine_git_object: 04fa60f4312ff6092e70a91efe19bd9d2ded2d12
+  docs/models/tagcolumninfo.md:
+    id: a6ad0575dc39
+    last_write_checksum: sha1:0514f21a35d99b6e86bead7d1809ae9aa41a7a8a
+    pristine_git_object: 237a22f9e751f79abc34bda03a3ee4fdae622f2b
+  docs/models/tagconfig.md:
+    id: c7ea69d9ee86
+    last_write_checksum: sha1:5cc48c8f50ed6fd2ace388c7abaaf8fbe088a018
+    pristine_git_object: f6c64ba7b4411fa868b99cea50900ae1118e6fdc
+  docs/models/tagtableinfo.md:
+    id: f4ca82b4d1c8
+    last_write_checksum: sha1:6f4ab190f456d7587bef2762de66c344bf393191
+    pristine_git_object: 6127c5c355b250fbb8061b00366a6e6a7463a0b3
+  docs/models/tokentextchunking.md:
+    id: 5a22aed43a46
+    last_write_checksum: sha1:c27a2e5169bc83297e5310ddf8ca7271d86c8c2d
+    pristine_git_object: aeef608f304bedd42af13703a3ae2e1b4a491835
+  docs/models/updateactivitystatusrequest.md:
+    id: fbd53fc501c2
+    last_write_checksum: sha1:0811604d99112e0265afa36cd1ae47589cf7da99
+    pristine_git_object: f3924fe3f3f9ab58b1265606dca0168756a8cf9a
+  docs/models/updateblueprintinstancestatusrequest.md:
+    id: 5c24f5a97d1e
+    last_write_checksum: sha1:5531f013e51cdf0aacaf820ff36ca6f71a8b9ae6
+    pristine_git_object: 2fa6350c21360100e3c3b80340c0528b7355dd15
+  docs/models/updateblueprintrequest.md:
+    id: 34fc2c6363eb
+    last_write_checksum: sha1:195f477b37d73390421917e31c5c8d90f302438f
+    pristine_git_object: ee92900da92cf5c882a13bb820a6c4e91321e0f3
+  docs/models/updateblueprintrequest1.md:
+    id: 3fe4d052b557
+    last_write_checksum: sha1:bcb3afdcae2a779fb70174d841678f2e21edff9c
+    pristine_git_object: e10058ffeeefe2bfd825cebf02bbfc5d438effe0
+  docs/models/updateblueprinttaskrequest.md:
+    id: 78aba5b3329e
+    last_write_checksum: sha1:7e0ca8b9d163b494c21fd3a09c73b62a17daaffe
+    pristine_git_object: 7da689375c7c72ca07f448dc2e8465a27d929414
+  docs/models/updateblueprinttaskrequest1.md:
+    id: b73f7fa37611
+    last_write_checksum: sha1:22c1fb840c644a4171513ae96f9ac10b65cc0499
+    pristine_git_object: 9cc3a83da2409d47cb18eaeb328311cac5c8d578
+  docs/models/updatechunkingstrategyrequest.md:
+    id: 7bec618c722a
+    last_write_checksum: sha1:66d68ef5f13bf6f3c87122438df0eda7247687f7
+    pristine_git_object: 190d0e8336fcacfaf5c8fc5dab64d5e39acf31b3
+  docs/models/updatechunkingstrategyrequest1.md:
+    id: 9928c9ac8801
+    last_write_checksum: sha1:e6641084e433d302c21637014321d8c3f49928b1
+    pristine_git_object: 81ee4aafa3ffc2354ce9ec9f69269862bc1927fb
+  docs/models/updatechunkingstrategyresponse.md:
+    id: d798df9df582
+    last_write_checksum: sha1:459f5628a7f9f7676bd487c49147e3492aeb8db3
+    pristine_git_object: ac6830a89e6d5d040d1a5204f5635a9efbb3005b
+  docs/models/updatedataelementrequest.md:
+    id: b0415c4824fb
+    last_write_checksum: sha1:45e5fd40950b1091f4925d5f0a022cd06e2b8803
+    pristine_git_object: 0b3ab9922f66bd1a5eea3ce9b011b82355748820
+  docs/models/updatedataelementrequest1.md:
+    id: ef19db9f818b
+    last_write_checksum: sha1:0b2dc6bdc0a7029abcf0bcaaa6dfa54439082506
+    pristine_git_object: f431c0f37364e1cf6e84f2175c4a211e4c651da3
+  docs/models/updatedataelementresponse.md:
+    id: aaa37d793bb3
+    last_write_checksum: sha1:5abe58cd471af23eda0c65511fb1e3df384e6f49
+    pristine_git_object: 3f5bc01174fdbad727ecf3cd03508eac90750816
+  docs/models/updatedatasourcerequest.md:
+    id: 416b27e82395
+    last_write_checksum: sha1:ddd37331c80d4ce5a4dbcf5d43a6b878c452b29d
+    pristine_git_object: 7e14317700da9811d30f5e213441eb344779cb2d
+  docs/models/updatedatasourcerequest1.md:
+    id: d5dcee407b3a
+    last_write_checksum: sha1:449e0feb7c68398347e4ece99d06e0ad8a5db653
+    pristine_git_object: 78d284c30f2aedf79878f501d1fcc4ba67b33c33
+  docs/models/updatedatasourceresponse.md:
+    id: a113833fc9fa
+    last_write_checksum: sha1:a6ae6663ac85620c93cb45f2fe693949eb6e7912
+    pristine_git_object: c02755b94f4e789676659d5f4858702c639d9dcd
+  docs/models/updateragconfigrequest.md:
+    id: a9784efd2a81
+    last_write_checksum: sha1:1b6b13c2a768aa502a3e61bbf27f0f8db0ce06bd
+    pristine_git_object: 2869d63b9d598e438da748f8d38442881733cc3f
+  docs/models/updateragconfigrequest1.md:
+    id: fd3200a415b6
+    last_write_checksum: sha1:afb0fdaecd299a39b5767a0d22085fc7ea89e245
+    pristine_git_object: f44671b1086e6f46ac19c876608e6b8d0bfe0597
+  docs/models/updateragconfigresponse.md:
+    id: db44d28ccefe
+    last_write_checksum: sha1:9adc6b473b9483c0e50bd403c0dacf501c457971
+    pristine_git_object: e3069522d3230d20ea66f5091b395b3c9af5a91c
+  docs/models/updatetagcolumninforequest.md:
+    id: 69f1d6de2889
+    last_write_checksum: sha1:a3114e833fd2fdfff8de46f05967dfd560bf5a89
+    pristine_git_object: 205488114b74aa8061733906d64ba68faac03b40
+  docs/models/updatetagcolumnrequest.md:
+    id: be0279b71125
+    last_write_checksum: sha1:f700ce10b4a050bcf2f4736b67329603f6bb813c
+    pristine_git_object: 3116ab670c7de5e0429f69e8442b4851595cb447
+  docs/models/updatetagcolumnresponse.md:
+    id: 3a6206cfb1c8
+    last_write_checksum: sha1:abbc1f0de8252aef4a496f544569f0d0008feb8e
+    pristine_git_object: c049b81611c6f91f6dc89d82ab8dc93cb05a647d
+  docs/models/updatetagconfigrequest.md:
+    id: a78c1adb2916
+    last_write_checksum: sha1:dedab0fe2cc62acbf40636fd9e694822cbe4f508
+    pristine_git_object: 84eb399072579a7e70f341487cfc5379519d65e4
+  docs/models/updatetagconfigrequest1.md:
+    id: 2ea1d2048d52
+    last_write_checksum: sha1:cb2d434e7360800840dded4dcfc19287104dcdd6
+    pristine_git_object: c1bd6dd97dcb2cbf1f0896f42fb172b4ff5055cd
+  docs/models/updatetagconfigresponse.md:
+    id: 1102fdaa9a03
+    last_write_checksum: sha1:9c59a93492fbad92bd13721c6c9a0ebde523d534
+    pristine_git_object: d7f6c0d24f35be4bbe26c33a667ecd18c585cbdc
+  docs/models/updatetagtableinforequest.md:
+    id: 727d67c66f23
+    last_write_checksum: sha1:cc66bc38670bc8c97fa1120a39a8f423854d4c90
+    pristine_git_object: ae17aa8cb40ea028a04adf1fa9a5a77093c449e4
+  docs/models/updatetagtablerequest.md:
+    id: 6a0d138c9ca3
+    last_write_checksum: sha1:9b684334618d6747640541063193e8cd04ee43e2
+    pristine_git_object: bb60c80708508c4c078ab3a74823306465a921d3
+  docs/models/updatetagtableresponse.md:
+    id: aadf8c1ee777
+    last_write_checksum: sha1:ec2a21cd0ba59e65907fb38ea4162ee75c765114
+    pristine_git_object: da648fcccfd85ba754bb96ee210020202f5406d0
+  docs/models/uploadcontentresponse.md:
+    id: e5f6d0184124
+    last_write_checksum: sha1:934831724395832d725fcd66c1cd9a3e6f453adc
+    pristine_git_object: bf6a49c52189b369c9abeecfc6d651754dfdec9f
+  docs/models/uploaddatasourcecontentrequest.md:
+    id: 6986a0c29174
+    last_write_checksum: sha1:97bb518b164705d7113f5a79fb1d34226662f87a
+    pristine_git_object: 8208ba5a4cf90a1d2c02de40b2435a8cbe83e873
+  docs/models/utils/retryconfig.md:
+    id: 4343ac43161c
+    last_write_checksum: sha1:562c0f21e308ad10c27f85f75704c15592c6929d
+    pristine_git_object: 69dd549ec7f5f885101d08dd502e25748183aebf
+  docs/models/validationerror.md:
+    id: 304bdf06ef8b
+    last_write_checksum: sha1:1889f608099577e6a116c14b211a6811d6b22786
+    pristine_git_object: 7a1654a1a5cfb3ab92360b361e8e962bf2db4582
+  docs/models/webdomain.md:
+    id: ac90730ad8f7
+    last_write_checksum: sha1:c099780c77e4605d8f827efa01735a477210fdee
+    pristine_git_object: 9df7359bd2e959cbfd65fa586db709547a104ed0
+  docs/sdks/blueprints/README.md:
+    id: 43596dbb889b
+    last_write_checksum: sha1:2cbace9a51adebb6fd823856ee528086a2328b9a
+    pristine_git_object: 73a3d7bf7cfd792634385335ebea4d98d4720f2a
+  docs/sdks/content/README.md:
+    id: de1d68ebc2ba
+    last_write_checksum: sha1:21478e027e4137341b90cbb543d447473c0646b0
+    pristine_git_object: c724dd1dd0cdfd51f5da4ce5f8a72df991990390
+  docs/sdks/dataelements/README.md:
+    id: 658a68bdfb39
+    last_write_checksum: sha1:26e4b99b660f05f1afc35a899fc0913a652d3fff
+    pristine_git_object: 65800c0df1cf2736327ad3561f1cd8cb8cb9d8d1
+  docs/sdks/datasources/README.md:
+    id: 024d3ed36945
+    last_write_checksum: sha1:74808080bb69c8fdce22a329c6c5ba2342e4a7b1
+    pristine_git_object: 84b6fa6bc4946ab812066cb10ef90bcffb765bd3
+  docs/sdks/executions/README.md:
+    id: 401745b17323
+    last_write_checksum: sha1:a6fa401515998f49efbcbaa5c3d370b5334877a0
+    pristine_git_object: 9beaed4b1804edcfb5842deebfd1d3dee56c9868
+  docs/sdks/instances/README.md:
+    id: 3a42a583dacc
+    last_write_checksum: sha1:74c5c9dbf5b0ea6eaceccb5a415e6d84de53b4c8
+    pristine_git_object: fbde6d1d5ab737c23d10a96032bae1a27d2c3c9b
+  docs/sdks/meibelaicontent/README.md:
+    id: 4a75980af700
+    last_write_checksum: sha1:23c32b42754e585a33048b9ebf74c793125c6835
+    pristine_git_object: 2a2aa57136824d1ddb6f98f7edb61a298329c299
+  docs/sdks/rag/README.md:
+    id: 1c314cbdd04f
+    last_write_checksum: sha1:046aa7faac07b938f9cca1de471678804f68e3c2
+    pristine_git_object: 1f1acdb138fd14ef4bff8018e9910f78fb120b4a
+  docs/sdks/tag/README.md:
+    id: e36df12529f4
+    last_write_checksum: sha1:c212440da6a3820c170f5be4da7d41ec02686715
+    pristine_git_object: 230d529ef8fdcdf181e42d0a171bfc5c9e715570
+  poetry.toml:
+    id: a81ade82122a
+    last_write_checksum: sha1:2242305e29dc6921bdf5b200aea5d4bf67830230
+    pristine_git_object: cd3492ac9dc870fdcf23dbd94fd1d40cc753cc8e
+  py.typed:
+    id: 258c3ed47ae4
+    last_write_checksum: sha1:8efc425ffe830805ffcc0f3055871bdcdc542c60
+    pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
+  pylintrc:
+    id: 7ce8b9f946e6
+    last_write_checksum: sha1:db2aebd83e553dd59d3965e79104a3fb780c403a
+    pristine_git_object: e8cd3e85682cd3d489cf3c5be75a0563d0c9f4bf
+  pyproject.toml:
+    id: 5d07e7d72637
+    last_write_checksum: sha1:83e47cf3a9df962e9db733a9abc60837e6fcb22c
+    pristine_git_object: 9e76d70c09194526b4a68a1da8d2d5e89d2f8eca
+  scripts/prepare_readme.py:
+    id: e0c5957a6035
+    last_write_checksum: sha1:4f38078791667b48e093e6f5b54bda2b240c741d
+    pristine_git_object: a846fc6cb394f8cd1523e14ed4cfe3a0d14198af
+  scripts/publish.sh:
+    id: fe273b08f514
+    last_write_checksum: sha1:b31bafc19c15ab5ea925fdf8d5d4adce2b115a63
+    pristine_git_object: 2a3ead70ccc6228cbae1c5c8a319b1399f3804ea
+  src/meibelai/__init__.py:
+    id: 8ab6e1a099c2
+    last_write_checksum: sha1:36306d1d404b6aeb912d27f1d9c52f098ff7bf9b
+    pristine_git_object: dd02e42e4cc509dc90e6ae70493054021faa5f9c
+  src/meibelai/_hooks/__init__.py:
+    id: dc4f5c15fa10
+    last_write_checksum: sha1:e3111289afd28ad557c21d9e2f918caabfb7037d
+    pristine_git_object: 2ee66cdd592fe41731c24ddd407c8ca31c50aec1
+  src/meibelai/_hooks/sdkhooks.py:
+    id: 0fa5a86858fb
+    last_write_checksum: sha1:ccc4e92dc7ad406a271ea77d6d0fdd7a1e43e7c2
+    pristine_git_object: d4eee9d135a661a1605a0e43b1b1392cb041a4a8
+  src/meibelai/_hooks/types.py:
+    id: 0a1cd0d81f08
+    last_write_checksum: sha1:7f2497cd6e2bd5675f8f799a76c78fd1c6ee60c0
+    pristine_git_object: 9b50d497b8196195b4d7a30470cd231d68d4cd39
+  src/meibelai/_version.py:
+    id: 67c1a15c7974
+    last_write_checksum: sha1:53ec2186194685d27416d76b026fc87e88537135
+    pristine_git_object: a235469d9f102024fea13b4e5c120b14a7076d02
+  src/meibelai/basesdk.py:
+    id: 147a3827d9f5
+    last_write_checksum: sha1:55f782d4ae2e71f7b5f4085796d395bc08ca2b0a
+    pristine_git_object: 75c16a8032c1786f4f3a1456e15955a4ee1563f0
+  src/meibelai/blueprints.py:
+    id: 40d5ed5279ba
+    last_write_checksum: sha1:5b23693c11916e74666093ef41fc503c0760b675
+    pristine_git_object: cc847a02ce5ef7d054b8f78bded6922fc7cb0795
+  src/meibelai/content.py:
+    id: 71d0b38a3912
+    last_write_checksum: sha1:041b18cf116824e1ede2b40339e48b5c990fae63
+    pristine_git_object: bbcff1d1e1623b9952c7e0eacbcefa3511bf4be7
+  src/meibelai/dataelements.py:
+    id: 61dab38355f1
+    last_write_checksum: sha1:ece28081b582764076357a758706ee3919932f1e
+    pristine_git_object: 58cb87fd6ede46b0623ebb42a287cdc3f360a350
+  src/meibelai/datasources.py:
+    id: 81104fcde7dd
+    last_write_checksum: sha1:1656b195927b249b7d2c08422de43af85d166db3
+    pristine_git_object: d36898402313e18185606c6bd51f5cbf3644c1a4
+  src/meibelai/executions.py:
+    id: eeda88d248c6
+    last_write_checksum: sha1:aea55e28ec3207c9f2e4dd6ac2d82290a1205556
+    pristine_git_object: 7ebe2ca400bc126d0602f91f8f1920ecae814e68
+  src/meibelai/httpclient.py:
+    id: 71c056cf3639
+    last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
+    pristine_git_object: 89560b566073785535643e694c112bedbd3db13d
+  src/meibelai/instances.py:
+    id: 2aaabdc4b00c
+    last_write_checksum: sha1:e6d74533c0c7933bb7d5d44388057875ec3907aa
+    pristine_git_object: 6e37d16bcfe4bfd17f882e0472ae952a014c1d98
+  src/meibelai/meibelai_content.py:
+    id: 438aabc0fffc
+    last_write_checksum: sha1:6ed415f095cfd072ab1b16f885cfafa6496bcf64
+    pristine_git_object: cf63e7377a068cf802a8305dbfed05adce208a43
+  src/meibelai/models/__init__.py:
+    id: 5c627b972d34
+    last_write_checksum: sha1:9f1b67a1a40d3d228d77fd1a3c05dce757b6fc63
+    pristine_git_object: 7091a2326fe1a5626aa5e11f89c0778236191dbd
+  src/meibelai/models/activity.py:
+    id: 7af01ddbba8f
+    last_write_checksum: sha1:f5f577ca64c4198b7fef710fbc5bf7368d90a7e1
+    pristine_git_object: 51e151a59c3f7026f8e225a4f78c14677af225f3
+  src/meibelai/models/activitystatus.py:
+    id: 9345379a378c
+    last_write_checksum: sha1:639b534e833e8c54f9cd13189bb4f8798d4f3d42
+    pristine_git_object: 332d20b85e1ef34c08e4c86f9a44404f307564c2
+  src/meibelai/models/addactivitybyblueprintinstanceop.py:
+    id: e94a50778cdf
+    last_write_checksum: sha1:81cb3e831d349d2fa08a3437163fd7f8e28b518b
+    pristine_git_object: a4ab367d3f3e39ba3ec229c515af6e4b0a5a4208
+  src/meibelai/models/addactivityrequest.py:
+    id: 03ad4fe73ea4
+    last_write_checksum: sha1:3b6903c055bedccede6c48c74cdd4a2f98fade00
+    pristine_git_object: 653903add18b9af114b489873af8db3635cc98a3
+  src/meibelai/models/addactivityresponse.py:
+    id: df3470d14596
+    last_write_checksum: sha1:60e8710b167b348b7313a50a4d0cbe26f3d06aee
+    pristine_git_object: 597c33253b3008934caa24de1d0ba0a4eeafd771
+  src/meibelai/models/addblueprintinstancerequest.py:
+    id: 2e1473160c2e
+    last_write_checksum: sha1:d2fe6ca88f1268658868f9cfaf71e910f048add7
+    pristine_git_object: 4fb4677578b3fd5244e5d7f46d536e0d87093b0c
+  src/meibelai/models/addblueprintinstanceresponse.py:
+    id: 288a36688876
+    last_write_checksum: sha1:e8e8aba6325075f04ee70d591b68db34e9260d72
+    pristine_git_object: 5ab787ad43bccb0f06b7defdff0433120e2c10b2
+  src/meibelai/models/addblueprintrequest.py:
+    id: 5a387109fc2f
+    last_write_checksum: sha1:46a938c5503699ddf5a94c84b1219dccd2ab03b9
+    pristine_git_object: 97b0f7af80aba1535358c3073ce44c55a702e773
+  src/meibelai/models/addblueprintresponse.py:
+    id: f5bb7646f841
+    last_write_checksum: sha1:6687ab3975b39e6a3dc7741fb8aad3f2282857d2
+    pristine_git_object: 1d2c132edaf2376fb27eeaaf609c9fc51da5c802
+  src/meibelai/models/addblueprinttaskrequest.py:
+    id: 7d1396a4e770
+    last_write_checksum: sha1:7e36e3b8134f69f831349dde5d4214448764b7bb
+    pristine_git_object: dbc4326d6461c51006175e86ab859f5182f6805e
+  src/meibelai/models/addchunkingstrategyop.py:
+    id: 2cbd0d0f45df
+    last_write_checksum: sha1:7a8d533835c3b5825b68e679da9fa711df6e489e
+    pristine_git_object: 0ab2bce5ed0a4e7c4333750495104bf4c9b01894
+  src/meibelai/models/addchunkingstrategyrequest.py:
+    id: 452d3907df07
+    last_write_checksum: sha1:deadadc1a930fbddac723f8f446e86a56c4c05fb
+    pristine_git_object: 2f0c5e123a0dd1218d0368b74da078a65c65b16f
+  src/meibelai/models/addchunkingstrategyresponse.py:
+    id: 62d5695849bb
+    last_write_checksum: sha1:24fe786571bb7cc6e9ec1f6d9566a8b351006a47
+    pristine_git_object: cfc694dc82a2e99debac67390a40d51727cb928c
+  src/meibelai/models/adddataelementop.py:
+    id: 8bc2e3b99606
+    last_write_checksum: sha1:e22304f528cc21d69c3553879c1359e7a6b57ae2
+    pristine_git_object: 2a73e453b61c0404f19b18cf7979ba994af310fb
+  src/meibelai/models/adddataelementrequest.py:
+    id: eeae2e4951b7
+    last_write_checksum: sha1:05462d20704680891921ad25b8e719caf123da57
+    pristine_git_object: 6b63767b80a1470bbbc98e3ee170499f5907d482
+  src/meibelai/models/adddataelementresponse.py:
+    id: 946d349fe046
+    last_write_checksum: sha1:39c9803fd49c5672c0ee289814cdaa76232ab777
+    pristine_git_object: bbaf5dd0318d80f315c7c155a9743a55b79e6f97
+  src/meibelai/models/adddatasourcerequest.py:
+    id: ccee61ed4a91
+    last_write_checksum: sha1:ff94a976008a0de75ec4d4e04ad44e74bb15635b
+    pristine_git_object: d0e10fb91c5aff45014945c588a08f6cb595a615
+  src/meibelai/models/adddatasourceresponse.py:
+    id: d66d52a00d9d
+    last_write_checksum: sha1:461c73db4dc0cd100a9477d992d486fb4579f3d1
+    pristine_git_object: 9d61caa908ff04aa2d83dcbacb74c31c7efb6f32
+  src/meibelai/models/addeventresponse.py:
+    id: 16e06d73566f
+    last_write_checksum: sha1:c5b5130a9fd42bb256d4e96abb8903783c6308a4
+    pristine_git_object: 3961e47d055d281fe94ea0a6fe4335585a83fb90
+  src/meibelai/models/addragconfigop.py:
+    id: 17278ddb69c5
+    last_write_checksum: sha1:7928d2a894628bba87167964ebfc0e1aa2ae7fe3
+    pristine_git_object: 106b62aa935592e16e20f4158738e1f0d8979104
+  src/meibelai/models/addragconfigrequest.py:
+    id: ace2fcce0ca2
+    last_write_checksum: sha1:6375bbfda5d9a7f6714850a55241c924f5edc1f7
+    pristine_git_object: 554004cfadaab4929e70345ff9a63157718af08e
+  src/meibelai/models/addragconfigresponse.py:
+    id: 95acf90614e3
+    last_write_checksum: sha1:3d05003dfe74f6e18e4e0cc03f3f3b26858e6fd1
+    pristine_git_object: d341522c2df2241ac73d1665800953ab367ccb7c
+  src/meibelai/models/addtagcolumninfoop.py:
+    id: db824060dba8
+    last_write_checksum: sha1:f859a80817a97ba80a09a0997b4025b0e710028e
+    pristine_git_object: dd1fc98a91f6c71a31582b4031704e95c6f39aed
+  src/meibelai/models/addtagcolumnrequest.py:
+    id: a63bf6fad462
+    last_write_checksum: sha1:a3583080e4ca20bac5cacf77c0465bfc8d998a76
+    pristine_git_object: c196fcd2de786a1bb05630e03c2dc32b238bebec
+  src/meibelai/models/addtagcolumnresponse.py:
+    id: d6edfae4b9de
+    last_write_checksum: sha1:f4ffaf18dd0948ea95c0f3430b119e2edce494e3
+    pristine_git_object: d2b0334d1a3a2efcec6848bd31f253fe79cdf49b
+  src/meibelai/models/addtagconfigop.py:
+    id: d3646800f8be
+    last_write_checksum: sha1:447a687d2567235da3c8e71b462563f573b059ee
+    pristine_git_object: cb9de099e8d14e36dc25b136cc3b10a046a1e8cb
+  src/meibelai/models/addtagconfigrequest.py:
+    id: af309e397b25
+    last_write_checksum: sha1:dd24c1720bffd0f15885417b632920852f538ac9
+    pristine_git_object: 59b1856f1b605e963fc0e0f5670b447b21ec04a4
+  src/meibelai/models/addtagconfigresponse.py:
+    id: 195aa6cd066c
+    last_write_checksum: sha1:742998d1f27509cd5f4c9ed67dd642f8c789ce85
+    pristine_git_object: afb6a5f03cf5dd4001b96c2f82995def09fa49cd
+  src/meibelai/models/addtagtableinfoop.py:
+    id: bfc4c99c0063
+    last_write_checksum: sha1:d4c2b12b9af305664e6941a00fec9d81585d1738
+    pristine_git_object: 492fcaed95b96a47ef9ec3b754ab3b5856bee6c1
+  src/meibelai/models/addtagtablerequest.py:
+    id: 7ea0ed114263
+    last_write_checksum: sha1:e3beb340262938e354a2b4cf497e90c614fea8bc
+    pristine_git_object: 53a3d09d87c453787393bbb57569a5a42a3694cc
+  src/meibelai/models/addtagtableresponse.py:
+    id: dc87a6b5c474
+    last_write_checksum: sha1:4b04f8689b984865bb5c2ed95e3107af9856d9b8
+    pristine_git_object: faff6e5b085ef48756abde1aaa1c8f5d78b01b28
+  src/meibelai/models/alloweddataelementfilterkeys.py:
+    id: 73bf032b219b
+    last_write_checksum: sha1:f06fcf5b8c6517354071da1a123fa2d04855dac8
+    pristine_git_object: c76360bc4e9ed2a8a977129832c3163109ee500c
+  src/meibelai/models/apierror.py:
+    id: bf80ff5fbe13
+    last_write_checksum: sha1:5e335771ca4564f3b15ecf30c3bae5602ae3d638
+    pristine_git_object: 93c0595fad248e251c16e0a8360562dbfe117a7c
+  src/meibelai/models/basicwebauth.py:
+    id: a5ba22ef9156
+    last_write_checksum: sha1:1bf129809f320d657e64c42c663eb8a84972053d
+    pristine_git_object: ad1179f5df961f37c86aa7ce743f2d4cd5d636c9
+  src/meibelai/models/blueprint.py:
+    id: 0d7171148325
+    last_write_checksum: sha1:2e0e9fbe9edf95cef00caa46509175a3d051c46a
+    pristine_git_object: f63b6a305860b00f756383db5ff27aa45c123696
+  src/meibelai/models/blueprintexecutionmode.py:
+    id: e9bb8efd0df8
+    last_write_checksum: sha1:099f56d39c68ae3834b4c6fe27885e919be8aa4d
+    pristine_git_object: 3bf80167f17903683b1583e10cb1a489bbf28c4e
+  src/meibelai/models/blueprintinstance.py:
+    id: 82afde7c814a
+    last_write_checksum: sha1:ec2b785307dbea9a6c82252ff5fb85dc6bfd0e4d
+    pristine_git_object: 4d7e0dd14db53c4f9ce7ffc89d4ee6682dc7ff00
+  src/meibelai/models/blueprintinstancestatus.py:
+    id: 2b50c41b26cc
+    last_write_checksum: sha1:d385d725cbc160086ecab66c7e7f3104b61b83ac
+    pristine_git_object: fb3c9f55608d9f51657f27887c2f31282da0a20d
+  src/meibelai/models/cancelblueprintinstanceop.py:
+    id: 65c6b9a4cbb5
+    last_write_checksum: sha1:3d06b5a71dd4fb568818881ce9043de0a79bcd01
+    pristine_git_object: f0525de88d049a760f74c4e9a899c090b835a026
+  src/meibelai/models/chatblueprintinstancerequest.py:
+    id: 89c8d8010b9a
+    last_write_checksum: sha1:5a6d01fac0defdd9b05df284d4cc8ebcb3d948ea
+    pristine_git_object: 1b87a50b3371ec40e2aac231bff071f92ea65d3b
+  src/meibelai/models/chatblueprintinstanceresponse.py:
+    id: 7fe219b3a92e
+    last_write_checksum: sha1:a06844257f53d1e41f77719c42f47f2a28aa96e8
+    pristine_git_object: 993ba73da2af6cb56b82859b719179c149693443
+  src/meibelai/models/chatwithblueprintop.py:
+    id: 7433bc82c8dd
+    last_write_checksum: sha1:bfd86743a0abb4b774a179749760ef8ceae6bcfe
+    pristine_git_object: 73375703217d5034d2f1fd150cb41fd1c0aa470a
+  src/meibelai/models/codechunking.py:
+    id: e3026cc15900
+    last_write_checksum: sha1:4b963ef7f0930c726d465abea4908208317bacd0
+    pristine_git_object: b149002812606604b1d32edec5b870c0662bfaee
+  src/meibelai/models/completeblueprintinstanceop.py:
+    id: ffc8667a8e89
+    last_write_checksum: sha1:b8128a26c54a041b3d6baef78df8532acf6b324a
+    pristine_git_object: 9cb1a6f91005fa17e9d1051c29af67bf16bbee5b
+  src/meibelai/models/completeblueprintinstancerequest.py:
+    id: af509c855fd6
+    last_write_checksum: sha1:1db213349550a67a20cbbf04b9ebdb11b0555017
+    pristine_git_object: 6be75963111ad070b18ca486f490837c383486a3
+  src/meibelai/models/contentitem.py:
+    id: 3a5e484de212
+    last_write_checksum: sha1:0bd058f9d91bec57da10804243d4edfaefcaf3da
+    pristine_git_object: db1b2636fb392f657c61c5f46b01639cd9b7c1a8
+  src/meibelai/models/contenttype.py:
+    id: 0a6f89f7ed56
+    last_write_checksum: sha1:71873b397058f7eb37ce360dd09998717ca15ada
+    pristine_git_object: 33c785248f864f2f4cbebe90a8d530c6e4d21df4
+  src/meibelai/models/createblueprinttaskop.py:
+    id: 193ad486e598
+    last_write_checksum: sha1:d36924f8eae9d0b58c9cabe1c1897dfbfe70b554
+    pristine_git_object: 8c4bcdc1d6e4b69eba94efad2b1790329ed7367a
+  src/meibelai/models/createeventbyblueprintinstanceidop.py:
+    id: 130e456dc48b
+    last_write_checksum: sha1:40a12765666a559a50d9a2324898290f02f5bdd1
+    pristine_git_object: 9aa11eeaebf0e58d60929c5cc53bab345a538ddf
+  src/meibelai/models/customeventrequest.py:
+    id: 55e312cf71af
+    last_write_checksum: sha1:f3427833ebb1497f1d66b49da1712e7c70522eec
+    pristine_git_object: 9842d8fd9adcb8bba97a32ffc6d009aa70c3a6fd
+  src/meibelai/models/dataelement.py:
+    id: b3ee8fc547d8
+    last_write_checksum: sha1:8560048bb09c5a08e405de67b3161659bfeb003c
+    pristine_git_object: 555266af3815e022dd7ed098fe43ba5382e63120
+  src/meibelai/models/dataelementcondition.py:
+    id: dab8ef84a83d
+    last_write_checksum: sha1:f70f368cb80806a45d69b2a654ee9bc701ad3bf4
+    pristine_git_object: c8429ac08b30921c7f934aa04fcc4fb6f68cec47
+  src/meibelai/models/dataelementdiscoveryrecord.py:
+    id: f805f88a50c5
+    last_write_checksum: sha1:673f58f7f59f7c4039216b2a87c0ce6988b96a5e
+    pristine_git_object: 593f86a1b262de4580710384943c988840e66382
+  src/meibelai/models/dataelementfilter.py:
+    id: 42efd0bb3639
+    last_write_checksum: sha1:3e7408777582bbbb333d7b88506c8405fda403d0
+    pristine_git_object: db41d143b52921aa6759fa6fc8c69d5a6557e8fe
+  src/meibelai/models/dataelementfilterrequest.py:
+    id: a459b23aa104
+    last_write_checksum: sha1:ea6ab89ec7840ea9fe7e7eb88f37e507ab3ccc77
+    pristine_git_object: e6f1be3e04315f03a7953e7d49656f86098612d5
+  src/meibelai/models/datasource.py:
+    id: 212a00d6800d
+    last_write_checksum: sha1:1bd14ca1a2fc9035a05a74f85409a3da543f4040
+    pristine_git_object: 01e6938c58a3640ff6f7a0b7064ec4bf62955c00
+  src/meibelai/models/datasourcewebconfig.py:
+    id: ee84c2202d7d
+    last_write_checksum: sha1:2113442d83b1ba628865934185f35bad9f0ecd9b
+    pristine_git_object: 630ba237616d182728a6d010a6551f45e1876e93
+  src/meibelai/models/deleteblueprintinstanceop.py:
+    id: 4d3694a1ffac
+    last_write_checksum: sha1:93909209ef238d2d44886a3729694daeca63a499
+    pristine_git_object: 8067dc2b4b9980538a816046b2c36fdf417d60d9
+  src/meibelai/models/deleteblueprintop.py:
+    id: 4dd562410ecc
+    last_write_checksum: sha1:ab75914a60fadc656bc3b9ed6e7d04a7356a38ff
+    pristine_git_object: 38b26ef406e5eca765709e945996bc81c42b171c
+  src/meibelai/models/deleteblueprinttaskop.py:
+    id: 0bef8d54747a
+    last_write_checksum: sha1:204b53c2a5dce70aacc52756efd3678f31d1f84f
+    pristine_git_object: dfdf35adff28e2299bdf21c609d73e34eb85446d
+  src/meibelai/models/deletechunkingstrategyop.py:
+    id: 255f408fee88
+    last_write_checksum: sha1:928dfc4074724ce5f2bb98944d069e688006ceb0
+    pristine_git_object: 3d68c8b402b70983ac05ea868e2b757199148aa7
+  src/meibelai/models/deletechunkingstrategyresponse.py:
+    id: c01862765e13
+    last_write_checksum: sha1:23849ad61e1ae4f0a9d0d9a3a3091cbe716b1d64
+    pristine_git_object: d09429df120362a738daa0b34cec6c940ab37622
+  src/meibelai/models/deletecontentresponse.py:
+    id: 0f2adaab1060
+    last_write_checksum: sha1:8ef9a0ddef2fa05571c73dd6d313c7171b92cc0b
+    pristine_git_object: 40150f01b52f76ecb78a143cedbd52aac3fc2779
+  src/meibelai/models/deletedataelementop.py:
+    id: 1e7a2e0753d8
+    last_write_checksum: sha1:8c207f1487015a538dc34023677e8d7f6cf11d25
+    pristine_git_object: e0932afbc3731685b8cbf5c41df0a79adae9196c
+  src/meibelai/models/deletedataelementresponse.py:
+    id: 3c34cd5c8976
+    last_write_checksum: sha1:21c3f03485deb670717b66b7e9344b8291415dcb
+    pristine_git_object: ddcebb2e301d8f7a62b7a918644ef029faae6f14
+  src/meibelai/models/deletedatasourcecontentop.py:
+    id: 121366e12277
+    last_write_checksum: sha1:a53b0cdc94d518facbb6cb49740e1215b9f3e338
+    pristine_git_object: 6b6da33f853fdd21732a3ef75e7311a6f6c2684b
+  src/meibelai/models/deletedatasourceop.py:
+    id: 29c89de621fd
+    last_write_checksum: sha1:8db0ee139f3f804f41f2d7c63ec8b416a3335239
+    pristine_git_object: d6b8b937768256d41572bdf80e02dde6f76460a6
+  src/meibelai/models/deletedatasourceresponse.py:
+    id: 7ab9e6f1f517
+    last_write_checksum: sha1:2f07fb4a328ef06dbcc2c662e253474af2ed1ce7
+    pristine_git_object: 066f9a786ca6a965b25d36bbb2086f5dfbbe687e
+  src/meibelai/models/deleteragconfigop.py:
+    id: ec415b7c7147
+    last_write_checksum: sha1:799993cbe6956a937abb50505ed46651f5aea780
+    pristine_git_object: ad7dfda1eeaf975f82249401f1c5aa98ac3db48e
+  src/meibelai/models/deletetagcolumninfoop.py:
+    id: 8b65d193e20c
+    last_write_checksum: sha1:982d0d27e6fa423c2a4f1a3a3e4a5bf04b0fb969
+    pristine_git_object: 6d6cc04ff0a28396415cd364b5b809ebbd125788
+  src/meibelai/models/deletetagconfigop.py:
+    id: 8b5de5bd4888
+    last_write_checksum: sha1:fb49557a059d347023a11e74454dc49710e84b9d
+    pristine_git_object: d34cc80a3351bea102cbe837e3286be3b401342d
+  src/meibelai/models/deletetagtableinfoop.py:
+    id: 845608c29bb1
+    last_write_checksum: sha1:39f5591f3465705f362f58173f1f64fda3178d62
+    pristine_git_object: 59908f78dbdc883ffa9cb44184ccae92f5c7c901
+  src/meibelai/models/deletetagtableresponse.py:
+    id: 49a3762d6a11
+    last_write_checksum: sha1:685ef938714c84a54931e76f38df10a2b56c31a8
+    pristine_git_object: ddab25cf15601e8454cba5ffa03dc105032b2ebc
+  src/meibelai/models/downloaddatasourcecontentop.py:
+    id: 9b9e4b8cd535
+    last_write_checksum: sha1:03716f26005db1019ec20e1df94fa8c1da5cde33
+    pristine_git_object: 42e55b6b0627377fb3685424b18d0cbd5dfadfe7
+  src/meibelai/models/dsldefinition.py:
+    id: 405abd2762e9
+    last_write_checksum: sha1:bdd5a2b85554fae9c3d55164f702bce36a89f004
+    pristine_git_object: a1e700c1e8ef0ee618be1d9727376e8d899ad371
+  src/meibelai/models/embeddingmodel.py:
+    id: b890353b86b5
+    last_write_checksum: sha1:bbfa46ba72d16f974a35b48d8d1f2c0ccbefa6e1
+    pristine_git_object: 386f921e4de18574a04c45ffea5db214e15f097e
+  src/meibelai/models/event.py:
+    id: 52f9a53bd297
+    last_write_checksum: sha1:e0f59d1a2f65fb80b69e85438321301dd3da56ba
+    pristine_git_object: 06f68b243261c1cf7fa9b9499c565b2d2fdf8d46
+  src/meibelai/models/eventtype.py:
+    id: 957cd1682c0d
+    last_write_checksum: sha1:50536dcebd2571c6eee3c795b0f32d6c9720c314
+    pristine_git_object: 8e0c160dc9c77c84be5a3e1dddc7dc1484385472
+  src/meibelai/models/executeblueprintop.py:
+    id: f3601af76bff
+    last_write_checksum: sha1:6362165cd8f4f151597b08728659bdc38006111a
+    pristine_git_object: 040a9d5f40d19f75b4ae97e745d93aced11b0421
+  src/meibelai/models/executeblueprintrequest.py:
+    id: 104215b62106
+    last_write_checksum: sha1:5360a794b151fe098e7558b8a2fa42dd2943e98e
+    pristine_git_object: b35e686c004c7d0b0fa6437b8510cbae6ee0cc8f
+  src/meibelai/models/extractormodel.py:
+    id: 4bfe4b29a222
+    last_write_checksum: sha1:d2c4f4475afcca017030869590523a48df182c99
+    pristine_git_object: 038c4a97745d0801d4681de797fbf4fa3148e43d
+  src/meibelai/models/failblueprintinstanceop.py:
+    id: d461be11adf4
+    last_write_checksum: sha1:1a93c99d51f83fb4c3082cb7aa1eb52bc0dc5092
+    pristine_git_object: 514cf6b603124d4ab96cc63a4f3aef354f3df0b3
+  src/meibelai/models/failblueprintinstancerequest.py:
+    id: f37b4e5cffe5
+    last_write_checksum: sha1:007e6378626f409fc2c1437035afc3888f6c79a6
+    pristine_git_object: 31ad8b550fded861313dcc268810477a0e01ab30
+  src/meibelai/models/getactivitiesbyblueprintinstanceop.py:
+    id: 463694c32b79
+    last_write_checksum: sha1:79423436893336c3e6026297af82936c4f8e692a
+    pristine_git_object: b961b482c7295b9f8a07b16436b3d199af8cae65
+  src/meibelai/models/getactivitiesresponse.py:
+    id: 1cca7ef36571
+    last_write_checksum: sha1:3beb31f4a8e3e6614dd5218643aa51418ab81e9b
+    pristine_git_object: 61936efc87d2f64ce9e0fd18c41e43325b3f400a
+  src/meibelai/models/getactivitybyblueprintinstanceop.py:
+    id: c7f85e610abd
+    last_write_checksum: sha1:9bed7b1db2917b06ffdcf024ab085724c2ec5922
+    pristine_git_object: cd856dc641877718fdb773846ad9cdb286e4219f
+  src/meibelai/models/getallblueprintinstancesop.py:
+    id: bf3d101cf54c
+    last_write_checksum: sha1:838942cda363f06f14584b3e1b3d3b19dc1fc757
+    pristine_git_object: 16899bd2df1f37f431d6b70d4d36b2e2f0eb0725
+  src/meibelai/models/getalldatasourceidsrequest.py:
+    id: 1b5bdb3dde61
+    last_write_checksum: sha1:e83e79a90276e100c73342fdf9d84dc4d9fb1b01
+    pristine_git_object: 2f84af83352e053b2d0716b8aa3570d1823c0302
+  src/meibelai/models/getalltagcolumninfoop.py:
+    id: 5928f1a5c549
+    last_write_checksum: sha1:1684cb6f6005b42c1af8703ab85daa5d22e24d99
+    pristine_git_object: e51964d85fb86859479adb24f005e7581dea289e
+  src/meibelai/models/getalltagtableinfoop.py:
+    id: ad0a40a6fae0
+    last_write_checksum: sha1:9af351b2a95000ad887f1070486fd8c2bab8b0ef
+    pristine_git_object: 4bfec4b8fb05d6fdcc8d1f3fc801fcd6b7a72679
+  src/meibelai/models/getblueprintinstanceop.py:
+    id: cae106325944
+    last_write_checksum: sha1:e7b1bd45512e263263f08c378b54054b301fa544
+    pristine_git_object: 5d8962f88f4e64de0811b20b75de78ec5379faa9
+  src/meibelai/models/getblueprintinstancesresponse.py:
+    id: c99d1e148784
+    last_write_checksum: sha1:54aef999902b06065c0bcbdac3eee0a3a7df4e25
+    pristine_git_object: a5a296a7f9456879d3e63cb75c44726e6ab18577
+  src/meibelai/models/getblueprintinstanceworkflowstatusop.py:
+    id: 4bef43ade14d
+    last_write_checksum: sha1:d180a315196681e46840127334bec7c0d8c24078
+    pristine_git_object: 3b9845a9334690b5fa4a7cf944cd0c24b7e82b44
+  src/meibelai/models/getblueprintop.py:
+    id: e13f4a001c78
+    last_write_checksum: sha1:ada0c95c1047c3611543fc54ad217f36504b82f2
+    pristine_git_object: 444f29c32385ee529a5e901a716b2ab03d954811
+  src/meibelai/models/getblueprintsresponse.py:
+    id: 6ed7bfcca001
+    last_write_checksum: sha1:5497a30e890dd5b0f7790f1fef28a76dfd1fff13
+    pristine_git_object: 96e8637dc7d0fbd63658123f112a92d94d4eef8f
+  src/meibelai/models/getblueprinttasksop.py:
+    id: 803a1bcf8e45
+    last_write_checksum: sha1:62598829427494345ba8d0cf001e20cf92e9940d
+    pristine_git_object: 0793b7e382a2b02fb017c13c91732cc7309fc7cb
+  src/meibelai/models/getchunkingstrategyop.py:
+    id: 0380707babd4
+    last_write_checksum: sha1:9baebb39d25f1581b0910ec1381436979faf64b5
+    pristine_git_object: b072436952bd532196ed494efdd625e15e70b0c4
+  src/meibelai/models/getcontentresponse.py:
+    id: f5b98ef085ff
+    last_write_checksum: sha1:48146ff9d68e7b08d9a0627331f3e813a06d75c5
+    pristine_git_object: 2d1cbd5ea154d75baabe77970b4eec91ef47f8b6
+  src/meibelai/models/getdataelementop.py:
+    id: 3169958ce98e
+    last_write_checksum: sha1:957c63bfb060e02fba82f14a403f902e3daf93b3
+    pristine_git_object: b5f34b16d9e9450a21aa85cea90478b49370c72a
+  src/meibelai/models/getdataelementsbyfiltersop.py:
+    id: 3daa556ecdbb
+    last_write_checksum: sha1:ae2d9a0528ce14d10f685bf8137a6fe0e2aa0173
+    pristine_git_object: 11c6445debbbc5c98ad58020f99e899f803a5a1e
+  src/meibelai/models/getdataelementsop.py:
+    id: 69035d8c5bb4
+    last_write_checksum: sha1:d5dfdd95caf5e5c1b3190e787642ea7a579f0c33
+    pristine_git_object: fedc1cc4490d8a3cf629ca3a34147510034ece82
+  src/meibelai/models/getdatasourcecontentmetadataop.py:
+    id: f11099d626a0
+    last_write_checksum: sha1:052e78bcd1151277ab46de69661377b978e51134
+    pristine_git_object: 144b0c1192ef951b574fb629d3cae2cd97f3d5ad
+  src/meibelai/models/getdatasourceop.py:
+    id: 098da30e0368
+    last_write_checksum: sha1:fce1ef0d4a80c031f0dcde34ad8ed0540fcaa35f
+    pristine_git_object: 36057616d02876b7facf38f574dbb91a6ddf156d
+  src/meibelai/models/getdatasourceuploadstatusop.py:
+    id: 1853fc403151
+    last_write_checksum: sha1:aace74e04df83a38c9d893915c3daac00f7c87ff
+    pristine_git_object: 2c11d2aae5a4161edb87649d46f80ce303db244e
+  src/meibelai/models/geteventbyblueprintinstanceop.py:
+    id: 3c644dd14e3d
+    last_write_checksum: sha1:dfec6e231b3930ec260724d255e5ac4e4c769e48
+    pristine_git_object: 4cf8fb8dd172ff634441d74cdb168a1bde490232
+  src/meibelai/models/geteventsbyblueprintinstanceop.py:
+    id: 1e3fccc7913c
+    last_write_checksum: sha1:17eafafbe6aa66b2a4c1055ca643a1d42bbcfe1a
+    pristine_git_object: 3e06dee4c72ac98f13bc0b37f0ff9f2089aee254
+  src/meibelai/models/geteventsresponse.py:
+    id: 206ff2e8ed42
+    last_write_checksum: sha1:fb465bedf1fdb0b876959bcefc65d52d08c3d664
+    pristine_git_object: c56a4cc382fa15730171e76c6674b0fb91cb1c7f
+  src/meibelai/models/getragconfigop.py:
+    id: 87933d37694d
+    last_write_checksum: sha1:04d8be344760b23a49b2457208b385d59dd30e1b
+    pristine_git_object: 5f6598b810927755c7c53d8b8f3bd034659fe8bd
+  src/meibelai/models/gettagcolumninfoop.py:
+    id: 2ecc8b462f3c
+    last_write_checksum: sha1:7dcc0c456c9c7fe7a15deeba5e7205c88ab46b8a
+    pristine_git_object: dc7f270528cf9cbbcdb15d27986f8de20c9c9147
+  src/meibelai/models/gettagconfigop.py:
+    id: ccd95f494b45
+    last_write_checksum: sha1:66fad611f0394d58bd0128859adfb6f31809b1e0
+    pristine_git_object: 78f98333542c959250c0ece0d855548840582ca7
+  src/meibelai/models/gettagtableinfoop.py:
+    id: ff28dddee61c
+    last_write_checksum: sha1:d2e5493007093740acf42b7f102ac08005a5405e
+    pristine_git_object: 1598ce456c008231c0ffb46c02bd17fd096263e6
+  src/meibelai/models/htmlchunking.py:
+    id: da70f58c2b17
+    last_write_checksum: sha1:2a120d38c4a75897febf81130db068cb6f4e598c
+    pristine_git_object: c33799fc19b08d261e54412c1880c33f11c4b162
+  src/meibelai/models/httpvalidationerror.py:
+    id: a9595f451fbc
+    last_write_checksum: sha1:8ccdc25a0cb5a4569839918684c17e83ac4f1f3b
+    pristine_git_object: 10fe9d97f908a7f31fa5a2e8e13e409d57d8dc75
+  src/meibelai/models/jsonnodechunking.py:
+    id: f72e46cfebbb
+    last_write_checksum: sha1:fabe572cce5e48fa3a981921f2787d0d85af1547
+    pristine_git_object: dc0810aedb486cf4205338c2e3415de183e29667
+  src/meibelai/models/listcontentresponse.py:
+    id: c820c1396683
+    last_write_checksum: sha1:3ee59aad96574d8093fee16587e82e9cbc23f8b4
+    pristine_git_object: 398d8ee6a93ef4a8404332b7fabbc10d26b644be
+  src/meibelai/models/listdatasourcecontentop.py:
+    id: 1953e446b8c3
+    last_write_checksum: sha1:a91631662b505b126eccc0297a1cf6bca9ffb982
+    pristine_git_object: 956ff73dfaa13f47a3ba9428aa54d2f33e0744ab
+  src/meibelai/models/markdownnodechunking.py:
+    id: 127c055faebb
+    last_write_checksum: sha1:02542e22272135f559af6b6eede4481d6802924d
+    pristine_git_object: 28f78cfc9e9fbc945838208a1b110464d52dc2e4
+  src/meibelai/models/meibelaierror.py:
+    id: 309d5cad7cef
+    last_write_checksum: sha1:7ec184ca498cb54634764e1cf619ca1126ee1f45
+    pristine_git_object: cb2005254d3618a1da511303dc4b3f1d3bf915fb
+  src/meibelai/models/metadataoptions.py:
+    id: 1f3c9e3b6f01
+    last_write_checksum: sha1:1ae6c2d388e8e7a149b9e620419b584839f37c89
+    pristine_git_object: f68e976956f3a3b6c87c34441fdd3c1773ac2184
+  src/meibelai/models/no_response_error.py:
+    id: 19b08f6e10a0
+    last_write_checksum: sha1:7f326424a7d5ae1bcd5c89a0d6b3dbda9138942f
+    pristine_git_object: 1deab64bc43e1e65bf3c412d326a4032ce342366
+  src/meibelai/models/objectstorageconfig.py:
+    id: 4ab98c81838e
+    last_write_checksum: sha1:8c001362181fc02a756b72a39f0ac8cd9ddc1a11
+    pristine_git_object: 250639a745d805dcd8d1fe3231d22832535dbaa4
+  src/meibelai/models/objectstoragefilters.py:
+    id: 7a1547f89725
+    last_write_checksum: sha1:1bb4d0ea7bcc235997e95cd31002debd64c4eb2f
+    pristine_git_object: dfe664e86168a4ebb827db19f6f3bce17861cf02
+  src/meibelai/models/queryworkflowop.py:
+    id: 3c5522242d72
+    last_write_checksum: sha1:f0a4f5efbe707c660a6b44e79a4866598f78a107
+    pristine_git_object: 4be536685a1217e773f9427a1284d5a294d9c71d
+  src/meibelai/models/ragchunkingstrategy.py:
+    id: c0d0a52741e7
+    last_write_checksum: sha1:26cca160f9edbc1d7fd8ed311494d662e22e4d0e
+    pristine_git_object: e4bab807e94c1d13d0703f36ea192580abe80570
+  src/meibelai/models/ragconfig.py:
+    id: 3116f578fe30
+    last_write_checksum: sha1:9b1dafad5ecb07b450b2878960983564440b07d1
+    pristine_git_object: a9c375513ad4208c22de52fbc9abf3e08c9c4343
+  src/meibelai/models/responsevalidationerror.py:
+    id: d284e33600c5
+    last_write_checksum: sha1:5346dcf2f842dd9b13e78ce988ea77ccd7776c58
+    pristine_git_object: daaf2dba8cc11048431cb874db0e3aa09f6cd4f9
+  src/meibelai/models/s3config.py:
+    id: befde16ae2b0
+    last_write_checksum: sha1:e37092e9d8b3be54a1f70b7d4cc314f624d0c9b8
+    pristine_git_object: ece8271b2de5f7d5cb884d83c6ab444a7249989c
+  src/meibelai/models/security.py:
+    id: 2a7f6b5b04c4
+    last_write_checksum: sha1:02576290549a0cf279b29df70ccdfd2c4b47221a
+    pristine_git_object: 21ae15af6e2dc38cbc8ee2968dfb53bceddb743f
+  src/meibelai/models/semanticchunking.py:
+    id: 97faef13975a
+    last_write_checksum: sha1:52c3ff1362b0156b3f99fc2ac5a24a12f863ac34
+    pristine_git_object: ad4c45ef08af33cbf8e726ceb85590251b8a48e2
+  src/meibelai/models/sendchatmessageop.py:
+    id: b47a68ef2e88
+    last_write_checksum: sha1:31a3d560f47c252833048db93357bb0ae90bf969
+    pristine_git_object: 6dde2d81489bedaa8c1c1e60f0c63059012bdc92
+  src/meibelai/models/sendsignalop.py:
+    id: c550aa639cd3
+    last_write_checksum: sha1:cc8d6b305cde3007d02dddf64aefce4f0e824245
+    pristine_git_object: 6254db18877d9127f9373d91571357bdc928706e
+  src/meibelai/models/sentencechunking.py:
+    id: 63e70fafc1b0
+    last_write_checksum: sha1:343b79dda173a0cdbda3ae430fcdb2dce5237194
+    pristine_git_object: 944d19ac3a2ff32c5775e5f5842951dd0b91dad1
+  src/meibelai/models/sparseembeddingmodel.py:
+    id: 64e03df97353
+    last_write_checksum: sha1:b16d8b4aaf5f483da1bc8fef17888dfabbb849d6
+    pristine_git_object: 77e94a8ec20ce5d1f48b5f30f0ef0984a0ad4543
+  src/meibelai/models/sseevent.py:
+    id: 384c1ac870ca
+    last_write_checksum: sha1:c6c17c43c41f714e8529e5c01a86f91464db5379
+    pristine_git_object: 9a43a1e081216581b28fbd72db21108f73e59760
+  src/meibelai/models/startblueprintinstanceop.py:
+    id: 364cfa95f5ba
+    last_write_checksum: sha1:473ba194034cf86e3a8e58b48a3d5ac326d6de52
+    pristine_git_object: 8928d58cf2d2b5773064a1103971989c98d1de04
+  src/meibelai/models/startblueprintinstancerequest.py:
+    id: b989d5826456
+    last_write_checksum: sha1:c4d96c423d96c7384e8fed17967a762399db790e
+    pristine_git_object: 70d10977c1b43e6579d0666f306625e0ce21ee04
+  src/meibelai/models/streamdatasourceuploadprogressop.py:
+    id: 7fc269811563
+    last_write_checksum: sha1:54ddc54468c52184df6f91671dd5cd8b29baca68
+    pristine_git_object: ee223550bcfbc64d20a4d0dcefa76ad4a19976ea
+  src/meibelai/models/streamuploadprogressop.py:
+    id: d07357d92c62
+    last_write_checksum: sha1:afdfd7d09163ec3b44eae075270a462e77978cda
+    pristine_git_object: 566be0dd3bc1e269f99efd73971ee7a0be55cfee
+  src/meibelai/models/tagcolumninfo.py:
+    id: e8812b0a4d1b
+    last_write_checksum: sha1:be8afa387d934b061f739aa1f16963f1c821fbec
+    pristine_git_object: dca8ac5b73f904b6f4a6bc2f09c0e1319f785503
+  src/meibelai/models/tagconfig.py:
+    id: 36aa665c48ae
+    last_write_checksum: sha1:76dd8ec11c17c26e3a9b5cd5c099ffd8b8a31092
+    pristine_git_object: ac9fef652932a5e133f358442b25ac0716d42f7b
+  src/meibelai/models/tagtableinfo.py:
+    id: e72071e9ad42
+    last_write_checksum: sha1:239e8e43b4e583f85443b0d1220c6e740addd81d
+    pristine_git_object: 76fb5293297fcbef7bb8d31dbf76d1df6430722e
+  src/meibelai/models/tokentextchunking.py:
+    id: ff31ee2a97e5
+    last_write_checksum: sha1:9c2651ddd7b5fa8ed59e0ebbdda94fd8ea052534
+    pristine_git_object: b714b2608a82c8e80d33e8c97c769fe292378301
+  src/meibelai/models/updateactivitystatusop.py:
+    id: 16d784b3f1ba
+    last_write_checksum: sha1:6cefdb0fa2fbea35279a2bafa0419369e3272898
+    pristine_git_object: e55d62660858d11c99caf4aa29b09ba3eec6b880
+  src/meibelai/models/updateblueprintinstancestatusop.py:
+    id: d3b31aa72361
+    last_write_checksum: sha1:c687ca3506cd7485253599ad792cf9b3d0d3c4a4
+    pristine_git_object: 8a081a9334b6f2f13b364367420851e293456b45
+  src/meibelai/models/updateblueprintop.py:
+    id: a579ab4c66ec
+    last_write_checksum: sha1:42d162d1af10a14f0c0b54f6ae360767abd27d63
+    pristine_git_object: a5a58b2df02da0af15d591eaccc72b083e26b66d
+  src/meibelai/models/updateblueprintrequest.py:
+    id: 0419c134a40b
+    last_write_checksum: sha1:6835448f57c7901476a5304071864d2885565611
+    pristine_git_object: 4e5b1a41298eab186b1966ca3db96380dec22d3a
+  src/meibelai/models/updateblueprinttaskop.py:
+    id: 886eced52484
+    last_write_checksum: sha1:2a03d958518d59dbcc4205639d2ea71fec6580fe
+    pristine_git_object: 7c003deae9902ef98cbbce70d58b14f91f104e37
+  src/meibelai/models/updateblueprinttaskrequest.py:
+    id: ffc86eaae6d2
+    last_write_checksum: sha1:aea86cbc9ce967c36210e356454ee9889c81e236
+    pristine_git_object: f739fe16f97c274bfbc2988e62cb010a1fc33222
+  src/meibelai/models/updatechunkingstrategyop.py:
+    id: c737d9d1dbd0
+    last_write_checksum: sha1:2b0ca3d3e1a05e33fe2f1cdd9fd970dab9a6acda
+    pristine_git_object: 3db771293298b9fb265cb96d9dd3997cac3b505a
+  src/meibelai/models/updatechunkingstrategyrequest.py:
+    id: 0e3d2caa6978
+    last_write_checksum: sha1:0529ac5683b45fb10da33da799b3a8b43b5a0105
+    pristine_git_object: 063f83525a83ebf5e2ad5a17455e5f8ab35517dc
+  src/meibelai/models/updatechunkingstrategyresponse.py:
+    id: cb1304e8279f
+    last_write_checksum: sha1:00ccd2b2772f9f1a8f0a28a4cb65bc8c615984cf
+    pristine_git_object: c07c483a33aefb038cc68fe636d8ca2dd85d9e37
+  src/meibelai/models/updatedataelementop.py:
+    id: b7fe26ca3af9
+    last_write_checksum: sha1:ccd7dee7e3fb8c091042e5d55e3caa572e59db90
+    pristine_git_object: 48c293333b7edf539d3f9b6357b3502900aaef2a
+  src/meibelai/models/updatedataelementrequest.py:
+    id: 2b7e901ec2fb
+    last_write_checksum: sha1:cb6c47bf046a887912ea3b38d0154e243bea3d43
+    pristine_git_object: bfd34fd06d381ee734cf5ff3f7b75c90812a7b9d
+  src/meibelai/models/updatedataelementresponse.py:
+    id: 71cf8a0d7a16
+    last_write_checksum: sha1:8efc90a99591fc6b78dc2f381fdc83d2c38d6216
+    pristine_git_object: d2037bdb7072843a7a4fa3971f3465a2262d4f2b
+  src/meibelai/models/updatedatasourceop.py:
+    id: 2f0e7fcc1b83
+    last_write_checksum: sha1:cde5cc1a4cf01837506e969a96345eef11638622
+    pristine_git_object: 3a3814b533ca13170d7b52463598ef0b000132e9
+  src/meibelai/models/updatedatasourcerequest.py:
+    id: 52591ca47ab1
+    last_write_checksum: sha1:68fd97177979c80ec041e39829b61e146a9ff930
+    pristine_git_object: c86b1141691ee6306a0ca7be757299a420adf4e2
+  src/meibelai/models/updatedatasourceresponse.py:
+    id: 9ec9a8e7b784
+    last_write_checksum: sha1:c002de0fed52bf0303e59d4c1acaed75acf240ef
+    pristine_git_object: c4a86762eb856ea1199604e22c717981fe433695
+  src/meibelai/models/updateragconfigop.py:
+    id: 3520edee05f0
+    last_write_checksum: sha1:a29987acfe9d774f9d1c58e3dfebcb36a5f8e4a1
+    pristine_git_object: be214c9b17e2d5699d7b6b7aa633951ffd0397f5
+  src/meibelai/models/updateragconfigrequest.py:
+    id: 014b3af3d98c
+    last_write_checksum: sha1:48c20979ed569b4d702200fb96b57795543b8b55
+    pristine_git_object: e10951835e1e0132494d41bf6353c4d9c7e67f08
+  src/meibelai/models/updateragconfigresponse.py:
+    id: a1bc7d922bc0
+    last_write_checksum: sha1:da7f641b5690b997f54db9afad20d6d3fe3a9077
+    pristine_git_object: 597b9238d3194be571804efec1a6b33e89dd7bb5
+  src/meibelai/models/updatetagcolumninfoop.py:
+    id: b8796c33ccf7
+    last_write_checksum: sha1:1fd3260b33aa22b4a0b7f32959a0714f35358b83
+    pristine_git_object: 82dd78e5ebdbe73a5c59154ea42cc099a0f24be3
+  src/meibelai/models/updatetagcolumnrequest.py:
+    id: cdb849e7d88b
+    last_write_checksum: sha1:a51a304ff0926153e8a18fb2cd549979801d3898
+    pristine_git_object: 46317dd321c237417eed595a7a0dd5c975fe6e97
+  src/meibelai/models/updatetagcolumnresponse.py:
+    id: 2338d070114b
+    last_write_checksum: sha1:9eb27766e5624bf4aa8428ac321f09bd04f76724
+    pristine_git_object: 4e941dcdd6806215e364010c6a5fbef1db58b08b
+  src/meibelai/models/updatetagconfigop.py:
+    id: 6f0ca071d4db
+    last_write_checksum: sha1:80186404c711641a92fae98abeeffc6bf894bb1c
+    pristine_git_object: 7a6167aa7b9e37dfd9bf06068bf5c3ec5c1df0ad
+  src/meibelai/models/updatetagconfigrequest.py:
+    id: 1487e5820675
+    last_write_checksum: sha1:3fcf207c445dc1d1b13cc39f7463e8d8c75e66d5
+    pristine_git_object: f7952dc4bc32309fa8d492c119970174a738c160
+  src/meibelai/models/updatetagconfigresponse.py:
+    id: be746651e157
+    last_write_checksum: sha1:adb4fc96efd5692f6aa0a64c3e0c995b88b817ed
+    pristine_git_object: d4517218446148fa413fc6fd4f85c543a9fb8257
+  src/meibelai/models/updatetagtableinfoop.py:
+    id: af78c0d7b750
+    last_write_checksum: sha1:2fd47cc89e3bbb9e4283e7c3ddc3b0c43fdf3a26
+    pristine_git_object: bd5adf6b8156257beecdbdd53a1222f199905e94
+  src/meibelai/models/updatetagtablerequest.py:
+    id: fc65b21b8939
+    last_write_checksum: sha1:b09d141f2348b0dae5d3c0a3d34f9d0ab4afdef3
+    pristine_git_object: fb100bfd35e75b83fef82952fb58251fd871974b
+  src/meibelai/models/updatetagtableresponse.py:
+    id: c6e36ab4cf4d
+    last_write_checksum: sha1:80490cee1cda536355f1608c1626652fba3b17a6
+    pristine_git_object: b690f0341996cfc8620895ae39a7696cec1c3d78
+  src/meibelai/models/uploadcontentresponse.py:
+    id: eeb2c7817f87
+    last_write_checksum: sha1:6d46a8ea694d636f53a42ac7e97a5cd766ab893c
+    pristine_git_object: 2d5be5acf3189b5ac4c50881e2e313524713a0c8
+  src/meibelai/models/uploaddatasourcecontentop.py:
+    id: ff7afdd52cff
+    last_write_checksum: sha1:f76664c8f040b8af5ee5b8cfb2b973810c891e79
+    pristine_git_object: e821e477521b67f11dc716dce776973abd225711
+  src/meibelai/models/validationerror.py:
+    id: 11cdb0e5746e
+    last_write_checksum: sha1:4b09ae5a5fab7216f18498697a0154b6b536ce1e
+    pristine_git_object: 3201a7ac0cd712888134e6cbe9ef8f1d455f5f2c
+  src/meibelai/models/webdomain.py:
+    id: 277aa5925319
+    last_write_checksum: sha1:3d2967a845a2def2385ad73fd1182837ba7eb6e0
+    pristine_git_object: 53bc833b59b49c93b5d33fc7ab93e82e8e707687
+  src/meibelai/py.typed:
+    id: 91474f6cda7d
+    last_write_checksum: sha1:8efc425ffe830805ffcc0f3055871bdcdc542c60
+    pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
+  src/meibelai/rag.py:
+    id: 3da4db4f897c
+    last_write_checksum: sha1:386489a3d2220cf82a86bb77608183d78e1943b1
+    pristine_git_object: 74dd68fb30674c999e56cc478782556f960750ac
+  src/meibelai/sdk.py:
+    id: 6869434cbf22
+    last_write_checksum: sha1:ad2a65c142eb72f2d4b9a50071c87f2a9287b6ff
+    pristine_git_object: 46da709b69bd88d738cc463f8644f12a1e8afbd6
+  src/meibelai/sdkconfiguration.py:
+    id: 0e4027bb4dd7
+    last_write_checksum: sha1:86e8d96a6cce8d479a0cd32e054ae5b3f13822ea
+    pristine_git_object: 2896bbc46fd714dfa8ee1edc6c0971dc577d4975
+  src/meibelai/tag.py:
+    id: 7847c8025dd4
+    last_write_checksum: sha1:393e1005dd5b93f7dcad05928a2c986fdbe1a4f1
+    pristine_git_object: 2fdce33fa73b67cc228b1d4a67b6ba4c95ed5c8d
+  src/meibelai/types/__init__.py:
+    id: f36198191d0d
+    last_write_checksum: sha1:140ebdd01a46f92ffc710c52c958c4eba3cf68ed
+    pristine_git_object: fc76fe0c5505e29859b5d2bb707d48fd27661b8c
+  src/meibelai/types/basemodel.py:
+    id: c2d84dcd9c83
+    last_write_checksum: sha1:615d0b364fa924b0fef719958df34596cc7c1ae2
+    pristine_git_object: 231c2e37283a76082f1a064c7aae47f8ee4ee694
+  src/meibelai/utils/__init__.py:
+    id: a12577cdb6d9
+    last_write_checksum: sha1:5d88356c206a32c694ae113178ca6325a9fc612a
+    pristine_git_object: 87192ddef2589a7778f85e1cd715d6d1e61ae0a6
+  src/meibelai/utils/annotations.py:
+    id: f3c66bb9166b
+    last_write_checksum: sha1:a4824ad65f730303e4e1e3ec1febf87b4eb46dbc
+    pristine_git_object: 12e0aa4f1151bb52474cc02e88397329b90703f6
+  src/meibelai/utils/datetimes.py:
+    id: 1e5c4a8a41ec
+    last_write_checksum: sha1:c721e4123000e7dc61ec52b28a739439d9e17341
+    pristine_git_object: a6c52cd61bbe2d459046c940ce5e8c469f2f0664
+  src/meibelai/utils/enums.py:
+    id: 6c6a24433aae
+    last_write_checksum: sha1:786ba597f79dca6fbc0d87c591752bb8d775ecb7
+    pristine_git_object: c3bc13cfc48794c143a64667f02e7949a8ce3fcc
+  src/meibelai/utils/eventstreaming.py:
+    id: b47841bc8f17
+    last_write_checksum: sha1:bababae5d54b7efc360db701daa49e18a92c2f3b
+    pristine_git_object: 0969899bfc491e5e408d05643525f347ea95e4fc
+  src/meibelai/utils/forms.py:
+    id: 681d4c97a079
+    last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
+    pristine_git_object: f961e76beaf0a8b1fe0dda44754a74eebd3608e7
+  src/meibelai/utils/headers.py:
+    id: 52bb04d9f619
+    last_write_checksum: sha1:7c6df233ee006332b566a8afa9ce9a245941d935
+    pristine_git_object: 37864cbbbc40d1a47112bbfdd3ba79568fc8818a
+  src/meibelai/utils/logger.py:
+    id: 44328dfd61e1
+    last_write_checksum: sha1:a904100f4a6709ea28527bae3c9dc4d8696ef8d6
+    pristine_git_object: a9ccd4370a03f39d122d59825613afb3be78ac4f
+  src/meibelai/utils/metadata.py:
+    id: d300c5113dc7
+    last_write_checksum: sha1:c6a560bd0c63ab158582f34dadb69433ea73b3d4
+    pristine_git_object: 173b3e5ce658675c2f504222a56b3daaaa68107d
+  src/meibelai/utils/queryparams.py:
+    id: 326f035f8ab1
+    last_write_checksum: sha1:b94c3f314fd3da0d1d215afc2731f48748e2aa59
+    pristine_git_object: c04e0db82b68eca041f2cb2614d748fbac80fd41
+  src/meibelai/utils/requestbodies.py:
+    id: e2a8addaab29
+    last_write_checksum: sha1:e0a3a78158eba39880475d62d61be906625676b8
+    pristine_git_object: d5240dd5f5efffabbd9aefa2f4a349511a9c75b4
+  src/meibelai/utils/retries.py:
+    id: 427e07c3be46
+    last_write_checksum: sha1:5b97ac4f59357d70c2529975d50364c88bcad607
+    pristine_git_object: 88a91b10cd2076b4a2c6cff2ac6bfaa5e3c5ad13
+  src/meibelai/utils/security.py:
+    id: dd8ee33c037a
+    last_write_checksum: sha1:24a2c071dada60f820ae4d1a85026ee09ad575df
+    pristine_git_object: d8eccd5a31d7a0f48fc2d257527f447dd3b77722
+  src/meibelai/utils/serializers.py:
+    id: 6b5a3e4cdfc3
+    last_write_checksum: sha1:a0d184ace7371a14a7d005cca7f358a03e3d4b07
+    pristine_git_object: 378a14c0f86a867ca7b0eb7e620da82234c0ccc4
+  src/meibelai/utils/unmarshal_json_response.py:
+    id: 36095fc04f6f
+    last_write_checksum: sha1:326c9257b1fae1c11f39b558c5f475790e822722
+    pristine_git_object: 0ccce19fcd232a1753b3e44b1842add8e20073aa
+  src/meibelai/utils/url.py:
+    id: cc93b1270382
+    last_write_checksum: sha1:6479961baa90432ca25626f8e40a7bbc32e73b41
+    pristine_git_object: c78ccbae426ce6d385709d97ce0b1c2813ea2418
+  src/meibelai/utils/values.py:
+    id: b4c97d6a3e49
+    last_write_checksum: sha1:acaa178a7c41ddd000f58cc691e4632d925b2553
+    pristine_git_object: dae01a44384ac3bc13ae07453a053bf6c898ebe3
 examples:
   list:
     speakeasy-default-list:
@@ -2378,5 +3608,430 @@ examples:
           application/json: "<value>"
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  getBlueprintInstanceWorkflowStatus:
+    speakeasy-default-get-blueprint-instance-workflow-status:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  sendChatMessage:
+    speakeasy-default-send-chat-message:
+      parameters:
+        path:
+          blueprint_instance_id: "<id>"
+      requestBody:
+        application/json: {"user_message": "<value>", "metadata": null}
+      responses:
+        "200":
+          application/json: {"assistant_response": "<value>"}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Python SDK Changes:
+  * `meibelai.blueprints.executions.get_blueprint_instance_workflow_status()`: **Added**
+  * `meibelai.blueprints.executions.send_chat_message()`: **Added**
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .vscode/settings.json
+  - USAGE.md
+  - docs/models/activity.md
+  - docs/models/activitystatus.md
+  - docs/models/addactivitybyblueprintinstancerequest.md
+  - docs/models/addactivityrequest.md
+  - docs/models/addactivityresponse.md
+  - docs/models/addblueprintinstancerequest.md
+  - docs/models/addblueprintinstanceresponse.md
+  - docs/models/addblueprintrequest.md
+  - docs/models/addblueprintresponse.md
+  - docs/models/addblueprinttaskrequest.md
+  - docs/models/addchunkingstrategyrequest.md
+  - docs/models/addchunkingstrategyrequest1.md
+  - docs/models/addchunkingstrategyresponse.md
+  - docs/models/adddataelementrequest.md
+  - docs/models/adddataelementrequest1.md
+  - docs/models/adddataelementresponse.md
+  - docs/models/adddatasourcerequest.md
+  - docs/models/adddatasourceresponse.md
+  - docs/models/addeventresponse.md
+  - docs/models/addragconfigrequest.md
+  - docs/models/addragconfigrequest1.md
+  - docs/models/addragconfigresponse.md
+  - docs/models/addtagcolumninforequest.md
+  - docs/models/addtagcolumnrequest.md
+  - docs/models/addtagcolumnresponse.md
+  - docs/models/addtagconfigrequest.md
+  - docs/models/addtagconfigrequest1.md
+  - docs/models/addtagconfigresponse.md
+  - docs/models/addtagtableinforequest.md
+  - docs/models/addtagtablerequest.md
+  - docs/models/addtagtableresponse.md
+  - docs/models/alloweddataelementfilterkeys.md
+  - docs/models/basicwebauth.md
+  - docs/models/blueprint.md
+  - docs/models/blueprintexecutionmode.md
+  - docs/models/blueprintinstance.md
+  - docs/models/blueprintinstancestatus.md
+  - docs/models/cancelblueprintinstancerequest.md
+  - docs/models/chatwithblueprintrequest.md
+  - docs/models/codechunking.md
+  - docs/models/completeblueprintinstancerequest.md
+  - docs/models/completeblueprintinstancerequest1.md
+  - docs/models/contentitem.md
+  - docs/models/contenttype.md
+  - docs/models/createblueprinttaskrequest.md
+  - docs/models/createeventbyblueprintinstanceidrequest.md
+  - docs/models/customeventrequest.md
+  - docs/models/data.md
+  - docs/models/dataelement.md
+  - docs/models/dataelementcondition.md
+  - docs/models/dataelementdiscoveryrecord.md
+  - docs/models/dataelementfilter.md
+  - docs/models/dataelementfilterrequest.md
+  - docs/models/datasource.md
+  - docs/models/datasourcewebconfig.md
+  - docs/models/deleteblueprintinstancerequest.md
+  - docs/models/deleteblueprintrequest.md
+  - docs/models/deleteblueprinttaskrequest.md
+  - docs/models/deletechunkingstrategyrequest.md
+  - docs/models/deletechunkingstrategyresponse.md
+  - docs/models/deletecontentresponse.md
+  - docs/models/deletedataelementrequest.md
+  - docs/models/deletedataelementresponse.md
+  - docs/models/deletedatasourcecontentrequest.md
+  - docs/models/deletedatasourcerequest.md
+  - docs/models/deletedatasourceresponse.md
+  - docs/models/deleteragconfigrequest.md
+  - docs/models/deletetagcolumninforequest.md
+  - docs/models/deletetagconfigrequest.md
+  - docs/models/deletetagtableinforequest.md
+  - docs/models/deletetagtableresponse.md
+  - docs/models/downloaddatasourcecontentrequest.md
+  - docs/models/dsldefinition.md
+  - docs/models/embeddingmodel.md
+  - docs/models/event.md
+  - docs/models/eventtype.md
+  - docs/models/executeblueprintrequest.md
+  - docs/models/executeblueprintrequest1.md
+  - docs/models/extractormodel.md
+  - docs/models/failblueprintinstancerequest.md
+  - docs/models/failblueprintinstancerequest1.md
+  - docs/models/getactivitiesbyblueprintinstancerequest.md
+  - docs/models/getactivitiesresponse.md
+  - docs/models/getactivitybyblueprintinstancerequest.md
+  - docs/models/getallblueprintinstancesrequest.md
+  - docs/models/getalldatasourceidsrequest.md
+  - docs/models/getalltagcolumninforequest.md
+  - docs/models/getalltagtableinforequest.md
+  - docs/models/getblueprintinstancerequest.md
+  - docs/models/getblueprintinstancesresponse.md
+  - docs/models/getblueprintrequest.md
+  - docs/models/getblueprintsresponse.md
+  - docs/models/getblueprinttasksrequest.md
+  - docs/models/getchunkingstrategyrequest.md
+  - docs/models/getcontentresponse.md
+  - docs/models/getdataelementrequest.md
+  - docs/models/getdataelementsbyfiltersrequest.md
+  - docs/models/getdataelementsrequest.md
+  - docs/models/getdatasourcecontentmetadatarequest.md
+  - docs/models/getdatasourcerequest.md
+  - docs/models/getdatasourceuploadstatusrequest.md
+  - docs/models/geteventbyblueprintinstancerequest.md
+  - docs/models/geteventsbyblueprintinstancerequest.md
+  - docs/models/geteventsresponse.md
+  - docs/models/getragconfigrequest.md
+  - docs/models/gettagcolumninforequest.md
+  - docs/models/gettagconfigrequest.md
+  - docs/models/gettagtableinforequest.md
+  - docs/models/htmlchunking.md
+  - docs/models/httpvalidationerror.md
+  - docs/models/jsonnodechunking.md
+  - docs/models/listcontentresponse.md
+  - docs/models/listdatasourcecontentrequest.md
+  - docs/models/loc.md
+  - docs/models/markdownnodechunking.md
+  - docs/models/metadataoptions.md
+  - docs/models/objectstorageconfig.md
+  - docs/models/objectstoragefilters.md
+  - docs/models/queryworkflowrequest.md
+  - docs/models/ragchunkingstrategy.md
+  - docs/models/ragconfig.md
+  - docs/models/s3config.md
+  - docs/models/security.md
+  - docs/models/semanticchunking.md
+  - docs/models/sendsignalrequest.md
+  - docs/models/sentencechunking.md
+  - docs/models/size.md
+  - docs/models/sparseembeddingmodel.md
+  - docs/models/sseevent.md
+  - docs/models/startblueprintinstancerequest.md
+  - docs/models/startblueprintinstancerequest1.md
+  - docs/models/streamdatasourceuploadprogressrequest.md
+  - docs/models/streamuploadprogressrequest.md
+  - docs/models/tagcolumninfo.md
+  - docs/models/tagconfig.md
+  - docs/models/tagtableinfo.md
+  - docs/models/tokentextchunking.md
+  - docs/models/updateactivitystatusrequest.md
+  - docs/models/updateblueprintinstancestatusrequest.md
+  - docs/models/updateblueprintrequest.md
+  - docs/models/updateblueprintrequest1.md
+  - docs/models/updateblueprinttaskrequest.md
+  - docs/models/updateblueprinttaskrequest1.md
+  - docs/models/updatechunkingstrategyrequest.md
+  - docs/models/updatechunkingstrategyrequest1.md
+  - docs/models/updatechunkingstrategyresponse.md
+  - docs/models/updatedataelementrequest.md
+  - docs/models/updatedataelementrequest1.md
+  - docs/models/updatedataelementresponse.md
+  - docs/models/updatedatasourcerequest.md
+  - docs/models/updatedatasourcerequest1.md
+  - docs/models/updatedatasourceresponse.md
+  - docs/models/updateragconfigrequest.md
+  - docs/models/updateragconfigrequest1.md
+  - docs/models/updateragconfigresponse.md
+  - docs/models/updatetagcolumninforequest.md
+  - docs/models/updatetagcolumnrequest.md
+  - docs/models/updatetagcolumnresponse.md
+  - docs/models/updatetagconfigrequest.md
+  - docs/models/updatetagconfigrequest1.md
+  - docs/models/updatetagconfigresponse.md
+  - docs/models/updatetagtableinforequest.md
+  - docs/models/updatetagtablerequest.md
+  - docs/models/updatetagtableresponse.md
+  - docs/models/uploadcontentresponse.md
+  - docs/models/uploaddatasourcecontentrequest.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validationerror.md
+  - docs/models/webdomain.md
+  - docs/sdks/blueprints/README.md
+  - docs/sdks/content/README.md
+  - docs/sdks/dataelements/README.md
+  - docs/sdks/datasources/README.md
+  - docs/sdks/executions/README.md
+  - docs/sdks/instances/README.md
+  - docs/sdks/meibelaicontent/README.md
+  - docs/sdks/rag/README.md
+  - docs/sdks/tag/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare_readme.py
+  - scripts/publish.sh
+  - src/meibelai/__init__.py
+  - src/meibelai/_hooks/__init__.py
+  - src/meibelai/_hooks/sdkhooks.py
+  - src/meibelai/_hooks/types.py
+  - src/meibelai/_version.py
+  - src/meibelai/basesdk.py
+  - src/meibelai/blueprints.py
+  - src/meibelai/content.py
+  - src/meibelai/dataelements.py
+  - src/meibelai/datasources.py
+  - src/meibelai/executions.py
+  - src/meibelai/httpclient.py
+  - src/meibelai/instances.py
+  - src/meibelai/meibelai_content.py
+  - src/meibelai/models/__init__.py
+  - src/meibelai/models/activity.py
+  - src/meibelai/models/activitystatus.py
+  - src/meibelai/models/addactivitybyblueprintinstanceop.py
+  - src/meibelai/models/addactivityrequest.py
+  - src/meibelai/models/addactivityresponse.py
+  - src/meibelai/models/addblueprintinstancerequest.py
+  - src/meibelai/models/addblueprintinstanceresponse.py
+  - src/meibelai/models/addblueprintrequest.py
+  - src/meibelai/models/addblueprintresponse.py
+  - src/meibelai/models/addblueprinttaskrequest.py
+  - src/meibelai/models/addchunkingstrategyop.py
+  - src/meibelai/models/addchunkingstrategyrequest.py
+  - src/meibelai/models/addchunkingstrategyresponse.py
+  - src/meibelai/models/adddataelementop.py
+  - src/meibelai/models/adddataelementrequest.py
+  - src/meibelai/models/adddataelementresponse.py
+  - src/meibelai/models/adddatasourcerequest.py
+  - src/meibelai/models/adddatasourceresponse.py
+  - src/meibelai/models/addeventresponse.py
+  - src/meibelai/models/addragconfigop.py
+  - src/meibelai/models/addragconfigrequest.py
+  - src/meibelai/models/addragconfigresponse.py
+  - src/meibelai/models/addtagcolumninfoop.py
+  - src/meibelai/models/addtagcolumnrequest.py
+  - src/meibelai/models/addtagcolumnresponse.py
+  - src/meibelai/models/addtagconfigop.py
+  - src/meibelai/models/addtagconfigrequest.py
+  - src/meibelai/models/addtagconfigresponse.py
+  - src/meibelai/models/addtagtableinfoop.py
+  - src/meibelai/models/addtagtablerequest.py
+  - src/meibelai/models/addtagtableresponse.py
+  - src/meibelai/models/alloweddataelementfilterkeys.py
+  - src/meibelai/models/apierror.py
+  - src/meibelai/models/basicwebauth.py
+  - src/meibelai/models/blueprint.py
+  - src/meibelai/models/blueprintexecutionmode.py
+  - src/meibelai/models/blueprintinstance.py
+  - src/meibelai/models/blueprintinstancestatus.py
+  - src/meibelai/models/cancelblueprintinstanceop.py
+  - src/meibelai/models/chatwithblueprintop.py
+  - src/meibelai/models/codechunking.py
+  - src/meibelai/models/completeblueprintinstanceop.py
+  - src/meibelai/models/completeblueprintinstancerequest.py
+  - src/meibelai/models/contentitem.py
+  - src/meibelai/models/contenttype.py
+  - src/meibelai/models/createblueprinttaskop.py
+  - src/meibelai/models/createeventbyblueprintinstanceidop.py
+  - src/meibelai/models/customeventrequest.py
+  - src/meibelai/models/dataelement.py
+  - src/meibelai/models/dataelementcondition.py
+  - src/meibelai/models/dataelementdiscoveryrecord.py
+  - src/meibelai/models/dataelementfilter.py
+  - src/meibelai/models/dataelementfilterrequest.py
+  - src/meibelai/models/datasource.py
+  - src/meibelai/models/datasourcewebconfig.py
+  - src/meibelai/models/deleteblueprintinstanceop.py
+  - src/meibelai/models/deleteblueprintop.py
+  - src/meibelai/models/deleteblueprinttaskop.py
+  - src/meibelai/models/deletechunkingstrategyop.py
+  - src/meibelai/models/deletechunkingstrategyresponse.py
+  - src/meibelai/models/deletecontentresponse.py
+  - src/meibelai/models/deletedataelementop.py
+  - src/meibelai/models/deletedataelementresponse.py
+  - src/meibelai/models/deletedatasourcecontentop.py
+  - src/meibelai/models/deletedatasourceop.py
+  - src/meibelai/models/deletedatasourceresponse.py
+  - src/meibelai/models/deleteragconfigop.py
+  - src/meibelai/models/deletetagcolumninfoop.py
+  - src/meibelai/models/deletetagconfigop.py
+  - src/meibelai/models/deletetagtableinfoop.py
+  - src/meibelai/models/deletetagtableresponse.py
+  - src/meibelai/models/downloaddatasourcecontentop.py
+  - src/meibelai/models/dsldefinition.py
+  - src/meibelai/models/embeddingmodel.py
+  - src/meibelai/models/event.py
+  - src/meibelai/models/eventtype.py
+  - src/meibelai/models/executeblueprintop.py
+  - src/meibelai/models/executeblueprintrequest.py
+  - src/meibelai/models/extractormodel.py
+  - src/meibelai/models/failblueprintinstanceop.py
+  - src/meibelai/models/failblueprintinstancerequest.py
+  - src/meibelai/models/getactivitiesbyblueprintinstanceop.py
+  - src/meibelai/models/getactivitiesresponse.py
+  - src/meibelai/models/getactivitybyblueprintinstanceop.py
+  - src/meibelai/models/getallblueprintinstancesop.py
+  - src/meibelai/models/getalldatasourceidsrequest.py
+  - src/meibelai/models/getalltagcolumninfoop.py
+  - src/meibelai/models/getalltagtableinfoop.py
+  - src/meibelai/models/getblueprintinstanceop.py
+  - src/meibelai/models/getblueprintinstancesresponse.py
+  - src/meibelai/models/getblueprintop.py
+  - src/meibelai/models/getblueprintsresponse.py
+  - src/meibelai/models/getblueprinttasksop.py
+  - src/meibelai/models/getchunkingstrategyop.py
+  - src/meibelai/models/getcontentresponse.py
+  - src/meibelai/models/getdataelementop.py
+  - src/meibelai/models/getdataelementsbyfiltersop.py
+  - src/meibelai/models/getdataelementsop.py
+  - src/meibelai/models/getdatasourcecontentmetadataop.py
+  - src/meibelai/models/getdatasourceop.py
+  - src/meibelai/models/getdatasourceuploadstatusop.py
+  - src/meibelai/models/geteventbyblueprintinstanceop.py
+  - src/meibelai/models/geteventsbyblueprintinstanceop.py
+  - src/meibelai/models/geteventsresponse.py
+  - src/meibelai/models/getragconfigop.py
+  - src/meibelai/models/gettagcolumninfoop.py
+  - src/meibelai/models/gettagconfigop.py
+  - src/meibelai/models/gettagtableinfoop.py
+  - src/meibelai/models/htmlchunking.py
+  - src/meibelai/models/httpvalidationerror.py
+  - src/meibelai/models/jsonnodechunking.py
+  - src/meibelai/models/listcontentresponse.py
+  - src/meibelai/models/listdatasourcecontentop.py
+  - src/meibelai/models/markdownnodechunking.py
+  - src/meibelai/models/meibelaierror.py
+  - src/meibelai/models/metadataoptions.py
+  - src/meibelai/models/no_response_error.py
+  - src/meibelai/models/objectstorageconfig.py
+  - src/meibelai/models/objectstoragefilters.py
+  - src/meibelai/models/queryworkflowop.py
+  - src/meibelai/models/ragchunkingstrategy.py
+  - src/meibelai/models/ragconfig.py
+  - src/meibelai/models/responsevalidationerror.py
+  - src/meibelai/models/s3config.py
+  - src/meibelai/models/security.py
+  - src/meibelai/models/semanticchunking.py
+  - src/meibelai/models/sendsignalop.py
+  - src/meibelai/models/sentencechunking.py
+  - src/meibelai/models/sparseembeddingmodel.py
+  - src/meibelai/models/sseevent.py
+  - src/meibelai/models/startblueprintinstanceop.py
+  - src/meibelai/models/startblueprintinstancerequest.py
+  - src/meibelai/models/streamdatasourceuploadprogressop.py
+  - src/meibelai/models/streamuploadprogressop.py
+  - src/meibelai/models/tagcolumninfo.py
+  - src/meibelai/models/tagconfig.py
+  - src/meibelai/models/tagtableinfo.py
+  - src/meibelai/models/tokentextchunking.py
+  - src/meibelai/models/updateactivitystatusop.py
+  - src/meibelai/models/updateblueprintinstancestatusop.py
+  - src/meibelai/models/updateblueprintop.py
+  - src/meibelai/models/updateblueprintrequest.py
+  - src/meibelai/models/updateblueprinttaskop.py
+  - src/meibelai/models/updateblueprinttaskrequest.py
+  - src/meibelai/models/updatechunkingstrategyop.py
+  - src/meibelai/models/updatechunkingstrategyrequest.py
+  - src/meibelai/models/updatechunkingstrategyresponse.py
+  - src/meibelai/models/updatedataelementop.py
+  - src/meibelai/models/updatedataelementrequest.py
+  - src/meibelai/models/updatedataelementresponse.py
+  - src/meibelai/models/updatedatasourceop.py
+  - src/meibelai/models/updatedatasourcerequest.py
+  - src/meibelai/models/updatedatasourceresponse.py
+  - src/meibelai/models/updateragconfigop.py
+  - src/meibelai/models/updateragconfigrequest.py
+  - src/meibelai/models/updateragconfigresponse.py
+  - src/meibelai/models/updatetagcolumninfoop.py
+  - src/meibelai/models/updatetagcolumnrequest.py
+  - src/meibelai/models/updatetagcolumnresponse.py
+  - src/meibelai/models/updatetagconfigop.py
+  - src/meibelai/models/updatetagconfigrequest.py
+  - src/meibelai/models/updatetagconfigresponse.py
+  - src/meibelai/models/updatetagtableinfoop.py
+  - src/meibelai/models/updatetagtablerequest.py
+  - src/meibelai/models/updatetagtableresponse.py
+  - src/meibelai/models/uploadcontentresponse.py
+  - src/meibelai/models/uploaddatasourcecontentop.py
+  - src/meibelai/models/validationerror.py
+  - src/meibelai/models/webdomain.py
+  - src/meibelai/py.typed
+  - src/meibelai/rag.py
+  - src/meibelai/sdk.py
+  - src/meibelai/sdkconfiguration.py
+  - src/meibelai/tag.py
+  - src/meibelai/types/__init__.py
+  - src/meibelai/types/basemodel.py
+  - src/meibelai/utils/__init__.py
+  - src/meibelai/utils/annotations.py
+  - src/meibelai/utils/datetimes.py
+  - src/meibelai/utils/enums.py
+  - src/meibelai/utils/eventstreaming.py
+  - src/meibelai/utils/forms.py
+  - src/meibelai/utils/headers.py
+  - src/meibelai/utils/logger.py
+  - src/meibelai/utils/metadata.py
+  - src/meibelai/utils/queryparams.py
+  - src/meibelai/utils/requestbodies.py
+  - src/meibelai/utils/retries.py
+  - src/meibelai/utils/security.py
+  - src/meibelai/utils/serializers.py
+  - src/meibelai/utils/unmarshal_json_response.py
+  - src/meibelai/utils/url.py
+  - src/meibelai/utils/values.py

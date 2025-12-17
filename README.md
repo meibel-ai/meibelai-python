@@ -268,7 +268,7 @@ with Meibelai(
 <details open>
 <summary>Available methods</summary>
 
-### [blueprints](docs/sdks/blueprints/README.md)
+### [Blueprints](docs/sdks/blueprints/README.md)
 
 * [get_blueprints](docs/sdks/blueprints/README.md#get_blueprints) - Get Blueprints
 * [create_blueprint](docs/sdks/blueprints/README.md#create_blueprint) - Create Blueprint
@@ -281,15 +281,17 @@ with Meibelai(
 * [update_blueprint_task](docs/sdks/blueprints/README.md#update_blueprint_task) - Update Blueprint Task
 * [delete_blueprint_task](docs/sdks/blueprints/README.md#delete_blueprint_task) - Delete Blueprint Task
 
-#### [blueprints.executions](docs/sdks/executions/README.md)
+#### [Blueprints.Executions](docs/sdks/executions/README.md)
 
 * [start_blueprint_instance](docs/sdks/executions/README.md#start_blueprint_instance) - Start Blueprint Instance
 * [cancel_blueprint_instance](docs/sdks/executions/README.md#cancel_blueprint_instance) - Cancel Blueprint Instance
 * [send_signal](docs/sdks/executions/README.md#send_signal) - Send Signal
 * [query_workflow](docs/sdks/executions/README.md#query_workflow) - Query Workflow
 * [chat_with_blueprint](docs/sdks/executions/README.md#chat_with_blueprint) - Chat With Blueprint
+* [get_blueprint_instance_workflow_status](docs/sdks/executions/README.md#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
+* [send_chat_message](docs/sdks/executions/README.md#send_chat_message) - Send Chat Message
 
-#### [blueprints.instances](docs/sdks/instances/README.md)
+#### [Blueprints.Instances](docs/sdks/instances/README.md)
 
 * [add_blueprint_instance](docs/sdks/instances/README.md#add_blueprint_instance) - Add Blueprint Instance
 * [get_all_blueprint_instances](docs/sdks/instances/README.md#get_all_blueprint_instances) - Get All Blueprint Instances
@@ -306,12 +308,12 @@ with Meibelai(
 * [create_event_by_blueprint_instance_id](docs/sdks/instances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
 * [get_events_by_blueprint_instance](docs/sdks/instances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
 
-### [content](docs/sdks/content/README.md)
+### [Content](docs/sdks/content/README.md)
 
 * [stream_upload_progress](docs/sdks/content/README.md#stream_upload_progress) - Stream upload progress events
 * [stream_datasource_upload_progress](docs/sdks/content/README.md#stream_datasource_upload_progress) - Stream upload progress events (legacy)
 
-### [datasources](docs/sdks/datasources/README.md)
+### [Datasources](docs/sdks/datasources/README.md)
 
 * [add_datasource](docs/sdks/datasources/README.md#add_datasource) - Add Datasource
 * [get_datasource](docs/sdks/datasources/README.md#get_datasource) - Get Datasource
@@ -319,7 +321,7 @@ with Meibelai(
 * [delete_datasource](docs/sdks/datasources/README.md#delete_datasource) - Delete Datasource
 * [get_all_datasource_ids](docs/sdks/datasources/README.md#get_all_datasource_ids) - Get All Datasource Ids
 
-#### [datasources.content](docs/sdks/meibelaicontent/README.md)
+#### [Datasources.Content](docs/sdks/meibelaicontent/README.md)
 
 * [list_datasource_content](docs/sdks/meibelaicontent/README.md#list_datasource_content) - List datasource content
 * [upload_datasource_content](docs/sdks/meibelaicontent/README.md#upload_datasource_content) - Upload Content
@@ -330,7 +332,7 @@ with Meibelai(
 * [delete_datasource_content](docs/sdks/meibelaicontent/README.md#delete_datasource_content) - Delete content
 * [download_datasource_content](docs/sdks/meibelaicontent/README.md#download_datasource_content) - Download content file
 
-#### [datasources.dataelements](docs/sdks/dataelements/README.md)
+#### [Datasources.Dataelements](docs/sdks/dataelements/README.md)
 
 * [add_data_element](docs/sdks/dataelements/README.md#add_data_element) - Add Data Element
 * [get_data_elements](docs/sdks/dataelements/README.md#get_data_elements) - Get Data Elements
@@ -339,7 +341,7 @@ with Meibelai(
 * [delete_data_element](docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
 * [get_data_elements_by_filters](docs/sdks/dataelements/README.md#get_data_elements_by_filters) - Get Data Elements By Filters
 
-#### [datasources.rag](docs/sdks/rag/README.md)
+#### [Datasources.Rag](docs/sdks/rag/README.md)
 
 * [add_rag_config](docs/sdks/rag/README.md#add_rag_config) - Add Rag Config
 * [get_rag_config](docs/sdks/rag/README.md#get_rag_config) - Get Rag Config
@@ -350,7 +352,7 @@ with Meibelai(
 * [update_chunking_strategy](docs/sdks/rag/README.md#update_chunking_strategy) - Update Chunking Strategy
 * [delete_chunking_strategy](docs/sdks/rag/README.md#delete_chunking_strategy) - Delete Chunking Strategy
 
-#### [datasources.tag](docs/sdks/tag/README.md)
+#### [Datasources.Tag](docs/sdks/tag/README.md)
 
 * [add_tag_config](docs/sdks/tag/README.md#add_tag_config) - Add Tag Config
 * [get_tag_config](docs/sdks/tag/README.md#get_tag_config) - Get Tag Config
@@ -602,7 +604,7 @@ import os
 
 
 with Meibelai(
-    server_idx=2,
+    server_idx=0,
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 

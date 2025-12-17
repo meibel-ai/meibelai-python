@@ -103,6 +103,14 @@ if TYPE_CHECKING:
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
     )
+    from .chatblueprintinstancerequest import (
+        ChatBlueprintInstanceRequest,
+        ChatBlueprintInstanceRequestTypedDict,
+    )
+    from .chatblueprintinstanceresponse import (
+        ChatBlueprintInstanceResponse,
+        ChatBlueprintInstanceResponseTypedDict,
+    )
     from .chatwithblueprintop import (
         ChatWithBlueprintRequest,
         ChatWithBlueprintRequestTypedDict,
@@ -267,6 +275,10 @@ if TYPE_CHECKING:
         GetBlueprintInstancesResponse,
         GetBlueprintInstancesResponseTypedDict,
     )
+    from .getblueprintinstanceworkflowstatusop import (
+        GetBlueprintInstanceWorkflowStatusRequest,
+        GetBlueprintInstanceWorkflowStatusRequestTypedDict,
+    )
     from .getblueprintop import GetBlueprintRequest, GetBlueprintRequestTypedDict
     from .getblueprintsresponse import (
         GetBlueprintsResponse,
@@ -344,6 +356,10 @@ if TYPE_CHECKING:
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
     from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
+    from .sendchatmessageop import (
+        SendChatMessageRequest,
+        SendChatMessageRequestTypedDict,
+    )
     from .sendsignalop import SendSignalRequest, SendSignalRequestTypedDict
     from .sentencechunking import SentenceChunking, SentenceChunkingTypedDict
     from .sparseembeddingmodel import (
@@ -569,6 +585,10 @@ __all__ = [
     "BlueprintTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
+    "ChatBlueprintInstanceRequest",
+    "ChatBlueprintInstanceRequestTypedDict",
+    "ChatBlueprintInstanceResponse",
+    "ChatBlueprintInstanceResponseTypedDict",
     "ChatWithBlueprintRequest",
     "ChatWithBlueprintRequestTypedDict",
     "CodeChunking",
@@ -667,6 +687,8 @@ __all__ = [
     "GetAllTagTableInfoRequestTypedDict",
     "GetBlueprintInstanceRequest",
     "GetBlueprintInstanceRequestTypedDict",
+    "GetBlueprintInstanceWorkflowStatusRequest",
+    "GetBlueprintInstanceWorkflowStatusRequestTypedDict",
     "GetBlueprintInstancesResponse",
     "GetBlueprintInstancesResponseTypedDict",
     "GetBlueprintRequest",
@@ -742,6 +764,8 @@ __all__ = [
     "SecurityTypedDict",
     "SemanticChunking",
     "SemanticChunkingTypedDict",
+    "SendChatMessageRequest",
+    "SendChatMessageRequestTypedDict",
     "SendSignalRequest",
     "SendSignalRequestTypedDict",
     "SentenceChunking",
@@ -904,6 +928,10 @@ _dynamic_imports: dict[str, str] = {
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
+    "ChatBlueprintInstanceRequest": ".chatblueprintinstancerequest",
+    "ChatBlueprintInstanceRequestTypedDict": ".chatblueprintinstancerequest",
+    "ChatBlueprintInstanceResponse": ".chatblueprintinstanceresponse",
+    "ChatBlueprintInstanceResponseTypedDict": ".chatblueprintinstanceresponse",
     "ChatWithBlueprintRequest": ".chatwithblueprintop",
     "ChatWithBlueprintRequestTypedDict": ".chatwithblueprintop",
     "CodeChunking": ".codechunking",
@@ -1004,6 +1032,8 @@ _dynamic_imports: dict[str, str] = {
     "GetBlueprintInstanceRequestTypedDict": ".getblueprintinstanceop",
     "GetBlueprintInstancesResponse": ".getblueprintinstancesresponse",
     "GetBlueprintInstancesResponseTypedDict": ".getblueprintinstancesresponse",
+    "GetBlueprintInstanceWorkflowStatusRequest": ".getblueprintinstanceworkflowstatusop",
+    "GetBlueprintInstanceWorkflowStatusRequestTypedDict": ".getblueprintinstanceworkflowstatusop",
     "GetBlueprintRequest": ".getblueprintop",
     "GetBlueprintRequestTypedDict": ".getblueprintop",
     "GetBlueprintsResponse": ".getblueprintsresponse",
@@ -1072,6 +1102,8 @@ _dynamic_imports: dict[str, str] = {
     "SecurityTypedDict": ".security",
     "SemanticChunking": ".semanticchunking",
     "SemanticChunkingTypedDict": ".semanticchunking",
+    "SendChatMessageRequest": ".sendchatmessageop",
+    "SendChatMessageRequestTypedDict": ".sendchatmessageop",
     "SendSignalRequest": ".sendsignalop",
     "SendSignalRequestTypedDict": ".sendsignalop",
     "SentenceChunking": ".sentencechunking",

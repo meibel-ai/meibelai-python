@@ -1,5 +1,4 @@
-# Executions
-(*blueprints.executions*)
+# Blueprints.Executions
 
 ## Overview
 
@@ -12,6 +11,8 @@ work with executions of blueprints
 * [send_signal](#send_signal) - Send Signal
 * [query_workflow](#query_workflow) - Query Workflow
 * [chat_with_blueprint](#chat_with_blueprint) - Chat With Blueprint
+* [get_blueprint_instance_workflow_status](#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
+* [send_chat_message](#send_chat_message) - Send Chat Message
 
 ## start_blueprint_instance
 
@@ -255,6 +256,90 @@ with Meibelai(
 ### Response
 
 **[Any](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## get_blueprint_instance_workflow_status
+
+Get Blueprint Instance Workflow Status
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="getBlueprintInstanceWorkflowStatus" method="get" path="/{blueprint_instance_id}/workflow-status" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.blueprints.executions.get_blueprint_instance_workflow_status(blueprint_instance_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | Unique identifier for the workflow instance                         |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[Any](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## send_chat_message
+
+Send Chat Message
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="sendChatMessage" method="post" path="/{blueprint_instance_id}/chat/send_message" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.blueprints.executions.send_chat_message(blueprint_instance_id="<id>", user_message="<value>", metadata=None)
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `blueprint_instance_id`                                             | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `user_message`                                                      | *str*                                                               | :heavy_check_mark:                                                  | User Chat Message                                                   |
+| `metadata`                                                          | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.ChatBlueprintInstanceResponse](../../models/chatblueprintinstanceresponse.md)**
 
 ### Errors
 

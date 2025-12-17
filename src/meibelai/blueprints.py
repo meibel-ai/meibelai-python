@@ -68,6 +68,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -152,6 +153,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -273,6 +275,7 @@ class Blueprints(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.AddBlueprintRequest
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -394,6 +397,7 @@ class Blueprints(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.AddBlueprintRequest
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -485,6 +489,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -576,6 +581,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -700,6 +706,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.UpdateBlueprintRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -824,6 +831,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.UpdateBlueprintRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -915,6 +923,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1006,6 +1015,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1109,6 +1119,7 @@ class Blueprints(BaseSDK):
                 "json",
                 Optional[models.ExecuteBlueprintRequest],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1212,6 +1223,7 @@ class Blueprints(BaseSDK):
                 "json",
                 Optional[models.ExecuteBlueprintRequest],
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1333,6 +1345,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.AddBlueprintTaskRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1454,6 +1467,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.AddBlueprintTaskRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1545,6 +1559,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1636,6 +1651,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1757,6 +1773,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.UpdateBlueprintTaskRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1878,6 +1895,7 @@ class Blueprints(BaseSDK):
                 "json",
                 models.UpdateBlueprintTaskRequest,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1972,6 +1990,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -2066,6 +2085,7 @@ class Blueprints(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

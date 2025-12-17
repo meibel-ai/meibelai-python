@@ -1,5 +1,4 @@
 # Blueprints
-(*blueprints*)
 
 ## Overview
 
