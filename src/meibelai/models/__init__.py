@@ -94,23 +94,20 @@ if TYPE_CHECKING:
     from .addtagtableresponse import AddTagTableResponse, AddTagTableResponseTypedDict
     from .alloweddataelementfilterkeys import AllowedDataElementFilterKeys
     from .apierror import APIError
+    from .artifact import Artifact, ArtifactTypedDict
     from .basicwebauth import BasicWebAuth, BasicWebAuthTypedDict
     from .blueprint import Blueprint, BlueprintTypedDict
     from .blueprintexecutionmode import BlueprintExecutionMode
     from .blueprintinstance import BlueprintInstance, BlueprintInstanceTypedDict
     from .blueprintinstancestatus import BlueprintInstanceStatus
+    from .calltoaction import CallToAction, CallToActionTypedDict
     from .cancelblueprintinstanceop import (
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
     )
-    from .chatblueprintinstancerequest import (
-        ChatBlueprintInstanceRequest,
-        ChatBlueprintInstanceRequestTypedDict,
-    )
-    from .chatblueprintinstanceresponse import (
-        ChatBlueprintInstanceResponse,
-        ChatBlueprintInstanceResponseTypedDict,
-    )
+    from .chatmessagerequest import ChatMessageRequest, ChatMessageRequestTypedDict
+    from .chatmessageresponse import ChatMessageResponse, ChatMessageResponseTypedDict
+    from .chatresponse import ChatResponse, ChatResponseTypedDict
     from .codechunking import CodeChunking, CodeChunkingTypedDict
     from .completeblueprintinstanceop import (
         CompleteBlueprintInstanceRequest1,
@@ -352,12 +349,17 @@ if TYPE_CHECKING:
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
     from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
+    from .send_chat_message_stream_blueprint_instance_id_chat_stream_postop import (
+        SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest,
+        SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict,
+    )
     from .sendchatmessageop import (
         SendChatMessageRequest,
         SendChatMessageRequestTypedDict,
     )
     from .sendsignalop import SendSignalRequest, SendSignalRequestTypedDict
     from .sentencechunking import SentenceChunking, SentenceChunkingTypedDict
+    from .source import RelevanceScore, RelevanceScoreTypedDict, Source, SourceTypedDict
     from .sparseembeddingmodel import (
         SparseEmbeddingModel,
         SparseEmbeddingModelTypedDict,
@@ -383,6 +385,7 @@ if TYPE_CHECKING:
     from .tagconfig import TagConfig, TagConfigTypedDict
     from .tagtableinfo import TagTableInfo, TagTableInfoTypedDict
     from .tokentextchunking import TokenTextChunking, TokenTextChunkingTypedDict
+    from .toolactivity import ToolActivity, ToolActivityTypedDict
     from .updateactivitystatusop import (
         UpdateActivityStatusRequest,
         UpdateActivityStatusRequestTypedDict,
@@ -571,6 +574,8 @@ __all__ = [
     "AddTagTableResponse",
     "AddTagTableResponseTypedDict",
     "AllowedDataElementFilterKeys",
+    "Artifact",
+    "ArtifactTypedDict",
     "BasicWebAuth",
     "BasicWebAuthTypedDict",
     "Blueprint",
@@ -579,12 +584,16 @@ __all__ = [
     "BlueprintInstanceStatus",
     "BlueprintInstanceTypedDict",
     "BlueprintTypedDict",
+    "CallToAction",
+    "CallToActionTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
-    "ChatBlueprintInstanceRequest",
-    "ChatBlueprintInstanceRequestTypedDict",
-    "ChatBlueprintInstanceResponse",
-    "ChatBlueprintInstanceResponseTypedDict",
+    "ChatMessageRequest",
+    "ChatMessageRequestTypedDict",
+    "ChatMessageResponse",
+    "ChatMessageResponseTypedDict",
+    "ChatResponse",
+    "ChatResponseTypedDict",
     "CodeChunking",
     "CodeChunkingTypedDict",
     "CompleteBlueprintInstanceRequest",
@@ -749,6 +758,8 @@ __all__ = [
     "RagChunkingStrategyTypedDict",
     "RagConfig",
     "RagConfigTypedDict",
+    "RelevanceScore",
+    "RelevanceScoreTypedDict",
     "ResponseValidationError",
     "S3Config",
     "S3ConfigTypedDict",
@@ -760,12 +771,16 @@ __all__ = [
     "SemanticChunkingTypedDict",
     "SendChatMessageRequest",
     "SendChatMessageRequestTypedDict",
+    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest",
+    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict",
     "SendSignalRequest",
     "SendSignalRequestTypedDict",
     "SentenceChunking",
     "SentenceChunkingTypedDict",
     "Size",
     "SizeTypedDict",
+    "Source",
+    "SourceTypedDict",
     "SparseEmbeddingModel",
     "SparseEmbeddingModelTypedDict",
     "StartBlueprintInstanceRequest",
@@ -784,6 +799,8 @@ __all__ = [
     "TagTableInfoTypedDict",
     "TokenTextChunking",
     "TokenTextChunkingTypedDict",
+    "ToolActivity",
+    "ToolActivityTypedDict",
     "UpdateActivityStatusRequest",
     "UpdateActivityStatusRequestTypedDict",
     "UpdateBlueprintInstanceStatusRequest",
@@ -912,6 +929,8 @@ _dynamic_imports: dict[str, str] = {
     "AddTagTableResponseTypedDict": ".addtagtableresponse",
     "AllowedDataElementFilterKeys": ".alloweddataelementfilterkeys",
     "APIError": ".apierror",
+    "Artifact": ".artifact",
+    "ArtifactTypedDict": ".artifact",
     "BasicWebAuth": ".basicwebauth",
     "BasicWebAuthTypedDict": ".basicwebauth",
     "Blueprint": ".blueprint",
@@ -920,12 +939,16 @@ _dynamic_imports: dict[str, str] = {
     "BlueprintInstance": ".blueprintinstance",
     "BlueprintInstanceTypedDict": ".blueprintinstance",
     "BlueprintInstanceStatus": ".blueprintinstancestatus",
+    "CallToAction": ".calltoaction",
+    "CallToActionTypedDict": ".calltoaction",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
-    "ChatBlueprintInstanceRequest": ".chatblueprintinstancerequest",
-    "ChatBlueprintInstanceRequestTypedDict": ".chatblueprintinstancerequest",
-    "ChatBlueprintInstanceResponse": ".chatblueprintinstanceresponse",
-    "ChatBlueprintInstanceResponseTypedDict": ".chatblueprintinstanceresponse",
+    "ChatMessageRequest": ".chatmessagerequest",
+    "ChatMessageRequestTypedDict": ".chatmessagerequest",
+    "ChatMessageResponse": ".chatmessageresponse",
+    "ChatMessageResponseTypedDict": ".chatmessageresponse",
+    "ChatResponse": ".chatresponse",
+    "ChatResponseTypedDict": ".chatresponse",
     "CodeChunking": ".codechunking",
     "CodeChunkingTypedDict": ".codechunking",
     "CompleteBlueprintInstanceRequest1": ".completeblueprintinstanceop",
@@ -1094,12 +1117,18 @@ _dynamic_imports: dict[str, str] = {
     "SecurityTypedDict": ".security",
     "SemanticChunking": ".semanticchunking",
     "SemanticChunkingTypedDict": ".semanticchunking",
+    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest": ".send_chat_message_stream_blueprint_instance_id_chat_stream_postop",
+    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict": ".send_chat_message_stream_blueprint_instance_id_chat_stream_postop",
     "SendChatMessageRequest": ".sendchatmessageop",
     "SendChatMessageRequestTypedDict": ".sendchatmessageop",
     "SendSignalRequest": ".sendsignalop",
     "SendSignalRequestTypedDict": ".sendsignalop",
     "SentenceChunking": ".sentencechunking",
     "SentenceChunkingTypedDict": ".sentencechunking",
+    "RelevanceScore": ".source",
+    "RelevanceScoreTypedDict": ".source",
+    "Source": ".source",
+    "SourceTypedDict": ".source",
     "SparseEmbeddingModel": ".sparseembeddingmodel",
     "SparseEmbeddingModelTypedDict": ".sparseembeddingmodel",
     "Data": ".sseevent",
@@ -1122,6 +1151,8 @@ _dynamic_imports: dict[str, str] = {
     "TagTableInfoTypedDict": ".tagtableinfo",
     "TokenTextChunking": ".tokentextchunking",
     "TokenTextChunkingTypedDict": ".tokentextchunking",
+    "ToolActivity": ".toolactivity",
+    "ToolActivityTypedDict": ".toolactivity",
     "UpdateActivityStatusRequest": ".updateactivitystatusop",
     "UpdateActivityStatusRequestTypedDict": ".updateactivitystatusop",
     "UpdateBlueprintInstanceStatusRequest": ".updateblueprintinstancestatusop",

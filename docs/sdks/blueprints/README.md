@@ -269,7 +269,7 @@ with Meibelai(
         "key": "<value>",
         "key1": "<value>",
         "key2": "<value>",
-    })
+    }, enable_streaming=False)
 
     # Handle response
     print(res)
@@ -282,6 +282,7 @@ with Meibelai(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `blueprint_id`                                                      | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `init_input`                                                        | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `enable_streaming`                                                  | *OptionalNullable[bool]*                                            | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response

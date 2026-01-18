@@ -12,6 +12,8 @@ class StartBlueprintInstanceRequestTypedDict(TypedDict):
 
     workflow_args: NotRequired[Nullable[List[Any]]]
     workflow_kwargs: NotRequired[Nullable[Dict[str, Any]]]
+    enable_streaming: NotRequired[Nullable[bool]]
+    r"""Enable streaming responses to Redis for chat workflows. When True, chat responses are streamed to Redis streams that can be consumed via the /chat/stream endpoint."""
 
 
 class StartBlueprintInstanceRequest(BaseModel):
@@ -21,32 +23,30 @@ class StartBlueprintInstanceRequest(BaseModel):
 
     workflow_kwargs: OptionalNullable[Dict[str, Any]] = UNSET
 
+    enable_streaming: OptionalNullable[bool] = UNSET
+    r"""Enable streaming responses to Redis for chat workflows. When True, chat responses are streamed to Redis streams that can be consumed via the /chat/stream endpoint."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["workflow_args", "workflow_kwargs"]
-        nullable_fields = ["workflow_args", "workflow_kwargs"]
-        null_default_fields = []
-
+        optional_fields = set(["workflow_args", "workflow_kwargs", "enable_streaming"])
+        nullable_fields = set(["workflow_args", "workflow_kwargs", "enable_streaming"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m

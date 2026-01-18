@@ -289,6 +289,7 @@ with Meibelai(
 * [query_workflow](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#query_workflow) - Query Workflow
 * [get_blueprint_instance_workflow_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
 * [send_chat_message](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_chat_message) - Send Chat Message
+* [send_chat_message_stream_blueprint_instance_id_chat_stream_post](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/executions/README.md#send_chat_message_stream_blueprint_instance_id_chat_stream_post) - Send a chat message and stream the response via SSE
 
 #### [Blueprints.Instances](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md)
 

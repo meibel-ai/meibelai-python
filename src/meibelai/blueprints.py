@@ -1068,6 +1068,7 @@ class Blueprints(BaseSDK):
         *,
         blueprint_id: str,
         init_input: OptionalNullable[Dict[str, Any]] = UNSET,
+        enable_streaming: OptionalNullable[bool] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1077,6 +1078,7 @@ class Blueprints(BaseSDK):
 
         :param blueprint_id:
         :param init_input:
+        :param enable_streaming:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1096,6 +1098,7 @@ class Blueprints(BaseSDK):
             blueprint_id=blueprint_id,
             execute_blueprint_request=models.ExecuteBlueprintRequest(
                 init_input=init_input,
+                enable_streaming=enable_streaming,
             ),
         )
 
@@ -1172,6 +1175,7 @@ class Blueprints(BaseSDK):
         *,
         blueprint_id: str,
         init_input: OptionalNullable[Dict[str, Any]] = UNSET,
+        enable_streaming: OptionalNullable[bool] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1181,6 +1185,7 @@ class Blueprints(BaseSDK):
 
         :param blueprint_id:
         :param init_input:
+        :param enable_streaming:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1200,6 +1205,7 @@ class Blueprints(BaseSDK):
             blueprint_id=blueprint_id,
             execute_blueprint_request=models.ExecuteBlueprintRequest(
                 init_input=init_input,
+                enable_streaming=enable_streaming,
             ),
         )
 
