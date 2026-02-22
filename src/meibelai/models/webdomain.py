@@ -28,3 +28,9 @@ class WebDomain(BaseModel):
     ingestible: bool
 
     expandable: bool
+
+
+try:
+    WebDomain.model_rebuild()
+except NameError:
+    pass

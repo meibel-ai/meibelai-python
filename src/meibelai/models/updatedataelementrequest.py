@@ -18,6 +18,7 @@ class UpdateDataElementRequestTypedDict(TypedDict):
     path: NotRequired[Nullable[str]]
     media_type: NotRequired[Nullable[str]]
     discovery_record: NotRequired[Nullable[DataElementDiscoveryRecordTypedDict]]
+    parent_data_element_id: NotRequired[Nullable[str]]
 
 
 class UpdateDataElementRequest(BaseModel):
@@ -33,13 +34,29 @@ class UpdateDataElementRequest(BaseModel):
 
     discovery_record: OptionalNullable[DataElementDiscoveryRecord] = UNSET
 
+    parent_data_element_id: OptionalNullable[str] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["description", "name", "path", "media_type", "discovery_record"]
+            [
+                "description",
+                "name",
+                "path",
+                "media_type",
+                "discovery_record",
+                "parent_data_element_id",
+            ]
         )
         nullable_fields = set(
-            ["description", "name", "path", "media_type", "discovery_record"]
+            [
+                "description",
+                "name",
+                "path",
+                "media_type",
+                "discovery_record",
+                "parent_data_element_id",
+            ]
         )
         serialized = handler(self)
         m = {}

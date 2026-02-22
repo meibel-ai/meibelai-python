@@ -5,9 +5,9 @@ from .dataelementdiscoveryrecord import (
     DataElementDiscoveryRecord,
     DataElementDiscoveryRecordTypedDict,
 )
-from meibelai.types import BaseModel, Nullable, UNSET_SENTINEL
+from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from pydantic import model_serializer
-from typing_extensions import TypedDict
+from typing_extensions import NotRequired, TypedDict
 
 
 class DataElementTypedDict(TypedDict):
@@ -22,6 +22,7 @@ class DataElementTypedDict(TypedDict):
     description: Nullable[str]
     created_at: str
     updated_at: str
+    parent_data_element_id: NotRequired[Nullable[str]]
 
 
 class DataElement(BaseModel):
@@ -45,16 +46,31 @@ class DataElement(BaseModel):
 
     updated_at: str
 
+    parent_data_element_id: OptionalNullable[str] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
+        optional_fields = set(["parent_data_element_id"])
+        nullable_fields = set(
+            ["id", "discovery_record", "description", "parent_data_element_id"]
+        )
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
             if val != UNSET_SENTINEL:
-                m[k] = val
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m

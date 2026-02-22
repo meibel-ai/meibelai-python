@@ -6,7 +6,7 @@ from meibelai._hooks import HookContext
 from meibelai.types import OptionalNullable, UNSET
 from meibelai.utils import get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, List, Mapping, Optional
+from typing import Any, List, Mapping, Optional, Union
 
 
 class Tag(BaseSDK):
@@ -19,7 +19,11 @@ class Tag(BaseSDK):
         working_bucket: str,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
+        working_platform: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
+        database_config: OptionalNullable[
+            Union[models.DatabaseConfigInput, models.DatabaseConfigInputTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -31,7 +35,9 @@ class Tag(BaseSDK):
         :param working_bucket:
         :param description:
         :param logical_group_regex:
+        :param working_platform:
         :param db_path:
+        :param database_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -53,7 +59,11 @@ class Tag(BaseSDK):
                 description=description,
                 logical_group_regex=logical_group_regex,
                 working_bucket=working_bucket,
+                working_platform=working_platform,
                 db_path=db_path,
+                database_config=utils.get_pydantic_model(
+                    database_config, OptionalNullable[models.DatabaseConfigInput]
+                ),
             ),
         )
 
@@ -132,7 +142,11 @@ class Tag(BaseSDK):
         working_bucket: str,
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
+        working_platform: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
+        database_config: OptionalNullable[
+            Union[models.DatabaseConfigInput, models.DatabaseConfigInputTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -144,7 +158,9 @@ class Tag(BaseSDK):
         :param working_bucket:
         :param description:
         :param logical_group_regex:
+        :param working_platform:
         :param db_path:
+        :param database_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -166,7 +182,11 @@ class Tag(BaseSDK):
                 description=description,
                 logical_group_regex=logical_group_regex,
                 working_bucket=working_bucket,
+                working_platform=working_platform,
                 db_path=db_path,
+                database_config=utils.get_pydantic_model(
+                    database_config, OptionalNullable[models.DatabaseConfigInput]
+                ),
             ),
         )
 
@@ -429,7 +449,11 @@ class Tag(BaseSDK):
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
+        working_platform: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
+        database_config: OptionalNullable[
+            Union[models.DatabaseConfigInput, models.DatabaseConfigInputTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -441,7 +465,9 @@ class Tag(BaseSDK):
         :param description:
         :param logical_group_regex:
         :param working_bucket:
+        :param working_platform:
         :param db_path:
+        :param database_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -463,7 +489,11 @@ class Tag(BaseSDK):
                 description=description,
                 logical_group_regex=logical_group_regex,
                 working_bucket=working_bucket,
+                working_platform=working_platform,
                 db_path=db_path,
+                database_config=utils.get_pydantic_model(
+                    database_config, OptionalNullable[models.DatabaseConfigInput]
+                ),
             ),
         )
 
@@ -542,7 +572,11 @@ class Tag(BaseSDK):
         description: OptionalNullable[str] = UNSET,
         logical_group_regex: OptionalNullable[str] = UNSET,
         working_bucket: OptionalNullable[str] = UNSET,
+        working_platform: OptionalNullable[str] = UNSET,
         db_path: OptionalNullable[str] = UNSET,
+        database_config: OptionalNullable[
+            Union[models.DatabaseConfigInput, models.DatabaseConfigInputTypedDict]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -554,7 +588,9 @@ class Tag(BaseSDK):
         :param description:
         :param logical_group_regex:
         :param working_bucket:
+        :param working_platform:
         :param db_path:
+        :param database_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -576,7 +612,11 @@ class Tag(BaseSDK):
                 description=description,
                 logical_group_regex=logical_group_regex,
                 working_bucket=working_bucket,
+                working_platform=working_platform,
                 db_path=db_path,
+                database_config=utils.get_pydantic_model(
+                    database_config, OptionalNullable[models.DatabaseConfigInput]
+                ),
             ),
         )
 

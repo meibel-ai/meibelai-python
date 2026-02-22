@@ -68,7 +68,9 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.start_blueprint_instance_request,
+                request.start_blueprint_instance_request
+                if request is not None
+                else None,
                 True,
                 True,
                 "json",
@@ -178,7 +180,9 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.start_blueprint_instance_request,
+                request.start_blueprint_instance_request
+                if request is not None
+                else None,
                 True,
                 True,
                 "json",
@@ -467,7 +471,11 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, True, True, "json", OptionalNullable[List[Any]]
+                request.request_body if request is not None else None,
+                True,
+                True,
+                "json",
+                OptionalNullable[List[Any]],
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
@@ -568,7 +576,11 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, True, True, "json", OptionalNullable[List[Any]]
+                request.request_body if request is not None else None,
+                True,
+                True,
+                "json",
+                OptionalNullable[List[Any]],
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
@@ -669,7 +681,11 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, True, True, "json", OptionalNullable[List[Any]]
+                request.request_body if request is not None else None,
+                True,
+                True,
+                "json",
+                OptionalNullable[List[Any]],
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
@@ -770,7 +786,11 @@ class Executions(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body, True, True, "json", OptionalNullable[List[Any]]
+                request.request_body if request is not None else None,
+                True,
+                True,
+                "json",
+                OptionalNullable[List[Any]],
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,

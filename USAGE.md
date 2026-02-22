@@ -30,6 +30,17 @@ with Meibelai(
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
     })
 
     # Handle response
@@ -72,6 +83,17 @@ async def main():
             "authentication": {
                 "username": "Eulalia35",
                 "password": "VKK1aONN4LAHFVF",
+            },
+        }, connector_config={
+            "connector_id": "<id>",
+            "airbyte_config": {
+                "source_id": "<id>",
+                "destination_id": "<id>",
+                "connection_id": "<id>",
+            },
+            "source_config": {
+                "key": "<value>",
+                "key1": "<value>",
             },
         })
 

@@ -34,7 +34,14 @@ with Meibelai(
         "last_modified_time": "<value>",
         "size": 740493,
         "element_hash": "<value>",
-    })
+        "file_id": "<id>",
+        "file_created_at": "<value>",
+        "file_modified_at": "<value>",
+        "extra": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
+    }, parent_data_element_id="<id>")
 
     # Handle response
     print(res)
@@ -51,6 +58,7 @@ with Meibelai(
 | `path`                                                                                    | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `media_type`                                                                              | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `discovery_record`                                                                        | [Nullable[models.DataElementDiscoveryRecord]](../../models/dataelementdiscoveryrecord.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `parent_data_element_id`                                                                  | *OptionalNullable[str]*                                                                   | :heavy_minus_sign:                                                                        | N/A                                                                                       |
 | `retries`                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                          | :heavy_minus_sign:                                                                        | Configuration to override the default retry behavior of the client.                       |
 
 ### Response
@@ -172,7 +180,14 @@ with Meibelai(
         "last_modified_time": "<value>",
         "size": 506325,
         "element_hash": "<value>",
-    })
+        "file_id": "<id>",
+        "file_created_at": None,
+        "file_modified_at": None,
+        "extra": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
+    }, parent_data_element_id="<id>")
 
     # Handle response
     print(res)
@@ -190,6 +205,7 @@ with Meibelai(
 | `path`                                                                                            | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
 | `media_type`                                                                                      | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
 | `discovery_record`                                                                                | [OptionalNullable[models.DataElementDiscoveryRecord]](../../models/dataelementdiscoveryrecord.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `parent_data_element_id`                                                                          | *OptionalNullable[str]*                                                                           | :heavy_minus_sign:                                                                                | N/A                                                                                               |
 | `retries`                                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                  | :heavy_minus_sign:                                                                                | Configuration to override the default retry behavior of the client.                               |
 
 ### Response

@@ -216,7 +216,7 @@ with Meibelai(
 
 ### Response
 
-**[str](../../models/.md)**
+**[str](../../models/responsedeleteragconfig.md)**
 
 ### Errors
 

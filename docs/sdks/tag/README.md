@@ -29,6 +29,7 @@ Add Tag Config
 
 <!-- UsageSnippet language="python" operationID="addTagConfig" method="post" path="/datasource/{datasource_id}/tag_config" -->
 ```python
+import meibelai
 from meibelai import Meibelai
 import os
 
@@ -37,7 +38,27 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="fray brace waltz interesting huzzah whether experience", logical_group_regex="<value>", db_path="<value>")
+    res = m_client.datasources.tag.add_tag_config(datasource_id="<id>", working_bucket="<value>", description="fray brace waltz interesting huzzah whether experience", logical_group_regex="<value>", working_platform="<value>", db_path="<value>", database_config=meibelai.DatabaseConfigInput(
+        anyof_schema_1_validator=meibelai.DuckDBConfig(
+            database_type=meibelai.DatabaseType.CLICKHOUSE,
+            database_filepath="<value>",
+            database_name="<value>",
+            database_schema="<value>",
+        ),
+        anyof_schema_2_validator=meibelai.ClickhouseConfig(
+            database_type=meibelai.DatabaseType.DUCKDB,
+            database_name="<value>",
+        ),
+        anyof_schema_3_validator=meibelai.PostgreSQLConfig(
+            database_type=None,
+            database_name="<value>",
+        ),
+        actual_instance="<value>",
+        any_of_schemas=[
+            "<value 1>",
+            "<value 2>",
+        ],
+    ))
 
     # Handle response
     print(res)
@@ -46,14 +67,16 @@ with Meibelai(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `working_bucket`                                                    | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `description`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `logical_group_regex`                                               | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `db_path`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `datasource_id`                                                                     | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `working_bucket`                                                                    | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `description`                                                                       | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `logical_group_regex`                                                               | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `working_platform`                                                                  | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `db_path`                                                                           | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `database_config`                                                                   | [OptionalNullable[models.DatabaseConfigInput]](../../models/databaseconfiginput.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
 
 ### Response
 
@@ -123,7 +146,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.tag.update_tag_config(datasource_id="<id>", description="impostor inside immediately", logical_group_regex=None, working_bucket="<value>", db_path="<value>")
+    res = m_client.datasources.tag.update_tag_config(datasource_id="<id>", description="impostor inside immediately", logical_group_regex=None, working_bucket="<value>", working_platform="<value>", db_path="<value>", database_config=None)
 
     # Handle response
     print(res)
@@ -132,14 +155,16 @@ with Meibelai(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `description`                                                       | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `logical_group_regex`                                               | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `working_bucket`                                                    | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `db_path`                                                           | *OptionalNullable[str]*                                             | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `datasource_id`                                                                     | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `description`                                                                       | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `logical_group_regex`                                                               | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `working_bucket`                                                                    | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `working_platform`                                                                  | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `db_path`                                                                           | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `database_config`                                                                   | [OptionalNullable[models.DatabaseConfigInput]](../../models/databaseconfiginput.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
 
 ### Response
 
@@ -184,7 +209,7 @@ with Meibelai(
 
 ### Response
 
-**[str](../../models/.md)**
+**[str](../../models/responsedeletetagconfig.md)**
 
 ### Errors
 

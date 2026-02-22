@@ -26,6 +26,7 @@ class Dataelements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
+        parent_data_element_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -39,6 +40,7 @@ class Dataelements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
+        :param parent_data_element_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -64,6 +66,7 @@ class Dataelements(BaseSDK):
                 discovery_record=utils.get_pydantic_model(
                     discovery_record, Nullable[models.DataElementDiscoveryRecord]
                 ),
+                parent_data_element_id=parent_data_element_id,
             ),
         )
 
@@ -149,6 +152,7 @@ class Dataelements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ],
+        parent_data_element_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -162,6 +166,7 @@ class Dataelements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
+        :param parent_data_element_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -187,6 +192,7 @@ class Dataelements(BaseSDK):
                 discovery_record=utils.get_pydantic_model(
                     discovery_record, Nullable[models.DataElementDiscoveryRecord]
                 ),
+                parent_data_element_id=parent_data_element_id,
             ),
         )
 
@@ -671,6 +677,7 @@ class Dataelements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ] = UNSET,
+        parent_data_element_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -685,6 +692,7 @@ class Dataelements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
+        :param parent_data_element_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -712,6 +720,7 @@ class Dataelements(BaseSDK):
                     discovery_record,
                     OptionalNullable[models.DataElementDiscoveryRecord],
                 ),
+                parent_data_element_id=parent_data_element_id,
             ),
         )
 
@@ -798,6 +807,7 @@ class Dataelements(BaseSDK):
                 models.DataElementDiscoveryRecordTypedDict,
             ]
         ] = UNSET,
+        parent_data_element_id: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -812,6 +822,7 @@ class Dataelements(BaseSDK):
         :param path:
         :param media_type:
         :param discovery_record:
+        :param parent_data_element_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -839,6 +850,7 @@ class Dataelements(BaseSDK):
                     discovery_record,
                     OptionalNullable[models.DataElementDiscoveryRecord],
                 ),
+                parent_data_element_id=parent_data_element_id,
             ),
         )
 
@@ -1174,7 +1186,7 @@ class Dataelements(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.data_element_filter_request,
+                request.data_element_filter_request if request is not None else None,
                 False,
                 True,
                 "json",
@@ -1302,7 +1314,7 @@ class Dataelements(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.data_element_filter_request,
+                request.data_element_filter_request if request is not None else None,
                 False,
                 True,
                 "json",

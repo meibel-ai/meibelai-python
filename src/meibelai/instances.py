@@ -1092,7 +1092,9 @@ class Instances(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.complete_blueprint_instance_request,
+                request.complete_blueprint_instance_request
+                if request is not None
+                else None,
                 True,
                 True,
                 "json",
@@ -1198,7 +1200,9 @@ class Instances(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.complete_blueprint_instance_request,
+                request.complete_blueprint_instance_request
+                if request is not None
+                else None,
                 True,
                 True,
                 "json",

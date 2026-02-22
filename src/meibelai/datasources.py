@@ -11,7 +11,7 @@ from meibelai.tag import Tag
 from meibelai.types import OptionalNullable, UNSET
 from meibelai.utils import get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, List, Mapping, Optional, Union
+from typing import Any, Mapping, Optional, Union
 
 
 class Datasources(BaseSDK):
@@ -57,6 +57,12 @@ class Datasources(BaseSDK):
         web_config: OptionalNullable[
             Union[models.DatasourceWebConfig, models.DatasourceWebConfigTypedDict]
         ] = UNSET,
+        connector_config: OptionalNullable[
+            Union[
+                models.DatasourceConnectorConfig,
+                models.DatasourceConnectorConfigTypedDict,
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -71,6 +77,7 @@ class Datasources(BaseSDK):
         :param recurrence:
         :param object_storage_config:
         :param web_config:
+        :param connector_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -97,6 +104,9 @@ class Datasources(BaseSDK):
             ),
             web_config=utils.get_pydantic_model(
                 web_config, OptionalNullable[models.DatasourceWebConfig]
+            ),
+            connector_config=utils.get_pydantic_model(
+                connector_config, OptionalNullable[models.DatasourceConnectorConfig]
             ),
         )
 
@@ -178,6 +188,12 @@ class Datasources(BaseSDK):
         web_config: OptionalNullable[
             Union[models.DatasourceWebConfig, models.DatasourceWebConfigTypedDict]
         ] = UNSET,
+        connector_config: OptionalNullable[
+            Union[
+                models.DatasourceConnectorConfig,
+                models.DatasourceConnectorConfigTypedDict,
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -192,6 +208,7 @@ class Datasources(BaseSDK):
         :param recurrence:
         :param object_storage_config:
         :param web_config:
+        :param connector_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -218,6 +235,9 @@ class Datasources(BaseSDK):
             ),
             web_config=utils.get_pydantic_model(
                 web_config, OptionalNullable[models.DatasourceWebConfig]
+            ),
+            connector_config=utils.get_pydantic_model(
+                connector_config, OptionalNullable[models.DatasourceConnectorConfig]
             ),
         )
 
@@ -482,6 +502,12 @@ class Datasources(BaseSDK):
         web_config: OptionalNullable[
             Union[models.DatasourceWebConfig, models.DatasourceWebConfigTypedDict]
         ] = UNSET,
+        connector_config: OptionalNullable[
+            Union[
+                models.DatasourceConnectorConfig,
+                models.DatasourceConnectorConfigTypedDict,
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -495,6 +521,7 @@ class Datasources(BaseSDK):
         :param recurrence:
         :param object_storage_config:
         :param web_config:
+        :param connector_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -521,6 +548,9 @@ class Datasources(BaseSDK):
                 ),
                 web_config=utils.get_pydantic_model(
                     web_config, OptionalNullable[models.DatasourceWebConfig]
+                ),
+                connector_config=utils.get_pydantic_model(
+                    connector_config, OptionalNullable[models.DatasourceConnectorConfig]
                 ),
             ),
         )
@@ -606,6 +636,12 @@ class Datasources(BaseSDK):
         web_config: OptionalNullable[
             Union[models.DatasourceWebConfig, models.DatasourceWebConfigTypedDict]
         ] = UNSET,
+        connector_config: OptionalNullable[
+            Union[
+                models.DatasourceConnectorConfig,
+                models.DatasourceConnectorConfigTypedDict,
+            ]
+        ] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -619,6 +655,7 @@ class Datasources(BaseSDK):
         :param recurrence:
         :param object_storage_config:
         :param web_config:
+        :param connector_config:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -645,6 +682,9 @@ class Datasources(BaseSDK):
                 ),
                 web_config=utils.get_pydantic_model(
                     web_config, OptionalNullable[models.DatasourceWebConfig]
+                ),
+                connector_config=utils.get_pydantic_model(
+                    connector_config, OptionalNullable[models.DatasourceConnectorConfig]
                 ),
             ),
         )
@@ -904,17 +944,13 @@ class Datasources(BaseSDK):
     def get_all_datasource_ids(
         self,
         *,
-        customer_id: str,
-        project_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[str]:
+    ) -> models.GetAllDatasourceIdsResponse:
         r"""Get All Datasource Ids
 
-        :param customer_id:
-        :param project_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -929,28 +965,19 @@ class Datasources(BaseSDK):
             base_url = server_url
         else:
             base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetAllDatasourceIdsRequest(
-            customer_id=customer_id,
-            project_id=project_id,
-        )
-
         req = self._build_request(
             method="POST",
             path="/project_datasource_ids",
             base_url=base_url,
             url_variables=url_variables,
-            request=request,
-            request_body_required=True,
+            request=None,
+            request_body_required=False,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.GetAllDatasourceIdsRequest
-            ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
@@ -984,7 +1011,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(List[str], http_res)
+            return unmarshal_json_response(models.GetAllDatasourceIdsResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res
@@ -1002,17 +1029,13 @@ class Datasources(BaseSDK):
     async def get_all_datasource_ids_async(
         self,
         *,
-        customer_id: str,
-        project_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> List[str]:
+    ) -> models.GetAllDatasourceIdsResponse:
         r"""Get All Datasource Ids
 
-        :param customer_id:
-        :param project_id:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1027,28 +1050,19 @@ class Datasources(BaseSDK):
             base_url = server_url
         else:
             base_url = self._get_url(base_url, url_variables)
-
-        request = models.GetAllDatasourceIdsRequest(
-            customer_id=customer_id,
-            project_id=project_id,
-        )
-
         req = self._build_request_async(
             method="POST",
             path="/project_datasource_ids",
             base_url=base_url,
             url_variables=url_variables,
-            request=request,
-            request_body_required=True,
+            request=None,
+            request_body_required=False,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.GetAllDatasourceIdsRequest
-            ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
@@ -1082,7 +1096,7 @@ class Datasources(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(List[str], http_res)
+            return unmarshal_json_response(models.GetAllDatasourceIdsResponse, http_res)
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res

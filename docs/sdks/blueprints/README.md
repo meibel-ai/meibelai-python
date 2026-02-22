@@ -240,7 +240,7 @@ with Meibelai(
 
 ### Response
 
-**[str](../../models/.md)**
+**[str](../../models/responsedeleteblueprint.md)**
 
 ### Errors
 

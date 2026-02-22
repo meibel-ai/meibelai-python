@@ -49,6 +49,17 @@ with Meibelai(
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
     })
 
     # Handle response
@@ -58,16 +69,17 @@ with Meibelai(
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `customer_id`                                                                       | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `project_id`                                                                        | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `name`                                                                              | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `description`                                                                       | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `recurrence`                                                                        | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `object_storage_config`                                                             | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `web_config`                                                                        | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `customer_id`                                                                                   | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `project_id`                                                                                    | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `name`                                                                                          | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `description`                                                                                   | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `recurrence`                                                                                    | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `object_storage_config`                                                                         | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md)             | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `web_config`                                                                                    | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md)             | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `connector_config`                                                                              | [OptionalNullable[models.DatasourceConnectorConfig]](../../models/datasourceconnectorconfig.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `retries`                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                | :heavy_minus_sign:                                                                              | Configuration to override the default retry behavior of the client.                             |
 
 ### Response
 
@@ -154,6 +166,18 @@ with Meibelai(
             "username": "Craig.Torp",
             "password": "EOnNAiJTwzj27zA",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+            "key2": "<value>",
+        },
     })
 
     # Handle response
@@ -163,15 +187,16 @@ with Meibelai(
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `datasource_id`                                                                     | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `name`                                                                              | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `description`                                                                       | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `recurrence`                                                                        | *OptionalNullable[str]*                                                             | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `object_storage_config`                                                             | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `web_config`                                                                        | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `datasource_id`                                                                                 | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `name`                                                                                          | *OptionalNullable[str]*                                                                         | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `description`                                                                                   | *OptionalNullable[str]*                                                                         | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `recurrence`                                                                                    | *OptionalNullable[str]*                                                                         | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `object_storage_config`                                                                         | [OptionalNullable[models.ObjectStorageConfig]](../../models/objectstorageconfig.md)             | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `web_config`                                                                                    | [OptionalNullable[models.DatasourceWebConfig]](../../models/datasourcewebconfig.md)             | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `connector_config`                                                                              | [OptionalNullable[models.DatasourceConnectorConfig]](../../models/datasourceconnectorconfig.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `retries`                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                | :heavy_minus_sign:                                                                              | Configuration to override the default retry behavior of the client.                             |
 
 ### Response
 
@@ -241,7 +266,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.get_all_datasource_ids(customer_id="<id>", project_id="<id>")
+    res = m_client.datasources.get_all_datasource_ids()
 
     # Handle response
     print(res)
@@ -252,13 +277,11 @@ with Meibelai(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `customer_id`                                                       | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
-| `project_id`                                                        | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[List[str]](../../models/.md)**
+**[models.GetAllDatasourceIdsResponse](../../models/getalldatasourceidsresponse.md)**
 
 ### Errors
 

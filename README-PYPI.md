@@ -95,7 +95,7 @@ It's also possible to write a standalone Python script without needing to set up
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.10"
 # dependencies = [
 #     "meibelai",
 # ]
@@ -160,6 +160,17 @@ with Meibelai(
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
     })
 
     # Handle response
@@ -202,6 +213,17 @@ async def main():
             "authentication": {
                 "username": "Eulalia35",
                 "password": "VKK1aONN4LAHFVF",
+            },
+        }, connector_config={
+            "connector_id": "<id>",
+            "airbyte_config": {
+                "source_id": "<id>",
+                "destination_id": "<id>",
+                "connection_id": "<id>",
+            },
+            "source_config": {
+                "key": "<value>",
+                "key1": "<value>",
             },
         })
 
@@ -253,6 +275,17 @@ with Meibelai(
         "authentication": {
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
+        },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
         },
     })
 
@@ -444,6 +477,17 @@ with Meibelai(
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
@@ -484,6 +528,17 @@ with Meibelai(
         "authentication": {
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
+        },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
         },
     })
 
@@ -540,6 +595,17 @@ with Meibelai(
             "authentication": {
                 "username": "Eulalia35",
                 "password": "VKK1aONN4LAHFVF",
+            },
+        }, connector_config={
+            "connector_id": "<id>",
+            "airbyte_config": {
+                "source_id": "<id>",
+                "destination_id": "<id>",
+                "connection_id": "<id>",
+            },
+            "source_config": {
+                "key": "<value>",
+                "key1": "<value>",
             },
         })
 
@@ -629,6 +695,17 @@ with Meibelai(
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
         },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
+        },
     })
 
     # Handle response
@@ -669,6 +746,17 @@ with Meibelai(
         "authentication": {
             "username": "Eulalia35",
             "password": "VKK1aONN4LAHFVF",
+        },
+    }, connector_config={
+        "connector_id": "<id>",
+        "airbyte_config": {
+            "source_id": "<id>",
+            "destination_id": "<id>",
+            "connection_id": "<id>",
+        },
+        "source_config": {
+            "key": "<value>",
+            "key1": "<value>",
         },
     })
 

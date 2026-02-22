@@ -46,3 +46,9 @@ class DatasourceWebConfig(BaseModel):
                 m[k] = val
 
         return m
+
+
+try:
+    DatasourceWebConfig.model_rebuild()
+except NameError:
+    pass
