@@ -4,7 +4,7 @@ from .basesdk import BaseSDK
 from meibelai import models, utils
 from meibelai._hooks import HookContext
 from meibelai.types import OptionalNullable, UNSET
-from meibelai.utils import get_security_from_env
+from meibelai.utils import eventstreaming, get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Any, Dict, List, Mapping, Optional
 
@@ -1250,7 +1250,7 @@ class Executions(BaseSDK):
 
         raise models.APIError("Unexpected response received", http_res)
 
-    def send_chat_message_stream_blueprint_instance_id_chat_stream_post(
+    def send_chat_message_stream(
         self,
         *,
         blueprint_instance_id: str,
@@ -1262,7 +1262,7 @@ class Executions(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Any:
+    ) -> eventstreaming.EventStream[models.SendChatMessageStreamResponseBody]:
         r"""Send a chat message and stream the response via SSE
 
         Send a chat message to a running chat agent workflow and stream the response as Server-Sent Events.
@@ -1287,7 +1287,7 @@ class Executions(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest(
+        request = models.SendChatMessageStreamRequest(
             blueprint_instance_id=blueprint_instance_id,
             chat_message_request=models.ChatMessageRequest(
                 user_message=user_message,
@@ -1307,7 +1307,7 @@ class Executions(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="text/event-stream",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
@@ -1337,7 +1337,7 @@ class Executions(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="send_chat_message_stream__blueprint_instance_id__chat_stream_post",
+                operation_id="sendChatMessageStream",
                 oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1345,17 +1345,26 @@ class Executions(BaseSDK):
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
+            stream=True,
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(Any, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStream(
+                http_res,
+                lambda raw: utils.unmarshal_json(
+                    raw, models.SendChatMessageStreamResponseBody
+                ),
+                sentinel="[DONE]",
+                client_ref=self,
             )
-            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = utils.stream_to_text(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
@@ -1363,9 +1372,10 @@ class Executions(BaseSDK):
             http_res_text = utils.stream_to_text(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
 
-        raise models.APIError("Unexpected response received", http_res)
+        http_res_text = utils.stream_to_text(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)
 
-    async def send_chat_message_stream_blueprint_instance_id_chat_stream_post_async(
+    async def send_chat_message_stream_async(
         self,
         *,
         blueprint_instance_id: str,
@@ -1377,7 +1387,7 @@ class Executions(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Any:
+    ) -> eventstreaming.EventStreamAsync[models.SendChatMessageStreamResponseBody]:
         r"""Send a chat message and stream the response via SSE
 
         Send a chat message to a running chat agent workflow and stream the response as Server-Sent Events.
@@ -1402,7 +1412,7 @@ class Executions(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest(
+        request = models.SendChatMessageStreamRequest(
             blueprint_instance_id=blueprint_instance_id,
             chat_message_request=models.ChatMessageRequest(
                 user_message=user_message,
@@ -1422,7 +1432,7 @@ class Executions(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="application/json",
+            accept_header_value="text/event-stream",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
@@ -1452,7 +1462,7 @@ class Executions(BaseSDK):
             hook_ctx=HookContext(
                 config=self.sdk_configuration,
                 base_url=base_url or "",
-                operation_id="send_chat_message_stream__blueprint_instance_id__chat_stream_post",
+                operation_id="sendChatMessageStream",
                 oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -1460,17 +1470,26 @@ class Executions(BaseSDK):
             ),
             request=req,
             error_status_codes=["422", "4XX", "5XX"],
+            stream=True,
             retry_config=retry_config,
         )
 
         response_data: Any = None
-        if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(Any, http_res)
-        if utils.match_response(http_res, "422", "application/json"):
-            response_data = unmarshal_json_response(
-                models.HTTPValidationErrorData, http_res
+        if utils.match_response(http_res, "200", "text/event-stream"):
+            return eventstreaming.EventStreamAsync(
+                http_res,
+                lambda raw: utils.unmarshal_json(
+                    raw, models.SendChatMessageStreamResponseBody
+                ),
+                sentinel="[DONE]",
+                client_ref=self,
             )
-            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res, http_res_text
+            )
+            raise models.HTTPValidationError(response_data, http_res, http_res_text)
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
@@ -1478,4 +1497,5 @@ class Executions(BaseSDK):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.APIError("API error occurred", http_res, http_res_text)
 
-        raise models.APIError("Unexpected response received", http_res)
+        http_res_text = await utils.stream_to_text_async(http_res)
+        raise models.APIError("Unexpected response received", http_res, http_res_text)

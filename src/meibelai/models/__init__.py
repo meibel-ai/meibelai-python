@@ -105,6 +105,12 @@ if TYPE_CHECKING:
         CancelBlueprintInstanceRequest,
         CancelBlueprintInstanceRequestTypedDict,
     )
+    from .chatevent import (
+        ChatEvent,
+        ChatEventData,
+        ChatEventDataTypedDict,
+        ChatEventTypedDict,
+    )
     from .chatmessagerequest import ChatMessageRequest, ChatMessageRequestTypedDict
     from .chatmessageresponse import ChatMessageResponse, ChatMessageResponseTypedDict
     from .chatresponse import ChatResponse, ChatResponseTypedDict
@@ -335,6 +341,7 @@ if TYPE_CHECKING:
         GetTagTableInfoRequest,
         GetTagTableInfoRequestTypedDict,
     )
+    from .heartbeatevent import HeartbeatEvent, HeartbeatEventTypedDict
     from .htmlchunking import HTMLChunking, HTMLChunkingTypedDict
     from .httpvalidationerror import HTTPValidationError, HTTPValidationErrorData
     from .jsonnodechunking import JSONNodeChunking, JSONNodeChunkingTypedDict
@@ -363,13 +370,15 @@ if TYPE_CHECKING:
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
     from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
-    from .send_chat_message_stream_blueprint_instance_id_chat_stream_postop import (
-        SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest,
-        SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict,
-    )
     from .sendchatmessageop import (
         SendChatMessageRequest,
         SendChatMessageRequestTypedDict,
+    )
+    from .sendchatmessagestreamop import (
+        SendChatMessageStreamRequest,
+        SendChatMessageStreamRequestTypedDict,
+        SendChatMessageStreamResponseBody,
+        SendChatMessageStreamResponseBodyTypedDict,
     )
     from .sendsignalop import SendSignalRequest, SendSignalRequestTypedDict
     from .sentencechunking import SentenceChunking, SentenceChunkingTypedDict
@@ -604,6 +613,10 @@ __all__ = [
     "CallToActionTypedDict",
     "CancelBlueprintInstanceRequest",
     "CancelBlueprintInstanceRequestTypedDict",
+    "ChatEvent",
+    "ChatEventData",
+    "ChatEventDataTypedDict",
+    "ChatEventTypedDict",
     "ChatMessageRequest",
     "ChatMessageRequestTypedDict",
     "ChatMessageResponse",
@@ -761,6 +774,8 @@ __all__ = [
     "HTMLChunkingTypedDict",
     "HTTPValidationError",
     "HTTPValidationErrorData",
+    "HeartbeatEvent",
+    "HeartbeatEventTypedDict",
     "JSONNodeChunking",
     "JSONNodeChunkingTypedDict",
     "ListContentResponse",
@@ -801,8 +816,10 @@ __all__ = [
     "SemanticChunkingTypedDict",
     "SendChatMessageRequest",
     "SendChatMessageRequestTypedDict",
-    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest",
-    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict",
+    "SendChatMessageStreamRequest",
+    "SendChatMessageStreamRequestTypedDict",
+    "SendChatMessageStreamResponseBody",
+    "SendChatMessageStreamResponseBodyTypedDict",
     "SendSignalRequest",
     "SendSignalRequestTypedDict",
     "SentenceChunking",
@@ -975,6 +992,10 @@ _dynamic_imports: dict[str, str] = {
     "CallToActionTypedDict": ".calltoaction",
     "CancelBlueprintInstanceRequest": ".cancelblueprintinstanceop",
     "CancelBlueprintInstanceRequestTypedDict": ".cancelblueprintinstanceop",
+    "ChatEvent": ".chatevent",
+    "ChatEventData": ".chatevent",
+    "ChatEventDataTypedDict": ".chatevent",
+    "ChatEventTypedDict": ".chatevent",
     "ChatMessageRequest": ".chatmessagerequest",
     "ChatMessageRequestTypedDict": ".chatmessagerequest",
     "ChatMessageResponse": ".chatmessageresponse",
@@ -1128,6 +1149,8 @@ _dynamic_imports: dict[str, str] = {
     "GetTagConfigRequestTypedDict": ".gettagconfigop",
     "GetTagTableInfoRequest": ".gettagtableinfoop",
     "GetTagTableInfoRequestTypedDict": ".gettagtableinfoop",
+    "HeartbeatEvent": ".heartbeatevent",
+    "HeartbeatEventTypedDict": ".heartbeatevent",
     "HTMLChunking": ".htmlchunking",
     "HTMLChunkingTypedDict": ".htmlchunking",
     "HTTPValidationError": ".httpvalidationerror",
@@ -1163,10 +1186,12 @@ _dynamic_imports: dict[str, str] = {
     "SecurityTypedDict": ".security",
     "SemanticChunking": ".semanticchunking",
     "SemanticChunkingTypedDict": ".semanticchunking",
-    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest": ".send_chat_message_stream_blueprint_instance_id_chat_stream_postop",
-    "SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequestTypedDict": ".send_chat_message_stream_blueprint_instance_id_chat_stream_postop",
     "SendChatMessageRequest": ".sendchatmessageop",
     "SendChatMessageRequestTypedDict": ".sendchatmessageop",
+    "SendChatMessageStreamRequest": ".sendchatmessagestreamop",
+    "SendChatMessageStreamRequestTypedDict": ".sendchatmessagestreamop",
+    "SendChatMessageStreamResponseBody": ".sendchatmessagestreamop",
+    "SendChatMessageStreamResponseBodyTypedDict": ".sendchatmessagestreamop",
     "SendSignalRequest": ".sendsignalop",
     "SendSignalRequestTypedDict": ".sendsignalop",
     "SentenceChunking": ".sentencechunking",

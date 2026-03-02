@@ -12,7 +12,7 @@ work with executions of blueprints
 * [query_workflow](#query_workflow) - Query Workflow
 * [get_blueprint_instance_workflow_status](#get_blueprint_instance_workflow_status) - Get Blueprint Instance Workflow Status
 * [send_chat_message](#send_chat_message) - Send Chat Message
-* [send_chat_message_stream_blueprint_instance_id_chat_stream_post](#send_chat_message_stream_blueprint_instance_id_chat_stream_post) - Send a chat message and stream the response via SSE
+* [send_chat_message_stream](#send_chat_message_stream) - Send a chat message and stream the response via SSE
 
 ## start_blueprint_instance
 
@@ -283,13 +283,13 @@ with Meibelai(
 | models.HTTPValidationError | 422                        | application/json           |
 | models.APIError            | 4XX, 5XX                   | \*/\*                      |
 
-## send_chat_message_stream_blueprint_instance_id_chat_stream_post
+## send_chat_message_stream
 
 Send a chat message to a running chat agent workflow and stream the response as Server-Sent Events.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="send_chat_message_stream__blueprint_instance_id__chat_stream_post" method="post" path="/{blueprint_instance_id}/chat/stream" -->
+<!-- UsageSnippet language="python" operationID="sendChatMessageStream" method="post" path="/{blueprint_instance_id}/chat/stream" -->
 ```python
 from meibelai import Meibelai
 import os
@@ -299,10 +299,12 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.blueprints.executions.send_chat_message_stream_blueprint_instance_id_chat_stream_post(blueprint_instance_id="<id>", user_message="<value>", timeout_seconds=290915, include_thinking=False, include_tool_activity=None)
+    res = m_client.blueprints.executions.send_chat_message_stream(blueprint_instance_id="<id>", user_message="<value>", timeout_seconds=None, include_thinking=False, include_tool_activity=True)
 
-    # Handle response
-    print(res)
+    with res as event_stream:
+        for event in event_stream:
+            # handle event
+            print(event, flush=True)
 
 ```
 
@@ -319,7 +321,7 @@ with Meibelai(
 
 ### Response
 
-**[Any](../../models/.md)**
+**[Union[eventstreaming.EventStream[models.SendChatMessageStreamResponseBody], eventstreaming.EventStreamAsync[models.SendChatMessageStreamResponseBody]]](../../models/.md)**
 
 ### Errors
 

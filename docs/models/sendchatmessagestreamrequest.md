@@ -1,4 +1,4 @@
-# SendChatMessageStreamBlueprintInstanceIDChatStreamPostRequest
+# SendChatMessageStreamRequest
 
 
 ## Fields
