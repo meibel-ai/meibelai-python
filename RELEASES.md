@@ -255,3 +255,11 @@ Based on:
 - Speakeasy CLI 1.737.1 (2.845.19) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v0.26.1] .
+
+## 2026-03-03 01:28:46
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.738.0 (2.845.21) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.27.0] .
