@@ -3,16 +3,16 @@ id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
   docChecksum: ebc2036e4b5438cbb055892b3c1abe50
   docVersion: 0.5.0
-  speakeasyVersion: 1.737.0
-  generationVersion: 2.845.15
-  releaseVersion: 0.26.0
-  configChecksum: bbb756407278916e9ed26aafc1826e33
+  speakeasyVersion: 1.737.1
+  generationVersion: 2.845.19
+  releaseVersion: 0.26.1
+  configChecksum: ba8ef9cdbbc246954907ec1b97083998
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 persistentEdits:
-  generation_id: c73dced5-7bcd-4a63-a325-798f9e967e54
-  pristine_commit_hash: de76402503b7bc64dbff0cf2dfef660e7cccce09
-  pristine_tree_hash: 64066b05c28360436d7d30fc6b03ef078005bf96
+  generation_id: 94fc2149-c806-44a8-802e-ec59a8913aaf
+  pristine_commit_hash: f682b3aaf1d25470c433ecbad00ef4a628c34bd6
+  pristine_tree_hash: 0c99473af67397e20f459ea464396db1a4f7ff96
 features:
   python:
     additionalDependencies: 1.0.0
@@ -880,8 +880,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:65a746f371fbb56a59af9acd36ecb3203bc2d33a
-    pristine_git_object: 2a148053d2bb7b51e1fdb657a69fe62e4d910c02
+    last_write_checksum: sha1:1afc2b0eccbfab7ea8c6a346f7710ced5a481476
+    pristine_git_object: d3dd3fcfcb9c5ee45650f3e3fd031e329e763d53
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:4f38078791667b48e093e6f5b54bda2b240c741d
@@ -908,8 +908,8 @@ trackedFiles:
     pristine_git_object: 9b50d497b8196195b4d7a30470cd231d68d4cd39
   src/meibelai/_version.py:
     id: 67c1a15c7974
-    last_write_checksum: sha1:610b0af2625b50578a730f46d29354fc96ee4ee9
-    pristine_git_object: dc1207d3f06fd0b45c7b11165c9037e6e4c95256
+    last_write_checksum: sha1:4736fb08b67774812b1b4b8600d31af2d35bc723
+    pristine_git_object: a605ad77ac6e37605ee5012140eefcbb6c6e5963
   src/meibelai/basesdk.py:
     id: 147a3827d9f5
     last_write_checksum: sha1:09ff66ee95b0ba7a428546827e6e76d23ca04d2e
@@ -3798,10 +3798,6 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Python SDK Changes:
-  * `meibelai.blueprints.executions.send_chat_message_stream()`: **Added**
-  * `meibelai.blueprints.executions.send_chat_message_stream_blueprint_instance_id_chat_stream_post()`: **Removed** (Breaking ⚠️)
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
