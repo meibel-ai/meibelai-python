@@ -2,6 +2,14 @@
 
 BlueprintInstanceStatus
 
+## Example Usage
+
+```python
+from meibelai.models import BlueprintInstanceStatus
+
+value = BlueprintInstanceStatus.CREATED
+```
+
 
 ## Values
 

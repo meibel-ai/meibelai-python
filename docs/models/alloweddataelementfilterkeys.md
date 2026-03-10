@@ -2,6 +2,14 @@
 
 AllowedDataElementFilterKeys
 
+## Example Usage
+
+```python
+from meibelai.models import AllowedDataElementFilterKeys
+
+value = AllowedDataElementFilterKeys.ID
+```
+
 
 ## Values
 

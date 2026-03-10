@@ -2,6 +2,14 @@
 
 ActivityStatus
 
+## Example Usage
+
+```python
+from meibelai.models import ActivityStatus
+
+value = ActivityStatus.PENDING
+```
+
 
 ## Values
 

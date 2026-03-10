@@ -2,6 +2,14 @@
 
 DatabaseType
 
+## Example Usage
+
+```python
+from meibelai.models import DatabaseType
+
+value = DatabaseType.CLICKHOUSE
+```
+
 
 ## Values
 

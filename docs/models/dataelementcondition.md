@@ -2,6 +2,14 @@
 
 DataElementCondition
 
+## Example Usage
+
+```python
+from meibelai.models import DataElementCondition
+
+value = DataElementCondition.EQUALS
+```
+
 
 ## Values
 

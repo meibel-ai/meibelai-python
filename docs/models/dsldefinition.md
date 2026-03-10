@@ -2,6 +2,14 @@
 
 DslDefinition
 
+## Example Usage
+
+```python
+from meibelai.models import DslDefinition
+
+value = DslDefinition.SERVERLESS_WORKFLOW_V1_0_0
+```
+
 
 ## Values
 

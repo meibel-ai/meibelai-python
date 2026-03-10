@@ -2,6 +2,14 @@
 
 Platform
 
+## Example Usage
+
+```python
+from meibelai.models import Platform
+
+value = Platform.AZURE
+```
+
 
 ## Values
 

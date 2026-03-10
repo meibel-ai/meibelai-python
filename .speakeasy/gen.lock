@@ -1,27 +1,27 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: 47ee2ead7ff089a88f82dccd3b57107a
+  docChecksum: af969763af100fddef356845244ecb7a
   docVersion: 0.6.0
-  speakeasyVersion: 1.738.0
-  generationVersion: 2.845.21
-  releaseVersion: 0.27.0
-  configChecksum: bb3f60923438da5086fd689107703a50
+  speakeasyVersion: 1.750.0
+  generationVersion: 2.856.1
+  releaseVersion: 0.27.1
+  configChecksum: 016a464bf856bbcf50e4a5199ab7a118
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 persistentEdits:
-  generation_id: 131ef00c-28bc-47ff-830b-8d6d6bb09cfd
-  pristine_commit_hash: f6867f25b0a81231216743b8738a54d7982c7295
-  pristine_tree_hash: 7bd1440914b9599103c5228f5d32eb78fa0b14e9
+  generation_id: d499ce85-6ff0-4354-920a-a0153cdc8de7
+  pristine_commit_hash: 9bc92569a0d012ba834f94014dedce01a7f109a8
+  pristine_tree_hash: 417913a4eac72cfe702e82ef2ce13056e97411b6
 features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.7
-    core: 6.0.15
+    core: 6.0.16
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     downloadStreams: 1.0.1
-    enumUnions: 0.1.0
+    enumUnions: 0.1.1
     envVarSecurityUsage: 0.3.2
     flatRequests: 1.0.1
     flattening: 3.1.1
@@ -34,7 +34,7 @@ features:
     responseFormat: 1.1.0
     retries: 3.0.4
     sdkHooks: 1.2.1
-    serverEvents: 1.0.13
+    serverEvents: 1.0.14
     serverEventsSentinels: 0.1.0
     unions: 3.1.4
 trackedFiles:
@@ -68,8 +68,8 @@ trackedFiles:
     pristine_git_object: e5654ce872018400c3726efe2905cc5dc600f09d
   docs/models/activitystatus.md:
     id: 64f50c19be21
-    last_write_checksum: sha1:975efb0a8f8c3794631273bcacf3e1d478b5a7fb
-    pristine_git_object: 3a78dc141963449a8c4b674537bfcf100439ae96
+    last_write_checksum: sha1:ef9cd9a81785235325b836abb81fedbf55c6ab8a
+    pristine_git_object: 1d06bb6fd9d188493d70b5414c5bc2ca0f3b570a
   docs/models/addactivitybyblueprintinstancerequest.md:
     id: 0dcc35b79fa4
     last_write_checksum: sha1:2685b45cbc76ff53900e868df4066298f021b02c
@@ -192,8 +192,8 @@ trackedFiles:
     pristine_git_object: 614141ff715373762023cebef5c3d9983f1ef193
   docs/models/alloweddataelementfilterkeys.md:
     id: d2a059dc884a
-    last_write_checksum: sha1:ce94d19f3c7130c52e6dbe78aed814117cce9d98
-    pristine_git_object: 77cfb4888adc38870bc4557a5ec5fdb2e2d96963
+    last_write_checksum: sha1:9a088325a7b583e01a53145430bb09388a8e1170
+    pristine_git_object: 29f4128daf83c81ef060eeb9d581e749a77b02bf
   docs/models/arguments.md:
     id: 7ea5e33709a7
     last_write_checksum: sha1:6bc50277f8c62420983fb6bd7f7440973268c1d1
@@ -216,16 +216,16 @@ trackedFiles:
     pristine_git_object: dd8fb073175498e6b3f242921c3c8c37072aa195
   docs/models/blueprintexecutionmode.md:
     id: 7130aaa61bfb
-    last_write_checksum: sha1:6f613cf7012e96ff200e1f9c8f327d63e523752f
-    pristine_git_object: 84dd041f47b011d16850d95c8ce594953c98f877
+    last_write_checksum: sha1:0e4c4041ebbeb81dde1393b4c605c5f1d918dfa4
+    pristine_git_object: 76d67b863b64e387e7e622da0642e520888e629f
   docs/models/blueprintinstance.md:
     id: f25c087f6175
     last_write_checksum: sha1:9c2c4be3b04bc7c31458b7c7630bfceb461501ff
     pristine_git_object: bba55881cf866157f7ac211650fdf5c9f8a034e5
   docs/models/blueprintinstancestatus.md:
     id: 7753dceba403
-    last_write_checksum: sha1:c76e875a809941bb60bcf97e56a4d52032005348
-    pristine_git_object: 077734c9ed08265083b18977992f16add8830751
+    last_write_checksum: sha1:c7fc4d8063863957cbd2f4eaa1d31e2f64539893
+    pristine_git_object: 25f8d9cd73c4cd999eb36f28b2e052774eca9170
   docs/models/calltoaction.md:
     id: 5c693e59996a
     last_write_checksum: sha1:51359a3c8842e7ec9eeaebd3c599b9410b2e427a
@@ -312,8 +312,8 @@ trackedFiles:
     pristine_git_object: 52460765bf59d10a4295ea2031ac9afabe60e5fe
   docs/models/contenttype.md:
     id: 78e9266f4216
-    last_write_checksum: sha1:b09b585d1da48101d72e479a5dbdeb4e89e4287c
-    pristine_git_object: 7e169c73348c42f9ab2047b26dfca559bffbeb5e
+    last_write_checksum: sha1:360fd10b3732ebe4f02a7428c144709da7166a56
+    pristine_git_object: 7e6e33f7d04cad8acea31519c38a7cd21c474bb5
   docs/models/createblueprinttaskrequest.md:
     id: 5a49bd82579a
     last_write_checksum: sha1:68e3834795eed745d38614fc55b40f48e095d553
@@ -340,16 +340,16 @@ trackedFiles:
     pristine_git_object: 0a100958c0520313990a4fb1d94424a34eb02747
   docs/models/databasetype.md:
     id: fb0997a88e7b
-    last_write_checksum: sha1:650c8059c0118ba9d9022e52a01771dab1ffc280
-    pristine_git_object: 6af78aaaebe714ff7a6c63093b8463e9e5908287
+    last_write_checksum: sha1:fdbb250aa1b78a9a7bdda29dbf3cd43440999069
+    pristine_git_object: 7f9ec4e38ffcecf78cce3dc6a7fb5f9ed7b60526
   docs/models/dataelement.md:
     id: 3f56a9422058
     last_write_checksum: sha1:2367b15f9ce335396e50d4324c51022a3cb91f90
     pristine_git_object: 7c092ced1c74053084d77077b97cceca464c6dce
   docs/models/dataelementcondition.md:
     id: 09066005433c
-    last_write_checksum: sha1:064ac4d32b7f0c571b7531e575ed894d10799248
-    pristine_git_object: c0ea7bd3f64caa53924f0ed46cff8ac4a3de2126
+    last_write_checksum: sha1:c9cf9b66d06101c55865950d6f6d93a44c00408c
+    pristine_git_object: 1d60236becd1fe5d3e70ba01166b1773df77c0de
   docs/models/dataelementdiscoveryrecord.md:
     id: a9e127b005c1
     last_write_checksum: sha1:145aad7a05a8bc595e0868d1b2ef660fae105c8e
@@ -444,8 +444,8 @@ trackedFiles:
     pristine_git_object: 899970b67ab00241009cb02c0b268580685e6af7
   docs/models/dsldefinition.md:
     id: a3e2d51f294f
-    last_write_checksum: sha1:b1c758ef99dc2e878d65e946adcf88350c9105ae
-    pristine_git_object: b91d4bd2bf1f0d74c97bbb220cc686a2380a86a6
+    last_write_checksum: sha1:1c54e301fcb98087f8853e6b881902f956eb96e1
+    pristine_git_object: 9d7502129e1ed95c276c22ec20f620616beab2fe
   docs/models/duckdbconfig.md:
     id: d43b6e3a750a
     last_write_checksum: sha1:aa903855dfccc4cb4a086206f79d8f40f2ef78e8
@@ -460,8 +460,8 @@ trackedFiles:
     pristine_git_object: 3ecdd39b5548346f47c24ccd5bbfcbeb7aa48828
   docs/models/eventtype.md:
     id: bfe6f1477d8b
-    last_write_checksum: sha1:02db9b555573fa45e313db1ebdd1d312c2a3484e
-    pristine_git_object: c7306e756702a08a4ae46c4b0e8638e8f8560a85
+    last_write_checksum: sha1:d8643829de2f2c22a1a41b2d29687a4ef03421d4
+    pristine_git_object: 6ff827ea49c2c393bdf5a296c215c544f81b581a
   docs/models/executeblueprintrequest.md:
     id: afc6bc1d7611
     last_write_checksum: sha1:5738345e834d724fbe414098db3f4fa544f7b040
@@ -648,8 +648,8 @@ trackedFiles:
     pristine_git_object: eeb86e56afb0640e88459487dee0f582a500d0a9
   docs/models/platform.md:
     id: a8d0f558209c
-    last_write_checksum: sha1:fbd0d825c6e2e054bdc78671ac4c0226ef1ecfd5
-    pristine_git_object: f55003fb77e8de80324c3da3845c51f7bb576c6d
+    last_write_checksum: sha1:053ddc8d266e83f91c52cc8eabd17c431730f3db
+    pristine_git_object: 6c70b1bd36f1e67b5ed35362114f51d4e953a62e
   docs/models/postgresqlconfig.md:
     id: 95b5de45ba38
     last_write_checksum: sha1:845734af1ce3299edb15380fd857a39176ee1bc7
@@ -964,8 +964,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:73bd232a602b4c894b79920315b7dbfb44d49ace
-    pristine_git_object: b050cdd3387de0e65bd2289937ab3361d99a1baf
+    last_write_checksum: sha1:fc3fb3d679608f073f49f6740b806694b15758c3
+    pristine_git_object: 2edea7295455f86ab3db7151db52d2231897d0e5
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:4f38078791667b48e093e6f5b54bda2b240c741d
@@ -992,8 +992,8 @@ trackedFiles:
     pristine_git_object: 9b50d497b8196195b4d7a30470cd231d68d4cd39
   src/meibelai/_version.py:
     id: 67c1a15c7974
-    last_write_checksum: sha1:40dba8e155b4d3456819cc2e4283dbc8fad5398f
-    pristine_git_object: 0b4c00f0cbb88cb45175c530c279c13078ff5b61
+    last_write_checksum: sha1:9400649e194bb00524d3ddb623fff85095ae8011
+    pristine_git_object: 05e436793feb0c9a34456a89daeb042b0be2516c
   src/meibelai/basesdk.py:
     id: 147a3827d9f5
     last_write_checksum: sha1:09ff66ee95b0ba7a428546827e6e76d23ca04d2e
@@ -1036,8 +1036,8 @@ trackedFiles:
     pristine_git_object: 90dfe510b54284fcf132dc7f38e059589693cf69
   src/meibelai/models/activity.py:
     id: 7af01ddbba8f
-    last_write_checksum: sha1:16ea7f500701ac4a5d74755d652521b68f6c384c
-    pristine_git_object: 8ecfa483da488165d38675657f3a6d584afdbbd2
+    last_write_checksum: sha1:c6ee96d344cd1e2bc2b1eefa4ddb2dcfcdd77b2a
+    pristine_git_object: b7db193315f6e1df9ad73d19a321138ffcbb1edf
   src/meibelai/models/activitystatus.py:
     id: 9345379a378c
     last_write_checksum: sha1:639b534e833e8c54f9cd13189bb4f8798d4f3d42
@@ -1048,40 +1048,40 @@ trackedFiles:
     pristine_git_object: a4ab367d3f3e39ba3ec229c515af6e4b0a5a4208
   src/meibelai/models/addactivityrequest.py:
     id: 03ad4fe73ea4
-    last_write_checksum: sha1:3358df49a590bd405189af461295e15dc2a761d7
-    pristine_git_object: d87b36edb67ad0e7b757555405a2a7bb6641b7dd
+    last_write_checksum: sha1:1d4114bcc4ce4c49fef95b61a34290fb1ea8dfb0
+    pristine_git_object: bcac35500866dd638d286a724c3a11090906c86c
   src/meibelai/models/addactivityresponse.py:
     id: df3470d14596
     last_write_checksum: sha1:60e8710b167b348b7313a50a4d0cbe26f3d06aee
     pristine_git_object: 597c33253b3008934caa24de1d0ba0a4eeafd771
   src/meibelai/models/addblueprintinstancerequest.py:
     id: 2e1473160c2e
-    last_write_checksum: sha1:d8423af4ec3511ecdde855a280091b0095bd9cff
-    pristine_git_object: f46cffa615826455ce93b2426bd3ec2b7230e83c
+    last_write_checksum: sha1:8192a51a51d64b9bb10811780a49a1e0342fc3c5
+    pristine_git_object: ab4efbefad008a47d2bc59c12bb2b5de7ea57ed1
   src/meibelai/models/addblueprintinstanceresponse.py:
     id: 288a36688876
     last_write_checksum: sha1:e8e8aba6325075f04ee70d591b68db34e9260d72
     pristine_git_object: 5ab787ad43bccb0f06b7defdff0433120e2c10b2
   src/meibelai/models/addblueprintrequest.py:
     id: 5a387109fc2f
-    last_write_checksum: sha1:99872c9999fa77b1ae44c816126744aee5921356
-    pristine_git_object: 33de421c2cf16a6f9af7705ffebbfecac2aec82f
+    last_write_checksum: sha1:4a621a5c79cdd0b0de941f5573b0342c2533a79d
+    pristine_git_object: dbb1d8a85077afc6344811ebe002ed3f67a6a046
   src/meibelai/models/addblueprintresponse.py:
     id: f5bb7646f841
     last_write_checksum: sha1:6687ab3975b39e6a3dc7741fb8aad3f2282857d2
     pristine_git_object: 1d2c132edaf2376fb27eeaaf609c9fc51da5c802
   src/meibelai/models/addblueprinttaskrequest.py:
     id: 7d1396a4e770
-    last_write_checksum: sha1:8b5bbf14762fe0daf4b55668942e5524f66a65dc
-    pristine_git_object: 8d0017b8b04065e17c88c9c3a48157471588c50e
+    last_write_checksum: sha1:7e93c372c19e6cef0fd88a03f7a61538d01fad38
+    pristine_git_object: 7536a8fc57426da2c3926bdd495015f5e728d3a8
   src/meibelai/models/addchunkingstrategyop.py:
     id: 2cbd0d0f45df
     last_write_checksum: sha1:7a8d533835c3b5825b68e679da9fa711df6e489e
     pristine_git_object: 0ab2bce5ed0a4e7c4333750495104bf4c9b01894
   src/meibelai/models/addchunkingstrategyrequest.py:
     id: 452d3907df07
-    last_write_checksum: sha1:fbc47694d955b740982768824bb34184b10b70b7
-    pristine_git_object: 49805cc6a7279421f744a48090a71799be180dc3
+    last_write_checksum: sha1:04f9a627ffea19cfa6e588641fa7b70369c0cc81
+    pristine_git_object: 4804af5b5d29c32058099711b7ae2d43efb887f5
   src/meibelai/models/addchunkingstrategyresponse.py:
     id: 62d5695849bb
     last_write_checksum: sha1:24fe786571bb7cc6e9ec1f6d9566a8b351006a47
@@ -1092,16 +1092,16 @@ trackedFiles:
     pristine_git_object: 2a73e453b61c0404f19b18cf7979ba994af310fb
   src/meibelai/models/adddataelementrequest.py:
     id: eeae2e4951b7
-    last_write_checksum: sha1:ce443b70d500fba28f8daea985e09464aa3b32da
-    pristine_git_object: 972025112d37ead1f36037e958bd991963432ff3
+    last_write_checksum: sha1:478a8c21115e54f978a9e1fa2b1e05d2fbdd2c81
+    pristine_git_object: ed4fb03456708a04a5ebf0eaf8da843876869e8c
   src/meibelai/models/adddataelementresponse.py:
     id: 946d349fe046
     last_write_checksum: sha1:39c9803fd49c5672c0ee289814cdaa76232ab777
     pristine_git_object: bbaf5dd0318d80f315c7c155a9743a55b79e6f97
   src/meibelai/models/adddatasourcerequest.py:
     id: ccee61ed4a91
-    last_write_checksum: sha1:835a1ccb4e798bf8fb7de7cecf96931fe281c080
-    pristine_git_object: fd66df40d8c3056b3664f8ab29607500a29e7359
+    last_write_checksum: sha1:15be5e3574ad699477f71e9fa899426db0d7d822
+    pristine_git_object: 1d9e3b37057503996f312842354ffee66169525f
   src/meibelai/models/adddatasourceresponse.py:
     id: d66d52a00d9d
     last_write_checksum: sha1:461c73db4dc0cd100a9477d992d486fb4579f3d1
@@ -1116,8 +1116,8 @@ trackedFiles:
     pristine_git_object: 106b62aa935592e16e20f4158738e1f0d8979104
   src/meibelai/models/addragconfigrequest.py:
     id: ace2fcce0ca2
-    last_write_checksum: sha1:7f3efb869a38f03b10518ec8f709c56f5ba12adc
-    pristine_git_object: 0f3d81dab0c9b97ab63bca41a8e3f7a032f9a248
+    last_write_checksum: sha1:41cd330d44d22c66b4f6630c80eb7ae813e32cc9
+    pristine_git_object: 0143d2eb979d9f7330a536115514c7c27ccc93de
   src/meibelai/models/addragconfigresponse.py:
     id: 95acf90614e3
     last_write_checksum: sha1:3d05003dfe74f6e18e4e0cc03f3f3b26858e6fd1
@@ -1128,8 +1128,8 @@ trackedFiles:
     pristine_git_object: dd1fc98a91f6c71a31582b4031704e95c6f39aed
   src/meibelai/models/addtagcolumnrequest.py:
     id: a63bf6fad462
-    last_write_checksum: sha1:e68da8e651f955026aab1dba8ec88e628b2c1ce6
-    pristine_git_object: 75e2deaec23f9cc7b4104dc0690ae378efa82306
+    last_write_checksum: sha1:65e69957e71fcb533f25ea6925b877acea868fd5
+    pristine_git_object: f6c7b06757264c32eeded3b74611e25a38f1cf0f
   src/meibelai/models/addtagcolumnresponse.py:
     id: d6edfae4b9de
     last_write_checksum: sha1:f4ffaf18dd0948ea95c0f3430b119e2edce494e3
@@ -1140,8 +1140,8 @@ trackedFiles:
     pristine_git_object: cb9de099e8d14e36dc25b136cc3b10a046a1e8cb
   src/meibelai/models/addtagconfigrequest.py:
     id: af309e397b25
-    last_write_checksum: sha1:60fc8b7ed181c3b7703c1a5cc83b96b11e9cb983
-    pristine_git_object: 0c3bf94f687a3a9518077085b18ad6035d0d20fc
+    last_write_checksum: sha1:9624041116088c7c7c7755f05dd08c6aa44ed831
+    pristine_git_object: 97b3fff95956f25cf5204fb7f86d4400cc693039
   src/meibelai/models/addtagconfigresponse.py:
     id: 195aa6cd066c
     last_write_checksum: sha1:742998d1f27509cd5f4c9ed67dd642f8c789ce85
@@ -1152,16 +1152,16 @@ trackedFiles:
     pristine_git_object: 492fcaed95b96a47ef9ec3b754ab3b5856bee6c1
   src/meibelai/models/addtagtablerequest.py:
     id: 7ea0ed114263
-    last_write_checksum: sha1:19797cd3ca7baf98f3b1dc11313f63d793ea4324
-    pristine_git_object: ce0eb8e46b10d1dec4ef6a073242158b8e99f959
+    last_write_checksum: sha1:8f0c999229fca022ae9759444c723c48a06e7d66
+    pristine_git_object: 0fe141ce4e99fb6edf0965604a855977c3447769
   src/meibelai/models/addtagtableresponse.py:
     id: dc87a6b5c474
     last_write_checksum: sha1:4b04f8689b984865bb5c2ed95e3107af9856d9b8
     pristine_git_object: faff6e5b085ef48756abde1aaa1c8f5d78b01b28
   src/meibelai/models/airbyteconfig.py:
     id: 8ff5a19bd1db
-    last_write_checksum: sha1:c0a613e137acafddb8f879a69f204e031ea3d12c
-    pristine_git_object: 0745b3aea629b65b70ef051e98b645bdfdb1a12f
+    last_write_checksum: sha1:ccce63cebce2fd3f705945babdbbd042cbbdc127
+    pristine_git_object: bfdcf4732ed6fb3366c8dc55f2290389980e7d25
   src/meibelai/models/alloweddataelementfilterkeys.py:
     id: 73bf032b219b
     last_write_checksum: sha1:8e78134ea815f88ab25aa8e7f46b4d26432fda0b
@@ -1172,76 +1172,76 @@ trackedFiles:
     pristine_git_object: 93c0595fad248e251c16e0a8360562dbfe117a7c
   src/meibelai/models/artifact.py:
     id: 24c2e61428aa
-    last_write_checksum: sha1:7bc9b571c864da8ba5ff7c2efe23039baea5a30d
-    pristine_git_object: 36e26d6960b3576968b105e155f5f997efda371b
+    last_write_checksum: sha1:db071ce43d747e0c1f9603f9a26beec8584ea90d
+    pristine_git_object: 1664b28d27e2b676aa02096def3d6121d8727018
   src/meibelai/models/basicwebauth.py:
     id: a5ba22ef9156
     last_write_checksum: sha1:1bf129809f320d657e64c42c663eb8a84972053d
     pristine_git_object: ad1179f5df961f37c86aa7ce743f2d4cd5d636c9
   src/meibelai/models/blueprint.py:
     id: 0d7171148325
-    last_write_checksum: sha1:4a74c6929aa3d4252316a2aa75b3a0d9a9d9cc14
-    pristine_git_object: 52134f957a9f3ddf805ae214ecc14d6dc723a9c5
+    last_write_checksum: sha1:90f37a6e3ebe4447a5cb6767e669aeb6396388dd
+    pristine_git_object: 64b0817b745f538b88657f7160e44c9da92f664c
   src/meibelai/models/blueprintexecutionmode.py:
     id: e9bb8efd0df8
     last_write_checksum: sha1:099f56d39c68ae3834b4c6fe27885e919be8aa4d
     pristine_git_object: 3bf80167f17903683b1583e10cb1a489bbf28c4e
   src/meibelai/models/blueprintinstance.py:
     id: 82afde7c814a
-    last_write_checksum: sha1:876f90a213a1785a0cbc7dec6878248c3b7fc389
-    pristine_git_object: e4707aa2d9e2fab7a5d37812607d5dc1f0609c5e
+    last_write_checksum: sha1:76ee6f3cfebe2cab2248b531542c0e52a7bed101
+    pristine_git_object: 495df1f3155ad22bacc436824e02484833dc154f
   src/meibelai/models/blueprintinstancestatus.py:
     id: 2b50c41b26cc
     last_write_checksum: sha1:d385d725cbc160086ecab66c7e7f3104b61b83ac
     pristine_git_object: fb3c9f55608d9f51657f27887c2f31282da0a20d
   src/meibelai/models/calltoaction.py:
     id: 4d78ca395c9d
-    last_write_checksum: sha1:4c857f120d2dfea2d996f46582cc8c4edbc22421
-    pristine_git_object: 7b84c87589328c394a0995f44d3803ab4af50736
+    last_write_checksum: sha1:7946746e822a081e5d661916faf9987097c64274
+    pristine_git_object: d45eece5fe2022c83090a9269b91017cbebc075a
   src/meibelai/models/cancelblueprintinstanceop.py:
     id: 65c6b9a4cbb5
     last_write_checksum: sha1:3d06b5a71dd4fb568818881ce9043de0a79bcd01
     pristine_git_object: f0525de88d049a760f74c4e9a899c090b835a026
   src/meibelai/models/chatmessagerequest.py:
     id: 4644ef5a739c
-    last_write_checksum: sha1:960aa9194be3949554fb1c2465c590c5185206e6
-    pristine_git_object: 5459dfb55872383cb3c3a699550d25ea543e7d5e
+    last_write_checksum: sha1:67cf8a689719b43c8c85c16d60f394966a415582
+    pristine_git_object: b4d85e34e386a9384c662267b8e1e1e99086af04
   src/meibelai/models/chatmessageresponse.py:
     id: 4658c998eccc
-    last_write_checksum: sha1:9f7e712ef479ccc8a73c4e715d436144ea4331e2
-    pristine_git_object: 3b37e66e4817f84a03bf728a8a762828f396caa1
+    last_write_checksum: sha1:7353cbc8eb7b1ccd3ea8d9e97a72c5ea05c8fb5e
+    pristine_git_object: e6597452fe78bfbf7e60cc79bdd47716564c29ed
   src/meibelai/models/chatresponse.py:
     id: f1b7bc3e0791
-    last_write_checksum: sha1:ade106d152c300db9aae9b0ca430643a5b553769
-    pristine_git_object: 32b3e133c17a67c46e207ee6da25ed0be1d7cd62
+    last_write_checksum: sha1:b5a4a91012f47510fbc7311ae1ba9f9dad182315
+    pristine_git_object: a3eabdeb673ac1afb552d55fa7fde6d0b3bb13dc
   src/meibelai/models/clickhouseconfig.py:
     id: 5dd912dc7fdd
-    last_write_checksum: sha1:395ec1b53e10844a0fddd043b3ad250f9955cf4a
-    pristine_git_object: ee76f135b18e6488bbf20b0757bf2e329601422d
+    last_write_checksum: sha1:6d45c5938eea37549bd225998424eefead547403
+    pristine_git_object: 219bcf784bec71fa565bee69b3d531d45d5d118b
   src/meibelai/models/codechunking.py:
     id: e3026cc15900
-    last_write_checksum: sha1:c4ed207d4aae7a56c56031e17cb6fcd7d11bbbbb
-    pristine_git_object: 05300c9a905381b3e4d21a06dcb0c9f2cbf0bc8c
+    last_write_checksum: sha1:f7ffd2110e66ef99b1e084245a53a7eca515a1ef
+    pristine_git_object: 1d3724c9a564be434e8404d3160fef0d6cd4fe90
   src/meibelai/models/completeblueprintinstanceop.py:
     id: ffc8667a8e89
-    last_write_checksum: sha1:613abf2250a0b3a2d083c6778d3642f5451ebc31
-    pristine_git_object: d500fdd8c3069876e1ac8ab3d959efd60ce90922
+    last_write_checksum: sha1:9b6540280c23c4a0f110b92161a4d4b9d50e55c0
+    pristine_git_object: 866075d09c415139e19ab4324f5957f0fc061cb8
   src/meibelai/models/completeblueprintinstancerequest.py:
     id: af509c855fd6
-    last_write_checksum: sha1:cd2621a8da14fb0a3423e4b50cbb4f562e2f82ef
-    pristine_git_object: 21557e03c3a5ea562281a65d53bf52e7bbb83083
+    last_write_checksum: sha1:2ea54dbeaba00533d3ae91078d7dc9ca2e87598c
+    pristine_git_object: f2edf4bfc87a77400a8a08e5e0ed7ea09109f4a9
   src/meibelai/models/completionevent.py:
     id: 26ba43507a87
-    last_write_checksum: sha1:3e97835d9c0a05f6b29c40f8d19f0c2d14302bd8
-    pristine_git_object: 577079fa490c65b829f5712787a4a66431c88439
+    last_write_checksum: sha1:539603f5abd024cab1db0c99500d29a2acaac854
+    pristine_git_object: 20b92d78779434bcce8af8c7a6cb62aba678f237
   src/meibelai/models/connectedevent.py:
     id: 2f678c6647c2
     last_write_checksum: sha1:d12a7636623c7e3325311a83b9fe2c073d8a4b1e
     pristine_git_object: 842e624224d76c44808a03d3f5089d6a1c740429
   src/meibelai/models/contentitem.py:
     id: 3a5e484de212
-    last_write_checksum: sha1:2a8a26c9d19b83eee96118652deb5d6c071995da
-    pristine_git_object: c21a7f843ee2f64c0bea89b5d6a9fe3b7d04a161
+    last_write_checksum: sha1:8f497873242e244036a00a937fc224855af052a5
+    pristine_git_object: eb409174f24cfe5eeff025f891f58cac07ba3947
   src/meibelai/models/contenttype.py:
     id: 0a6f89f7ed56
     last_write_checksum: sha1:71873b397058f7eb37ce360dd09998717ca15ada
@@ -1256,52 +1256,52 @@ trackedFiles:
     pristine_git_object: 9aa11eeaebf0e58d60929c5cc53bab345a538ddf
   src/meibelai/models/customeventrequest.py:
     id: 55e312cf71af
-    last_write_checksum: sha1:ce1bb00d61f62749244253f0ac25c56b0532bb93
-    pristine_git_object: 3f4f35eb00ecb815ce397b32bbfbc839a7759b0f
+    last_write_checksum: sha1:a7c7130e09ce4d1672736fdccf6992f17a6ed36b
+    pristine_git_object: 56d202ce99f7767503c841b3128d8e8e77a26858
   src/meibelai/models/databaseconfig_input.py:
     id: fd661609078a
-    last_write_checksum: sha1:f1a8ced3802f4122f6782f76b7c8fe141475fa0d
-    pristine_git_object: 7fb46479dcd8d880c0faa842b5c88545f81ab50c
+    last_write_checksum: sha1:71022e650406d4efe66c449a59881861739fe09f
+    pristine_git_object: baa6c44cff07dfa4bc7355ba6caf715ea44addbd
   src/meibelai/models/databaseconfig_output.py:
     id: f3613a03f519
-    last_write_checksum: sha1:bb697b824d804d0a59947c406f2184da69cfc3ce
-    pristine_git_object: f48b2641afca4a1e37f1287670936000e6e0b7cb
+    last_write_checksum: sha1:707cc50205e3911234c7f6e284c382f44fc91a61
+    pristine_git_object: 9830856b9ce7a7337ab1b63303df15856a5d19ac
   src/meibelai/models/databasetype.py:
     id: 432458d78496
     last_write_checksum: sha1:ab5799d6226bc4b39aab82847ea14184a9f0b954
     pristine_git_object: 6dc74026ade9b3f7c7dca97ac3ea32f6b865659a
   src/meibelai/models/dataelement.py:
     id: b3ee8fc547d8
-    last_write_checksum: sha1:c9547f72d1bd6948ce8df0695df7e9b12a3496ed
-    pristine_git_object: 97415ddee303a65c5432126b81cd24e652ddf96b
+    last_write_checksum: sha1:2faf14379705ea9168d0e70c83087f890d409874
+    pristine_git_object: d83e645e3ee6e7417ad4195597aaa9b3510085be
   src/meibelai/models/dataelementcondition.py:
     id: dab8ef84a83d
     last_write_checksum: sha1:59a22c11af14b392ca9ef7e281d41c43056d0b35
     pristine_git_object: c72ada56f665066fb0b1d0190ccd5fcdd312f0b2
   src/meibelai/models/dataelementdiscoveryrecord.py:
     id: f805f88a50c5
-    last_write_checksum: sha1:829844ae45a04f26545a05e4a57507e0a14d03cd
-    pristine_git_object: 58ab83049542135ecf4b7902ea11c4b0811fdde4
+    last_write_checksum: sha1:24ef1a2258c7d16ff5eff9dc56a0f562f65ed189
+    pristine_git_object: 4872088678a69f9ff0a01d3a37c5ecc6625db657
   src/meibelai/models/dataelementfilter.py:
     id: 42efd0bb3639
-    last_write_checksum: sha1:494b3b9e98ae12ca35f5ddf22b41d8e75d1005b8
-    pristine_git_object: 6a0b843059c08967f533f395fd5107bcf6a23365
+    last_write_checksum: sha1:eb347547bca3c7679802fd42eae26fdd82913cb5
+    pristine_git_object: 4bf5af78cc8ae46857573e7fdd26e002a2c4368d
   src/meibelai/models/dataelementfilterrequest.py:
     id: a459b23aa104
-    last_write_checksum: sha1:a6e1d976a2346558b5efc0074b717e8b8695d304
-    pristine_git_object: 6853bfa65016eb998025145ab6e830dce616d828
+    last_write_checksum: sha1:12ce666e171e2a524b0e807ab16bcf98f12abf60
+    pristine_git_object: 26b0346c695dfab0bd54eba886092e684538e493
   src/meibelai/models/datasource.py:
     id: 212a00d6800d
-    last_write_checksum: sha1:211b6ae3dfa358e09285f049641ccb663dc79a70
-    pristine_git_object: feb1245ad09b99c28fce39a4411046b63b9ad322
+    last_write_checksum: sha1:91f92614252834191422ae37986ae4e4ad15fd47
+    pristine_git_object: 63306bddf2f09f3271bd0d241b54d5693723fb2b
   src/meibelai/models/datasourceconnectorconfig.py:
     id: 5d720640418d
-    last_write_checksum: sha1:725c806abe9c6a7782fe4cd6174d4c855b50133b
-    pristine_git_object: a0384583f776e0ba7c382de6f4ec23429d856472
+    last_write_checksum: sha1:2f589cb3244546b922cb03fcd3cf46f6e8b4fa93
+    pristine_git_object: c5afad5d1427721edd77d6a51463b515cf4dccd1
   src/meibelai/models/datasourcewebconfig.py:
     id: ee84c2202d7d
-    last_write_checksum: sha1:18adfe2782e4111291b259ac4ad54c62193a6e3a
-    pristine_git_object: d570dde558ca0650069e666f62b16f25095bbdb4
+    last_write_checksum: sha1:99e0d8dd286c96f78560c0b8fd5d48b122f862c6
+    pristine_git_object: 376550f47a6aee347a187c1a4173cd4eb1af95e4
   src/meibelai/models/deleteblueprintinstanceop.py:
     id: 4d3694a1ffac
     last_write_checksum: sha1:93909209ef238d2d44886a3729694daeca63a499
@@ -1376,28 +1376,28 @@ trackedFiles:
     pristine_git_object: a1e700c1e8ef0ee618be1d9727376e8d899ad371
   src/meibelai/models/duckdbconfig.py:
     id: 9828be5a1f4d
-    last_write_checksum: sha1:e11df4890bd266d44cc2c7e6a84fc529fd083ba9
-    pristine_git_object: e6552307a2d333462e602de4c870bd2be330e1e3
+    last_write_checksum: sha1:80d35755b1dcb8d5fc83b11208cc28d6ceb0c8c1
+    pristine_git_object: eb8dc5cc70733cd316508611ec28cc4a89ce16c5
   src/meibelai/models/embeddingmodel.py:
     id: b890353b86b5
     last_write_checksum: sha1:bbfa46ba72d16f974a35b48d8d1f2c0ccbefa6e1
     pristine_git_object: 386f921e4de18574a04c45ffea5db214e15f097e
   src/meibelai/models/event.py:
     id: 52f9a53bd297
-    last_write_checksum: sha1:555d094e099ec4e10b3e0fb4d03bf12809f6c1ad
-    pristine_git_object: 6893d1808f97e8c18bc6746d709f92902db91a70
+    last_write_checksum: sha1:80e8158e3066a65d67a791011d5f194176e01cbc
+    pristine_git_object: 4f7aa927655a99e6dd5ee4cb6025a8d9d14c2c18
   src/meibelai/models/eventtype.py:
     id: 957cd1682c0d
     last_write_checksum: sha1:50536dcebd2571c6eee3c795b0f32d6c9720c314
     pristine_git_object: 8e0c160dc9c77c84be5a3e1dddc7dc1484385472
   src/meibelai/models/executeblueprintop.py:
     id: f3601af76bff
-    last_write_checksum: sha1:45eee2d36013de5698c034c1b26e53558548c624
-    pristine_git_object: 34c44931aa4caab7d4880625d9966f6798535052
+    last_write_checksum: sha1:ae0bd44a4eed4c45bd7bf6070d8fa13fa8b8fee6
+    pristine_git_object: 55361a7c4d87bad41dabfaebd52044befd017223
   src/meibelai/models/executeblueprintrequest.py:
     id: 104215b62106
-    last_write_checksum: sha1:ca2d2036e221518e7f909fb2dace28fac7657b14
-    pristine_git_object: cd39c244212a8a3a0dd51a0a1d4725aa69947ec6
+    last_write_checksum: sha1:4dba82ed575a1e41fa77bd9dafd70739b4d163ed
+    pristine_git_object: 23024d5b63afb4a2084e275d1fd3d42a3ca06ed5
   src/meibelai/models/extractormodel.py:
     id: 4bfe4b29a222
     last_write_checksum: sha1:d2c4f4475afcca017030869590523a48df182c99
@@ -1408,12 +1408,12 @@ trackedFiles:
     pristine_git_object: 514cf6b603124d4ab96cc63a4f3aef354f3df0b3
   src/meibelai/models/failblueprintinstancerequest.py:
     id: f37b4e5cffe5
-    last_write_checksum: sha1:47d3c2c103a6897ea850bf2d5b7c7e5c98453069
-    pristine_git_object: e80c3a3f3b43d565d301f6ebb189a3208c154a60
+    last_write_checksum: sha1:b679a4dded77d959b349f279e7fbc5d2c9f2764e
+    pristine_git_object: 71466ffae2baf03631bd4ec43f5dae0810fa7b7b
   src/meibelai/models/getactivitiesbyblueprintinstanceop.py:
     id: 463694c32b79
-    last_write_checksum: sha1:932cc405af8a1ed6b6c3555b3819c91adab2fefb
-    pristine_git_object: aad3f4eb0351daff80196faaa72f45f3023a4f8b
+    last_write_checksum: sha1:64c85c55da00e857b574f095cd0918c56f92ebf9
+    pristine_git_object: 8e895a48e0c097219a46b7985cb87ca9e92e9087
   src/meibelai/models/getactivitiesresponse.py:
     id: 1cca7ef36571
     last_write_checksum: sha1:3beb31f4a8e3e6614dd5218643aa51418ab81e9b
@@ -1424,24 +1424,24 @@ trackedFiles:
     pristine_git_object: cd856dc641877718fdb773846ad9cdb286e4219f
   src/meibelai/models/getallblueprintinstancesop.py:
     id: bf3d101cf54c
-    last_write_checksum: sha1:96438a65d028d462e7d5ad47a410c972c3f35064
-    pristine_git_object: ef1935d6207a776180907a4e5df24d4af5e7875e
+    last_write_checksum: sha1:60883d63f02437c28b995bdc279435e78d3e7094
+    pristine_git_object: 6ba28aa63ce8e773d8d0093c26035e327b6e9b5e
   src/meibelai/models/getalldatasourceidsresponse.py:
     id: c9b5b395a114
     last_write_checksum: sha1:abbbf3bd41e53831c344d1b9141b64c23de5b935
     pristine_git_object: 3f088ffc13719d3749b91b48f5b62df1c46fd985
   src/meibelai/models/getalltagcolumninfoop.py:
     id: 5928f1a5c549
-    last_write_checksum: sha1:9d7810eb1dee19e892f563a260d16914eb10d982
-    pristine_git_object: de0f16df62c84c45269e50e2cd94f490de37279e
+    last_write_checksum: sha1:833ccebc0eb7748787824741125a0a445ba249b4
+    pristine_git_object: 3e077bf5c1e5ed23ef8dd8ce839c7064795dd50b
   src/meibelai/models/getalltagtableinfoop.py:
     id: ad0a40a6fae0
-    last_write_checksum: sha1:e3a04a72e14c2239f96f3f0a92d158186d204d8d
-    pristine_git_object: 969c7557342073e8c88573c48810f4586a87362e
+    last_write_checksum: sha1:3976cbd713dad327171b0705009f74b8ae1b6d78
+    pristine_git_object: d6f6af76a1f27b43be4ae1acff2c049662c840ec
   src/meibelai/models/getblueprintinstanceop.py:
     id: cae106325944
-    last_write_checksum: sha1:80cff8beff225047d096a4f6719ddbc8d9e239f4
-    pristine_git_object: 1e4ea8c5c38d2bceffe33fc452b5ed958f724d14
+    last_write_checksum: sha1:acda2ae21e1bd41270062719bdda40f6bf5e97a2
+    pristine_git_object: 83485fe7ff49550b8fe99965f95de46733bab8a6
   src/meibelai/models/getblueprintinstancesresponse.py:
     id: c99d1e148784
     last_write_checksum: sha1:54aef999902b06065c0bcbdac3eee0a3a7df4e25
@@ -1468,20 +1468,20 @@ trackedFiles:
     pristine_git_object: b072436952bd532196ed494efdd625e15e70b0c4
   src/meibelai/models/getcontentresponse.py:
     id: f5b98ef085ff
-    last_write_checksum: sha1:654ce98afb57cffd74218066ce396772b6e7248b
-    pristine_git_object: 0ee06917b444148bb310ac81eae219cff11b9e0d
+    last_write_checksum: sha1:d1f23a7631d9cebac3bba4230cdb406d71813bba
+    pristine_git_object: dbcdf5b17883204ecfa581b3add30f42e36e07cc
   src/meibelai/models/getdataelementop.py:
     id: 3169958ce98e
     last_write_checksum: sha1:957c63bfb060e02fba82f14a403f902e3daf93b3
     pristine_git_object: b5f34b16d9e9450a21aa85cea90478b49370c72a
   src/meibelai/models/getdataelementsbyfiltersop.py:
     id: 3daa556ecdbb
-    last_write_checksum: sha1:c3d9c0ab99c7e9fba0a900d9f97867077556530d
-    pristine_git_object: 1264a29152e457fc8e4bb0e139fc9e0f8dccbd87
+    last_write_checksum: sha1:540ab5e6660a27b19d64d381f7714937637711c3
+    pristine_git_object: 4031309647a3d04e05e6e9e4044497dd5c754766
   src/meibelai/models/getdataelementsop.py:
     id: 69035d8c5bb4
-    last_write_checksum: sha1:a27210803000b9d9810da65d1c46c53356eb3053
-    pristine_git_object: ce0ef83a13ccb3565521234ec58ecf47d558a165
+    last_write_checksum: sha1:7f03739b603315ca577751c568ee424a5cea6d41
+    pristine_git_object: 77741a6da9d1a153fd7d310ca5ac05e37d939194
   src/meibelai/models/getdatasourcecontentmetadataop.py:
     id: f11099d626a0
     last_write_checksum: sha1:052e78bcd1151277ab46de69661377b978e51134
@@ -1500,8 +1500,8 @@ trackedFiles:
     pristine_git_object: 4cf8fb8dd172ff634441d74cdb168a1bde490232
   src/meibelai/models/geteventsbyblueprintinstanceop.py:
     id: 1e3fccc7913c
-    last_write_checksum: sha1:c7dfb1caa0d2acc936b38eb52c3cf932bf3405d4
-    pristine_git_object: 3c4520c831d1c996a199656befde84936110191c
+    last_write_checksum: sha1:c69514b2b64455b80dd3502118ae10a516ed3d68
+    pristine_git_object: ecb9a72585792de034c5aaf578a848748397f661
   src/meibelai/models/geteventsresponse.py:
     id: 206ff2e8ed42
     last_write_checksum: sha1:fb465bedf1fdb0b876959bcefc65d52d08c3d664
@@ -1524,8 +1524,8 @@ trackedFiles:
     pristine_git_object: 1598ce456c008231c0ffb46c02bd17fd096263e6
   src/meibelai/models/htmlchunking.py:
     id: da70f58c2b17
-    last_write_checksum: sha1:5551bf6b54458c6588cd282de61d2ebb8d2a67a6
-    pristine_git_object: 60d3278d437ca184913b0d6a0fc931c46db3b96a
+    last_write_checksum: sha1:6d487636aa6cfa64cef2cb13cd65fc4ae310d711
+    pristine_git_object: 5374c036876c87c4b2210dae073006fcfa1ac2ac
   src/meibelai/models/httpvalidationerror.py:
     id: a9595f451fbc
     last_write_checksum: sha1:8ccdc25a0cb5a4569839918684c17e83ac4f1f3b
@@ -1536,12 +1536,12 @@ trackedFiles:
     pristine_git_object: dc0810aedb486cf4205338c2e3415de183e29667
   src/meibelai/models/listcontentresponse.py:
     id: c820c1396683
-    last_write_checksum: sha1:e0f13519b7471cfcfb094351d5164e752bfcbe0e
-    pristine_git_object: b583724694fd718bb8fe6b365931309b87137cf7
+    last_write_checksum: sha1:c5d2a62150e76db22718886a530e8039b50fe969
+    pristine_git_object: ab4749023377bc701504e56b19f645250520fd31
   src/meibelai/models/listdatasourcecontentop.py:
     id: 1953e446b8c3
-    last_write_checksum: sha1:e4e0cebce6fa1ad213eb8d3609036a5245c1af26
-    pristine_git_object: 78f3a9a33eea150c30a768724e02d42d7a9bcb35
+    last_write_checksum: sha1:4e3126f7087ce42f58d080c2ca61a73da8f0a5d9
+    pristine_git_object: ca3074c0a11a786af67e24d81a5bc99b49978a1f
   src/meibelai/models/markdownnodechunking.py:
     id: 127c055faebb
     last_write_checksum: sha1:02542e22272135f559af6b6eede4481d6802924d
@@ -1552,44 +1552,44 @@ trackedFiles:
     pristine_git_object: cb2005254d3618a1da511303dc4b3f1d3bf915fb
   src/meibelai/models/metadataoptions.py:
     id: 1f3c9e3b6f01
-    last_write_checksum: sha1:87c618fae035132e7fb0f7513b61ad32a55b9e34
-    pristine_git_object: dd7e7fd1e0e2f23055dfbf8dc038e7005a1c8bca
+    last_write_checksum: sha1:050511da8daa7ace0a902aa67f400d119fb70d17
+    pristine_git_object: 310694e68296b1018d91948e33b6762a4943563a
   src/meibelai/models/no_response_error.py:
     id: 19b08f6e10a0
     last_write_checksum: sha1:7f326424a7d5ae1bcd5c89a0d6b3dbda9138942f
     pristine_git_object: 1deab64bc43e1e65bf3c412d326a4032ce342366
   src/meibelai/models/objectstorageconfig.py:
     id: 4ab98c81838e
-    last_write_checksum: sha1:2b4c9973d6c969564314182730b3a9775f0870a6
-    pristine_git_object: 0f8f626097be9aee2fe7c04e5aa45774d5df2742
+    last_write_checksum: sha1:ae3e0d07c0f948a7ecc6d9a0750c7d0005e6bf91
+    pristine_git_object: 992d0faf3e342a3cde3ac73e8984cd15dd2bf5f1
   src/meibelai/models/objectstoragefilters.py:
     id: 7a1547f89725
-    last_write_checksum: sha1:ab9e053696aa0836921a556992220d49fcbc148b
-    pristine_git_object: 130576350176c7db23d3890a69c74cb99638a794
+    last_write_checksum: sha1:9e0d2836dd27eae8b3989626b46b45cc0d64e9d8
+    pristine_git_object: 33cde75ab2a0f6eaa82376e4ebf5ca2e08768505
   src/meibelai/models/partialresponseevent.py:
     id: fba52527ef9f
-    last_write_checksum: sha1:7b83b435464d49b4080aac0626b0d2fedf2b41e0
-    pristine_git_object: d4dade93256857611502c305d671573f322d9477
+    last_write_checksum: sha1:1ae7812e53464dcfe2238badb89891fc45ddc3d6
+    pristine_git_object: 7fa964e98572ee5753ddcbe7dad35acc6aca5a7a
   src/meibelai/models/platform.py:
     id: da8aaa69a46f
     last_write_checksum: sha1:89b435687f0cde77620f27a391233bb081f88118
     pristine_git_object: 024339fee8aafd214d89756198c5b895560c3b31
   src/meibelai/models/postgresqlconfig.py:
     id: 425d94f1fd9d
-    last_write_checksum: sha1:30be6feeead967ae248c9c1c6d29196a3bb2321e
-    pristine_git_object: 08c7f2f5d891ceba5df66b0c053325312e8a0810
+    last_write_checksum: sha1:95e445071abf6ad9876b325c6c248bc1f14e2141
+    pristine_git_object: d1efc30e10d971616743b226bb1ca6beaa28f791
   src/meibelai/models/queryworkflowop.py:
     id: 3c5522242d72
-    last_write_checksum: sha1:6c1771e2885a5eb37b3843867c27cf6306793b0b
-    pristine_git_object: 6b642b2d5f9af2e8942bcbad60f8c91ceeaa7ad2
+    last_write_checksum: sha1:199125437ac693c038fffbb7283e24e86cc8f3ca
+    pristine_git_object: a8796c21d0a32ecea1f79152efbde519c0756222
   src/meibelai/models/ragchunkingstrategy.py:
     id: c0d0a52741e7
-    last_write_checksum: sha1:d1dd3f563287e94150d91834ee8aa24141eae985
-    pristine_git_object: dba07c915b2c3b61b3437ccb22be00a57defe64d
+    last_write_checksum: sha1:efd093df88997ab9b3c3c49204f4a1e99b21fbe1
+    pristine_git_object: 67d6b12371744297b5be610c25ee919eb82cf427
   src/meibelai/models/ragconfig.py:
     id: 3116f578fe30
-    last_write_checksum: sha1:f3b845d8102f31c11e7f507fcc4665ea0e07f05a
-    pristine_git_object: e3b7c2098cd59ba48e615ad97de381d95901d7e6
+    last_write_checksum: sha1:3ec511363f52039700b4673610453a6ce5dc67f0
+    pristine_git_object: 91a84ac943dc23a1789d7b500e6ae7e51eb84964
   src/meibelai/models/responsevalidationerror.py:
     id: d284e33600c5
     last_write_checksum: sha1:5346dcf2f842dd9b13e78ce988ea77ccd7776c58
@@ -1600,12 +1600,12 @@ trackedFiles:
     pristine_git_object: ece8271b2de5f7d5cb884d83c6ab444a7249989c
   src/meibelai/models/security.py:
     id: 2a7f6b5b04c4
-    last_write_checksum: sha1:73b8d8b66fbc004623a122c37f291ec53242669c
-    pristine_git_object: 7e241d739e5ea56e28bc3bf9f180146699df4c79
+    last_write_checksum: sha1:4733e48137a89d7b70449557d5b2beeeef593977
+    pristine_git_object: b950911d56a950aed7eb263c5ba8f268781e4550
   src/meibelai/models/semanticchunking.py:
     id: 97faef13975a
-    last_write_checksum: sha1:356dd7085395c587bebb86c76c7386ead75697ef
-    pristine_git_object: adc8003f9d277df75f91328e0595b622f14950e6
+    last_write_checksum: sha1:7334f3e9ee9c3a88e6aff22721187d453758c477
+    pristine_git_object: 2d777dd4468bc7d2d33cdedf6ae760648a688148
   src/meibelai/models/sendchatmessageop.py:
     id: b47a68ef2e88
     last_write_checksum: sha1:af36f00952d334cf954ca736ebd43d0adececc38
@@ -1616,32 +1616,32 @@ trackedFiles:
     pristine_git_object: 8fab271cfb4adc6ac203250a3abad625f68e2c64
   src/meibelai/models/sendsignalop.py:
     id: c550aa639cd3
-    last_write_checksum: sha1:e65ffae9da05f4df3fa663b9c194209086282ce5
-    pristine_git_object: a4e10c8993dffb2754a9000d209dfec1d99a759c
+    last_write_checksum: sha1:f9fc3cde8efba51a59ffc9302dd85db913de9f0d
+    pristine_git_object: 36e9822b059afc1684b3c1982e753971d75d8c36
   src/meibelai/models/sentencechunking.py:
     id: 63e70fafc1b0
-    last_write_checksum: sha1:0204932c51d2a078a88babd8c50a46fc78cd05e7
-    pristine_git_object: 6271f980dc857dcb7333f73311d0a8655a4c1693
+    last_write_checksum: sha1:9ed5c2bb7a2e6074e3b81a5137af3c20e63c4091
+    pristine_git_object: 5fad95035adc1362ac629c546914567ad1e701e3
   src/meibelai/models/source.py:
     id: 983de7e3370f
-    last_write_checksum: sha1:7c04b06e3932366811f283b11e3e1505b6ca4ab6
-    pristine_git_object: 04a5ca74af88895014c0e87e085664bf0df10677
+    last_write_checksum: sha1:f9487b9161a3f41647ca8aa3b550ff141e87b153
+    pristine_git_object: c3eb174f9867456778b96ebdc0af02d8fb534ec1
   src/meibelai/models/sparseembeddingmodel.py:
     id: 64e03df97353
     last_write_checksum: sha1:b16d8b4aaf5f483da1bc8fef17888dfabbb849d6
     pristine_git_object: 77e94a8ec20ce5d1f48b5f30f0ef0984a0ad4543
   src/meibelai/models/sseevent.py:
     id: 384c1ac870ca
-    last_write_checksum: sha1:a71d9c5cf1f24f631dfa776d0f1321558abbe3a6
-    pristine_git_object: d4ab447389280e8d105aca694ea9e998efb1c071
+    last_write_checksum: sha1:2caacc593b0317497078d62a88fabcd5ead5d1f5
+    pristine_git_object: b38e7adda7151494c0657a0a792f460a580ad695
   src/meibelai/models/startblueprintinstanceop.py:
     id: 364cfa95f5ba
-    last_write_checksum: sha1:1b677d2ff1f2391344ab7f593de1832fb197c6e4
-    pristine_git_object: d56f5bff9fa177f0e8d853243a98aaf35697398e
+    last_write_checksum: sha1:1bb536f4b72f644dbbec7dfb899ced2212a5b12f
+    pristine_git_object: aeba45ad631660a561b16b8e97b4a8f44e769da5
   src/meibelai/models/startblueprintinstancerequest.py:
     id: b989d5826456
-    last_write_checksum: sha1:db75ab2a5733f2155de349a63c9543ef39eef5ea
-    pristine_git_object: 193607d4bda4606504f3c271d08b3a7302be604f
+    last_write_checksum: sha1:4300b02a6dfd2a5b02e1c76445853f05ff5767cf
+    pristine_git_object: 932034173f39b3e28702aa7f95ebdbba262ed69e
   src/meibelai/models/statusevent.py:
     id: 64d6cc009e58
     last_write_checksum: sha1:142f73f4e9f6c8354d071443c013307df6ac3afa
@@ -1656,24 +1656,24 @@ trackedFiles:
     pristine_git_object: 566be0dd3bc1e269f99efd73971ee7a0be55cfee
   src/meibelai/models/tagcolumninfo.py:
     id: e8812b0a4d1b
-    last_write_checksum: sha1:068e666798dfe5dc62b9ac9c034da63d72057f6d
-    pristine_git_object: a54f4a19cc73eb967283a613bdd57b1a48af3fdf
+    last_write_checksum: sha1:3c0808a20d65b3ef37053ecb2ee118ef9f601516
+    pristine_git_object: fe28d113c4ea206fe12a37cdc0cf2ca7656f7f6e
   src/meibelai/models/tagconfig.py:
     id: 36aa665c48ae
-    last_write_checksum: sha1:0746111f28e5edbfb428350b5a329e80fa2c5105
-    pristine_git_object: 33b3a1f558a954469fdd64cdbfb84e82a1264532
+    last_write_checksum: sha1:c36d923937723c8372d2c8fb1b9165e696763a2a
+    pristine_git_object: f3642beeb3f0cbd87ffe42b92daa3e7e0e7aa047
   src/meibelai/models/tagtableinfo.py:
     id: e72071e9ad42
-    last_write_checksum: sha1:183dad7701b2364eb528743aa4c6d8beb26a7cd7
-    pristine_git_object: 3594ee599fdd782c988fa289cc3553674ef43822
+    last_write_checksum: sha1:b08d261588bb171ed9066abc395bf572a0ccf208
+    pristine_git_object: 28d7afac26b54d5d37a2f8ffe47605fb6deeeb11
   src/meibelai/models/tokentextchunking.py:
     id: ff31ee2a97e5
-    last_write_checksum: sha1:e17564de7a32efb8c6dd0fac3d19ce431f9e0694
-    pristine_git_object: ea543be97959eae072af73a9c14daf70bb218e62
+    last_write_checksum: sha1:37bec0746ac9e4220a409acb763bc65eaed33a9c
+    pristine_git_object: 161eb0861b02fe5d09bec8fbbc90fe2422e6c9e9
   src/meibelai/models/toolactivity.py:
     id: 565e90a4c8e2
-    last_write_checksum: sha1:4fb1463fc24f686fcba9a34d51fae1689452cf21
-    pristine_git_object: 19d8c1f81a653dd04b146d7627ead47778a22efb
+    last_write_checksum: sha1:0339ea169e8aebbfe6a03908eb70d17001398121
+    pristine_git_object: 8bc8f5fb45df92c77b65c425a405b62e90333a9c
   src/meibelai/models/toolcallevent.py:
     id: 0de494676307
     last_write_checksum: sha1:9287c7a7da2594a7ef14787bb8f5a5d77500a551
@@ -1688,32 +1688,32 @@ trackedFiles:
     pristine_git_object: e55d62660858d11c99caf4aa29b09ba3eec6b880
   src/meibelai/models/updateblueprintinstancestatusop.py:
     id: d3b31aa72361
-    last_write_checksum: sha1:e3ea2e5217dd9dbbb51dd3dd19bcb6044c9626f1
-    pristine_git_object: 01bd8e50f067d5cca240bca249107857673e4830
+    last_write_checksum: sha1:944323c8f281d8496fc156512280f0efe296fccd
+    pristine_git_object: bed8798f0d2ada0111149b5fe2ac106ca5c33968
   src/meibelai/models/updateblueprintop.py:
     id: a579ab4c66ec
     last_write_checksum: sha1:42d162d1af10a14f0c0b54f6ae360767abd27d63
     pristine_git_object: a5a58b2df02da0af15d591eaccc72b083e26b66d
   src/meibelai/models/updateblueprintrequest.py:
     id: 0419c134a40b
-    last_write_checksum: sha1:7beb7a5a657940bfe4024912b8e9cd0b2a7b1b79
-    pristine_git_object: 837ecd532eff64342ed519c32f01951e1c8e68b5
+    last_write_checksum: sha1:035efbc31e75d0397e64ab327c02f38a9a367427
+    pristine_git_object: f0535602697bcd92fec5740643b1d1b8ec0459a3
   src/meibelai/models/updateblueprinttaskop.py:
     id: 886eced52484
     last_write_checksum: sha1:2a03d958518d59dbcc4205639d2ea71fec6580fe
     pristine_git_object: 7c003deae9902ef98cbbce70d58b14f91f104e37
   src/meibelai/models/updateblueprinttaskrequest.py:
     id: ffc86eaae6d2
-    last_write_checksum: sha1:849de30556c144d0a42ad9dfbf075e222aa13cc4
-    pristine_git_object: 394796fb15e9bbf2c996d807234abc2956d2e8b9
+    last_write_checksum: sha1:8d971b5d6262465b24341cdeb4475a7a20fb623b
+    pristine_git_object: c6b7884a46a1532c31764f145242382eb65ebc40
   src/meibelai/models/updatechunkingstrategyop.py:
     id: c737d9d1dbd0
     last_write_checksum: sha1:2b0ca3d3e1a05e33fe2f1cdd9fd970dab9a6acda
     pristine_git_object: 3db771293298b9fb265cb96d9dd3997cac3b505a
   src/meibelai/models/updatechunkingstrategyrequest.py:
     id: 0e3d2caa6978
-    last_write_checksum: sha1:5e14da667c037febaf8e7a292b135c23d74586d8
-    pristine_git_object: 9bf1fc676a4029ea7502a7c2384370912fa764bc
+    last_write_checksum: sha1:2bc1711f656930bc2769706ef32afd364ad78d2d
+    pristine_git_object: 43dc4aee099042fe62073e665245476fd4f2cd68
   src/meibelai/models/updatechunkingstrategyresponse.py:
     id: cb1304e8279f
     last_write_checksum: sha1:00ccd2b2772f9f1a8f0a28a4cb65bc8c615984cf
@@ -1724,8 +1724,8 @@ trackedFiles:
     pristine_git_object: 48c293333b7edf539d3f9b6357b3502900aaef2a
   src/meibelai/models/updatedataelementrequest.py:
     id: 2b7e901ec2fb
-    last_write_checksum: sha1:342ed51c8ce3f69dad820550ceb884f679c21ab0
-    pristine_git_object: 2fb63d4cb4842609d3b532063b6bd233d36e47f8
+    last_write_checksum: sha1:5368453c06855916ef29d139ad6d593e03574900
+    pristine_git_object: 813f5b58940a6a7d2c717a8bbaf4c6597e4c2263
   src/meibelai/models/updatedataelementresponse.py:
     id: 71cf8a0d7a16
     last_write_checksum: sha1:8efc90a99591fc6b78dc2f381fdc83d2c38d6216
@@ -1736,8 +1736,8 @@ trackedFiles:
     pristine_git_object: 3a3814b533ca13170d7b52463598ef0b000132e9
   src/meibelai/models/updatedatasourcerequest.py:
     id: 52591ca47ab1
-    last_write_checksum: sha1:dd466886d81979899b25a6d9334d2cdd71388911
-    pristine_git_object: e628b7876e2bdec9209db3bd8311d18bdf83d32f
+    last_write_checksum: sha1:e1432a9b63e718542ae1e938ec7dafe864ee30f5
+    pristine_git_object: 7b14d625adcaf1b162a924465cc87aac35a0dfa3
   src/meibelai/models/updatedatasourceresponse.py:
     id: 9ec9a8e7b784
     last_write_checksum: sha1:c002de0fed52bf0303e59d4c1acaed75acf240ef
@@ -1748,8 +1748,8 @@ trackedFiles:
     pristine_git_object: be214c9b17e2d5699d7b6b7aa633951ffd0397f5
   src/meibelai/models/updateragconfigrequest.py:
     id: 014b3af3d98c
-    last_write_checksum: sha1:6966dfd975f18ed6ef7e5a25b0abed952860b448
-    pristine_git_object: 972df077e48b2f0346d4a3cff49721d78f5fe644
+    last_write_checksum: sha1:0ebdae7d5b87856e6422241968050488e41c8bd0
+    pristine_git_object: 183bf9d030a0fb915217270ff011354b8f3e9a98
   src/meibelai/models/updateragconfigresponse.py:
     id: a1bc7d922bc0
     last_write_checksum: sha1:da7f641b5690b997f54db9afad20d6d3fe3a9077
@@ -1760,8 +1760,8 @@ trackedFiles:
     pristine_git_object: 82dd78e5ebdbe73a5c59154ea42cc099a0f24be3
   src/meibelai/models/updatetagcolumnrequest.py:
     id: cdb849e7d88b
-    last_write_checksum: sha1:84740812a0e1e7fbc205c3bc4eb5517875381d92
-    pristine_git_object: debf9341b071571b7562713d3204d4a114b10f44
+    last_write_checksum: sha1:f136be3377c3d29b024aed53314e31a24dcfb61c
+    pristine_git_object: 06217bee42643bc4bd78a41190e000d7383d0996
   src/meibelai/models/updatetagcolumnresponse.py:
     id: 2338d070114b
     last_write_checksum: sha1:9eb27766e5624bf4aa8428ac321f09bd04f76724
@@ -1772,8 +1772,8 @@ trackedFiles:
     pristine_git_object: 7a6167aa7b9e37dfd9bf06068bf5c3ec5c1df0ad
   src/meibelai/models/updatetagconfigrequest.py:
     id: 1487e5820675
-    last_write_checksum: sha1:d0113bbb58fa1ff3dcca5b81116b2fc319f52878
-    pristine_git_object: a9ce63a28cf5b6379f3397ba38a1a57c5f936433
+    last_write_checksum: sha1:12568ab7443bb7688b0917d2bdf49816303aabf8
+    pristine_git_object: 4a9cc022eda094bb7aae957ad06e8ae89002b568
   src/meibelai/models/updatetagconfigresponse.py:
     id: be746651e157
     last_write_checksum: sha1:adb4fc96efd5692f6aa0a64c3e0c995b88b817ed
@@ -1784,8 +1784,8 @@ trackedFiles:
     pristine_git_object: bd5adf6b8156257beecdbdd53a1222f199905e94
   src/meibelai/models/updatetagtablerequest.py:
     id: fc65b21b8939
-    last_write_checksum: sha1:dbd35b1fed4faa8f174d2499d918bdbcbd453219
-    pristine_git_object: 28ca963c1be132c3e9303871eafa521024798b52
+    last_write_checksum: sha1:e166feb90578a113961335a6db5a2495c5990248
+    pristine_git_object: f0806a50f9e9326dbde66e49bddebf839b16b692
   src/meibelai/models/updatetagtableresponse.py:
     id: c6e36ab4cf4d
     last_write_checksum: sha1:80490cee1cda536355f1608c1626652fba3b17a6
@@ -3898,9 +3898,6 @@ examples:
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Python SDK Changes:
-  * `meibelai.blueprints.executions.send_chat_message_stream()`:  `response.[]` **Changed** (Breaking ⚠️)
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

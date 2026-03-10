@@ -2,6 +2,14 @@
 
 EventType
 
+## Example Usage
+
+```python
+from meibelai.models import EventType
+
+value = EventType.INSTANCE_STARTED
+```
+
 
 ## Values
 
