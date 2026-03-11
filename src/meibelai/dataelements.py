@@ -6,7 +6,7 @@ from meibelai._hooks import HookContext
 from meibelai.types import Nullable, OptionalNullable, UNSET
 from meibelai.utils import get_security_from_env
 from meibelai.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, List, Mapping, Optional, Union
+from typing import Any, Dict, List, Mapping, Optional, Union
 
 
 class Dataelements(BaseSDK):
@@ -1354,6 +1354,618 @@ class Dataelements(BaseSDK):
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
             return unmarshal_json_response(List[models.DataElement], http_res)
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def get_data_element_metadata(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetDataElementMetadataResponse:
+        r"""Get Data Element Metadata
+
+        :param datasource_id:
+        :param data_element_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementMetadataRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDataElementMetadata",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.GetDataElementMetadataResponse, http_res
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def get_data_element_metadata_async(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetDataElementMetadataResponse:
+        r"""Get Data Element Metadata
+
+        :param datasource_id:
+        :param data_element_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementMetadataRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDataElementMetadata",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.GetDataElementMetadataResponse, http_res
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def update_data_element_metadata(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        metadata: Dict[str, Any],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.PutDataElementMetadataResponse:
+        r"""Update Data Element Metadata
+
+        :param datasource_id:
+        :param data_element_id:
+        :param metadata:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.UpdateDataElementMetadataRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+            put_data_element_metadata_request=models.PutDataElementMetadataRequest(
+                metadata=metadata,
+            ),
+        )
+
+        req = self._build_request(
+            method="PUT",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=True,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.put_data_element_metadata_request,
+                False,
+                False,
+                "json",
+                models.PutDataElementMetadataRequest,
+            ),
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="updateDataElementMetadata",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.PutDataElementMetadataResponse, http_res
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def update_data_element_metadata_async(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        metadata: Dict[str, Any],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.PutDataElementMetadataResponse:
+        r"""Update Data Element Metadata
+
+        :param datasource_id:
+        :param data_element_id:
+        :param metadata:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.UpdateDataElementMetadataRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+            put_data_element_metadata_request=models.PutDataElementMetadataRequest(
+                metadata=metadata,
+            ),
+        )
+
+        req = self._build_request_async(
+            method="PUT",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=True,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.put_data_element_metadata_request,
+                False,
+                False,
+                "json",
+                models.PutDataElementMetadataRequest,
+            ),
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="updateDataElementMetadata",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.PutDataElementMetadataResponse, http_res
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    def get_data_element_metadata_result(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        request_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetDataElementMetadataResultResponse:
+        r"""Get Data Element Metadata Result
+
+        :param datasource_id:
+        :param data_element_id:
+        :param request_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementMetadataResultRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+            request_id=request_id,
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata/result/{request_id}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDataElementMetadataResult",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.GetDataElementMetadataResultResponse, http_res
+            )
+        if utils.match_response(http_res, "422", "application/json"):
+            response_data = unmarshal_json_response(
+                models.HTTPValidationErrorData, http_res
+            )
+            raise models.HTTPValidationError(response_data, http_res)
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise models.APIError("API error occurred", http_res, http_res_text)
+
+        raise models.APIError("Unexpected response received", http_res)
+
+    async def get_data_element_metadata_result_async(
+        self,
+        *,
+        datasource_id: str,
+        data_element_id: str,
+        request_id: str,
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> models.GetDataElementMetadataResultResponse:
+        r"""Get Data Element Metadata Result
+
+        :param datasource_id:
+        :param data_element_id:
+        :param request_id:
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        request = models.GetDataElementMetadataResultRequest(
+            datasource_id=datasource_id,
+            data_element_id=data_element_id,
+            request_id=request_id,
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata/result/{request_id}",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            allow_empty_value=None,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+            else:
+                retries = utils.RetryConfig(
+                    "backoff", utils.BackoffStrategy(500, 60000, 1.5, 3600000), True
+                )
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["5XX"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="getDataElementMetadataResult",
+                oauth2_scopes=None,
+                security_source=get_security_from_env(
+                    self.sdk_configuration.security, models.Security
+                ),
+            ),
+            request=req,
+            error_status_codes=["422", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        response_data: Any = None
+        if utils.match_response(http_res, "200", "application/json"):
+            return unmarshal_json_response(
+                models.GetDataElementMetadataResultResponse, http_res
+            )
         if utils.match_response(http_res, "422", "application/json"):
             response_data = unmarshal_json_response(
                 models.HTTPValidationErrorData, http_res

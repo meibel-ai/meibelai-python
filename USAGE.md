@@ -9,7 +9,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -63,7 +63,7 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+        res = await m_client.datasources.add_datasource_async(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
             "filters": None,

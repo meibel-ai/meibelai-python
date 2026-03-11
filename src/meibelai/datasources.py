@@ -6,6 +6,7 @@ from meibelai import models, utils
 from meibelai._hooks import HookContext
 from meibelai.dataelements import Dataelements
 from meibelai.meibelai_content import MeibelaiContent
+from meibelai.metadata_model_catalog import MetadataModelCatalog
 from meibelai.rag import Rag
 from meibelai.tag import Tag
 from meibelai.types import OptionalNullable, UNSET
@@ -25,6 +26,8 @@ class Datasources(BaseSDK):
     r"""Operations with rag"""
     content: MeibelaiContent
     r"""Operations with content upload and management"""
+    metadata_model_catalog: MetadataModelCatalog
+    r"""Operations with metadata model catalog"""
 
     def __init__(
         self, sdk_config: SDKConfiguration, parent_ref: Optional[object] = None
@@ -42,12 +45,13 @@ class Datasources(BaseSDK):
         self.content = MeibelaiContent(
             self.sdk_configuration, parent_ref=self.parent_ref
         )
+        self.metadata_model_catalog = MetadataModelCatalog(
+            self.sdk_configuration, parent_ref=self.parent_ref
+        )
 
     def add_datasource(
         self,
         *,
-        customer_id: str,
-        project_id: str,
         name: str,
         description: str,
         recurrence: str,
@@ -70,8 +74,6 @@ class Datasources(BaseSDK):
     ) -> models.AddDatasourceResponse:
         r"""Add Datasource
 
-        :param customer_id:
-        :param project_id:
         :param name:
         :param description:
         :param recurrence:
@@ -93,9 +95,7 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddDatasourceRequest(
-            customer_id=customer_id,
-            project_id=project_id,
+        request = models.AddGatewayDatasourceRequest(
             name=name,
             description=description,
             recurrence=recurrence,
@@ -124,7 +124,7 @@ class Datasources(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.AddDatasourceRequest
+                request, False, False, "json", models.AddGatewayDatasourceRequest
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,
@@ -177,8 +177,6 @@ class Datasources(BaseSDK):
     async def add_datasource_async(
         self,
         *,
-        customer_id: str,
-        project_id: str,
         name: str,
         description: str,
         recurrence: str,
@@ -201,8 +199,6 @@ class Datasources(BaseSDK):
     ) -> models.AddDatasourceResponse:
         r"""Add Datasource
 
-        :param customer_id:
-        :param project_id:
         :param name:
         :param description:
         :param recurrence:
@@ -224,9 +220,7 @@ class Datasources(BaseSDK):
         else:
             base_url = self._get_url(base_url, url_variables)
 
-        request = models.AddDatasourceRequest(
-            customer_id=customer_id,
-            project_id=project_id,
+        request = models.AddGatewayDatasourceRequest(
             name=name,
             description=description,
             recurrence=recurrence,
@@ -255,7 +249,7 @@ class Datasources(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.AddDatasourceRequest
+                request, False, False, "json", models.AddGatewayDatasourceRequest
             ),
             allow_empty_value=None,
             timeout_ms=timeout_ms,

@@ -3,6 +3,7 @@
 from __future__ import annotations
 from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
 from .extractormodel import ExtractorModel, ExtractorModelTypedDict
+from .metadatamodelconfig import MetadataModelConfig, MetadataModelConfigTypedDict
 from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
 from .sparseembeddingmodel import SparseEmbeddingModel, SparseEmbeddingModelTypedDict
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
@@ -20,6 +21,7 @@ class UpdateRagConfigRequestTypedDict(TypedDict):
     sparse_embedding_model: NotRequired[Nullable[SparseEmbeddingModelTypedDict]]
     collect_metadata: NotRequired[Nullable[bool]]
     metadata_options: NotRequired[Nullable[MetadataOptionsTypedDict]]
+    metadata_model: NotRequired[Nullable[MetadataModelConfigTypedDict]]
 
 
 class UpdateRagConfigRequest(BaseModel):
@@ -39,6 +41,8 @@ class UpdateRagConfigRequest(BaseModel):
 
     metadata_options: OptionalNullable[MetadataOptions] = UNSET
 
+    metadata_model: OptionalNullable[MetadataModelConfig] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -50,6 +54,7 @@ class UpdateRagConfigRequest(BaseModel):
                 "sparse_embedding_model",
                 "collect_metadata",
                 "metadata_options",
+                "metadata_model",
             ]
         )
         nullable_fields = set(
@@ -61,6 +66,7 @@ class UpdateRagConfigRequest(BaseModel):
                 "sparse_embedding_model",
                 "collect_metadata",
                 "metadata_options",
+                "metadata_model",
             ]
         )
         serialized = handler(self)

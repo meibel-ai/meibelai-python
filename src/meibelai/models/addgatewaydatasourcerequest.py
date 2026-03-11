@@ -12,11 +12,7 @@ from pydantic import model_serializer
 from typing_extensions import NotRequired, TypedDict
 
 
-class AddDatasourceRequestTypedDict(TypedDict):
-    r"""AddDatasourceRequest"""
-
-    customer_id: str
-    project_id: str
+class AddGatewayDatasourceRequestTypedDict(TypedDict):
     name: str
     description: str
     recurrence: str
@@ -25,13 +21,7 @@ class AddDatasourceRequestTypedDict(TypedDict):
     connector_config: NotRequired[Nullable[DatasourceConnectorConfigTypedDict]]
 
 
-class AddDatasourceRequest(BaseModel):
-    r"""AddDatasourceRequest"""
-
-    customer_id: str
-
-    project_id: str
-
+class AddGatewayDatasourceRequest(BaseModel):
     name: str
 
     description: str

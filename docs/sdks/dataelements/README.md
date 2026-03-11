@@ -12,6 +12,9 @@ Operations with data elements
 * [update_data_element](#update_data_element) - Update Data Element
 * [delete_data_element](#delete_data_element) - Delete Data Element
 * [get_data_elements_by_filters](#get_data_elements_by_filters) - Get Data Elements By Filters
+* [get_data_element_metadata](#get_data_element_metadata) - Get Data Element Metadata
+* [update_data_element_metadata](#update_data_element_metadata) - Update Data Element Metadata
+* [get_data_element_metadata_result](#get_data_element_metadata_result) - Get Data Element Metadata Result
 
 ## add_data_element
 
@@ -311,6 +314,136 @@ with Meibelai(
 ### Response
 
 **[List[models.DataElement]](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## get_data_element_metadata
+
+Get Data Element Metadata
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="getDataElementMetadata" method="get" path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.dataelements.get_data_element_metadata(datasource_id="<id>", data_element_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `data_element_id`                                                   | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.GetDataElementMetadataResponse](../../models/getdataelementmetadataresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## update_data_element_metadata
+
+Update Data Element Metadata
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="updateDataElementMetadata" method="put" path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.dataelements.update_data_element_metadata(datasource_id="<id>", data_element_id="<id>", metadata={
+        "key": "<value>",
+    })
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `data_element_id`                                                   | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `metadata`                                                          | Dict[str, *Any*]                                                    | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.PutDataElementMetadataResponse](../../models/putdataelementmetadataresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## get_data_element_metadata_result
+
+Get Data Element Metadata Result
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="getDataElementMetadataResult" method="get" path="/datasource/{datasource_id}/data_element/{data_element_id}/metadata/result/{request_id}" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.dataelements.get_data_element_metadata_result(datasource_id="<id>", data_element_id="<id>", request_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `data_element_id`                                                   | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `request_id`                                                        | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.GetDataElementMetadataResultResponse](../../models/getdataelementmetadataresultresponse.md)**
 
 ### Errors
 

@@ -14,6 +14,9 @@ Operations with rag
 * [get_chunking_strategy](#get_chunking_strategy) - Get Chunking Strategy
 * [update_chunking_strategy](#update_chunking_strategy) - Update Chunking Strategy
 * [delete_chunking_strategy](#delete_chunking_strategy) - Delete Chunking Strategy
+* [reprocess_datasource_metadata](#reprocess_datasource_metadata) - Reprocess Datasource Metadata
+* [get_reprocess_metadata_status](#get_reprocess_metadata_status) - Get Reprocess Metadata Status
+* [patch_rag_config_metadata](#patch_rag_config_metadata) - Patch Rag Config Metadata
 
 ## add_rag_config
 
@@ -47,6 +50,10 @@ with Meibelai(
         "extract_summary": True,
         "has_consumer_content": True,
         "get_bibliographical_information": False,
+    }, metadata_model={
+        "type": "<value>",
+        "model_id": "<id>",
+        "fields": None,
     })
 
     # Handle response
@@ -66,6 +73,7 @@ with Meibelai(
 | `sparse_embedding_model`                                                              | [OptionalNullable[models.SparseEmbeddingModel]](../../models/sparseembeddingmodel.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `collect_metadata`                                                                    | *OptionalNullable[bool]*                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `metadata_options`                                                                    | [OptionalNullable[models.MetadataOptions]](../../models/metadataoptions.md)           | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `metadata_model`                                                                      | [OptionalNullable[models.MetadataModelConfig]](../../models/metadatamodelconfig.md)   | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `retries`                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                      | :heavy_minus_sign:                                                                    | Configuration to override the default retry behavior of the client.                   |
 
 ### Response
@@ -152,6 +160,16 @@ with Meibelai(
         "extract_summary": True,
         "has_consumer_content": True,
         "get_bibliographical_information": True,
+    }, metadata_model={
+        "type": "<value>",
+        "model_id": "<id>",
+        "fields": [
+            {
+                "name": "<value>",
+                "type": "<value>",
+                "description": "disbar lack stoop apud wearily misappropriate",
+            },
+        ],
     })
 
     # Handle response
@@ -171,6 +189,7 @@ with Meibelai(
 | `sparse_embedding_model`                                                              | [OptionalNullable[models.SparseEmbeddingModel]](../../models/sparseembeddingmodel.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `collect_metadata`                                                                    | *OptionalNullable[bool]*                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `metadata_options`                                                                    | [OptionalNullable[models.MetadataOptions]](../../models/metadataoptions.md)           | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `metadata_model`                                                                      | [OptionalNullable[models.MetadataModelConfig]](../../models/metadatamodelconfig.md)   | :heavy_minus_sign:                                                                    | N/A                                                                                   |
 | `retries`                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                      | :heavy_minus_sign:                                                                    | Configuration to override the default retry behavior of the client.                   |
 
 ### Response
@@ -466,6 +485,151 @@ with Meibelai(
 ### Response
 
 **[models.DeleteChunkingStrategyResponse](../../models/deletechunkingstrategyresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## reprocess_datasource_metadata
+
+Reprocess Datasource Metadata
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="reprocessDatasourceMetadata" method="post" path="/datasource/{datasource_id}/reprocess_metadata" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.rag.reprocess_datasource_metadata(datasource_id="<id>", metadata_model={
+        "type": "<value>",
+        "model_id": "<id>",
+        "fields": [
+            {
+                "name": "<value>",
+                "type": "<value>",
+                "description": "meaningfully regarding excitedly emerge whereas scram",
+            },
+        ],
+    })
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `datasource_id`                                                                     | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `metadata_model`                                                                    | [OptionalNullable[models.MetadataModelConfig]](../../models/metadatamodelconfig.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
+
+### Response
+
+**[models.ReprocessDatasourceResponse](../../models/reprocessdatasourceresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## get_reprocess_metadata_status
+
+Get Reprocess Metadata Status
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="getReprocessMetadataStatus" method="get" path="/datasource/{datasource_id}/reprocess_metadata/status" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.rag.get_reprocess_metadata_status(datasource_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.GetReprocessStatusResponse](../../models/getreprocessstatusresponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## patch_rag_config_metadata
+
+Patch Rag Config Metadata
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="patchRagConfigMetadata" method="patch" path="/datasource/{datasource_id}/rag_config/metadata" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.rag.patch_rag_config_metadata(datasource_id="<id>", metadata_model={
+        "type": "<value>",
+        "model_id": "<id>",
+        "fields": [
+            {
+                "name": "<value>",
+                "type": "<value>",
+                "description": "mid salty thoughtfully",
+            },
+        ],
+    })
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `metadata_model`                                                    | [models.MetadataModelConfig](../../models/metadatamodelconfig.md)   | :heavy_check_mark:                                                  | MetadataModelConfig                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.PatchRagConfigMetadataResponse](../../models/patchragconfigmetadataresponse.md)**
 
 ### Errors
 

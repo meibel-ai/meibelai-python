@@ -139,7 +139,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -193,7 +193,7 @@ async def main():
         api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
     ) as m_client:
 
-        res = await m_client.datasources.add_datasource_async(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+        res = await m_client.datasources.add_datasource_async(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
             "filters": None,
@@ -255,7 +255,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -364,6 +364,7 @@ with Meibelai(
 * [get_datasource_content_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelaicontent/README.md#get_datasource_content_metadata) - Get content metadata
 * [delete_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelaicontent/README.md#delete_datasource_content) - Delete content
 * [download_datasource_content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelaicontent/README.md#download_datasource_content) - Download content file
+* [trigger_ingest](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/meibelaicontent/README.md#trigger_ingest) - Trigger ingest
 
 #### [Datasources.Dataelements](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md)
 
@@ -373,6 +374,14 @@ with Meibelai(
 * [update_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_data_element) - Update Data Element
 * [delete_data_element](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#delete_data_element) - Delete Data Element
 * [get_data_elements_by_filters](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_elements_by_filters) - Get Data Elements By Filters
+* [get_data_element_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element_metadata) - Get Data Element Metadata
+* [update_data_element_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#update_data_element_metadata) - Update Data Element Metadata
+* [get_data_element_metadata_result](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/dataelements/README.md#get_data_element_metadata_result) - Get Data Element Metadata Result
+
+#### [Datasources.MetadataModelCatalog](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/metadatamodelcatalog/README.md)
+
+* [list_metadata_model_catalog](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/metadatamodelcatalog/README.md#list_metadata_model_catalog) - List Metadata Model Catalog
+* [get_metadata_model_catalog_entry](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/metadatamodelcatalog/README.md#get_metadata_model_catalog_entry) - Get Metadata Model Catalog Entry
 
 #### [Datasources.Rag](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md)
 
@@ -384,6 +393,9 @@ with Meibelai(
 * [get_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#get_chunking_strategy) - Get Chunking Strategy
 * [update_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#update_chunking_strategy) - Update Chunking Strategy
 * [delete_chunking_strategy](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#delete_chunking_strategy) - Delete Chunking Strategy
+* [reprocess_datasource_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#reprocess_datasource_metadata) - Reprocess Datasource Metadata
+* [get_reprocess_metadata_status](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#get_reprocess_metadata_status) - Get Reprocess Metadata Status
+* [patch_rag_config_metadata](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/rag/README.md#patch_rag_config_metadata) - Patch Rag Config Metadata
 
 #### [Datasources.Tag](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/tag/README.md)
 
@@ -456,7 +468,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -508,7 +520,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -575,7 +587,7 @@ with Meibelai(
     res = None
     try:
 
-        res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+        res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
             "bucket": "<value>",
             "prefix": "<value>",
             "filters": None,
@@ -674,7 +686,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -726,7 +738,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,

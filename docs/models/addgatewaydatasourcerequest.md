@@ -1,14 +1,10 @@
-# AddDatasourceRequest
-
-AddDatasourceRequest
+# AddGatewayDatasourceRequest
 
 
 ## Fields
 
 | Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `customer_id`                                                                                | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
-| `project_id`                                                                                 | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
 | `name`                                                                                       | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
 | `description`                                                                                | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
 | `recurrence`                                                                                 | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |

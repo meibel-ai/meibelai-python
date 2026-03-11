@@ -14,6 +14,7 @@ Operations with content upload and management
 * [get_datasource_content_metadata](#get_datasource_content_metadata) - Get content metadata
 * [delete_datasource_content](#delete_datasource_content) - Delete content
 * [download_datasource_content](#download_datasource_content) - Download content file
+* [trigger_ingest](#trigger_ingest) - Trigger ingest
 
 ## list_datasource_content
 
@@ -351,6 +352,47 @@ with Meibelai(
 ### Response
 
 **[httpx.Response](../../models/.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.HTTPValidationError | 422                        | application/json           |
+| models.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## trigger_ingest
+
+Trigger ingestion for a datasource
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="triggerIngest" method="get" path="/datasource/{datasource_id}/trigger-ingest" -->
+```python
+from meibelai import Meibelai
+import os
+
+
+with Meibelai(
+    api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
+) as m_client:
+
+    res = m_client.datasources.content.trigger_ingest(datasource_id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `datasource_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[Any](../../models/.md)**
 
 ### Errors
 

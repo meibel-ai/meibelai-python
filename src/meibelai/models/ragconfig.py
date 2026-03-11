@@ -3,6 +3,7 @@
 from __future__ import annotations
 from .embeddingmodel import EmbeddingModel, EmbeddingModelTypedDict
 from .extractormodel import ExtractorModel, ExtractorModelTypedDict
+from .metadatamodelconfig import MetadataModelConfig, MetadataModelConfigTypedDict
 from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
 from .sparseembeddingmodel import SparseEmbeddingModel, SparseEmbeddingModelTypedDict
 from meibelai.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
@@ -21,6 +22,7 @@ class RagConfigTypedDict(TypedDict):
     sparse_embedding_model: NotRequired[Nullable[SparseEmbeddingModelTypedDict]]
     collect_metadata: NotRequired[Nullable[bool]]
     metadata_options: NotRequired[Nullable[MetadataOptionsTypedDict]]
+    metadata_model: NotRequired[Nullable[MetadataModelConfigTypedDict]]
     created_by: NotRequired[Nullable[str]]
     updated_by: NotRequired[Nullable[str]]
 
@@ -44,6 +46,8 @@ class RagConfig(BaseModel):
 
     metadata_options: OptionalNullable[MetadataOptions] = UNSET
 
+    metadata_model: OptionalNullable[MetadataModelConfig] = UNSET
+
     created_by: OptionalNullable[str] = UNSET
 
     updated_by: OptionalNullable[str] = UNSET
@@ -57,6 +61,7 @@ class RagConfig(BaseModel):
                 "sparse_embedding_model",
                 "collect_metadata",
                 "metadata_options",
+                "metadata_model",
                 "created_by",
                 "updated_by",
             ]
@@ -68,6 +73,7 @@ class RagConfig(BaseModel):
                 "sparse_embedding_model",
                 "collect_metadata",
                 "metadata_options",
+                "metadata_model",
                 "created_by",
                 "updated_by",
             ]

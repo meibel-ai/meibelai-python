@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: c1c6891a-974d-4485-9f9e-e0f3320259c6
 management:
-  docChecksum: af969763af100fddef356845244ecb7a
+  docChecksum: 6721487b4e8febdc13818e1bff079005
   docVersion: 0.6.0
-  speakeasyVersion: 1.750.0
-  generationVersion: 2.856.1
-  releaseVersion: 0.27.1
-  configChecksum: 016a464bf856bbcf50e4a5199ab7a118
+  speakeasyVersion: 1.752.0
+  generationVersion: 2.859.2
+  releaseVersion: 0.27.2
+  configChecksum: e9ce04936ec6ac384d140f98702c418e
   repoURL: https://github.com/meibel-ai/meibelai-python.git
   installationURL: https://github.com/meibel-ai/meibelai-python.git
 persistentEdits:
-  generation_id: d499ce85-6ff0-4354-920a-a0153cdc8de7
-  pristine_commit_hash: 9bc92569a0d012ba834f94014dedce01a7f109a8
-  pristine_tree_hash: 417913a4eac72cfe702e82ef2ce13056e97411b6
+  generation_id: 68b68c79-3f29-496a-bd39-502b138d3380
+  pristine_commit_hash: 59d985b505f28ce0bf57d0729a70a77b29bcabde
+  pristine_tree_hash: e7cb19d0bb8a0d46e99c1efaf34a51c55714bd19
 features:
   python:
     additionalDependencies: 1.0.0
@@ -34,7 +34,7 @@ features:
     responseFormat: 1.1.0
     retries: 3.0.4
     sdkHooks: 1.2.1
-    serverEvents: 1.0.14
+    serverEvents: 1.0.15
     serverEventsSentinels: 0.1.0
     unions: 3.1.4
 trackedFiles:
@@ -60,8 +60,8 @@ trackedFiles:
     pristine_git_object: 8d79f0abb72526f1fb34a4c03e5bba612c6ba2ae
   USAGE.md:
     id: 3aed33ce6e6f
-    last_write_checksum: sha1:6efb4b08f9541c918c7efb2d07a76589b8eafac4
-    pristine_git_object: ba1838b060f8f1e360b08f2973e9b90b24a16a23
+    last_write_checksum: sha1:859b4bb43ac533643669833e94d3277d45cf8e74
+    pristine_git_object: 0d7beeebf4873625d173d435dde4d76b65aed0f0
   docs/models/activity.md:
     id: 78c9fe854b65
     last_write_checksum: sha1:b5f88681f66907f7f0ea9b32edbc78b84fb6208b
@@ -126,10 +126,6 @@ trackedFiles:
     id: 5b533312b774
     last_write_checksum: sha1:a103bcaa5fd24d4913181ac35adc5b2455ad5f78
     pristine_git_object: 5b40dd9b05ba9761ee3eb266bd9bc652725d5ac4
-  docs/models/adddatasourcerequest.md:
-    id: 099234bd27b4
-    last_write_checksum: sha1:ab56bbd6b93f46eae8002170ebc377f5bfabcf15
-    pristine_git_object: 07452962e3776bb6aa467792b4e5cbc050447a5d
   docs/models/adddatasourceresponse.md:
     id: 22f00a75fc8f
     last_write_checksum: sha1:f285854faebf808ff7ae4ad6f310d812696cb4f7
@@ -138,10 +134,14 @@ trackedFiles:
     id: 31074252fecb
     last_write_checksum: sha1:6ec3e798c310a077b70d7e36f043e2c272cf70d2
     pristine_git_object: 0600e9d3fa2a8c687fe16e9d0d62c5f443570ec8
+  docs/models/addgatewaydatasourcerequest.md:
+    id: 518d40fa4463
+    last_write_checksum: sha1:13d612328144c9f39f964f3e2e65cf930997fa79
+    pristine_git_object: ad602e56a3c1a404d4ed5bdf9b1fee568c05ac51
   docs/models/addragconfigrequest.md:
     id: 2daa6f0325b8
-    last_write_checksum: sha1:5ad21f6a56afb10afddaa0bc55fe4241b2111026
-    pristine_git_object: d2c88b0a6554ac701649f6c5415356292540a9bc
+    last_write_checksum: sha1:230d47fafba31e2e101e9b70ef01ab4418c592b4
+    pristine_git_object: c2b1bcb966ba2b6ad26c3a80079f3b5d4bd2e73e
   docs/models/addragconfigrequest1.md:
     id: 578e7d2e2193
     last_write_checksum: sha1:535a7da2a2a74ff9900cdbcd1d93e8c84a751e97
@@ -542,6 +542,22 @@ trackedFiles:
     id: be2b91231085
     last_write_checksum: sha1:97b79b9f73249bac03d28b9cf6935233ecf145fa
     pristine_git_object: cda4af31d47664dc70417fddbb55134c8d16bf13
+  docs/models/getdataelementmetadatarequest.md:
+    id: 61d6386d29c7
+    last_write_checksum: sha1:396c7518977da07333707547f777deda4c3ab7d2
+    pristine_git_object: be923330eba631818f33519c501c50f5e02ecbed
+  docs/models/getdataelementmetadataresponse.md:
+    id: 5aedbd933fae
+    last_write_checksum: sha1:85e58c34d30a3598ea83ea97547c4c8014cf1b74
+    pristine_git_object: 496ce1e58fd55ad487065ffcd25920c7024d6658
+  docs/models/getdataelementmetadataresultrequest.md:
+    id: 7edd4b86331d
+    last_write_checksum: sha1:f5123f6ab82b2a63bbbe4d8481e7863f3aaa9ca4
+    pristine_git_object: d3a2b90f835c84b8daa77bd87c64a6400567097f
+  docs/models/getdataelementmetadataresultresponse.md:
+    id: 0be95ac23ea8
+    last_write_checksum: sha1:ceb94d1b596b23faae6b439dc1da67b528c60c44
+    pristine_git_object: e1d38fda705549ef25279d226d6abb747872e086
   docs/models/getdataelementrequest.md:
     id: 3b762f0dcd32
     last_write_checksum: sha1:d0cf87b4d85ab6ca8d88fddd1190722338e93ecc
@@ -578,10 +594,22 @@ trackedFiles:
     id: 3825bca01108
     last_write_checksum: sha1:01f8bec0fee9718db02351570cd956f096a1b543
     pristine_git_object: 1e3e2ac5c68572cbaf8f39ec957bc75c0c168ead
+  docs/models/getmetadatamodelcatalogentryrequest.md:
+    id: 1376c577c0af
+    last_write_checksum: sha1:f70eb1703f82a5a2b5b81043bb5b65bb47a3f93b
+    pristine_git_object: 9dd338762c834e666846abd26f5ca319298a43b8
   docs/models/getragconfigrequest.md:
     id: 524787e5e8a8
     last_write_checksum: sha1:74bf0f6fa1bfa833dcb42c313e80824abc4e5f2c
     pristine_git_object: 71a0b46ce0f5612747d4e718771b520736287ced
+  docs/models/getreprocessmetadatastatusrequest.md:
+    id: 1d0cab4af2fc
+    last_write_checksum: sha1:521638e72e338eed84141ecf2a54906a277a2ce7
+    pristine_git_object: 16f9b906c85dbefa83256311c1ef2887cf2e1a05
+  docs/models/getreprocessstatusresponse.md:
+    id: 6315cc50151f
+    last_write_checksum: sha1:494fff53873d9e9cbacf6831a3abfccfe909400e
+    pristine_git_object: 8be180432a30bd1d6460a44e1116c6d23d55479f
   docs/models/gettagcolumninforequest.md:
     id: 46dc5e3efa6f
     last_write_checksum: sha1:b475b462650d8a7dddb445aec277a2286a4189d8
@@ -614,6 +642,14 @@ trackedFiles:
     id: b0b67eeef19f
     last_write_checksum: sha1:85d09af8c9b2291aff0507b32e7a0ddb83f730d5
     pristine_git_object: da8e38cb698f735b3436f5a67f10237db7a075de
+  docs/models/listmetadatamodelcatalogrequest.md:
+    id: 63c513b7e8c7
+    last_write_checksum: sha1:d89b3f5aead8bc32fd960650fce99dd541867d41
+    pristine_git_object: 53848c09511cf43df4a00dfedd94a8b97e44a08d
+  docs/models/listmetadatamodelcatalogresponse.md:
+    id: a6f1b055d33e
+    last_write_checksum: sha1:0c6ada5137032f82ad28529e0bd85092d63eda0a
+    pristine_git_object: 2cd3d889ac8da5779ad79118d237dc745627451d
   docs/models/loc.md:
     id: b071d5a509cc
     last_write_checksum: sha1:09a04749333ab50ae806c3ac6adcaa90d54df0f1
@@ -622,6 +658,22 @@ trackedFiles:
     id: 3bc3affa6716
     last_write_checksum: sha1:ea489be351119d3f6b98be12420d153049700a0d
     pristine_git_object: 5d7df87c7c7e7e2b2d7ceaa0b226c1bafcb05428
+  docs/models/metadatafielddefinition.md:
+    id: b555ea726768
+    last_write_checksum: sha1:a6ef5d7bfdd5e861a12b8b71b118ab7bc0dd2fa2
+    pristine_git_object: e32aff0683f3e8b2d8dc4ccd876b5d034b0402b2
+  docs/models/metadatamodelcatalogentry.md:
+    id: ae52275fd1ed
+    last_write_checksum: sha1:f111ec397c96ae1356e97bed86b5e5029f77e9c4
+    pristine_git_object: e85f2e85fcb58d1d24e7ee1db993c29b1e41ca9a
+  docs/models/metadatamodelconfig.md:
+    id: a21fb9f31238
+    last_write_checksum: sha1:fb3dc1c68436bf91aa5732c5b05dc17508775569
+    pristine_git_object: 53649c3a6655b2afad83b9ded88123250868cc72
+  docs/models/metadatamodelfield.md:
+    id: 17ec6a8480b9
+    last_write_checksum: sha1:71a3fa591a2ea559bf4c8a93198ff98b672c6e3d
+    pristine_git_object: 8964d8235954664d435a975c9cf248ab8e6de559
   docs/models/metadataoptions.md:
     id: 21f9e7314472
     last_write_checksum: sha1:3cbe55671720854fe0a5d005c75f7f198d1de1d1
@@ -646,6 +698,18 @@ trackedFiles:
     id: 409c4464077c
     last_write_checksum: sha1:a34003eb1fbf699bdc049cf8f873f222db262806
     pristine_git_object: eeb86e56afb0640e88459487dee0f582a500d0a9
+  docs/models/patchragconfigmetadatarequest.md:
+    id: 43977bb11a1a
+    last_write_checksum: sha1:9d4f4d09a3ca6ad2457878e6854e1b9c59381fa4
+    pristine_git_object: c19c55e34bbd292f3083cdb8f6b96ae8da26c840
+  docs/models/patchragconfigmetadatarequest1.md:
+    id: 83500f31606e
+    last_write_checksum: sha1:bc6117fc5ce7a4f2aef31b2f02c4ca987103cc92
+    pristine_git_object: dc69f7e9e97335e75240c11a600a3fc313c3b2f1
+  docs/models/patchragconfigmetadataresponse.md:
+    id: 2cc2e0b2fa57
+    last_write_checksum: sha1:3f765afe49c966754b638c077918a64757074d4e
+    pristine_git_object: 9f6c89ed81249e051102dd94fbeb9ae3ceb884be
   docs/models/platform.md:
     id: a8d0f558209c
     last_write_checksum: sha1:053ddc8d266e83f91c52cc8eabd17c431730f3db
@@ -654,6 +718,14 @@ trackedFiles:
     id: 95b5de45ba38
     last_write_checksum: sha1:845734af1ce3299edb15380fd857a39176ee1bc7
     pristine_git_object: 6fb1fa303052bf89fc22e9873dbcaab444226f64
+  docs/models/putdataelementmetadatarequest.md:
+    id: 6423d04ee40a
+    last_write_checksum: sha1:0c971ea641a8f543a97f5c82ed937b07f4d0cc9b
+    pristine_git_object: c03b4b796d0e53e0632fbdbfa04fba3c614f824a
+  docs/models/putdataelementmetadataresponse.md:
+    id: 8f8d972492ee
+    last_write_checksum: sha1:94c7285e034546107cd6baa36d3192f94fcea4e1
+    pristine_git_object: 4643226e049edf2d6469ec37126c93ef326f8ecd
   docs/models/queryworkflowrequest.md:
     id: af0ecfb58182
     last_write_checksum: sha1:70677bbd96a58f94c62945ef43b7082d26a1baee
@@ -664,12 +736,24 @@ trackedFiles:
     pristine_git_object: 81fa2af0d840332efa94fba22a75f80735b73355
   docs/models/ragconfig.md:
     id: b6aa678b63d3
-    last_write_checksum: sha1:d9b18978e63b7d74ad2202ed9938224084a24afa
-    pristine_git_object: 3f4c35572c1fe198eecd8c1867e1f06468001056
+    last_write_checksum: sha1:169b7a11456334bbcc0517b6566a30ccf5f2cacf
+    pristine_git_object: 680549dd43a829152276d12f21aea7c14481a35d
   docs/models/relevancescore.md:
     id: 1d0ce2e0ccf9
     last_write_checksum: sha1:85a429b24cb2fb2cbfd6fe6e9ce75a8006f2b0dc
     pristine_git_object: f913d81d47c795040f13d7569f8b26d069814f33
+  docs/models/reprocessdatasourcemetadatarequest.md:
+    id: 2f3efc4b2089
+    last_write_checksum: sha1:93b7358d9a332f347329b410b7320baf69498cd1
+    pristine_git_object: 3d88fdd899d576de51f93fb6beba16b255ca8bf5
+  docs/models/reprocessdatasourcerequest.md:
+    id: b760da1b7206
+    last_write_checksum: sha1:0c99978e21e91fadb721ca668d2f0ee93661a92e
+    pristine_git_object: 91413b380ccd1454f283f289225ab64e4bc7e586
+  docs/models/reprocessdatasourceresponse.md:
+    id: ae7ff18b58d8
+    last_write_checksum: sha1:6296edc7bea16b5416b9006de57f1d8f22a6acc1
+    pristine_git_object: d314ca992175dbcb77e8b7eeb3735e91b9e9e1ba
   docs/models/result.md:
     id: b850437752c3
     last_write_checksum: sha1:9a0359b48485ed6e2bdcb12c796c3df50832aaff
@@ -786,6 +870,10 @@ trackedFiles:
     id: 6c2f5e89c27b
     last_write_checksum: sha1:2ed3a1b03984fec82e68f882c4756c5e9fb850c7
     pristine_git_object: 7d8bab20df6d35d9a5fab879f442dabcd34e2512
+  docs/models/triggeringestrequest.md:
+    id: 0e81677495e0
+    last_write_checksum: sha1:e9264020421b46ca7c765260722eda03d32166c0
+    pristine_git_object: 00641fc2e3194bda768e106f87edfed09adac2bd
   docs/models/updateactivitystatusrequest.md:
     id: fbd53fc501c2
     last_write_checksum: sha1:0811604d99112e0265afa36cd1ae47589cf7da99
@@ -822,6 +910,10 @@ trackedFiles:
     id: d798df9df582
     last_write_checksum: sha1:459f5628a7f9f7676bd487c49147e3492aeb8db3
     pristine_git_object: ac6830a89e6d5d040d1a5204f5635a9efbb3005b
+  docs/models/updatedataelementmetadatarequest.md:
+    id: f1ac451e904a
+    last_write_checksum: sha1:562492f4485904a5e4c0b516fe1a1a8ebf13ca0d
+    pristine_git_object: d05601d9ea661dae5e9fd06e776160f63148fbfb
   docs/models/updatedataelementrequest.md:
     id: b0415c4824fb
     last_write_checksum: sha1:99fe80ec0feb8f5c8d7d7164b3e600c5d962551b
@@ -848,8 +940,8 @@ trackedFiles:
     pristine_git_object: c02755b94f4e789676659d5f4858702c639d9dcd
   docs/models/updateragconfigrequest.md:
     id: a9784efd2a81
-    last_write_checksum: sha1:1b6b13c2a768aa502a3e61bbf27f0f8db0ce06bd
-    pristine_git_object: 2869d63b9d598e438da748f8d38442881733cc3f
+    last_write_checksum: sha1:6fcf489543bf073975ae9c9dc0515924a1e1801f
+    pristine_git_object: 16aea3c355a35bee34af64bec0ea9a1b5bcf2776
   docs/models/updateragconfigrequest1.md:
     id: fd3200a415b6
     last_write_checksum: sha1:afb0fdaecd299a39b5767a0d22085fc7ea89e245
@@ -924,12 +1016,12 @@ trackedFiles:
     pristine_git_object: c724dd1dd0cdfd51f5da4ce5f8a72df991990390
   docs/sdks/dataelements/README.md:
     id: 658a68bdfb39
-    last_write_checksum: sha1:b6bd25dc63a644d76098e85ed3f97cbf42eef70f
-    pristine_git_object: d92c84b3f267a04a03d6c5f8e2a814f16925ca61
+    last_write_checksum: sha1:32b3e7c32c0b8cdd58ff197252f88e56f073917c
+    pristine_git_object: 990a8bc5210b379498bf9be187939f228ad500ad
   docs/sdks/datasources/README.md:
     id: 024d3ed36945
-    last_write_checksum: sha1:9d6deaf3943f359553071379f2cc02cc686e5576
-    pristine_git_object: 971cbc78da4eb4d246d22ff7936fd0f15f8e4563
+    last_write_checksum: sha1:e9f1e72c9f4d24f2724c239f331733cc55012edb
+    pristine_git_object: 66492834fadef602ed60a11e5da67ee2afb414c3
   docs/sdks/executions/README.md:
     id: 401745b17323
     last_write_checksum: sha1:52ef2f2125a02719ff2ffae3a65494a29d398e42
@@ -940,12 +1032,16 @@ trackedFiles:
     pristine_git_object: fbde6d1d5ab737c23d10a96032bae1a27d2c3c9b
   docs/sdks/meibelaicontent/README.md:
     id: 4a75980af700
-    last_write_checksum: sha1:23c32b42754e585a33048b9ebf74c793125c6835
-    pristine_git_object: 2a2aa57136824d1ddb6f98f7edb61a298329c299
+    last_write_checksum: sha1:46437183076d4abde772c7cd87156d2c00f8a556
+    pristine_git_object: f49c7efe1e88dd89b17ba79f6596651949f189db
+  docs/sdks/metadatamodelcatalog/README.md:
+    id: 20ec76a242ae
+    last_write_checksum: sha1:18205b1878d121ff83d6d7acbb3030f6eb8c045b
+    pristine_git_object: 10d2acafa69ed9dd8b9a016bfc6586cb7cb49932
   docs/sdks/rag/README.md:
     id: 1c314cbdd04f
-    last_write_checksum: sha1:a5c0ebc7bf0e47fd13e92626f925dd4b179c629d
-    pristine_git_object: 877bcfca6c1fd672112bd3c28888978041973324
+    last_write_checksum: sha1:d837d38896842d3c99218cac05e9a967fea5778d
+    pristine_git_object: 2a3019ee9a282e967dd6f89a914437e8432cdeb0
   docs/sdks/tag/README.md:
     id: e36df12529f4
     last_write_checksum: sha1:664171d63602b57677c259595b6c46c44796dd00
@@ -964,8 +1060,8 @@ trackedFiles:
     pristine_git_object: cb9c15d314c1930557401074329ed7a737147919
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:fc3fb3d679608f073f49f6740b806694b15758c3
-    pristine_git_object: 2edea7295455f86ab3db7151db52d2231897d0e5
+    last_write_checksum: sha1:604ac7ac9af8ed3695a067c72b78580cb492acfb
+    pristine_git_object: cae5f671956e5c5a3531e306eb6901ffd64d2ce4
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:4f38078791667b48e093e6f5b54bda2b240c741d
@@ -992,8 +1088,8 @@ trackedFiles:
     pristine_git_object: 9b50d497b8196195b4d7a30470cd231d68d4cd39
   src/meibelai/_version.py:
     id: 67c1a15c7974
-    last_write_checksum: sha1:9400649e194bb00524d3ddb623fff85095ae8011
-    pristine_git_object: 05e436793feb0c9a34456a89daeb042b0be2516c
+    last_write_checksum: sha1:7528c02015ef0ce32c0615fb8ce22f2a71ab262b
+    pristine_git_object: 0c98f79a5e30ac079f1c058b12416cf861261291
   src/meibelai/basesdk.py:
     id: 147a3827d9f5
     last_write_checksum: sha1:09ff66ee95b0ba7a428546827e6e76d23ca04d2e
@@ -1004,16 +1100,16 @@ trackedFiles:
     pristine_git_object: dd8b7adae820caca1845be862346f4b9bc3f5aa4
   src/meibelai/content.py:
     id: 71d0b38a3912
-    last_write_checksum: sha1:041b18cf116824e1ede2b40339e48b5c990fae63
-    pristine_git_object: bbcff1d1e1623b9952c7e0eacbcefa3511bf4be7
+    last_write_checksum: sha1:8867060dbb890f04b7b8b9b2066620aaaf216708
+    pristine_git_object: 470ff67e513d9194483059bd4da3540b26beb4eb
   src/meibelai/dataelements.py:
     id: 61dab38355f1
-    last_write_checksum: sha1:6bb069f7ee1151dfba5033a08c0d364a0dbd1e54
-    pristine_git_object: e9d98593cc72c7e137ff28518830c58f8897b2e3
+    last_write_checksum: sha1:e51f99fd1e10ba54ac170241aed86bc053921377
+    pristine_git_object: b6d2319ad96ea42d34f944ab92ac600a4f024456
   src/meibelai/datasources.py:
     id: 81104fcde7dd
-    last_write_checksum: sha1:525bb93a2bc52d78b70f4730b008caff0f935f68
-    pristine_git_object: 0ea3a873660e1b338940b7e0f9a24a4c92a6e6dd
+    last_write_checksum: sha1:82da99972f58f498290e234136954b0e74509674
+    pristine_git_object: f64ac27b5cd3d864b839c1f5489818c0c6dd8809
   src/meibelai/executions.py:
     id: eeda88d248c6
     last_write_checksum: sha1:f99d04a510cfc3283ea1e2a8c02e58737b5c085d
@@ -1028,12 +1124,16 @@ trackedFiles:
     pristine_git_object: ab8ef13f1d6d53cf7ec0f9916d951e3cbe7705da
   src/meibelai/meibelai_content.py:
     id: 438aabc0fffc
-    last_write_checksum: sha1:6ed415f095cfd072ab1b16f885cfafa6496bcf64
-    pristine_git_object: cf63e7377a068cf802a8305dbfed05adce208a43
+    last_write_checksum: sha1:08683b878fbfc3dbed96447d569c16d430bcde41
+    pristine_git_object: 5726155def642fe37e0fddaa33b99deb8a872407
+  src/meibelai/metadata_model_catalog.py:
+    id: b45880e76c8f
+    last_write_checksum: sha1:79c5c1283e04ac5876e4047843fa350986264c5e
+    pristine_git_object: d54a5e96e11973a12b1feb864310e7663fc55fd1
   src/meibelai/models/__init__.py:
     id: 5c627b972d34
-    last_write_checksum: sha1:0644acf336389e422f34278d72db700455b0316f
-    pristine_git_object: 90dfe510b54284fcf132dc7f38e059589693cf69
+    last_write_checksum: sha1:404ec3c4a7eab78ff52dc4f5994f3bf1c1d2c886
+    pristine_git_object: 2a0aa60983308a1c47d4790adaf3402e1cc0ce5c
   src/meibelai/models/activity.py:
     id: 7af01ddbba8f
     last_write_checksum: sha1:c6ee96d344cd1e2bc2b1eefa4ddb2dcfcdd77b2a
@@ -1098,10 +1198,6 @@ trackedFiles:
     id: 946d349fe046
     last_write_checksum: sha1:39c9803fd49c5672c0ee289814cdaa76232ab777
     pristine_git_object: bbaf5dd0318d80f315c7c155a9743a55b79e6f97
-  src/meibelai/models/adddatasourcerequest.py:
-    id: ccee61ed4a91
-    last_write_checksum: sha1:15be5e3574ad699477f71e9fa899426db0d7d822
-    pristine_git_object: 1d9e3b37057503996f312842354ffee66169525f
   src/meibelai/models/adddatasourceresponse.py:
     id: d66d52a00d9d
     last_write_checksum: sha1:461c73db4dc0cd100a9477d992d486fb4579f3d1
@@ -1110,14 +1206,18 @@ trackedFiles:
     id: 16e06d73566f
     last_write_checksum: sha1:c5b5130a9fd42bb256d4e96abb8903783c6308a4
     pristine_git_object: 3961e47d055d281fe94ea0a6fe4335585a83fb90
+  src/meibelai/models/addgatewaydatasourcerequest.py:
+    id: f96d43bdb6cf
+    last_write_checksum: sha1:df5b690ee820ab78d6e92dc738ef1f0aa784c8ea
+    pristine_git_object: 62eb4dd1998c52b8cb3baf124ced7df581efe004
   src/meibelai/models/addragconfigop.py:
     id: 17278ddb69c5
     last_write_checksum: sha1:7928d2a894628bba87167964ebfc0e1aa2ae7fe3
     pristine_git_object: 106b62aa935592e16e20f4158738e1f0d8979104
   src/meibelai/models/addragconfigrequest.py:
     id: ace2fcce0ca2
-    last_write_checksum: sha1:41cd330d44d22c66b4f6630c80eb7ae813e32cc9
-    pristine_git_object: 0143d2eb979d9f7330a536115514c7c27ccc93de
+    last_write_checksum: sha1:010f5c112ef4f1b0ec35491eddbe8070e3dab8fb
+    pristine_git_object: 2e89991f477e2f7d476ecc08fe4566cc049aa415
   src/meibelai/models/addragconfigresponse.py:
     id: 95acf90614e3
     last_write_checksum: sha1:3d05003dfe74f6e18e4e0cc03f3f3b26858e6fd1
@@ -1470,6 +1570,22 @@ trackedFiles:
     id: f5b98ef085ff
     last_write_checksum: sha1:d1f23a7631d9cebac3bba4230cdb406d71813bba
     pristine_git_object: dbcdf5b17883204ecfa581b3add30f42e36e07cc
+  src/meibelai/models/getdataelementmetadataop.py:
+    id: aa3e90ae1e28
+    last_write_checksum: sha1:000a1a901677f560020c2477cad1bd695594c87a
+    pristine_git_object: ca6f46f2a96a31c63704bc41e69c893864542e50
+  src/meibelai/models/getdataelementmetadataresponse.py:
+    id: b646d47df79b
+    last_write_checksum: sha1:a92eaa68c49fef8b749720f2e5a33df8c00cd2ab
+    pristine_git_object: 0f83a85fd88be1675098173e4fae462605e474a7
+  src/meibelai/models/getdataelementmetadataresultop.py:
+    id: e8d6bf87a282
+    last_write_checksum: sha1:81c13ed4df5402dba1011c41e225e7b4251e065d
+    pristine_git_object: 7ef60b1d0053d978d3577b6429af8031447a0b08
+  src/meibelai/models/getdataelementmetadataresultresponse.py:
+    id: a06502be2e1c
+    last_write_checksum: sha1:4e3034d00737dd668f969d202116f1c68754a9ec
+    pristine_git_object: 4120a9fd45994fbc410bfdd08454573197529cab
   src/meibelai/models/getdataelementop.py:
     id: 3169958ce98e
     last_write_checksum: sha1:957c63bfb060e02fba82f14a403f902e3daf93b3
@@ -1506,10 +1622,22 @@ trackedFiles:
     id: 206ff2e8ed42
     last_write_checksum: sha1:fb465bedf1fdb0b876959bcefc65d52d08c3d664
     pristine_git_object: c56a4cc382fa15730171e76c6674b0fb91cb1c7f
+  src/meibelai/models/getmetadatamodelcatalogentryop.py:
+    id: 7654be14fa8a
+    last_write_checksum: sha1:bab804b9bca207811b9db8e8aa6847121beb8fb4
+    pristine_git_object: 0fb14321faea0acd3c2e9bfe83cb1741f2011ae0
   src/meibelai/models/getragconfigop.py:
     id: 87933d37694d
     last_write_checksum: sha1:04d8be344760b23a49b2457208b385d59dd30e1b
     pristine_git_object: 5f6598b810927755c7c53d8b8f3bd034659fe8bd
+  src/meibelai/models/getreprocessmetadatastatusop.py:
+    id: 2e56087e45d6
+    last_write_checksum: sha1:95a9c44788631c12bcb8054088d42ee7b4bec0e5
+    pristine_git_object: 0d39a4dc8ec77dd5232b426eb4cb047bc862b86f
+  src/meibelai/models/getreprocessstatusresponse.py:
+    id: 85e866131552
+    last_write_checksum: sha1:d9acc055c08f917977c8668bbffc585311a67c6a
+    pristine_git_object: 495572dee67d9145a451466d305aee2ecf6b8dde
   src/meibelai/models/gettagcolumninfoop.py:
     id: 2ecc8b462f3c
     last_write_checksum: sha1:7dcc0c456c9c7fe7a15deeba5e7205c88ab46b8a
@@ -1542,6 +1670,14 @@ trackedFiles:
     id: 1953e446b8c3
     last_write_checksum: sha1:4e3126f7087ce42f58d080c2ca61a73da8f0a5d9
     pristine_git_object: ca3074c0a11a786af67e24d81a5bc99b49978a1f
+  src/meibelai/models/listmetadatamodelcatalogop.py:
+    id: 66fc32d28bfb
+    last_write_checksum: sha1:73ce1269744f02c5e3f9577e8d26d8d5d0330641
+    pristine_git_object: a8e9db46c3b9f41e52d52fdd2e7157e04795781e
+  src/meibelai/models/listmetadatamodelcatalogresponse.py:
+    id: 68b927614fa1
+    last_write_checksum: sha1:d69a0c0f610cdedbc733a5961052e4879a59614e
+    pristine_git_object: b0c6cb760f736215ffd07a09999fb924bfce760f
   src/meibelai/models/markdownnodechunking.py:
     id: 127c055faebb
     last_write_checksum: sha1:02542e22272135f559af6b6eede4481d6802924d
@@ -1550,6 +1686,22 @@ trackedFiles:
     id: 309d5cad7cef
     last_write_checksum: sha1:7ec184ca498cb54634764e1cf619ca1126ee1f45
     pristine_git_object: cb2005254d3618a1da511303dc4b3f1d3bf915fb
+  src/meibelai/models/metadatafielddefinition.py:
+    id: 9e256f7bc587
+    last_write_checksum: sha1:5a51011b65cd418b66e4937751b6a9a580bd38ee
+    pristine_git_object: ec17e0cbc2099d838823a36f5591b3223c886907
+  src/meibelai/models/metadatamodelcatalogentry.py:
+    id: 26a24112cf28
+    last_write_checksum: sha1:e4a864633babf470b5648381b598bcdf09db09f1
+    pristine_git_object: bc29f668371c3fe06924ac160e4cd9f4a1a937c7
+  src/meibelai/models/metadatamodelconfig.py:
+    id: 60132cea9a62
+    last_write_checksum: sha1:0a8118116d06c3a635eef4800b1fabd6f0a4e3bb
+    pristine_git_object: bfdc43561eb421b77ad9bebe545ca897f7673a49
+  src/meibelai/models/metadatamodelfield.py:
+    id: e3927dca35ae
+    last_write_checksum: sha1:71e0ca7bd280d2e5aa1d86775d9b2c3a2edaee36
+    pristine_git_object: e613461fd1245360401f7b336a59e12e371bad27
   src/meibelai/models/metadataoptions.py:
     id: 1f3c9e3b6f01
     last_write_checksum: sha1:050511da8daa7ace0a902aa67f400d119fb70d17
@@ -1570,6 +1722,18 @@ trackedFiles:
     id: fba52527ef9f
     last_write_checksum: sha1:1ae7812e53464dcfe2238badb89891fc45ddc3d6
     pristine_git_object: 7fa964e98572ee5753ddcbe7dad35acc6aca5a7a
+  src/meibelai/models/patchragconfigmetadataop.py:
+    id: d3212b8a98af
+    last_write_checksum: sha1:68bfd7548c07ea533841444ed8644fbf2a09ae7f
+    pristine_git_object: a3fce2acffe56a5576ecae29fe48461be2bdbe27
+  src/meibelai/models/patchragconfigmetadatarequest.py:
+    id: 759eff9ea30f
+    last_write_checksum: sha1:551e42853fed3ac9bec2304c31ec583b0b308aa0
+    pristine_git_object: 75e9e178170a43b7e420546006b57f624fa1b74c
+  src/meibelai/models/patchragconfigmetadataresponse.py:
+    id: 5168a9899e5e
+    last_write_checksum: sha1:f91745003d007e6df14780849572fff3a9f13f9c
+    pristine_git_object: 9a119ef6a704b3725daa4813214af7d9df2dc622
   src/meibelai/models/platform.py:
     id: da8aaa69a46f
     last_write_checksum: sha1:89b435687f0cde77620f27a391233bb081f88118
@@ -1578,6 +1742,14 @@ trackedFiles:
     id: 425d94f1fd9d
     last_write_checksum: sha1:95e445071abf6ad9876b325c6c248bc1f14e2141
     pristine_git_object: d1efc30e10d971616743b226bb1ca6beaa28f791
+  src/meibelai/models/putdataelementmetadatarequest.py:
+    id: e3cb9039619a
+    last_write_checksum: sha1:cebd84d9ecd333f848060c36029e2bc90acfec22
+    pristine_git_object: 1408996d8bad99db335be864902c9f30be940488
+  src/meibelai/models/putdataelementmetadataresponse.py:
+    id: 695973bd5eb6
+    last_write_checksum: sha1:78836d7b9532bf7ed08048519c4e64c1efea7a19
+    pristine_git_object: 4f208156be3bf2fdba117055971b86792f5e0f6f
   src/meibelai/models/queryworkflowop.py:
     id: 3c5522242d72
     last_write_checksum: sha1:199125437ac693c038fffbb7283e24e86cc8f3ca
@@ -1588,8 +1760,20 @@ trackedFiles:
     pristine_git_object: 67d6b12371744297b5be610c25ee919eb82cf427
   src/meibelai/models/ragconfig.py:
     id: 3116f578fe30
-    last_write_checksum: sha1:3ec511363f52039700b4673610453a6ce5dc67f0
-    pristine_git_object: 91a84ac943dc23a1789d7b500e6ae7e51eb84964
+    last_write_checksum: sha1:7f868fdce6b4bdd1cf398db6d74ef97191e74e3d
+    pristine_git_object: 28789def99fdc0ec0a7445a51fdb0a39365578ba
+  src/meibelai/models/reprocessdatasourcemetadataop.py:
+    id: 1a825871d743
+    last_write_checksum: sha1:5fa336c60111c268181bfd1a8b80378d3a19801c
+    pristine_git_object: 56bfbb909686655038779e4bc95a6e9ae6c971d6
+  src/meibelai/models/reprocessdatasourcerequest.py:
+    id: 7224d3ee7b14
+    last_write_checksum: sha1:74483d90b9d681d1b084b054b1e2049361b5dd98
+    pristine_git_object: 8959d6339aafd321c6c1b5b2c3833c30dd100bf6
+  src/meibelai/models/reprocessdatasourceresponse.py:
+    id: 9e5cbb8cfd84
+    last_write_checksum: sha1:9ea9d4cc352adbb952842d50669124d9a6559a6f
+    pristine_git_object: 003c1720afc3c2ec38a42f2fcce0d2b901b4ecd6
   src/meibelai/models/responsevalidationerror.py:
     id: d284e33600c5
     last_write_checksum: sha1:5346dcf2f842dd9b13e78ce988ea77ccd7776c58
@@ -1682,6 +1866,10 @@ trackedFiles:
     id: c753e952a788
     last_write_checksum: sha1:5c2e455bd95ea92855dc8f3eb90119e609733226
     pristine_git_object: 94093aa731cff02e504a54b474713e47af4badce
+  src/meibelai/models/triggeringestop.py:
+    id: e0b3c29ce00d
+    last_write_checksum: sha1:1b680b384ac077e7f9c7ae408f2e4296018e96e9
+    pristine_git_object: d89edc13f1814c178103f35aa4d23684cbffe46e
   src/meibelai/models/updateactivitystatusop.py:
     id: 16d784b3f1ba
     last_write_checksum: sha1:6cefdb0fa2fbea35279a2bafa0419369e3272898
@@ -1718,6 +1906,10 @@ trackedFiles:
     id: cb1304e8279f
     last_write_checksum: sha1:00ccd2b2772f9f1a8f0a28a4cb65bc8c615984cf
     pristine_git_object: c07c483a33aefb038cc68fe636d8ca2dd85d9e37
+  src/meibelai/models/updatedataelementmetadataop.py:
+    id: 0e4e47ec0ff8
+    last_write_checksum: sha1:e045458ea82db257446584ce76988a3e75e53f03
+    pristine_git_object: b09f6975a4709eaeecc609a9998d0eda24e532fe
   src/meibelai/models/updatedataelementop.py:
     id: b7fe26ca3af9
     last_write_checksum: sha1:ccd7dee7e3fb8c091042e5d55e3caa572e59db90
@@ -1748,8 +1940,8 @@ trackedFiles:
     pristine_git_object: be214c9b17e2d5699d7b6b7aa633951ffd0397f5
   src/meibelai/models/updateragconfigrequest.py:
     id: 014b3af3d98c
-    last_write_checksum: sha1:0ebdae7d5b87856e6422241968050488e41c8bd0
-    pristine_git_object: 183bf9d030a0fb915217270ff011354b8f3e9a98
+    last_write_checksum: sha1:bf1e04cf72a2e5cfef8550056fe48ad49cc7c5f2
+    pristine_git_object: 1f670ac54bb26f315a79d5ad0ab5752f517b18a9
   src/meibelai/models/updateragconfigresponse.py:
     id: a1bc7d922bc0
     last_write_checksum: sha1:da7f641b5690b997f54db9afad20d6d3fe3a9077
@@ -1812,8 +2004,8 @@ trackedFiles:
     pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
   src/meibelai/rag.py:
     id: 3da4db4f897c
-    last_write_checksum: sha1:386489a3d2220cf82a86bb77608183d78e1943b1
-    pristine_git_object: 74dd68fb30674c999e56cc478782556f960750ac
+    last_write_checksum: sha1:ed952d5f4f84ea91f6aed5863bae87529ea0b1a8
+    pristine_git_object: 23bb005174895395adfa5026e13fc7f0e8171034
   src/meibelai/sdk.py:
     id: 6869434cbf22
     last_write_checksum: sha1:41b73cdd0f35130304683677bdcbef985c417167
@@ -1856,8 +2048,8 @@ trackedFiles:
     pristine_git_object: 3324e1bc2668c54c4d5f5a1a845675319757a828
   src/meibelai/utils/eventstreaming.py:
     id: b47841bc8f17
-    last_write_checksum: sha1:ffa870a25a7e4e2015bfd7a467ccd3aa1de97f0e
-    pristine_git_object: f2052fc22d9fd6c663ba3dce019fe234ca37108b
+    last_write_checksum: sha1:620d78a8b4e3b854e08d136e02e40a01a786bd70
+    pristine_git_object: 3bdcd6d3d4fc772cb7f5fca8685dcdc8c85e13e8
   src/meibelai/utils/forms.py:
     id: 681d4c97a079
     last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
@@ -3031,7 +3223,7 @@ examples:
   addDatasource:
     speakeasy-default-add-datasource:
       requestBody:
-        application/json: {"customer_id": "<id>", "project_id": "<id>", "name": "<value>", "description": "kindly kookily biodegrade after helpfully mushy unlike", "recurrence": "<value>", "object_storage_config": {"bucket": "<value>", "prefix": "<value>", "filters": null, "gcs_config": {"key": "<value>", "key1": "<value>"}, "s3_config": {"role_arn": "<value>", "region": "<value>"}}, "web_config": {"baseURL": "https://neighboring-fen.net/", "javascriptRender": true, "waitForSelector": "<value>", "domains": null, "authentication": {"username": "Eulalia35", "password": "VKK1aONN4LAHFVF"}}, "connector_config": {"connector_id": "<id>", "airbyte_config": {"source_id": "<id>", "destination_id": "<id>", "connection_id": "<id>"}, "source_config": {"key": "<value>", "key1": "<value>"}}}
+        application/json: {"name": "<value>", "description": "kindly kookily biodegrade after helpfully mushy unlike", "recurrence": "<value>", "object_storage_config": {"bucket": "<value>", "prefix": "<value>", "filters": null, "gcs_config": {"key": "<value>", "key1": "<value>"}, "s3_config": {"role_arn": "<value>", "region": "<value>"}}, "web_config": {"baseURL": "https://neighboring-fen.net/", "javascriptRender": true, "waitForSelector": "<value>", "domains": null, "authentication": {"username": "Eulalia35", "password": "VKK1aONN4LAHFVF"}}, "connector_config": {"connector_id": "<id>", "airbyte_config": {"source_id": "<id>", "destination_id": "<id>", "connection_id": "<id>"}, "source_config": {"key": "<value>", "key1": "<value>"}}}
       responses:
         "200":
           application/json: {"id": "<id>"}
@@ -3340,7 +3532,7 @@ examples:
         path:
           datasource_id: "<id>"
       requestBody:
-        application/json: {"description": "which gloomy regarding rosemary provider vivaciously fat willow", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 66789}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": null, "extract_questions_answers": false, "extract_summary": true, "has_consumer_content": true, "get_bibliographical_information": false}}
+        application/json: {"description": "which gloomy regarding rosemary provider vivaciously fat willow", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 66789}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": null, "extract_questions_answers": false, "extract_summary": true, "has_consumer_content": true, "get_bibliographical_information": false}, "metadata_model": {"type": "<value>", "model_id": "<id>", "fields": null}}
       responses:
         "200":
           application/json: {"message": "<value>"}
@@ -3353,7 +3545,7 @@ examples:
           datasource_id: "<id>"
       responses:
         "200":
-          application/json: {"datasource_id": "<id>", "description": "versus banish stiffen true reorganisation gee", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": null, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": true, "metadata_options": {"create_title": true, "extract_questions_answers": true, "extract_summary": false, "has_consumer_content": false, "get_bibliographical_information": true}, "created_by": "<value>", "updated_by": "<value>"}
+          application/json: {"datasource_id": "<id>", "description": "versus banish stiffen true reorganisation gee", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": null, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": true, "metadata_options": {"create_title": true, "extract_questions_answers": true, "extract_summary": false, "has_consumer_content": false, "get_bibliographical_information": true}, "metadata_model": {"type": "<value>", "model_id": "<id>", "fields": [{"name": "<value>", "type": "<value>", "description": "so cinch lifestyle"}]}, "created_by": "<value>", "updated_by": "<value>"}
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
   updateRagConfig:
@@ -3362,7 +3554,7 @@ examples:
         path:
           datasource_id: "<id>"
       requestBody:
-        application/json: {"description": "scoop version advocate fondly darn who wherever respectful atop snack", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 562748}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": true, "extract_questions_answers": false, "extract_summary": true, "has_consumer_content": true, "get_bibliographical_information": true}}
+        application/json: {"description": "scoop version advocate fondly darn who wherever respectful atop snack", "collection_id": "<id>", "extractor_model": {"name": "<value>", "endpoint": "<value>"}, "embedding_model": {"name": "<value>", "endpoint": "<value>", "dimensions": 562748}, "sparse_embedding_model": {"name": "<value>", "endpoint": "<value>"}, "collect_metadata": false, "metadata_options": {"create_title": true, "extract_questions_answers": false, "extract_summary": true, "has_consumer_content": true, "get_bibliographical_information": true}, "metadata_model": {"type": "<value>", "model_id": "<id>", "fields": [{"name": "<value>", "type": "<value>", "description": "disbar lack stoop apud wearily misappropriate"}]}}
       responses:
         "200":
           application/json: {"message": "<value>"}
@@ -3896,8 +4088,123 @@ examples:
       responses:
         "422":
           application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  getDataElementMetadata:
+    speakeasy-default-get-data-element-metadata:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+      responses:
+        "200":
+          application/json: {"data_element_id": "<id>", "metadata": {}}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  updateDataElementMetadata:
+    speakeasy-default-update-data-element-metadata:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+      requestBody:
+        application/json: {"metadata": {"key": "<value>"}}
+      responses:
+        "200":
+          application/json: {"workflow_id": "<id>", "request_id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  getDataElementMetadataResult:
+    speakeasy-default-get-data-element-metadata-result:
+      parameters:
+        path:
+          datasource_id: "<id>"
+          data_element_id: "<id>"
+          request_id: "<id>"
+      responses:
+        "200":
+          application/json: {"request_id": "<id>", "status": "<value>", "metadata": null, "error": null}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  reprocessDatasourceMetadata:
+    speakeasy-default-reprocess-datasource-metadata:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      requestBody:
+        application/json: {"metadata_model": {"type": "<value>", "model_id": "<id>", "fields": [{"name": "<value>", "type": "<value>", "description": "meaningfully regarding excitedly emerge whereas scram"}]}}
+      responses:
+        "200":
+          application/json: {"workflow_id": "<id>"}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  getReprocessMetadataStatus:
+    speakeasy-default-get-reprocess-metadata-status:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      responses:
+        "200":
+          application/json: {"total": 454128, "completed": 735562, "failed": 559845}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  patchRagConfigMetadata:
+    speakeasy-default-patch-rag-config-metadata:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      requestBody:
+        application/json: {"metadata_model": {"type": "<value>", "model_id": "<id>", "fields": [{"name": "<value>", "type": "<value>", "description": "mid salty thoughtfully"}]}}
+      responses:
+        "200":
+          application/json: {"message": "<value>"}
+        "422":
+          application/json: {"detail": [{"loc": ["<value>"], "msg": "<value>", "type": "<value>"}]}
+  triggerIngest:
+    speakeasy-default-trigger-ingest:
+      parameters:
+        path:
+          datasource_id: "<id>"
+      responses:
+        "200":
+          application/json: "<value>"
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  listMetadataModelCatalog:
+    speakeasy-default-list-metadata-model-catalog:
+      parameters:
+        query:
+          scope: "<value>"
+      responses:
+        "200":
+          application/json: {"models": []}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
+  getMetadataModelCatalogEntry:
+    speakeasy-default-get-metadata-model-catalog-entry:
+      parameters:
+        path:
+          model_id: "<id>"
+      responses:
+        "200":
+          application/json: {"model_id": "<id>", "name": "<value>", "description": "now until shameless airport", "scope": "<value>", "customer_id": null, "project_id": "<id>", "fields": [], "created_by": "<value>", "updated_by": "<value>", "created_at": "2025-08-29T13:21:39.010Z", "updated_at": null}
+        "422":
+          application/json: {"detail": [{"loc": [], "msg": "<value>", "type": "<value>"}]}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Python SDK Changes:
+  * `meibelai.datasources.add_datasource()`:  `request` **Changed** (Breaking ⚠️)
+  * `meibelai.datasources.rag.reprocess_datasource_metadata()`: **Added**
+  * `meibelai.datasources.dataelements.get_data_element_metadata_result()`: **Added**
+  * `meibelai.datasources.dataelements.get_data_element_metadata()`: **Added**
+  * `meibelai.datasources.rag.get_reprocess_metadata_status()`: **Added**
+  * `meibelai.datasources.rag.patch_rag_config_metadata()`: **Added**
+  * `meibelai.datasources.content.trigger_ingest()`: **Added**
+  * `meibelai.datasources.metadata_model_catalog.list_metadata_model_catalog()`: **Added**
+  * `meibelai.datasources.metadata_model_catalog.get_metadata_model_catalog_entry()`: **Added**
+  * `meibelai.datasources.dataelements.update_data_element_metadata()`: **Added**
+  * `meibelai.datasources.rag.add_rag_config()`:  `request.metadata_model` **Added**
+  * `meibelai.datasources.rag.get_rag_config()`:  `response.metadata_model` **Added**
+  * `meibelai.datasources.rag.update_rag_config()`:  `request.metadata_model` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

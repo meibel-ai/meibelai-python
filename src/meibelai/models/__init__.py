@@ -55,15 +55,15 @@ if TYPE_CHECKING:
         AddDataElementResponse,
         AddDataElementResponseTypedDict,
     )
-    from .adddatasourcerequest import (
-        AddDatasourceRequest,
-        AddDatasourceRequestTypedDict,
-    )
     from .adddatasourceresponse import (
         AddDatasourceResponse,
         AddDatasourceResponseTypedDict,
     )
     from .addeventresponse import AddEventResponse, AddEventResponseTypedDict
+    from .addgatewaydatasourcerequest import (
+        AddGatewayDatasourceRequest,
+        AddGatewayDatasourceRequestTypedDict,
+    )
     from .addragconfigop import AddRagConfigRequest1, AddRagConfigRequest1TypedDict
     from .addragconfigrequest import AddRagConfigRequest, AddRagConfigRequestTypedDict
     from .addragconfigresponse import (
@@ -320,6 +320,22 @@ if TYPE_CHECKING:
         GetChunkingStrategyRequestTypedDict,
     )
     from .getcontentresponse import GetContentResponse, GetContentResponseTypedDict
+    from .getdataelementmetadataop import (
+        GetDataElementMetadataRequest,
+        GetDataElementMetadataRequestTypedDict,
+    )
+    from .getdataelementmetadataresponse import (
+        GetDataElementMetadataResponse,
+        GetDataElementMetadataResponseTypedDict,
+    )
+    from .getdataelementmetadataresultop import (
+        GetDataElementMetadataResultRequest,
+        GetDataElementMetadataResultRequestTypedDict,
+    )
+    from .getdataelementmetadataresultresponse import (
+        GetDataElementMetadataResultResponse,
+        GetDataElementMetadataResultResponseTypedDict,
+    )
     from .getdataelementop import GetDataElementRequest, GetDataElementRequestTypedDict
     from .getdataelementsbyfiltersop import (
         GetDataElementsByFiltersRequest,
@@ -347,7 +363,19 @@ if TYPE_CHECKING:
         GetEventsByBlueprintInstanceRequestTypedDict,
     )
     from .geteventsresponse import GetEventsResponse, GetEventsResponseTypedDict
+    from .getmetadatamodelcatalogentryop import (
+        GetMetadataModelCatalogEntryRequest,
+        GetMetadataModelCatalogEntryRequestTypedDict,
+    )
     from .getragconfigop import GetRagConfigRequest, GetRagConfigRequestTypedDict
+    from .getreprocessmetadatastatusop import (
+        GetReprocessMetadataStatusRequest,
+        GetReprocessMetadataStatusRequestTypedDict,
+    )
+    from .getreprocessstatusresponse import (
+        GetReprocessStatusResponse,
+        GetReprocessStatusResponseTypedDict,
+    )
     from .gettagcolumninfoop import (
         GetTagColumnInfoRequest,
         GetTagColumnInfoRequestTypedDict,
@@ -365,10 +393,28 @@ if TYPE_CHECKING:
         ListDatasourceContentRequest,
         ListDatasourceContentRequestTypedDict,
     )
+    from .listmetadatamodelcatalogop import (
+        ListMetadataModelCatalogRequest,
+        ListMetadataModelCatalogRequestTypedDict,
+    )
+    from .listmetadatamodelcatalogresponse import (
+        ListMetadataModelCatalogResponse,
+        ListMetadataModelCatalogResponseTypedDict,
+    )
     from .markdownnodechunking import (
         MarkdownNodeChunking,
         MarkdownNodeChunkingTypedDict,
     )
+    from .metadatafielddefinition import (
+        MetadataFieldDefinition,
+        MetadataFieldDefinitionTypedDict,
+    )
+    from .metadatamodelcatalogentry import (
+        MetadataModelCatalogEntry,
+        MetadataModelCatalogEntryTypedDict,
+    )
+    from .metadatamodelconfig import MetadataModelConfig, MetadataModelConfigTypedDict
+    from .metadatamodelfield import MetadataModelField, MetadataModelFieldTypedDict
     from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
     from .no_response_error import NoResponseError
     from .objectstorageconfig import ObjectStorageConfig, ObjectStorageConfigTypedDict
@@ -392,11 +438,43 @@ if TYPE_CHECKING:
         Sources,
         SourcesTypedDict,
     )
+    from .patchragconfigmetadataop import (
+        PatchRagConfigMetadataRequest1,
+        PatchRagConfigMetadataRequest1TypedDict,
+    )
+    from .patchragconfigmetadatarequest import (
+        PatchRagConfigMetadataRequest,
+        PatchRagConfigMetadataRequestTypedDict,
+    )
+    from .patchragconfigmetadataresponse import (
+        PatchRagConfigMetadataResponse,
+        PatchRagConfigMetadataResponseTypedDict,
+    )
     from .platform import Platform
     from .postgresqlconfig import PostgreSQLConfig, PostgreSQLConfigTypedDict
+    from .putdataelementmetadatarequest import (
+        PutDataElementMetadataRequest,
+        PutDataElementMetadataRequestTypedDict,
+    )
+    from .putdataelementmetadataresponse import (
+        PutDataElementMetadataResponse,
+        PutDataElementMetadataResponseTypedDict,
+    )
     from .queryworkflowop import QueryWorkflowRequest, QueryWorkflowRequestTypedDict
     from .ragchunkingstrategy import RagChunkingStrategy, RagChunkingStrategyTypedDict
     from .ragconfig import RagConfig, RagConfigTypedDict
+    from .reprocessdatasourcemetadataop import (
+        ReprocessDatasourceMetadataRequest,
+        ReprocessDatasourceMetadataRequestTypedDict,
+    )
+    from .reprocessdatasourcerequest import (
+        ReprocessDatasourceRequest,
+        ReprocessDatasourceRequestTypedDict,
+    )
+    from .reprocessdatasourceresponse import (
+        ReprocessDatasourceResponse,
+        ReprocessDatasourceResponseTypedDict,
+    )
     from .responsevalidationerror import ResponseValidationError
     from .s3config import S3Config, S3ConfigTypedDict
     from .security import Security, SecurityTypedDict
@@ -462,6 +540,7 @@ if TYPE_CHECKING:
         ToolResultEventDataTypedDict,
         ToolResultEventTypedDict,
     )
+    from .triggeringestop import TriggerIngestRequest, TriggerIngestRequestTypedDict
     from .updateactivitystatusop import (
         UpdateActivityStatusRequest,
         UpdateActivityStatusRequestTypedDict,
@@ -497,6 +576,10 @@ if TYPE_CHECKING:
     from .updatechunkingstrategyresponse import (
         UpdateChunkingStrategyResponse,
         UpdateChunkingStrategyResponseTypedDict,
+    )
+    from .updatedataelementmetadataop import (
+        UpdateDataElementMetadataRequest,
+        UpdateDataElementMetadataRequestTypedDict,
     )
     from .updatedataelementop import (
         UpdateDataElementRequest1,
@@ -619,12 +702,12 @@ __all__ = [
     "AddDataElementRequestTypedDict",
     "AddDataElementResponse",
     "AddDataElementResponseTypedDict",
-    "AddDatasourceRequest",
-    "AddDatasourceRequestTypedDict",
     "AddDatasourceResponse",
     "AddDatasourceResponseTypedDict",
     "AddEventResponse",
     "AddEventResponseTypedDict",
+    "AddGatewayDatasourceRequest",
+    "AddGatewayDatasourceRequestTypedDict",
     "AddRagConfigRequest",
     "AddRagConfigRequest1",
     "AddRagConfigRequest1TypedDict",
@@ -819,6 +902,14 @@ __all__ = [
     "GetChunkingStrategyRequestTypedDict",
     "GetContentResponse",
     "GetContentResponseTypedDict",
+    "GetDataElementMetadataRequest",
+    "GetDataElementMetadataRequestTypedDict",
+    "GetDataElementMetadataResponse",
+    "GetDataElementMetadataResponseTypedDict",
+    "GetDataElementMetadataResultRequest",
+    "GetDataElementMetadataResultRequestTypedDict",
+    "GetDataElementMetadataResultResponse",
+    "GetDataElementMetadataResultResponseTypedDict",
     "GetDataElementRequest",
     "GetDataElementRequestTypedDict",
     "GetDataElementsByFiltersRequest",
@@ -837,8 +928,14 @@ __all__ = [
     "GetEventsByBlueprintInstanceRequestTypedDict",
     "GetEventsResponse",
     "GetEventsResponseTypedDict",
+    "GetMetadataModelCatalogEntryRequest",
+    "GetMetadataModelCatalogEntryRequestTypedDict",
     "GetRagConfigRequest",
     "GetRagConfigRequestTypedDict",
+    "GetReprocessMetadataStatusRequest",
+    "GetReprocessMetadataStatusRequestTypedDict",
+    "GetReprocessStatusResponse",
+    "GetReprocessStatusResponseTypedDict",
     "GetTagColumnInfoRequest",
     "GetTagColumnInfoRequestTypedDict",
     "GetTagConfigRequest",
@@ -855,11 +952,23 @@ __all__ = [
     "ListContentResponseTypedDict",
     "ListDatasourceContentRequest",
     "ListDatasourceContentRequestTypedDict",
+    "ListMetadataModelCatalogRequest",
+    "ListMetadataModelCatalogRequestTypedDict",
+    "ListMetadataModelCatalogResponse",
+    "ListMetadataModelCatalogResponseTypedDict",
     "Loc",
     "LocTypedDict",
     "MarkdownNodeChunking",
     "MarkdownNodeChunkingTypedDict",
     "MeibelaiError",
+    "MetadataFieldDefinition",
+    "MetadataFieldDefinitionTypedDict",
+    "MetadataModelCatalogEntry",
+    "MetadataModelCatalogEntryTypedDict",
+    "MetadataModelConfig",
+    "MetadataModelConfigTypedDict",
+    "MetadataModelField",
+    "MetadataModelFieldTypedDict",
     "MetadataOptions",
     "MetadataOptionsTypedDict",
     "NoResponseError",
@@ -873,9 +982,19 @@ __all__ = [
     "PartialResponseEventDataDataTypedDict",
     "PartialResponseEventDataTypedDict",
     "PartialResponseEventTypedDict",
+    "PatchRagConfigMetadataRequest",
+    "PatchRagConfigMetadataRequest1",
+    "PatchRagConfigMetadataRequest1TypedDict",
+    "PatchRagConfigMetadataRequestTypedDict",
+    "PatchRagConfigMetadataResponse",
+    "PatchRagConfigMetadataResponseTypedDict",
     "Platform",
     "PostgreSQLConfig",
     "PostgreSQLConfigTypedDict",
+    "PutDataElementMetadataRequest",
+    "PutDataElementMetadataRequestTypedDict",
+    "PutDataElementMetadataResponse",
+    "PutDataElementMetadataResponseTypedDict",
     "QueryWorkflowRequest",
     "QueryWorkflowRequestTypedDict",
     "RagChunkingStrategy",
@@ -884,6 +1003,12 @@ __all__ = [
     "RagConfigTypedDict",
     "RelevanceScore",
     "RelevanceScoreTypedDict",
+    "ReprocessDatasourceMetadataRequest",
+    "ReprocessDatasourceMetadataRequestTypedDict",
+    "ReprocessDatasourceRequest",
+    "ReprocessDatasourceRequestTypedDict",
+    "ReprocessDatasourceResponse",
+    "ReprocessDatasourceResponseTypedDict",
     "ResponseValidationError",
     "Result",
     "ResultTypedDict",
@@ -943,6 +1068,8 @@ __all__ = [
     "ToolResultEventData",
     "ToolResultEventDataTypedDict",
     "ToolResultEventTypedDict",
+    "TriggerIngestRequest",
+    "TriggerIngestRequestTypedDict",
     "UpdateActivityStatusRequest",
     "UpdateActivityStatusRequestTypedDict",
     "UpdateBlueprintInstanceStatusRequest",
@@ -961,6 +1088,8 @@ __all__ = [
     "UpdateChunkingStrategyRequestTypedDict",
     "UpdateChunkingStrategyResponse",
     "UpdateChunkingStrategyResponseTypedDict",
+    "UpdateDataElementMetadataRequest",
+    "UpdateDataElementMetadataRequestTypedDict",
     "UpdateDataElementRequest",
     "UpdateDataElementRequest1",
     "UpdateDataElementRequest1TypedDict",
@@ -1039,12 +1168,12 @@ _dynamic_imports: dict[str, str] = {
     "AddDataElementRequestTypedDict": ".adddataelementrequest",
     "AddDataElementResponse": ".adddataelementresponse",
     "AddDataElementResponseTypedDict": ".adddataelementresponse",
-    "AddDatasourceRequest": ".adddatasourcerequest",
-    "AddDatasourceRequestTypedDict": ".adddatasourcerequest",
     "AddDatasourceResponse": ".adddatasourceresponse",
     "AddDatasourceResponseTypedDict": ".adddatasourceresponse",
     "AddEventResponse": ".addeventresponse",
     "AddEventResponseTypedDict": ".addeventresponse",
+    "AddGatewayDatasourceRequest": ".addgatewaydatasourcerequest",
+    "AddGatewayDatasourceRequestTypedDict": ".addgatewaydatasourcerequest",
     "AddRagConfigRequest1": ".addragconfigop",
     "AddRagConfigRequest1TypedDict": ".addragconfigop",
     "AddRagConfigRequest": ".addragconfigrequest",
@@ -1232,6 +1361,14 @@ _dynamic_imports: dict[str, str] = {
     "GetChunkingStrategyRequestTypedDict": ".getchunkingstrategyop",
     "GetContentResponse": ".getcontentresponse",
     "GetContentResponseTypedDict": ".getcontentresponse",
+    "GetDataElementMetadataRequest": ".getdataelementmetadataop",
+    "GetDataElementMetadataRequestTypedDict": ".getdataelementmetadataop",
+    "GetDataElementMetadataResponse": ".getdataelementmetadataresponse",
+    "GetDataElementMetadataResponseTypedDict": ".getdataelementmetadataresponse",
+    "GetDataElementMetadataResultRequest": ".getdataelementmetadataresultop",
+    "GetDataElementMetadataResultRequestTypedDict": ".getdataelementmetadataresultop",
+    "GetDataElementMetadataResultResponse": ".getdataelementmetadataresultresponse",
+    "GetDataElementMetadataResultResponseTypedDict": ".getdataelementmetadataresultresponse",
     "GetDataElementRequest": ".getdataelementop",
     "GetDataElementRequestTypedDict": ".getdataelementop",
     "GetDataElementsByFiltersRequest": ".getdataelementsbyfiltersop",
@@ -1250,8 +1387,14 @@ _dynamic_imports: dict[str, str] = {
     "GetEventsByBlueprintInstanceRequestTypedDict": ".geteventsbyblueprintinstanceop",
     "GetEventsResponse": ".geteventsresponse",
     "GetEventsResponseTypedDict": ".geteventsresponse",
+    "GetMetadataModelCatalogEntryRequest": ".getmetadatamodelcatalogentryop",
+    "GetMetadataModelCatalogEntryRequestTypedDict": ".getmetadatamodelcatalogentryop",
     "GetRagConfigRequest": ".getragconfigop",
     "GetRagConfigRequestTypedDict": ".getragconfigop",
+    "GetReprocessMetadataStatusRequest": ".getreprocessmetadatastatusop",
+    "GetReprocessMetadataStatusRequestTypedDict": ".getreprocessmetadatastatusop",
+    "GetReprocessStatusResponse": ".getreprocessstatusresponse",
+    "GetReprocessStatusResponseTypedDict": ".getreprocessstatusresponse",
     "GetTagColumnInfoRequest": ".gettagcolumninfoop",
     "GetTagColumnInfoRequestTypedDict": ".gettagcolumninfoop",
     "GetTagConfigRequest": ".gettagconfigop",
@@ -1268,8 +1411,20 @@ _dynamic_imports: dict[str, str] = {
     "ListContentResponseTypedDict": ".listcontentresponse",
     "ListDatasourceContentRequest": ".listdatasourcecontentop",
     "ListDatasourceContentRequestTypedDict": ".listdatasourcecontentop",
+    "ListMetadataModelCatalogRequest": ".listmetadatamodelcatalogop",
+    "ListMetadataModelCatalogRequestTypedDict": ".listmetadatamodelcatalogop",
+    "ListMetadataModelCatalogResponse": ".listmetadatamodelcatalogresponse",
+    "ListMetadataModelCatalogResponseTypedDict": ".listmetadatamodelcatalogresponse",
     "MarkdownNodeChunking": ".markdownnodechunking",
     "MarkdownNodeChunkingTypedDict": ".markdownnodechunking",
+    "MetadataFieldDefinition": ".metadatafielddefinition",
+    "MetadataFieldDefinitionTypedDict": ".metadatafielddefinition",
+    "MetadataModelCatalogEntry": ".metadatamodelcatalogentry",
+    "MetadataModelCatalogEntryTypedDict": ".metadatamodelcatalogentry",
+    "MetadataModelConfig": ".metadatamodelconfig",
+    "MetadataModelConfigTypedDict": ".metadatamodelconfig",
+    "MetadataModelField": ".metadatamodelfield",
+    "MetadataModelFieldTypedDict": ".metadatamodelfield",
     "MetadataOptions": ".metadataoptions",
     "MetadataOptionsTypedDict": ".metadataoptions",
     "NoResponseError": ".no_response_error",
@@ -1291,15 +1446,31 @@ _dynamic_imports: dict[str, str] = {
     "PartialResponseEventTypedDict": ".partialresponseevent",
     "Sources": ".partialresponseevent",
     "SourcesTypedDict": ".partialresponseevent",
+    "PatchRagConfigMetadataRequest1": ".patchragconfigmetadataop",
+    "PatchRagConfigMetadataRequest1TypedDict": ".patchragconfigmetadataop",
+    "PatchRagConfigMetadataRequest": ".patchragconfigmetadatarequest",
+    "PatchRagConfigMetadataRequestTypedDict": ".patchragconfigmetadatarequest",
+    "PatchRagConfigMetadataResponse": ".patchragconfigmetadataresponse",
+    "PatchRagConfigMetadataResponseTypedDict": ".patchragconfigmetadataresponse",
     "Platform": ".platform",
     "PostgreSQLConfig": ".postgresqlconfig",
     "PostgreSQLConfigTypedDict": ".postgresqlconfig",
+    "PutDataElementMetadataRequest": ".putdataelementmetadatarequest",
+    "PutDataElementMetadataRequestTypedDict": ".putdataelementmetadatarequest",
+    "PutDataElementMetadataResponse": ".putdataelementmetadataresponse",
+    "PutDataElementMetadataResponseTypedDict": ".putdataelementmetadataresponse",
     "QueryWorkflowRequest": ".queryworkflowop",
     "QueryWorkflowRequestTypedDict": ".queryworkflowop",
     "RagChunkingStrategy": ".ragchunkingstrategy",
     "RagChunkingStrategyTypedDict": ".ragchunkingstrategy",
     "RagConfig": ".ragconfig",
     "RagConfigTypedDict": ".ragconfig",
+    "ReprocessDatasourceMetadataRequest": ".reprocessdatasourcemetadataop",
+    "ReprocessDatasourceMetadataRequestTypedDict": ".reprocessdatasourcemetadataop",
+    "ReprocessDatasourceRequest": ".reprocessdatasourcerequest",
+    "ReprocessDatasourceRequestTypedDict": ".reprocessdatasourcerequest",
+    "ReprocessDatasourceResponse": ".reprocessdatasourceresponse",
+    "ReprocessDatasourceResponseTypedDict": ".reprocessdatasourceresponse",
     "ResponseValidationError": ".responsevalidationerror",
     "S3Config": ".s3config",
     "S3ConfigTypedDict": ".s3config",
@@ -1361,6 +1532,8 @@ _dynamic_imports: dict[str, str] = {
     "ToolResultEventData": ".toolresultevent",
     "ToolResultEventDataTypedDict": ".toolresultevent",
     "ToolResultEventTypedDict": ".toolresultevent",
+    "TriggerIngestRequest": ".triggeringestop",
+    "TriggerIngestRequestTypedDict": ".triggeringestop",
     "UpdateActivityStatusRequest": ".updateactivitystatusop",
     "UpdateActivityStatusRequestTypedDict": ".updateactivitystatusop",
     "UpdateBlueprintInstanceStatusRequest": ".updateblueprintinstancestatusop",
@@ -1379,6 +1552,8 @@ _dynamic_imports: dict[str, str] = {
     "UpdateChunkingStrategyRequestTypedDict": ".updatechunkingstrategyrequest",
     "UpdateChunkingStrategyResponse": ".updatechunkingstrategyresponse",
     "UpdateChunkingStrategyResponseTypedDict": ".updatechunkingstrategyresponse",
+    "UpdateDataElementMetadataRequest": ".updatedataelementmetadataop",
+    "UpdateDataElementMetadataRequestTypedDict": ".updatedataelementmetadataop",
     "UpdateDataElementRequest1": ".updatedataelementop",
     "UpdateDataElementRequest1TypedDict": ".updatedataelementop",
     "UpdateDataElementRequest": ".updatedataelementrequest",

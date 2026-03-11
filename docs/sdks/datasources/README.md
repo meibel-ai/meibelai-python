@@ -28,7 +28,7 @@ with Meibelai(
     api_key_header=os.getenv("MEIBELAI_API_KEY_HEADER", ""),
 ) as m_client:
 
-    res = m_client.datasources.add_datasource(customer_id="<id>", project_id="<id>", name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
+    res = m_client.datasources.add_datasource(name="<value>", description="kindly kookily biodegrade after helpfully mushy unlike", recurrence="<value>", object_storage_config={
         "bucket": "<value>",
         "prefix": "<value>",
         "filters": None,
@@ -71,8 +71,6 @@ with Meibelai(
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `customer_id`                                                                                   | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `project_id`                                                                                    | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
 | `name`                                                                                          | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
 | `description`                                                                                   | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
 | `recurrence`                                                                                    | *str*                                                                                           | :heavy_check_mark:                                                                              | N/A                                                                                             |
