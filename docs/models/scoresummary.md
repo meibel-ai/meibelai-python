@@ -1,0 +1,18 @@
+# ScoreSummary
+
+Aggregated summary of scoring jobs matching one or two AgentIdentityContext filters.  With one level (primary only): flat aggregate of all jobs matching primary_field=primary_value. With two levels (primary + secondary): both constraints are applied; primary is the higher level and secondary is the lower level.
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `primary_field`                                                        | *str*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |
+| `primary_value`                                                        | *str*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |
+| `secondary_field`                                                      | *OptionalNullable[str]*                                                | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `secondary_value`                                                      | *OptionalNullable[str]*                                                | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `status`                                                               | [OptionalNullable[models.ScoringStatus]](../models/scoringstatus.md)   | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `aggregate_score`                                                      | [OptionalNullable[models.AggregateScore]](../models/aggregatescore.md) | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `module_scores`                                                        | Dict[str, [models.ModuleScores](../models/modulescores.md)]            | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `n_jobs_per_module`                                                    | Dict[str, *int*]                                                       | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `jobs`                                                                 | List[[models.ScoringJobRecord](../models/scoringjobrecord.md)]         | :heavy_minus_sign:                                                     | N/A                                                                    |

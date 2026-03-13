@@ -341,6 +341,12 @@ with Meibelai(
 * [create_event_by_blueprint_instance_id](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
 * [get_events_by_blueprint_instance](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/instances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
 
+### [ConfidenceScoring](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/confidencescoring/README.md)
+
+* [get_scoring_job](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/confidencescoring/README.md#get_scoring_job) - Get Scoring Job
+* [get_all_scoring_jobs](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/confidencescoring/README.md#get_all_scoring_jobs) - Get All Scoring Jobs
+* [get_scoring_jobs_summary](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/confidencescoring/README.md#get_scoring_jobs_summary) - Get Scoring Jobs Summary
+
 ### [Content](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md)
 
 * [stream_upload_progress](https://github.com/meibel-ai/meibelai-python/blob/master/docs/sdks/content/README.md#stream_upload_progress) - Stream upload progress events

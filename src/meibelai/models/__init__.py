@@ -91,6 +91,10 @@ if TYPE_CHECKING:
     )
     from .addtagtablerequest import AddTagTableRequest, AddTagTableRequestTypedDict
     from .addtagtableresponse import AddTagTableResponse, AddTagTableResponseTypedDict
+    from .agentidentitycontext import (
+        AgentIdentityContext,
+        AgentIdentityContextTypedDict,
+    )
     from .airbyteconfig import AirbyteConfig, AirbyteConfigTypedDict
     from .alloweddataelementfilterkeys import AllowedDataElementFilterKeys
     from .apierror import APIError
@@ -134,6 +138,11 @@ if TYPE_CHECKING:
         CompletionEventSourcesTypedDict,
         CompletionEventTypedDict,
     )
+    from .confidencescoringconfig import (
+        ConfidenceScoringConfig,
+        ConfidenceScoringConfigTypedDict,
+    )
+    from .config import Config, ConfigTypedDict
     from .connectedevent import (
         ConnectedEvent,
         ConnectedEventData,
@@ -286,6 +295,10 @@ if TYPE_CHECKING:
         GetAllDatasourceIdsResponse,
         GetAllDatasourceIdsResponseTypedDict,
     )
+    from .getallscoringjobsop import (
+        GetAllScoringJobsRequest,
+        GetAllScoringJobsRequestTypedDict,
+    )
     from .getalltagcolumninfoop import (
         GetAllTagColumnInfoRequest,
         GetAllTagColumnInfoRequestTypedDict,
@@ -376,6 +389,11 @@ if TYPE_CHECKING:
         GetReprocessStatusResponse,
         GetReprocessStatusResponseTypedDict,
     )
+    from .getscoringjobop import GetScoringJobRequest, GetScoringJobRequestTypedDict
+    from .getscoringjobssummaryop import (
+        GetScoringJobsSummaryRequest,
+        GetScoringJobsSummaryRequestTypedDict,
+    )
     from .gettagcolumninfoop import (
         GetTagColumnInfoRequest,
         GetTagColumnInfoRequestTypedDict,
@@ -388,6 +406,14 @@ if TYPE_CHECKING:
     from .htmlchunking import HTMLChunking, HTMLChunkingTypedDict
     from .httpvalidationerror import HTTPValidationError, HTTPValidationErrorData
     from .jsonnodechunking import JSONNodeChunking, JSONNodeChunkingTypedDict
+    from .judgeconfig import (
+        JudgeConfig,
+        JudgeConfigTypedDict,
+        TemperatureMax,
+        TemperatureMaxTypedDict,
+        TemperatureStep,
+        TemperatureStepTypedDict,
+    )
     from .listcontentresponse import ListContentResponse, ListContentResponseTypedDict
     from .listdatasourcecontentop import (
         ListDatasourceContentRequest,
@@ -416,11 +442,19 @@ if TYPE_CHECKING:
     from .metadatamodelconfig import MetadataModelConfig, MetadataModelConfigTypedDict
     from .metadatamodelfield import MetadataModelField, MetadataModelFieldTypedDict
     from .metadataoptions import MetadataOptions, MetadataOptionsTypedDict
+    from .nbootstraps import NBootstraps, NBootstrapsTypedDict
     from .no_response_error import NoResponseError
     from .objectstorageconfig import ObjectStorageConfig, ObjectStorageConfigTypedDict
     from .objectstoragefilters import (
         ObjectStorageFilters,
         ObjectStorageFiltersTypedDict,
+    )
+    from .occonfig import OCConfig, OCConfigTypedDict, Temperature, TemperatureTypedDict
+    from .ocrconfig import (
+        OCRConfig,
+        OCRConfigTypedDict,
+        OcrConfidenceScores,
+        OcrConfidenceScoresTypedDict,
     )
     from .partialresponseevent import (
         Artifacts,
@@ -477,6 +511,21 @@ if TYPE_CHECKING:
     )
     from .responsevalidationerror import ResponseValidationError
     from .s3config import S3Config, S3ConfigTypedDict
+    from .scoresummary import (
+        AggregateScore,
+        AggregateScoreTypedDict,
+        ModuleScores,
+        ModuleScoresTypedDict,
+        ScoreSummary,
+        ScoreSummaryTypedDict,
+    )
+    from .scoringjobrecord import (
+        Score,
+        ScoreTypedDict,
+        ScoringJobRecord,
+        ScoringJobRecordTypedDict,
+    )
+    from .scoringstatus import ScoringStatus
     from .security import Security, SecurityTypedDict
     from .semanticchunking import SemanticChunking, SemanticChunkingTypedDict
     from .sendchatmessageop import (
@@ -522,6 +571,7 @@ if TYPE_CHECKING:
     from .tagcolumninfo import TagColumnInfo, TagColumnInfoTypedDict
     from .tagconfig import TagConfig, TagConfigTypedDict
     from .tagtableinfo import TagTableInfo, TagTableInfoTypedDict
+    from .tokenconfig import TokenConfig, TokenConfigTypedDict
     from .tokentextchunking import TokenTextChunking, TokenTextChunkingTypedDict
     from .toolactivity import ToolActivity, ToolActivityTypedDict
     from .toolcallevent import (
@@ -732,6 +782,10 @@ __all__ = [
     "AddTagTableRequestTypedDict",
     "AddTagTableResponse",
     "AddTagTableResponseTypedDict",
+    "AgentIdentityContext",
+    "AgentIdentityContextTypedDict",
+    "AggregateScore",
+    "AggregateScoreTypedDict",
     "AirbyteConfig",
     "AirbyteConfigTypedDict",
     "AllowedDataElementFilterKeys",
@@ -785,6 +839,10 @@ __all__ = [
     "CompletionEventSources",
     "CompletionEventSourcesTypedDict",
     "CompletionEventTypedDict",
+    "ConfidenceScoringConfig",
+    "ConfidenceScoringConfigTypedDict",
+    "Config",
+    "ConfigTypedDict",
     "ConnectedEvent",
     "ConnectedEventData",
     "ConnectedEventDataTypedDict",
@@ -882,6 +940,8 @@ __all__ = [
     "GetAllBlueprintInstancesRequestTypedDict",
     "GetAllDatasourceIdsResponse",
     "GetAllDatasourceIdsResponseTypedDict",
+    "GetAllScoringJobsRequest",
+    "GetAllScoringJobsRequestTypedDict",
     "GetAllTagColumnInfoRequest",
     "GetAllTagColumnInfoRequestTypedDict",
     "GetAllTagTableInfoRequest",
@@ -936,6 +996,10 @@ __all__ = [
     "GetReprocessMetadataStatusRequestTypedDict",
     "GetReprocessStatusResponse",
     "GetReprocessStatusResponseTypedDict",
+    "GetScoringJobRequest",
+    "GetScoringJobRequestTypedDict",
+    "GetScoringJobsSummaryRequest",
+    "GetScoringJobsSummaryRequestTypedDict",
     "GetTagColumnInfoRequest",
     "GetTagColumnInfoRequestTypedDict",
     "GetTagConfigRequest",
@@ -948,6 +1012,8 @@ __all__ = [
     "HTTPValidationErrorData",
     "JSONNodeChunking",
     "JSONNodeChunkingTypedDict",
+    "JudgeConfig",
+    "JudgeConfigTypedDict",
     "ListContentResponse",
     "ListContentResponseTypedDict",
     "ListDatasourceContentRequest",
@@ -971,11 +1037,21 @@ __all__ = [
     "MetadataModelFieldTypedDict",
     "MetadataOptions",
     "MetadataOptionsTypedDict",
+    "ModuleScores",
+    "ModuleScoresTypedDict",
+    "NBootstraps",
+    "NBootstrapsTypedDict",
     "NoResponseError",
+    "OCConfig",
+    "OCConfigTypedDict",
+    "OCRConfig",
+    "OCRConfigTypedDict",
     "ObjectStorageConfig",
     "ObjectStorageConfigTypedDict",
     "ObjectStorageFilters",
     "ObjectStorageFiltersTypedDict",
+    "OcrConfidenceScores",
+    "OcrConfidenceScoresTypedDict",
     "PartialResponseEvent",
     "PartialResponseEventData",
     "PartialResponseEventDataData",
@@ -1016,6 +1092,13 @@ __all__ = [
     "S3ConfigTypedDict",
     "SSEEvent",
     "SSEEventTypedDict",
+    "Score",
+    "ScoreSummary",
+    "ScoreSummaryTypedDict",
+    "ScoreTypedDict",
+    "ScoringJobRecord",
+    "ScoringJobRecordTypedDict",
+    "ScoringStatus",
     "Security",
     "SecurityTypedDict",
     "SemanticChunking",
@@ -1056,6 +1139,14 @@ __all__ = [
     "TagConfigTypedDict",
     "TagTableInfo",
     "TagTableInfoTypedDict",
+    "Temperature",
+    "TemperatureMax",
+    "TemperatureMaxTypedDict",
+    "TemperatureStep",
+    "TemperatureStepTypedDict",
+    "TemperatureTypedDict",
+    "TokenConfig",
+    "TokenConfigTypedDict",
     "TokenTextChunking",
     "TokenTextChunkingTypedDict",
     "ToolActivity",
@@ -1198,6 +1289,8 @@ _dynamic_imports: dict[str, str] = {
     "AddTagTableRequestTypedDict": ".addtagtablerequest",
     "AddTagTableResponse": ".addtagtableresponse",
     "AddTagTableResponseTypedDict": ".addtagtableresponse",
+    "AgentIdentityContext": ".agentidentitycontext",
+    "AgentIdentityContextTypedDict": ".agentidentitycontext",
     "AirbyteConfig": ".airbyteconfig",
     "AirbyteConfigTypedDict": ".airbyteconfig",
     "AllowedDataElementFilterKeys": ".alloweddataelementfilterkeys",
@@ -1244,6 +1337,10 @@ _dynamic_imports: dict[str, str] = {
     "CompletionEventSources": ".completionevent",
     "CompletionEventSourcesTypedDict": ".completionevent",
     "CompletionEventTypedDict": ".completionevent",
+    "ConfidenceScoringConfig": ".confidencescoringconfig",
+    "ConfidenceScoringConfigTypedDict": ".confidencescoringconfig",
+    "Config": ".config",
+    "ConfigTypedDict": ".config",
     "ConnectedEvent": ".connectedevent",
     "ConnectedEventData": ".connectedevent",
     "ConnectedEventDataTypedDict": ".connectedevent",
@@ -1341,6 +1438,8 @@ _dynamic_imports: dict[str, str] = {
     "GetAllBlueprintInstancesRequestTypedDict": ".getallblueprintinstancesop",
     "GetAllDatasourceIdsResponse": ".getalldatasourceidsresponse",
     "GetAllDatasourceIdsResponseTypedDict": ".getalldatasourceidsresponse",
+    "GetAllScoringJobsRequest": ".getallscoringjobsop",
+    "GetAllScoringJobsRequestTypedDict": ".getallscoringjobsop",
     "GetAllTagColumnInfoRequest": ".getalltagcolumninfoop",
     "GetAllTagColumnInfoRequestTypedDict": ".getalltagcolumninfoop",
     "GetAllTagTableInfoRequest": ".getalltagtableinfoop",
@@ -1395,6 +1494,10 @@ _dynamic_imports: dict[str, str] = {
     "GetReprocessMetadataStatusRequestTypedDict": ".getreprocessmetadatastatusop",
     "GetReprocessStatusResponse": ".getreprocessstatusresponse",
     "GetReprocessStatusResponseTypedDict": ".getreprocessstatusresponse",
+    "GetScoringJobRequest": ".getscoringjobop",
+    "GetScoringJobRequestTypedDict": ".getscoringjobop",
+    "GetScoringJobsSummaryRequest": ".getscoringjobssummaryop",
+    "GetScoringJobsSummaryRequestTypedDict": ".getscoringjobssummaryop",
     "GetTagColumnInfoRequest": ".gettagcolumninfoop",
     "GetTagColumnInfoRequestTypedDict": ".gettagcolumninfoop",
     "GetTagConfigRequest": ".gettagconfigop",
@@ -1407,6 +1510,12 @@ _dynamic_imports: dict[str, str] = {
     "HTTPValidationErrorData": ".httpvalidationerror",
     "JSONNodeChunking": ".jsonnodechunking",
     "JSONNodeChunkingTypedDict": ".jsonnodechunking",
+    "JudgeConfig": ".judgeconfig",
+    "JudgeConfigTypedDict": ".judgeconfig",
+    "TemperatureMax": ".judgeconfig",
+    "TemperatureMaxTypedDict": ".judgeconfig",
+    "TemperatureStep": ".judgeconfig",
+    "TemperatureStepTypedDict": ".judgeconfig",
     "ListContentResponse": ".listcontentresponse",
     "ListContentResponseTypedDict": ".listcontentresponse",
     "ListDatasourceContentRequest": ".listdatasourcecontentop",
@@ -1427,11 +1536,21 @@ _dynamic_imports: dict[str, str] = {
     "MetadataModelFieldTypedDict": ".metadatamodelfield",
     "MetadataOptions": ".metadataoptions",
     "MetadataOptionsTypedDict": ".metadataoptions",
+    "NBootstraps": ".nbootstraps",
+    "NBootstrapsTypedDict": ".nbootstraps",
     "NoResponseError": ".no_response_error",
     "ObjectStorageConfig": ".objectstorageconfig",
     "ObjectStorageConfigTypedDict": ".objectstorageconfig",
     "ObjectStorageFilters": ".objectstoragefilters",
     "ObjectStorageFiltersTypedDict": ".objectstoragefilters",
+    "OCConfig": ".occonfig",
+    "OCConfigTypedDict": ".occonfig",
+    "Temperature": ".occonfig",
+    "TemperatureTypedDict": ".occonfig",
+    "OCRConfig": ".ocrconfig",
+    "OCRConfigTypedDict": ".ocrconfig",
+    "OcrConfidenceScores": ".ocrconfig",
+    "OcrConfidenceScoresTypedDict": ".ocrconfig",
     "Artifacts": ".partialresponseevent",
     "ArtifactsTypedDict": ".partialresponseevent",
     "CallToActions": ".partialresponseevent",
@@ -1474,6 +1593,17 @@ _dynamic_imports: dict[str, str] = {
     "ResponseValidationError": ".responsevalidationerror",
     "S3Config": ".s3config",
     "S3ConfigTypedDict": ".s3config",
+    "AggregateScore": ".scoresummary",
+    "AggregateScoreTypedDict": ".scoresummary",
+    "ModuleScores": ".scoresummary",
+    "ModuleScoresTypedDict": ".scoresummary",
+    "ScoreSummary": ".scoresummary",
+    "ScoreSummaryTypedDict": ".scoresummary",
+    "Score": ".scoringjobrecord",
+    "ScoreTypedDict": ".scoringjobrecord",
+    "ScoringJobRecord": ".scoringjobrecord",
+    "ScoringJobRecordTypedDict": ".scoringjobrecord",
+    "ScoringStatus": ".scoringstatus",
     "Security": ".security",
     "SecurityTypedDict": ".security",
     "SemanticChunking": ".semanticchunking",
@@ -1516,6 +1646,8 @@ _dynamic_imports: dict[str, str] = {
     "TagConfigTypedDict": ".tagconfig",
     "TagTableInfo": ".tagtableinfo",
     "TagTableInfoTypedDict": ".tagtableinfo",
+    "TokenConfig": ".tokenconfig",
+    "TokenConfigTypedDict": ".tokenconfig",
     "TokenTextChunking": ".tokentextchunking",
     "TokenTextChunkingTypedDict": ".tokentextchunking",
     "ToolActivity": ".toolactivity",

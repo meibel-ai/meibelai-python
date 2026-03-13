@@ -341,6 +341,12 @@ with Meibelai(
 * [create_event_by_blueprint_instance_id](docs/sdks/instances/README.md#create_event_by_blueprint_instance_id) - Create Event By Blueprint Instance Id
 * [get_events_by_blueprint_instance](docs/sdks/instances/README.md#get_events_by_blueprint_instance) - Get Events By Blueprint Instance
 
+### [ConfidenceScoring](docs/sdks/confidencescoring/README.md)
+
+* [get_scoring_job](docs/sdks/confidencescoring/README.md#get_scoring_job) - Get Scoring Job
+* [get_all_scoring_jobs](docs/sdks/confidencescoring/README.md#get_all_scoring_jobs) - Get All Scoring Jobs
+* [get_scoring_jobs_summary](docs/sdks/confidencescoring/README.md#get_scoring_jobs_summary) - Get Scoring Jobs Summary
+
 ### [Content](docs/sdks/content/README.md)
 
 * [stream_upload_progress](docs/sdks/content/README.md#stream_upload_progress) - Stream upload progress events

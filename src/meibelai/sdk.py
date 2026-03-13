@@ -16,6 +16,7 @@ import weakref
 
 if TYPE_CHECKING:
     from meibelai.blueprints import Blueprints
+    from meibelai.confidence_scoring import ConfidenceScoring
     from meibelai.content import Content
     from meibelai.datasources import Datasources
 
@@ -31,10 +32,13 @@ class Meibelai(BaseSDK):
     content: "Content"
     blueprints: "Blueprints"
     r"""Operations with blueprints"""
+    confidence_scoring: "ConfidenceScoring"
+    r"""Operations with confidence scoring jobs and summaries"""
     _sub_sdk_map = {
         "datasources": ("meibelai.datasources", "Datasources"),
         "content": ("meibelai.content", "Content"),
         "blueprints": ("meibelai.blueprints", "Blueprints"),
+        "confidence_scoring": ("meibelai.confidence_scoring", "ConfidenceScoring"),
     }
 
     def __init__(
